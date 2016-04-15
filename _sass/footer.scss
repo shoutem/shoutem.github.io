@@ -1,0 +1,46 @@
+.footer {
+    background-color: $footerbackground;
+    height: 90px;
+    color: $footercolor;
+    padding-top: 22px;
+
+    @include mobile {
+        height: 180px;
+    }
+
+    .container-fluid {
+        max-width: 1240px;
+    }
+    .footer-logo {        
+        @include logoimage('../img/shoutem_logo_footer.png', 96px, 36px);
+        opacity: 0.4;
+        float: left;
+
+        @include mobile {
+            float: none;
+            margin: 0 auto;
+        }
+    }
+    .footer-menu {
+        float: right;
+        opacity: 0.4;
+        color: $footercolor;
+    }
+    .footer-menu {
+        list-style: none;
+    
+        li {
+            float: left;
+            padding: 10px;
+        }
+        a {
+            color: $footercolor;
+
+            &:hover,
+            &:active {
+                color: $footercolor;
+                text-decoration: none;
+            }
+        }
+    }
+}

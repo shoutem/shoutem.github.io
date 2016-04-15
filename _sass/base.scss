@@ -1,0 +1,72 @@
+/* Bootstrap overrides */
+body {
+    color: $primary;
+    line-height: 30px;
+}
+blockquote {
+    border-width: 1px;
+    font-size: 17px;
+    font-weight: bold;
+}
+blockquote p {
+    color: $primary
+}
+
+blockquote .small, 
+blockquote footer, 
+blockquote small {
+    display: block;
+    font-size: 16px;
+    font-weight: normal;
+}
+
+/*Remove line from blockqute*/
+blockquote .small:before, 
+blockquote footer:before, 
+blockquote small:before {
+    content: "";
+}
+
+pre {
+    border-color: $code;
+    margin-bottom: 24px;
+}
+
+hr {
+    display: none;
+}
+
+p {
+    margin-bottom: 20px;
+    color: $text;
+}
+h1 {
+    @include headline(48px, 48px);
+}
+h2 {
+    @include headline(24px, 32px);
+}
+
+h1,
+h2 {
+    margin-bottom: 35px;
+}
+
+h4 {
+    font-weight: bold;
+    margin-bottom: 25px;
+}
+
+h5 {
+    @include headline(20px, 32px);
+    font-weight: normal;
+}
+
+a:focus,
+a:hover {
+    color: $accent;
+    text-decoration: underline;
+}
+.row {
+    position: relative;
+}

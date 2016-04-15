@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+
+  {% include head.html %}
+  <link rel="stylesheet" type="text/css" href="/css/documentation.css">
+  </head>
+
+	<body>
+  {% include navbar.html %}
+
+	<div id="wrapper">
+    <div id="sidebar-wrapper">
+  <ul class="sidebar-nav" id="menu">
+      
+    <li class="sidebar-brand">
+      <a href="/docs/">
+          Developer portal
+      </a>
+    </li>
+    <!-- Getting started -->
+    <li>
+      <a class="menu-group-title" href="/docs/getting-started/introduction">Getting Started</a>
+      <div id="getting-started" style="display:none;">
+        <ul>
+          <li>
+            <a href="/docs/getting-started/introduction">Introduction</a>
+          </li>
+          <li>
+            <a href="/docs/getting-started/development-environment">Development Environment</a>
+          </li>
+          <li>
+            <a href="/docs/getting-started/initializing-extension">Initializing Extension</a>
+          </li>
+          <li>
+            <a href="/docs/getting-started/shortcut">Shortcut</a>
+          </li>
+          <li>
+            <a href="/docs/getting-started/screen">Screen</a>
+          </li>
+          <li>
+            <a href="/docs/getting-started/data-schemas">Data Schemas</a>
+          </li>
+          <li>
+            <a href="/docs/getting-started/loading-data">Loading Data</a>
+          </li>
+          <li>
+            <a href="/docs/getting-started/component">Component</a>
+          </li>
+          <li>
+            <a href="/docs/getting-started/richer-app">Final Polishing</a>
+          </li>
+          <li>
+            <a href="/docs/getting-started/publish">Publish</a>
+          </li>
+        </ul>
+      </div>
+    </li>
+
+    <!-- RestaurantsRatings -->
+    <li>
+      <a class="menu-group-title" href="/docs/restaurant-rating/restaurant-rating-extension">Restaurants Ratings</a>
+      <div id="restaurant-rating" style="display:none;">
+        <ul>
+          <li>
+            <a href="/docs/restaurant-rating/restaurant-rating-extension">Goal</a>
+          </li>
+          <li>
+            <a href="/docs/restaurant-rating/user-scoped-data-schemas">User scoped data schemas</a>
+          </li>
+          <li>
+            <a href="/docs/restaurant-rating/advanced-usage-admin-pages">Advanced admin pages</a>
+          </li>
+          <li>
+            <a href="/docs/restaurant-rating/controller">Controller</a>
+          </li>
+          <li>
+            <a href="/docs/restaurant-rating/summary">Summary</a>
+          </li>
+        </ul>
+      </div>
+    </li>
+
+    <!-- Shopify -->
+    <li>
+      <a class="menu-group-title" href="/docs/shopify/about">Shopify</a>
+      <div id="shopify" style="display:none;">
+        <ul>
+          <li>
+            <a href="/docs/shopify/about">Intro</a>
+          </li>
+          <li>
+            <a href="/docs/shopify/creating-ui">Creating UI</a>
+          </li>
+          <li>
+            <a href="/docs/shopify/custom-admin-page">Custom admin page</a>
+          </li>
+          <li>
+            <a href="/docs/shopify/authorize">Authorizing Shopify app</a>
+          </li>
+          <li>
+            <a href="/docs/shopify/api">Shoutem API</a>
+          </li>
+          <li>
+            <a href="/docs/shopify/sdk">Shoutem SDK</a>
+          </li>
+          <li>
+            <a href="/docs/shopify/client-settings">Client settings</a>
+          </li>
+          <li>
+            <a href="/docs/shopify/summary">Summary</a>
+          </li>
+        </ul>
+      </div>
+    </li>
+
+  </ul>
+</div>
+
+    <div class="documentation-wrapper">
+      <div class="container-fluid">
+        <div id="documentation">
+        <!-- It will work both on page and github markdown -->
+        {{ content | replace: 'http://shoutem.github.io' : site.baseurl }}
+				</div>
+      </div>
+    </div>
+    <div class"clearfix"></div>
+
+  </div>
+
+  <!-- Set active menu -->
+  <script src="https://code.jquery.com/jquery-2.2.3.min.js"   integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo="   crossorigin="anonymous"></script>
+  <script src="/js/menu.js"></script>
+  <script>
+  $(function() {
+    showMenuItems();
+    // var location = window.location.href;
+    // var startingIndex = location.indexOf('/docs/') + 6;
+    // var endIndex = location.slice(startingIndex).indexOf('/') + startingIndex;
+    // var section = location.slice(startingIndex, endIndex);
+
+    // var path = location.slice(endIndex).slice(0, -1);
+
+    // $('#' + section).show();
+    // // Make active parent <li> of <a>
+    // // Select last matched link, because sections also have links
+
+    // $('#documentationTab').addClass('active');
+
+    // $('a[href$="' + path + '"]:last').parent().addClass('active');
+  });
+    
+  </script>
+	</body>
+
+</html>
+

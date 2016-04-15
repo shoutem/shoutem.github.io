@@ -1,0 +1,41 @@
+.navbar-default .navbar-nav>.active>a,
+.navbar-default .navbar-nav>.active>a:focus,
+.navbar-default .navbar-nav>.active>a:hover {
+    color: $primary;
+    background-color: #fff;
+    border-bottom: 4px solid $accent
+}
+.navbar-right .btn-primary {
+    margin-top: 18px;
+    border-radius: 4px;
+    height: 48px;
+    font-size: 16px;
+    width: 107px;
+    padding-top: 12px;
+}
+.navbar .container-fluid {
+    max-width: 1240px;
+}
+.navbar .navbar-brand--logo {
+  background-image: url('../img/shoutem-developers.png');
+  background-size: 100%;
+  width: 187px;
+  height: 34px;
+}
+#wrapper {
+  padding-top: 80px;
+}
+.navbar-default .navbar-nav>li>a.btn-primary {
+  color: #fff;
+  &:focus,
+  &:hover {
+    color: #fff;
+    background-color: $accent;
+    border: 1px solid $accent;
+  }
+}
+@media (min-width: 768px) {
+  .navbar-nav>li {
+      margin-right: 13px;
+  }
+}

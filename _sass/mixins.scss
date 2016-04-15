@@ -1,0 +1,31 @@
+@mixin headline ($size, $lineheight, $color: $primary) {
+  font-size: $size;
+  line-height: $lineheight;
+  color: $color;
+}
+
+@mixin logoimage ($imageurl, $width, $height) {
+  background-image: url($imageurl);
+  width: $width;
+  height: $height;
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+
+@mixin flexcontainer () {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin mobile {
+  @media only screen and (max-width: 768px) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media only screen and (min-width: 768px) {
+    @content;
+  }
+}

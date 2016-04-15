@@ -1,0 +1,118 @@
+$imagesPath: '../img/';
+
+@mixin background-png-3x ($image) {
+    background-repeat: no-repeat;
+
+    background-image: url("#{$imagesPath}#{$image}.png");
+
+    @media (min-device-pixel-ratio: 1.5) {
+        background-image: url("#{$imagesPath}#{$image}@2x.png");
+        background-size: 100%;
+    }
+    @media (min-device-pixel-ratio: 2.5) {
+        background-image: url("#{$imagesPath}#{$image}@3x.png");
+        background-size: 100%;
+    }  
+}
+
+@mixin size ($w, $h) {
+    width: $w; 
+    height: $h;
+}
+@mixin border-radius ($r) {
+    -webkit-border-radius: $r; 
+    -moz-border-radius: $r; 
+    -o-border-radius: $r; 
+    -ms-border-radius: $r; 
+    border-radius: $r;
+}
+@mixin rotating ($time: 9s) {
+    animation-name: ani-rotate; 
+    animation-duration: $time; 
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+@keyframes ani-rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+@keyframes ani-thrust-line {
+    0% { height: 3px; }
+    20% { height: 15px; }
+    100% { height: 3px; }
+}
+
+/* animation container */
+.shoutem-ani { 
+    position: absolute; 
+    z-index: 1; 
+    left: 0; 
+    top: 0; 
+    width: 100%; 
+    height: 100%; 
+    overflow: hidden; 
+
+    .particle { 
+        position: absolute; 
+        pointer-events: none; 
+        user-select: none; 
+        -webkit-touch-callout: none; 
+        touch-callout: none; 
+    }
+    .particle-1 { 
+        @include size(14px, 14px);
+        @include background-png-3x(particle-1); 
+    }
+    .particle-2 {
+        @include size(24px, 24px);
+        @include background-png-3x(particle-2);
+    }
+    .particle-3 { 
+        @include size(15px, 15px);
+        @include background-png-3x(particle-3);
+        @include rotating();
+    }
+    .particle-4 { 
+        @include size(15px, 15px);
+        @include background-png-3x(particle-4);
+        @include rotating();
+    }
+    .particle-5 {
+        @include size(75px, 95px);
+        @include background-png-3x(particle-5);
+
+        .thrust-line { 
+            position: absolute; 
+            top: 77px;
+            @include size(3px, 15px);
+            @include border-radius(2px);
+            background: white;
+            animation: ani-thrust-line 1.1s linear infinite;
+        }
+        .thrust-line-1 { 
+            left: 19px; 
+        }
+        .thrust-line-2 { 
+            left: 24px; 
+            animation-delay: 0.25s;
+        }
+        .thrust-line-3 { 
+            left: 29px; 
+            animation-delay: 0.65s;
+        }
+        .thrust-line-4 { 
+            left: 43px; 
+            animation-delay: 0.35s;
+        }
+        .thrust-line-5 { 
+            left: 48px; 
+            animation-delay: 0.85s;
+        }
+        .thrust-line-6 { 
+            left: 53px; 
+            animation-delay: 0.55s;
+        }    
+    }
+}

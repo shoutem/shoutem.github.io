@@ -1,0 +1,491 @@
+---
+---
+
+@import "colors";
+@import "mixins";
+@import "footer";
+@import "animation";
+
+p {
+    color: $hometext;
+}
+
+.section-header {
+    @include headline(45px, 55px, $homeheading);
+    font-weight: 100;
+    text-align: center;
+    padding-top: 80px;
+    margin-bottom: 60px;
+}
+
+.section-sub-header {
+    @include headline(20px, 32px);
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.sub-text {
+    @include headline(14px, 26px);
+}
+
+.section {
+    width: 100%;
+    max-width: 1240px;
+    margin: 0 auto;
+}
+
+.section.narrow {
+    max-width: 1024px;
+    position: relative;
+}
+
+.flex-container {
+    max-width: 1240px;
+    margin: 40px auto 80px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.gray-background {
+    background-color: $graybackground;
+}
+
+.blue-background {
+    background-color: $bluebackground;
+}
+
+.left-align {
+    text-align: left;
+}
+
+.main {
+    display: block;
+    width: 100%;
+    background-color: $accent;
+    color: #fff;
+    text-align: center;
+    padding: 184px 0 48px;
+
+    .main-heading {
+        font-size: 62px;
+        line-height: 79px;
+        font-weight: 100;
+        margin-bottom: 24px;
+    }
+
+    p {
+        color: rgba(255, 255, 255, 0.8);
+        line-height: 28px;
+        margin-bottom: 58px;
+    }
+}
+
+.step {
+    text-align: center;
+    width: 300px;
+    min-height: 130px;
+
+    @include mobile {
+        width: 100%;
+    }
+
+    .step-title {
+        font-weight: bold;
+        text-transform: uppercase;
+        margin-bottom: 20px;
+    }
+
+    .step-button {
+        text-transform: uppercase;
+        color: #fff;
+        font-weight: bold;
+        font-size: 14px;
+        height: 90px;
+        width: 260px;
+        border-top-left-radius: 4px;
+        border-bottom-left-radius: 4px;
+        box-shadow: none;
+        letter-spacing: 1px;
+
+        &.publish-button {
+            background-color: $green;
+            border: 1px solid $green;
+            border-radius: 4px;
+        }
+    }
+
+    .arrow-box {
+        position: relative;
+        background: $accent;
+        border: 1px solid $accent;
+
+        &:after,
+        &:before {
+            left: 100%;
+            top: 50%;
+            border: solid transparent;
+            content: " ";
+            height: 0;
+            width: 0;
+            position: absolute;
+            pointer-events: none;
+        }
+
+        &:after {            
+            border-left-color: $accent;
+            border-width: 44px;
+            margin-top: -44px;
+        }
+
+        &:before {           
+            border-left-color: $accent;
+            border-width: 45px;
+            margin-top: -45px;
+        }
+    }
+}
+
+.section-step0 {
+    padding-bottom: 60px;
+}
+
+.section-step1 {
+    padding-bottom: 80px;
+    .case {
+        margin-bottom: 60px;
+    }
+}
+
+.section-step2 {
+    .section-header {
+        margin-bottom: 16px;
+    }
+    .section-sub-header {
+        margin-bottom: 60px;
+    }
+
+    .builder-screenshot {
+        @include logoimage('../img/image-builder-screenshot@2x.png', 669px, 372px);
+        @include mobile {
+            display: none;
+        }
+    }
+}
+
+.section-step3 {
+    .section-header {
+        padding-top: 200px;
+        text-align: left;
+        margin-bottom: 16px;
+    }
+    .bullet-point {
+        padding-left: 35px;
+        margin-bottom: 16px;
+        font-size: 16px;
+        color: $hometext;
+    }
+    p {
+        font-size: 18px;
+    }
+    .image-device {
+        @include logoimage('../img/image-device@2x.png', 458px, 560px);
+        margin-top: 75px;
+        position: absolute;
+        @include mobile {
+            display: none;
+        }
+    }
+    .mobile-screenshot {
+        @include logoimage('../img/image-mobile-screenshot@2x.png', 387px, 490px);
+        margin-left: 48px;
+        margin-top: 145px;
+        @include mobile {
+            display: none;
+        }
+    }
+}
+
+.bullet-icon {
+    position: absolute;
+    margin-top: 5px;
+
+    &.a {
+        @include logoimage('../img/icon-bullet-1.svg', 17px, 16px);
+        left: -20px;
+    }
+    &.b {
+        @include logoimage('../img/icon-bullet-2.svg', 12px, 13px);
+        left: -20px;
+    }
+    &.c {
+        @include logoimage('../img/icon-bullet-3.svg', 17px, 16px);
+        left: 15px;
+    }
+    &.d {
+        @include logoimage('../img/icon-bullet-4.svg', 12px, 13px);
+        left: 15px;
+    }
+}
+
+.arrow {
+    @include logoimage('../img/image-arrow-blue.svg', 28px, 88px);
+    position: absolute;
+    bottom: -40px;
+    z-index: 1;
+
+    &.first,
+    &.second {
+        left: 50%;
+    }
+    &.third {
+        left: 20%;
+    }
+}
+
+.chapter {
+    width: 270px;
+    height: 400px;
+    background-color: #fff;
+    border-radius: 4px;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.1), 0 0 2px 0 rgba(0, 0, 0, 0.1);
+    transition: box-shadow ease 0.1s;
+    cursor: pointer;
+    margin-bottom: 20px;
+    @include mobile {
+        margin: 0 auto 20px;
+    }
+
+    &:hover,
+    &:active {
+        box-shadow: 0 19px 38px 0 rgba(0, 0, 0, 0.3), 0 15px 12px 0 rgba(0, 0, 0, 0.2);
+    }
+
+    .chapter-content {
+        padding: 24px;
+    }
+
+    .chapter-image {
+        width: 270px;
+        height: 180px;
+        @include flexcontainer();
+
+        &.blue {
+            background-color: #58c6fb;
+        }
+        &.orange {
+            background-color: #fe9827;
+        }
+        &.purple {
+            background-color: #bd10e0;
+        }
+        &.darkblue {
+            background-color: #0f75fb;
+        }
+
+        .getting-started-icon {
+            @include logoimage('../img/icon-tutorial-getting-started.svg', 75px, 95px);
+        }
+        .restaurant-app-icon {
+            @include logoimage('../img/icon-tutorial-restaurant-app.svg', 80px, 82px);
+        }
+        .shopping-app-icon {
+            @include logoimage('../img/icon-tutorial-shopping-app.svg', 104px, 58px);
+        }
+        .loyalty-app-icon {
+            @include logoimage('../img/icon-tutorial-loyalty-app.svg', 104px, 51px);
+        }
+    }
+}
+
+.documentation-category,
+.chapter-category {
+  font-size: 12px;
+  color: $muted;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.documentation-group {
+    width: 270px;
+    margin-bottom: 80px;
+    @include mobile {
+       margin: 0 auto 30px;
+    }
+
+    .documentation-link {
+        position: relative;
+        padding-left: 40px;
+        color: $homeheading;
+        line-height: 30px;
+        display: block;
+        padding-top: 20px;
+        cursor: hover;
+
+        &:hover {
+            color: $homeheading;
+            text-decoration: none;
+        }
+
+        .link-icon {
+            @include logoimage('../img/icon-reference.svg', 24px, 30px);
+            position: absolute;
+            left: 0;
+            opacity: 0.6;
+        }
+    }
+    
+}
+
+.feature {
+    width: 270px;
+    min-height: 230px;
+    @include mobile {
+        margin: 0 auto 30px;
+    }
+
+    .feature-title {
+        font-size: 17px;
+        opacity: 0.8;
+        margin-bottom: 10px;
+    }
+
+    .feature-icon {
+        margin-bottom: 30px;
+
+        &.extensions {
+            @include logoimage('../img/icon-features-extensions.svg', 24px, 24px);
+        }
+        &.styling {
+            @include logoimage('../img/icon-features-styling.svg', 24px, 24px);
+        }
+        &.command-line {
+            @include logoimage('../img/icon-features-command-line.svg', 9px, 16px);
+        }
+        &.analytics {
+            @include logoimage('../img/icon-features-analytics.svg', 24px, 24px);
+        }
+        &.push-notifications {
+            @include logoimage('../img/icon-features-push-notifications.svg', 24px, 24px);
+        }
+        &.monetization {
+            @include logoimage('../img/icon-features-monetization.svg', 14px, 24px);
+        }
+        &.extendable {
+            @include logoimage('../img/icon-features-extendable.svg', 24px, 24px);
+        }
+        &.app-configuration {
+            @include logoimage('../img/icon-features-app-configuration.svg', 16px, 24px);
+        }
+        &.auto-updated {
+            @include logoimage('../img/icon-features-auto-updated.svg', 24px, 24px);
+        }
+        &.scalable {
+            @include logoimage('../img/icon-features-scalable.svg', 24px, 24px);
+        }
+        &.cloud-storage {
+            @include logoimage('../img/icon-features-cloud-storage.svg', 28px, 20px);
+        }
+        &.rest-json-api {
+            @include logoimage('../img/icon-features-rest-json-api.svg', 24px, 24px);
+        }
+    }    
+}
+
+.app {
+    width: 170px;
+    min-height: 120px;
+    text-align: center;
+
+    .app-icon {
+        height: 85px;
+        width: 85px;
+        background-repeat: no-repeat;
+        background-size: 100%;
+        margin: 0 auto 25px;
+
+        &.leadership {
+            background-image: url('../img/image-app-leadership-conference.png');
+        }
+        &.jax-xplrr {
+            background-image: url('../img/image-app-jax-xplrr.svg');
+        }
+        &.melbourne-central {
+            background-image: url('../img/image-app-melbourne-central.png');
+        }
+        &.firmsconsulting {
+            background-image: url('../img/image-app-firmsconsulting.svg');
+        }
+        &.seln {
+            background-image: url('../img/image-app-seln-social-network.svg');
+        }
+        &.laughing-place {
+            background-image: url('../img/image-app-laughing-place.png');
+        }
+    }
+}
+
+.company {
+    width: 170px;
+    height: 80px;
+    @include flexcontainer();
+
+    .company-logo {
+        &.usa-today {
+            @include logoimage('../img/logo-usa-today.svg', 100px, 53px);
+        }
+        &.t-mobile {
+            @include logoimage('../img/logo-t-mobile.svg', 129px, 23px);
+        }
+        &.tnw {
+            @include logoimage('../img/logo-tnw.svg', 68px, 31px);
+        }
+        &.techcrunch {
+            @include logoimage('../img/logo-techcrunch.svg', 154px, 23px);
+        }
+        &.mashable {
+            @include logoimage('../img/logo-mashable.svg', 126px, 23px);
+        }
+        &.entrepreneur {
+            @include logoimage('../img/logo-entrepreneur.svg', 144px, 29px);
+        }
+    }
+}
+
+.signup {
+    text-align: center;
+    background-color: $accent;
+
+    .signup-title {
+        @include headline(45px, 60px, #fff);
+        font-weight: 100;
+        text-align: center;
+        padding-top: 80px;
+        margin-bottom: 25px;
+    }
+    .signup-description {
+        color: #fff;
+        line-height: 30px;
+        width: 570px;
+        margin: 0 auto 28px;
+    }
+    .signup-button {
+        width: 188px;
+        height: 56px;
+        border: 1px solid #fff;
+        border-radius: 4px;
+        background-color: #fff;
+        text-transform: uppercase;
+        margin-bottom: 40px;
+    }
+    .signup-email {
+        width: 370px;
+        height: 56px;
+        border-radius: 4px;
+        background-color: $lightbackground;
+        padding: 19px 15px 16px;
+        margin-bottom: 80px;
+    }
+}

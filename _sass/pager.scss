@@ -1,0 +1,24 @@
+#documentation .pager {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin-bottom: 0;
+
+    a {
+        width: 50%;
+        border: none;
+        border-radius: 0;
+        height: 88px;
+        padding-top: 32px;
+    }
+
+    .previous a {
+        background-color: $lightaccent;
+        color: $accent;
+    }
+
+    .next a {
+        background-color: $accent;
+        color: #fff;
+    }
+}

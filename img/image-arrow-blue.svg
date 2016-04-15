@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="28px" height="88px" viewBox="0 0 28 88" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: sketchtool 3.6.1 (26313) - http://www.bohemiancoding.com/sketch -->
+    <title>image-arrow-blue</title>
+    <desc>Created with sketchtool.</desc>
+    <defs></defs>
+    <g id="A-Landing" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="A01-Home-(Desktop)" transform="translate(-706.000000, -1790.000000)" fill="#00AADF">
+            <g id="image-arrow-blue" transform="translate(706.000000, 1790.000000)">
+                <g id="Button-Accented" transform="translate(0.000000, 71.000000)">
+                    <g id="Group-54">
+                        <g id="ic_chevron_down">
+                            <path d="M12.8576797,15.4526409 C13.6266294,16.2500328 14.8748269,16.248494 15.6422927,15.4526409 L27.3296748,3.33296076 C27.9030104,2.73841841 27.8907462,1.77103436 27.3152819,1.1854759 L27.3634846,1.2345241 C26.7822001,0.643043308 25.8381708,0.653846799 25.2722238,1.24072721 L14.2499862,12.6706602 L3.22774862,1.24072721 C2.65406173,0.645820537 1.71195216,0.648965636 1.13648785,1.2345241 L1.18469053,1.1854759 C0.603405988,1.77695669 0.601906383,2.74354561 1.17029763,3.33296076 L12.8576797,15.4526409 Z" id="Icon-Shape"></path>
+                        </g>
+                    </g>
+                </g>
+                <rect id="Rectangle-692" x="13" y="27" width="3" height="58" rx="2"></rect>
+                <rect id="Rectangle-692" x="13" y="12" width="3" height="3" rx="2"></rect>
+                <rect id="Rectangle-692" x="13" y="0" width="3" height="3" rx="2"></rect>
+                <rect id="Rectangle-692" x="13" y="20" width="3" height="3" rx="2"></rect>
+            </g>
+        </g>
+    </g>
+</svg>

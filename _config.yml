@@ -1,0 +1,14 @@
+title: Developer portal
+email: tomislav.tenodi@shoutem.com
+description: Supercharge your React Native development with Shoutem
+baseurl: ""
+twitter_username: TomislavTenodi
+github_username:  tenodi
+
+sass:
+  style: compressed
+
+# Build settings
+markdown: kramdown
+
+url: "http://shoutem.github.io"
