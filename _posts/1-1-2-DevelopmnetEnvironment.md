@@ -8,10 +8,8 @@ permalink: /docs/getting-started/development-environment
 
 Before we start making Shoutem extensions, let's set development environment. Download Shoutem [Command Line Interface](https://www.npmjs.com/package/shoutem-cli) tool which is available through `npm`, package management system for `Node.js`.
 
-<blockquote>
-  <p>Note</p>
-  <footer>In case you don't have `npm` configured, the best way to do it is with [installing](https://nodejs.org/en/download/) `Node.js`, which includes `npm`.</footer>
-</blockquote>
+> ### Note
+> In case you don't have `npm` configured, the best way to do it is with [installing](https://nodejs.org/en/download/) `Node.js`, which includes `npm`.
 
 Once you have `npm` installed, write:
 

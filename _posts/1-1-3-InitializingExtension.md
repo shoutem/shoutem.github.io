@@ -28,10 +28,8 @@ shoutem init
 
 General information about extension which you just entered is contained in `extension.json`. You can read [more](TODO) about initializing process with additional features, like creating _extension_ from template.
 
-<blockquote>
-  <p>Note</p>
-  <footer>In case you can't remember the structure of some command, type: `shoutem help [command]` where you should replace '[command]' with one of the [CLI commands](#list-of-commands)</footer>
-</blockquote>
+> ### Note
+> In case you can't remember the structure of some command, type: `shoutem help [command]` where you should replace '[command]' with one of the [CLI commands](#list-of-commands)
 
 <br />
 #### Folder structure 
