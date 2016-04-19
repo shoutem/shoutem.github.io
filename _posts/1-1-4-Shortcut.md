@@ -91,10 +91,10 @@ Try clicking now on `RestaurantsExtensions` on [Shoutem builder](TODO). You see 
 <nav>
   <ul class="pager">
     <li class="previous">
-      [<span aria-hidden="true">&larr;</span> Previous](http://shoutem.github.io/docs/getting-started/initializing-extension)
+      <a href="http://shoutem.github.io/docs/getting-started/initializing-extension"><span aria-hidden="true">&larr;</span> Previous</a>
     </li>
     <li class="next">
-      [Next <span aria-hidden="true">&rarr;</span>](http://shoutem.github.io/docs/getting-started/screen)
+      <a href="http://shoutem.github.io/docs/getting-started/screen">Next <span aria-hidden="true">&rarr;</span></a>
     </li>
   </ul>
 </nav>

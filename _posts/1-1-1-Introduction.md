@@ -60,7 +60,7 @@ Let\'s start making first extension. We\'ll start with [setting your development
 <nav>
   <ul class="pager">
     <li class="next">
-      [Let's roll! <span aria-hidden="true">&rarr;</span>](http://shoutem.github.io/docs/getting-started/development-environment)
+      <a href="http://shoutem.github.io/docs/getting-started/development-environment">Let's roll! <span aria-hidden="true">&rarr;</span></a>
     </li>
   </ul>
 </nav>

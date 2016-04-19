@@ -152,10 +152,10 @@ Now we want to use _Shoutem cloud!_ What about loading some data from Shoutem se
 <nav>
   <ul class="pager">
     <li class="previous">
-      [<span aria-hidden="true">&larr;</span> Previous](http://shoutem.github.io/docs/getting-started/shortcut)
+      <a href="http://shoutem.github.io/docs/getting-started/shortcut"><span aria-hidden="true">&larr;</span> Previous</a>
     </li>
     <li class="next">
-      [Next <span aria-hidden="true">&rarr;</span>](http://shoutem.github.io/docs/getting-started/data-schemas)
+      <a href="http://shoutem.github.io/docs/getting-started/data-schemas">Next <span aria-hidden="true">&rarr;</span></a>
     </li>
   </ul>
 </nav>

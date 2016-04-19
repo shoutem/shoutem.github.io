@@ -91,10 +91,10 @@ Fill out the content of the restaurant. Here are some data that you can enter:
 <nav>
   <ul class="pager">
     <li class="previous">
-      [<span aria-hidden="true">&larr;</span> Previous](http://shoutem.github.io/docs/getting-started/screen)
+      <a href="http://shoutem.github.io/docs/getting-started/screen"><span aria-hidden="true">&larr;</span> Previous</a>
     </li>
     <li class="next">
-      [Next <span aria-hidden="true">&rarr;</span>](http://shoutem.github.io/docs/getting-started/loading-data)
+      <a href="http://shoutem.github.io/docs/getting-started/loading-data">Next <span aria-hidden="true">&rarr;</span></a>
     </li>
   </ul>
 </nav>

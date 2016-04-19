@@ -136,10 +136,10 @@ You finished your first extension! What's next?
 <nav>
   <ul class="pager">
     <li class="previous">
-      [<span aria-hidden="true">&larr;</span> Previous](http://shoutem.github.io/docs/getting-started/component)
+      <a href="http://shoutem.github.io/docs/getting-started/component"><span aria-hidden="true">&larr;</span> Previous</a>
     </li>
     <li class="next">
-      [Next <span aria-hidden="true">&rarr;</span>](http://shoutem.github.io/docs/getting-started/publish)
+      <a href="http://shoutem.github.io/docs/getting-started/publish">Next <span aria-hidden="true">&rarr;</span></a>
     </li>
   </ul>
 </nav>

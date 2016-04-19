@@ -90,10 +90,10 @@ You see that your ```RestaurantsExtension``` extension is installed there, but w
 <nav>
   <ul class="pager">
     <li class="previous">
-      [<span aria-hidden="true">&larr;</span> Previous](http://shoutem.github.io/docs/getting-started/development-environment)
+      <a href="http://shoutem.github.io/docs/getting-started/development-environment"><span aria-hidden="true">&larr;</span> Previous</a>
     </li>
     <li class="next">
-      [Next <span aria-hidden="true">&rarr;</span>](http://shoutem.github.io/docs/getting-started/shortcut)
+      <a href="http://shoutem.github.io/docs/getting-started/shortcut">Next <span aria-hidden="true">&rarr;</span></a>
     </li>
   </ul>
 </nav>

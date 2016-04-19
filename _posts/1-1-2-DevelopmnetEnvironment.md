@@ -36,10 +36,10 @@ For writing extensions, you need an editor. Use **editor of your choice**.
 <nav>
   <ul class="pager">
     <li class="previous">
-      [<span aria-hidden="true">&larr;</span> Previous](http://shoutem.github.io/docs/getting-started/introduction)
+      <a href="http://shoutem.github.io/docs/getting-started/introduction"><span aria-hidden="true">&larr;</span> Previous</a>
     </li>
     <li class="next">
-      [Next <span aria-hidden="true">&rarr;</span>](http://shoutem.github.io/docs/getting-started/initializing-extension)
+      <a href="http://shoutem.github.io/docs/getting-started/initializing-extension">Next <span aria-hidden="true">&rarr;</span></a>
     </li>
   </ul>
 </nav>
