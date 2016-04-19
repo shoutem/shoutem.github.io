@@ -1,6 +1,6 @@
 ---
 layout: doc
-permalink: /docs/getting-started/richer-app
+permalink: /docs/getting-started/final-polishing
 ---
 
 # Final polishing
