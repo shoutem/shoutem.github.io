@@ -36,6 +36,13 @@ hr {
     display: none;
 }
 
+hr.menu-hr {
+    display: block;
+    border-top: 1px solid #ccc;
+    margin-top: 15px;
+    margin-bottom: 12px;
+}
+
 p {
     margin-bottom: 20px;
     color: $text;
