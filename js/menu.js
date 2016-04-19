@@ -1,16 +1,16 @@
 function showMenuItems() {
   var location = window.location.href;
-  var startingIndex = location.indexOf('/docs/') + 6;
-  var endIndex = location.slice(startingIndex).indexOf('/') + startingIndex;
-  var section = location.slice(startingIndex, endIndex);
-
-  var path = location.slice(endIndex).slice(0, -1);
-
+  
+  // Show section with links
+  var startingIndexSection = location.indexOf('/docs/') + 6;
+  var endIndexSection = location.slice(startingIndexSection).indexOf('/') + startingIndexSection;
+  var section = location.slice(startingIndexSection, endIndexSection);
   $('#' + section).show();
-  // Make active parent <li> of <a>
-  // Select last matched link, because sections also have links
 
-  $('#documentationTab').addClass('active');
-
+  // Show active menu item
+  var path = location.slice(location.indexOf('/docs/'));
   $('a[href$="' + path + '"]:last').parent().addClass('active');
+
+  // Select documentation tab
+  $('#documentationTab').addClass('active');
 };
