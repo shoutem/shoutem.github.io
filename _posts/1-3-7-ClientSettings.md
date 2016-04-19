@@ -1,5 +1,5 @@
 ---
-layout: /doc
+layout: doc
 permalink: /docs/shopify/client-settings
 ---
 

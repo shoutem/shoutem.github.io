@@ -1,5 +1,5 @@
 ---
-layout: docs
+layout: doc
 permalink: /docs/getting-started/initializing-extension
 ---
 
