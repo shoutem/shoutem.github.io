@@ -175,7 +175,7 @@ Let's enrich our application a bit and implement RestaurantDetails screen.
       <a href="http://shoutem.github.io/docs/getting-started/loading-data"><span aria-hidden="true">&larr;</span> Previous</a>
     </li>
     <li class="next">
-      <a href="http://shoutem.github.io/docs/getting-started/richer-app">Next <span aria-hidden="true">&rarr;</span></a>
+      <a href="http://shoutem.github.io/docs/getting-started/final-polishing">Next <span aria-hidden="true">&rarr;</span></a>
     </li>
   </ul>
 </nav>
