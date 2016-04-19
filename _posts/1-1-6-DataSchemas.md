@@ -8,13 +8,15 @@ permalink: /docs/getting-started/data-schemas
 First you need to define which kind of data you want to store on Shoutem cloud, namily it's structure - properties and types which it will hold. For this, we're using Shoutem-flavored [JSON Schemas](http://json-schema.org/) (We're just customizing it within the standard). JSON Schema is a way for defining your ```JSON```s, which will be instances of your model - Restaurants.
 
 <br />
+
 #### Use Shoutem CLI
+
 Do:
 
 ```
 shoutem data-schema Restaurants
 ```
-Shoutem created `Restaurants.json` under new folder `/server/data-schemas` folder (TODO - to be defined how identification of data-schemas should be handled). This is for the first time that we used `server` folder for something. The reason is that data-schemas are not part of the application code, but rather server side for extension. `Restaurants.json` looks like this:
+Shoutem created `Restaurants.json` under new folder `/server/data-schemas` folder. This is for the first time that we used `server` folder for something. The reason is that data-schemas are not part of the application code, but rather server side for extension. `Restaurants.json` looks like this:
 
 ```
 {
