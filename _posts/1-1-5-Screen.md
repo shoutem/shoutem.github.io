@@ -59,7 +59,7 @@ export function openRestaurantsList() {
 }</span>
 </pre>
 
-Redux action `navigateTo`, provided by Shoutem, opens new screen in application. Its argument is object ([Shoutem route object]()) with property screen. Notice the value of `screen` property. That there is an identification for created screen. Each extension has it's unique identity, defined by structure `{developerName}`.`{extensionName}`. More over, each construct within the extension has it's own id defined by name of the property used in exporting object in `index.js`. Since we exported name `RestaurnatList` inside `screens` exporting object in `index.js`, our screen has `developer.restaurants-extension.RestaurantsList` name. In this example, you need to replace `developer` with your developer name.
+Redux action `navigateTo`, provided by Shoutem, opens new screen in application. Its argument is object ([Shoutem route object]()) with property screen. Notice the value of `screen` property. That there is an identification for created screen. Since we're referencing screen here and not creating it, we're using absolute name. More over, some construct within the extension has it's own id defined by name of the property used in exporting object in `index.js`. Since we exported name `RestaurnatList` inside `screens` exporting object in `index.js`, our screen has `developer.restaurants-extension.RestaurantsList` name. In this example, you need to replace `developer` with your developer name.
 
 Upload the extension:
 

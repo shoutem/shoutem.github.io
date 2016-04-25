@@ -20,7 +20,7 @@ Shoutem created `Restaurants.json` under new folder `/server/data-schemas` folde
 
 ```
 {
-  "type": "Restorants",
+  "name": "Restorants",
   "properties": {
     "name": {
       "format": "single-line",
@@ -46,7 +46,7 @@ Now we want to add some data to our _Restaurants_ schema. Since that's the job f
   "description": "List restaurants",
   "shortcuts": [{
     "name": "OpenRestaurantsList",
-    "action": "openRestaurantsList",
+    "action": "developer.restaurant-extension.openRestaurantsList",
     "title": "List of restaurants",
     "description": "Allow users to check the restaurants.",
     "icon": "",
@@ -54,14 +54,14 @@ Now we want to add some data to our _Restaurants_ schema. Since that's the job f
       "page": "shoutem.admin.contentPage",
       "title": "Restaurants",
       "parameters": {
-        "schema": ".Restaurants"
+        "schema": "developer.restaurant-extension.Restaurants"
       }
     }]</span>
   }]
 }
 </pre> 
 
-We used `shoutem.admin.contentPage` (from predefined Admin pages) which expects `schema` parameter that describes data schema to be used in Content editor. Notice `.` in front of the `Restaurants`. This denotes an schema that is defined inside this extension.
+We used `shoutem.admin.contentPage` (from predefined Admin pages) which expects `schema` parameter that describes data schema to be used in Content editor.
 
 Do:
 

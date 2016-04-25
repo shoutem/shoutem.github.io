@@ -63,6 +63,8 @@ In `extension.json` you can see:
 }
 ```
 
+You'll see property `name` on some other places too. We use it for **defining** extension parts.
+
 Extension is now only locally available on your computer. We need to upload it to Shoutem server so you can install it on the application.
 
 ```

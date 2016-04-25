@@ -12,7 +12,7 @@ First, let's add new fields to our `Restaurants` schema:
 
 <pre>
 {
-  "name": "Restorant",
+  "name": "Restorants",
   "properties": {
     "name": {
       "format": "single-line",
