@@ -8,13 +8,13 @@
   <body>
     {% include navbar.html %}
 
-    <!-- <div id="documentation"></div> -->
-    <div id="wrapper" class="home">
-      <div class="shoutem-ani"></div>
+    <div id="wrapper" class="home">      
 
       <div class="container-fluid">
         <div class="row">
-          <div class="main">            
+          <div class="main">
+            <div class="shoutem-ani"></div>
+
             <div class="main-heading">Supercharge your React Native<br>development with Shoutem</div>
             <p>Speed up building beautiful native apps for both iOS and Android<br>with Shoutem extensions.</p>
             <img src="../img/icon-scroll-down.png" height="78" width="33">
@@ -27,18 +27,18 @@
             <div class="flex-container">
               <div class="step">
                 <div class="step-title">Step 1</div>
-                <button class="step-button arrow-box">Write extension in JS + React Native</button>
+                <button class="step-button arrow-box">Write extensions in React Native</button>
               </div>
               <div class="step">
                 <div class="step-title">Step 2</div>
-                <button class="step-button arrow-box">Add to Shoutem builder</button>
+                <button class="step-button arrow-box">Use Shoutem Cloud to store data</button>
               </div>
               <div class="step">
                 <div class="step-title">Step 3</div>
                 <button class="step-button publish-button">Publish</button>
               </div>
             </div>
-            <div class="section-sub-header">Let's find out how great this is!</div>
+            <div class="section-footer">Let's find out how great this is!</div>
           </div>
           <div class="arrow first"></div>
         </div>
@@ -48,11 +48,11 @@
           <div class="row case">
             <div class="col-sm-5">
               <div class="section-sub-header left-align">Case A: Start from scratch?</div>
-              <p>Start with a clean slate.  It’s great because you can build something completely new and still get to use our prebuilt <a href="#">UI components</a>, <a href="#">SDKs</a>, CMS, etc. And it’s all familiar JS and <a href="#">React Native.</a></p>
+              <p>Start with a clean slate. <a href="http://shoutem.github.io/docs/components">UI React components</a>, push notifications, analytics and monetization are only few of the features supported out of the box when building Shoutem extensions.</p>
             </div>
             <div class="col-sm-1"></div>
             <div class="col-sm-5">
-              <pre><code>// install Shoutem
+              <pre><code>// install development tool
 npm install -g shoutem-cli
 
 // create folder and application scaffolding
@@ -68,7 +68,7 @@ shoutem init</code></pre>
             </div>
             <div class="col-sm-1"></div>
             <div class="col-sm-5">
-              <pre><code>// install Shoutem
+              <pre><code>// install development tool
 npm install -g shoutem-cli
 
 // create folder and duplicate extension
@@ -89,14 +89,14 @@ shoutem upload</code></pre>
 
         <div class="row blue-background section-step2">
           <div class="section narrow">
-            <div class="section-header">Step 2: Add to Shoutem Builder</div>
-            <div class="section-sub-header">Add uploaded extension to your Shoutem app</div>
+            <div class="section-header">Step 2: Use Shoutem Cloud</div>
+            <div class="section-sub-header">Add your extension to your app</div>
             <div class="row">
               <div class="col-sm-1"></div>
               <div class="col-sm-4">
-                <div class="bullet-point"><div class="bullet-icon a"></div>It’s great because you can connect your extension without mobile backend</div>
+                <div class="bullet-point"><div class="bullet-icon a"></div>No need to develop your own backend, use our powerful SDK to communicate with Cloud through Redux actions. Create a data schema and fill it with data.</div>
                 <p class="sub-text">Learn how in <a href="#">Create a custom data-schema tutorial.</a></p>
-                <div class="bullet-point"><div class="bullet-icon b"></div>Or even use 3rd party APIs as your source.</div>
+                <div class="bullet-point"><div class="bullet-icon b"></div>Connect to any other API using pure React Native.</div>
                 <p class="sub-text">Learn how in <a href="#">How to integrate with 3rd-party API tutorial.</a></p>
               </div>
               <div class="col-sm-1"></div>
@@ -136,6 +136,7 @@ shoutem upload</code></pre>
                   <div class="chapter-category">Getting started</div>
                   <h4 class="chapter-title">Hello, world!</h4>
                   <p class="chapter-description">Create your first custom Shoutem app/extension in three simple steps</p>
+                  <div class="chapter-time"><div class="time-icon"></div><span> 10 min &#183; Simple</span></div>
                 </div>
               </div>
               <div class="chapter" onclick="window.location.href='/docs/restaurant-rating/restaurant-rating-extension'">
@@ -146,6 +147,7 @@ shoutem upload</code></pre>
                   <div class="chapter-category">Tutorial</div>
                   <h4 class="chapter-title">1. Adding ratings to a restaurant app</h4>
                   <p class="chapter-description">Learn to create a custom data-schema.</p>
+                  <div class="chapter-time"><div class="time-icon"></div><span> 30 min &#183; Simple</span></div>
                 </div>
               </div>
               <div class="chapter" onclick="window.location.href='/docs/shopify/about'">
@@ -156,6 +158,7 @@ shoutem upload</code></pre>
                   <div class="chapter-category">Tutorial</div>
                   <h4 class="chapter-title">2. Create a Shopify extension</h4>
                   <p class="chapter-description">Learn how to integrate with a 3rd party service API</p>
+                  <div class="chapter-time"><div class="time-icon"></div><span> 45 min &#183; Medium</span></div>
                 </div>
               </div>
               <div class="chapter">
@@ -165,8 +168,8 @@ shoutem upload</code></pre>
                 <div class="chapter-content">
                   <div class="chapter-category">Tutorial</div>
                   <h4 class="chapter-title">3. Create a punch-card loyaly extension</h4>
-                  <p class="chapter-description">Learn how to extend existing extension with new functionality (Coming soon)
-    </p>
+                  <p class="chapter-description">Learn how to extend existing extension with new functionality (Coming soon)</p>
+                  <div class="chapter-time"><div class="time-icon"></div><span> 45 min &#183; Medium</span></div>
                 </div>
               </div>
             </div>
@@ -305,7 +308,7 @@ shoutem upload</code></pre>
 
 
         <div id="signup" class="row signup">
-          <div class="signup-title">New Shoutem is almost ready!</div>
+          <div class="signup-title">Sign up for an early invite!</div>
           <div class="signup-description">We are currently in private beta. If you would like early access to the beta, please sign up with your email address.</div>
           <!-- Begin MailChimp Signup Form -->
             <div id="mc_embed_signup">
@@ -314,7 +317,7 @@ shoutem upload</code></pre>
                 
               <div>
                 <input type="email" value="" name="EMAIL" class="signup-email required email" placeholder="Enter your email" id="mce-EMAIL">
-                <input type="submit" value="Sign up" name="subscribe" id="mc-embedded-subscribe" class="signup-button"
+                <input type="submit" value="Sign up for beta" name="subscribe" id="mc-embedded-subscribe" class="signup-button"
               </div>
                 <div id="mce-responses" class="clear">
                   <div class="response" id="mce-error-response" style="display:none"></div>

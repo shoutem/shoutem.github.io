@@ -23,6 +23,11 @@ p {
     text-align: center;
     margin-bottom: 30px;
 }
+.section-footer {
+    @include headline(16px, 30px);
+    text-align: center;
+    margin-bottom: 30px;
+}
 
 .sub-text {
     @include headline(14px, 26px);
@@ -96,6 +101,8 @@ p {
         font-weight: bold;
         text-transform: uppercase;
         margin-bottom: 20px;
+        font-size: 12px; 
+        letter-spacing: 1px;
     }
 
     .step-button {
@@ -247,13 +254,14 @@ p {
 
 .chapter {
     width: 270px;
-    height: 400px;
+    min-height: 420px;
     background-color: #fff;
-    border-radius: 4px;
     box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.1), 0 0 2px 0 rgba(0, 0, 0, 0.1);
     transition: box-shadow ease 0.1s;
     cursor: pointer;
     margin-bottom: 20px;
+    overflow: hidden;
+
     @include mobile {
         margin: 0 auto 20px;
     }
@@ -265,6 +273,24 @@ p {
 
     .chapter-content {
         padding: 24px;
+
+        .chapter-title {
+            line-height: 140%; 
+            margin-bottom: 6px;
+        }
+        .chapter-time {
+            text-transform: uppercase;
+            color: $chapterfooter;
+            @include headline(14px, 24px);
+            @include flexcontainer();
+            justify-content: initial;
+
+            .time-icon {
+                display: inline-block;
+                @include logoimage('../img/icon-time.svg', 19px, 19px);
+                margin-right: 8px;
+            }
+        }
     }
 
     .chapter-image {
