@@ -15,6 +15,7 @@
         @include logoimage('../img/shoutem_logo_footer.png', 96px, 36px);
         opacity: 0.4;
         float: left;
+        margin-top: 6px;
 
         @include mobile {
             float: none;

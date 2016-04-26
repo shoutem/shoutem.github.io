@@ -21,6 +21,7 @@
   background-size: 100%;
   width: 187px;
   height: 34px;
+  margin-top: -9px;
 }
 #wrapper {
   padding-top: 80px;
@@ -37,5 +38,9 @@
 @media (min-width: 768px) {
   .navbar-nav>li {
       margin-right: 13px;
+  }
+  .navbar-nav>li>a { 
+    padding-top: 30px;
+    padding-bottom: 28px;
   }
 }
