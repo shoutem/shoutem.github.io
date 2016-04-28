@@ -52,6 +52,9 @@ p {
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
+    @include mobile {
+        flex-direction: column;
+    }
 }
 
 .gray-background {
@@ -60,6 +63,10 @@ p {
 
 .blue-background {
     background-color: $bluebackground;
+}
+
+.dark-blue-background {
+    background-color: $darkbluebackground;
 }
 
 .left-align {
@@ -86,6 +93,46 @@ p {
         line-height: 28px;
         margin-bottom: 58px;
     }
+}
+
+.paris-cta {
+
+    .flex-container {
+        margin-top: 30px;
+        margin-bottom: 0;
+    }
+    .paris-text {
+        @include headline(16px, 24px);
+        color: #fff;
+        margin-bottom: 30px;        
+    }
+
+    .paris-icon {
+        @include logoimage('../img/icon-paris.svg', 32px, 56px);
+        margin-bottom: 30px;        
+    }
+
+    .demo-button {
+        width: 187px;
+        height: 48px;
+        border: 1px solid #fff;
+        border-radius: 4px;
+        background-color: #fff;
+        text-transform: uppercase;
+        font-size: 14px;
+        letter-spacing: 1px;
+        padding-top: 10px;
+        padding-left: 8px;
+        color: $primary;
+        text-align: center;
+        margin-bottom: 30px;        
+
+        &:hover,
+        &:active {
+            text-decoration: none;
+        }
+    }
+
 }
 
 .step {
