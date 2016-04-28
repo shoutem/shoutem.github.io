@@ -1,0 +1,46 @@
+<div class="param-property hide">{{name}}</div>
+<div class="param-property" data-label='{{name}}'>
+    {{#if isBody}}
+        <!-- TENODI - remove input controls for parameters, since API endpoint testing is removed -->
+        <!--{{#if isFile}}-->
+            <!--<input type="file" name='{{name}}'/>-->
+
+            <!--<div class="parameter-content-type"/>-->
+        <!--{{else}}-->
+            <!--{{#if default}}-->
+                <!--<textarea class='body-textarea form-control' name='{{name}}' data-toggle="tooltip" data-placement="top" title="" data-original-title='{{name}}'>{{default}}</textarea>-->
+                <!--<div class="parameter-content-type"/>-->
+            <!--{{else}}-->
+                <!--<textarea class='body-textarea form-control' name='{{name}}' data-toggle="tooltip" data-placement="top" title="" data-original-title='{{name}}'></textarea>-->
+                <!--<div class="parameter-content-type"/>-->
+            <!--{{/if}}-->
+        <!--{{/if}}-->
+        <div class="small-description">
+            {{#if type}}
+                <code class="code-signature">{{type}}</code>
+            {{/if}}
+            <div class="markdown">{{description}}</div>
+        </div>
+    {{else}}
+        {{#if isFile}}
+
+            <label class="btn btn-primary" for="my-file-selector">
+                <input id="my-file-selector" type="file" style="display:none;" name='{{name}}'>
+                Choose file
+            </label>
+            <div class="parameter-content-type"/>
+        {{else}}
+            <!--{{#if default}}-->
+                <!--<input class='parameter form-control' minlength='0' name='{{name}}' placeholder='' type='{{inputType}}' value='{{default}}'  data-toggle="tooltip" data-placement="right" title="" data-original-title='{{name}}'/>-->
+            <!--{{else}}-->
+                <!--<input class='parameter form-control' minlength='0' name='{{name}}' placeholder='' type='{{inputType}}' value=''  data-toggle="tooltip" data-placement="right" title="" data-original-title='{{name}}'/>-->
+            <!--{{/if}}-->
+        {{/if}}
+        <div class="small-description">
+            {{#if type}}
+                <code class="code-signature">{{type}}</code>
+            {{/if}}
+            <div class="markdown">{{description}}</div>
+        </div>
+    {{/if}}
+</div>
