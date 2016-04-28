@@ -10,25 +10,16 @@ var less = require('gulp-less');
 var handlebars = require('gulp-handlebars');
 var wrap = require('gulp-wrap');
 var declare = require('gulp-declare');
-var watch = require('gulp-watch');
-var connect = require('gulp-connect');
-var header = require('gulp-header');
-var pkg = require('./package.json');
 var order = require('gulp-order');
-var banner = ['/**',
-  ' * <%= pkg.name %> - <%= pkg.description %>',
-  ' * @version v<%= pkg.version %>',
-  ' * @link <%= pkg.homepage %>',
-  ' * @license <%= pkg.license %>',
-  ' */',
-  ''].join('\n');
+
+const apiDist = '../api';
 
 /**
- * Clean ups ./dist folder
+ * Clean ups api dist folder
  */
 gulp.task('clean', function() {
   return gulp
-    .src('./dist', {read: false})
+    .src(apiDist, {read: false})
     .pipe(clean({force: true}))
     .on('error', log);
 });
@@ -38,7 +29,7 @@ gulp.task('clean', function() {
  */
 function templates() {
   return gulp
-    .src(['./src/main/template/**/*'])
+    .src(['./template/**/*'])
     .pipe(handlebars())
     .pipe(wrap('Handlebars.template(<%= contents %>)'))
     .pipe(declare({
@@ -55,7 +46,7 @@ gulp.task('dist', ['clean'], function() {
 
   return es.merge(
       gulp.src([
-        './src/main/javascript/**/*.js',
+        './javascript/**/*.js',
         './node_modules/swagger-client/browser/swagger-client.js'
       ]),
       templates()
@@ -63,14 +54,12 @@ gulp.task('dist', ['clean'], function() {
     .pipe(order(['scripts.js', 'templates.js']))
     .pipe(concat('swagger-ui.js'))
     .pipe(wrap('(function(){<%= contents %>}).call(this);'))
-    .pipe(header(banner, { pkg: pkg } ))
-    .pipe(gulp.dest('./dist'))
+    .pipe(gulp.dest(apiDist))
     .pipe(uglify())
     .on('error', log)
     .pipe(rename({extname: '.min.js'}))
     .on('error', log)
-    .pipe(gulp.dest('./dist'))
-    .pipe(connect.reload());
+    .pipe(gulp.dest(apiDist));
 });
 
 /**
@@ -80,14 +69,13 @@ gulp.task('less', ['clean'], function() {
 
   return gulp
     .src([
-      './src/main/less/screen.less',
-      './src/main/less/print.less',
-      './src/main/less/reset.less'
+      './less/screen.less',
+      './less/print.less',
+      './less/reset.less'
     ])
     .pipe(less())
     .on('error', log)
-    .pipe(gulp.dest('./src/main/html/css/'))
-    .pipe(connect.reload());
+    .pipe(gulp.dest('./html/css/'));
 });
 
 
@@ -99,33 +87,14 @@ gulp.task('copy', ['less'], function() {
   // copy JavaScript files inside lib folder
   gulp
     .src(['./lib/**/*.{js,map}'])
-    .pipe(gulp.dest('./dist/lib'))
+    .pipe(gulp.dest(`${apiDist}/lib`))
     .on('error', log);
 
   // copy all files inside html folder
   gulp
-    .src(['./src/main/html/**/*'])
-    .pipe(gulp.dest('./dist'))
+    .src(['./html/**/*'])
+    .pipe(gulp.dest(apiDist))
     .on('error', log);
-});
-
-/**
- * Watch for changes and recompile
- */
-gulp.task('watch', function() {
-  return watch(['./src/**/*.{js,less,handlebars}'], function() {
-    gulp.start('default');
-  });
-});
-
-/**
- * Live reload web server of `dist`
- */
-gulp.task('connect', function() {
-  connect.server({
-    root: 'dist',
-    livereload: true
-  });
 });
 
 function log(error) {
@@ -134,4 +103,3 @@ function log(error) {
 
 
 gulp.task('default', ['dist', 'copy']);
-gulp.task('serve', ['connect', 'watch']);
