@@ -1,0 +1,29 @@
+<div class="param-property hide" data-label="name">{{name}}</div>
+<div class="param-property" data-label='{{name}}'>
+    <div>
+        <!-- TENODI - remove input controls for parameters, since API endpoint testing is removed -->
+        <!--<select {{#isArray this}} multiple='multiple'{{/isArray}} class='parameter form-control' name='{{name}}'  data-toggle="tooltip" data-placement="right" title="" data-original-title='{{name}}'>-->
+            <!--{{#if required}}-->
+            <!--{{else}}-->
+                <!--{{#if default}}-->
+                <!--{{else}}-->
+                        <!--<option selected="" value=''></option>-->
+                <!--{{/if}}-->
+            <!--{{/if}}-->
+            <!--{{#each allowableValues.descriptiveValues}}-->
+                <!--{{#if isDefault}}-->
+                    <!--<option selected="" value='{{value}}'>{{value}} (default)</option>-->
+                <!--{{else}}-->
+                    <!--<option value='{{value}}'>{{value}}</option>-->
+                <!--{{/if}}-->
+            <!--{{/each}}-->
+        <!--</select>-->
+        <div class="small-description">
+            {{#if type}}
+                <code class="code-signature">{{type}}</code>
+            {{/if}}
+            <div class="markdown">{{description}}</div>
+        </div>
+    </div>
+</div>
+

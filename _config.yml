@@ -13,3 +13,4 @@ sass:
 markdown: kramdown
 
 url: "http://shoutem.github.io"
+exclude: ['api-src/']

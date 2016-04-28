@@ -1,0 +1,34 @@
+<div class="param-property hide">{{name}}</div>
+<div class="param-property" data-label='{{name}}'>
+    <!-- TENODI - remove input controls for parameters, since API endpoint testing is removed -->
+    <!--{{#if isBody}}-->
+        <!--{{#if isFile}}-->
+            <!--<input type="file" name='{{name}}'/>-->
+        <!--{{else}}-->
+            <!--{{#if default}}-->
+                <!--<textarea class='body-textarea form-control required' placeholder='(required)' name='{{name}}'  data-toggle="tooltip" data-placement="top" title="" data-original-title='{{name}}'>{{default}}</textarea>-->
+                <!--<div class="parameter-content-type"/>-->
+            <!--{{else}}-->
+                <!--<textarea class='body-textarea form-control required' placeholder='(required)' name='{{name}}' data-toggle="tooltip" data-placement="top" title="" data-original-title='{{name}}'></textarea>-->
+                <!--<div class="parameter-content-type"/>-->
+            <!--{{/if}}-->
+        <!--{{/if}}-->
+    <!--{{else}}-->
+        <!--{{#if isFile}}-->
+            <!--<input class='parameter form-control required' type='file' name='{{name}}'/>-->
+        <!--{{else}}-->
+            <!--{{#if default}}-->
+                <!--<input class='parameter form-control required' minlength='1' name='{{name}}' placeholder='(required)' type='{{inputType}}' value='{{default}}' data-toggle="tooltip" data-placement="right" title="" data-original-title='{{name}}'/>-->
+            <!--{{else}}-->
+                <!--<input class='parameter form-control required' minlength='1' name='{{name}}' placeholder='(required)' type='{{inputType}}' value='' data-toggle="tooltip" data-placement="right" title="" data-original-title='{{name}}'/>-->
+            <!--{{/if}}-->
+        <!--{{/if}}-->
+    <!--{{/if}}-->
+    <div class="small-description">
+        {{#if type}}
+            <code class="code-signature">{{type}}</code>
+        {{/if}}
+        <div class="markdown">{{description}}</div>
+    </div>
+</div>
+
