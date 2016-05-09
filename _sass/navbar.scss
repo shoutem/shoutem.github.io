@@ -1,3 +1,15 @@
+.headroom {
+    will-change: transform;
+    transition: transform 200ms linear;
+}
+.headroom--pinned {
+    transform: translateY(0%);
+}
+.headroom--unpinned {
+    transform: translateY(-100%);
+}
+
+
 .navbar-default .navbar-nav>.active>a,
 .navbar-default .navbar-nav>.active>a:focus,
 .navbar-default .navbar-nav>.active>a:hover {
@@ -10,11 +22,10 @@
     border-radius: 4px;
     height: 48px;
     font-size: 16px;
-    width: 107px;
     padding-top: 12px;
 }
 .navbar .container-fluid {
-    max-width: 1240px;
+    max-width: 1170px;
 }
 .navbar .navbar-brand--logo {
   background-image: url('../img/shoutem-developers.png');
@@ -28,11 +39,13 @@
 }
 .navbar-default .navbar-nav>li>a.btn-primary {
   color: #fff;
+  font-weight: bold;
+  @include easeLinear();
   &:focus,
   &:hover {
     color: #fff;
-    background-color: $accent;
-    border: 1px solid $accent;
+    background-color: #00BEF7;
+    border: 1px solid #00BEF7;
   }
 }
 @media (min-width: 768px) {
