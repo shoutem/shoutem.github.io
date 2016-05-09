@@ -35,7 +35,7 @@ p {
 
 .section {
     width: 100%;
-    max-width: 1240px;
+    max-width: 1170px;
     margin: 0 auto;
 }
 
@@ -45,13 +45,16 @@ p {
 }
 
 .flex-container {
-    max-width: 1240px;
+    max-width: 1170px;
     margin: 40px auto 80px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
+    @include mobile {
+        flex-direction: column;
+    }
 }
 
 .gray-background {
@@ -60,6 +63,10 @@ p {
 
 .blue-background {
     background-color: $bluebackground;
+}
+
+.dark-blue-background {
+    background-color: $darkbluebackground;
 }
 
 .left-align {
@@ -86,6 +93,52 @@ p {
         line-height: 28px;
         margin-bottom: 58px;
     }
+}
+
+.paris-cta {
+
+    .flex-container {
+        margin-top: 30px;
+        margin-bottom: 0;
+    }
+    .paris-text {
+        @include headline(16px, 24px);
+        color: #fff;
+        margin-bottom: 30px;        
+    }
+
+    .paris-icon {
+        @include logoimage('../img/icon-paris.svg', 32px, 56px);
+        margin-bottom: 30px;        
+    }
+
+    .demo-button {
+        width: 187px;
+        height: 48px;
+        border: 1px solid #fff;
+        border-radius: 4px;
+        background-color: #fff;
+        text-transform: uppercase;
+        line-height: 48px;
+        color: $primary;
+        text-align: center;
+        margin-bottom: 30px;
+        
+        font-weight: bold;
+        font-size: 14px;
+        letter-spacing: 1px;
+
+        @include easeLinear;
+        
+        &:hover, &:focus,
+        &:active {
+            border-color: $accent;
+            background-color: $accent;
+            color: white;
+            text-decoration: none;
+        }
+    }
+
 }
 
 .step {
@@ -116,6 +169,7 @@ p {
         border-bottom-left-radius: 4px;
         box-shadow: none;
         letter-spacing: 1px;
+        line-height: 24px;
 
         &.publish-button {
             background-color: $green;
@@ -160,6 +214,7 @@ p {
 }
 
 .section-step1 {
+    background-color: white;
     padding-bottom: 80px;
     .case {
         margin-bottom: 60px;
@@ -183,6 +238,7 @@ p {
 }
 
 .section-step3 {
+    background-color: white;
     .section-header {
         padding-top: 200px;
         text-align: left;
@@ -257,10 +313,12 @@ p {
     min-height: 420px;
     background-color: #fff;
     box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.1), 0 0 2px 0 rgba(0, 0, 0, 0.1);
-    transition: box-shadow ease 0.1s;
+    transition: box-shadow ease-out 0.2s;
     cursor: pointer;
     margin-bottom: 20px;
     overflow: hidden;
+    
+    @include border-radius(4px);
 
     @include mobile {
         margin: 0 auto 20px;
@@ -279,9 +337,7 @@ p {
             margin-bottom: 6px;
         }
         .chapter-time {
-            text-transform: uppercase;
-            color: $chapterfooter;
-            @include headline(14px, 24px);
+            @include headline(14px, 24px, $chapterfooter);
             @include flexcontainer();
             justify-content: initial;
 
@@ -329,6 +385,7 @@ p {
 .documentation-category,
 .chapter-category {
   font-size: 12px;
+  font-weight: bold;
   color: $muted;
   letter-spacing: 1px;
   text-transform: uppercase;
@@ -477,41 +534,5 @@ p {
         &.entrepreneur {
             @include logoimage('../img/logo-entrepreneur.svg', 144px, 29px);
         }
-    }
-}
-
-.signup {
-    text-align: center;
-    background-color: $accent;
-
-    .signup-title {
-        @include headline(45px, 60px, #fff);
-        font-weight: 100;
-        text-align: center;
-        padding-top: 80px;
-        margin-bottom: 25px;
-    }
-    .signup-description {
-        color: #fff;
-        line-height: 30px;
-        width: 570px;
-        margin: 0 auto 28px;
-    }
-    .signup-button {
-        width: 188px;
-        height: 56px;
-        border: 1px solid #fff;
-        border-radius: 4px;
-        background-color: #fff;
-        text-transform: uppercase;
-        margin-bottom: 40px;
-    }
-    .signup-email {
-        width: 370px;
-        height: 56px;
-        border-radius: 4px;
-        background-color: $lightbackground;
-        padding: 19px 15px 16px;
-        margin-bottom: 80px;
     }
 }

@@ -111,5 +111,30 @@ $(function(){
 
 	// start animation
 	
-	var shoutemAni = new ShoutemAnimation(".shoutem-ani"); 
+	var shoutemAni = new ShoutemAnimation(".shoutem-ani");
+	
+	// footer animation support
+	
+	function onFooterResize() {
+		// throttle
+		setTimeout(function() {
+			$("#wrapper").css({ marginBottom: $(".footer").height() + "px" });
+		}, 300);
+	}
+	
+	$(window).on("resize", onFooterResize);
+	onFooterResize();
+	
+	// header
+	
+	var headroom  = new Headroom($("nav.headroom").get(0), 
+		{
+			tolerance: {
+				down : 10, up : 20
+			},
+			offset : 81
+		}	
+	);
+	headroom.init(); 	
+	
 });

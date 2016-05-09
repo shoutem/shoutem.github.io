@@ -73,7 +73,28 @@ a:focus,
 a:hover {
     color: $accent;
     text-decoration: underline;
+    outline: none;
 }
+
 .row {
     position: relative;
+}
+
+::-moz-selection {
+    background: #00aadf;
+    text-shadow: none;
+}
+
+::selection {
+    background: #00aadf;
+    text-shadow: none;
+}
+
+input[type=text], input[type=tel], input[type=email], input[type=submit], textarea {
+    -webkit-font-smoothing: antialiased; 
+    -moz-osx-font-smoothing: grayscale; 
+    -webkit-appearance: none;
+    appearance: none; 
+    resize: none; 
+    outline: none;
 }
