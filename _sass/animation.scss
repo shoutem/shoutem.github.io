@@ -1,49 +1,5 @@
 $imagesPath: '../img/';
 
-@mixin background-png-3x ($image) {
-    background-repeat: no-repeat;
-
-    background-image: url("#{$imagesPath}#{$image}.png");
-
-    @media (min-device-pixel-ratio: 1.5) {
-        background-image: url("#{$imagesPath}#{$image}@2x.png");
-        background-size: 100%;
-    }
-    @media (min-device-pixel-ratio: 2.5) {
-        background-image: url("#{$imagesPath}#{$image}@3x.png");
-        background-size: 100%;
-    }  
-}
-
-@mixin size ($w, $h) {
-    width: $w; 
-    height: $h;
-}
-@mixin border-radius ($r) {
-    -webkit-border-radius: $r; 
-    -moz-border-radius: $r; 
-    -o-border-radius: $r; 
-    -ms-border-radius: $r; 
-    border-radius: $r;
-}
-@mixin rotating ($time: 9s) {
-    animation-name: ani-rotate; 
-    animation-duration: $time; 
-    animation-iteration-count: infinite;
-    animation-timing-function: linear;
-}
-
-@keyframes ani-rotate {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
-}
-
-@keyframes ani-thrust-line {
-    0% { height: 3px; }
-    20% { height: 15px; }
-    100% { height: 3px; }
-}
-
 /* animation container */
 .shoutem-ani { 
     position: absolute; 

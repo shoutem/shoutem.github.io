@@ -1,46 +1,120 @@
 .footer {
-    background-color: $footerbackground;
-    height: 90px;
-    color: $footercolor;
-    padding-top: 22px;
 
-    @include mobile {
-        height: 180px;
-    }
+    position: fixed; 
+    bottom: 0; 
+    width: 100%; 
+    z-index: -1;
 
-    .container-fluid {
-        max-width: 1240px;
-    }
-    .footer-logo {        
-        @include logoimage('../img/shoutem_logo_footer.png', 96px, 36px);
-        opacity: 0.4;
-        float: left;
-        margin-top: 6px;
+    .signup {
+        text-align: center;
+        background-color: #2E3854;
 
-        @include mobile {
-            float: none;
-            margin: 0 auto;
+        .signup-title {
+            @include headline(45px, 60px, #fff);
+            font-weight: 100;
+            text-align: center;
+            padding-top: 80px;
+            margin-bottom: 25px;
+        }
+        .signup-description {
+            color: #A3A7B3;
+            line-height: 30px;
+            width: 570px;
+            margin: 0 auto 28px;
+        }
+        .signup-button {
+            width: 200px;
+            height: 56px;
+            border: 1px solid #fff;
+            border-radius: 4px;
+            background-color: #fff;
+            text-transform: uppercase;
+            margin-bottom: 40px;
+            font-weight: bold;
+            font-size: 14px;
+            letter-spacing: 1px;
+            padding: 0;
+            @include easeLinear;
+            
+            &:hover, &:focus,
+            &:active {
+                border-color: $accent;
+                background-color: $accent;
+                color: white;
+            }
+                        
+        }
+        .signup-email {
+            width: 370px;
+            height: 56px;
+            border-radius: 4px;
+            background-color: $lightbackground;
+            padding: 1px 15px 0;
+            margin-bottom: 80px;
+            margin-right: 8px;
+            border: none;
+            @include easeLinear;
+            
+            &:focus {
+                background-color: white;
+                color: $primary;
+            }
+            
         }
     }
-    .footer-menu {
-        float: right;
-        opacity: 0.4;
+
+    .bottom-footer {
+
+        background-color: $footerbackground;
+        height: 90px;
         color: $footercolor;
-    }
-    .footer-menu {
-        list-style: none;
+        padding-top: 22px;
     
-        li {
-            float: left;
-            padding: 10px;
+        @include mobile {
+            height: 180px;
         }
-        a {
-            color: $footercolor;
 
+        .container-fluid {
+            max-width: 1170px;
+        }
+        .footer-logo {        
+            @include logoimage('../img/shoutem_logo_footer.png', 96px, 36px);
+            opacity: 0.4;
+            float: left;
+            margin-top: 6px;
+            @include easeLinear;
+
+            @include mobile {
+                float: none;
+                margin: 0 auto;
+            }
+            
             &:hover,
             &:active {
+                opacity: 1;
+            }
+        }
+        .footer-menu {
+            float: right;
+            opacity: 1;
+            color: $footercolor;
+        }
+        .footer-menu {
+            list-style: none;
+        
+            li {
+                float: left;
+                padding: 10px 16px;
+            }
+            a {
                 color: $footercolor;
-                text-decoration: none;
+                @include easeLinear;
+
+                &:hover,
+                &:active {
+                    color:  white;
+                    text-decoration: none;
+                }
             }
         }
     }
