@@ -29,12 +29,12 @@ $imagesPath: '../img/';
     .particle-3 { 
         @include size(15px, 15px);
         @include background-png-3x(particle-3);
-        @include rotating();
+        /*@include rotating();*/
     }
     .particle-4 { 
         @include size(15px, 15px);
         @include background-png-3x(particle-4);
-        @include rotating();
+        /*@include rotating();*/
     }
     .particle-5 {
         @include size(75px, 95px);
