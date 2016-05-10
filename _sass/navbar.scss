@@ -16,6 +16,8 @@
 
             color: $accent;
             background: none;
+            transition: none;
+            
             &:hover,
             &:focus {
                 background: none;
@@ -62,14 +64,14 @@
             transform: scale3d(0, 1, 1);
             -webkit-transform-origin: center left;
             transform-origin: center left;
-            -webkit-transition: transform 0.4s cubic-bezier(0.22, 0.61, 0.36, 1);
-            transition: transform 0.4s cubic-bezier(0.22, 0.61, 0.36, 1);
         }        
         
         &::after {
             background: $accent;
         }
         &::before {
+            -webkit-transition: transform 0.4s cubic-bezier(0.22, 0.61, 0.36, 1);
+            transition: transform 0.4s cubic-bezier(0.22, 0.61, 0.36, 1);
             background: #00BEF7;
         }
     }
