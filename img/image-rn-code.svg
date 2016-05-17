@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="539px" height="312px" viewBox="0 0 539 312" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: sketchtool 3.7.2 (28276) - http://www.bohemiancoding.com/sketch -->
+    <title>7AF5372B-307C-460E-8E7C-A9E8D260DA35</title>
+    <desc>Created with sketchtool.</desc>
+    <defs>
+        <rect id="path-1" x="0" y="0" width="539" height="312" rx="4"></rect>
+    </defs>
+    <g id="A-Landing" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="A04-Home-(Desktop)---Without-features" transform="translate(-716.000000, -2271.000000)">
+            <g id="Step-2---1" transform="translate(0.000000, 2048.000000)">
+                <g id="image-rn-code" transform="translate(716.000000, 223.000000)">
+                    <mask id="mask-2" fill="white">
+                        <use xlink:href="#path-1"></use>
+                    </mask>
+                    <use id="Mask" fill="#313C59" xlink:href="#path-1"></use>
+                    <g id="Group" mask="url(#mask-2)" fill="#444F6C">
+                        <rect id="Background" opacity="0.5" x="0" y="0" width="50" height="312"></rect>
+                        <rect id="Background" x="480" y="0" width="1" height="312"></rect>
+                    </g>
+                    <rect id="Rectangle-1720" fill="#444F6C" mask="url(#mask-2)" x="0" y="132" width="539" height="24"></rect>
+                    <text id="1" mask="url(#mask-2)" font-family="SourceCodePro-Medium, Source Code Pro" font-size="14" font-weight="400" line-spacing="24" fill="#A7AAAE">
+                        <tspan x="33.6" y="26">1</tspan>
+                        <tspan x="33.6" y="50">2</tspan>
+                        <tspan x="33.6" y="74">3</tspan>
+                        <tspan x="33.6" y="98">4</tspan>
+                        <tspan x="33.6" y="122" text-decoration="line-through">5</tspan>
+                        <tspan x="42" y="122"></tspan>
+                        <tspan x="33.6" y="146">5</tspan>
+                        <tspan x="33.6" y="170">6</tspan>
+                        <tspan x="33.6" y="194">7</tspan>
+                        <tspan x="33.6" y="218">8</tspan>
+                        <tspan x="33.6" y="242">9</tspan>
+                        <tspan x="25.2" y="266">10</tspan>
+                        <tspan x="25.2" y="290">11</tspan>
+                    </text>
+                    <text id="import-React,-{" mask="url(#mask-2)" font-family="SourceCodePro-Medium, Source Code Pro" font-size="14" font-weight="400" line-spacing="24">
+                        <tspan x="62" y="26" fill="#B8E986">import</tspan>
+                        <tspan x="112.4" y="26" fill="#7B8397"> </tspan>
+                        <tspan x="120.8" y="26" fill="#FFFFFF">React</tspan>
+                        <tspan x="162.8" y="26" fill="#7B8397">, {</tspan>
+                        <tspan x="62" y="50" fill="#7B8397">  </tspan>
+                        <tspan x="78.8" y="50" fill="#FFFFFF">Component</tspan>
+                        <tspan x="154.4" y="50" fill="#7B8397">,</tspan>
+                        <tspan x="62" y="74" fill="#7B8397">  </tspan>
+                        <tspan x="78.8" y="74" fill="#FFFFFF">Text</tspan>
+                        <tspan x="112.4" y="74" fill="#7B8397">,</tspan>
+                        <tspan x="62" y="98" fill="#7B8397">} </tspan>
+                        <tspan x="78.8" y="98" fill="#B8E986">from</tspan>
+                        <tspan x="112.4" y="98" fill="#7B8397"> </tspan>
+                        <tspan x="120.8" y="98" fill="#F6A623">'react-native'</tspan>
+                        <tspan x="238.4" y="98" fill="#7B8397">;</tspan>
+                        <tspan x="62" y="122" fill="#7B8397"></tspan>
+                        <tspan x="62" y="146" fill="#B8E986">class</tspan>
+                        <tspan x="104" y="146" fill="#7B8397"> </tspan>
+                        <tspan x="112.4" y="146" fill="#FFFFFF">RestaurantsList</tspan>
+                        <tspan x="238.4" y="146" fill="#7B8397"> </tspan>
+                        <tspan x="246.8" y="146" fill="#B8E986">extends</tspan>
+                        <tspan x="305.6" y="146" fill="#7B8397"> </tspan>
+                        <tspan x="314" y="146" fill="#FFFFFF">Component</tspan>
+                        <tspan x="389.6" y="146" fill="#7B8397"> {</tspan>
+                        <tspan x="62" y="170" fill="#7B8397">  </tspan>
+                        <tspan x="78.8" y="170" fill="#FFFFFF">render</tspan>
+                        <tspan x="129.2" y="170" fill="#7B8397">() {</tspan>
+                        <tspan x="62" y="194" fill="#7B8397">    </tspan>
+                        <tspan x="95.6" y="194" fill="#B8E986">return</tspan>
+                        <tspan x="146" y="194" fill="#7B8397"> </tspan>
+                        <tspan x="154.4" y="194" fill="#F6A623">&lt;Text&gt;Hello World!&lt;/Text&gt;</tspan>
+                        <tspan x="364.4" y="194" fill="#7B8397"></tspan>
+                        <tspan x="62" y="218" fill="#7B8397">}</tspan>
+                        <tspan x="62" y="242" fill="#7B8397"></tspan>
+                        <tspan x="62" y="266" fill="#B8E986">export</tspan>
+                        <tspan x="112.4" y="266" fill="#7B8397"> </tspan>
+                        <tspan x="120.8" y="266" fill="#B8E986">default</tspan>
+                        <tspan x="179.6" y="266" fill="#7B8397"> </tspan>
+                        <tspan x="188" y="266" fill="#FFFFFF">connect</tspan>
+                        <tspan x="246.8" y="266" fill="#7B8397">((</tspan>
+                        <tspan x="263.6" y="266" fill="#FFFFFF">state</tspan>
+                        <tspan x="305.6" y="266" fill="#7B8397">, </tspan>
+                        <tspan x="322.4" y="266" fill="#FFFFFF">ownProps</tspan>
+                        <tspan x="389.6" y="266" fill="#7B8397">) </tspan>
+                        <tspan x="62" y="290" fill="#7B8397">=&gt; </tspan>
+                        <tspan x="87.2" y="290" fill="#FFFFFF">state</tspan>
+                        <tspan x="129.2" y="290" fill="#7B8397">)(</tspan>
+                        <tspan x="146" y="290" fill="#FFFFFF">RestaurantsList</tspan>
+                        <tspan x="272" y="290" fill="#7B8397">)</tspan>
+                    </text>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
