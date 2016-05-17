@@ -1,0 +1,91 @@
+@import "variables";
+@import "mixins";
+
+.mobile-menu-overlay {
+    position: fixed;
+    visibility: hidden;
+    opacity: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background: #00aadf;
+    z-index: 100000;
+    transition: opacity .5s,visibility 0s .5s;
+    
+    @include respond-to('small') {
+        background: linear-gradient(to right, rgba(28,34,50,0.9) 0%,rgba(28,34,50,0.9) 50%,rgba(0, 170, 223,1) 50%);
+    }
+    
+    &.open {
+        visibility: visible;
+        opacity: 1;
+        transition: opacity .5s;
+    }
+    
+    ul {
+        list-style: none;
+        padding: 0;
+        
+        @include respond-to('small') {
+            margin-left: 50%;
+        }
+    }
+    
+    li {
+            
+        font-size: 14px;
+        padding-left: 15px;
+        border-left-width: 5px;
+        border-left-color: transparent;
+        border-left-style: solid;
+        
+        &:hover, &.nav-link-active {
+            border-left-color: #FFFFFF;
+        }
+        
+        &.nav-separator {
+            height: 1px;
+            background: rgba(255, 255, 255, 0.2);
+            background-clip: content-box;
+            width: 100%;
+        }
+        
+        &.primary {
+            font-size: 16px;
+            
+            a {
+                height: 56px;
+                line-height: 56px;
+            }
+        }
+        
+        a {
+            height: 48px;
+            width: 100%;
+            display: inline-block;
+            line-height: 48px;
+            vertical-align: middle;
+            color: #FFFFFF;
+            text-decoration: none;
+        }
+    }
+    
+    .close-menu-overlay {
+        display: block;
+        height: 80px;
+        width: 100%;
+        background: transparent;
+        border: none;
+        color: #FFFFFF;
+        
+        .close-icon {
+            height: 24px;
+            width: 24px;
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            background: url("../img/icon-close-white.svg") no-repeat center;
+        }
+    }
+}

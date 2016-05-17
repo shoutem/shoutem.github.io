@@ -7,6 +7,7 @@
 @import "footer";
 @import "animation";
 @import "helpers";
+@import "menu-overlay";
 
 p {
     color: $hometext;
@@ -53,6 +54,8 @@ p {
     width: 100%;
     max-width: 1170px;
     margin: 0 auto;
+    padding-left: 15px;
+    padding-right: 15px;
 }
 
 .section.narrow {

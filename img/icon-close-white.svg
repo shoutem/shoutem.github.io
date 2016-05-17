@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="14px" height="14px" viewBox="0 0 14 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: sketchtool 3.7.2 (28276) - http://www.bohemiancoding.com/sketch -->
+    <title>D63CCF4A-78E1-45EE-BDD9-B05122E3FED3</title>
+    <desc>Created with sketchtool.</desc>
+    <defs>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-1">
+            <stop stop-color="#DADCE2" offset="0%"></stop>
+            <stop stop-color="#000000" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="A-Landing" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="A06-Home-(Mobile)---Nav" transform="translate(-340.000000, -26.000000)">
+            <g id="Group">
+                <g id="Icons/Actions/Dark/ic-actions-dark-close" transform="translate(335.000000, 21.000000)">
+                    <g>
+                        <polygon id="Bounds" fill="url(#linearGradient-1)" opacity="0" points="0 0 24 0 24 24 0 24"></polygon>
+                        <polygon id="Shape" fill="#FFFFFF" points="5.70710678 5 11.9497475 11.2426407 18.1923882 5 18.8994949 5.70710678 12.6568542 11.9497475 18.8994949 18.1923882 18.1923882 18.8994949 11.9497475 12.6568542 5.70710678 18.8994949 5 18.1923882 11.2426407 11.9497475 5 5.70710678"></polygon>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
