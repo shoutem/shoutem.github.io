@@ -98,13 +98,29 @@ p {
 }
 
 .header-wrapper {
-    position: absolute;
+    max-width: 1440px;
     width: 100%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
     z-index: 2;
     height: 100%;
     
-    @include respond-to('medium') {
-        background: url("../img/image-header@2x.png") no-repeat 80% bottom / auto 85%;
+    
+    
+    
+    // .device-image {
+    //     background: url("../img/image-header@2x.png");
+    // }
+}
+
+.with-image.header-wrapper {
+    @media (min-width: 1340px) {
+            background-position-x: 100%;
+        }
+    
+    @include respond-to('large') {
+        background: url("../img/image-header@2x.png") no-repeat 100% bottom / auto 85%;
     }
 }
 
@@ -112,26 +128,56 @@ p {
     background-color: $accent;
     color: #fff; // test!
     height: 100%;
+    
+    .header-text {
+        
+        margin: 0 auto;
+    }
+    
+    .with-image .header-text {
+        
+        @include respond-to('large') {
+            text-align: left;
+        }
+        
+        @include respond-to('large') {
+            margin-left: 5%;
+        }
+        
+        
+        @media (min-width: 1340px) {
+            margin-left: 13%;
+        }
+    }
 
     .main-heading {
-        font-size: 54px;
-        line-height: 68px;
+        color: rgba(255, 255, 255, 0.8);
+        font-size: 35px;
+        line-height: 1.3;
         font-weight: 100;
-        margin-bottom: 24px;
+        margin-bottom: 0 auto 24px;
         text-align: center;
         
-        @include respond-to('medium') {
+        @include respond-to('small') {
+            font-size: 54px;
+        }
+    }
+    
+    .with-image .main-heading {
+        @include respond-to('large') {
             text-align: left;
         }
     }
 
-    p {
+    .p, .sub-heading {
         color: rgba(255, 255, 255, 0.8);
         line-height: 28px;
         margin-bottom: 0;
         text-align: center;
-        
-        @include respond-to('medium') {
+    }
+    
+    .with-image .sub-heading {
+        @include respond-to('large') {
             text-align: left;
         }
     }
@@ -169,16 +215,17 @@ p {
     }
     
     .paris-text {
-        height: 56px;
+        
         vertical-align: middle;
         @include headline(16px, 24px);
-        line-height: 56px;
         color: #fff;
         text-align: center;
-        margin-bottom: 20px;
+        margin-bottom: 25px;
         
         @include respond-to('small') {
             margin-bottom: 0;
+            height: 56px;
+            line-height: 56px;
         }
     }
     
@@ -186,10 +233,12 @@ p {
         content: url("../img/icon-paris.svg");
         display: block;
         height: 56px;
+        margin-bottom: 25px;
         
         @include respond-to('small') {
             vertical-align: middle;
             margin-right: 24px;
+            margin-bottom: 0;
             display: inline-block;
         }
     }
@@ -430,7 +479,11 @@ p {
         border: solid 1px #7ed321;
     }
     
-    @include respond-to('small') {
+    .bullets-wrapper {
+            display: flex;
+        }
+    
+    @include respond-to('medium') {
         .section-header {
             padding-top: 200px;
             text-align: left;
@@ -444,6 +497,10 @@ p {
             font-size: 16px;
             line-height: 1.9;
             color: #888fa1;
+        }
+        
+        .bullets-wrapper {
+            display: block;
         }
     }
     
