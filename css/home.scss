@@ -22,6 +22,11 @@ p {
     color: #444f6c;
 }
 
+.section-header--big {
+        margin-bottom: 60px;
+        font-size: 48px;
+    }
+
 .section-subtitle {
     width: 55%;
     margin: 0 auto 47px;
@@ -69,7 +74,7 @@ p {
 
 .flex-container {
     max-width: 1170px;
-    margin: 40px auto 80px;
+    margin: 0 auto 80px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -591,13 +596,6 @@ p {
     }
     &.third {
         left: 20%;
-    }
-}
-
-.section-get-started {
-    .section-header {
-        margin-bottom: 60px;
-        font-size: 48px;
     }
 }
 
