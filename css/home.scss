@@ -22,6 +22,11 @@ p {
     color: #444f6c;
 }
 
+.section-header--big {
+        margin-bottom: 60px;
+        font-size: 48px;
+    }
+
 .section-subtitle {
     width: 55%;
     margin: 0 auto 47px;
@@ -69,7 +74,7 @@ p {
 
 .flex-container {
     max-width: 1170px;
-    margin: 40px auto 80px;
+    margin: 0 auto 80px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -258,7 +263,7 @@ p {
 
     .demo-button {
         display: inline-block;
-        width: 187px;
+        width: 260px;
         height: 48px;
         border: 1px solid #fff;
         border-radius: 4px;
@@ -297,7 +302,7 @@ p {
     font-size: 14px;
     border: rgba(49, 60, 89, 0.2) solid 1px;
     border-radius: 4px;
-    padding: 5px 10px;
+    padding: 7px 14px 5px;
     color: #313c59;
     line-height: 1.4;
     letter-spacing: 1.2px;
@@ -591,13 +596,6 @@ p {
     }
     &.third {
         left: 20%;
-    }
-}
-
-.section-get-started {
-    .section-header {
-        margin-bottom: 60px;
-        font-size: 48px;
     }
 }
 
