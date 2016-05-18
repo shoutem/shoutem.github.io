@@ -11,28 +11,29 @@
     <div id="wrapper" class="home">      
 
       <div class="container-fluid">
-        <div class="row">
-          <div class="main">
+        <div class="header row">
+          <div class="main col-xs-12 with-arrow">
             <div class="shoutem-ani"></div>
-
-            <div class="main-heading">Supercharge your React Native<br>development with Shoutem</div>
-            <p>Speed up building beautiful native apps for both iOS and Android<br>with Shoutem extensions.</p>
-            <img src="../img/icon-scroll-down.png" height="78" width="33">
+            <div class="header-wrapper with-image">
+              <div class="header-text">
+                <p class="main-heading">Supercharge your<br>React&nbsp;Native development<br>with Shoutem</p>
+                <p class="sub-heading">Speed up building beautiful native apps for both<br>iOS and Android with Shoutem extensions.</p>
+              </div>
+            </div>
           </div>
         </div>
 
         <div class="row dark-blue-background paris-cta">
           <div class="section narrow">
-            <div class="flex-container">
-              <div class="paris-icon"></div>
-              <div class="paris-text">Join us at ReactEurope 2016</div>
-              <div class="paris-text">Paris, Jun/02 and Jun/03 2016</div>
-              <a href="http://eepurl.com/b02FF5" target="_blank" class="demo-button">Sign up for demo</a>
+            <div class="row">
+              <div class="paris-text col-sm-4 sm-text-left"><span>Join us at ReactEurope 2016</span></div>
+              <div class="paris-text col-sm-4"><span>Paris, Jun/02 and Jun/03 2016</span></div>
+              <div class="button-wrapper col-sm-4 sm-text-right"><a href="http://eepurl.com/b02FF5" target="_blank" class="demo-button">Sign up for demo</a></div>
             </div>
           </div>
         </div>
 
-        <div class="row blue-background section-step0">
+        <div class="row blue-background section-step0 with-arrow">
           <div class="section narrow">
             <div class="section-header">How does it work?</div>
             <div class="flex-container">
@@ -49,99 +50,76 @@
                 <button class="step-button publish-button">Go live</button>
               </div>
             </div>
-            <div class="section-footer">Let's find out how great this is!</div>
+            <div class="section-footer">Get a head start by creating 80% of your apps with Shoutem and developing only what you need with React Native:</div>
           </div>
-          <div class="arrow first"></div>
         </div>
 
         <div class="row section-step1">
-          <div class="section narrow">
-            <div class="section-header">Step 1: Write extension</div>
-            <div class="row case">
-              <div class="col-sm-5">
-                <div class="section-sub-header left-align">Case A: Start from scratch?</div>
-                <p>Start with a clean slate. <a href="http://shoutem.github.io/docs/components">UI React components</a>, push notifications, analytics and monetization are only few of the features supported out of the box when building Shoutem extensions.</p>
-              </div>
-              <div class="col-sm-1"></div>
-              <div class="col-sm-5">
-                <pre><code>// install development tool
-  npm install -g shoutem-cli
-
-  // create folder and application scaffolding
-  mkdir MyExtension && cd MyExtension
-  shoutem init</code></pre>
-              <p class="sub-text">Continue from here in the <a href="#">Overview tutorial.</a></p>
-              </div>
+          <div class="section wider">
+            <div class="section-header"><span class="step-label">Step 1</span>Create 80% of the app</div>
+            <div class="section-subtitle">
+              We’ve got most of the functionalities you'd expect from an app already built for you
             </div>
-            <div class="row case">
-              <div class="col-sm-5">
-                <div class="section-sub-header left-align">Case B: Customize any Shoutem extension</div>
-                <p>Start off by customizing an existing Shoutem extension. It’s great because you can customize and extend 20+ existing <a href="#">extensions</a>, such as News, Loyalty or E-commerce, so you don’t reinvent the wheel.</p>
-              </div>
-              <div class="col-sm-1"></div>
-              <div class="col-sm-5">
-                <pre><code>// install development tool
-  npm install -g shoutem-cli
-
-  // create folder and duplicate extension
-  mkdir MyCustomNews && cd MyCustomNews
-  shoutem duplicate ShoutemNewsExtension</code></pre>
-              <p class="sub-text">Continue from here in the <a href="#">Create a punch-card loyalty extension tutorial.</a></p>
-              </div>
-            </div>
-            <div class="section-sub-header">Got your code ready?</div>
             <div class="row">
-              <div class="col-sm-3"></div>
-              <div class="col-sm-6">
-                <pre><code>// upload to Shoutem cloud
-    shoutem upload</code></pre>
+              <div class="col-sm-8 hidden-xs hidden-sm builder-image with-arrow">
+                <img src="img/image-builder@2x.png"></img>
               </div>
-              <div class="col-sm-3"></div>
+              <div class="col-md-4 bullet-points">
+                <div class="bullet-point"><span class="bullet-icon a"></span><span class="bullet-text">20+ pre-built modules/extensions</span></div>
+                <div class="bullet-point"><span class="bullet-icon b"></span><span class="bullet-text">Mobile backend as a Service and CMS</span></div>
+                <div class="bullet-point"><span class="bullet-icon a"></span><span class="bullet-text">Dozens integrations available</span></div>
+                <div class="separator"></div>
+                <div class="integrations">
+                  <img src="img/image-modules-and-integrations.svg" alt="">
+                </div>
+              </div>
             </div>
           </div>
-          <div class="arrow second"></div>
         </div>
 
         <div class="row blue-background section-step2">
-          <div class="section narrow">
-            <div class="section-header">Step 2: Use Shoutem Cloud</div>
-            <div class="section-sub-header">Add your extension to your app</div>
+          <div class="section wider">
+            <div class="section-header"><span class="step-label">Step 2</span>Add Magic</div>
+            <div class="section-sub-header">Use the time saved on the core part to get innovative in extending</div>
             <div class="row">
-              <div class="col-sm-1"></div>
-              <div class="col-sm-4">
-                <div class="bullet-point"><div class="bullet-icon a"></div>No need to develop your own backend, use our powerful SDK to communicate with Cloud through Redux actions. Create a data schema and fill it with data.</div>
-                <p class="sub-text">Learn how in <a href="#">Create a custom data-schema tutorial.</a></p>
-                <div class="bullet-point"><div class="bullet-icon b"></div>Connect to any other API using pure React Native.</div>
-                <p class="sub-text">Learn how in <a href="#">How to integrate with 3rd-party API tutorial.</a></p>
+              <div class="col-md-4 bullet-points">
+                <div class="bullet-point"><span class="bullet-icon a"></span><span class="bullet-text">Customize existing extensions</span></div>
+                <div class="bullet-point"><span class="bullet-icon b"></span><span class="bullet-text">Write your own extensions</span></div>
+                <div class="bullet-point"><span class="bullet-icon a"></span><span class="bullet-text">Use built-in SDKs</span></div>
+                <div class="separator"></div>
+                <div class="bullet-point"><span class="bullet-icon react"></span><span class="bullet-text">Powered by React Native</span></div>
               </div>
-              <div class="col-sm-1"></div>
-              <div class="col-sm-6">
-                <div class="builder-screenshot"></div>
+              <div class="col-sm-7 col-sm-offset-1 image-rn-code with-arrow hidden-xs hidden-sm">
+                <img src="img/image-rn-code-combined@2x.png" alt="">
               </div>
             </div>
-            <div class="arrow third"></div>
           </div>
         </div>
 
         <div class="row section-step3">
           <div class="section narrow">
-            <div class="col-sm-6">
+            <div class="col-md-6 hidden-xs hidden-sm">
               <div class="image-device"></div>
               <div class="mobile-screenshot"></div>
             </div>
-            <div class="col-sm-6">
-              <div class="section-header">Step 3: Publish</div>
-              <p>Publish you app from the Shoutem Builder on both App Store and Google Play.</p>
-              <div class="bullet-point"><div class="bullet-icon c"></div>It’s great because you get instant publishing to <a href="#">App Store</a> and <a>Google Play</a>,</div>
-              <div class="bullet-point"><div class="bullet-icon d"></div>You get automated app publishing, app management, automated updates and live reloads,</div>
-              <div class="bullet-point"><div class="bullet-icon c"></div>And you get silky-smooth experience with <a href="#">React Native</a>.</div>
+            <div class="col-md-6">
+              <div class="section-header"><span class="step-label">Step 3</span>Go live</div>
+              <div class="section-sub-header">Publish you app on both App Store and Google Play. Leave the rest to our automated app management.</div>
+              <div class="bullets-wrapper">
+                <div class="bullet-points">
+                  <div class="bullet-point"><span class="bullet-icon a"></span><span class="bullet-text">Publish to: <img class="app-store-logo" src="img/app-store.svg" alt=""> + <img class="app-store-logo" src="img/app-store-copy.svg" alt=""></span></div>
+                  <div class="bullet-point"><span class="bullet-icon b"></span><span class="bullet-text">Engage your users</span></div>
+                  <div class="bullet-point"><span class="bullet-icon a"></span><span class="bullet-text">Analyze data</span></div>
+                </div>
+              </div>
+              
             </div>
           </div>
         </div>
 
         <div class="row gray-background">
-          <div class="section">
-            <div class="section-header" style="margin-bottom:60px;">Learn by doing</div>
+          <div class="section section-get-started">
+            <div class="section-header">Get started now</div>
             <div class="flex-container">
               <div class="chapter" onclick="window.location.href='/docs/getting-started/introduction'">
                 <div class="chapter-image blue">
@@ -183,151 +161,38 @@
                 <div class="chapter-content">
                   <div class="chapter-category">Tutorial</div>
                   <h4 class="chapter-title">3. Create a punch-card loyaly extension</h4>
-                  <p class="chapter-description">Learn how to extend existing extension with new functionality (Coming soon)</p>
+                  <p class="chapter-description">Learn how to extend existing extension with new functionality</p>
                   <div class="chapter-time"><div class="time-icon"></div><span> 45 min &nbsp;&#8226;&nbsp; Medium</span></div>
                 </div>
               </div>
             </div>
           </div>
-<!--          <div class="section">
-            <div class="section-sub-header">Dive into documentation</div>
-            <div class="flex-container">
-              <div class="documentation-group">
-                <div class="documentation-category">Creating screens</div>
-                <a class="documentation-link" href="/docs/getting-started/component"><i class="link-icon"></i>Using components</a>
-                <a class="documentation-link" href="/docs/getting-started/screen"><i class="link-icon"></i>Writing additional layouts</a>
-                <a class="documentation-link" href="/docs/components"><i class="link-icon"></i>Extending components</a>
-              </div>
-              <div class="documentation-group">
-                <div class="documentation-category">Data handling</div>
-                <a class="documentation-link" href="/docs/getting-started/data-schemas"><i class="link-icon"></i>Custom data schemas</a>
-                <a class="documentation-link" href="/docs/restaurant-rating/advanced-usage-admin-pages"><i class="link-icon"></i>Writing CMS admin pages</a>
-                <a class="documentation-link" href="/docs/api"><i class="link-icon"></i>Shoutem CMS API</a>
-              </div>
-              <div class="documentation-group">
-                <div class="documentation-category">Styling</div>
-                <a class="documentation-link" href="/docs/components"><i class="link-icon"></i>Making stylable extensions</a>
-                <a class="documentation-link" href="/docs/components"><i class="link-icon"></i>Writing themes</a>
-                <a class="documentation-link" href="/docs/components"><i class="link-icon"></i>Optimizing extensions</a>
-              </div>
-              <div class="documentation-group">
-                <div class="documentation-category">Development</div>
-                <a class="documentation-link" href="/docs/api"><i class="link-icon"></i>Shoutem API</a>
-                <a class="documentation-link" href="/docs/components"><i class="link-icon"></i>Components library</a>
-                <a class="documentation-link" href="/docs/debugging"><i class="link-icon"></i>Testing and debugging</a>
-              </div>
-            </div>
-          </div>
-        </div>-->
-
-<!--       <div class="row">
-          <div class="section">
-            <div class="section-header">Feature list</div>
-            <div class="section-sub-header">Comprehensive toolkit for building beautiful applications</div>
-            <div class="flex-container">
-              <div class="feature">
-                <div class="feature-icon extensions"></div>
-                <div class="feature-title">Prebuilt extensions</div>
-                <p class="feature-description">20+ fully functional extensions (e.g. News reader, eCommerce, Maps, User sign in and registration etc.)</p>
-              </div>
-              <div class="feature">
-                <div class="feature-icon extensions"></div>
-                <div class="feature-title">Components</div>
-                <p class="feature-description">Speed up your development by using Shoutem ready made components</p>
-              </div>
-              <div class="feature">
-                <div class="feature-icon styling"></div>
-                <div class="feature-title">Styling</div>
-                <p class="feature-description">If predefined themes are not enough, our framework makes styling React Native apps as simple as styling HTML with CSS</p>
-              </div>
-              <div class="feature">
-                <div class="feature-icon command-line"></div>
-                <div class="feature-title">Command Line Tool</div>
-                <p class="feature-description">Our command line tool will save you time with many common tasks like defining new views and creating new data schemas</p>
-              </div>
-            </div>
-
-            <div class="section-sub-header">Integrations</div>
-            <div class="flex-container">
-              <div class="feature">
-                <div class="feature-icon analytics"></div>
-                <div class="feature-title">Analytics</div>
-                <p class="feature-description">Integration with popular analytical services like Google Analytics or Flurry helps you Analyze your user behavior and optimize your app</p>
-              </div>
-              <div class="feature">
-                <div class="feature-icon push-notifications"></div>
-                <div class="feature-title">Push notifications</div>
-                <p class="feature-description">Out of the box support for Urban Airship PN services.</p>
-              </div>
-              <div class="feature">
-                <div class="feature-icon monetization"></div>
-                <div class="feature-title">Monetization</div>
-                <p class="feature-description">Easily integrate payment providers (ApplePay, PayPal) or add support for mobile Ads to monetize your application.</p>
-              </div>
-              <div class="feature">
-                <div class="feature-icon extendable"></div>
-                <div class="feature-title">Extendable</div>
-                <p class="feature-description">Having your own service? No problem, we made it easy to integrate with any 3rd party service.</p>
-              </div>
-            </div>
-
-            <div class="section-sub-header">Application management</div>
-            <div class="flex-container">
-              <div class="feature">
-                <div class="feature-icon extendable"></div>
-                <div class="feature-title">App publishing</div>
-                <p class="feature-description">Hassle free automated publishing to iTunes AppStore and Google Play under your developer account.</p>
-              </div>
-              <div class="feature">
-                <div class="feature-icon app-configuration"></div>
-                <div class="feature-title">App configuration management</div>
-                <p class="feature-description">Manage your application configuration from one place and instantly push any changes.</p>
-              </div>
-              <div class="feature">
-                <div class="feature-icon auto-updated"></div>
-                <div class="feature-title">Auto updates</div>
-                <p class="feature-description">We will update your app binary to keep it up to date with OS versions and new devices.</p>
-              </div>
-              <div class="feature">
-                <div class="feature-icon auto-updated"></div>
-                <div class="feature-title">Live app reload</div>
-                <p class="feature-description">Instantly push new code changes (application version) to your users.</p>
-              </div>
-            </div>
-
-            <div class="section-sub-header">Infrastructure</div>
-            <div class="flex-container">
-              <div class="feature">
-                <div class="feature-icon scalable"></div>
-                <div class="feature-title">Scalable</div>
-                <p class="feature-description">Our robust and scalable backend services are designed to support the growth of your application.</p>
-              </div>
-              <div class="feature">
-                <div class="feature-icon cloud-storage"></div>
-                <div class="feature-title">Cloud storage & CMS</div>
-                <p class="feature-description">Powerful and simple to use object storage service with Web CMS that you can give to your clients.</p>
-              </div>
-              <div class="feature">
-                <div class="feature-icon rest-json-api"></div>
-                <div class="feature-title">REST JSON API</div>
-                <p class="feature-description">Integrate with stand-alone desktop apps or other.</p>
-              </div>
-              <div class="feature">
-                <div class="feature-icon"></div>
-                <div class="feature-title"></div>
-                <p class="feature-description"></p>
-              </div>
-            </div>
-          </div>-->
         </div>
 
       </div>
     </div>
-
+    
+    <div id="mobile-menu-overlay" class="mobile-menu-overlay"  onclick="closeMenu();">
+      <div class="close-menu-overlay">
+        <span class="close-icon"></span>
+     </div>
+      <ul>
+        <li class="nav-link primary nav-link-active"><a href="/">Home</a></li>
+        <!--<li class="nav-link primary"><a href="">Features</a></li>-->
+        <li class="nav-link primary"><a href="/docs/getting-started/introduction">Docs</a></li>
+        <li class="nav-separator"></li>
+        <li class="nav-link"><a href="http://www.shoutem.com/">Shoutem Home</a></li>
+        <li class="nav-link"><a href="http://www.shoutem.com/about">About</a></li>
+        <li class="nav-link"><a href="http://www.shoutem.com/termsofservice">Terms of service</a></li>
+        <li class="nav-link"><a href="http://www.shoutem.com/privacypolicy">Privacy</a></li>
+        <li class="nav-link"><a href="http://www.shoutem.com/dmca">DMCA</a></li>
+      </ul>
+    </div>
     {% include footer.html %}
     <script   src="https://code.jquery.com/jquery-2.2.3.min.js"   integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo="   crossorigin="anonymous"></script>
     <script type="text/javascript" src="/js/animation.js"></script>
     <script type="text/javascript" src="/js/headroom.min.js"></script>
+    <script type="text/javascript" src="/js/main.js"></script>
     {% include ga.html %}
   </body>
 </html>
