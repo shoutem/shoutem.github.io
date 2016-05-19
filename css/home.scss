@@ -349,6 +349,10 @@ p {
             border: 1px solid $green;
             border-radius: 4px;
         }
+        
+        span {
+            display: block;
+        }
     }
 
     .arrow-box {
@@ -378,6 +382,7 @@ p {
             border-left-color: $accent;
             border-width: 45px;
             margin-top: -45px;
+            margin-left: 1px;
         }
     }
 }
