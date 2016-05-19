@@ -264,14 +264,16 @@ p {
     .demo-button {
         display: inline-block;
         width: 260px;
-        height: 48px;
+        height: auto;
         border: 1px solid #fff;
         border-radius: 4px;
         background-color: #fff;
         text-transform: uppercase;
-        line-height: 48px;
+        line-height: 22px;
         color: $primary;
         text-align: center;
+        padding: 10px;
+        margin-top: -6px;
         
         font-weight: bold;
         font-size: 14px;
