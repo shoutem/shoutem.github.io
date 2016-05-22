@@ -61,7 +61,7 @@ render() {
 Before we add this component to RestaurnatsList, create new screen that should be opened when restaurants row is clicked:
 
 ```
-shoutem create screen --name RestaurantDetails
+shoutem screen RestaurantDetails
 ```
 
 Add this component in `renderRow` method to _RestaurantsList_. When invoking _RestaurantsRow_ component, we will need to pass `restaurant` and `onPress` method. Method `onPress` needs to open new screen. That is done with React Native [navigator](https://facebook.github.io/react-native/docs/navigator.html#content) construct which is passed to every `screen` via `props`. Just call `navigator.push()` method with Shoutem [Route object](TODO) which accepts: screen property as constant and `props` that should be passed to new screen. We've already used Shoutem route object in shortcut `action` which we passed to `navigateTo` action.
@@ -69,7 +69,7 @@ Add this component in `renderRow` method to _RestaurantsList_. When invoking _Re
 Add this to _RestaurantsList_ screen:
 
 <pre>
-<span class="newCode">import RestaurantsRow from '../components/RestaurantsRow'; </span>
+<span class="newCode">import RestaurantsRow from './components/RestaurantsRow'; </span>
 
 // Class declaration ...
 
@@ -79,7 +79,7 @@ renderRow(restaurant) {
     &lt;RestaurantsRow
       restaurant
       onPress={() => navigator.push({
-        screen: 'developer.restaurant-extension.RestaurantDetails',
+        screen: 'dev-name.restaurant-extension.RestaurantDetails',
         props: {
           restaurant, dispatch
         }

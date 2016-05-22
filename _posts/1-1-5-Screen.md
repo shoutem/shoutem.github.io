@@ -9,7 +9,7 @@ permalink: /docs/getting-started/screen
 Screens are React components which are connected to Redux store, i.e. they have access to complete application's state. Let's create new screen:
 
 ```
-shoutem screen RestaurantList
+shoutem screen RestaurantsList
 ```
 
 Folder `app/screens/` was created with `RestaurantList.js` file:
@@ -54,12 +54,12 @@ Open `app/actions.js` and add the highlighted:
 
 export function openRestaurantsList() {
   return navigateTo({
-    screen: 'developer.restaurant-extension.RestaurantsList'
+    screen: 'dev-name.restaurant-extension.RestaurantsList'
   })
 }</span>
 </pre>
 
-Redux action `navigateTo`, provided by Shoutem, opens new screen in application. Its argument is object ([Shoutem route object]()) with property screen. Notice the value of `screen` property. That there is an identification for created screen. Since we're referencing screen here and not creating it, we're using absolute name. More over, some construct within the extension has it's own id defined by name of the property used in exporting object in `index.js`. Since we exported name `RestaurnatList` inside `screens` exporting object in `index.js`, our screen has `developer.restaurants-extension.RestaurantsList` name. In this example, you need to replace `developer` with your developer name.
+Redux action `navigateTo`, provided by Shoutem, opens new screen in application. Its argument is object ([Shoutem route object]()) with property screen. Notice the value of `screen` property. That there is an identification for created screen. Since we're referencing screen here and not creating it, we're using absolute name. More over, some construct within the extension has it's own id defined by name of the property used in exporting object in `index.js`. Since we exported name `RestaurnatList` inside `screens` exporting object in `index.js`, our screen has `dev-name.restaurants-extension.RestaurantsList` name. In this example, you need to replace `dev-name` with your developer name.
 
 Upload the extension:
 
