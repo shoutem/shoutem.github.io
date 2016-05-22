@@ -70,7 +70,6 @@ import React, {
 } from 'react-native';
 
 class RestaurantsDetails extends Component {
-
   render() {
     const { restaurant } = this.props;
     return (
@@ -95,7 +94,6 @@ class RestaurantsDetails extends Component {
   }
 }
 
-// TODO add style so details screen is nicer.
 export default connect((state, ownProps) => state)(RestaurantsDetails)
 ```
 
