@@ -21,7 +21,7 @@ As shown on the following picture, every Shoutem application is made of extensio
 <img src='{{ site.baseUrl }}/img/getting-started/apps-are-made-of-extensions.png'/>
 </p>
 
-Extensions represent small features that are connected to application through [shortcuts](TODO). Application admins just connect wanted extension on their [HomeScreen](TODO) through shortcut and fill out content! Everything in the application is represented via extensions - even HomeScreen is extension!
+Extensions represent small features that are connected to application through [shortcuts](TODO). Application admins just connect wanted extensions to their HomeScreen [HomeScreen](TODO) through extensions' shortcuts and fill out the content! Everything in the application is represented via extensions - even HomeScreen is extension!
 
 Extension contains of the following parts:
 
@@ -45,7 +45,7 @@ Shoutem uses [React](TODO) and [React Native](TODO) as frameworks for building c
 <Text>Hello World!</Text>
 ```
 
-On top of React and React Native, we\'re using [Redux](http://redux.js.org/) as a pattern to write extensions. Redux envolves from Flux introducing simpler, one-way unidirectional data flow for predictive application behavior. Although Shoutem is using Redux for it's architecture within the application, you\'re free to use any other application architecture. However, tutorials will use Redux constructs when writing extension. There are several constructs in Redux shown on next picture:
+On top of React and React Native, we're using [Redux](http://redux.js.org/) as a pattern to write extensions. Redux envolves from Flux introducing simpler, one-way data flow for predictive application behavior. Although Shoutem is using Redux for it's architecture within the application, you're free to use any other application architecture. However, tutorials will use Redux constructs when writing extension. There are several constructs in Redux shown on next picture:
 
 <p class="image">
 <img src='http://shoutem.github.io/img/getting-started/redux.png'/>
@@ -55,7 +55,7 @@ Each application has a [Redux store](http://redux.js.org/docs/basics/Store.html)
 
 <br />
 
-Let\'s start making first extension. We\'ll start with [setting your development environment](http://shoutem.github.io/docs/getting-started/development-environment).
+Let's start making first extension. We'll start with [setting your development environment](http://shoutem.github.io/docs/getting-started/development-environment).
 
 <nav>
   <ul class="pager">

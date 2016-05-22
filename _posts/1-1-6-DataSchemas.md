@@ -16,19 +16,19 @@ Do:
 ```
 shoutem data-schema Restaurants
 ```
-Shoutem created `Restaurants.json` under new folder `/server/data-schemas` folder. This is for the first time that we used `server` folder for something. The reason is that data-schemas are not part of the application code, but rather server side for extension. `Restaurants.json` looks like this:
+Shoutem created `Restaurants.json` under new folder `server/data-schemas` folder. This is for the first time that we used `server` folder for something. The reason is that data-schemas are not part of the application code, but rather server side for extension. `Restaurants.json` looks like this:
 
 ```
 {
-  "name": "Restorants",
+  "name": "Restaurants",
   "properties": {
     "name": {
       "format": "single-line",
       "title": "Name",
-      "type": "string",
+      "type": "string"
     }
   },
-  "title": "Restorants",
+  "title": "Restaurants",
   "titleProperty": "name"
 }
 ```
@@ -46,7 +46,7 @@ Now we want to add some data to our _Restaurants_ schema. Since that's the job f
   "description": "List restaurants",
   "shortcuts": [{
     "name": "OpenRestaurantsList",
-    "action": "developer.restaurant-extension.openRestaurantsList",
+    "action": "dev-name.restaurant-extension.openRestaurantsList",
     "title": "List of restaurants",
     "description": "Allow users to check the restaurants.",
     "icon": "",
@@ -54,14 +54,14 @@ Now we want to add some data to our _Restaurants_ schema. Since that's the job f
       "page": "shoutem.admin.contentPage",
       "title": "Restaurants",
       "parameters": {
-        "schema": "developer.restaurant-extension.Restaurants"
+        "schema": "dev-name.restaurant-extension.Restaurants"
       }
     }]</span>
   }]
 }
 </pre> 
 
-We used `shoutem.admin.contentPage` (from predefined Admin pages) which expects `schema` parameter that describes data schema to be used in Content editor.
+We used `shoutem.admin.contentPage` (from predefined Admin pages) which expects `schema` parameter that describes data schema to be used in Content editor. Don't forget to replace `dev-name` with your developer name.
 
 Do:
 
