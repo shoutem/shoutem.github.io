@@ -15,7 +15,7 @@ In this tutorial, these new concepts will be covered:
 - introducing Shoutem Cloud Code
 - advanced usage of Shoutem Admin Pages
 
-## About the extension
+### About the extension
 
 Let's describe what we want to build. Restaurants Rating extension lists all the restaurants with the average points. Once some restaurant from the list is selected, new screen with the details of the restaurant is opened. That screen will also include form submitting users' reviews with associated points.
 
@@ -24,3 +24,11 @@ Following picture represents the mockup:
 TODO - slika mockupa kako bi RestaurantsRatingExtension trebala izgledati
 
 Let's extend our restaurants extension with permission which allows all users to submit their ratings.
+
+<nav>
+  <ul class="pager">
+    <li class="next">
+      <a href="http://shoutem.github.io/docs/user-data/adapt-ui">Next <span aria-hidden="true">&rarr;</span></a>
+    </li>
+  </ul>
+</nav>

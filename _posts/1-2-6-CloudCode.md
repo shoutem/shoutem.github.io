@@ -151,3 +151,14 @@ Add some restaurant to your Shoutem CMS and rate it over the app. This is what y
 TODO - Show 2 admin page tabs, and show only restaurant content page with average points.
 
 Great, calculating average points is done! Let's recap what we've learned in this tutorial.
+
+<nav>
+  <ul class="pager">
+    <li class="previous">
+      <a href="http://shoutem.github.io/docs/user-data/properties-admin-pages"><span aria-hidden="true">&larr;</span> Previous</a>
+    </li>
+    <li class="next">
+      <a href="http://shoutem.github.io/docs/user-data/summary">Next <span aria-hidden="true">&rarr;</span></a>
+    </li>
+  </ul>
+</nav>

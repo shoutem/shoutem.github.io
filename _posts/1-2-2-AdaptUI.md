@@ -67,3 +67,14 @@ Check the [props section](TODO) for [RatingStars] component which explains which
 TODO - add picture showing only rating form
 
 Let's now adjust schemas by adding average points to `Restaurants` schema and implementing schema for restaurants ratings.
+
+<nav>
+  <ul class="pager">
+    <li class="previous">
+      <a href="http://shoutem.github.io/docs/user-data/introduction"><span aria-hidden="true">&larr;</span> Previous</a>
+    </li>
+    <li class="next">
+      <a href="http://shoutem.github.io/docs/user-data/submitting-user-data">Next <span aria-hidden="true">&rarr;</span></a>
+    </li>
+  </ul>
+</nav>

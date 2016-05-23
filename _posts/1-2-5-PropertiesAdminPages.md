@@ -64,3 +64,14 @@ Visit [Shoutem Builder](TODO). You can see that now we have 2 tabs for admin pag
 TODO - add picture showing Shoutem builder screen.
 
 Once data schemas and admin pages are set, we want to calculate average points from restaurant. For that, we're using Shoutem Cloud Code.
+
+<nav>
+  <ul class="pager">
+    <li class="previous">
+      <a href="http://shoutem.github.io/docs/user-data/shoutem-authentication"><span aria-hidden="true">&larr;</span> Previous</a>
+    </li>
+    <li class="next">
+      <a href="http://shoutem.github.io/docs/user-data/cloud-code">Next <span aria-hidden="true">&rarr;</span></a>
+    </li>
+  </ul>
+</nav>

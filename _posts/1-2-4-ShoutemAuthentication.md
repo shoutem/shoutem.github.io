@@ -106,3 +106,14 @@ handleSubmit(points) {
 As we can see, this permission doesn't have only `read` and `write`, but `RUD` options (Read, Update and Delete), allowing you to create whatever you imagine. Create permission is not needed, since it's defined in `permission for schema`. With such permission specified, we're allowing everyone to read users review, but only the owner can update and delete it.
 
 It is the time to update admin pages which will be shown on `RestaurantsList` shortcut, because we don't want admin's to change average points for the restaurant or to submit their reviews of restaurants.
+
+<nav>
+  <ul class="pager">
+    <li class="previous">
+      <a href="http://shoutem.github.io/docs/user-data/submitting-user-data"><span aria-hidden="true">&larr;</span> Previous</a>
+    </li>
+    <li class="next">
+      <a href="http://shoutem.github.io/docs/user-data/properties-admin-pages">Next <span aria-hidden="true">&rarr;</span></a>
+    </li>
+  </ul>
+</nav>

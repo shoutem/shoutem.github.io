@@ -149,3 +149,14 @@ render() {
 </pre>
 
 We need to make sure that application users are signed in to our application before submitting their review.
+
+<nav>
+  <ul class="pager">
+    <li class="previous">
+      <a href="http://shoutem.github.io/docs/user-data/adapt-ui"><span aria-hidden="true">&larr;</span> Previous</a>
+    </li>
+    <li class="next">
+      <a href="http://shoutem.github.io/docs/user-data/shoutem-authentication">Next <span aria-hidden="true">&rarr;</span></a>
+    </li>
+  </ul>
+</nav>
