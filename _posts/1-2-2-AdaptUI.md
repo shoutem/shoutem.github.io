@@ -38,8 +38,6 @@ class RestaurantsDetails extends Component {
         &lt;/Text>
 <span class="newCode">        &lt;RatingStars
           points={[1, 2, 3, 4, 5]}
-          description="Rate this restaurant!"
-          submitText="Submit"
           onSubmit={this.handleSubmit}
           /></span>
         &lt;TouchableOpacity onPress={() => Linking.openURL(restaurant.url)}>
@@ -60,7 +58,40 @@ class RestaurantsDetails extends Component {
 export default connect((state, ownProps) => state)(RestaurantsDetails)
 </pre>
 
-Check the [props section](TODO) for [RatingStars] component which explains which properties we can pass it to customize the component. Method `handleSubmit` we'll implement later.
+Check the [props section](TODO) for [RatingStars](TODO) component which explains which properties we can pass it to customize the component. Method `handleSubmit` we'll implement later.
+
+The same component we'll use in the `RestaurantsList` screen, but there we'll disable it, since we don't want user to rate it there. Import RatingStars and change `render` method of `RestaurantsList` screen as follows:
+
+<pre>
+<span class="newCode">import { Spinner, ListView, RatingStars } from 'shoutem-ui';</span>
+
+... in `Component` definition ...
+
+render() {
+<span class="newCode">  const { restaurants, navigator } = this.props;
+  return restaurants ?
+    &lt;ListView
+      items={restaurants}
+      titleProperty="name"
+      description="address"
+      image="image"
+      onPress={() => navigator.push({
+        screen: 'dev-name.restaurant-extension.RestaurantDetails',
+        props: {
+          restaurant, dispatch
+        }
+    > 
+      &lt;RatingStars
+        disable
+        scale={[1,5]}
+        pointsProperty{"averagePoints"}
+      />
+    &lt;/ListView>:</span>
+    &lt;Spinner />
+}
+</pre>
+
+We passed here `RatingStars` as children component to `ListView`, which will include that component for each item and will pass it item that it iterates through. From that item, we want to extract `averagePoints` property and to show it as in RatingStars, which we'll add later to the schema. Also, `RatingStars` needs to be disabled, so used can't submit their reviews there, but only on `RestaurantDetails` screen.
 
 `shoutem upload` it, add some Restaurant through the CMS and navigate into the details. It looks as follows:
 

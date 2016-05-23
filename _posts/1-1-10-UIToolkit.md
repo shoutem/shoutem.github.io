@@ -38,6 +38,7 @@ class RestaurantsList extends Component {
         items={restaurants}
         titleProperty="name"
         description="address"
+        image="image"
         onPress={() => navigator.push({
           screen: 'dev-name.restaurant-extension.RestaurantDetails',
           props: {

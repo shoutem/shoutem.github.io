@@ -21,7 +21,9 @@ Let's describe what we want to build. Restaurants Rating extension lists all the
 
 Following picture represents the mockup:
 
-TODO - slika mockupa kako bi RestaurantsRatingExtension trebala izgledati
+<p class="image">
+<img src='http://shoutem.github.io/img/user-data/restaurant-rating-end-result.png'/>
+</p>
 
 Let's extend our restaurants extension with permission which allows all users to submit their ratings.
 
