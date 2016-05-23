@@ -34,7 +34,7 @@ Notice `render` method. It's usual method which specifies how the `Component` sh
 
 When creating screen, it's good practice to immediately export it in `app/index.js`. Let's do that:
 
-```
+<pre>
 <span class="newCode">import RestaurantsList from './screens/RestaurantsList';</span>
 import * as actions from './actions';
 
@@ -45,7 +45,7 @@ import * as actions from './actions';
 export actions;
 
 export const reducer = {};
-```
+</pre>
 
 Open `app/actions.js` and add the highlighted:
 
