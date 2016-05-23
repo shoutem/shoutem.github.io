@@ -1,9 +1,9 @@
 ---
 layout: doc
-permalink: /docs/getting-started/final-polishing
+permalink: /docs/getting-started/missing-fields
 ---
 
-# Final polishing
+# Add missing properties
 <hr />
 
 Extension we've built until now is cool, but we want to add extra fields in data and show them on DetailsScreen. We also don't want to show only same photo when rendering row.
@@ -129,7 +129,7 @@ shoutem upload
 <img src='http://shoutem.github.io/img/getting-started/restaurant-list-and-details.png'/>
 </p>
 
-You finished your first extension! What's next?
+You just finished your first extension! It looks great, but there is a room for improvement, wouldn't you agree? Also, it doesn't look how we specified in the beginning that we would like it to look like. Shoutem prepared it's [UI toolkit](/docs/coming-soon) for you that you can use to create **beautiful** apps.
 
 <nav>
   <ul class="pager">
@@ -137,7 +137,7 @@ You finished your first extension! What's next?
       <a href="http://shoutem.github.io/docs/getting-started/component"><span aria-hidden="true">&larr;</span> Previous</a>
     </li>
     <li class="next">
-      <a href="http://shoutem.github.io/docs/getting-started/publish">Next <span aria-hidden="true">&rarr;</span></a>
+      <a href="http://shoutem.github.io/docs/getting-started/ui-toolkit">Next <span aria-hidden="true">&rarr;</span></a>
     </li>
   </ul>
 </nav>
