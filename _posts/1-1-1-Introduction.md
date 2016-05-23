@@ -21,7 +21,7 @@ As shown on the following picture, every Shoutem application is made of extensio
 <img src='{{ site.baseUrl }}/img/getting-started/apps-are-made-of-extensions.png'/>
 </p>
 
-Extensions represent small features that are connected to application through [shortcuts](TODO). Application admins just connect wanted extensions to their HomeScreen [HomeScreen](TODO) through extensions' shortcuts and fill out the content! Everything in the application is represented via extensions - even HomeScreen is extension!
+Extensions represent small features that are connected to application through [shortcuts](/docs/coming-soon). Application admins just connect wanted extensions to their HomeScreen [HomeScreen](TODO) through extensions' shortcuts and fill out the content! Everything in the application is represented via extensions - even HomeScreen is extension!
 
 Extension contains of the following parts:
 
