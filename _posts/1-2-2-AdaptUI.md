@@ -30,29 +30,29 @@ class RestaurantsDetails extends Component {
   render() {
     const { restaurant } = this.props;
     return (
-      <View>
-        <Image
+      &lt;View>
+        &lt;Image
           soure:{{uri: restaurant.image}} />
-        <Text>
+        &lt;Text>
           {restaurant.description}
-        </Text>
-<span class="newCode">        <RatingStars
+        &lt;/Text>
+<span class="newCode">        &lt;RatingStars
           points={[1, 2, 3, 4, 5]}
           description="Rate this restaurant!"
           submitText="Submit"
           onSubmit={this.handleSubmit}
           /></span>
-        <TouchableOpacity onPress={() => Linking.openURL(restaurant.url)}>
-          <Text>
+        &lt;TouchableOpacity onPress={() => Linking.openURL(restaurant.url)}>
+          &lt;Text>
             {"Website"}
-          </Text>
-        </TouchableOpacity>
-        <TouchableOpacity onPress={() => Linking.openURL(restaurant.mail)}>
-          <Text>
+          &lt;/Text>
+        &lt;/TouchableOpacity>
+        &lt;TouchableOpacity onPress={() => Linking.openURL(restaurant.mail)}>
+          &lt;Text>
             {"Send mail"}
-          </Text>
-        </TouchableOpacity>
-      </View>
+          &lt;/Text>
+        &lt;/TouchableOpacity>
+      &lt;/View>
     )
   }
 }
