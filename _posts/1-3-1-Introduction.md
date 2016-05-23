@@ -13,7 +13,6 @@ This tutorial shows you how to build extension which will enable applications us
 - Shoutem API
 
 
-<br />
 ## Shopify Application
 
 Before we describe what we want to build, we need to separate different concepts: 
@@ -29,7 +28,6 @@ We're building ***Shoutem*** _extension_ which will be used in ***Shoutem*** _ap
 
 For the purpose of this tutorial, you will need to become [Shopify partner](TODO) to create Shopify app. Once you've [registered](TODO) as Shopify partner, creating Shopify app is pretty straightforward. Read [Shopify's documentation](https://docs.shopify.com/api/guides/introduction) on how to create and submit your ***Shopify*** _app_.
 
-<br />
 ## About the extension
 
 Let's describe what we want to build. Shopify extension allows admins to sell products on their Shopify store to their application users. Application admins need to authorize your Shopify app to connect to admin's Shopify store. Once admin has authorized Shopify app, extension lists the products contained in the Shopify app. Once this point is reached, we finished the process of connecting your extension to other 3rd party service and building upon it, like adding possibility to buy products, shouldn't present a problem.
