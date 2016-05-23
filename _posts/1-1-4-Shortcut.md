@@ -67,14 +67,14 @@ export function openRestaurantsList() {
 
 Actions are nothing else than javascript functions. Export that action inside of `app/index.js` file:
 
-```
+<pre>
 <span class="newCode">import * as actions from './actions';</span>
 export const screens = {};
 
 <span class="newCode">export actions;</span>
 
 export const reducer = {};
-```
+</pre>
 
 Finally:
 
