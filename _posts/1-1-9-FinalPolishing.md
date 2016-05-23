@@ -46,7 +46,7 @@ First, let's add new fields to our `Restaurants` schema:
 }
 </pre>
 
-You can browse [complete list](TODO) of Shoutem types that you can put in restaurant.
+You can browse [complete list](/docs/coming-soon) of Shoutem types that you can put in restaurant.
 
 Do 
 ```

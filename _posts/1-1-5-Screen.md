@@ -28,7 +28,7 @@ class RestaurantsList extends Component {
 export default connect((state, ownProps) => state)(RestaurantsList)
 ```
 
-Shoutem CLI, by default saves screens in `app/screens/` folder, but you can [configure it](TODO) to save it elsewhere. 
+Shoutem CLI, by default saves screens in `app/screens/` folder, but you can [configure it](/docs/coming-soon) to save it elsewhere. 
 
 Notice `render` method. It's usual method which specifies how the `Component` should be rendered. On the other hand, [connect](https://github.com/reactjs/react-redux/blob/master/docs/api.md#connectmapstatetoprops-mapdispatchtoprops-mergeprops-options) call is how we bind React and Redux and `connect` our component, `RestaurantsList` screen, to application's state.
 
@@ -59,7 +59,7 @@ export function openRestaurantsList() {
 }</span>
 </pre>
 
-Redux action `navigateTo`, provided by Shoutem, opens new screen in application. Its argument is object ([Shoutem route object]()) with property screen. Notice the value of `screen` property. That there is an identification for created screen. Since we're referencing screen here and not creating it, we're using absolute name. More over, some construct within the extension has it's own id defined by name of the property used in exporting object in `index.js`. Since we exported name `RestaurnatList` inside `screens` exporting object in `index.js`, our screen has `dev-name.restaurants-extension.RestaurantsList` name. In this example, you need to replace `dev-name` with your developer name.
+Redux action `navigateTo`, provided by Shoutem, opens new screen in application. Its argument is object ([Shoutem route object](/docs/coming-soon)) with property screen. Notice the value of `screen` property. That there is an identification for created screen. Since we're referencing screen here and not creating it, we're using absolute name. More over, some construct within the extension has it's own id defined by name of the property used in exporting object in `index.js`. Since we exported name `RestaurnatList` inside `screens` exporting object in `index.js`, our screen has `dev-name.restaurants-extension.RestaurantsList` name. In this example, you need to replace `dev-name` with your developer name.
 
 Upload the extension:
 
@@ -67,7 +67,7 @@ Upload the extension:
 shoutem upload
 ```
 
-Try now tapping to shortcut on the preview in [Shoutem Builder](). 
+Try now tapping to shortcut on the preview in [Shoutem Builder](/docs/coming-soon). 
 
 <p class="image">
 <img src='http://shoutem.github.io/img/getting-started/hello-world.png'/>
@@ -75,7 +75,7 @@ Try now tapping to shortcut on the preview in [Shoutem Builder]().
 
 <br />
 
-Great! New screen is opened. Add static restaurants and ListView in screen. Start by importing [ListView](TODO) from React Native.
+Great! New screen is opened. Add static restaurants and ListView in screen. Start by importing [ListView](/docs/coming-soon) from React Native.
 
 <pre>
 import React, {

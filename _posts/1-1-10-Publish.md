@@ -14,16 +14,14 @@ By default, all extension that you publish to the market are only visible to you
 shoutem publish
 ```
 
-[//]: <> (TODO - picture which shows the published extension)
-
-However, you might want to make your extension public and available for others to use. You can even make [money](TODO) writing extensions. See chapter about [Developer console](TODO) to check for all possibilities with your extensions.
+However, you might want to make your extension public and available for others to use. You can even make [money](/docs/coming-soon) writing extensions. See chapter about [Developer console](/docs/coming-soon) to check for all possibilities with your extensions.
 
 ### What's next?
 
 We've prepared few more tutorials on how to you can make the most out of Shoutem:
 
-- [Let your users fill the content in your app](http://shoutem.github.io/docs/restaurant-rating/restaurant-rating-extension)
-- [Connecting to 3rd party API](http://shoutem.github.io/docs/shopify/about)
-- [Debugging with Shoutem]()
+- [Let your users fill the content in your app](http://shoutem.github.io/docs/user-data/introduction)
+- [Connecting to 3rd party API](http://shoutem.github.io/docs/3rd-party/introduction)
+- [Debugging with Shoutem](/docs/coming-soon)
 
 Good coding!

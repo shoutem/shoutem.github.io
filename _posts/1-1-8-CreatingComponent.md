@@ -14,7 +14,7 @@ shoutem component RestaurantRow
 
 New file `RestaurantsRow.js` is created in the new folder `/app/components`, default folder for components. Components is not something we want to export, so no need to modify `app/index.js`.
 
-As we said, we want this component to be clickable. Import [TouchableOpacity](TODO) from React Native which will listen to touch on wrapped component.
+As we said, we want this component to be clickable. Import [TouchableOpacity](https://facebook.github.io/react-native/docs/touchableopacity.html) from React Native which will listen to touch on wrapped component.
 
 ```
 import React, {
@@ -64,7 +64,7 @@ Before we add this component to RestaurnatsList, create new screen that should b
 shoutem screen RestaurantDetails
 ```
 
-Add this component in `renderRow` method to _RestaurantsList_. When invoking _RestaurantsRow_ component, we will need to pass `restaurant` and `onPress` method. Method `onPress` needs to open new screen. That is done with React Native [navigator](https://facebook.github.io/react-native/docs/navigator.html#content) construct which is passed to every `screen` via `props`. Just call `navigator.push()` method with Shoutem [Route object](TODO) which accepts: screen property as constant and `props` that should be passed to new screen. We've already used Shoutem route object in shortcut `action` which we passed to `navigateTo` action.
+Add this component in `renderRow` method to _RestaurantsList_. When invoking _RestaurantsRow_ component, we will need to pass `restaurant` and `onPress` method. Method `onPress` needs to open new screen. That is done with React Native [navigator](https://facebook.github.io/react-native/docs/navigator.html#content) construct which is passed to every `screen` via `props`. Just call `navigator.push()` method with Shoutem [Route object](/docs/coming-soon) which accepts: screen property as constant and `props` that should be passed to new screen. We've already used Shoutem route object in shortcut `action` which we passed to `navigateTo` action.
 
 Add this to _RestaurantsList_ screen:
 
@@ -101,7 +101,7 @@ Picture and title are be there. Clicking on row also opens new screen.
 <img src='http://shoutem.github.io/img/getting-started/restaurant-row-1.png'/>
 </p>
 
-However, list row doesn't look as we planned. We need to make use out of [Flexbox](https://facebook.github.io/react-native/docs/flexbox.html) and [style](TODO) from React Native. This is complete code what you should end up with:
+However, list row doesn't look as we planned. We need to make use out of [Flexbox](https://facebook.github.io/react-native/docs/flexbox.html) and [style](https://facebook.github.io/react-native/docs/style.html) from React Native. This is complete code what you should end up with:
 
 
 <pre>

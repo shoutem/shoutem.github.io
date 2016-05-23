@@ -46,7 +46,7 @@ Application needs to know where it can find extension parts. To support arbitrar
 - middleware and
 - application lifecycle methods.
 
-The 2 latter we won't use in this tutorial, but you can find more information on these [here](TODO). Current `index.js` looks as follows:
+The 2 latter we won't use in this tutorial, but you can find more information on these [here](/docs/coming-soon). Current `index.js` looks as follows:
 
 ```
 export const screens = {};
@@ -88,7 +88,7 @@ This is what you get:
 <img src='http://shoutem.github.io/img/getting-started/with-custom-extensions.png'/>
 </p>
 
-Try clicking now on `RestaurantsExtensions` on [Shoutem builder](TODO). You see your shortcut defined there! Click on it. Nothing happens. That's exactly what `openRestaurantsList` action does - nothing. Let's change that so it opens screen.
+Try clicking now on `RestaurantsExtensions` on [Shoutem builder](/docs/coming-soon). You see your shortcut defined there! Click on it. Nothing happens. That's exactly what `openRestaurantsList` action does - nothing. Let's change that so it opens screen.
 
 <nav>
   <ul class="pager">

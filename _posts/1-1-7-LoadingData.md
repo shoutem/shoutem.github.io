@@ -10,15 +10,15 @@ Now that we have data on Shoutem server, let's load that data on our `Restaurant
 
 We can have one big reducer which will manage whole application state, or more little reducers which will take care of different properties in the state. 
 
-Shoutem framework has [reducers](TODO) for `data schemas` which will change the state when you use `actions` from Shoutem framework. Import these reducers.
+Shoutem framework has [reducers](/docs/coming-soon) for `data schemas` which will change the state when you use `actions` from Shoutem framework. Import these reducers.
 
 ```
 import { storage, collection } from 'shoutem/reducers';
 ```
 
-Reducer [storage](TODO) retrieves resources in dictionary while [collection](TODO) stores resources ID's in array so the order is maintained.
+Reducer [storage](/docs/coming-soon) retrieves resources in dictionary while [collection](/docs/coming-soon) stores resources ID's in array so the order is maintained.
 
-Make use of Redux's [combineReducers](TODO) to create one `Root reducer` from more Shoutem reducers. Remember how we're identifying extension parts: `developerName`.`extensionName`.`extensionPartName`. In this case, extension part we're talking about is data schema, specifically `Restaurants` schema.
+Make use of Redux's [combineReducers](http://redux.js.org/docs/api/combineReducers.html) to create one `Root reducer` from more Shoutem reducers. Remember how we're identifying extension parts: `developerName`.`extensionName`.`extensionPartName`. In this case, extension part we're talking about is data schema, specifically `Restaurants` schema.
 
 ```
 import { combineReducers } from 'redux';
@@ -53,7 +53,7 @@ import { find } from 'shoutem/cms';
 import { Spinner } from 'shoutem/views';
 </pre>
 
-Add `componentDidMount` React [component lifecycle method](TODO) as a place to fetch data. When fetching data, you need to specify which `data schema` should be filled.
+Add `componentDidMount` React [component lifecycle method](https://facebook.github.io/react/docs/component-specs.html#mounting-componentdidmount) as a place to fetch data. When fetching data, you need to specify which `data schema` should be filled.
 
 <pre>
 componentDidMount() {

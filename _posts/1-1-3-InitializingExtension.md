@@ -26,7 +26,7 @@ Initialize the project:
 shoutem init
 ```
 
-General information about extension which you just entered is contained in `extension.json`. You can read [more](TODO) about initializing process with additional features, like creating _extension_ from template.
+General information about extension which you just entered is contained in `extension.json`. You can read [more](/docs/coming-soon) about initializing process with additional features, like creating _extension_ from template.
 
 > ### Note
 > In case you can't remember the structure of some command, type: `shoutem help [command]` where you should replace '[command]' with one of the [CLI commands](#list-of-commands)

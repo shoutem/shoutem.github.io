@@ -21,13 +21,13 @@ As shown on the following picture, every Shoutem application is made of extensio
 <img src='{{ site.baseUrl }}/img/getting-started/apps-are-made-of-extensions.png'/>
 </p>
 
-Extensions represent small features that are connected to application through [shortcuts](/docs/coming-soon). Application admins just connect wanted extensions to their HomeScreen [HomeScreen](TODO) through extensions' shortcuts and fill out the content! Everything in the application is represented via extensions - even HomeScreen is extension!
+Extensions represent small features that are connected to application through [shortcuts](/docs/coming-soon). Application admins just connect wanted extensions to their HomeScreen [HomeScreen](/docs/coming-soon) through extensions' shortcuts and fill out the content! Everything in the application is represented via extensions - even HomeScreen is extension!
 
 Extension contains of the following parts:
 
-- [data](TODO): Data used in extension
-- [component](TODO): Component will be shown on screen (e.g. button, list, image, text area)
-- [screen](TODO): Defines how to render components on mobile screen and send data to them
+- [data](/docs/coming-soon): Data used in extension
+- [component](/docs/coming-soon): Component will be shown on screen (e.g. button, list, image, text area)
+- [screen](/docs/coming-soon): Defines how to render components on mobile screen and send data to them
 
 <p class="image">
 <img src='http://shoutem.github.io/img/getting-started/extensions-consist-of.png'/>
@@ -39,7 +39,7 @@ Extension contains of the following parts:
 
 <hr />
 
-Shoutem uses [React](TODO) and [React Native](TODO) as frameworks for building cross-platform apps. React is an open-source JavaScript library providing a *View* from M**V**C framework, while React Native exposes iOS and Android *native* components to React environment. It is important to mention that these 2 technologies represent only prerequisites for using Shoutem. You can use [JSX](TODO) as a simpler way to define how your UI component should look like. This is how  `Text` UI component is written in JSX:
+Shoutem uses [React](https://facebook.github.io/react/) and [React Native](https://facebook.github.io/react-native/) as frameworks for building cross-platform apps. React is an open-source JavaScript library providing a *View* from M**V**C framework, while React Native exposes iOS and Android *native* components to React environment. It is important to mention that these 2 technologies represent only prerequisites for using Shoutem. You can use [JSX](https://facebook.github.io/react/docs/jsx-in-depth.html) as a simpler way to define how your UI component should look like. This is how  `Text` UI component is written in JSX:
 
 ```
 <Text>Hello World!</Text>
@@ -51,7 +51,7 @@ On top of React and React Native, we're using [Redux](http://redux.js.org/) as a
 <img src='http://shoutem.github.io/img/getting-started/redux.png'/>
 </p>
 
-Each application has a [Redux store](http://redux.js.org/docs/basics/Store.html) which holds the `application state`. When the state changes, React automatically updates the UI component. Application can dispatch [Redux actions](TODO) on events, e.g. tapping on button, which will hold information about that event. Dispatched actions will be handled by [Redux reducers](TODO) which specify what is the next state given the action. Once reducers handle action, application is in the new state and UI component automatically adopts to the new state.
+Each application has a [Redux store](http://redux.js.org/docs/basics/Store.html) which holds the `application state`. When the state changes, React automatically updates the UI component. Application can dispatch [Redux actions](http://redux.js.org/docs/basics/Actions.html) on events, e.g. tapping on button, which will hold information about that event. Dispatched actions will be handled by [Redux reducers](http://redux.js.org/docs/basics/Reducers.html) which specify what is the next state given the action. Once reducers handle action, application is in the new state and UI component automatically adopts to the new state.
 
 <br />
 

@@ -33,9 +33,9 @@ Shoutem created `Restaurants.json` under new folder `server/data-schemas` folder
 }
 ```
 
-```Restaurants.json``` is already prefilled with some memebers. Member ```type``` corresponds with the name passed when creating schema - that is the denoting the type of the Schema. Member ```properties``` represents properties of the instances created by ```Restaurants``` schema and it comes with the member ```name```. We'll use that for Restaurant's name. Other members are _meta_ about the schema and are explained in [Data]() chapter.
+```Restaurants.json``` is already prefilled with some memebers. Member ```type``` corresponds with the name passed when creating schema - that is the denoting the type of the Schema. Member ```properties``` represents properties of the instances created by ```Restaurants``` schema and it comes with the member ```name```. We'll use that for Restaurant's name. Other members are _meta_ about the schema and are explained in [Data](/docs/coming-soon) chapter.
 
-Now we want to add some data to our _Restaurants_ schema. Since that's the job for `application admin`, we need to add `Admin page` to Shoutem builder for our extension. `Admin pages` are registered to specific extension shortcut. Shoutem has a list of [predefined Admin pages](TODO), out of which some have the purpose of entering the content for some data-schema. We need that Admin page which acts as Content page. Let's add it to `extension.json`:
+Now we want to add some data to our _Restaurants_ schema. Since that's the job for `application admin`, we need to add `Admin page` to Shoutem builder for our extension. `Admin pages` are registered to specific extension shortcut. Shoutem has a list of [predefined Admin pages](/docs/coming-soon), out of which some have the purpose of entering the content for some data-schema. We need that Admin page which acts as Content page. Let's add it to `extension.json`:
 
 <pre>
 {
