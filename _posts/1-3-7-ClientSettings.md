@@ -219,3 +219,14 @@ shoutem upload
 Everything works as expected!
 
 TODO - add good picture (that is the same as mockup)
+
+<nav>
+  <ul class="pager">
+    <li class="previous">
+      <a href="http://shoutem.github.io/docs/3rd-party/shoutem-sdk"><span aria-hidden="true">&larr;</span> Previous</a>
+    </li>
+    <li class="next">
+      <a href="http://shoutem.github.io/docs/3rd-party/summary">Next <span aria-hidden="true">&rarr;</span></a>
+    </li>
+  </ul>
+</nav>

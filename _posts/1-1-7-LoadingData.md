@@ -159,4 +159,3 @@ However, we don't want only title to be visible in list, but also to show image 
     </li>
   </ul>
 </nav>
-

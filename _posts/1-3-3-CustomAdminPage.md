@@ -67,3 +67,14 @@ This is the result you got in admin panel of `OpenProductList` shortcut.
 TODO - add picture representing admin page, only with input control described in HTML of admin page on selected shortcut.
 
 Now that we've built custom admin page, let's make it authorize Shopify app.
+
+<nav>
+  <ul class="pager">
+    <li class="previous">
+      <a href="http://shoutem.github.io/docs/3rd-party/creating-ui"><span aria-hidden="true">&larr;</span> Previous</a>
+    </li>
+    <li class="next">
+      <a href="http://shoutem.github.io/docs/3rd-party/authorize">Next <span aria-hidden="true">&rarr;</span></a>
+    </li>
+  </ul>
+</nav>

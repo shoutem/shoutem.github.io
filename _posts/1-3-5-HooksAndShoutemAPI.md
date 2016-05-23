@@ -232,3 +232,14 @@ Great job for reaching the end of this chapter! Do `shoutem upload` and navigate
 TODO - add picture of this controller with copied code and the name
 
 Don't forget that in admin page we assumed that we have `SHOUTEM_APP_ID` set, but actually we didn't. It's the time for getting that id through Shoutem builder SDK.
+
+<nav>
+  <ul class="pager">
+    <li class="previous">
+      <a href="http://shoutem.github.io/docs/3rd-party/authorize"><span aria-hidden="true">&larr;</span> Previous</a>
+    </li>
+    <li class="next">
+      <a href="http://shoutem.github.io/docs/3rd-party/shoutem-sdk">Next <span aria-hidden="true">&rarr;</span></a>
+    </li>
+  </ul>
+</nav>

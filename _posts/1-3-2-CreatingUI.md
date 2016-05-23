@@ -188,3 +188,14 @@ This is the result that you see in the builder.
 TODO - add image that shows current status of the extension, with hardcoded products with descriptions and product placeholders.
 
 Keep in mind that this is generated with static data. However, we want to actually connect to admin's Shopify store and to get products from there. For that, admin needs to authorize your Shopify app to read data from Shopify. Let's do that by making custom admin page.
+
+<nav>
+  <ul class="pager">
+    <li class="previous">
+      <a href="http://shoutem.github.io/docs/3rd-party/introduction"><span aria-hidden="true">&larr;</span> Previous</a>
+    </li>
+    <li class="next">
+      <a href="http://shoutem.github.io/docs/3rd-party/custom-admin-page">Next <span aria-hidden="true">&rarr;</span></a>
+    </li>
+  </ul>
+</nav>

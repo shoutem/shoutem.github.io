@@ -104,3 +104,14 @@ To try if it works, you need to [remove](TODO) app from your Shopify store and r
 TODO - add picture showing admin page once user is authenticated to shopify with text "Extension is successfully authorized for shop: shoutem.myshopify.com" - you can use any other shopify shop name if necessary
 
 Now that we have `ACCESS TOKEN` for Shopify shop, we're done with the builder side as well. Only mobile extension part is missing now. Let's make that.
+
+<nav>
+  <ul class="pager">
+    <li class="previous">
+      <a href="http://shoutem.github.io/docs/3rd-party/hooks"><span aria-hidden="true">&larr;</span> Previous</a>
+    </li>
+    <li class="next">
+      <a href="http://shoutem.github.io/docs/3rd-party/client-settings">Next <span aria-hidden="true">&rarr;</span></a>
+    </li>
+  </ul>
+</nav>

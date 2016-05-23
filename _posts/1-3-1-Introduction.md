@@ -39,3 +39,11 @@ Following pictures represent the mockup:
 TODO - mockup pictures
 
 Let's start by creating UI of the extension.
+
+<nav>
+  <ul class="pager">
+    <li class="next">
+      <a href="http://shoutem.github.io/docs/3rd-party/creating-ui">Next <span aria-hidden="true">&rarr;</span></a>
+    </li>
+  </ul>
+</nav>

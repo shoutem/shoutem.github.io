@@ -92,3 +92,14 @@ Notice `EXTENSION_HOST` variable. It's value represents the host IP address whic
 Replace `[YOUR_HOST]` variable with `extensions.shoutem.com/dev-name.shopify-extension` which represents the API endpoint of your extension. Don't forget to replace `dev-name` with your developer name. Also, replace `[YOUR_API_KEY]` with the API_KEY of Shopify app. Notice that we have one unresolved variable: `SHOUTEM_APP_ID`. Leave that for now, until we introduce Shoutem SDK.
 
 Following the authorization lifecycle, let's add a _hook controller_ for our extension which will communicate with Shopify service.
+
+<nav>
+  <ul class="pager">
+    <li class="previous">
+      <a href="http://shoutem.github.io/docs/3rd-party/custom-admin-page"><span aria-hidden="true">&larr;</span> Previous</a>
+    </li>
+    <li class="next">
+      <a href="http://shoutem.github.io/docs/3rd-party/hooks">Next <span aria-hidden="true">&rarr;</span></a>
+    </li>
+  </ul>
+</nav>
