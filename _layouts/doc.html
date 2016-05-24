@@ -9,7 +9,8 @@
   {% include navbar.html %}
 
 	<div id="wrapper">
-    <div id="sidebar-wrapper">
+    <div class="container-docs clearfix">
+      <div id="sidebar-wrapper">
   <ul class="sidebar-nav" id="menu">
       
     <li class="sidebar-brand">
@@ -150,7 +151,7 @@
       </div>
     </div>
     <div class"clearfix"></div>
-
+    </div>
   </div>
   
   <div id="mobile-menu-overlay" class="mobile-menu-overlay" onclick="closeMenu()">
@@ -169,9 +170,11 @@
         <li class="nav-link"><a href="http://www.shoutem.com/dmca">DMCA</a></li>
       </ul>
     </div>
-
+    
+  {% include footer.html %}
   <!-- Set active menu -->
   <script src="https://code.jquery.com/jquery-2.2.3.min.js"   integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo="   crossorigin="anonymous"></script>
+  <script type="text/javascript" src="/js/headroom.min.js"></script>
   <script src="/js/menu.js"></script>
   <script src="/js/main.js"></script>
   <script>
