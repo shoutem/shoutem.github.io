@@ -132,7 +132,7 @@ class RestaurantsDetails extends Component {
 export default connect((state, ownProps) => state)(RestaurantsDetails)
 ```
 
-```
+```ShellSession
 shoutem push
 Uploading `Restaurants` extension to Shoutem...
 Success!
