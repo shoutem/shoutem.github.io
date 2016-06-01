@@ -8,8 +8,8 @@ permalink: /docs/getting-started/using-cloud-storage
 
 Shoutem Cloud Storage is a CMS solution for mobile apps. It is optimized to be used within React Native apps with premade `reducers` and `actions` that are available in `shoutem-cloud` package. To describe model of your data on Shoutem Cloud, you need to define `Data Schema`:
 
-```
-shoutem create data-schema Restaurants
+```ShellSession
+$ shoutem create data-schema Restaurants
 `Restaurants` data schema is created.
 Success!
 ```
@@ -103,8 +103,8 @@ Change `dev-name` with your developer name.
 
 Upload the extension:
 
-```
-shoutem push
+```ShellSession
+$ shoutem push
 Uploading `Restaurants` extension to Shoutem...
 Success!
 ```

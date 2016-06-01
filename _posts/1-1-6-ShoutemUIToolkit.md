@@ -58,8 +58,8 @@ render() {
 
 Upload your extension.
 
-```
-shoutem push
+```ShellSession
+$ shoutem push
 Uploading `Restaurants` extension to Shoutem...
 Success!
 ```
