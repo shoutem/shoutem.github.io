@@ -33,7 +33,7 @@ Description: Show the cool restaurants!
 This information will be stored in `extension.json` file.
 
 > #### Note
-> In case you can't remember the structure of some command, type: `shoutem help` or `shoutem help [command]` where you should replace '[command]' with one of the [CLI commands](/docs/coming-soon)
+> In case you can't remember the structure of some command, type: `shoutem help` or `shoutem help [command]` where you should replace '[command]' with one of the [CLI commands](/docs/cli/reference)
 
 ## Folder structure
 Initialization process already filled your folder with additional files and folders. Your structure looks like this:
