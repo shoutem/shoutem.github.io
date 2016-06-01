@@ -29,7 +29,7 @@ This is for the first time that we used `server` folder for something. The reaso
 
 Let's add now properties that we want to persist for a restaurant, such as: `name`, `address`, `description`, `url`, `image` and `mail`.
 
-```JSON{4-,34}
+```JSON{4-34}
 #file: server/data-schemas/Restaurants.json
 {
   "name": "Restaurants",
