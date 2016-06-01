@@ -3,64 +3,47 @@ layout: doc
 permalink: /docs/getting-started/introduction
 ---
 
-# Getting Started!
+# Getting Started
 <hr />
-This tutorial shows how to write the custom Extensions for Shoutem mobile platform. It introduces the most important concepts of Shoutem extensions. After completing this tutorial, you will have a running mobile app that retrieves content from the Shoutem CMS.
 
-Here you can find a preview how completed app will look like.
+This tutorial shows how to write custom Extensions for Shoutem platform. It introduces the most important Shoutem extensions concepts. After completing this tutorial, you will have a running mobile app that retrieves content from the Shoutem CMS.
+
+Here's a preview how completed app will look like.
 
 <p class="image">
-<img src='http://shoutem.github.io/img/getting-started/restaurant-preview.png'/>
+<img src='{{ site.baseurl }}/img/getting-started/extension-preview.png'/>
 </p>
 
 ## So what are extensions?
-
 As shown on the following picture, every Shoutem application is made of extensions.
 
 <p class="image">
-<img src='{{ site.baseUrl }}/img/getting-started/apps-are-made-of-extensions.png'/>
+<img src='{{ site.baseurl }}/img/getting-started/apps-are-made-of-extensions.png'/>
 </p>
 
-Extensions represent small features that are connected to application through [shortcuts](/docs/coming-soon). Application admins just connect wanted extensions to their HomeScreen [HomeScreen](/docs/coming-soon) through extensions' shortcuts and fill out the content! Everything in the application is represented via extensions - even HomeScreen is extension!
-
-Extension contains of the following parts:
-
-- [data](/docs/coming-soon): Data used in extension
-- [component](/docs/coming-soon): Component will be shown on screen (e.g. button, list, image, text area)
-- [screen](/docs/coming-soon): Defines how to render components on mobile screen and send data to them
+Extensions represent small features that are connected to application through [shortcuts](/docs/coming-soon). Application admins just connect wanted extensions to application's [Home Screen](/docs/coming-soon) and fill out the content! Shoutem prepared a bunch of **open sourced** extensions which you can easily checkout and customize to your needs.
 
 <p class="image">
-<img src='http://shoutem.github.io/img/getting-started/extensions-consist-of.png'/>
+<img src='{{ site.baseurl }}/img/getting-started/shoutem-extensions.png'/>
 </p>
 
-<br />
-
-## Technology
+## About technology
 
 <hr />
 
-Shoutem uses [React](https://facebook.github.io/react/) and [React Native](https://facebook.github.io/react-native/) as frameworks for building cross-platform apps. React is an open-source JavaScript library providing a *View* from M**V**C framework, while React Native exposes iOS and Android *native* components to React environment. It is important to mention that these 2 technologies represent only prerequisites for using Shoutem. You can use [JSX](https://facebook.github.io/react/docs/jsx-in-depth.html) as a simpler way to define how your UI component should look like. This is how  `Text` UI component is written in JSX:
-
-```
-<Text>Hello World!</Text>
-```
-
-On top of React and React Native, we're using [Redux](http://redux.js.org/) as a pattern to write extensions. Redux envolves from Flux introducing simpler, one-way data flow for predictive application behavior. Although Shoutem is using Redux for it's architecture within the application, you're free to use any other application architecture. However, tutorials will use Redux constructs when writing extension. There are several constructs in Redux shown on next picture:
+Shoutem uses [React](https://facebook.github.io/react/) and [React Native](https://facebook.github.io/react-native/) as frameworks for building cross-platform apps. React is an open source JavaScript library providing a **View** from M**V**C framework, while React Native exposes iOS and Android *native* components to React environment. We're also using [JSX](https://facebook.github.io/react/docs/jsx-in-depth.html) as a simpler way to define UI components. It looks like this:
 
 <p class="image">
-<img src='http://shoutem.github.io/img/getting-started/redux.png'/>
+<img src='{{ site.baseurl }}/img/getting-started/jsx-component-example.png'/>
+</p>
+
+On top of React and React Native, we're using [Redux](http://redux.js.org/), one-way data flow pattern for predictive application behavior. There are several constructs in Redux shown on next picture:
+
+<p class="image">
+<img src='{{ site.baseurl }}/img/getting-started/redux.png'/>
 </p>
 
 Each application has a [Redux store](http://redux.js.org/docs/basics/Store.html) which holds the `application state`. When the state changes, React automatically updates the UI component. Application can dispatch [Redux actions](http://redux.js.org/docs/basics/Actions.html) on events, e.g. tapping on button, which will hold information about that event. Dispatched actions will be handled by [Redux reducers](http://redux.js.org/docs/basics/Reducers.html) which specify what is the next state given the action. Once reducers handle action, application is in the new state and UI component automatically adopts to the new state.
 
-<br />
-
-Let's start making first extension. We'll start with [setting your development environment](http://shoutem.github.io/docs/getting-started/development-environment).
-
-<nav>
-  <ul class="pager">
-    <li class="next">
-      <a href="http://shoutem.github.io/docs/getting-started/development-environment">Let's roll! <span aria-hidden="true">&rarr;</span></a>
-    </li>
-  </ul>
-</nav>
+## Create extension
+Best way to understand the power of the extensions, is to get your hands dirty. We'll start with [setting your development environment](http://shoutem.github.io/docs/getting-started/development-environment).

@@ -1,36 +1,43 @@
 ---
 layout: doc
-permalink: /docs/user-data/introduction
+permalink: /docs/ui-toolkit/introduction
 ---
 
-# User data on your extension
+# Introduction
 
-This tutorial shows you can allow users of your application to submit their data, through building extension for rating restaurants. It will include users submitting their reviews using [Shoutem storage](TODO) and calculating the average points with [Shoutem Cloud Code](TODO). We will continue from the extension we've made in [Getting started](TODO) tutorial, so if you still haven't, check that tutorial which introduces the core principles of Shoutem platform. [Here's](TODO) the code you should end up with after that extension is done.
+![alt text]({{ site.baseurl }}/img/ui-toolkit/introduction.jpg "UI toolkit"){:.docs-component-image}
 
-### New concepts
-In this tutorial, these new concepts will be covered:
+`shoutem-ui` is a UI toolkit that enables you to build beautiful React Native apps by using our professionally designed UI components. All our components are built from the ground up to be both composable and themeable. Each component has a predefined style that is compatible with the rest of the toolkit, this makes it possible to build complex components that look great without the need to manually define complex styles.
 
-- defining permissions for your Schemas
-- Shoutem Authentication
-- introducing Shoutem Cloud Code
-- advanced usage of Shoutem Admin Pages
+To accomplish all that, we have built support for themes on top of React Native style. Each component has a built in style that will be used by default, but if you decide to add themes to your app, our components will automatically pick up custom styles from the active theme. Themes are completely optional, all UI components can be styled as normal React Native components as well, by passing the custom style rules through the `style` prop.
 
-### About the extension
+You can find out more about themes [here]({{ site.baseurl }}/docs/ui-toolkit/theme).
 
-Let's describe what we want to build. Restaurants Rating extension lists all the restaurants with the average points. Once some restaurant from the list is selected, new screen with the details of the restaurant is opened. That screen will also include form submitting users' reviews with associated points.
+## Installation
 
-Following picture represents the mockup:
+`shoutem-ui` is available on npm:
 
-<p class="image">
-<img src='http://shoutem.github.io/img/user-data/restaurant-rating-end-result.png'/>
-</p>
+```bash
+$ npm install shoutem-ui
+```
 
-Let's extend our restaurants extension with permission which allows all users to submit their ratings.
+To use it, simply import the desired components and start using them in your layouts:
 
-<nav>
-  <ul class="pager">
-    <li class="next">
-      <a href="http://shoutem.github.io/docs/user-data/adapt-ui">Next <span aria-hidden="true">&rarr;</span></a>
-    </li>
-  </ul>
-</nav>
+```JavaScript
+import React, { Component } from 'react';
+import { Tile, Subtitle, Caption } from 'shoutem-ui';
+
+class NewsItem extends Component {
+  render() {
+    return (
+      <Tile>
+        <Image source="..." />
+        <Subtitle lines=2>When The Morning Dawns - DJ Silver Samples</Subtitle>
+        <Caption>20 hours ago</Caption>
+      </Tile>
+    );
+  }
+}
+```
+
+You can also use standard React Native components in your layouts anywhere you wish, but they will not inherit either the theme or parent styles, so you will need to style them manually.

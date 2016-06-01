@@ -2,7 +2,9 @@
 <html>
 
   {% include head.html %}
-  <link rel="stylesheet" type="text/css" href="/css/documentation.css">
+  <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/css/prism.css">
+  <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/css/documentation.css">
+  <!-- <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/lib/codemirror/codemirror.css"> -->
   </head>
 
 	<body>
@@ -12,133 +14,114 @@
     <div class="container-docs clearfix">
       <div id="sidebar-wrapper">
   <ul class="sidebar-nav" id="menu">
-      
+
     <li class="sidebar-brand">
       <a href="/docs/">
           Developer portal
       </a>
     </li>
-    <!-- Getting started -->
+    <!-- Extensions -->
     <li>
-      <a class="menu-group-title" href="/docs/getting-started/introduction">Getting Started</a>
-      <div id="getting-started" style="display:none;">
+      <a class="menu-group-title" href="{{ site.baseurl }}/docs/getting-started/introduction">Getting Started</a>
+      <div id="getting-started" class="menu-group-wrapper" style="display:none;">
         <ul>
           <li>
-            <a href="/docs/getting-started/introduction">Introduction</a>
+            <a href="{{ site.baseurl }}/docs/getting-started/introduction">Introduction</a>
           </li>
           <li>
-            <a href="/docs/getting-started/development-environment">Development Environment</a>
+            <a href="{{ site.baseurl }}/docs/getting-started/development-environment">Setting Environment</a>
           </li>
           <li>
-            <a href="/docs/getting-started/initializing-extension">Initializing Extension</a>
+            <a href="{{ site.baseurl }}/docs/getting-started/initializing-extension">Initializing Extension</a>
           </li>
           <li>
-            <a href="/docs/getting-started/shortcut">Shortcut</a>
+            <a href="{{ site.baseurl }}/docs/getting-started/shortcut">Creating Shortcut</a>
           </li>
           <li>
-            <a href="/docs/getting-started/screen">Screen</a>
+            <a href="{{ site.baseurl }}/docs/getting-started/creating-screen">Creating Screen</a>
           </li>
           <li>
-            <a href="/docs/getting-started/data-schemas">Data Schemas</a>
+            <a href="{{ site.baseurl }}/docs/getting-started/shoutem-ui-toolkit">Using UI Toolkit</a>
           </li>
           <li>
-            <a href="/docs/getting-started/loading-data">Loading Data</a>
+            <a href="{{ site.baseurl }}/docs/getting-started/using-cloud-storage">Using Cloud Storage</a>
           </li>
           <li>
-            <a href="/docs/getting-started/component">Component</a>
+            <a href="{{ site.baseurl }}/docs/getting-started/working-with-data">Working with data</a>
           </li>
           <li>
-            <a href="/docs/getting-started/missing-fields">Missing fields</a>
-          </li>
-          <li>
-            <a href="/docs/getting-started/ui-toolkit">UI toolkit</a>
-          </li>
-          <li>
-            <a href="/docs/getting-started/publish">Publish</a>
+            <a href="{{ site.baseurl }}/docs/getting-started/publish">Publishing</a>
           </li>
         </ul>
       </div>
-    </li>
-
-    <!-- RestaurantsRatings -->
-    <li>
-      <a class="menu-group-title" href="/docs/user-data/introduction">Implementing user data</a>
-      <div id="user-data" style="display:none;">
-        <ul>
-          <li>
-            <a href="/docs/user-data/introduction">Introduction</a>
-          </li>
-          <li>
-            <a href="/docs/user-data/adapt-ui">Adapt UI</a>
-          </li>
-          <li>
-            <a href="/docs/user-data/submitting-user-data">Submitting user data</a>
-          </li>
-          <li>
-            <a href="/docs/user-data/shoutem-authentication">Shoutem Authentication</a>
-          </li>
-          <li>
-            <a href="/docs/user-data/properties-admin-pages">Properties for Admin pages</a>
-          </li>
-          <li>
-            <a href="/docs/user-data/cloud-code">Cloud Code</a>
-          </li>
-          <li>
-            <a href="/docs/user-data/summary">Summary</a>
-          </li>
-        </ul>
-      </div>
-    </li>
-
-    <!-- Shopify -->
-    <li>
-      <a class="menu-group-title" href="/docs/3rd-party/introduction">Connecting to 3rd party service</a>
-      <div id="3rd-party" style="display:none;">
-        <ul>
-          <li>
-            <a href="/docs/3rd-party/introduction">Introduction</a>
-          </li>
-          <li>
-            <a href="/docs/3rd-party/creating-ui">Creating UI</a>
-          </li>
-          <li>
-            <a href="/docs/3rd-party/custom-admin-page">Custom admin page</a>
-          </li>
-          <li>
-            <a href="/docs/3rd-party/authorize">Authorization</a>
-          </li>
-          <li>
-            <a href="/docs/3rd-party/hooks">Hooks and Shoutem API</a>
-          </li>
-          <li>
-            <a href="/docs/3rd-party/shoutem-sdk">Shoutem SDK</a>
-          </li>
-          <li>
-            <a href="/docs/3rd-party/client-settings">Client settings</a>
-          </li>
-          <li>
-            <a href="/docs/3rd-party/summary">Summary</a>
-          </li>
-        </ul>
-      </div>
-    </li>
-
-    <hr class="menu-hr"/>
-
-    <!-- API -->
-    <li>
-      <a class="menu-group-title" href="/docs/api">API</a>
     </li>
 
     <!-- Components -->
     <li>
-      <a class="menu-group-title" href="/docs/components">Components</a>
+      <a class="menu-group-title" href="{{ site.baseurl }}/docs/ui-toolkit/introduction">UI toolkit</a>
+      <div id="ui-toolkit" class="menu-group-wrapper" style="display:none;">
+        <ul>
+       	   <li>
+            <a href="{{ site.baseurl }}/docs/ui-toolkit/introduction">Introduction</a>
+          </li>
+          <li>
+            <a href="{{ site.baseurl }}/docs/ui-toolkit/theme">Theme</a>
+          </li>
+       	  <li>
+            <a href="{{ site.baseurl }}/docs/ui-toolkit/typography">Typography</a>
+          </li>
+          <li>
+            <a href="{{ site.baseurl }}/docs/ui-toolkit/navigation-bar">Navigation Bar</a>
+          </li>
+          <li>
+            <a href="{{ site.baseurl }}/docs/ui-toolkit/dropdown-menu">Dropdown Menu</a>
+          </li>
+          <li>
+            <a href="{{ site.baseurl }}/docs/ui-toolkit/list-view">List View</a>
+          </li>
+          <li>
+            <a href="{{ site.baseurl }}/docs/ui-toolkit/grid-view">Grid View</a>
+          </li>
+          <li>
+            <a href="{{ site.baseurl }}/docs/ui-toolkit/cards">Cards</a>
+          </li>
+          <li>
+            <a href="{{ site.baseurl }}/docs/ui-toolkit/dividers">Dividers</a>
+          </li>
+          <li>
+            <a href="{{ site.baseurl }}/docs/ui-toolkit/rows">Rows</a>
+          </li>
+          <li>
+            <a href="{{ site.baseurl }}/docs/ui-toolkit/tiles">Tiles</a>
+          </li>
+          <li>
+            <a href="{{ site.baseurl }}/docs/ui-toolkit/image-preview">Image Preview</a>
+          </li>
+          <li>
+            <a href="{{ site.baseurl }}/docs/ui-toolkit/horizontal-pager">Horizontal Pager</a>
+          </li>
+          <li>
+            <a href="{{ site.baseurl }}/docs/ui-toolkit/image-gallery">Image Gallery</a>
+          </li>
+          <li>
+            <a href="{{ site.baseurl }}/docs/ui-toolkit/video">Video</a>
+          </li>
+          <li>
+            <a href="{{ site.baseurl }}/docs/ui-toolkit/spinner">Spinner</a>
+          </li>
+          <li>
+        </ul>
+      </div>
     </li>
-
-    <!-- Debugging -->
+    <!-- CLI -->
     <li>
-      <a class="menu-group-title" href="/docs/debugging">Debugging</a>
-    </li>
+      <a class="menu-group-title" href="{{ site.baseurl }}/docs/CLI/reference">CLI</a>
+      <div id="cli" class="menu-group-wrapper" style="display:none;">
+        <ul>
+       	   <li>
+            <a href="{{ site.baseurl }}/docs/CLI/reference">Reference</a>
+          </li>
+        </ul>
   </ul>
 </div>
 
@@ -152,8 +135,19 @@
     </div>
     <div class"clearfix"></div>
     </div>
+
+    <nav id="pager-wrapper">
+      <ul class="pager">
+        <li class="previous" style="display: none;">
+          <a href="#"><img class="docs-pager-icon-left" aria-hidden="true" src="{{ site.baseurl }}/img/icon-arrow-left.svg"></img>Previous</a>
+        </li>
+        <li class="next" style="display: none;">
+          <a href="#">Next<img class="docs-pager-icon-right" aria-hidden="true" src="{{ site.baseurl }}/img/icon-arrow-right.svg"></a>
+        </li>
+      </ul>
+    </nav>
   </div>
-  
+
   <div id="mobile-menu-overlay" class="mobile-menu-overlay" onclick="closeMenu()">
       <div class="close-menu-overlay">
         <span class="close-icon"></span>
@@ -161,7 +155,7 @@
       <ul>
         <li class="nav-link primary"><a href="/">Home</a></li>
         <!--<li class="nav-link primary"><a href="">Features</a></li>-->
-        <li class="nav-link primary nav-link-active"><a href="/docs/getting-started/introduction">Docs</a></li>
+        <li class="nav-link primary nav-link-active"><a href="{{ site.baseurl }}/docs/getting-started/introduction">Docs</a></li>
         <li class="nav-separator"></li>
         <li class="nav-link"><a href="http://www.shoutem.com/">Shoutem Home</a></li>
         <li class="nav-link"><a href="http://www.shoutem.com/about">About</a></li>
@@ -170,33 +164,19 @@
         <li class="nav-link"><a href="http://www.shoutem.com/dmca">DMCA</a></li>
       </ul>
     </div>
-    
+
   {% include footer.html %}
   <!-- Set active menu -->
+
+  <!-- <script src="{{ site.baseurl }}/lib/codemirror/codemirror.js"></script>
+  <script src="{{ site.baseurl }}/lib/codemirror/mode/javascript/javascript.js"></script>
+  <script src="{{ site.baseurl }}/lib/codemirror/mode/jsx/jsx.js"></script> -->
+
   <script src="https://code.jquery.com/jquery-2.2.3.min.js"   integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo="   crossorigin="anonymous"></script>
-  <script type="text/javascript" src="/js/headroom.min.js"></script>
-  <script src="/js/menu.js"></script>
-  <script src="/js/main.js"></script>
-  <script>
-  $(function() {
-    showMenuItems();
-    // var location = window.location.href;
-    // var startingIndex = location.indexOf('/docs/') + 6;
-    // var endIndex = location.slice(startingIndex).indexOf('/') + startingIndex;
-    // var section = location.slice(startingIndex, endIndex);
-
-    // var path = location.slice(endIndex).slice(0, -1);
-
-    // $('#' + section).show();
-    // // Make active parent <li> of <a>
-    // // Select last matched link, because sections also have links
-
-    // $('#documentationTab').addClass('active');
-
-    // $('a[href$="' + path + '"]:last').parent().addClass('active');
-  });
-    
-  </script>
+  <script type="text/javascript" src="{{ site.baseurl }}/js/headroom.min.js"></script>
+  <script src="{{ site.baseurl }}/js/main.js"></script>
+  <script src="{{ site.baseurl }}/js/docs.js"></script>
+  <script src="{{ site.baseurl }}/js/prism.js" data-manual></script>
   {% include ga.html %}
 	</body>
 

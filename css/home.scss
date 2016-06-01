@@ -15,7 +15,7 @@ p {
 
 .section-header {
     @include headline(32px, 32px, $homeheading);
-    font-weight: 100;
+    font-weight: 300;
     text-align: center;
     padding-top: 80px;
     margin-bottom: 16px;
@@ -23,9 +23,10 @@ p {
 }
 
 .section-header--big {
-        margin-bottom: 60px;
-        font-size: 48px;
-    }
+    font-weight: 100;
+    margin-bottom: 60px;
+    font-size: 48px;
+}
 
 .section-subtitle {
     width: 55%;
@@ -73,7 +74,7 @@ p {
 }
 
 .flex-container {
-    max-width: 1170px;
+    max-width: 1000px;
     margin: 0 auto 80px;
     display: flex;
     flex-direction: row;

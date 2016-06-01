@@ -50,13 +50,9 @@ p {
 h1 {
     @include headline(48px, 48px);
 }
+
 h2 {
     @include headline(24px, 32px);
-}
-
-h1,
-h2 {
-    margin-bottom: 35px;
 }
 
 h4 {
@@ -81,11 +77,13 @@ a:hover {
 }
 
 ::-moz-selection {
+    color: white;
     background: #00aadf;
     text-shadow: none;
 }
 
 ::selection {
+    color: white;
     background: #00aadf;
     text-shadow: none;
 }

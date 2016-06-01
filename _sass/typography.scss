@@ -11,6 +11,29 @@
 
 @font-face {
     font-family: 'MuseoSans';
+    src: url('../fonts/museosans-100-webfont.eot');
+    src: url('../fonts/museosans-100-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/museosans-100-webfont.woff2') format('woff2'),
+         url('../fonts/museosans-100-webfont.woff') format('woff'),
+         url('../fonts/museosans-100-webfont.ttf') format('truetype');
+    font-weight: 100;
+    font-style: normal;
+
+}
+
+@font-face {
+   font-family: 'MuseoSans';
+   src: url('../fonts/museosans-300-webfont.eot');
+   src: url('../fonts/museosans-300-webfont.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/museosans-300-webfont.woff2') format('woff2'),
+        url('../fonts/museosans-300-webfont.woff') format('woff'),
+        url('../fonts/museosans-300-webfont.ttf') format('truetype');
+   font-weight: 300;
+   font-style: normal;
+}
+
+@font-face {
+    font-family: 'MuseoSans';
     src: url('../fonts/museosans_500-webfont.eot');
     src: url('../fonts/museosans_500-webfont.eot?#iefix') format('embedded-opentype'),
          url('../fonts/museosans_500-webfont.woff2') format('woff2'),
@@ -29,18 +52,6 @@
          url('../fonts/museosans_700-webfont.woff') format('woff'),
          url('../fonts/museosans_700-webfont.ttf') format('truetype');
     font-weight: bold;
-    font-style: normal;
-
-}
-
-@font-face {
-    font-family: 'MuseoSans';
-    src: url('../fonts/museosans-100-webfont.eot');
-    src: url('../fonts/museosans-100-webfont.eot?#iefix') format('embedded-opentype'),
-         url('../fonts/museosans-100-webfont.woff2') format('woff2'),
-         url('../fonts/museosans-100-webfont.woff') format('woff'),
-         url('../fonts/museosans-100-webfont.ttf') format('truetype');
-    font-weight: 100;
     font-style: normal;
 
 }

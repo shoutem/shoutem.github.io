@@ -6,14 +6,16 @@
 
     ul {
         padding: 0;
-        background-color: $lightaccent;
+        background-color: #fff;
     }
 
     li {
-        text-indent: 20px;
-        line-height: 40px;
+        text-indent: 15px;
+        padding-top: 1px;
+        line-height: 39px;
 
         &.active {
+            background-color: rgba(0,170,223,0.07);
             border-left: 3px solid $accent;
             a {
                 color: $accent; 
@@ -23,7 +25,25 @@
         ul {
             list-style: none;
             font-size: 15px;
-            margin-left: 20px;
+            margin-left: 15px;
+            
+            li {
+                text-indent: 17px;
+                border-left: 3px solid rgba(0,170,223,0);
+                transition: background .2s linear;
+                
+                &:hover {
+                    background: rgba(0,170,223,0.07);
+                }
+                
+                a:hover {
+                    color: #444f6c;
+                }
+                
+                &.active a:hover {
+                    color: #00aadf;
+                }
+            }
         }
 
         a {
@@ -37,12 +57,16 @@
             }
         }
     }
-}
-
-.menu-group-title {
-    color: $primary;
-    opacity: 0.6;
-    font-size: 17px;
+    
+    .menu-group-title {
+        color: #888fa1;
+        line-height: 48px;
+        transition: color .2s linear;
+        
+        &:hover {
+            color: #00aadf;
+        }
+    }
 }
 
 .sidebar-brand {

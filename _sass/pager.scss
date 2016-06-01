@@ -1,10 +1,10 @@
-#documentation .pager {
+#wrapper .pager {
     background: #FFFFFF;
     position: absolute;
     left: 0;
     right: 0;
     margin: 0;
-    padding-top: 22px;
+    padding-top: 80px;
 
     a {
         width: 50%;
@@ -17,10 +17,36 @@
     .previous a {
         background-color: $lightaccent;
         color: $accent;
+        transition: background 0.2s linear;
+        
+        &:hover {
+            background-color: rgba(0,170,223,0.14);
+        }
+
     }
 
     .next a {
         background-color: $accent;
         color: #fff;
+        transition: background 0.2s linear;
+        
+        &:hover {
+            background-color: #00bef7;
+        }
+    }
+    
+    img {
+        position: relative;
+        width: 13px;
+        height: 13px;
+        bottom: 1px;
+    }
+    
+    .docs-pager-icon-left {
+        right: 24px;
+    }
+    
+    .docs-pager-icon-right {
+        left: 24px;
     }
 }

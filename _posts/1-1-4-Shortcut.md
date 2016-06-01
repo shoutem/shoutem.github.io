@@ -3,42 +3,45 @@ layout: doc
 permalink: /docs/getting-started/shortcut
 ---
 
-# Shortcut
+# Creating Shortcut
 <hr />
 
-Shortcuts are a way to define entrance into the extension, usually a way to open the first screen of your extension. You can see it as starting point of some feature, e.g. functional unit of your extension. Let's now create a shortcut.
+Entry points of extensions are defined by shortcuts, which usually specify which screen will be opened first. Extensions can expose more shortcuts. You can see it as a starting point of some extension unit, e.g. feature - functional unit of your extension. Let's now create a shortcut.
 
-```
-shoutem shortcut OpenRestaurantsList
+```ShellSession
+$ shoutem create shortcut OpenRestaurantsList
+Enter shortcut's informations.
+Title: List of restaurants
+Description: Allow users to browse through list of restaurants
+`OpenRestaurantsList` shortcut is created.
 ```
 
 Your `extension.json` was just modified:
 
-<pre>
+```json
+#file: extension.json
 {
-  "name": "restaurant-extension",
+  "name": "restaurants",
   "version": "0.0.1",
 
-  "title": "RestaurantExtension",
-<span class="newCode">  "description": "List restaurants",
+  "title": "Restaurants",
+  "description": "Show the cool restaurants!",
   "shortcuts": [{
     "name": "OpenRestaurantsList",
-    "action": "dev-name.restaurant-extension.openRestaurantsList",
+    "action": "dev-name.restaurants.openRestaurantsList",
     "title": "List of restaurants",
-    "description": "Allow users to check the restaurants.",
-    "icon": "",
-    "adminPages": []
-  }]</span>
+    "description": "Allow users to browse through list of restaurants"
+  }]
 }
-</pre>
-
-Notice that `shortcut` object has properties `name`, which identifies the class of that Shortcut and `action`, which represents the action that will be triggered when shortcut is tapped. Do you remember when we said that we use `name` for defining parts of extension? In the `name` property, you're using so-called **relative name**, while in any other property where you're **referencing** extension part, you're using **absolute name**. That's why under `action` property, we're having `dev-name.restaurant-extension.openRestaurantsList` value instead of `openRestaurantsList`. Absolute name of extension part follows this structure: `{developerName}.{extensionName}.{extensionPartName}`. Now, you should replace `dev-name` with your developer name. If you forgot which developer name you've registered write:
-
-```
-shoutem config --get developer
 ```
 
-Application needs to know where it can find extension parts. To support arbitrary folder structure in your extension, your `app` folder contains `index.js` file which exports all the extension parts, such as:
+Notice that object in `shortcuts` has property `name`, which identifies the class of that Shortcut and `action`, which represents the action that will be triggered when shortcut is tapped. In the `name` property, use **relative name** to define an extension part. In properties like `action`, where extension part is referenced, use **absolute name**. That's why under `action` property, we're having `dev-name.restaurant-extension.openRestaurantsList` value instead of only `openRestaurantsList`. Absolute name of extension part follows this structure: `{developerName}.{extensionName}.{extensionPartName}`.
+
+In your `extension.json`, CLI already put your developer name to `dev-name` in this snippet, so you don't need to change anything.
+
+## Exporting extension parts
+
+Application needs to know where it can find extension parts. To give you freedom to use any folder structure for your extension, we expect your `app` folder to contain file named `index.js` which exports all the extension parts, such as:
 
 - actions,
 - reducer,
@@ -46,9 +49,13 @@ Application needs to know where it can find extension parts. To support arbitrar
 - middleware and
 - application lifecycle methods.
 
-The 2 latter we won't use in this tutorial, but you can find more information on these [here](/docs/coming-soon). Current `index.js` looks as follows:
+The two latter we won't use in this tutorial, but you can find more information on these [here](/docs/coming-soon). Current `index.js` looks as follows:
 
-```
+```JSX
+#file: app/index.js
+// Constants `screens`, `actions` and `reducer` are exported via named export
+// It is important to use those exact names
+
 export const screens = {};
 
 export const actions = {};
@@ -56,47 +63,39 @@ export const actions = {};
 export const reducer = {};
 ```
 
-Constants `screens`, `actions` and `reducer` are exported via named export and that's why it's important not to change their names.
+We'll store our actions in `actions.js` file, but as already mentioned, you can have any folder structure. Create `actions.js` file in `app` folder with this content:
 
-We'll store our actions in `actions.js` file, but as already mentioned, you can have any folder structure. Create `actions.js` file in `app` folder with such content:
-
-```
-export function openRestaurantsList() {
+```JSX
+#file: app/actions.js
+export function openRestaurantsList(shortcut) {
+  // implement an action that will open up a screen
 }
 ```
 
-Actions are nothing else than javascript functions. Export that action inside of `app/index.js` file:
+Actions are nothing else than JavaScript functions. Some actions are used to open `Screen` and some are used as `Redux actions`, to change the store. Export that action inside of `app/index.js` file:
 
-<pre>
-<span class="newCode">import * as actions from './actions';</span>
+```javascript{1,4}
+#file: app/index.js
+import * as actions from './actions';
 export const screens = {};
 
-<span class="newCode">export actions;</span>
+export actions;
 
 export const reducer = {};
-</pre>
+```
 
 Finally:
 
-```
-shoutem upload
+```ShellSession
+$ shoutem push
+Uploading `Restaurants` extension to Shoutem...
+Success!
 ```
 
-This is what you get:
+Go to `Shoutem Builder` and click on `Screens`. Try checking `Add` modal now. You can finally see your `extension` there. Moreover, you can see it's shortcut that it's exposing:
 
 <p class="image">
-<img src='http://shoutem.github.io/img/getting-started/with-custom-extensions.png'/>
+<img src='{{ site.baseurl }}/img/getting-started/add-modal-shortcut.png'/>
 </p>
 
-Try clicking now on `RestaurantsExtensions` on [Shoutem builder](/docs/coming-soon). You see your shortcut defined there! Click on it. Nothing happens. That's exactly what `openRestaurantsList` action does - nothing. Let's change that so it opens screen.
-
-<nav>
-  <ul class="pager">
-    <li class="previous">
-      <a href="http://shoutem.github.io/docs/getting-started/initializing-extension"><span aria-hidden="true">&larr;</span> Previous</a>
-    </li>
-    <li class="next">
-      <a href="http://shoutem.github.io/docs/getting-started/screen">Next <span aria-hidden="true">&rarr;</span></a>
-    </li>
-  </ul>
-</nav>
+Try clicking now on `List of restaurants` in `Add` modal. Shotcut is inserted into app navigation, but nothing else happens! That's exactly what `openRestaurantsList` action does - nothing. Let's change that so it opens `Screen`.

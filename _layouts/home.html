@@ -2,7 +2,7 @@
 <html lang="en-us">
 
   {% include head.html %}
-  <link rel="stylesheet" type="text/css" href="/css/home.css">
+  <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/css/home.css">
   </head>
 
   <body>
@@ -125,43 +125,30 @@
                   <div class="getting-started-icon"></div>
                 </div>
                 <div class="chapter-content">
-                  <div class="chapter-category">Getting started</div>
-                  <h4 class="chapter-title">Hello, world!</h4>
+                  <div class="chapter-category">Tutorial</div>
+                  <h4 class="chapter-title">Getting started</h4>
                   <p class="chapter-description">Create your first custom Shoutem app/extension in three simple steps</p>
-                  <div class="chapter-time"><div class="time-icon"></div><span> 10 min &nbsp;&#8226;&nbsp; Simple</span></div>
+                  <div class="chapter-time"><div class="time-icon"></div><span> 15 min &nbsp;&#8226;&nbsp; Simple</span></div>
                 </div>
               </div>
-              <div class="chapter" onclick="window.location.href='/docs/user-data/introduction'">
+              <div class="chapter" onclick="window.location.href='/docs/ui-toolkit/introduction'">
                 <div class="chapter-image orange">
                   <div class="restaurant-app-icon"></div>
                 </div>
                 <div class="chapter-content">
-                  <div class="chapter-category">Tutorial</div>
-                  <h4 class="chapter-title">1. User data</h4>
-                  <p class="chapter-description">Learn how to allow users to submit data</p>
-                  <div class="chapter-time"><div class="time-icon"></div><span> 30 min &nbsp;&#8226;&nbsp; Simple</span></div>
+                  <div class="chapter-category">Reference</div>
+                  <h4 class="chapter-title">UI Toolkit</h4>
+                  <p class="chapter-description">Build skinnable React Native apps sing our professionally designed UI components</p>
                 </div>
               </div>
-              <div class="chapter" onclick="window.location.href='/docs/3rd-party/introduction'">
+              <div class="chapter" onclick="window.location.href='http://www.shoutem.com'">
                 <div class="chapter-image purple">
                   <div class="shopping-app-icon"></div>
                 </div>
                 <div class="chapter-content">
-                  <div class="chapter-category">Tutorial</div>
-                  <h4 class="chapter-title">2. 3rd party services</h4>
-                  <p class="chapter-description">Learn how to integrate with a 3rd party service API</p>
-                  <div class="chapter-time"><div class="time-icon"></div><span> 45 min &nbsp;&#8226;&nbsp; Medium</span></div>
-                </div>
-              </div>
-              <div class="chapter" onclick="window.location.href='/docs/coming-soon'">
-                <div class="chapter-image darkblue">
-                  <div class="loyalty-app-icon"></div>
-                </div>
-                <div class="chapter-content">
-                  <div class="chapter-category">Tutorial</div>
-                  <h4 class="chapter-title">3. Easy debugging in your extensions</h4>
-                  <p class="chapter-description">Learn how to debug your extensions</p>
-                  <div class="chapter-time"><div class="time-icon"></div><span> 45 min &nbsp;&#8226;&nbsp; Medium</span></div>
+                  <div class="chapter-category">Explore</div>
+                  <h4 class="chapter-title">Shoutem app builder</h4>
+                  <p class="chapter-description">Shoutem enables anyone to create and manage beautiful apps with minimal effort</p>
                 </div>
               </div>
             </div>
@@ -178,7 +165,7 @@
       <ul>
         <li class="nav-link primary nav-link-active"><a href="/">Home</a></li>
         <!--<li class="nav-link primary"><a href="">Features</a></li>-->
-        <li class="nav-link primary"><a href="/docs/getting-started/introduction">Docs</a></li>
+        <li class="nav-link primary"><a href="{{ site.baseurl }}/docs/getting-started/introduction">Docs</a></li>
         <li class="nav-separator"></li>
         <li class="nav-link"><a href="http://www.shoutem.com/">Shoutem Home</a></li>
         <li class="nav-link"><a href="http://www.shoutem.com/about">About</a></li>
@@ -189,9 +176,9 @@
     </div>
     {% include footer.html %}
     <script   src="https://code.jquery.com/jquery-2.2.3.min.js"   integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo="   crossorigin="anonymous"></script>
-    <script type="text/javascript" src="/js/animation.js"></script>
-    <script type="text/javascript" src="/js/headroom.min.js"></script>
-    <script type="text/javascript" src="/js/main.js"></script>
+    <script type="text/javascript" src="{{ site.baseurl }}/js/animation.js"></script>
+    <script type="text/javascript" src="{{ site.baseurl }}/js/headroom.min.js"></script>
+    <script type="text/javascript" src="{{ site.baseurl }}/js/main.js"></script>
     {% include ga.html %}
   </body>
 </html>

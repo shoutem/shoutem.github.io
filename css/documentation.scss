@@ -8,3 +8,133 @@
 @import "mixins";
 @import "footer";
 @import "menu-overlay";
+
+h1{
+    margin-bottom: 33px;
+}
+
+h2 {
+    font-weight: 300;
+    margin-top: 64px;
+    margin-bottom: 16px;
+}
+
+h4 {
+    font-size: 15px;
+}
+
+h3 code, h4 code {
+    background: inherit;
+    font-weight: inherit;
+    color: inherit;
+    font-size: inherit;
+}
+
+.docs-component-image {
+    max-width: 100%;
+    margin-bottom: 24px;
+}
+
+.docs-codeblock-path {
+    color: #888fa1;
+    font-size: 15px;
+}
+
+pre code.language-shellsession {
+    color: #697289 !important;
+    display: block;
+    line-height: 1.7;
+}
+
+pre code.language-shellsession:first-line {
+    color: #343D59;
+}
+
+pre code.language-shellsession:first-letter {
+    color: #697289;
+}
+
+h4[id^=jsx-declaration], h4[id^=style] {
+    margin-bottom: 16px;
+}
+
+h4[id^=jsx-declaration] + pre,  h4[id^=style] + pre{
+    margin-bottom: 44px;
+}
+
+h4[id^=props] + ul,  h4[id^=style] + ul{
+    margin-bottom: 44px;
+}
+
+code[class*="language-"], pre[class*="language-"] { 
+    font-family: SourceCodePro-Medium, Menlo, Monaco, Consolas,"Courier New", monospace;
+    text-shadow: none;
+    color: #444f6c;
+    line-height: 24px;
+}
+
+:not(pre) > code[class*="language-"], pre[class*="language-"] {
+    background-color: #f3f3f3;
+}
+
+pre code {
+    color: #444f6c;
+}
+
+pre {
+    font-size: 14px; 
+}
+
+blockquote p {
+    color: #444f6c;
+    font-size: 16px;
+    line-height: 28px;
+}
+
+blockquote h4 + p {
+    margin-top: -16px;
+}
+
+blockquote ol:last-child, blockquote p:last-child, blockquote ul:last-child {
+    margin-bottom: 9px;
+}
+
+blockquote {
+    border-left: 1px solid #C4C7D0;
+}
+
+blockquote h4  {
+    margin-top: 20px;
+}
+
+blockquote p {
+    margin-top: 13px;
+}
+
+blockquote {
+    font-size: 18px;
+    padding: 1px 38px;
+}
+
+p > a {
+    border-bottom: 1px solid rgba(0, 170, 223, 0);
+    transition: border-bottom-color 0.2s linear;
+}
+
+p > a:hover {
+    text-decoration: none;
+    border-bottom-color: rgba(0, 170, 223, 1);
+}
+
+pre[data-line] {
+    padding-left: 1em;
+}
+
+.line-highlight {
+    background: #00aadf;
+    opacity: 0.2;
+    
+    &:before, &[data-end]:after {
+        content: "";
+    }
+}
