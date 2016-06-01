@@ -133,7 +133,7 @@ export default connect((state, ownProps) => state)(RestaurantsDetails)
 ```
 
 ```ShellSession
-shoutem push
+$ shoutem push
 Uploading `Restaurants` extension to Shoutem...
 Success!
 ```
