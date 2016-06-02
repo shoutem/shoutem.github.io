@@ -33,7 +33,7 @@ $(function(){
 		this.manageParticles = function() {
 			
 			// calculate number for particles
-			this.maxParticles = Math.max(5, Math.round(this.$container.width() * this.$container.height() / 90000));
+			this.maxParticles = Math.max(5, Math.round(this.$container.width() * this.$container.height() / 120000));
 				
 			// delete superfluous particles
 			while (this.particles.length > this.maxParticles) {
