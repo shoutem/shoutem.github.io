@@ -92,10 +92,10 @@ Go to `Extensions` tab in [Shoutem builder](/docs/coming-soon). You'll see that 
 <img src='{{ site.baseurl }}/img/getting-started/extension-tab-extension.png'/>
 </p>
 
-However, when you go to `Screens` tab now and click `Add`, this extension won't be shown.
+However, when you go to `Screens` tab now and click on `+` next to `Screens`, this extension won't be shown.
 
 <p class="image">
 <img src='{{ site.baseurl }}/img/getting-started/add-content-no-extension.png'/>
 </p>
 
-That's because `Add` modal shows _shortcuts_ which extensions export. We need to add shortcut to our extensions.
+That's because `Add screen` modal shows _shortcuts_ which extensions export. We need to add shortcut to our extensions.
