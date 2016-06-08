@@ -42,6 +42,7 @@ Initialization process already filled your folder with additional files and fold
 Restaurants/
   ├ app/
   |  ├ node_modules/
+  |  ├ const.js
   |  ├ index.js
   |  └ package.json
   ├ server/
@@ -50,8 +51,8 @@ Restaurants/
 
 Let's describe the structure:
 
-- `app/`: Contains application code
-- `server/`: Contains server code
+- `app/`: Application code
+- `server/`: Server code
 - `extension.json`: Extension general information
 
 In `extension.json` you can see:
@@ -67,9 +68,9 @@ In `extension.json` you can see:
 }
 ```
 
-Property `name`, combined with your developer name, uniquely identifies the extension. We'll use `name` to define extensions parts on other places too.
+Property `name`, combined with your developer name, uniquely identifies the extension. We'll use property `name` to define extensions parts too.
 
-Extension is now only locally available on your computer. We need to upload it to Shoutem server so you can install it on the application.
+Extension is now only locally available on your computer. We need to upload it to Shoutem so you can install it on the application.
 
 ```ShellSession
 $ shoutem push
@@ -77,15 +78,13 @@ Uploading `Restaurants` extension to Shoutem...
 Success!
 ```
 
-Create new application in [Shoutem builder](/docs/coming-soon). We'll use that application to test our extension. Install extension to the application. Write:
+To test our extension, we need to install it on the Shoutem application. You can create new application on [Shoutem builder](/docs/coming-soon) or just pass flag `--new` to installation command:
 
 ```ShellSession
-$ shoutem install
-> Restaurants App
-  Shoutem Demo App
+$ shoutem install --new
+Extension is installed on the new `Restaurants` extension.
+See it in browser: `http://www.shoutem.com/builder?id=141231234123`
 ```
-
-and select which application you want to install it on.
 
 Go to `Extensions` tab in [Shoutem builder](/docs/coming-soon). You'll see that extensions is installed on your application.
 

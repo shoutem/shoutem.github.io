@@ -85,7 +85,7 @@ At the end, we added few properties that describe your schema. We need to have a
   "description": "Show the cool restaurants!",
   "shortcuts": [{
     "name": "OpenRestaurantsList",
-    "action": "dev-name.restaurants.openRestaurantsList",
+    "action": "developer.restaurants.openRestaurantsList",
     "title": "List of restaurants",
     "description": "Allow users to browse through list of restaurants"
   }]
@@ -93,13 +93,13 @@ At the end, we added few properties that describe your schema. We need to have a
     "page": "shoutem.admin.contentPage",
     "title": "Content",
     "parameters": {
-      "schema": "dev-name.restaurants.Restaurants"
+      "schema": "developer.restaurants.Restaurants"
     }
   }]
 }
 ```
 
-Change `dev-name` with your developer name.
+Change `developer` with your developer name.
 
 Upload the extension:
 

@@ -30,7 +30,7 @@ import {
 renderRow(restaurant, navigator) {
   return (
   <TouchableOpacity onPress={() => navigator.push({
-    screen: 'dev-name.restaurans.RestaurantDetails',
+    screen: 'developer.restaurans.RestaurantDetails',
     props: {
       restaurant, dispatch
     }

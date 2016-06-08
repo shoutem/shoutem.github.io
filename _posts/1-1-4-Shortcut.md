@@ -28,16 +28,16 @@ Your `extension.json` was just modified:
   "description": "Show the cool restaurants!",
   "shortcuts": [{
     "name": "OpenRestaurantsList",
-    "action": "dev-name.restaurants.openRestaurantsList",
+    "action": "developer.restaurants.openRestaurantsList",
     "title": "List of restaurants",
     "description": "Allow users to browse through list of restaurants"
   }]
 }
 ```
 
-Notice that object in `shortcuts` has property `name`, which identifies the class of that Shortcut and `action`, which represents the action that will be triggered when shortcut is tapped. In the `name` property, use **relative name** to define an extension part. In properties like `action`, where extension part is referenced, use **absolute name**. That's why under `action` property, we're having `dev-name.restaurant-extension.openRestaurantsList` value instead of only `openRestaurantsList`. Absolute name of extension part follows this structure: `{developerName}.{extensionName}.{extensionPartName}`.
+Notice that object in `shortcuts` has property `name`, which identifies the Shortcut and `action`, which represents the action that will be triggered when shortcut is tapped. In the `name` property, use **relative name** to define an extension part. In properties like `action`, where some extension part is referenced, use **absolute name**. That's why under `action` property, we're having `developer.restaurants.openRestaurantsList` value instead of only `openRestaurantsList`. Absolute name of extension part follows this structure: `{developerName}.{extensionName}.{extensionPartName}`.
 
-In your `extension.json`, CLI already put your developer name to `dev-name` in this snippet, so you don't need to change anything.
+In your `extension.json`, CLI already put your developer name instead of `developer` in this snippet, so you don't need to change anything.
 
 ## Exporting extension parts
 

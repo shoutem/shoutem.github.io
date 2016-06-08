@@ -56,12 +56,12 @@ import { navigateTo } from 'shoutem/navigation';
 
 export function openRestaurantsList() {
   return navigateTo({
-    screen: 'dev-name.restaurants.RestaurantsList'
+    screen: 'developer.restaurants.RestaurantsList'
   })
 }
 ```
 
-Redux action `navigateTo`, provided by Shoutem, opens new screen in application. It accepts [Shoutem route object](/docs/coming-soon) as the only argument. Property `screen` holds an absolute reference for the screen that should be opened once shortcut is clicked. Since we exported name `RestaurnatList` inside `screens` exported object in `app/index.js`, our screen has `dev-name.restaurants.RestaurantsList` name. In this example, you need to replace `dev-name` with your developer name.
+Redux action `navigateTo`, provided by Shoutem, opens new screen in application. It accepts [Shoutem route object](/docs/coming-soon) as the only argument. Property `screen` holds an absolute reference for the screen that should be opened once shortcut is clicked. Since we exported name `RestaurnatList` inside `screens` exported object in `app/index.js`, our screen has `developer.restaurants.RestaurantsList` name. In this example, you need to replace `developer` with your developer name.
 
 Upload the extension:
 
@@ -176,7 +176,7 @@ And use it in `renderRow` method:
 renderRow(restaurant, navigator) {
   return (
     <TouchableOpacity onPress={() => navigator.push({
-        screen: 'dev-name.restaurans.RestaurantDetails',
+        screen: 'developer.restaurans.RestaurantDetails',
         props: {
           restaurant, dispatch
         }

@@ -25,12 +25,12 @@ import { storage, collection } from 'shoutem-cloud';
 import { combineReducers } from 'redux';
 
 export default combineReducers({
-  restaurants: storage('dev-name.restaurants.Restaurants'),
-  allRestaurants: collection('dev-name.restaurants.Restaurants')
+  restaurants: storage('developer.restaurants.Restaurants'),
+  allRestaurants: collection('developer.restaurants.Restaurants')
 })
 ```
 
-As usual, change `dev-name` to yours. This root reducer needs to be exported in `app/index.js` file:
+As usual, change `developer` to yours. This root reducer needs to be exported in `app/index.js` file:
 
 ```javascript{1,11}
 import reducer from './reducer';
@@ -66,14 +66,14 @@ import { find } from 'shoutem-cloud';
   componentDidMount() {
     let { dispatch, restaurants } = this.props;
     if (!restaurants) {
-      dispatch(find('dev-name.restaurants.Restaurants'));
+      dispatch(find('developer.restaurants.Restaurants'));
     }
   }
 
 renderRow(restaurant, navigator) {
   return (
   <TouchableOpacity onPress={() => navigator.push({
-    screen: 'dev-name.restaurans.RestaurantDetails',
+    screen: 'developer.restaurants.RestaurantDetails',
     props: {
       restaurant, dispatch
     }
@@ -99,8 +99,8 @@ render() {
 }
 
 export default connect((state, ownProps) => ({
-  restaurants: state['dev-name.restaurants'].allRestaurants.map(key =>
-    state['dev-name.restaurants'].restaurants[key]); 
+  restaurants: state['developer.restaurants'].allRestaurants.map(key =>
+    state['developer.restaurants'].restaurants[key]); 
 })(RestaurantsList)
 ```
 
