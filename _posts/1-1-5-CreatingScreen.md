@@ -10,12 +10,13 @@ Screens are React components which are connected to Redux store, i.e. they have 
 
 ```ShellSession
 $ shoutem create screen RestaurantsList
-`RestaurantsList` screen is created.
+
+File `app/screens/RestaurantsList.js` is created.
 ```
 
-Shoutem CLI created `app/screens/` folder with `RestaurantList.js` file:
+Shoutem CLI created `app/screens/` folder with `RestaurantsList.js` file:
 
-```javascript{2}
+```javascript
 #file: app/screens/RestaurantList.js
 import React, {
   Component,
@@ -52,16 +53,20 @@ Open `app/actions.js` and add the highlighted:
 
 ```javascript{1-7}
 #file: app/actions.js
-import { navigateTo } from 'shoutem/navigation';
+import { ext } from 'const';
+import { navigateTo } from '@shoutem/core';
 
+// Define your actions
+
+// Shoutem specified actions
 export function openRestaurantsList() {
   return navigateTo({
-    screen: 'developer.restaurants.RestaurantsList'
+    screen: ext('RestaurantsList'),
   })
 }
 ```
 
-Redux action `navigateTo`, provided by Shoutem, opens new screen in application. It accepts [Shoutem route object](/docs/coming-soon) as the only argument. Property `screen` holds an absolute reference for the screen that should be opened once shortcut is clicked. Since we exported name `RestaurnatList` inside `screens` exported object in `app/index.js`, our screen has `developer.restaurants.RestaurantsList` name. In this example, you need to replace `developer` with your developer name.
+Redux action `navigateTo`, provided by Shoutem, opens new screen in application. It accepts [Shoutem route object](/docs/coming-soon) as the only argument. Property `screen` holds an absolute reference for the screen that should be opened once shortcut is clicked. Since we exported name `RestaurnatList` inside `screens` exported object in `app/index.js`, our screen has `developer.restaurants.RestaurantsList` name. However, since we're referencing something that is defined in our extension, we can also use helper `ext` function that was created in `app/const.js` file. This function returns **absolute name** for the extension part which is passed as its first argument.
 
 Upload the extension:
 
@@ -77,7 +82,7 @@ Try now tapping to shortcut on the preview in [Shoutem Builder](/docs/coming-soo
 <img src='{{ site.baseurl }}/img/getting-started/extension-hello-world.png'/>
 </p>
 
-Great! New screen is opened. Add static restaurants and ListView in screen. Start by importing [View](/docs/coming-soon), [ListView](/docs/coming-soon) and [Image](/docs/coming-soon) from React Native and [getAsset](/docs/coming-soon) helper function from `shoutem`, to allow us to retrieve image.
+Great! New screen is opened. Add static restaurants and ListView in screen. Start by importing [View](/docs/coming-soon), [ListView](/docs/coming-soon) and [Image](/docs/coming-soon) from React Native.
 
 ```javascript{4-6,8}
 #file: app/screens/RestaurantsList.js
@@ -88,10 +93,9 @@ import React, {
   ListView,
   Image
 } from 'react-native';
-import { getAsset } from 'shoutem';
 ```
 
-Define a method in `RestaurantsList` class that returns an array of restaurants. We prepared some data for you. Create `app/assets` folder, which will keep the assets for the application. Download [this](/docs/coming-soon) `JSON` and put it to `app/assets/data`. Data in the `JSON` represents restaurants that should be used in the app with the reference to images. Download [those](/docs/coming-soon) images and put them to `assets/img` folder. Now, back to defining a method in `RestaurantsList` that will get this data. We'll use the same `getAsset` function.
+Define a method in `RestaurantsList` class that returns an array of restaurants. We prepared some data for you. Create `app/assets` folder, which will keep the assets for the application. Download [this](/docs/coming-soon) `zip`, extract it and copy its content to `app/assets`. It contains `data/restaurants.json` file with restaurants data and `img/` folder with images for these restaurants. Now, back to defining a method in `RestaurantsList` that will get this data. We'll use the same `getAsset` function.
 
 
 We filled out here some data for you, so you can actually see something inside.
@@ -99,7 +103,7 @@ We filled out here some data for you, so you can actually see something inside.
 ```javascript{1-3}
 #file: app/screens/RestaurantsList.js
 getRestaurants() {
-  return getAsset('data/restaurants');
+  return require('./assets/data/restaurants.json');
 }
 ```
 
@@ -114,21 +118,20 @@ getDataSource(restaurants) {
   return dataSource.cloneWithRows(restaurants);
 }
 
-renderRow(restaurant, navigator) {
+renderRow(restaurant) {
   return (
     <View>
-      <Image source:{{ uri: getAsset(restaurant.image) }} />
-      <Text>{restarant.name}</Text>
+      <Image source={require(restaurant.image)} />
+      <Text>{restaurant.name}</Text>
     </View>
   )
 }
 
 render() {
-  const { navigator } = this.props;
   return (
     <ListView
       dataSource={this.getDataSource(this.getRestaurants())}
-      renderRow={restaurant => this.renderRow(restaurant, navigator)}
+      renderRow={restaurant => this.renderRow(restaurant)}
     />
   )
 }

@@ -68,7 +68,7 @@ Application needs to know where it can find extension parts. To give you freedom
 - middleware and
 - application lifecycle methods.
 
-The two latter we won't use in this tutorial, but you can find more information [here](/docs/coming-soon). Current `index.js` looks as follows:
+We won't use the two latter in this tutorial, but you can find more information [here](/docs/coming-soon). Current `index.js` looks as follows:
 
 ```JSX
 #file: app/index.js
