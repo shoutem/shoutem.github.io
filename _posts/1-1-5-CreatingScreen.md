@@ -293,7 +293,7 @@ renderRow(restaurant, navigateTo) {
 
 This is what you should have end up with in `app/screens/RestaurantsList.js`:
 
-```JSX{5,7-10,12-15,18-35,38-69}
+```JSX{5,7-10,12-15,18-39,42-73}
 #file: app/screens/RestaurantsList.js
 import React, {
   Component
@@ -312,6 +312,10 @@ import { bindActionCreators } from 'redux';
 import { ext } from '../const';
 
 class RestaurantsList extends Component {
+  getRestaurants() {
+    return require('../assets/data/restaurants.json');
+  }
+
   getDataSource(restaurants) {
     const dataSource = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
     return dataSource.cloneWithRows(restaurants);
