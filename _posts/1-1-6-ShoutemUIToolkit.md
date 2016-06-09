@@ -21,7 +21,7 @@ import {
   Tile,
   Title,
   Subtitle
-} from 'shoutem-ui';
+} from '@shoutem/ui';
 import { connect } from 'react-redux'
 import { navigateTo } from '@shoutem/core';
 import { bindActionCreators } from 'redux';
@@ -96,7 +96,7 @@ import {
   Text,
   Title,
   View
-} from 'shoutem-ui';
+} from '@shoutem/ui';
 
 export default class RestaurantDetails extends Component {
   render() {
