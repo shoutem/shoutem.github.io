@@ -6,34 +6,36 @@ permalink: /docs/getting-started/working-with-data
 # Working with data
 <hr />
 
-Data on the Shoutem Cloud Storage needs to be fetched in the application. First, remove all static files from the extension, so we're sure that we're actually fetching data from the Shoutem Cloud Storage. Define `reducer` which will define how the state of the application should be changed on action. It also defines the initial state of the application. Create new folder `app/reducers` with `index.js` file.
+Data on the Shoutem Cloud Storage needs to be fetched in the application. First, remove all static files from the extension, so we're sure that we're actually fetching data from the Shoutem Cloud Storage - remove assets folder. Define `reducer` which will define how the state of the application should be changed when action is dispatched and how the initial state should look like. Create new folder `app/reducers` with `index.js` file.
 
 We can have one big reducer which will manage whole application state, or more little reducers which will take care of different properties in the state. 
 
-`shoutem-cloud` package has [reducers](/docs/coming-soon) for `data schemas` which will change the state when you use `actions` from Shoutem framework. Import these reducers.
+Package `@shoutem/redux-io` has [reducers](/docs/coming-soon) for and `actions` that can be used with Shoutem Storage. Import these reducers.
 
-```javascript
+```javascript{1}
 #file: app/reducers/index.js
-import { storage, collection } from 'shoutem-cloud';
+import { storage, collection } from '@shoutem/redux-io';
 ```
 
-Reducer [storage](/docs/coming-soon) retrieves resources in dictionary while [collection](/docs/coming-soon) stores resources ID's in array so the order is maintained. Make use of Redux's [combineReducers](http://redux.js.org/docs/api/combineReducers.html) to create one `Root reducer` from more Shoutem reducers. 
+Reducer [storage](/docs/coming-soon) retrieves resources in dictionary while [collection](/docs/coming-soon) stores resources ID's in an array so that the order is maintained. Make use of Redux's [combineReducers](http://redux.js.org/docs/api/combineReducers.html) to create one `Root reducer` from more Shoutem reducers. 
 
-```javascript{2-7}
+```javascript{2-8}
 #file: app/reducers/index.js
-import { storage, collection } from 'shoutem-cloud';
+import { storage, collection } from '@shoutem/redux-io';
 import { combineReducers } from 'redux';
+import { ext } from '../const';
 
 export default combineReducers({
-  restaurants: storage('dev-name.restaurants.Restaurants'),
-  allRestaurants: collection('dev-name.restaurants.Restaurants')
+  restaurants: storage(ext('Restaurants')),
+  allRestaurants: collection(ext('Restaurants'))
 })
 ```
 
-As usual, change `dev-name` to yours. This root reducer needs to be exported in `app/index.js` file:
+This root reducer needs to be exported in `app/index.js` file:
 
 ```javascript{1,11}
-import reducer from './reducer';
+#file app/index.js
+import reducer from './reducers';
 import RestaurantsList from './screens/RestaurantsList';
 import * as actions from './actions';
 
@@ -46,65 +48,137 @@ export actions;
 export reducer;
 ```
 
-The only thing left to do is to fetch data from `Shoutem Cloud` on `RestaurantsList` screen and to retrieve those data, in form of restaurants, from application's state. Meanwhile data is fetched, we'll show `Spinner` view from `shoutem-ui`.
+The only thing left to do is to fetch data from `Shoutem Storage` on `RestaurantsList` screen and to retrieve that data, in form of restaurants, from application's state. Meanwhile data is fetched, we'll show `Spinner` view from `@shoutem/ui`.
 
-```JSX{10,12,14-19,40-47,49-52}
+```JSX{4-8}
 #file: app/screens/RestaurantsList.js
-import React, {
-  Component,
-} from 'react-native';
-import {
-  ListView,
-  Tile,
-  Title,
-  Subtitle,
-  Image,
-  Spinner
-} from 'shoutem-ui';
-import { find } from 'shoutem-cloud';
-
-  componentDidMount() {
-    let { dispatch, restaurants } = this.props;
-    if (!restaurants) {
-      dispatch(find('dev-name.restaurants.Restaurants'));
-    }
-  }
-
-renderRow(restaurant, navigator) {
-  return (
-  <TouchableOpacity onPress={() => navigator.push({
-    screen: 'dev-name.restaurans.RestaurantDetails',
-    props: {
-      restaurant, dispatch
-    }
-  })}>
-    <Tile>
-      <Image styleName="banner" source={restaurant.image}>
-        <Title>{restaurant.title}</Title>
-        <Subtitle>{restaurant.address}</Subtitle>
-      </Image>
-    </Tile>
-  <TouchableOpacity />
-  )
-}
-
 render() {
-  const { restaurants, navigator } = this.props;
+  const { navigateTo, restaurants } = this.props;
   return restaurants ? 
     <ListView
       dataSource={restaurants}
-      renderRow={restaurant => this.renderRow(restaurant, navigator)}
+      renderRow={restaurant => this.renderRow(restaurant, navigateTo)}
     /> :
-    <Spinner/>
+    <Spinner />
 }
-
-export default connect((state, ownProps) => ({
-  restaurants: state['dev-name.restaurants'].allRestaurants.map(key =>
-    state['dev-name.restaurants'].restaurants[key]); 
-})(RestaurantsList)
 ```
 
-Each screen can modify how it retrieve application's state in the `connect` method. If there are no restaurants, React Native lifecycle method `componentDidMount` will fetch the data from Shoutem Cloud by dispatching `find` method from `shoutem-cloud` package.
+Once screen is mounted, if restaurants are not in the Redux store, we'll start fetching data with `find` method from `@shoutem/redux-io` package.
+
+```javascript{1}
+#file: app/screens/RestaurantsList.js
+import { find } from '@shoutem/redux-io';
+```
+
+Since `find` also needs to be dispatched, we'll bind it in the `mapDispatchToProps` function, 2nd argument of `connect` function.
+
+```javascript{4}
+#file: app/screens/RestaurantsList.js
+export default connect(
+  (state, ownProps) => state,
+  (dispatch, ownProps) => {
+    actions: bindActionsCreators([navigateTo, find], dispatch)
+  })(RestaurantsList)
+```
+
+Define a lifecycle method `componentDidMount` which will start fetching the restaurants.
+
+```javascript{1-7}
+#file: app/screens/RestaurantsList.js
+componentDidMount() {
+  const { actions, restaurants } = this.props;
+  const { find } = this.props.actions;
+  if (!restaurants) {
+    find(ext('Restaurants'));
+  }
+}
+```
+
+Finally, as we can see in `componentDidMount`, we want to have in props the restaurants collection. In `app/reducers/index.js` we defined that `restaurants` dictionary that will be received through `storage` and `allRestaurants` collection that will received through `collection` reducer. We need to combine both to get an array with restaurants from dictionary. Do this with with `getCollection` method from `@shoutem/redux-io`.
+
+```javascript{1}
+#file: app/screens/RestaurantsList.js
+import { find, getCollection } from '@shoutem/redux-io';
+```
+
+Use that method in `mapStateToProps` function, 1st argument of `connect` function.
+
+```javascript{3}
+#file: app/screens/RestaurantsList.js
+export default connect(
+  (state, ownProps) => {
+    restaurants: getCollection(state[ext()].allRestaurants, state[ext()])
+  },
+  (dispatch, ownProps) => {
+    actions: bindActionsCreators([navigateTo, find], dispatch)
+  })(RestaurantsList)
+```
+
+This is the final result of `RestaurantsList` screen that uses both Shoutem UI Toolkit and Shoutem Cloud Storage.
+
+```JSX{9,15,19-24,44-49,54-56,57}
+#file: app/screens/RestaurantsList.js
+import React, {
+  Component,
+} from 'react';
+import {
+  Image,
+  ListView,
+  Tile,
+  Title,
+  Spinner,
+  Subtitle
+} from '@shoutem/ui';
+import { connect } from 'react-redux'
+import { navigateTo } from '@shoutem/core';
+import { bindActionCreators } from 'redux';
+import { find, getCollection } from '@shoutem/redux-io';
+import { ext } from '../const';
+
+class RestaurantsList extends Component {
+  componentDidMount() {
+    const { actions, restaurants } = this.props;
+    const { find } = this.props.actions;
+    if (!restaurants) {
+      find(ext('Restaurants'));
+    }
+  }
+
+  renderRow(restaurant, navigateTo) {
+    return (
+      <TouchableOpacity onPress={() => navigateTo({
+          screen: ext('RestaurantDetails'),
+          props: { restaurant }
+        })}>
+        <Tile>
+          <Image styleName="banner" source={`../${restaurant.image}`}>
+            <Title>{restaurant.title}</Title>
+            <Subtitle>{restaurant.address}</Subtitle>
+          </Image>
+        </Tile>
+      <TouchableOpacity />
+    )
+  }
+
+  render() {
+    const { navigateTo, restaurants } = this.props;
+    return restaurants ? 
+      <ListView
+        dataSource={restaurants}
+        renderRow={restaurant => this.renderRow(restaurant, navigateTo)}
+      /> :
+      <Spinner />
+  }
+}
+
+export default connect(
+  (state, ownProps) => {
+    restaurants: getCollection(state[ext()].allRestaurants, state[ext()])
+  },
+  (dispatch, ownProps) => {
+    actions: bindActionsCreators([navigateTo, find], dispatch)
+  })(RestaurantsList)
+```
 
 Let's check how it works:
 

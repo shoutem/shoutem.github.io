@@ -14,7 +14,7 @@ Here's a preview how completed app will look like.
 <img src='{{ site.baseurl }}/img/getting-started/extension-preview.png'/>
 </p>
 
-## So what are extensions?
+## So what are the extensions?
 As shown on the following picture, every Shoutem application is made of extensions.
 
 <p class="image">
@@ -43,7 +43,7 @@ On top of React and React Native, we're using [Redux](http://redux.js.org/), one
 <img src='{{ site.baseurl }}/img/getting-started/redux.png'/>
 </p>
 
-Each application has a [Redux store](http://redux.js.org/docs/basics/Store.html) which holds the `application state`. When the state changes, React automatically updates the UI component. Application can dispatch [Redux actions](http://redux.js.org/docs/basics/Actions.html) on events, e.g. tapping on button, which will hold information about that event. Dispatched actions will be handled by [Redux reducers](http://redux.js.org/docs/basics/Reducers.html) which specify what is the next state given the action. Once reducers handle action, application is in the new state and UI component automatically adopts to the new state.
+Each application has a [Redux store](http://redux.js.org/docs/basics/Store.html) which holds the `application state`. When the state changes, React automatically updates the UI components. Application can dispatch [Redux actions](http://redux.js.org/docs/basics/Actions.html) on events, e.g. tapping on button, which will hold information about that event. Dispatched actions will be handled by [Redux reducers](http://redux.js.org/docs/basics/Reducers.html) which specify what is the next state given the action. Once reducers handle action, application is in the new state and UI component automatically adopts to the new state.
 
 ## Create extension
 Best way to understand the power of the extensions, is to get your hands dirty. We'll start with [setting your development environment](http://shoutem.github.io/docs/getting-started/development-environment).

@@ -9,18 +9,20 @@ permalink: /docs/getting-started/creating-screen
 Screens are React components which are connected to Redux store, i.e. they have access to complete application's state. Let's create new screen:
 
 ```ShellSession
-$ shoutem create screen RestaurantsList
-`RestaurantsList` screen is created.
+$ shoutem screen create RestaurantsList
+
+File `app/screens/RestaurantsList.js` is created.
 ```
 
-Shoutem CLI created `app/screens/` folder with `RestaurantList.js` file:
+Shoutem CLI created `app/screens/` folder with `RestaurantsList.js` file:
 
-```javascript{2}
+```javascript
 #file: app/screens/RestaurantList.js
 import React, {
-  Component,
-  Text,
-} from 'react-native';
+  Component
+} from 'react';
+import { Text } from 'react-native';
+import { connect } from 'react-redux'
 
 class RestaurantsList extends Component {
   render() {
@@ -32,10 +34,10 @@ export default connect((state, ownProps) => state)(RestaurantsList)
 
 In React, `Components` specify their UI in `render` method. On the other hand, [connect](https://github.com/reactjs/react-redux/blob/master/docs/api.md#connectmapstatetoprops-mapdispatchtoprops-mergeprops-options) call connects component to application's state.
 
-Screen needs to be exported in `app/screens/index.js` and it's a good practice to do so immediately:
+Screen needs to be exported in `app/index.js` and it's a good practice to do so immediately:
 
 ```javascript{1,4-6}
-#file: app/screens/index.js
+#file: app/index.js
 import RestaurantsList from './screens/RestaurantsList';
 import * as actions from './actions';
 
@@ -48,20 +50,24 @@ export actions;
 export const reducer = {};
 ```
 
-Open `app/actions.js` and add the highlighted:
+Open that screen when `openRestaurantsList` action is triggered in `app/action.js`:
 
-```javascript{1-7}
-#file: app/actions.js
-import { navigateTo } from 'shoutem/navigation';
+```javascript{9}
+#file: app/action.js
+import { navigateTo } from '@shoutem/core';
+import { ext } from './const';
 
+// Define your actions
+
+// Shoutem specified actions
 export function openRestaurantsList() {
   return navigateTo({
-    screen: 'dev-name.restaurants.RestaurantsList'
+    screen: ext('RestaurantsList')
   })
 }
 ```
 
-Redux action `navigateTo`, provided by Shoutem, opens new screen in application. It accepts [Shoutem route object](/docs/coming-soon) as the only argument. Property `screen` holds an absolute reference for the screen that should be opened once shortcut is clicked. Since we exported name `RestaurnatList` inside `screens` exported object in `app/index.js`, our screen has `dev-name.restaurants.RestaurantsList` name. In this example, you need to replace `dev-name` with your developer name.
+Redux action creator `navigateTo`, provided by Shoutem, opens new screen in application. It accepts [Shoutem route object](/docs/coming-soon) as the only argument. Property `screen` holds an absolute reference for the screen that should be opened once shortcut is clicked. Since we exported name `RestaurantsList` inside `screens` exported object in `app/index.js`, our screen has `developer.restaurants.RestaurantsList` name. However, since we're referencing something that is defined in our extension, we can also use helper `ext` function that was created in `app/const.js` file. This function returns **absolute name** for the extension part which is passed as its first argument.
 
 Upload the extension:
 
@@ -77,29 +83,26 @@ Try now tapping to shortcut on the preview in [Shoutem Builder](/docs/coming-soo
 <img src='{{ site.baseurl }}/img/getting-started/extension-hello-world.png'/>
 </p>
 
-Great! New screen is opened. Add static restaurants and ListView in screen. Start by importing [View](/docs/coming-soon), [ListView](/docs/coming-soon) and [Image](/docs/coming-soon) from React Native and [getAsset](/docs/coming-soon) helper function from `shoutem`, to allow us to retrieve image.
+Great! New screen is opened. Add static restaurants and `ListView` in screen. Start by importing [View](/docs/coming-soon), [ListView](/docs/coming-soon) and [Image](/docs/coming-soon) from React Native.
 
-```javascript{4-6,8}
+```javascript{1-5}
 #file: app/screens/RestaurantsList.js
-import React, {
-  Component,
+import {
   Text,
   View,
   ListView,
   Image
 } from 'react-native';
-import { getAsset } from 'shoutem';
 ```
 
-Define a method in `RestaurantsList` class that returns an array of restaurants. We prepared some data for you. Create `app/assets` folder, which will keep the assets for the application. Download [this](/docs/coming-soon) `JSON` and put it to `app/assets/data`. Data in the `JSON` represents restaurants that should be used in the app with the reference to images. Download [those](/docs/coming-soon) images and put them to `assets/img` folder. Now, back to defining a method in `RestaurantsList` that will get this data. We'll use the same `getAsset` function.
+Define a method in `RestaurantsList` class that returns an array of restaurants. We prepared some data for you. Create `app/assets` folder, which will keep the assets for application part of your extension. Download [this](/docs/coming-soon) `zip`, extract it and copy its content to `app/assets`. It contains `data/restaurants.json` file with restaurants data and `img/` folder with images for these restaurants.
 
-
-We filled out here some data for you, so you can actually see something inside.
+Now, back to defining a method in `RestaurantsList` that will retrieve this data.
 
 ```javascript{1-3}
 #file: app/screens/RestaurantsList.js
 getRestaurants() {
-  return getAsset('data/restaurants');
+  return require('../assets/data/restaurants.json');
 }
 ```
 
@@ -114,21 +117,20 @@ getDataSource(restaurants) {
   return dataSource.cloneWithRows(restaurants);
 }
 
-renderRow(restaurant, navigator) {
+renderRow(restaurant) {
   return (
     <View>
-      <Image source:{{ uri: getAsset(restaurant.image) }} />
-      <Text>{restarant.name}</Text>
+      <Image source={require(`../${restaurant.image})} />
+      <Text>{restaurant.name}</Text>
     </View>
   )
 }
 
 render() {
-  const { navigator } = this.props;
   return (
     <ListView
       dataSource={this.getDataSource(this.getRestaurants())}
-      renderRow={restaurant => this.renderRow(restaurant, navigator)}
+      renderRow={restaurant => this.renderRow(restaurant)}
     />
   )
 }
@@ -142,26 +144,90 @@ Uploading `Restaurants` extension to Shoutem...
 Success!
 ```
 
-`RestaurantsList` is now showing list of restaurants, just how we wanted.
+`RestaurantsList` is now showing list of restaurants. 
+
+<p class="image">
+<img src='{{ site.baseurl }}/img/getting-started/extension-plain-list-without-jss.png'/>
+</p>
+
+It's not quite how we wanted it to look like - image and text are not aligned. We need to add some styling with React Native. Import `StyleSheet` from React Native.
+
+```javascript{2}
+#file: app/screen/RestaurantsList.js
+import {
+  StyleSheet,
+  Text,
+  View,
+  ListView,
+  Image
+} from 'react-native';
+```
+
+Define a `style` constant outside of the class definition.
+
+```javascript{1-16}
+#file: app/screen/RestaurantsList.js
+const style = StyleSheet.create({
+  container: {
+    flex: 1,
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center'
+  },
+  title: {
+    flex: 1,
+    textAlign: 'center'
+  },
+  thumbnail: {
+    width: 53,
+    height: 81
+  }
+});
+```
+
+And use this style in `renderRow` function:
+
+```JSX{3-5}
+#file: app/screen/RestaurantsList.js
+renderRow(restaurant) {
+  return (
+    <View style={style.container}>
+      <Image style={style.thumbnail} source={require(`../${restaurant.image})} />
+      <Text style={style.title}>{restaurant.name}</Text>
+    </View>
+  )
+}
+```
+
+Upload the extension:
+
+```ShellSession
+$ shoutem push
+Uploading `Restaurants` extension to Shoutem...
+Success!
+```
+
+It looks how we wanted!
 
 <p class="image">
 <img src='{{ site.baseurl }}/img/getting-started/extension-plain-list.png'/>
 </p>
 
-Try clicking on a row. Nothing happens! We want to open up a details screen when list row item is clicked. That's why we passed `navigator` to `renderRow` method. Add that screen:
+Try clicking on a row. Nothing happens! We want to open up a details screen when list row item is clicked. First, create that screen:
 
 ```ShellSession
-$ shoutem create screen RestaurantDetails
-`RestaurantDetails` screen is created.
+$ shoutem screen create RestaurantDetails
+
+File `app/screens/RestaurantDetails.js` is created.
 ```
 
 Open that screen when list item is touched. That's done via `TouchableOpacity`. Import it:
 
-```javascript{7-8}
+```javascript{7}
 #file: app/screens/RestaurantsList.js
-import React, {
-  StyleSheet,
-  Component,
+import {
+  StyleSheet
+  Text,
   View,
   ListView,
   Image,
@@ -169,45 +235,160 @@ import React, {
 } from 'react-native';
 ```
 
+`TouchableOpacity` provides a way to catch touching the area on the screen taken by the components inside of the `TouchableOpacity` component. To open a screen on touch, we need to dispatch already introduced `navigateTo` Redux action creator. We can use it directly in the screen through dispatch, but Redux standard way is to bind together `dispatch` and action creator inside `mapDispatchToProps` function, the second argument of [connect](https://github.com/reactjs/react-redux/blob/master/docs/api.md#connectmapstatetoprops-mapdispatchtoprops-mergeprops-options) function.
+
+Import `navigateTo` function from `@shoutem/core` along with `bindActionCreators` from Redux which will do the binding. We'll also need to specify which screens needs to be opened, so import `ext` function as well.
+
+```javascript{1,2}
+#file: app/screens/RestaurantsList.js
+import { navigateTo } from '@shoutem/core';
+import { bindActionCreators } from 'redux';
+import { ext } from '../const';
+```
+
+and do the binding in `connect` function of `RestaurnatsList` screen:
+
+```javascript{1-5}
+#file: app/screens/RestaurantsList.js
+export default connect(
+  (state, ownProps) => state,
+  (dispatch, ownProps) => {
+    actions: bindActionsCreators([navigateTo], dispatch)
+  })(RestaurantsList)
+```
+
+We can access bound actions through the `props` and pass it to `renderRow` function. Change the call of `renderRow` function in `render` method, to pass it a `navigateTo` function.
+
+```JSX{2,6}
+#file: app/screens/RestaurantsList.js
+render() {
+  const { navigateTo } = this.props.actions;
+  return (
+    <ListView
+      dataSource={this.getDataSource(this.getRestaurants())}
+      renderRow={restaurant => this.renderRow(restaurant, navigateTo)}
+    />
+  )
+}
+```
+
 And use it in `renderRow` method:
 
-```JSX{3-14}
+```JSX{1,3-6,11}
 #file: app/screens/RestaurantsList.js
-renderRow(restaurant, navigator) {
+renderRow(restaurant, navigateTo) {
   return (
-    <TouchableOpacity onPress={() => navigator.push({
-        screen: 'dev-name.restaurans.RestaurantDetails',
-        props: {
-          restaurant, dispatch
-        }
+    <TouchableOpacity onPress={() => navigateTo({
+        screen: ext('RestaurantDetails'),
+        props: { restaurant }
       })}>
-      <View>
-        <Image source:{{ uri: getAsset('img/restaurants.png') }} />
-        <Text>{restaurant.title}</Text>
+      <View style={style.container}>
+        <Image style={style.thumbnail} source={require(`../${restaurant.image})} />
+        <Text style={style.title}>{restaurant.name}</Text>
       </View>
     </TouchableOpacity>
   )
 }
 ```
 
-To `RestaurantDetails` screen, just copy the following code. There's nothing new in it, just using already shown React Native components with `Linking` to open browser.
+This is what you should have end up with in `app/screens/RestaurantsList.js`:
 
-```JSX
+```JSX{5,7-10,12-15,18-39,42-73}
+#file: app/screens/RestaurantsList.js
+import React, {
+  Component
+} from 'react';
+import {
+  StyleSheet,
+  Text,
+  View,
+  ListView,
+  Image,
+  TouchableOpacity
+} from 'react-native';
+import { connect } from 'react-redux'
+import { navigateTo } from '@shoutem/core';
+import { bindActionCreators } from 'redux';
+import { ext } from '../const';
+
+class RestaurantsList extends Component {
+  getRestaurants() {
+    return require('../assets/data/restaurants.json');
+  }
+
+  getDataSource(restaurants) {
+    const dataSource = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
+    return dataSource.cloneWithRows(restaurants);
+  }
+
+  renderRow(restaurant, navigateTo) {
+    return (
+      <TouchableOpacity onPress={() => navigateTo({
+          screen: ext('RestaurantDetails'),
+          props: { restaurant }
+        })}>
+        View style={style.container}>
+          <Image style={style.thumbnail} source={require(`../${restaurant.image})} />
+          <Text style={style.title}>{restaurant.name}</Text>
+        </View>
+      </TouchableOpacity>
+    )
+  }
+
+  render() {
+    const { navigateTo } = this.props.actions;
+    return (
+      <ListView
+        dataSource={this.getDataSource(this.getRestaurants())}
+        renderRow={restaurant => this.renderRow(restaurant, navigateTo)}
+      />
+    )
+  }
+}
+
+const style = StyleSheet.create({
+  container: {
+    flex: 1,
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center'
+  },
+  title: {
+    flex: 1,
+    textAlign: 'center'
+  },
+  thumbnail: {
+    width: 53,
+    height: 81
+  }
+});
+
+export default connect(
+  (state, ownProps) => state,
+  (dispatch, ownProps) => {
+    actions: bindActionsCreators([navigateTo], dispatch)
+  })(RestaurantsList)
+```
+
+To `RestaurantDetails` screen, just copy the following code. We're not introducing anything new, just using already shown React Native components. We also removed `connect` function, since this screen doesn't need state.
+
+```JSX{6-7,10-26}
 #file: app/screens/RestaurantDetails.js
 import React, {
-  Component,
-  View,
-  Image,
+  Component
+} from 'react';
+import {
   Text,
+  View,
+  Image
 } from 'react-native';
-import { getAsset } from 'shoutem';
 
-class RestaurantDetails extends Component {
+export default class RestaurantDetails extends Component {
   render() {
     const { restaurant } = this.props;
     return (
       <View>
-        <Image source={getAsset(restaurant.image)} />
+        <Image source={require(`../${restaurant.image}`)} />
         <Text>{restaurant.description}</Text>
         <Text>LOCATION</Text>
         <Text>{restaurant.address}</Text>
@@ -219,9 +400,9 @@ class RestaurantDetails extends Component {
     )
   }
 }
-
-export default connect((state, ownProps) => state)(RestaurantsDetails)
 ```
+
+We'll skip implementing opening handling web and e-mail properties.
 
 Upload the extension:
 
@@ -231,7 +412,7 @@ Uploading `Restaurants` extension to Shoutem...
 Success!
 ```
 
-When you click on a row in list, this is what you get:
+When you click on a row in the list, this is what you get:
 
 <p class="image">
 <img src='{{ site.baseurl }}/img/getting-started/extension-plain-details.png'/>

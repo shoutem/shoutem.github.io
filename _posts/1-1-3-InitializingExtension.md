@@ -20,7 +20,7 @@ Let's start building! Locate to folder where you want to keep extension files:
 mkdir Restaurants && cd Restaurants
 ```
 
-Initialize the project:
+Initialize the extension with some data.
 
 ```ShellSession
 $ shoutem init
@@ -28,9 +28,12 @@ Enter information about your extension. Press `return` to accept (default) value
 Title: (Restaurants)
 Version: (0.0.1)
 Description: Show the cool restaurants!
+
+Extension successfully initialized!
+File `extension.json` is created.
 ```
 
-This information will be stored in `extension.json` file.
+These informations will be stored in `extension.json` file.
 
 > #### Note
 > In case you can't remember the structure of some command, type: `shoutem help` or `shoutem help [command]` where you should replace '[command]' with one of the [CLI commands]({{ site.baseurl }}/docs/cli/reference)
@@ -42,6 +45,7 @@ Initialization process already filled your folder with additional files and fold
 Restaurants/
   ├ app/
   |  ├ node_modules/
+  |  ├ const.js
   |  ├ index.js
   |  └ package.json
   ├ server/
@@ -50,8 +54,8 @@ Restaurants/
 
 Let's describe the structure:
 
-- `app/`: Contains application code
-- `server/`: Contains server code
+- `app/`: Application code
+- `server/`: Server code
 - `extension.json`: Extension general information
 
 In `extension.json` you can see:
@@ -67,9 +71,9 @@ In `extension.json` you can see:
 }
 ```
 
-Property `name`, combined with your developer name, uniquely identifies the extension. We'll use `name` to define extensions parts on other places too.
+Property `name`, combined with your developer name, uniquely identifies the extension. We'll use property `name` to define extensions parts too.
 
-Extension is now only locally available on your computer. We need to upload it to Shoutem server so you can install it on the application.
+Extension is now only locally available on your computer. We need to upload it to Shoutem so you can install it on the application.
 
 ```ShellSession
 $ shoutem push
@@ -77,15 +81,13 @@ Uploading `Restaurants` extension to Shoutem...
 Success!
 ```
 
-Create new application in [Shoutem builder](/docs/coming-soon). We'll use that application to test our extension. Install extension to the application. Write:
+To test our extension, we need to install it on the Shoutem application. You can create new application on [Shoutem builder](/docs/coming-soon) or just pass flag `--new` to installation command:
 
 ```ShellSession
-$ shoutem install
-> Restaurants App
-  Shoutem Demo App
+$ shoutem install --new
+Extension is installed on the new created `Restaurants` application.
+See it in browser: `https://www.shoutem.com/builder?id=141231234123`
 ```
-
-and select which application you want to install it on.
 
 Go to `Extensions` tab in [Shoutem builder](/docs/coming-soon). You'll see that extensions is installed on your application.
 
@@ -93,10 +95,10 @@ Go to `Extensions` tab in [Shoutem builder](/docs/coming-soon). You'll see that 
 <img src='{{ site.baseurl }}/img/getting-started/extension-tab-extension.png'/>
 </p>
 
-However, when you go to `Screens` tab now and click `Add`, this extension won't be shown.
+However, when you go to `Screens` tab now and click on `+` next to `Screens`, this extension won't be shown.
 
 <p class="image">
 <img src='{{ site.baseurl }}/img/getting-started/add-content-no-extension.png'/>
 </p>
 
-That's because `Add` modal shows _shortcuts_ which extensions export. We need to add shortcut to our extensions.
+That's because `Add screen` modal shows _shortcuts_ which extensions export. We need to add shortcut to our extensions.
