@@ -10,7 +10,6 @@ Screens are React components which are connected to Redux store, i.e. they have 
 
 ```ShellSession
 $ shoutem screen create RestaurantsList
-
 File `app/screens/RestaurantsList.js` is created.
 ```
 
@@ -217,7 +216,6 @@ Try clicking on a row. Nothing happens! We want to open up a details screen when
 
 ```ShellSession
 $ shoutem screen create RestaurantDetails
-
 File `app/screens/RestaurantDetails.js` is created.
 ```
 
@@ -418,4 +416,4 @@ When you click on a row in the list, this is what you get:
 <img src='{{ site.baseurl }}/img/getting-started/extension-plain-details.png'/>
 </p>
 
-We finished UI skeleton for our extension. But, it doesn't look as nice as we planned at the beginning. That's because we're using plain React Native components. `Shoutem UI toolkit to the rescue!`.
+We finished UI skeleton for our extension. But, it doesn't look as nice as we planned at the beginning. That's because we're using plain React Native components. `Shoutem UI Toolkit to the rescue!`.

@@ -34,7 +34,7 @@ Shoutem has developed very easy and intuitive process of app publishing, once yo
 
 Apart from extensions, Shoutem has other products ready for boosting your mobile development. Check them out:
 
-- [Build gorgeous apps with UI toolkit]({{ site.baseurl }}/docs/ui-toolkit/introduction)
+- [Build gorgeous apps with UI Toolkit]({{ site.baseurl }}/docs/ui-toolkit/introduction)
 - [Use scalable Cloud Storage optimized for React Native apps]({{ site.baseurl }}/docs/cloud/introduction)
 
 Good coding!

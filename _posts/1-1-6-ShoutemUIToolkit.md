@@ -6,9 +6,9 @@ permalink: /docs/getting-started/shoutem-ui-toolkit
 # Using UI Toolkit
 <hr />
 
-Shoutem UI toolkit is a set of styleable UI components that you can use in any React Native application. It basically turns any ordinary app into an amazing app. There are plenty of components that you can use out of the box. In this tutorial we'll use `ListView`, `Tile`, `Image`, `Title`, `Subtitle`, `Row`, `View` and `Icon` from the UI toolkit. Documentation for all the components can be found in the [reference]({{ site.baseurl }}/docs/ui-toolkit/introduction).
+Shoutem UI Toolkit is a set of styleable UI components that you can use in any React Native application. It basically turns any ordinary app into an amazing app. There are plenty of components that you can use out of the box. In this tutorial we'll use `ListView`, `Tile`, `Image`, `Title`, `Subtitle`, `Row`, `View` and `Icon` from the UI Toolkit. Documentation for all the components can be found in the [reference]({{ site.baseurl }}/docs/ui-toolkit/introduction).
 
-Up until now, we only used React Native components. Some of them, like `ListView`, have correspondent views in Shoutem UI toolkit. Update `RestaurantsList` screen code so that it uses Shoutem UI components.
+Up until now, we only used React Native components. Some of them, like `ListView`, have correspondent views in Shoutem UI Toolkit. Update `RestaurantsList` screen code so that it uses Shoutem UI components.
 
 ```JSX{4-10,27-32,41}
 #file: app/screens/RestaurantsList.js

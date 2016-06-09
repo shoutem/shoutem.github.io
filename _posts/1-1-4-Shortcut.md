@@ -110,4 +110,4 @@ Go to `Screens` in [Shoutem builder](/docs/coming-soon) and click to `+`. You ca
 <img src='{{ site.baseurl }}/img/getting-started/add-modal-shortcut.png'/>
 </p>
 
-Try clicking now on `List of restaurants` in `Add screen` modal. Shortcut is inserted into app navigation, but nothing else happens! That's exactly what `openRestaurantsList` action does - nothing. Let's change that so it opens `Screen`.
+Try clicking now on `Restaurants` in `Add screen` modal. Shortcut is inserted into app navigation, but nothing else happens! That's exactly what `openRestaurantsList` action does - nothing. Let's change that so it opens `Screen`.
