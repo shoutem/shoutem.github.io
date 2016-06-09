@@ -11,7 +11,7 @@ Once your extension is done, you can publish it. Although your extension is alre
 By default, all extension that you publish to the market are only visible to you. So, let's publish it!
 
 ```ShellSession
-shoutem publish
+$ shoutem publish
 Publishing `Restaurants` extension to Shoutem...
 Version 0.0.1 of `Restaurants` extensions was published!
 ```

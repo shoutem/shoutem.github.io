@@ -116,7 +116,7 @@ export default connect(
 
 This is the final result of `RestaurantsList` screen that uses both Shoutem UI Toolkit and Shoutem Cloud Storage.
 
-```JSX{9,15,19-24,44-49,54-56,57}
+```JSX{9,15,19-24,44-49,54-56,57,59}
 #file: app/screens/RestaurantsList.js
 import React, {
   Component,
