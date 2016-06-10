@@ -8,7 +8,7 @@ permalink: /docs/getting-started/publish
 
 Once your extension is done, you can publish it. Although your extension is already uploaded and installed to application, that application can't be published until extension is published.
 
-By default, all extension that you publish to the market are only visible to you. So, let's publish it!
+By default, every extension that you publish to the market is only visible to you. So, let's publish it!
 
 ```ShellSession
 $ shoutem publish
@@ -22,7 +22,7 @@ Go to [Developer console](/docs/coming-soon), where you can see your extension.
 <img src='{{ site.baseurl }}/img/getting-started/developer-console.png'/>
 </p>
 
-There you can manage general information about your extension, set its visibility and track the analytics. Go back to your application dashboard again and click `Publish` above the preview. That will lead you to screen for `Automatic App Publishing`.
+There you can manage general information about your extension, set its visibility and track the analytics. Go back to application dashboard for **RestaurantsApp** again and click `Publish` above the preview. That will lead you to screen for `Automatic App Publishing`.
 
 <p class="image">
 <img src='{{ site.baseurl }}/img/getting-started/automatic-app-publishing.png'/>
@@ -35,6 +35,7 @@ Shoutem has developed very easy and intuitive process of app publishing, once yo
 Apart from extensions, Shoutem has other products ready for boosting your mobile development. Check them out:
 
 - [Build gorgeous apps with UI Toolkit]({{ site.baseurl }}/docs/ui-toolkit/introduction)
-- [Use scalable Cloud Storage optimized for React Native apps]({{ site.baseurl }}/docs/cloud/introduction)
+- [Use scalable Cloud Storage optimized for React Native apps]({{ site.baseurl }}/docs/coming-soon)
+
 
 Good coding!
