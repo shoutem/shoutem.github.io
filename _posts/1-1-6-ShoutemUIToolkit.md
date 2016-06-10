@@ -132,7 +132,6 @@ export default class RestaurantDetails extends Component {
             <Subtitle>Email</Subtitle>
             <Text>{restaurant.email}</Text>
           </View>
-          <Icon iconName="disclosure" />
         </Row>
       </View>
     )
@@ -152,4 +151,4 @@ And this is our `RestaurantDetails` screen:
 <img src='{{ site.baseurl }}/img/getting-started/extension-rich-details.png'/>
 </p>
 
-That's exactly what we wanted to get! Our app reached final look! However, our app is using static data. Every time we want a change, we need to update the version of extension. That would be a very long process. It would be better to use Shoutem .
+That's exactly what we wanted to get! Our app reached final look! However, our app is using static data. Every time we want a change, we need to update the version of extension. That would be a very long process. **Shoutem Cloud Storage** to the rescue!
