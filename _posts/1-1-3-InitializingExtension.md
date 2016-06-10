@@ -12,12 +12,12 @@ Here's the mockup of the Restaurants extension, slightly different from the pict
 <img src='{{ site.baseurl }}/img/getting-started/extension-preview-lightweight.png'/>
 </p>
  
-Left application screen lists the restaurants and the right one shows details of one specific screen. 
+Left application screen lists the restaurants and the right one shows the details of one specific screen. 
 
 Let's start building! Locate to folder where you want to keep extension files:
 
 ```ShellSession
-mkdir Restaurants && cd Restaurants
+mkdir restaurants && cd restaurants
 ```
 
 Initialize the extension with some data.
@@ -39,7 +39,7 @@ These informations will be stored in `extension.json` file.
 > In case you can't remember the structure of some command, type: `shoutem help` or `shoutem help [command]` where you should replace '[command]' with one of the [CLI commands]({{ site.baseurl }}/docs/cli/reference)
 
 ## Folder structure
-Initialization process already filled your folder with additional files and folders. Your structure looks like this:
+Initialization process already filled your folder with additional files and folders. Your structure looks as follows:
 
 ```
 Restaurants/
@@ -71,9 +71,9 @@ In `extension.json` you can see:
 }
 ```
 
-Property `name`, combined with your developer name, uniquely identifies the extension. We'll use property `name` to define extensions parts too.
+Property `name`, combined with your developer name, uniquely identifies the extension: `developer.restaurants`. We'll use property `name` to define extensions parts too.
 
-Extension is now only locally available on your computer. We need to upload it to Shoutem so you can install it on the application.
+Extension is now only locally available on your machine. We need to upload it to Shoutem so you can install it on the application.
 
 ```ShellSession
 $ shoutem push
@@ -81,11 +81,11 @@ Uploading `Restaurants` extension to Shoutem...
 Success!
 ```
 
-To test our extension, we need to install it on the Shoutem application. You can create new application on [Shoutem builder](/docs/coming-soon) or just pass flag `--new` to installation command:
+To test our extension, we need to install it on the Shoutem application. You can create new application in [Shoutem builder](/docs/coming-soon) or just pass flag `--new` to installation command:
 
 ```ShellSession
 $ shoutem install --new
-Extension is installed on the new created `Restaurants` application.
+Extension is installed onto newly created `Restaurants` application.
 See it in browser: `https://www.shoutem.com/builder?id=141231234123`
 ```
 
