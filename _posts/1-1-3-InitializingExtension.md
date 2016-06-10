@@ -89,7 +89,7 @@ Extension is installed onto newly created `Restaurants` application.
 See it in browser: `https://www.shoutem.com/builder?id=141231234123`
 ```
 
-Go to `Extensions` tab in [Shoutem builder](/docs/coming-soon). You'll see that extensions is installed on your application.
+Go to `Extensions` tab in [Shoutem builder](/docs/coming-soon). You'll see that extension is installed on your application.
 
 <p class="image">
 <img src='{{ site.baseurl }}/img/getting-started/extension-tab-extension.png'/>

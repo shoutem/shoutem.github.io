@@ -6,7 +6,7 @@ permalink: /docs/getting-started/shortcut
 # Creating Shortcut
 <hr />
 
-Entry points of extensions are defined by shortcuts, which usually specify which screen will be opened first. Extensions can expose more shortcuts. You can see it as a starting point of some extension unit, e.g. feature - functional unit of your extension. Let's now create a shortcut.
+Entrance to the extension from application is defined by shortcuts, which most often specify the screen which will be opened first. Extensions can expose more shortcuts. You can see it as a starting point of some extension unit, e.g. feature - functional unit of your extension. Functional unit of the extension we're creating in this tutorial, allows admins to insert restaurants they want to show to the users of their application. Let's now create a shortcut.
 
 ```ShellSession
 $ shoutem shortcut create openRestaurantsList
@@ -38,7 +38,7 @@ Your `extension.json` was just modified:
 }
 ```
 
-Notice that object in `shortcuts` has property `name`, which identifies the Shortcut and `action`, which represents the action that will be triggered when shortcut is tapped. In the `name` property, use **relative name** to define an extension part. In properties like `action`, where some extension part is referenced, use **absolute name**. That's why under `action` property, we're having `developer.restaurants.openRestaurantsList` value instead of only `openRestaurantsList`. Absolute name of extension part follows this structure: `{developerName}.{extensionName}.{extensionPartName}`.
+Notice that object in `shortcuts` has property `name`, which defines the shortcut and `action`, which represents the action that will be triggered when shortcut is tapped. In the `name` property, use **relative name** to define an extension part. In properties like `action`, where some extension part is referenced, use **absolute name**. That's why under `action` property, we're having `developer.restaurants.openRestaurantsList` value instead of only `openRestaurantsList`. Absolute name of extension part follows this structure: `{developerName}.{extensionName}.{extensionPartName}`.
 
 In your `extension.json`, CLI already put your developer name instead of `developer` in this snippet, so you don't need to change anything.
 
@@ -82,7 +82,7 @@ export const actions = {};
 export const reducer = {};
 ```
 
-We'll store our actions in `app/action.js` file. Shoutem already created `openRestaurantsList` function in `app/action.js` file. Actions are nothing else than JavaScript functions. Some actions are used to open `Screen` and some are used as `Redux actions`, to change the store. In the `openRestaurantsList` we didn't implement which screen should be opened.
+We'll store our actions in `app/action.js` file. Shoutem already created `openRestaurantsList` function in `app/action.js` file. Actions are nothing else than JavaScript functions. Some actions are used to open `Screen` and some are used as `Redux actions`, to change the store. In the `openRestaurantsList` action, we still didn't say which screen should be opened. We'll leave that for later.
 
 Export that action inside of `app/index.js` file:
 
@@ -104,7 +104,7 @@ Uploading `Restaurants` extension to Shoutem...
 Success!
 ```
 
-Go to `Screens` in [Shoutem builder](/docs/coming-soon) and click to `+`. You can finally see your `extension` there. Moreover, you can see it's shortcut that it's exposing:
+Go to `Screens` in [Shoutem builder](/docs/coming-soon) and click to `+`. You can finally see your `extension` there. You can see it's shortcut that it's exposing.
 
 <p class="image">
 <img src='{{ site.baseurl }}/img/getting-started/add-modal-shortcut.png'/>
