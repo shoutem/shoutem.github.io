@@ -208,4 +208,4 @@ Everything should work as charm!
 <img src='{{ site.baseurl }}/img/getting-started/working-with-data.png'/>
 </p>
 
-This is it! You've done it. You've just made your first extension using powerful services as `Shoutem UI Toolkit` and `Shoutem Cloud Storage`. Well Done!
+This is it! You've done it. You've just made your first extension using powerful services as **Shoutem UI Toolkit** and **Shoutem Cloud Storage**. Well Done!
