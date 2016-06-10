@@ -37,5 +37,4 @@ Apart from extensions, Shoutem has other products ready for boosting your mobile
 - [Build gorgeous apps with UI Toolkit]({{ site.baseurl }}/docs/ui-toolkit/introduction)
 - [Use scalable Cloud Storage optimized for React Native apps]({{ site.baseurl }}/docs/coming-soon)
 
-
 Good coding!
