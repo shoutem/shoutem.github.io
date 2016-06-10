@@ -167,4 +167,4 @@ Add some restaurants to the admin page.
 <img src='{{ site.baseurl }}/img/getting-started/full-cms.png'/>
 </p>
 
-Although you've added them, our extension is still using static data. Let's go to fetch the data from Shoutem Cloud Storage using `@shoutem/redux-io` package.
+Although you've added them, your extension is still using static data. Let's go to fetch the data from Shoutem Cloud Storage using `@shoutem/redux-io` package.
