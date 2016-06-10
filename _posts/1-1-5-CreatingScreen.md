@@ -111,7 +111,7 @@ getRestaurants() {
 }
 ```
 
-We prepared some data for you. Create `app/assets` folder, which will keep the assets for application part of your extension. Download [this](/docs/coming-soon) `zip`, extract it and copy its content to `app/assets`. It contains `data/restaurants.json` file with restaurants data and `img/` folder with images for these restaurants.
+We prepared some data for you. Create `app/assets` folder, which will keep the assets for application part of your extension. Download [this](/restaurants.zip) `zip`, extract it and copy its content to `app/assets`. It contains `data/restaurants.json` file with restaurants data and `img/` folder with images for these restaurants.
 
 Implement `render` method that will use `ListView`. `ListView` accepts 2 properties: `dataSource` and `renderRow` which defines function rendering each row in the `ListView` component.
 

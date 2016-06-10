@@ -40,7 +40,7 @@ class RestaurantsList extends Component {
         })}>
         <Tile>
           <Image styleName="banner" source={`../${restaurant.image}`}>
-            <Title>{restaurant.title}</Title>
+            <Title>{restaurant.name}</Title>
             <Subtitle>{restaurant.address}</Subtitle>
           </Image>
         </Tile>
