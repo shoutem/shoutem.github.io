@@ -32,7 +32,7 @@ Password:
 
 Once you entered correct Shoutem credentials, you will be asked to specify unique developer name.
 
-```
+```ShellSession
 
 Successful login. Logged in as developer@example.com.
 Enter unique developer name.
