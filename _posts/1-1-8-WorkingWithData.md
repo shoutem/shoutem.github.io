@@ -10,14 +10,14 @@ Data on the Shoutem Cloud Storage needs to be fetched in the application. First,
 
 We can have one big reducer which will manage whole application state, or more little reducers which will take care of different properties in the state. 
 
-Package `@shoutem/redux-io` has [reducers](/docs/coming-soon) for and `actions` that can be used with Shoutem Storage. Import these reducers.
+Package `@shoutem/redux-io` has [reducers](/docs/coming-soon) and [actions](/docs/coming-soon) that communicate with Shoutem Cloud Storage. Import these reducers.
 
 ```javascript{1}
 #file: app/reducers/index.js
 import { storage, collection } from '@shoutem/redux-io';
 ```
 
-Reducer [storage](/docs/coming-soon) retrieves resources in dictionary while [collection](/docs/coming-soon) stores resources ID's in an array so that the order is maintained. Make use of Redux's [combineReducers](http://redux.js.org/docs/api/combineReducers.html) to create one `Root reducer` from more Shoutem reducers. 
+Reducer [storage](/docs/coming-soon) retrieves resources in a dictionary while [collection](/docs/coming-soon) stores resources ID's in an array so that the order is maintained. Make use of Redux's [combineReducers](http://redux.js.org/docs/api/combineReducers.html) to create one **root reducer** from more Shoutem reducers. 
 
 ```javascript{2-8}
 #file: app/reducers/index.js
@@ -37,7 +37,7 @@ This root reducer needs to be exported in `app/index.js` file:
 #file: app/index.js
 import reducer from './reducers';
 import RestaurantsList from './screens/RestaurantsList';
-import * as actions from './actions';
+import * as actions from './action';
 
 export const screens = {
   RestaurantsList,

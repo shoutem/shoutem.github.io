@@ -88,7 +88,7 @@ Export that action inside of `app/index.js` file:
 
 ```javascript{1,4}
 #file: app/index.js
-import * as actions from './actions';
+import * as actions from './action';
 export const screens = {};
 
 export actions;

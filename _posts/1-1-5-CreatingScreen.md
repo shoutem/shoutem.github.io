@@ -38,7 +38,7 @@ Screen needs to be exported in `app/index.js` and it's a good practice to do so 
 ```javascript{1,4-6}
 #file: app/index.js
 import RestaurantsList from './screens/RestaurantsList';
-import * as actions from './actions';
+import * as actions from './action';
 
 export const screens = {
   RestaurantsList,
