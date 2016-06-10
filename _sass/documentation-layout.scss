@@ -37,12 +37,12 @@
     display: inline-block;
   }
   .documentation-wrapper {
-      width: 60%;
+      width: 100%;
   }
 }
 
 @media (min-width: 1024px) {
   .documentation-wrapper {
-      max-width: 700px;
+      max-width: 870px;
   }
 }
