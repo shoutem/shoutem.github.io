@@ -81,11 +81,11 @@ Uploading `Restaurants` extension to Shoutem...
 Success!
 ```
 
-To test our extension, we need to install it on the Shoutem application. You can create new application in [Shoutem builder](/docs/coming-soon) or just pass flag `--new` to installation command:
+To test our extension, we need to install it on the Shoutem application. You can create new application in [Shoutem builder](/docs/coming-soon) or just pass flag `--new`  with the name for new application to installation command:
 
 ```ShellSession
-$ shoutem install --new
-Extension is installed onto newly created `Restaurants` application.
+$ shoutem install --new RestaurantsApp
+Extension is installed onto newly created `RestaurantsApp` application.
 See it in browser: `https://www.shoutem.com/builder?id=141231234123`
 ```
 
