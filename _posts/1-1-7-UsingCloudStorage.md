@@ -6,7 +6,7 @@ permalink: /docs/getting-started/using-cloud-storage
 # Using Cloud Storage
 <hr />
 
-Shoutem Cloud Storage is a CMS solution for mobile apps. It is optimized to be used within React Native apps with premade `reducers` and `actions` that are available in `@shoutem/redux-io` package. To describe model of your data on Shoutem Cloud Storage, you need to define `Data Schema`:
+Shoutem Cloud Storage is a CMS solution for mobile apps. It is optimized to be used within React Native apps with premade `reducers` and `actions` that are available in `@shoutem/redux-io` package. To describe model of your data on Shoutem Cloud Storage, you need to define a `Data Schema`:
 
 ```ShellSession
 $ shoutem data-schema create Restaurants
@@ -101,9 +101,9 @@ Let's add now properties that we want to persist for a restaurant, such as: `nam
 }
 ```
 
-At the end, we added few properties that describe your schema. We need to have a way to enter data for models represented by our data schemas. This is done on Shoutem Builder. Shoutem Builder has `admin pages` that are used for creating content for application and setting the preferences of the extension. You can write your own `admin pages` and thus fully customize the way app admin interacts with your extension. Shoutem has already made few `admin pages` that you are used to enter data to Shoutem Cloud.
+At the end, we added few properties that describe your schema. We need to have a way to enter data for models represented by our data schemas. This is done on Shoutem Builder. Shoutem Builder has **Admin Pages** that are to manage the extension, such as for creating the content for application or setting preferences of the extension. You can write your own Admin Pages and thus fully customize the way application admin interacts with your extension. Shoutem has already made few Admin Pages that you are used to enter data to Shoutem Cloud Storage.
 
-`Admin pages` are registered to specific extension shortcut. Add `admin page` to `OpenRestaurantsList` shortcut and specify for which `data schema` you want to enter data:
+Admin Pages are registered to a specific extension shortcut. Add Admin Page to `openRestaurantsList` shortcut and specify for which Data Schema you want to enter data:
 
 ```JSON{12-18}
 #file: extension.json
@@ -155,7 +155,7 @@ Click on `Create content` to start adding content. It will redirect you to `CMS`
 <img src='{{ site.baseurl }}/img/getting-started/empty-cms.png'/>
 </p>
 
-Click on `Add item`. This will open a modal for inserting data for `Restaurant` model, which you defined with your `data-schema`.
+Click on `Add item`. This will open a modal for inserting data for `Restaurants` model, which you defined with your Data Schema.
 
 <p class="image">
 <img src='{{ site.baseurl }}/img/getting-started/cms-modal.png'/>
