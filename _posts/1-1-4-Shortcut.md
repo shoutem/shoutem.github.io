@@ -6,7 +6,7 @@ permalink: /docs/getting-started/shortcut
 # Creating Shortcut
 <hr />
 
-Entrance to the extension from application is defined by shortcuts, which most often specify the screen which will be opened first. Extensions can expose more shortcuts. You can see it as a entry point of some extension unit, i.e. functional unit of your extension. Functional unit of the extension we're creating in this tutorial, allows admins to insert restaurants they want to show to the users of their application. Let's now create a shortcut.
+Entrance to the extension from application is defined by shortcuts. Extensions can expose more shortcuts. The easiest way to understand what shortcuts are, is to think of them as links to the starting screen in your extension. These links will be used to navigate to your extension from any part of the application. Let's now create a shortcut.
 
 ```ShellSession
 $ shoutem shortcut create openRestaurantsList
