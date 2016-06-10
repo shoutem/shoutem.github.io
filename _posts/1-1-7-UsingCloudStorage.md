@@ -10,8 +10,7 @@ Shoutem Cloud Storage is a CMS solution for mobile apps. It is optimized to be u
 
 ```ShellSession
 $ shoutem data-schema create Restaurants
-`Restaurants` data schema is created.
-Success!
+File `server/data-schemas/Restaurants.json` is created.
 ```
 
 Folder `data-schemas` inside `server` folder was created with file `Restaurants.json`. Content of that file is following:
@@ -36,12 +35,11 @@ This is for the first time that we used `server` folder for something. The reaso
 
 This schema was immediately exported in `extension.json` file:
 
-```JSON{13-16}
+```JSON{12-15}
 #file: extension.json
 {
   "name": "restaurants",
   "version": "0.0.1",
-
   "title": "Restaurants",
   "description": "Show the cool restaurants!",
   "shortcuts": [{
@@ -59,7 +57,7 @@ This schema was immediately exported in `extension.json` file:
 
 Let's add now properties that we want to persist for a restaurant, such as: `name`, `address`, `description`, `url`, `image` and `mail`.
 
-```JSON{4-34}
+```JSON{4-33}
 #file: server/data-schemas/Restaurants.json
 {
   "name": "Restaurants",
@@ -105,12 +103,11 @@ At the end, we added few properties that describe your schema. We need to have a
 
 Admin Pages are registered to a specific extension shortcut. Add Admin Page to `openRestaurantsList` shortcut and specify for which Data Schema you want to enter data:
 
-```JSON{12-18}
+```JSON{11-17}
 #file: extension.json
 {
   "name": "restaurants",
   "version": "0.0.1",
-
   "title": "Restaurants",
   "description": "Show the cool restaurants!",
   "shortcuts": [{

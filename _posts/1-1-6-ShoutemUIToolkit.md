@@ -139,6 +139,8 @@ export default class RestaurantDetails extends Component {
 }
 ```
 
+Upload it.
+
 ```ShellSession
 $ shoutem push
 Uploading `Restaurants` extension to Shoutem...

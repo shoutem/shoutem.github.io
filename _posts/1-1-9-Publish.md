@@ -13,7 +13,7 @@ By default, every extension that you publish to the market is only visible to yo
 ```ShellSession
 $ shoutem publish
 Publishing `Restaurants` extension to Shoutem...
-Version 0.0.1 of `Restaurants` extensions was published!
+Version `0.0.1` of `Restaurants` extensions was published!
 ```
 
 Go to [Developer console](/docs/coming-soon), where you can see your extension.

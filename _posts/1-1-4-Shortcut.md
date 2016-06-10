@@ -6,11 +6,11 @@ permalink: /docs/getting-started/shortcut
 # Creating Shortcut
 <hr />
 
-Entrance to the extension from application is defined by shortcuts, which most often specify the screen which will be opened first. Extensions can expose more shortcuts. You can see it as a starting point of some extension unit, e.g. feature - functional unit of your extension. Functional unit of the extension we're creating in this tutorial, allows admins to insert restaurants they want to show to the users of their application. Let's now create a shortcut.
+Entrance to the extension from application is defined by shortcuts, which most often specify the screen which will be opened first. Extensions can expose more shortcuts. You can see it as a entry point of some extension unit, i.e. functional unit of your extension. Functional unit of the extension we're creating in this tutorial, allows admins to insert restaurants they want to show to the users of their application. Let's now create a shortcut.
 
 ```ShellSession
 $ shoutem shortcut create openRestaurantsList
-Enter shortcut's informations.
+Enter shortcut information.
 Title: List of restaurants
 Description: Allow users to browse through list of restaurants
 
@@ -21,12 +21,11 @@ File `app/action.js` is created.
 
 Your `extension.json` was just modified:
 
-```json{6-12}
+```json{6-11}
 #file: extension.json
 {
   "name": "restaurants",
   "version": "0.0.1",
-
   "title": "Restaurants",
   "description": "Show the cool restaurants!",
   "shortcuts": [{

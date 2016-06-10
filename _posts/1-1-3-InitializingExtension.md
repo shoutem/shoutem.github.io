@@ -17,20 +17,19 @@ Left application screen lists the restaurants and the right one shows the detail
 Let's start building! Locate to folder where you want to keep extension files:
 
 ```ShellSession
-mkdir restaurants && cd restaurants
+mkdir Restaurants && cd Restaurants
 ```
 
 Initialize the extension with some data.
 
 ```ShellSession
-$ shoutem init
-Enter information about your extension. Press `return` to accept (default) value.
+$ shoutem init restaurants
+Enter information about your extension. Press `return` to accept (default) values.
 Title: (Restaurants)
 Version: (0.0.1)
 Description: Show the cool restaurants!
 
 Extension successfully initialized!
-File `extension.json` is created.
 ```
 
 These informations will be stored in `extension.json` file.
@@ -65,7 +64,6 @@ In `extension.json` you can see:
 {
   "name": "restaurants",
   "version": "0.0.1",
-
   "title": "Restaurants",
   "description": "Show the cool restaurants!"
 }
@@ -86,7 +84,7 @@ To test our extension, we need to install it on the Shoutem application. You can
 ```ShellSession
 $ shoutem install --new RestaurantsApp
 Extension is installed onto newly created `RestaurantsApp` application.
-See it in browser: `https://www.shoutem.com/builder?id=141231234123`
+See it in browser: `https://builder.shoutem.com/apps/141231234123`
 ```
 
 Go to `Extensions` tab in [Shoutem builder](/docs/coming-soon). You'll see that extension is installed on your application.
