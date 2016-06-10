@@ -52,7 +52,7 @@ import { navigateTo } from '@shoutem/core';
 
 // Shoutem specified actions
 export function openRestaurantsList(shortcut) {
-  navigateTo({
+  return navigateTo({
     // TODO: Specify screen to be opened
   })
 }

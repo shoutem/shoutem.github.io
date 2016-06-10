@@ -34,7 +34,7 @@ export default combineReducers({
 This root reducer needs to be exported in `app/index.js` file:
 
 ```javascript{1,11}
-#file app/index.js
+#file: app/index.js
 import reducer from './reducers';
 import RestaurantsList from './screens/RestaurantsList';
 import * as actions from './actions';
@@ -56,7 +56,7 @@ render() {
   const { navigateTo, restaurants } = this.props;
   return restaurants ? 
     <ListView
-      dataSource={restaurants}
+      data={restaurants}
       renderRow={restaurant => this.renderRow(restaurant, navigateTo)}
     /> :
     <Spinner />
@@ -164,7 +164,7 @@ class RestaurantsList extends Component {
     const { navigateTo, restaurants } = this.props;
     return restaurants ? 
       <ListView
-        dataSource={restaurants}
+        data={restaurants}
         renderRow={restaurant => this.renderRow(restaurant, navigateTo)}
       /> :
       <Spinner />

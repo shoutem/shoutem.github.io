@@ -59,7 +59,7 @@ import { ext } from './const';
 // Define your actions
 
 // Shoutem specified actions
-export function openRestaurantsList() {
+export function openRestaurantsList(shortcut) {
   return navigateTo({
     screen: ext('RestaurantsList')
   })
@@ -170,7 +170,7 @@ const style = StyleSheet.create({
   container: {
     flex: 1,
     flexDirection: 'row',
-    justifyContent: 'center',
+    justifyContent: 'space-around',
     alignItems: 'center'
   },
   title: {
