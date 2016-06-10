@@ -31,7 +31,7 @@ class RestaurantsList extends Component {
 export default connect((state, ownProps) => state)(RestaurantsList)
 ```
 
-In React, `Components` specify their UI in `render` method. On the other hand, [connect](https://github.com/reactjs/react-redux/blob/master/docs/api.md#connectmapstatetoprops-mapdispatchtoprops-mergeprops-options) call connects component to application's state.
+In React, `Components` specify their UI in `render` method. On the other hand, [connect](https://github.com/reactjs/react-redux/blob/master/docs/api.md#connectmapstatetoprops-mapdispatchtoprops-mergeprops-options) call connects component to the application's state.
 
 Screen needs to be exported in `app/index.js` and it's a good practice to do so immediately:
 
@@ -51,7 +51,7 @@ export const reducer = {};
 
 Open that screen when `openRestaurantsList` action is triggered in `app/action.js`:
 
-```javascript{9}
+```javascript{2,9}
 #file: app/action.js
 import { navigateTo } from '@shoutem/core';
 import { ext } from './const';
@@ -66,7 +66,7 @@ export function openRestaurantsList(shortcut) {
 }
 ```
 
-Redux action creator `navigateTo`, provided by Shoutem, opens new screen in application. It accepts [Shoutem route object](/docs/coming-soon) as the only argument. Property `screen` holds an absolute reference for the screen that should be opened once shortcut is clicked. Since we exported name `RestaurantsList` inside `screens` exported object in `app/index.js`, our screen has `developer.restaurants.RestaurantsList` name. However, since we're referencing something that is defined in our extension, we can also use helper `ext` function that was created in `app/const.js` file. This function returns **absolute name** for the extension part which is passed as its first argument.
+Redux action creator `navigateTo`, provided by Shoutem, opens new screen in application. It accepts [Shoutem route object](/docs/coming-soon) as the only argument. Property `screen` holds an absolute reference for the screen that should be opened once shortcut is clicked. Since we exported name `RestaurantsList` inside `screens` exported object in `app/index.js`, our screen has `developer.restaurants.RestaurantsList` `name`. However, since we're referencing something that is defined in our extension, we can also use helper function `ext` that was created in `app/const.js` file. This function returns **absolute name** for the extension part which is passed as its first argument, or `extension name` if no argument is passed.
 
 Upload the extension:
 
@@ -109,7 +109,7 @@ Implement `render` method that will use `ListView`. `ListView` accepts 2 propert
 
 Remove old `render` method and add these methods:
 
-```JSX{1-13,16-22}
+```JSX{1-13,16-21}
 #file: app/screens/RestaurantsList.js
 getDataSource(restaurants) {
   const dataSource = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
@@ -235,7 +235,7 @@ import {
 
 `TouchableOpacity` provides a way to catch touching the area on the screen taken by the components inside of the `TouchableOpacity` component. To open a screen on touch, we need to dispatch already introduced `navigateTo` Redux action creator. We can use it directly in the screen through dispatch, but Redux standard way is to bind together `dispatch` and action creator inside `mapDispatchToProps` function, the second argument of [connect](https://github.com/reactjs/react-redux/blob/master/docs/api.md#connectmapstatetoprops-mapdispatchtoprops-mergeprops-options) function.
 
-Import `navigateTo` function from `@shoutem/core` along with `bindActionCreators` from Redux which will do the binding. We'll also need to specify which screens needs to be opened, so import `ext` function as well.
+Import `navigateTo` function from `@shoutem/core` along with `bindActionCreators` from Redux which will do the binding. We also need to specify which screens needs to be opened, so import `ext` function as well.
 
 ```javascript{1,2}
 #file: app/screens/RestaurantsList.js
@@ -291,7 +291,7 @@ renderRow(restaurant, navigateTo) {
 
 This is what you should have end up with in `app/screens/RestaurantsList.js`:
 
-```JSX{5,7-10,12-15,18-39,42-73}
+```JSX{5,7-10,12-15,18-39,42-48,52-73}
 #file: app/screens/RestaurantsList.js
 import React, {
   Component
@@ -368,7 +368,7 @@ export default connect(
   })(RestaurantsList)
 ```
 
-To `RestaurantDetails` screen, just copy the following code. We're not introducing anything new, just using already shown React Native components. We also removed `connect` function, since this screen doesn't need state.
+To `RestaurantDetails` screen, just copy the following code. We're not introducing anything new, just using already shown React Native components. We also removed `connect` function, since this screen doesn't need a state.
 
 ```JSX{6-7,10-26}
 #file: app/screens/RestaurantDetails.js
@@ -400,7 +400,7 @@ export default class RestaurantDetails extends Component {
 }
 ```
 
-We'll skip implementing opening handling web and e-mail properties.
+We'll skip implementing the handling of web and e-mail properties and just render them.
 
 Upload the extension:
 
@@ -416,4 +416,4 @@ When you click on a row in the list, this is what you get:
 <img src='{{ site.baseurl }}/img/getting-started/extension-plain-details.png'/>
 </p>
 
-We finished UI skeleton for our extension. But, it doesn't look as nice as we planned at the beginning. That's because we're using plain React Native components. `Shoutem UI Toolkit to the rescue!`.
+We finished UI skeleton for our extension. But, it doesn't look as nice as we planned at the beginning. That's because we're using plain React Native components. **Shoutem UI Toolkit** to the rescue!.
