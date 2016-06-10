@@ -64,7 +64,7 @@ import {
 
 Use `Spinner` in `render` method.
 
-```JSX{4-8}
+```JSX{3-8}
 #file: app/screens/RestaurantsList.js
 render() {
   const { navigateTo, restaurants } = this.props;

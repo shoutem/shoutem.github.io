@@ -6,7 +6,7 @@ permalink: /docs/getting-started/shortcut
 # Creating Shortcut
 <hr />
 
-Entrance to the extension from application is defined by shortcuts. Extensions can expose more shortcuts. The easiest way to understand what shortcuts are, is to think of them as links to the starting screen in your extension. These links will be used to navigate to your extension from any part of the application. Let's now create a shortcut.
+The easiest way to understand what shortcuts are, is to think of them as links to the starting screen in your extension. These links will be used to navigate to your extension from any part of the application. Extensions can expose more shortcuts. Let's now create a shortcut.
 
 ```ShellSession
 $ shoutem shortcut create openRestaurantsList
@@ -67,7 +67,7 @@ Application needs to know where it can find extension parts. To give you freedom
 - middleware and
 - application lifecycle methods.
 
-We won't use the two latter in this tutorial, but you can find more information [here](/docs/coming-soon). Current `index.js` looks as follows:
+We won't use the last two in this tutorial, but you can find more information [here](/docs/coming-soon). Current `index.js` looks as follows:
 
 ```JSX
 #file: app/index.js

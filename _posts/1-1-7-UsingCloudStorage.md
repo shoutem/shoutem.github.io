@@ -99,9 +99,7 @@ Let's add now properties that we want to persist for a restaurant, such as: `nam
 }
 ```
 
-At the end, we added few properties that describe your schema. We need to have a way to enter data for models represented by our data schemas. This is done on Shoutem Builder. Shoutem Builder has **Admin Pages** that are to manage the extension, such as for creating the content for application or setting preferences of the extension. You can write your own Admin Pages and thus fully customize the way application admin interacts with your extension. Shoutem has already made few Admin Pages that you are used to enter data to Shoutem Cloud Storage.
-
-Admin Pages are registered to a specific extension shortcut. Add Admin Page to `openRestaurantsList` shortcut and specify for which Data Schema you want to enter data:
+Now in order to enter data for your schema, you need to link your extension with Shoutem CMS admin page. Shortly, **Admin Pages** are web pages that you as developer can write to allow admin to manage your extension. They are shown inside Shoutem builder when admin clicks on the shortcut. In this example we’re using predefined Shoutem CMS admin page. Add Admin Page to `openRestaurantsList` shortcut and specify for which Data Schema you want to enter the data:
 
 ```JSON{11-17}
 #file: extension.json

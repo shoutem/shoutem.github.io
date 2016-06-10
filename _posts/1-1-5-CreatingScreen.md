@@ -3,10 +3,14 @@ layout: doc
 permalink: /docs/getting-started/creating-screen
 ---
 
-# Creating Screen
+# Creating Screens
 <hr />
 
-Screens are React components which are connected to Redux store, i.e. they have access to complete application's state. Let's create new screen:
+Screens are React components which are connected to Redux store, i.e. they have access to complete application's state.
+
+## Creating list screen
+
+Let's create new screen.
 
 ```ShellSession
 $ shoutem screen create RestaurantsList
@@ -66,7 +70,7 @@ export function openRestaurantsList(shortcut) {
 }
 ```
 
-Redux action creator `navigateTo`, provided by Shoutem, opens new screen in application. It accepts [Shoutem route object](/docs/coming-soon) as the only argument. Property `screen` holds an absolute reference for the screen that should be opened once shortcut is clicked. Since we exported name `RestaurantsList` inside `screens` exported object in `app/index.js`, our screen has `developer.restaurants.RestaurantsList` `name`. However, since we're referencing something that is defined in our extension, we can also use helper function `ext` that was created in `app/const.js` file. This function returns **absolute name** for the extension part which is passed as its first argument, or `extension name` if no argument is passed.
+Redux action creator `navigateTo` opens new screen in application. It accepts [Shoutem route object](/docs/coming-soon) as the only argument. Property `screen` holds a reference for the screen that should be opened once shortcut is touched. To reference our `RestaurantsList` screen exported in `app/index.js`, we're using `ext` helper function that was created in `app/const.js` file. This function returns an **absolute name**, e.g. `developer.restaurants.RestaurantsList`, for the extension part which is passed as its first argument, or `extension name` if no argument is passed.
 
 Upload the extension:
 
@@ -82,7 +86,11 @@ Try now tapping to shortcut on the preview in [Shoutem Builder](/docs/coming-soo
 <img src='{{ site.baseurl }}/img/getting-started/extension-hello-world.png'/>
 </p>
 
-Great! New screen is opened. Add static restaurants and `ListView` in screen. Start by importing [View](/docs/coming-soon), [ListView](/docs/coming-soon) and [Image](/docs/coming-soon) from React Native.
+Great! New screen is opened.
+
+## Adding static data
+
+Let's add static restaurants and `ListView` in screen. Start by importing [View](/docs/coming-soon), [ListView](/docs/coming-soon) and [Image](/docs/coming-soon) from React Native.
 
 ```javascript{1-5}
 #file: app/screens/RestaurantsList.js
@@ -94,9 +102,7 @@ import {
 } from 'react-native';
 ```
 
-Define a method in `RestaurantsList` class that returns an array of restaurants. We prepared some data for you. Create `app/assets` folder, which will keep the assets for application part of your extension. Download [this](/docs/coming-soon) `zip`, extract it and copy its content to `app/assets`. It contains `data/restaurants.json` file with restaurants data and `img/` folder with images for these restaurants.
-
-Now, back to defining a method in `RestaurantsList` that will retrieve this data.
+Define a method in `RestaurantsList` class that returns an array of restaurants.
 
 ```javascript{1-3}
 #file: app/screens/RestaurantsList.js
@@ -104,6 +110,8 @@ getRestaurants() {
   return require('../assets/data/restaurants.json');
 }
 ```
+
+We prepared some data for you. Create `app/assets` folder, which will keep the assets for application part of your extension. Download [this](/docs/coming-soon) `zip`, extract it and copy its content to `app/assets`. It contains `data/restaurants.json` file with restaurants data and `img/` folder with images for these restaurants.
 
 Implement `render` method that will use `ListView`. `ListView` accepts 2 properties: `dataSource` and `renderRow` which defines function rendering each row in the `ListView` component.
 
@@ -149,7 +157,11 @@ Success!
 <img src='{{ site.baseurl }}/img/getting-started/extension-plain-list-without-jss.png'/>
 </p>
 
-It's not quite how we wanted it to look like - image and text are not aligned. We need to add some styling with React Native. Import `StyleSheet` from React Native.
+It's not quite how we wanted it to look like - image and text are not aligned.
+
+## Styling the screen
+
+We need to add some styling with React Native. Import `StyleSheet` from React Native.
 
 ```javascript{2}
 #file: app/screen/RestaurantsList.js
@@ -212,7 +224,11 @@ It looks how we wanted!
 <img src='{{ site.baseurl }}/img/getting-started/extension-plain-list.png'/>
 </p>
 
-Try clicking on a row. Nothing happens! We want to open up a details screen when list row item is clicked. First, create that screen:
+Try clicking on a row. Nothing happens! We want to open up a details screen when list row item is clicked.
+
+## Creating details screen
+
+First, create that screen:
 
 ```ShellSession
 $ shoutem screen create RestaurantDetails
@@ -233,7 +249,7 @@ import {
 } from 'react-native';
 ```
 
-`TouchableOpacity` provides a way to catch touching the area on the screen taken by the components inside of the `TouchableOpacity` component. To open a screen on touch, we need to dispatch already introduced `navigateTo` Redux action creator. We can use it directly in the screen through dispatch, but Redux standard way is to bind together `dispatch` and action creator inside `mapDispatchToProps` function, the second argument of [connect](https://github.com/reactjs/react-redux/blob/master/docs/api.md#connectmapstatetoprops-mapdispatchtoprops-mergeprops-options) function.
+To catch a tap on list row, we will use `TouchableOpacity` component. To open a screen on touch, we need to dispatch already introduced `navigateTo` Redux action creator. We can use it directly in the screen through dispatch, but Redux standard way is to bind together `dispatch` and action creator inside `mapDispatchToProps` function, the second argument of [connect](https://github.com/reactjs/react-redux/blob/master/docs/api.md#connectmapstatetoprops-mapdispatchtoprops-mergeprops-options) function.
 
 Import `navigateTo` function from `@shoutem/core` along with `bindActionCreators` from Redux which will do the binding. We also need to specify which screens needs to be opened, so import `ext` function as well.
 
@@ -244,7 +260,7 @@ import { bindActionCreators } from 'redux';
 import { ext } from '../const';
 ```
 
-and do the binding in `connect` function of `RestaurnatsList` screen:
+Do the binding in `connect` function of `RestaurnatsList` screen:
 
 ```javascript{1-5}
 #file: app/screens/RestaurantsList.js
@@ -257,22 +273,7 @@ export default connect(
 
 We can access bound actions through the `props` and pass it to `renderRow` function. Change the call of `renderRow` function in `render` method, to pass it a `navigateTo` function.
 
-```JSX{2,6}
-#file: app/screens/RestaurantsList.js
-render() {
-  const { navigateTo } = this.props.actions;
-  return (
-    <ListView
-      dataSource={this.getDataSource(this.getRestaurants())}
-      renderRow={restaurant => this.renderRow(restaurant, navigateTo)}
-    />
-  )
-}
-```
-
-And use it in `renderRow` method:
-
-```JSX{1,3-6,11}
+```JSX{1,3-6,11,16,20}
 #file: app/screens/RestaurantsList.js
 renderRow(restaurant, navigateTo) {
   return (
@@ -285,6 +286,16 @@ renderRow(restaurant, navigateTo) {
         <Text style={style.title}>{restaurant.name}</Text>
       </View>
     </TouchableOpacity>
+  )
+}
+
+render() {
+  const { navigateTo } = this.props.actions;
+  return (
+    <ListView
+      dataSource={this.getDataSource(this.getRestaurants())}
+      renderRow={restaurant => this.renderRow(restaurant, navigateTo)}
+    />
   )
 }
 ```
