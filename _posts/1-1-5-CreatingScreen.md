@@ -3,7 +3,7 @@ layout: doc
 permalink: /docs/getting-started/creating-screen
 ---
 
-# Creating Screens
+# Creating screens
 <hr />
 
 Screens are React components which are connected to Redux store, i.e. they have access to complete application's state.
@@ -111,7 +111,7 @@ getRestaurants() {
 }
 ```
 
-We prepared some data for you. Create `app/assets` folder, which will keep the assets for application part of your extension. Download [this](/restaurants.zip) `zip`, extract it and copy its content to `app/assets`. It contains `data/restaurants.json` file with restaurants data and `img/` folder with images for these restaurants.
+We prepared some data for you. Create `app/assets` folder, which will keep the assets for application part of your extension. Download [this `zip`](/restaurants.zip), extract it and copy its content to `app/assets`. It contains `data/restaurants.json` file with restaurants data and `img/` folder with images for these restaurants.
 
 Implement `render` method that will use `ListView`. `ListView` accepts 2 properties: `dataSource` and `renderRow` which defines function rendering each row in the `ListView` component.
 

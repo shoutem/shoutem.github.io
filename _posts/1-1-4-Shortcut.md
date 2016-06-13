@@ -3,7 +3,7 @@ layout: doc
 permalink: /docs/getting-started/shortcut
 ---
 
-# Creating Shortcut
+# Creating shortcut
 <hr />
 
 The easiest way to understand what shortcuts are, is to think of them as links to the starting screen in your extension. These links will be used to navigate to your extension from any part of the application. Extensions can expose more shortcuts. Let's now create a shortcut.
@@ -37,7 +37,7 @@ Your `extension.json` was just modified:
 }
 ```
 
-Notice that object in `shortcuts` has property `name`, which defines the shortcut and `action`, which represents the action that will be triggered when shortcut is tapped. In the `name` property, use **relative name** to define an extension part. In properties like `action`, where some extension part is referenced, use **absolute name**. That's why under `action` property, we're having `developer.restaurants.openRestaurantsList` value instead of only `openRestaurantsList`. Absolute name of extension part follows this structure: `{developerName}.{extensionName}.{extensionPartName}`.
+Notice that object in `shortcuts` has property `name`, which identifies the shortcut and `action`, which represents the action that will be triggered when shortcut is tapped. In the `name` property, use **relative name** to define an extension part. In properties like `action`, where some extension part is referenced, use **absolute name**. That's why under `action` property, we're having `developer.restaurants.openRestaurantsList` value instead of only `openRestaurantsList`. Absolute name of extension part follows this structure: `{developerName}.{extensionName}.{extensionPartName}`.
 
 In your `extension.json`, CLI already put your developer name instead of `developer` in this snippet, so you don't need to change anything.
 

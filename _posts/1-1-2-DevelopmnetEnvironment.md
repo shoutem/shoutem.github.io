@@ -3,7 +3,7 @@ layout: doc
 permalink: /docs/getting-started/development-environment
 ---
 
-# Setting Environment
+# Setting up the environment
 <hr />
 
 Before making an extension, set the development environment. Download Shoutem [Command Line Interface](https://www.npmjs.com/package/@shoutem/cli) (CLI), tool available through `npm`, the package management system for `Node.js`.
@@ -30,12 +30,12 @@ Email: developer@example.com
 Password:
 ```
 
-Once you entered correct Shoutem credentials, you will be asked to specify unique developer name.
+Once you entered correct Shoutem credentials, you will be asked to specify your developer name.
 
 ```ShellSession
 
 Successful login. Logged in as developer@example.com.
-Enter unique developer name.
+Enter developer name.
 Developer name: developer
 Success! Registered as `developer`.
 ```

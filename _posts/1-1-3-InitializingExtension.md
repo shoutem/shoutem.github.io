@@ -6,7 +6,8 @@ permalink: /docs/getting-started/initializing-extension
 # Initializing extension
 <hr />
 
-Here's the mockup of the Restaurants extension, slightly different from the picture we showed in [Introduction]({{ site.baseurl }}/docs/getting-started/introduction), for the clarity of it's components.
+Here's the mockup of the Restaurants extension, slightly different from the picture we showed in [Introduction]({{ site.baseurl }}/docs/getting-started/introduction), because we'll start off with the regular React Native components before switching to Shoutem UI Tookit.
+
 
 <p class="image">
 <img src='{{ site.baseurl }}/img/getting-started/extension-preview-lightweight.png'/>
@@ -20,7 +21,7 @@ Let's start building! Locate to folder where you want to keep extension files:
 mkdir Restaurants && cd Restaurants
 ```
 
-Initialize the extension with some data.
+Initialize the extension with basic extension data.
 
 ```ShellSession
 $ shoutem init restaurants
@@ -38,7 +39,7 @@ These informations will be stored in `extension.json` file.
 > In case you can't remember the structure of some command, type: `shoutem help` or `shoutem help [command]` where you should replace '[command]' with one of the [CLI commands]({{ site.baseurl }}/docs/cli/reference)
 
 ## Folder structure
-Initialization process already filled your folder with additional files and folders. Your structure looks as follows:
+Initialization process will generate the skeleton folder and file structure for you. Your structure looks as follows:
 
 ```
 Restaurants/
