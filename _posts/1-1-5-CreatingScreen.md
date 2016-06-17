@@ -1,6 +1,7 @@
 ---
 layout: doc
 permalink: /docs/getting-started/creating-screen
+title: Creating screen
 ---
 
 # Creating screens

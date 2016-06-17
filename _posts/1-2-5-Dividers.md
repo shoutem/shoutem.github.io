@@ -1,6 +1,7 @@
 ---
 layout: doc
 permalink: /docs/ui-toolkit/dividers
+title: Dividers
 ---
 
 # Dividers

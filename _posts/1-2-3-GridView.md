@@ -1,6 +1,7 @@
 ---
 layout: doc
 permalink: /docs/ui-toolkit/grid-view
+title: Grid View
 ---
 
 # GridView

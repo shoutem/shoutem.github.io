@@ -1,6 +1,7 @@
 ---
 layout: doc
 permalink: /docs/ui-toolkit/dropdown-menu
+title: Dropdown Menu
 ---
 
 # DropDownMenu

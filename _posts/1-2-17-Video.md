@@ -1,6 +1,7 @@
 ---
 layout: doc
 permalink: /docs/ui-toolkit/video
+title: Video
 ---
 
 # Video

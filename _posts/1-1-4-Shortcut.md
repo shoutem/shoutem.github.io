@@ -1,6 +1,7 @@
 ---
 layout: doc
 permalink: /docs/getting-started/shortcut
+title: Creating shortcut
 ---
 
 # Creating shortcut

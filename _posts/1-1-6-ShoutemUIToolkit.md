@@ -1,6 +1,7 @@
 ---
 layout: doc
 permalink: /docs/getting-started/shoutem-ui-toolkit
+title: Using UI Toolkit
 ---
 
 # Using UI Toolkit

@@ -1,6 +1,7 @@
 ---
 layout: doc
 permalink: /docs/getting-started/introduction
+title: Introduction
 ---
 
 # Getting Started

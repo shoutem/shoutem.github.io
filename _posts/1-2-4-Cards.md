@@ -1,6 +1,7 @@
 ---
 layout: doc
 permalink: /docs/ui-toolkit/cards
+title: Cards
 ---
 
 # Cards

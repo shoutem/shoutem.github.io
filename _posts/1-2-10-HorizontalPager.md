@@ -1,6 +1,7 @@
 ---
 layout: doc
 permalink: /docs/ui-toolkit/horizontal-pager
+title: Horizontal Pager
 ---
 
 # HorizontalPager

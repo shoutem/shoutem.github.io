@@ -1,6 +1,7 @@
 ---
 layout: doc
 permalink: /docs/getting-started/using-cloud-storage
+title: Using Cloud Storage
 ---
 
 # Using Cloud Storage

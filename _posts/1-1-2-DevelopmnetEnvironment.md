@@ -1,6 +1,7 @@
 ---
 layout: doc
 permalink: /docs/getting-started/development-environment
+title: Development environment
 ---
 
 # Setting up the environment

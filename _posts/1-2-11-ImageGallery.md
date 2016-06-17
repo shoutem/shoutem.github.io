@@ -1,6 +1,7 @@
 ---
 layout: doc
 permalink: /docs/ui-toolkit/image-gallery
+title: Image Gallery
 ---
 
 # ImageGallery

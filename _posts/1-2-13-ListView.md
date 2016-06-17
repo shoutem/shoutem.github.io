@@ -1,6 +1,7 @@
 ---
 layout: doc
 permalink: /docs/ui-toolkit/list-view
+title: List View
 ---
 
 # ListView 
