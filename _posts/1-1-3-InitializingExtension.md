@@ -19,7 +19,7 @@ Left application screen lists the restaurants and the right one shows the detail
 Let's start building! Locate to folder where you want to keep extension files:
 
 ```ShellSession
-mkdir Restaurants && cd Restaurants
+$ mkdir Restaurants && cd Restaurants
 ```
 
 Initialize the extension with basic extension data.
