@@ -31,7 +31,7 @@ Title: (Restaurants)
 Version: (0.0.1)
 Description: Show the cool restaurants!
 
-Extension successfully initialized!
+Extension initialized!
 ```
 
 These informations will be stored in `extension.json` file.

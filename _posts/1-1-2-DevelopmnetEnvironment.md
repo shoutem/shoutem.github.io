@@ -35,10 +35,10 @@ Once you entered correct Shoutem credentials, you will be asked to specify your 
 
 ```ShellSession
 
-Successful login. Logged in as developer@example.com.
+Logged in as developer@example.com.
 Enter developer name.
 Developer name: developer
-Success! Registered as `developer`.
+Registered as `developer`.
 ```
 
 ## Editor
