@@ -15,9 +15,9 @@ Enter shortcut information.
 Title: List of restaurants
 Description: Allow users to browse through list of restaurants
 
-`openRestaurantsList` shortcut is created.
+Shortcut `openRestaurantsList` is created.
 File `app/action.js` is created.
-`openRestaurantsList` function is appended to `app/action.js` file.
+Function `openRestaurantsList` is appended to `app/action.js` file.
 ```
 
 Your `extension.json` was just modified:
