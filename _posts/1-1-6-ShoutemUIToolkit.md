@@ -85,7 +85,7 @@ The result is stunning! With such a little change, we got an amazing app! Notice
 
 Let's change our `RestaurantDetails` screen also.
 
-```JSX{4-11,17-50}
+```JSX{4-11,17-48}
 #file: app/screens/RestaurantDetails.js
 import React, {
   Component
