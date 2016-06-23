@@ -268,6 +268,8 @@ Import `navigateTo` function from `@shoutem/core` along with `bindActionCreators
 import { navigateTo } from '@shoutem/core';
 import { bindActionCreators } from 'redux';
 import { ext } from '../const';
+
+class RestaurantsList extends Component {...}
 ```
 
 Do the binding in `connect` function of `RestaurnatsList` screen:
