@@ -65,8 +65,8 @@ In `extension.json` you can see:
 #file: extension.json
 {
   "name": "restaurants",
-  "version": "0.0.1",
   "title": "Restaurants",
+  "version": "0.0.1",
   "description": "Show the cool restaurants!"
 }
 ```
