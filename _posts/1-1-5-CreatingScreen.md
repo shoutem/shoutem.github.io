@@ -189,9 +189,8 @@ import {
 
 Define a `style` constant outside of the class definition.
 
-```javascript{5-20}
+```javascript{4-22}
 #file: app/screen/RestaurantsList.js
-
 import {...}
 class RestaurantsList extends Component {...}
 
@@ -199,20 +198,22 @@ const style = StyleSheet.create({
   container: {
     flex: 1,
     flexDirection: 'row',
-    justifyContent: 'space-around',
-    alignItems: 'center'
+    justifyContent: 'flex-start',
+    alignItems: 'center',
+    borderBottomWidth: 1,
+    borderColor: 'rgb(242, 242, 242)'
   },
   title: {
     flex: 1,
-    textAlign: 'center'
   },
   thumbnail: {
-    width: 53,
-    height: 81
+    marginVertical: 10,
+    marginHorizontal: 15,
+    width: 50,
+    height: 50
   }
 });
 
-export default connect((state, ownProps) => state)(RestaurantsList);
 ```
 
 And use this style in `renderRow` function:
@@ -222,7 +223,7 @@ And use this style in `renderRow` function:
 renderRow(restaurant) {
   return (
     <View style={style.container}>
-      <Image style={style.thumbnail} source={require(`../${restaurant.image})} />
+      <Image style={style.thumbnail} source={% raw %}{{ uri: restaurant.image }}{% endraw %} />
       <Text style={style.title}>{restaurant.name}</Text>
     </View>
   )
