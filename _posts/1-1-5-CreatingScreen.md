@@ -39,7 +39,7 @@ export default class RestaurantsList extends Component {
 }
 ```
 
-In React, `Components` specify their UI in `render` method. On the other hand, [connect](https://github.com/reactjs/react-redux/blob/master/docs/api.md#connectmapstatetoprops-mapdispatchtoprops-mergeprops-options) call connects component to the application's state.
+In React, `Components` specify their UI in `render` method.
 
 Screen needs to be exported in `app/index.js` and it's a good practice to do so immediately:
 
