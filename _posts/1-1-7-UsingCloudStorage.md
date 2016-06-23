@@ -120,7 +120,7 @@ Now in order to enter data for your schema, you need to link your extension with
       "parameters": {
         "schema": "developer.restaurants.Restaurants"
       }
-    }],
+    }]
   }],
   "dataSchemas": [{
     "name": "Restaurants",
