@@ -25,15 +25,18 @@ Shoutem CLI created `app/screens/` folder with `RestaurantsList.js` file:
 import React, {
   Component
 } from 'react';
-import { Text } from 'react-native';
-import { connect } from 'react-redux'
 
-class RestaurantsList extends Component {
+import {
+  Text,
+} from 'react-native';
+
+export default class RestaurantsList extends Component {
   render() {
-    return <Text>Hello World!</Text>
+    return (
+      <Text>Hello World!</Text>
+    );
+  }
 }
-
-export default connect((state, ownProps) => state)(RestaurantsList)
 ```
 
 In React, `Components` specify their UI in `render` method. On the other hand, [connect](https://github.com/reactjs/react-redux/blob/master/docs/api.md#connectmapstatetoprops-mapdispatchtoprops-mergeprops-options) call connects component to the application's state.
