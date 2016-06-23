@@ -61,7 +61,7 @@ Open that screen when `openRestaurantsList` action is triggered in `app/action.j
 
 ```javascript{2,9}
 #file: app/action.js
-import { navigateTo } from '@shoutem/core';
+import { navigateTo } from '@shoutem/core/navigation';
 import { ext } from './const';
 
 // Define your actions
