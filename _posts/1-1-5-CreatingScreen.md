@@ -93,8 +93,11 @@ Great! New screen is opened.
 
 Let's add static restaurants and `ListView` in screen. Start by importing [View](/docs/coming-soon), [ListView](/docs/coming-soon) and [Image](/docs/coming-soon) from React Native.
 
-```javascript{1-5}
+```javascript{4-9}
 #file: app/screens/RestaurantsList.js
+import React, {
+  Component
+} from 'react';
 import {
   Text,
   View,
