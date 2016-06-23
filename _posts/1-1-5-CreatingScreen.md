@@ -263,7 +263,7 @@ To catch a tap on list row, we will use `TouchableOpacity` component. To open a 
 
 Import `navigateTo` function from `@shoutem/core` along with `bindActionCreators` from Redux which will do the binding. We also need to specify which screens needs to be opened, so import `ext` function as well.
 
-```javascript{1,3}
+```javascript{1-3}
 #file: app/screens/RestaurantsList.js
 import { navigateTo } from '@shoutem/core';
 import { bindActionCreators } from 'redux';
