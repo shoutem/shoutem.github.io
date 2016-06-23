@@ -134,7 +134,7 @@ getDataSource(restaurants) {
 renderRow(restaurant) {
   return (
     <View>
-      <Image style={{{{ width: 70, height: 70 }}}} source={{{{ uri: restaurant.image }}}} />
+      <Image style={{"{{" width: 70, height: 70 }}}} source={{{{ uri: restaurant.image }}}} />
       <Text>{restaurant.name}</Text>
     </View>
   )
