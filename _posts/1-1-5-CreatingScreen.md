@@ -134,7 +134,7 @@ getDataSource(restaurants) {
 renderRow(restaurant) {
   return (
     <View>
-      <Image style= {% raw %} {{ width: 70, height: 70 }} {% endraw %} source= {% raw %}{{ uri: restaurant.image }}{% endraw %}  />
+      <Image style= {% raw %}{{ width: 70, height: 70 }}{% endraw %} source= {% raw %}{{ uri: restaurant.image }}{% endraw %} />
       <Text>{restaurant.name}</Text>
     </View>
   )
