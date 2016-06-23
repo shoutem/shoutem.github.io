@@ -180,8 +180,12 @@ import {
 
 Define a `style` constant outside of the class definition.
 
-```javascript{1-16}
+```javascript{5-20}
 #file: app/screen/RestaurantsList.js
+
+import {...}
+class RestaurantsList extends Component {...}
+
 const style = StyleSheet.create({
   container: {
     flex: 1,
@@ -198,6 +202,8 @@ const style = StyleSheet.create({
     height: 81
   }
 });
+
+export default connect((state, ownProps) => state)(RestaurantsList);
 ```
 
 And use this style in `renderRow` function:
