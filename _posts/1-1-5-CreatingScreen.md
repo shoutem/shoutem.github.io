@@ -118,13 +118,13 @@ getRestaurants() {
 }
 ```
 
-We prepared some data for you. Create `app/assets` folder, which will keep the assets for application part of your extension. Download [this `zip`](/restaurants/restaurants.zip), extract it and copy its content to `app/assets`. It contains `data/restaurants.json` file with restaurants data and `img/` folder with images for these restaurants.
+We prepared some data for you. Create `app/assets` folder, which will keep the assets for application part of your extension. Download [this `zip`](/restaurants/restaurants.zip), extract it and copy its content to `app/assets`. It contains `data/restaurants.json` file with restaurants data.
 
 Implement `render` method that will use `ListView`. `ListView` accepts 2 properties: `dataSource` and `renderRow` which defines function rendering each row in the `ListView` component.
 
 Remove old `render` method and add these methods:
 
-```JSX{1-13,16-21}
+```JSX{1-13,16-27}
 #file: app/screens/RestaurantsList.js
 getDataSource(restaurants) {
   const dataSource = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
@@ -134,13 +134,19 @@ getDataSource(restaurants) {
 renderRow(restaurant) {
   return (
     <View>
-      <Image source={require(`../${restaurant.image})} />
+      <Image style={{ width: 70, height: 70 }} source={{ uri: restaurant.image }} />
       <Text>{restaurant.name}</Text>
     </View>
   )
 }
 
 render() {
+  
+  //set the title in the Navigation bar
+  this.props.setNavBarProps({
+      centerComponent: <Text>RESTAURANTS</Text>,
+  });
+
   return (
     <ListView
       dataSource={this.getDataSource(this.getRestaurants())}
