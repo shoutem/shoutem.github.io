@@ -46,7 +46,7 @@ Also, `app/action.js` file was created with the following function:
 
 ```javascript{1-10}
 #file: app/action.js
-import { navigateTo } from '@shoutem/core';
+import { navigateTo } from '@shoutem/core/navigation';
 
 // Define your actions
 
