@@ -419,7 +419,7 @@ export default connect(
   })(RestaurantsList)
 ```
 
-To `RestaurantDetails` screen, just copy the following code. We're not introducing anything new, just using already shown React Native components. We also removed `connect` function, since this screen doesn't need a state.
+To `RestaurantDetails` screen, just copy the following code. We're not introducing anything new, just using already shown React Native components. 
 
 ```JSX{6,9,10,13-61}
 #file: app/screens/RestaurantDetails.js
@@ -449,7 +449,7 @@ export default class RestaurantDetails extends Component {
       //use ScrollView to make entire view scrollable
       <ScrollView style={styles.scroll}>
         <View style={styles.container}>
-          <Image style={styles.image} source={{ uri: restaurant.image }} />
+          <Image style={styles.image} source={% raw %}{{ uri: restaurant.image }}{% endraw %} />
 
           <Text style={styles.section}>{restaurant.description}</Text>
 
