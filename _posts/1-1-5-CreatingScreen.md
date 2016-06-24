@@ -287,7 +287,7 @@ import {
 } from 'react-native';
 ```
 
-To catch a tap on list row, we will use `TouchableOpacity` component. To open a screen on touch, we need to dispatch already introduced `navigateTo` Redux action creator. We can use it directly in the screen through dispatch, but Redux standard way is to bind together `dispatch` and action creator inside `mapDispatchToProps` function, the second argument of [connect](https://github.com/reactjs/react-redux/blob/master/docs/api.md#connectmapstatetoprops-mapdispatchtoprops-mergeprops-options) function.
+To open a screen on touch, we need to dispatch already introduced `navigateTo` Redux action creator. We can use it directly in the screen through dispatch, but Redux standard way is to bind together `dispatch` and action creator inside `mapDispatchToProps` function, the second argument of [connect](https://github.com/reactjs/react-redux/blob/master/docs/api.md#connectmapstatetoprops-mapdispatchtoprops-mergeprops-options) function.
 
 Import `navigateTo` function from `@shoutem/core/navigation` along with `bindActionCreators` from Redux which will do the binding. We also need to specify which screens needs to be opened, so import `ext` function as well. This function resolves paths so you don't need to write full names of your screens. 
 
