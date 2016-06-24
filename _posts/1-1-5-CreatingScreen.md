@@ -289,55 +289,60 @@ import {
 
 To catch a tap on list row, we will use `TouchableOpacity` component. To open a screen on touch, we need to dispatch already introduced `navigateTo` Redux action creator. We can use it directly in the screen through dispatch, but Redux standard way is to bind together `dispatch` and action creator inside `mapDispatchToProps` function, the second argument of [connect](https://github.com/reactjs/react-redux/blob/master/docs/api.md#connectmapstatetoprops-mapdispatchtoprops-mergeprops-options) function.
 
-Import `navigateTo` function from `@shoutem/core` along with `bindActionCreators` from Redux which will do the binding. We also need to specify which screens needs to be opened, so import `ext` function as well.
+Import `navigateTo` function from `@shoutem/core/navigation` along with `bindActionCreators` from Redux which will do the binding. We also need to specify which screens needs to be opened, so import `ext` function as well. This function resolves paths so you don't need to write full names of your screens. 
 
-```javascript{1-3}
+```javascript{1-4, 6}
 #file: app/screens/RestaurantsList.js
-import { navigateTo } from '@shoutem/core';
+import { connect } from 'react-redux';
+import { navigateTo } from '@shoutem/core/navigation';
 import { bindActionCreators } from 'redux';
 import { ext } from '../const';
 
 class RestaurantsList extends Component {...}
 ```
+Note that we've also changed that the class `RestaurnatsList` is no longer exported. Instead we will export the `connect` function. Let's do the binding of this screen. Place following code at the end of file:
 
-Do the binding in `connect` function of `RestaurnatsList` screen:
-
-```javascript{1-5}
+```javascript{2-5}
 #file: app/screens/RestaurantsList.js
+
 export default connect(
-  (state, ownProps) => state,
-  (dispatch, ownProps) => {
-    actions: bindActionsCreators([navigateTo], dispatch)
-  })(RestaurantsList)
+  undefined,
+  (dispatch) => bindActionCreators({ navigation }, dispatch)
+)(RestaurantsList)
 ```
 
-We can access bound actions through the `props` and pass it to `renderRow` function. Change the call of `renderRow` function in `render` method, to pass it a `navigateTo` function.
+We can access bound actions through the `props` and pass it to `renderRow` function. Let's add `TouchableOpacity` and connect it to `navigateTo` function.
 
-```JSX{1,3-6,11,16,20}
+```JSX{2,5-8,11,13}
 #file: app/screens/RestaurantsList.js
-renderRow(restaurant, navigateTo) {
-  return (
-    <TouchableOpacity onPress={() => navigateTo({
-        screen: ext('RestaurantDetails'),
-        props: { restaurant }
-      })}>
-      <View style={style.container}>
-        <Image style={style.thumbnail} source={require(`../${restaurant.image})} />
-        <Text style={style.title}>{restaurant.name}</Text>
-      </View>
-    </TouchableOpacity>
-  )
-}
+  renderRow(restaurant) {
+    const { navigateTo } = this.props;
 
-render() {
-  const { navigateTo } = this.props.actions;
-  return (
-    <ListView
-      dataSource={this.getDataSource(this.getRestaurants())}
-      renderRow={restaurant => this.renderRow(restaurant, navigateTo)}
-    />
-  )
-}
+    return (
+      <TouchableOpacity onPress={() => navigateTo({
+          screen: ext('RestaurantDetails'),
+          props: { restaurant }
+        })}>
+        <View style={style.container}>
+          <Image style={style.thumbnail} source={{ uri: restaurant.image }} />
+          <Text style={style.title}>{restaurant.name}</Text>
+        </View>
+      </TouchableOpacity>
+    );
+  }
+
+  render() {
+    this.props.setNavBarProps({
+      centerComponent: <Text>RESTAURANTS</Text>
+    });
+
+    return (
+      <ListView
+        dataSource={this.getDataSource(this.getRestaurants())}
+        renderRow={restaurant => this.renderRow(restaurant)}
+      />
+    );
+  }
 ```
 
 This is what you should have end up with in `app/screens/RestaurantsList.js`:
@@ -379,8 +384,7 @@ class RestaurantsList extends Component {
       <TouchableOpacity onPress={() => navigateTo({
           screen: ext('RestaurantDetails'),
           props: { restaurant }
-        })}
-      >
+        })}>
         <View style={style.container}>
           <Image style={style.thumbnail} source={% raw %}{{ uri: restaurant.image }}{% endraw %} />
           <Text style={style.title}>{restaurant.name}</Text>
@@ -421,8 +425,8 @@ const style = StyleSheet.create({
 });
 
 export default connect(
-  (state, ownProps) => ({}),
-  (dispatch, ownProps) => bindActionCreators({ navigateTo }, dispatch)
+  undefined,
+  (dispatch) => bindActionCreators({ navigation }, dispatch)
 )(RestaurantsList)
 
 ```
