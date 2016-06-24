@@ -12,7 +12,7 @@ The easiest way to understand what shortcuts are, is to think of them as links t
 ```ShellSession
 $ shoutem shortcut create openRestaurantsList
 Enter shortcut information.
-Title: List of restaurants
+Title: Restaurants
 Description: Allow users to browse through list of restaurants
 
 Shortcut `openRestaurantsList` is created.
@@ -28,11 +28,11 @@ Your `extension.json` was just modified:
   "name": "restaurants",
   "version": "0.0.1",
   "title": "Restaurants",
-  "description": "Show the cool restaurants!",
+  "description": "List of restaurants",
   "shortcuts": [{
     "name": "openRestaurantsList",
     "action": "developer.restaurants.openRestaurantsList",
-    "title": "List of restaurants",
+    "title": "Restaurants",
     "description": "Allow users to browse through list of restaurants"
   }]
 }
