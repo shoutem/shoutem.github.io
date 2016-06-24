@@ -91,7 +91,7 @@ Export that action inside of `app/index.js` file:
 import * as actions from './action';
 export const screens = {};
 
-export actions;
+export { actions };
 
 export const reducer = {};
 ```
