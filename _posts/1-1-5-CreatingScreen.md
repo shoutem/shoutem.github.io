@@ -291,7 +291,15 @@ To open a screen on touch, we need to dispatch already introduced `navigateTo` R
 
 Import `navigateTo` function from `@shoutem/core/navigation` along with `bindActionCreators` from Redux which will do the binding. We also need to specify which screens needs to be opened, so import `ext` function as well. This function resolves paths so you don't need to write full names of your screens. 
 
-...code block...
+```javascript{1-4, 6}
+#file: app/screens/RestaurantsList.js
+import { connect } from 'react-redux';
+import { navigateTo } from '@shoutem/core/navigation';
+import { bindActionCreators } from 'redux';
+import { ext } from '../const';
+
+class RestaurantsList extends Component {...}
+```
 
 Note that we've also changed that the class `RestaurnatsList` is no longer exported. Instead we will export the `connect` function. Let's do the binding of this screen. Place following code at the end of file:
 
