@@ -127,7 +127,7 @@ export default class RestaurantDetails extends Component {
   render() {
     const { restaurant, setNavBarProps } = this.props;
     
-    //we're maiking NavigationBar transparent
+    //we're making NavigationBar transparent
     setNavBarProps({ styleName: 'clear' });
 
     return (
