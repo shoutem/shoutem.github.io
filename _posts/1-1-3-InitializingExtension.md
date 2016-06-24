@@ -29,7 +29,7 @@ $ shoutem init restaurants
 Enter information about your extension. Press `return` to accept (default) values.
 Title: (Restaurants)
 Version: (0.0.1)
-Description: Show the cool restaurants!
+Description: List of restaurants
 
 Extension initialized!
 ```
@@ -67,7 +67,7 @@ In `extension.json` you can see:
   "name": "restaurants",
   "title": "Restaurants",
   "version": "0.0.1",
-  "description": "Show the cool restaurants!"
+  "description": "List of restaurants"
 }
 ```
 
