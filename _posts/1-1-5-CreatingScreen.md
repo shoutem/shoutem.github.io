@@ -255,7 +255,25 @@ $ shoutem screen create RestaurantDetails
 File `app/screens/RestaurantDetails.js` is created.
 ```
 
-Open that screen when list item is touched. That's done via `TouchableOpacity`. Import it:
+This creates the details screen in the `RestaurantDetails.js` file. Don't forget to export it in `index.js`.
+
+``````JSX{2,7}
+#file: app/index.js
+import RestaurantsList from './screens/RestaurantsList';
+import RestaurantDetails from './screens/RestaurantDetails';
+import * as actions from './action';
+
+export const screens = {
+  RestaurantsList,
+  RestaurantDetails
+};
+
+export { actions };
+
+export const reducer = {};
+```
+
+We want to open this screen when the list item is touched. For that we will use another component called `TouchableOpacity`. Let's import it in `RestaurantsList.js`:
 
 ```javascript{7}
 #file: app/screens/RestaurantsList.js
