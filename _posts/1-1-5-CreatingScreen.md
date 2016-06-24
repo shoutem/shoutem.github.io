@@ -421,34 +421,70 @@ export default connect(
 
 To `RestaurantDetails` screen, just copy the following code. We're not introducing anything new, just using already shown React Native components. We also removed `connect` function, since this screen doesn't need a state.
 
-```JSX{6-7,10-26}
+```JSX{6,9,10,13-61}
 #file: app/screens/RestaurantDetails.js
 import React, {
   Component
 } from 'react';
+
 import {
+  StyleSheet,
   Text,
   View,
-  Image
+  Image,
+  ScrollView,
 } from 'react-native';
 
 export default class RestaurantDetails extends Component {
   render() {
-    const { restaurant } = this.props;
+    const { restaurant, setNavBarProps } = this.props;
+
+    //set the title in the NavigationBar
+    setNavBarProps({
+      centerComponent: <Text>{restaurant.name.toUpperCase()}</Text>
+    });
+
     return (
-      <View>
-        <Image source={require(`../${restaurant.image}`)} />
-        <Text>{restaurant.description}</Text>
-        <Text>LOCATION</Text>
-        <Text>{restaurant.address}</Text>
-        <Text>WEB</Text>
-        <Text>{restaurant.url}</Text>
-        <Text>E-MAIL</Text>
-        <Text>{restaurant.email}</Text>
-      </View>
-    )
+
+      //use ScrollView to make entire view scrollable
+      <ScrollView style={styles.scroll}>
+        <View style={styles.container}>
+          <Image style={styles.image} source={{ uri: restaurant.image }} />
+
+          <Text style={styles.section}>{restaurant.description}</Text>
+
+          <Text style={styles.section}>LOCATION</Text>
+          <Text>{restaurant.address}</Text>
+
+          <Text style={styles.section}>WEB</Text>
+          <Text>{restaurant.url}</Text>
+
+          <Text style={styles.section}>E-MAIL</Text>
+          <Text>{restaurant.mail}</Text>
+        </View>
+      </ScrollView>
+    );
   }
 }
+
+const styles = StyleSheet.create({
+  scroll: {
+    flex: 1,
+  },
+  container: {
+    paddingTop: 20,
+    paddingHorizontal: 15,
+  },
+  image: {
+    flex: 1,
+    height: 340,
+    resizeMode: 'cover',
+  },
+  section: {
+    marginTop: 15,
+  },
+});
+
 ```
 
 We'll skip implementing the handling of web and e-mail properties and just render them.
