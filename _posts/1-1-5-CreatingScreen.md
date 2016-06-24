@@ -294,11 +294,7 @@ Import `navigateTo` function from `@shoutem/core/navigation` along with `bindAct
 ```javascript{1-4, 6}
 #file: app/screens/RestaurantsList.js
 import { connect } from 'react-redux';
-import { navigateTo } from '@shoutem/core/navigation';
-import { bindActionCreators } from 'redux';
-import { ext } from '../const';
 
-class RestaurantsList extends Component {...}
 ```
 
 Note that we've also changed that the class `RestaurnatsList` is no longer exported. Instead we will export the `connect` function. Let's do the binding of this screen. Place following code at the end of file:
