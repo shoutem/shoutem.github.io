@@ -70,7 +70,7 @@ import { ext } from './const';
 export function openRestaurantsList(shortcut) {
   return navigateTo({
     screen: ext('RestaurantsList')
-  })
+  });
 }
 ```
 
@@ -137,7 +137,7 @@ renderRow(restaurant) {
       <Image style= {% raw %}{{ width: 70, height: 70 }}{% endraw %} source= {% raw %}{{ uri: restaurant.image }}{% endraw %} />
       <Text>{restaurant.name}</Text>
     </View>
-  )
+  );
 }
 
 render() {
@@ -152,7 +152,7 @@ render() {
       dataSource={this.getDataSource(this.getRestaurants())}
       renderRow={restaurant => this.renderRow(restaurant)}
     />
-  )
+  );
 }
 ```
 
@@ -309,7 +309,7 @@ Note that we've also changed that the class `RestaurnatsList` is no longer expor
 
 export default connect(
   undefined,
-  (dispatch) => bindActionCreators({ navigation }, dispatch)
+  (dispatch) => bindActionCreators({ navigateTo }, dispatch)
 )(RestaurantsList)
 ```
 
@@ -428,7 +428,7 @@ const style = StyleSheet.create({
 
 export default connect(
   undefined,
-  (dispatch) => bindActionCreators({ navigation }, dispatch)
+  (dispatch) => bindActionCreators({ navigateTo }, dispatch)
 )(RestaurantsList)
 
 ```
