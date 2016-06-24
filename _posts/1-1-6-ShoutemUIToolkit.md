@@ -9,22 +9,32 @@ title: Using UI Toolkit
 
 Shoutem UI Toolkit is a set of styleable UI components that you can use in any React Native application. It basically turns any ordinary app into an amazing app. There are plenty of components that you can use out of the box. In this tutorial we'll use `ListView`, `Tile`, `Image`, `Title`, `Subtitle`, `Row`, `View` and `Icon` from the UI Toolkit. Documentation for all the components can be found in the [reference]({{ site.baseurl }}/docs/ui-toolkit/introduction).
 
-Up until now, we only used React Native components. Some of them, like `ListView`, have correspondent views in Shoutem UI Toolkit. Update `RestaurantsList` screen code so that it uses Shoutem UI components.
+Up until now, we only used React Native components. Some of them, like `ListView`, have correspondent views in Shoutem UI Toolkit. Specifically, Shoutem `ListView` already implements `rowHasChanged` function on React Native `ListView`, so we no longer need `getDataSource` helper method. Also, we no longer need `styles` definition because all styles for Shoute UI components are already implemented in [Shoutem UI theme]({{ site.baseurl }}/docs/ui-toolkit/theme).
+Update `RestaurantsList` screen code so that it uses Shoutem UI components.
 
-```JSX{4-10,27-32,41}
+```JSX{10-18,38-43}
 #file: app/screens/RestaurantsList.js
 import React, {
-  Component,
+  Component
 } from 'react';
+
+import {
+  StyleSheet,
+  TouchableOpacity,
+} from 'react-native';
+
 import {
   Image,
   ListView,
+  Text,
   Tile,
   Title,
-  Subtitle
+  Subtitle,
+  Overlay,
 } from '@shoutem/ui';
+
 import { connect } from 'react-redux'
-import { navigateTo } from '@shoutem/core';
+import { navigateTo } from '@shoutem/core/navigation';
 import { bindActionCreators } from 'redux';
 import { ext } from '../const';
 
@@ -33,14 +43,16 @@ class RestaurantsList extends Component {
     return require('../assets/data/restaurants.json');
   }
 
-  renderRow(restaurant, navigateTo) {
+  renderRow(restaurant) {
+    const { navigateTo } = this.props;
+
     return (
       <TouchableOpacity onPress={() => navigateTo({
           screen: ext('RestaurantDetails'),
           props: { restaurant }
         })}>
         <Tile>
-          <Image styleName="banner" source={`../${restaurant.image}`}>
+          <Image source={{ uri: restaurant.image }}>
             <Title>{restaurant.name}</Title>
             <Subtitle>{restaurant.address}</Subtitle>
           </Image>
@@ -50,21 +62,24 @@ class RestaurantsList extends Component {
   }
 
   render() {
-    const { navigateTo } = this.props.actions;
+    this.props.setNavBarProps({
+      centerComponent: <Text>RESTAURANTS</Text>
+    });
+
     return (
       <ListView
         data={this.getRestaurants()}
-        renderRow={restaurant => this.renderRow(restaurant, navigateTo)}
+        renderRow={restaurant => this.renderRow(restaurant)}
       />
     )
   }
 }
 
 export default connect(
-  (state, ownProps) => state,
-  (dispatch, ownProps) => {
-    actions: bindActionsCreators([navigateTo], dispatch)
-  })(RestaurantsList)
+  undefined,
+  (dispatch) => bindActionCreators({ navigation }, dispatch)
+)(RestaurantsList)
+
 ```
 
 Upload your extension.
