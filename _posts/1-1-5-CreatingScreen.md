@@ -257,7 +257,7 @@ File `app/screens/RestaurantDetails.js` is created.
 
 This creates the details screen in the `RestaurantDetails.js` file. Don't forget to export it in `index.js`.
 
-``````JSX{2,7}
+```JSX{2,7}
 #file: app/index.js
 import RestaurantsList from './screens/RestaurantsList';
 import RestaurantDetails from './screens/RestaurantDetails';
@@ -299,7 +299,6 @@ import { bindActionCreators } from 'redux';
 import { ext } from '../const';
 
 class RestaurantsList extends Component {...}
-
 ```
 
 Note that we've also changed that the class `RestaurnatsList` is no longer exported. Instead we will export the `connect` function. Let's do the binding of this screen. Place following code at the end of file:
