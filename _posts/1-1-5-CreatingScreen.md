@@ -342,11 +342,12 @@ render() {
 
 This is what you should have end up with in `app/screens/RestaurantsList.js`:
 
-```JSX{5,7-10,12-15,18-39,42-48,52-73}
+```JSX
 #file: app/screens/RestaurantsList.js
 import React, {
   Component
 } from 'react';
+
 import {
   StyleSheet,
   Text,
@@ -355,8 +356,9 @@ import {
   Image,
   TouchableOpacity
 } from 'react-native';
+
 import { connect } from 'react-redux'
-import { navigateTo } from '@shoutem/core';
+import { navigateTo } from '@shoutem/core/navigation';
 import { bindActionCreators } from 'redux';
 import { ext } from '../const';
 
@@ -366,32 +368,38 @@ class RestaurantsList extends Component {
   }
 
   getDataSource(restaurants) {
-    const dataSource = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
+    const dataSource = new ListView.DataSource({ rowHasChanged: (r1, r2) => r1 !== r2 });
     return dataSource.cloneWithRows(restaurants);
   }
 
-  renderRow(restaurant, navigateTo) {
+  renderRow(restaurant) {
+    const { navigateTo } = this.props;
+
     return (
       <TouchableOpacity onPress={() => navigateTo({
           screen: ext('RestaurantDetails'),
           props: { restaurant }
-        })}>
-        View style={style.container}>
-          <Image style={style.thumbnail} source={require(`../${restaurant.image})} />
+        })}
+      >
+        <View style={style.container}>
+          <Image style={style.thumbnail} source={% raw %}{{ uri: restaurant.image }}{% endraw %} />
           <Text style={style.title}>{restaurant.name}</Text>
         </View>
       </TouchableOpacity>
-    )
+    );
   }
 
   render() {
-    const { navigateTo } = this.props.actions;
+    this.props.setNavBarProps({
+      centerComponent: <Text>RESTAURANTS</Text>
+    });
+
     return (
       <ListView
         dataSource={this.getDataSource(this.getRestaurants())}
-        renderRow={restaurant => this.renderRow(restaurant, navigateTo)}
+        renderRow={restaurant => this.renderRow(restaurant)}
       />
-    )
+    );
   }
 }
 
@@ -399,24 +407,24 @@ const style = StyleSheet.create({
   container: {
     flex: 1,
     flexDirection: 'row',
-    justifyContent: 'center',
     alignItems: 'center'
   },
   title: {
     flex: 1,
-    textAlign: 'center'
   },
   thumbnail: {
-    width: 53,
-    height: 81
+    marginVertical: 10,
+    marginHorizontal: 15,
+    width: 50,
+    height: 50
   }
 });
 
 export default connect(
-  (state, ownProps) => state,
-  (dispatch, ownProps) => {
-    actions: bindActionsCreators([navigateTo], dispatch)
-  })(RestaurantsList)
+  (state, ownProps) => ({}),
+  (dispatch, ownProps) => bindActionCreators({ navigateTo }, dispatch)
+)(RestaurantsList)
+
 ```
 
 To `RestaurantDetails` screen, just copy the following code. We're not introducing anything new, just using already shown React Native components. 
