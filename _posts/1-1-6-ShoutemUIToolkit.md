@@ -52,13 +52,15 @@ class RestaurantsList extends Component {
           props: { restaurant }
         })}>
         <Tile>
-          <Image source={{ uri: restaurant.image }}>
-            <Title>{restaurant.name}</Title>
-            <Subtitle>{restaurant.address}</Subtitle>
-          </Image>
+          <Overlay styleName="dark">
+            <Image source={% raw %}{{ uri: restaurant.image }}{% endraw %}>
+              <Title>{restaurant.name}</Title>
+              <Subtitle>{restaurant.address}</Subtitle>
+            </Image>
+          </Overlay>
         </Tile>
       </TouchableOpacity>
-    )
+    );
   }
 
   render() {
@@ -71,13 +73,13 @@ class RestaurantsList extends Component {
         data={this.getRestaurants()}
         renderRow={restaurant => this.renderRow(restaurant)}
       />
-    )
+    );
   }
 }
 
 export default connect(
   undefined,
-  (dispatch) => bindActionCreators({ navigation }, dispatch)
+  (dispatch) => bindActionCreators({ navigateTo }, dispatch)
 )(RestaurantsList)
 
 ```
@@ -175,7 +177,7 @@ export default class RestaurantDetails extends Component {
 
         <Divider styleName="line" />
       </ScrollView>
-    )
+    );
   }
 }
 ```
