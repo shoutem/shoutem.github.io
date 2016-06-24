@@ -299,6 +299,7 @@ import { bindActionCreators } from 'redux';
 import { ext } from '../const';
 
 class RestaurantsList extends Component {...}
+
 ```
 
 Note that we've also changed that the class `RestaurnatsList` is no longer exported. Instead we will export the `connect` function. Let's do the binding of this screen. Place following code at the end of file:
