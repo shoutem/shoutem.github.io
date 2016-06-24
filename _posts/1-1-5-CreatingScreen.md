@@ -294,6 +294,11 @@ Import `navigateTo` function from `@shoutem/core/navigation` along with `bindAct
 ```javascript
 #file: app/screens/RestaurantsList.js
 import { connect } from 'react-redux';
+import { navigateTo } from '@shoutem/core/navigation';
+import { bindActionCreators } from 'redux';
+import { ext } from '../const';
+
+class RestaurantsList extends Component {...}
 
 ```
 
