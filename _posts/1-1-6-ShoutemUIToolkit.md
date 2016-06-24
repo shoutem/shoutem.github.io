@@ -100,56 +100,81 @@ The result is stunning! With such a little change, we got an amazing app! Notice
 
 Let's change our `RestaurantDetails` screen also.
 
-```JSX{4-11,17-48}
+```JSX{9-20,26-27,31-71}
 #file: app/screens/RestaurantDetails.js
 import React, {
   Component
 } from 'react';
+
+import {
+  ScrollView,
+} from 'react-native';
+
 import {
   Icon,
   Row,
   Subtitle,
   Text,
   Title,
-  View
+  View,
+  Image,
+  Divider,
+  Overlay,
+  Tile,
 } from '@shoutem/ui';
 
 export default class RestaurantDetails extends Component {
   render() {
-    const { restaurant } = this.props;
+    const { restaurant, setNavBarProps } = this.props;
+    
+    //we're maiking NavigationBar transparent
+    setNavBarProps({ styleName: 'clear' });
+
     return (
-      <View>
-        <Image styleName="banner">
-          <Title>{restaurant.name}</Title>
-          <Subtitle>{restaurant.address}</Subtitle>
+      <ScrollView>
+        <Image styleName="large-portrait" source={{ uri: restaurant.image }}>
+          <Overlay styleName="dark">
+            <Title>{restaurant.name}</Title>
+            <Subtitle>{restaurant.address}</Subtitle>
+          </Overlay>
         </Image>
-        
+
+        <Text styleName="inset">{restaurant.description}</Text>
+
+        <Divider styleName="line" />
+
         <Row>
-          <Icon iconName="laptop" />
+          <Icon name="web" />
           <View styleName="vertical">
             <Subtitle>Visit webpage</Subtitle>
             <Text>{restaurant.url}</Text>
           </View>
-          <Icon iconName="disclosure" />
+          <Icon name="close" />
         </Row>
 
+        <Divider styleName="line" />
+
         <Row>
-          <Icon iconName="pin" />
+          <Icon name="tweets" />
           <View styleName="vertical">
             <Subtitle>Address</Subtitle>
             <Text>{restaurant.address}</Text>
           </View>
-          <Icon iconName="disclosure" />
+          <Icon name="close" />
         </Row>
 
+        <Divider styleName="line" />
+
         <Row>
-          <Icon iconName="message" />
+          <Icon name="email" />
           <View styleName="vertical">
             <Subtitle>Email</Subtitle>
-            <Text>{restaurant.email}</Text>
+            <Text>{restaurant.mail}</Text>
           </View>
         </Row>
-      </View>
+
+        <Divider styleName="line" />
+      </ScrollView>
     )
   }
 }
