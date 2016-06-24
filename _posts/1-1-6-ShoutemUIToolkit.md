@@ -100,7 +100,7 @@ The result is stunning! With such a little change, we got an amazing app! Notice
 
 Let's change our `RestaurantDetails` screen also.
 
-```JSX{9-20,26-27,31-71}
+```JSX{9-20,26-27,31-72}
 #file: app/screens/RestaurantDetails.js
 import React, {
   Component
