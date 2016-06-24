@@ -52,7 +52,7 @@ export const screens = {
   RestaurantsList,
 };
 
-export actions;
+export { actions };
 
 export const reducer = {};
 ```
