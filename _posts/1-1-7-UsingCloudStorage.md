@@ -84,7 +84,7 @@ Let's add now properties that we want to persist for a restaurant, such as: `nam
       "type": "string"
     },
     "image": {
-      "format": "image",
+      "format": "attachemnt",
       "title": "Image",
       "type": "object"
     },
