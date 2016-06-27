@@ -12,7 +12,7 @@ Shoutem UI Toolkit is a set of styleable UI components that you can use in any R
 Up until now, we only used React Native components. Some of them, like `ListView`, have correspondent views in Shoutem UI Toolkit. Specifically, Shoutem `ListView` already implements `rowHasChanged` function on React Native `ListView`, so we no longer need `getDataSource` helper method. Also, we no longer need `styles` definition because all styles for Shoute UI components are already implemented in [Shoutem UI theme]({{ site.baseurl }}/docs/ui-toolkit/theme).
 Update `RestaurantsList` screen code so that it uses Shoutem UI components.
 
-```JSX{5-8,10-18,38-44,57}
+```JSX{5-8,10-18,38-45,57}
 #file: app/screens/RestaurantsList.js
 import React, {
   Component
