@@ -86,7 +86,8 @@ Let's add now properties that we want to persist for a restaurant, such as: `nam
     "image": {
       "format": "attachemnt",
       "title": "Image",
-      "type": "object"
+      "type": "object",
+      "referencedSchema": "shoutem.core.image-attachments"
     },
     "mail": {
       "format": "single-line",
