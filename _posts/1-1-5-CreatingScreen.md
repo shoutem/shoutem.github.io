@@ -111,11 +111,13 @@ import {
 
 Define a method in `RestaurantsList` class that returns an array of restaurants.
 
-```javascript{1-3}
+```javascript{3-5}
 #file: app/screens/RestaurantsList.js
-getRestaurants() {
-  return require('../assets/data/restaurants.json');
-}
+export default class RestaurantsList extends Component {
+
+  getRestaurants() {
+    return require('../assets/data/restaurants.json');
+  }
 ```
 
 We prepared some data for you. Create `app/assets` folder, which will keep the assets for application part of your extension. Download [this `zip`](/restaurants/restaurants.zip), extract it and copy its content to `app/assets`. It contains `data/restaurants.json` file with restaurants data.
@@ -124,8 +126,10 @@ Implement `render` method that will use `ListView`. `ListView` accepts 2 propert
 
 Remove old `render` method and add these methods:
 
-```JSX{1-13,16-27}
+```JSX{3-15,18-29}
 #file: app/screens/RestaurantsList.js
+getRestaurants() {...}
+
 getDataSource(restaurants) {
   const dataSource = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
   return dataSource.cloneWithRows(restaurants);
