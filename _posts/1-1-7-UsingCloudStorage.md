@@ -113,7 +113,7 @@ Now in order to enter data for your schema, you need to link your extension with
     "name": "OpenRestaurantsList",
     "action": "developer.restaurants.openRestaurantsList",
     "title": "List of restaurants",
-    "description": "Allow users to browse through list of restaurants"
+    "description": "Allow users to browse through list of restaurants",
     "adminPages": [{
       "page": "shoutem.admin.CmsPage",
       "title": "Content",
