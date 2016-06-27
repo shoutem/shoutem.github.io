@@ -49,12 +49,12 @@ class RestaurantsList extends Component {
           props: { restaurant }
         })}>
         <Tile>
-          <Overlay styleName="dark">
-            <Image source={% raw %}{{ uri: restaurant.image }}{% endraw %}>
-              <Title>{restaurant.name}</Title>
-              <Subtitle>{restaurant.address}</Subtitle>
-            </Image>
-          </Overlay>
+          <Image source={% raw %}{{ uri: restaurant.image }}{% endraw %}>
+              <Overlay styleName="dark">
+                <Title>{restaurant.name}</Title>
+                <Subtitle>{restaurant.address}</Subtitle>
+               </Overlay>
+          </Image>
         </Tile>
       </TouchableOpacity>
     );
