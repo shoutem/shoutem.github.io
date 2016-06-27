@@ -12,17 +12,15 @@ Shoutem UI Toolkit is a set of styleable UI components that you can use in any R
 Up until now, we only used React Native components. Some of them, like `ListView`, have correspondent views in Shoutem UI Toolkit. Specifically, Shoutem `ListView` already implements `rowHasChanged` function on React Native `ListView`, so we no longer need `getDataSource` helper method. Also, we no longer need `styles` definition because all styles for Shoute UI components are already implemented in [Shoutem UI theme]({{ site.baseurl }}/docs/ui-toolkit/theme).
 Update `RestaurantsList` screen code so that it uses Shoutem UI components.
 
-```JSX{5-8,10-18,38-45,57}
+```JSX{4-7,8-16,35-42,54}
 #file: app/screens/RestaurantsList.js
 import React, {
   Component
 } from 'react';
-
 import {
   StyleSheet,
   TouchableOpacity,
 } from 'react-native';
-
 import {
   Image,
   ListView,
@@ -32,7 +30,6 @@ import {
   Subtitle,
   Overlay,
 } from '@shoutem/ui';
-
 import { connect } from 'react-redux'
 import { navigateTo } from '@shoutem/core/navigation';
 import { bindActionCreators } from 'redux';
@@ -81,7 +78,6 @@ export default connect(
   undefined,
   (dispatch) => bindActionCreators({ navigateTo }, dispatch)
 )(RestaurantsList)
-
 ```
 
 Upload your extension.
@@ -102,16 +98,14 @@ The result is stunning! With such a little change, we got an amazing app! Notice
 
 Let's change our `RestaurantDetails` screen also.
 
-```JSX{5-7,9-20,26-27,30-72}
+```JSX{4-6,7-18,24-25,28-70}
 #file: app/screens/RestaurantDetails.js
 import React, {
   Component
 } from 'react';
-
 import {
   ScrollView,
 } from 'react-native';
-
 import {
   Icon,
   Row,
@@ -129,7 +123,7 @@ export default class RestaurantDetails extends Component {
   render() {
     const { restaurant, setNavBarProps } = this.props;
     
-    //we're making NavigationBar transparent
+    // make NavigationBar transparent
     setNavBarProps({ styleName: 'clear' });
 
     return (

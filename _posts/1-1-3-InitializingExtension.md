@@ -65,8 +65,8 @@ In `extension.json` you can see:
 #file: extension.json
 {
   "name": "restaurants",
-  "title": "Restaurants",
   "version": "0.0.1",
+  "title": "Restaurants",
   "description": "List of restaurants"
 }
 ```
@@ -86,7 +86,7 @@ To test our extension, we need to install it on the Shoutem application. You can
 ```ShellSession
 $ shoutem install --new RestaurantsApp
 Extension is installed onto newly created `RestaurantsApp` application.
-See it in browser: `https://builder.shoutem.com/app/141231234123`
+See it in browser: `https://builder.shoutem.com/apps/52634`
 ```
 
 Go to `Extensions` tab in [Shoutem builder](/docs/coming-soon). You'll see that extension is installed on your application.

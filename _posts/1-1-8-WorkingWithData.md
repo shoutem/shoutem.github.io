@@ -67,15 +67,15 @@ Use `Spinner` in `render` method.
 
 ```JSX{3-8}
 #file: app/screens/RestaurantsList.js
-render() {
-  const { navigateTo, restaurants } = this.props;
-  return restaurants ? 
-    <ListView
-      data={restaurants}
-      renderRow={restaurant => this.renderRow(restaurant, navigateTo)}
-    /> :
-    <Spinner />
-}
+  render() {
+    const { navigateTo, restaurants } = this.props;
+    return restaurants ? 
+      <ListView
+        data={restaurants}
+        renderRow={restaurant => this.renderRow(restaurant, navigateTo)}
+      /> :
+      <Spinner />
+  }
 ```
 
 Once screen is mounted, if restaurants are not in the Redux store, we'll start fetching data with [find](/docs/coming-soon) action creator from `@shoutem/redux-io` package.
@@ -118,7 +118,7 @@ import { find, getCollection } from '@shoutem/redux-io';
 
 Use that method in `mapStateToProps` function, 1st argument of `connect` function.
 
-```javascript{3}
+```javascript{2-4}
 #file: app/screens/RestaurantsList.js
 export default connect(
   (state, ownProps) => {

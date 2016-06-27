@@ -26,7 +26,7 @@ import React, {
   Component
 } from 'react';
 import {
-  Text,
+  Text
 } from 'react-native';
 
 export default class RestaurantsList extends Component {
@@ -38,7 +38,7 @@ export default class RestaurantsList extends Component {
 }
 ```
 
-In React, `Components` specify their UI in `render` method.
+In React, `Component` specifies its UI in `render` method.
 
 Screen needs to be exported in `app/index.js` and it's a good practice to do so immediately:
 
@@ -48,7 +48,7 @@ import RestaurantsList from './screens/RestaurantsList';
 import * as actions from './action';
 
 export const screens = {
-  RestaurantsList,
+  RestaurantsList
 };
 
 export { actions };
@@ -125,38 +125,37 @@ Implement `render` method that will use `ListView`. `ListView` accepts 2 propert
 
 Remove old `render` method and add these methods:
 
-```JSX{3-15,18-29}
+```JSX{3-15,17-28}
 #file: app/screens/RestaurantsList.js
-getRestaurants() {...}
+  getRestaurants() {...}
 
-getDataSource(restaurants) {
-  const dataSource = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
-  return dataSource.cloneWithRows(restaurants);
-}
+  getDataSource(restaurants) {
+    const dataSource = new ListView.DataSource({ rowHasChanged: (r1, r2) => r1 !== r2 });
+    return dataSource.cloneWithRows(restaurants);
+  }
 
-renderRow(restaurant) {
-  return (
-    <View>
-      <Image style= {% raw %}{{ width: 70, height: 70 }}{% endraw %} source= {% raw %}{{ uri: restaurant.image }}{% endraw %} />
-      <Text>{restaurant.name}</Text>
-    </View>
-  );
-}
+  renderRow(restaurant) {
+    return (
+      <View>
+        <Image style={% raw %}{{ width: 70, height: 70 }}{% endraw %} source={% raw %}{{ uri: restaurant.image }}{% endraw %} />
+        <Text>{restaurant.name}</Text>
+      </View>
+    );
+  }
 
-render() {
-  
-  //set the title in the Navigation bar
-  this.props.setNavBarProps({
-      centerComponent: <Text>RESTAURANTS</Text>,
-  });
+  render() {
+    //set the title in the Navigation bar
+    this.props.setNavBarProps({
+        centerComponent: <Text>RESTAURANTS</Text>,
+    });
 
-  return (
-    <ListView
-      dataSource={this.getDataSource(this.getRestaurants())}
-      renderRow={restaurant => this.renderRow(restaurant)}
-    />
-  );
-}
+    return (
+      <ListView
+        dataSource={this.getDataSource(this.getRestaurants())}
+        renderRow={restaurant => this.renderRow(restaurant)}
+      />
+    );
+  }
 ```
 
 Upload the extension:
@@ -207,7 +206,7 @@ const style = StyleSheet.create({
     borderColor: 'rgb(242, 242, 242)'
   },
   title: {
-    flex: 1,
+    flex: 1
   },
   thumbnail: {
     marginVertical: 10,
@@ -302,13 +301,14 @@ import { bindActionCreators } from 'redux';
 import { ext } from '../const';
 
 class RestaurantsList extends Component {...}
-
 ```
 
 Note that we've also changed that the class `RestaurnatsList` is no longer exported. Instead we will export the `connect` function. Let's do the binding of this screen. Place following code at the end of file:
 
-```javascript{2-5}
+```javascript{1-4}
 #file: app/screens/RestaurantsList.js
+import {...}
+class RestaurantsList extends Component {...}
 
 export default connect(
   undefined,
@@ -357,7 +357,6 @@ This is what you should have end up with in `app/screens/RestaurantsList.js`:
 import React, {
   Component
 } from 'react';
-
 import {
   StyleSheet,
   Text,
@@ -366,7 +365,6 @@ import {
   Image,
   TouchableOpacity
 } from 'react-native';
-
 import { connect } from 'react-redux'
 import { navigateTo } from '@shoutem/core/navigation';
 import { bindActionCreators } from 'redux';
@@ -438,12 +436,11 @@ export default connect(
 
 To `RestaurantDetails` screen, just copy the following code. We're not introducing anything new, just using already shown React Native components. 
 
-```JSX{6,9,10,13-61}
+```JSX{5,8,9,12-59}
 #file: app/screens/RestaurantDetails.js
 import React, {
   Component
 } from 'react';
-
 import {
   StyleSheet,
   Text,
@@ -462,7 +459,6 @@ export default class RestaurantDetails extends Component {
     });
 
     return (
-
       //use ScrollView to make entire view scrollable
       <ScrollView style={styles.scroll}>
         <View style={styles.container}>
@@ -501,7 +497,6 @@ const styles = StyleSheet.create({
     marginTop: 15,
   },
 });
-
 ```
 
 We'll skip implementing the handling of web and e-mail properties and just render them.
