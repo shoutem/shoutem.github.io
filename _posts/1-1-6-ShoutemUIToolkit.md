@@ -134,7 +134,7 @@ export default class RestaurantDetails extends Component {
 
     return (
       <ScrollView>
-        <Image styleName="large-portrait" source={{ uri: restaurant.image }}>
+        <Image styleName="large-portrait" source={% raw %}{{ uri: restaurant.image }}{% endraw %}>
           <Overlay styleName="dark">
             <Title>{restaurant.name}</Title>
             <Subtitle>{restaurant.address}</Subtitle>
