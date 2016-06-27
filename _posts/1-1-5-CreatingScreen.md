@@ -25,7 +25,6 @@ Shoutem CLI created `app/screens/` folder with `RestaurantsList.js` file:
 import React, {
   Component
 } from 'react';
-
 import {
   Text,
 } from 'react-native';
@@ -96,7 +95,7 @@ Great! New screen is opened.
 
 Let's add static restaurants and `ListView` in screen. Start by importing [View](/docs/coming-soon), [ListView](/docs/coming-soon) and [Image](/docs/coming-soon) from React Native.
 
-```javascript{4-9}
+```javascript{6-8}
 #file: app/screens/RestaurantsList.js
 import React, {
   Component
@@ -293,7 +292,7 @@ import {
 
 To open a screen on touch, we need to dispatch already introduced `navigateTo` Redux action creator. We can use it directly in the screen through dispatch, but Redux standard way is to bind together `dispatch` and action creator inside `mapDispatchToProps` function, the second argument of [connect](https://github.com/reactjs/react-redux/blob/master/docs/api.md#connectmapstatetoprops-mapdispatchtoprops-mergeprops-options) function.
 
-Import `navigateTo` function from `@shoutem/core/navigation` along with `bindActionCreators` from Redux which will do the binding. We also need to specify which screens needs to be opened, so import `ext` function as well. This function resolves paths so you don't need to write full names of your screens. 
+Import `navigateTo` function from `@shoutem/core/navigation` along with `bindActionCreators` from Redux which will do the binding. We also need to specify which screens need to be opened, so import `ext` function as well. This function resolves paths so you don't need to write full names of your screens. 
 
 ```javascript{1-4,6}
 #file: app/screens/RestaurantsList.js
