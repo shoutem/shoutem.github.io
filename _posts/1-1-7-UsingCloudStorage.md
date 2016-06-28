@@ -58,7 +58,7 @@ This schema was immediately exported in `extension.json` file:
 
 Let's add now properties that we want to persist for a restaurant, such as: `name`, `address`, `description`, `url`, `image` and `mail`.
 
-```JSON{4-33}
+```JSON{4-34}
 #file: server/data-schemas/Restaurants.json
 {
   "name": "Restaurants",
@@ -84,7 +84,7 @@ Let's add now properties that we want to persist for a restaurant, such as: `nam
       "type": "string"
     },
     "image": {
-      "format": "attachemnt",
+      "format": "attachment",
       "title": "Image",
       "type": "object",
       "referencedSchema": "shoutem.core.image-attachments"
@@ -119,7 +119,7 @@ Now in order to enter data for your schema, you need to link your extension with
       "page": "shoutem.admin.CmsPage",
       "title": "Content",
       "parameters": {
-        "schema": "developer.restaurants.Restaurants"
+        "schema": "[PUT_YOUR_DEV_NAME!].restaurants.Restaurants"
       }
     }]
   }],
@@ -130,7 +130,7 @@ Now in order to enter data for your schema, you need to link your extension with
 }
 ```
 
-Change `developer` with your developer name.
+Change `[PUT_YOUR_DEV_NAME!]` with your developer name.
 
 Upload the extension:
 
