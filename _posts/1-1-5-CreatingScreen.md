@@ -125,7 +125,7 @@ Implement `render` method that will use `ListView`. `ListView` accepts 2 propert
 
 Remove old `render` method and add these methods:
 
-```JSX{3-15,17-28}
+```JSX{3-15,18-28}
 #file: app/screens/RestaurantsList.js
   getRestaurants() {...}
 
