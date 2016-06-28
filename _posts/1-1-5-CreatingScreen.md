@@ -305,7 +305,7 @@ class RestaurantsList extends Component {...}
 
 Note that we've also changed that the class `RestaurnatsList` is no longer exported. Instead we will export the `connect` function. Let's do the binding of this screen. Place following code at the end of file:
 
-```javascript{1-4}
+```javascript{4-7}
 #file: app/screens/RestaurantsList.js
 import {...}
 class RestaurantsList extends Component {...}
@@ -313,7 +313,7 @@ class RestaurantsList extends Component {...}
 export default connect(
   undefined,
   (dispatch) => bindActionCreators({ navigateTo }, dispatch)
-)(RestaurantsList)
+)(RestaurantsList);
 ```
 
 We can access bound actions through the `props` and pass it to `renderRow` function. Let's add `TouchableOpacity` and connect it to `navigateTo` function.
@@ -329,7 +329,7 @@ We can access bound actions through the `props` and pass it to `renderRow` funct
           props: { restaurant }
         })}>
         <View style={style.container}>
-          <Image style={style.thumbnail} source={{ uri: restaurant.image }} />
+          <Image style={style.thumbnail} source={% raw %}{{ uri: restaurant.image }}{% endraw %} />
           <Text style={style.title}>{restaurant.name}</Text>
         </View>
       </TouchableOpacity>
@@ -430,7 +430,7 @@ const style = StyleSheet.create({
 export default connect(
   undefined,
   (dispatch) => bindActionCreators({ navigateTo }, dispatch)
-)(RestaurantsList)
+)(RestaurantsList);
 
 ```
 
