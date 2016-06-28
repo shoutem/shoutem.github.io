@@ -50,7 +50,7 @@ class RestaurantsList extends Component {
           props: { restaurant }
         })}>
         <Tile>
-          <Image source={% raw %}{{ uri: restaurant.image }}{% endraw %}>
+          <Image styleName="large-wide" source={% raw %}{{ uri: restaurant.image }}{% endraw %}>
               <Overlay styleName="dark">
                 <Title>{restaurant.name}</Title>
                 <Subtitle>{restaurant.address}</Subtitle>
@@ -106,6 +106,7 @@ import React, {
   Component
 } from 'react';
 import {
+  StyleSheet,
   ScrollView,
 } from 'react-native';
 import {
@@ -129,7 +130,7 @@ export default class RestaurantDetails extends Component {
     setNavBarProps({ styleName: 'clear' });
 
     return (
-      <ScrollView>
+      <ScrollView  style={% raw %}{{marginTop:-70}}{% endraw %}>
         <Image styleName="large-portrait" source={% raw %}{{ uri: restaurant.image }}{% endraw %}>
           <Overlay styleName="dark">
             <Title>{restaurant.name}</Title>
