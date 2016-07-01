@@ -38,11 +38,11 @@ This root reducer needs to be exported in `app/index.js` file:
 #file: app/index.js
 import reducer from './reducers';
 import RestaurantsList from './screens/RestaurantsList';
-import RestaurantsDetails from './screens/RestaurantsDetails';
+import RestaurantDetails from './screens/RestaurantDetails';
 
 export const screens = {
   RestaurantsList,
-  RestaurantsDetails
+  RestaurantDetails
 };
 
 export reducer;

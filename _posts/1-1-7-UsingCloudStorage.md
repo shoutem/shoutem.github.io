@@ -52,7 +52,7 @@ This schema was immediately exported in `extension.json` file:
   "screens": [{
     "name": "RestaurantsList"
   }, {
-    "name": "RestaurantsDetails"
+    "name": "RestaurantDetails"
   }],
   "schemas": [{
     "name": "Restaurants",
@@ -131,7 +131,7 @@ Now in order to enter data for your schema, you need to link your extension with
   "screens": [{
     "name": "RestaurantsList"
   }, {
-    "name": "RestaurantsDetails"
+    "name": "RestaurantDetails"
   }],
   "schemas": [{
     "name": "Restaurants",
