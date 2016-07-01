@@ -169,7 +169,7 @@ export default connect(
 
 We can access bound actions through the `props` and pass it to `renderRow` function. Let's add `TouchableOpacity` and connect it to `navigateTo` function.
 
-```JSX{2,5-8,13}
+```JSX{2,5-8,17}
 #file: app/screens/RestaurantsList.js
   renderRow(restaurant) {
     const { navigateTo } = this.props;
