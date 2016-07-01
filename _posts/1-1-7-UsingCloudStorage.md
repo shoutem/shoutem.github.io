@@ -10,11 +10,11 @@ title: Using Cloud Storage
 Shoutem Cloud Storage is a CMS solution for mobile apps. It is optimized to be used within React Native apps with premade `reducers` and `actions` that are available in `@shoutem/redux-io` package. To describe model of your data on Shoutem Cloud Storage, you need to define a `Data Schema`:
 
 ```ShellSession
-$ shoutem data-schema create Restaurants
-File `server/data-schemas/Restaurants.json` is created.
+$ shoutem schema Restaurants
+File `server/schemas/Restaurants.json` is created.
 ```
 
-Folder `data-schemas` inside `server` folder was created with file `Restaurants.json`. Content of that file is following:
+Folder `schemas` inside `server` folder was created with file `Restaurants.json`. Content of that file is following:
 
 ```JSON
 #file: server/data-schemas/Restaurants.json
@@ -36,22 +36,27 @@ This is for the first time that we used `server` folder for something. The reaso
 
 This schema was immediately exported in `extension.json` file:
 
-```JSON{12-15}
+```JSON{17-20}
 #file: extension.json
 {
   "name": "restaurants",
   "version": "0.0.1",
   "title": "Restaurants",
-  "description": "Show the cool restaurants!",
-  "shortcuts": [{
-    "name": "OpenRestaurantsList",
-    "action": "developer.restaurants.openRestaurantsList",
-    "title": "List of restaurants",
+  "description": "List of restaurants",
+  "navItems": [{
+    "name": "openRestaurantsList",
+    "title": "Restaurants",
     "description": "Allow users to browse through list of restaurants"
+    "screen": "[PUT_YOUR_DEV_NAME].restaurants.RestaurantsList",
   }],
-  "dataSchemas": [{
+  "screens": [{
+    "name": "RestaurantsList"
+  }, {
+    "name": "RestaurantsDetails"
+  }],
+  "schemas": [{
     "name": "Restaurants",
-    "path": "server/data-schemas/Restaurants.json"
+    "path": "server/schemas/Restaurants.json"
   }]
 }
 ```
@@ -59,7 +64,7 @@ This schema was immediately exported in `extension.json` file:
 Let's add now properties that we want to persist for a restaurant, such as: `name`, `address`, `description`, `url`, `image` and `mail`.
 
 ```JSON{4-34}
-#file: server/data-schemas/Restaurants.json
+#file: server/schemas/Restaurants.json
 {
   "name": "Restaurants",
   "properties": {
@@ -109,12 +114,12 @@ Now in order to enter data for your schema, you need to link your extension with
   "name": "restaurants",
   "version": "0.0.1",
   "title": "Restaurants",
-  "description": "Show the cool restaurants!",
-  "shortcuts": [{
-    "name": "OpenRestaurantsList",
-    "action": "developer.restaurants.openRestaurantsList",
-    "title": "List of restaurants",
-    "description": "Allow users to browse through list of restaurants",
+  "description": "List of restaurants",
+  "navItems": [{
+    "name": "openRestaurantsList",
+    "title": "Restaurants",
+    "description": "Allow users to browse through list of restaurants"
+    "screen": "[PUT_YOUR_DEV_NAME].restaurants.RestaurantsList",
     "adminPages": [{
       "page": "shoutem.admin.CmsPage",
       "title": "Content",
@@ -123,9 +128,14 @@ Now in order to enter data for your schema, you need to link your extension with
       }
     }]
   }],
-  "dataSchemas": [{
+  "screens": [{
+    "name": "RestaurantsList"
+  }, {
+    "name": "RestaurantsDetails"
+  }],
+  "schemas": [{
     "name": "Restaurants",
-    "path": "server/data-schemas/Restaurants.json"
+    "path": "server/schemas/Restaurants.json"
   }]
 }
 ```
