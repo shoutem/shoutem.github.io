@@ -1,99 +1,19 @@
 ---
 layout: doc
-permalink: /docs/getting-started/creating-screen
-title: Creating screen
+permalink: /docs/getting-started/using-ui-toolkit
+title: Using UI toolkit
 ---
 
-# Creating screens
+# Using UI toolkit
 <hr />
 
-Screens are React components which are connected to Redux store, i.e. they have access to complete application's state.
+Shoutem UI Toolkit is a set of styleable UI components that you can use in any React Native application. It basically turns any ordinary app into an amazing app. There are plenty of components that you can use out of the box. In this tutorial we'll use some of them. Documentation for all the components can be found in the [reference]({{ site.baseurl }}/docs/ui-toolkit/introduction).
 
-## Creating list screen
-
-Let's create new screen.
-
-```ShellSession
-$ shoutem screen create RestaurantsList
-File `app/screens/RestaurantsList.js` is created.
-```
-
-Shoutem CLI created `app/screens/` folder with `RestaurantsList.js` file:
-
-```javascript
-#file: app/screens/RestaurantList.js
-import React, {
-  Component
-} from 'react';
-import {
-  Text
-} from 'react-native';
-
-export default class RestaurantsList extends Component {
-  render() {
-    return (
-      <Text>Hello World!</Text>
-    );
-  }
-}
-```
-
-In React, `Component` specifies its UI in `render` method.
-
-Screen needs to be exported in `app/index.js` and it's a good practice to do so immediately:
-
-```javascript{1,4-6}
-#file: app/index.js
-import RestaurantsList from './screens/RestaurantsList';
-import * as actions from './action';
-
-export const screens = {
-  RestaurantsList
-};
-
-export { actions };
-
-export const reducer = {};
-```
-
-Open that screen when `openRestaurantsList` action is triggered in `app/action.js`:
-
-```javascript{2,9}
-#file: app/action.js
-import { navigateTo } from '@shoutem/core/navigation';
-import { ext } from './const';
-
-// Define your actions
-
-// Shoutem specified actions
-export function openRestaurantsList(shortcut) {
-  return navigateTo({
-    screen: ext('RestaurantsList')
-  });
-}
-```
-
-Redux action creator `navigateTo` opens new screen in application. It accepts [Shoutem route object](/docs/coming-soon) as the only argument. Property `screen` holds a reference for the screen that should be opened once shortcut is touched. To reference our `RestaurantsList` screen exported in `app/index.js`, we're using `ext` helper function that was created in `app/const.js` file. This function returns an **absolute name**, e.g. `developer.restaurants.RestaurantsList`, for the extension part which is passed as its first argument, or `extension name` if no argument is passed.
-
-Upload the extension:
-
-```ShellSession
-$ shoutem push
-Uploading `Restaurants` extension to Shoutem...
-Success!
-```
-
-Try now tapping to shortcut on the preview in [Shoutem Builder](/docs/coming-soon). 
-
-<p class="image">
-<img src='{{ site.baseurl }}/img/getting-started/extension-hello-world.png'/>
-</p>
-
-Great! New screen is opened.
+React Native itself exposes plain components that you can use, but there's usually much work still left to do to make them look as you wanted. Shoutem UI Toolkit brings the experience of building web pages to React Native and solves the problem of not being able to use CSS classes with [Shoutem UI theme]({{ site.baseurl }}/docs/ui-toolkit/theme).
 
 ## Adding static data
 
-Let's add static restaurants and `ListView` in screen. Start by importing [View](/docs/coming-soon), [ListView](/docs/coming-soon) and [Image](/docs/coming-soon) from React Native.
+Let's add static restaurants and show them in list. Start by UI components from the toolkit.
 
 ```javascript{6-8}
 #file: app/screens/RestaurantsList.js
@@ -101,11 +21,14 @@ import React, {
   Component
 } from 'react';
 import {
-  Text,
-  View,
+  Image,
   ListView,
-  Image
-} from 'react-native';
+  Text,
+  Tile,
+  Title,
+  Subtitle,
+  Overlay,
+} from '@shoutem/ui';
 ```
 
 Define a method in `RestaurantsList` class that returns an array of restaurants.
@@ -121,7 +44,7 @@ export default class RestaurantsList extends Component {
 
 We prepared some data for you. Create `app/assets` folder, which will keep the assets for application part of your extension. Download [this `zip`](/restaurants/restaurants.zip), extract it and copy its content to `app/assets`. It contains `data/restaurants.json` file with restaurants data.
 
-Implement `render` method that will use `ListView`. `ListView` accepts 2 properties: `dataSource` and `renderRow` which defines function rendering each row in the `ListView` component.
+Implement `render` method that will use `ListView`. `ListView` accepts data in the form of `Array` to show in the list and `renderRow` method which defines how list row should look like.
 
 Remove old `render` method and add these methods:
 
@@ -129,34 +52,34 @@ Remove old `render` method and add these methods:
 #file: app/screens/RestaurantsList.js
   getRestaurants() {...}
 
-  getDataSource(restaurants) {
-    const dataSource = new ListView.DataSource({ rowHasChanged: (r1, r2) => r1 !== r2 });
-    return dataSource.cloneWithRows(restaurants);
-  }
-
   renderRow(restaurant) {
     return (
-      <View>
-        <Image style={% raw %}{{ width: 70, height: 70 }}{% endraw %} source={% raw %}{{ uri: restaurant.image }}{% endraw %} />
-        <Text>{restaurant.name}</Text>
-      </View>
+      <Tile>
+        <Image source={% raw %}{{ uri: restaurant.image }}{% endraw %}>
+          <Overlay styleName="dark">
+            <Title>{restaurant.name}</Title>
+            <Subtitle>{restaurant.address}</Subtitle>
+           </Overlay>
+        </Image>
+      </Tile>
     );
   }
 
   render() {
-    //set the title in the Navigation bar
     this.props.setNavBarProps({
-        centerComponent: <Text>RESTAURANTS</Text>,
+      title: RESTAURANTS
     });
 
     return (
       <ListView
-        dataSource={this.getDataSource(this.getRestaurants())}
+        data={this.getRestaurants()}
         renderRow={restaurant => this.renderRow(restaurant)}
       />
     );
   }
 ```
+
+In render we used `setNavBarProps` method provided by Shoutem to set the NavBar title.
 
 Upload the extension:
 
@@ -169,82 +92,10 @@ Success!
 `RestaurantsList` is now showing list of restaurants. 
 
 <p class="image">
-<img src='{{ site.baseurl }}/img/getting-started/extension-plain-list-without-jss.png'/>
+<img src='{{ site.baseurl }}/img/getting-started/extension-rich-list.png'/>
 </p>
 
-It's not quite how we wanted it to look like - image and text are not aligned.
-
-## Styling the screen
-
-We need to add some styling with React Native. Import `StyleSheet` from React Native.
-
-```javascript{2}
-#file: app/screen/RestaurantsList.js
-import {
-  StyleSheet,
-  Text,
-  View,
-  ListView,
-  Image
-} from 'react-native';
-```
-
-Define a `style` constant outside of the class definition.
-
-```javascript{4-22}
-#file: app/screen/RestaurantsList.js
-import {...}
-class RestaurantsList extends Component {...}
-
-const style = StyleSheet.create({
-  container: {
-    flex: 1,
-    flexDirection: 'row',
-    justifyContent: 'flex-start',
-    alignItems: 'center',
-    borderBottomWidth: 1,
-    borderColor: 'rgb(242, 242, 242)'
-  },
-  title: {
-    flex: 1
-  },
-  thumbnail: {
-    marginVertical: 10,
-    marginHorizontal: 15,
-    width: 50,
-    height: 50
-  }
-});
-
-```
-
-And use this style in `renderRow` function:
-
-```JSX{3-5}
-#file: app/screen/RestaurantsList.js
-renderRow(restaurant) {
-  return (
-    <View style={style.container}>
-      <Image style={style.thumbnail} source={% raw %}{{ uri: restaurant.image }}{% endraw %} />
-      <Text style={style.title}>{restaurant.name}</Text>
-    </View>
-  )
-}
-```
-
-Upload the extension:
-
-```ShellSession
-$ shoutem push
-Uploading `Restaurants` extension to Shoutem...
-Success!
-```
-
-It looks how we wanted!
-
-<p class="image">
-<img src='{{ site.baseurl }}/img/getting-started/extension-plain-list.png'/>
-</p>
+This looks exactly how we wanted.
 
 Try clicking on a row. Nothing happens! We want to open up a details screen when list row item is clicked.
 
@@ -253,59 +104,59 @@ Try clicking on a row. Nothing happens! We want to open up a details screen when
 First, create that screen:
 
 ```ShellSession
-$ shoutem screen create RestaurantDetails
+$ shoutem screen RestaurantDetails
 File `app/screens/RestaurantDetails.js` is created.
 ```
 
-This creates the details screen in the `RestaurantDetails.js` file. Don't forget to export it in `index.js`.
+Screen was defined in extension.json. This creates the details screen in the `RestaurantDetails.js` file. Don't forget to export it in `index.js`.
 
-```JSX{2,7}
+```JSX{2,6}
 #file: app/index.js
 import RestaurantsList from './screens/RestaurantsList';
 import RestaurantDetails from './screens/RestaurantDetails';
-import * as actions from './action';
 
 export const screens = {
   RestaurantsList,
   RestaurantDetails
 };
 
-export { actions };
-
 export const reducer = {};
 ```
 
-We want to open this screen when the list item is touched. For that we will use another component called `TouchableOpacity`. Let's import it in `RestaurantsList.js`:
+We want to open this screen when the list item is touched. For that we will use `TouchableOpacity` component from React Native. Let's import it in `RestaurantsList.js`:
 
-```javascript{7}
+```javascript{2}
 #file: app/screens/RestaurantsList.js
 import {
-  StyleSheet
-  Text,
-  View,
-  ListView,
-  Image,
   TouchableOpacity
 } from 'react-native';
 ```
 
-To open a screen on touch, we need to dispatch already introduced `navigateTo` Redux action creator. We can use it directly in the screen through dispatch, but Redux standard way is to bind together `dispatch` and action creator inside `mapDispatchToProps` function, the second argument of [connect](https://github.com/reactjs/react-redux/blob/master/docs/api.md#connectmapstatetoprops-mapdispatchtoprops-mergeprops-options) function.
+To open screen, we'll use Redux action creator `navigateTo` opens new screen in application. It accepts [Shoutem route object](/docs/coming-soon) as the only argument with `screen` property. To reference our `RestaurantsDetails` screen exported in `app/index.js`, we're using `ext` helper function that was created in `app/const.js` file. This function returns an **absolute name**, e.g. `developer.restaurants.RestaurantsList`, for the extension part which is passed as its first argument, or `extension name` if no argument is passed.
 
-Import `navigateTo` function from `@shoutem/core/navigation` along with `bindActionCreators` from Redux which will do the binding. We also need to specify which screens need to be opened, so import `ext` function as well. This function resolves paths so you don't need to write full names of your screens. 
-
-```javascript{1-4,6}
+```javascript{1-2}
 #file: app/screens/RestaurantsList.js
-import { connect } from 'react-redux';
 import { navigateTo } from '@shoutem/core/navigation';
-import { bindActionCreators } from 'redux';
 import { ext } from '../const';
+```
+
+To open a screen on touch, we need to dispatch `navigateTo` Redux action creator. We can use it directly in the screen through dispatch, but Redux standard way is to bind together `dispatch` and action creator inside `mapDispatchToProps` function, the second argument of [connect](https://github.com/reactjs/react-redux/blob/master/docs/api.md#connectmapstatetoprops-mapdispatchtoprops-mergeprops-options) function.
+
+Import `connect` function which defined how component will connect to Redux store and also import `bindActionCreators` from Redux which will do the binding.
+
+```javascript{3-6}
+#file: app/screens/RestaurantsList.js
+import { navigateTo } from '@shoutem/core/navigation';
+import { ext } from '../const';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 
 class RestaurantsList extends Component {...}
 ```
 
-Note that we've also changed that the class `RestaurnatsList` is no longer exported. Instead we will export the `connect` function. Let's do the binding of this screen. Place following code at the end of file:
+Note that we've also changed that the class `RestaurnatsList` is no longer exported. Instead we will export the `connect` function in which binding is defined. Place following code at the end of file:
 
-```javascript{1-4}
+```javascript{4-7}
 #file: app/screens/RestaurantsList.js
 import {...}
 class RestaurantsList extends Component {...}
@@ -328,56 +179,46 @@ We can access bound actions through the `props` and pass it to `renderRow` funct
           screen: ext('RestaurantDetails'),
           props: { restaurant }
         })}>
-        <View style={style.container}>
-          <Image style={style.thumbnail} source={{ uri: restaurant.image }} />
-          <Text style={style.title}>{restaurant.name}</Text>
-        </View>
+        <Tile>
+          <Image source={% raw %}{{ uri: restaurant.image }}{% endraw %}>
+            <Overlay styleName="dark">
+              <Title>{restaurant.name}</Title>
+              <Subtitle>{restaurant.address}</Subtitle>
+             </Overlay>
+          </Image>
+        </Tile>
       </TouchableOpacity>
-    );
-  }
-
-  render() {
-    this.props.setNavBarProps({
-      centerComponent: <Text>RESTAURANTS</Text>
-    });
-
-    return (
-      <ListView
-        dataSource={this.getDataSource(this.getRestaurants())}
-        renderRow={restaurant => this.renderRow(restaurant)}
-      />
     );
   }
 ```
 
 This is what you should have end up with in `app/screens/RestaurantsList.js`:
 
-```JSX
+```JSX{4-7,8-16,35-42,54}
 #file: app/screens/RestaurantsList.js
 import React, {
   Component
 } from 'react';
 import {
-  StyleSheet,
-  Text,
-  View,
-  ListView,
-  Image,
-  TouchableOpacity
+  TouchableOpacity,
 } from 'react-native';
-import { connect } from 'react-redux'
+import {
+  Image,
+  ListView,
+  Text,
+  Tile,
+  Title,
+  Subtitle,
+  Overlay,
+} from '@shoutem/ui';
 import { navigateTo } from '@shoutem/core/navigation';
-import { bindActionCreators } from 'redux';
 import { ext } from '../const';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 
 class RestaurantsList extends Component {
   getRestaurants() {
     return require('../assets/data/restaurants.json');
-  }
-
-  getDataSource(restaurants) {
-    const dataSource = new ListView.DataSource({ rowHasChanged: (r1, r2) => r1 !== r2 });
-    return dataSource.cloneWithRows(restaurants);
   }
 
   renderRow(restaurant) {
@@ -388,115 +229,116 @@ class RestaurantsList extends Component {
           screen: ext('RestaurantDetails'),
           props: { restaurant }
         })}>
-        <View style={style.container}>
-          <Image style={style.thumbnail} source={% raw %}{{ uri: restaurant.image }}{% endraw %} />
-          <Text style={style.title}>{restaurant.name}</Text>
-        </View>
+        <Tile>
+          <Image source={% raw %}{{ uri: restaurant.image }}{% endraw %}>
+              <Overlay styleName="dark">
+                <Title>{restaurant.name}</Title>
+                <Subtitle>{restaurant.address}</Subtitle>
+               </Overlay>
+          </Image>
+        </Tile>
       </TouchableOpacity>
     );
   }
 
   render() {
     this.props.setNavBarProps({
-      centerComponent: <Text>RESTAURANTS</Text>
+      title: RESTAURANTS
     });
 
     return (
       <ListView
-        dataSource={this.getDataSource(this.getRestaurants())}
+        data={this.getRestaurants()}
         renderRow={restaurant => this.renderRow(restaurant)}
       />
     );
   }
 }
 
-const style = StyleSheet.create({
-  container: {
-    flex: 1,
-    flexDirection: 'row',
-    alignItems: 'center'
-  },
-  title: {
-    flex: 1,
-  },
-  thumbnail: {
-    marginVertical: 10,
-    marginHorizontal: 15,
-    width: 50,
-    height: 50
-  }
-});
-
 export default connect(
   undefined,
   (dispatch) => bindActionCreators({ navigateTo }, dispatch)
 )(RestaurantsList)
-
 ```
 
-To `RestaurantDetails` screen, just copy the following code. We're not introducing anything new, just using already shown React Native components. 
+To `RestaurantDetails` screen, just copy the following code. We're not introducing anything new, just using some new components.
 
-```JSX{5,8,9,12-59}
+```JSX{4-6,7-18,24-25,28-70}
 #file: app/screens/RestaurantDetails.js
 import React, {
   Component
 } from 'react';
 import {
-  StyleSheet,
-  Text,
-  View,
-  Image,
   ScrollView,
 } from 'react-native';
+import {
+  Icon,
+  Row,
+  Subtitle,
+  Text,
+  Title,
+  View,
+  Image,
+  Divider,
+  Overlay,
+  Tile,
+} from '@shoutem/ui';
 
 export default class RestaurantDetails extends Component {
   render() {
     const { restaurant, setNavBarProps } = this.props;
-
-    //set the title in the NavigationBar
-    setNavBarProps({
-      centerComponent: <Text>{restaurant.name.toUpperCase()}</Text>
-    });
+    
+    // make NavigationBar transparent
+    setNavBarProps({ styleName: 'clear' });
 
     return (
-      //use ScrollView to make entire view scrollable
-      <ScrollView style={styles.scroll}>
-        <View style={styles.container}>
-          <Image style={styles.image} source={% raw %}{{ uri: restaurant.image }}{% endraw %} />
+      <ScrollView>
+        <Image styleName="large-portrait" source={% raw %}{{ uri: restaurant.image }}{% endraw %}>
+          <Overlay styleName="dark">
+            <Title>{restaurant.name}</Title>
+            <Subtitle>{restaurant.address}</Subtitle>
+          </Overlay>
+        </Image>
 
-          <Text style={styles.section}>{restaurant.description}</Text>
+        <Text styleName="inset">{restaurant.description}</Text>
 
-          <Text style={styles.section}>LOCATION</Text>
-          <Text>{restaurant.address}</Text>
+        <Divider styleName="line" />
 
-          <Text style={styles.section}>WEB</Text>
-          <Text>{restaurant.url}</Text>
+        <Row>
+          <Icon name="web" />
+          <View styleName="vertical">
+            <Subtitle>Visit webpage</Subtitle>
+            <Text>{restaurant.url}</Text>
+          </View>
+          <Icon name="close" />
+        </Row>
 
-          <Text style={styles.section}>E-MAIL</Text>
-          <Text>{restaurant.mail}</Text>
-        </View>
+        <Divider styleName="line" />
+
+        <Row>
+          <Icon name="tweets" />
+          <View styleName="vertical">
+            <Subtitle>Address</Subtitle>
+            <Text>{restaurant.address}</Text>
+          </View>
+          <Icon name="close" />
+        </Row>
+
+        <Divider styleName="line" />
+
+        <Row>
+          <Icon name="email" />
+          <View styleName="vertical">
+            <Subtitle>Email</Subtitle>
+            <Text>{restaurant.mail}</Text>
+          </View>
+        </Row>
+
+        <Divider styleName="line" />
       </ScrollView>
     );
   }
 }
-
-const styles = StyleSheet.create({
-  scroll: {
-    flex: 1,
-  },
-  container: {
-    paddingTop: 20,
-    paddingHorizontal: 15,
-  },
-  image: {
-    flex: 1,
-    height: 340,
-    resizeMode: 'cover',
-  },
-  section: {
-    marginTop: 15,
-  },
-});
 ```
 
 We'll skip implementing the handling of web and e-mail properties and just render them.
@@ -512,7 +354,8 @@ Success!
 When you click on a row in the list, this is what you get:
 
 <p class="image">
-<img src='{{ site.baseurl }}/img/getting-started/extension-plain-details.png'/>
+<img src='{{ site.baseurl }}/img/getting-started/extension-rich-details.png'/>
 </p>
 
-We finished UI skeleton for our extension. But, it doesn't look as nice as we planned at the beginning. That's because we're using plain React Native components. **Shoutem UI Toolkit** to the rescue!.
+That's exactly what we wanted to get! Our app reached final look! However, our app is using static data. Every time we want a change, we need to update the version of extension. That would be a very long process. **Shoutem Cloud Storage** to the rescue!
+
