@@ -194,7 +194,7 @@ We can access bound actions through the `props` and pass it to `renderRow` funct
 
 This is what you should have end up with in `app/screens/RestaurantsList.js`:
 
-```JSX{4-7,8-16,35-42,54}
+```JSX
 #file: app/screens/RestaurantsList.js
 import React, {
   Component
@@ -263,7 +263,7 @@ export default connect(
 
 To `RestaurantDetails` screen, just copy the following code. We're not introducing anything new, just using some new components.
 
-```JSX{4-6,7-18,24-25,28-70}
+```JSX
 #file: app/screens/RestaurantDetails.js
 import React, {
   Component
