@@ -7,14 +7,14 @@ title: Initializing extension
 # Initializing extension
 <hr />
 
-Here's the mockup of the Restaurants extension, slightly different from the picture we showed in [Introduction]({{ site.baseurl }}/docs/getting-started/introduction), because we'll start off with the regular React Native components before switching to Shoutem UI Tookit.
+Here's the mockup of the Restaurants extension that we showed [Introduction]({{ site.baseurl }}/docs/getting-started/introduction). We're building _Restaurants_ extension.
 
 
 <p class="image">
-<img src='{{ site.baseurl }}/img/getting-started/extension-preview-lightweight.png'/>
+<img src='{{ site.baseurl }}/img/getting-started/extension-preview.png'/>
 </p>
  
-Left application screen lists the restaurants and the right one shows the details of one specific screen. 
+Left application screen lists the restaurants and the right one shows the details of one specific restaurant. 
 
 Let's start building! Locate to folder where you want to keep extension files:
 
@@ -95,10 +95,10 @@ Go to `Extensions` tab in [Shoutem builder](/docs/coming-soon). You'll see that 
 <img src='{{ site.baseurl }}/img/getting-started/extension-tab-extension.png'/>
 </p>
 
-However, when you go to `Screens` tab now and click on `+` next to `Screens`, this extension won't be shown.
+However, when you go to `Navigation` tab now and click on `+` next to `Navigation`, this extension won't be shown.
 
 <p class="image">
 <img src='{{ site.baseurl }}/img/getting-started/add-content-no-extension.png'/>
 </p>
 
-That's because `Add screen` modal shows _shortcuts_ which extensions export. We need to add shortcut to our extensions.
+That's because `Add navigation` modal shows _navigation items_ that extensions export. We need to create navigation item in our extensions.
