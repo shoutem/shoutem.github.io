@@ -34,17 +34,16 @@ export default combineReducers({
 
 This root reducer needs to be exported in `app/index.js` file:
 
-```javascript{1,11}
+```javascript{1,10}
 #file: app/index.js
 import reducer from './reducers';
 import RestaurantsList from './screens/RestaurantsList';
-import * as actions from './action';
+import RestaurantsDetails from './screens/RestaurantsDetails';
 
 export const screens = {
   RestaurantsList,
+  RestaurantsDetails
 };
-
-export actions;
 
 export reducer;
 ```
@@ -131,7 +130,7 @@ export default connect(
 
 This is the final result of `RestaurantsList` screen that uses both Shoutem UI Toolkit and Shoutem Cloud Storage.
 
-```JSX{9,15,19-25,44-50,55-57,59}
+```JSX{9,15,19-25,44-55,60-62,64}
 #file: app/screens/RestaurantsList.js
 import React, {
   Component,
@@ -176,7 +175,12 @@ class RestaurantsList extends Component {
   }
 
   render() {
-    const { navigateTo, restaurants } = this.props;
+    const { navigateTo, restaurants, setNavBarProps } = this.props;
+
+    setNavBarProps({
+      title: RESTAURANTS
+    });
+
     return restaurants ? 
       <ListView
         data={restaurants}
