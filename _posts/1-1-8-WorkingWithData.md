@@ -45,7 +45,7 @@ export const screens = {
   RestaurantDetails
 };
 
-export reducer;
+export { reducer };
 ```
 
 The only thing left to do is to fetch data from **Shoutem Cloud Storage** on `RestaurantsList` screen and to retrieve that data, in form of restaurants, from application's state. Meanwhile data is fetched, we'll show `Spinner` view from `@shoutem/ui`.
@@ -89,7 +89,7 @@ Since `find` also needs to be dispatched, we'll bind it in the `mapDispatchToPro
 ```javascript{4}
 #file: app/screens/RestaurantsList.js
 export default connect(
-  (state, ownProps) => state,
+  undefined,
   (dispatch, ownProps) => {
     actions: bindActionsCreators([navigateTo, find], dispatch)
   })(RestaurantsList)
@@ -178,7 +178,7 @@ class RestaurantsList extends Component {
     const { navigateTo, restaurants, setNavBarProps } = this.props;
 
     setNavBarProps({
-      title: RESTAURANTS
+      title: 'RESTAURANTS'
     });
 
     return restaurants ? 
