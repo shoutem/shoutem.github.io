@@ -10,7 +10,7 @@ title: Creating navigation and screen
 The easiest way to understand what navigation items are, is to think of them as links to the starting screen in your extension. These links will be used to navigate to your extension from any part of the application. Extensions can expose more navigation items. Let's now create one.
 
 ```ShellSession
-$ shoutem navigation openRestaurantsList
+$ shoutem navigation add openRestaurantsList
 Enter navigation item information.
 Title: Restaurants
 Description: Allow users to browse through list of restaurants
@@ -61,7 +61,7 @@ Screens are React components which are connected to Redux store, i.e. they have 
 Let's create new screen.
 
 ```ShellSession
-$ shoutem screen RestaurantsList
+$ shoutem screen add RestaurantsList
 File `app/screens/RestaurantsList.js` is created.
 ```
 

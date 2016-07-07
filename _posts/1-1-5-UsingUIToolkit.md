@@ -104,7 +104,7 @@ Try clicking on a row. Nothing happens! We want to open up a details screen when
 First, create that screen:
 
 ```ShellSession
-$ shoutem screen RestaurantDetails
+$ shoutem screen add RestaurantDetails
 File `app/screens/RestaurantDetails.js` is created.
 ```
 
