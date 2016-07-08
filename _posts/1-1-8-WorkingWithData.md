@@ -28,7 +28,7 @@ import { ext } from '../const';
 
 export default combineReducers({
   restaurants: storage(ext('Restaurants')),
-  allRestaurants: collection(ext('Restaurants'))
+  allRestaurants: collection(ext('Restaurants'), 'all')
 })
 ```
 
