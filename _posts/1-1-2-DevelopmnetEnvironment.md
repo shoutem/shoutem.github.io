@@ -25,7 +25,7 @@ Flag ```-g``` is to install CLI globally, so you can use `shoutem` command from 
 Each Shoutem user can become Shoutem developer. If you haven't already, go to [Shoutem](http://www.shoutem.com) and create new account. Now you can register as a developer with:
 
 ```ShellSession
-$ shoutem register
+$ shoutem login
 Enter your Shoutem credentials.
 Email: developer@example.com
 Password:
