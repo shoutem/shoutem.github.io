@@ -193,23 +193,23 @@ class RestaurantsList extends Component {
   }
 
   renderRow(restaurant) {
- 	const { navigateTo } = this.props;
+ 	  const { navigateTo } = this.props;
 
     return (
     	<TouchableOpacity onPress={() => navigateTo({
           screen: ext('RestaurantDetails'),
           props: { restaurant }
         })}>
-		<Tile>
-	          <Image styleName="large-wide" source={{ uri: restaurant.image }}>
-	              <Overlay styleName="dark">
-	                <Title>{restaurant.name}</Title>
-	                <Subtitle>{restaurant.address}</Subtitle>
-	               </Overlay>
-	          </Image>
-	          <Divider styleName="line" />
+  		  <Tile>
+          <Image styleName="large-wide" source={% raw %}{{ uri: restaurant.image }}{% endraw %}>
+              <Overlay styleName="dark">
+                <Title>{restaurant.name}</Title>
+                <Subtitle>{restaurant.address}</Subtitle>
+               </Overlay>
+          </Image>
+          <Divider styleName="line" />
         </Tile>
-	      </TouchableOpacity>
+     </TouchableOpacity>
     );
   }
 
