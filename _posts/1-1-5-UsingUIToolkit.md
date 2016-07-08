@@ -67,7 +67,7 @@ Remove old `render` method and add these methods:
 
   render() {
     this.props.setNavBarProps({
-      title: RESTAURANTS
+      title: 'RESTAURANTS'
     });
 
     return (

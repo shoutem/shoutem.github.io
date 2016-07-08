@@ -7,7 +7,7 @@ title: Working with data
 # Working with data
 <hr />
 
-Data on the Shoutem Cloud Storage needs to be fetched in the application. First, remove all static files from the extension, so we're sure that we're actually fetching data from the Shoutem Cloud Storage - remove assets folder. Define `reducer` which will define how the state of the application should be changed when action is dispatched and how the initial state should look like. Create new folder `app/reducers` with `index.js` file.
+Data on the Shoutem Cloud Storage needs to be fetched in the application. First, remove all static files from the extension, so we're sure that we're actually fetching data from the Shoutem Cloud Storage, i.e. remove assets folder. Define `reducer` which will define how the state of the application should be changed when action is dispatched and how the initial state should look like. Create new folder `app/reducers` with `index.js` file.
 
 We can have one big reducer which will manage whole application state, or more little reducers which will take care of different properties in the state. 
 
@@ -55,16 +55,15 @@ First we need to get the list of `restaurants` from `props` and bind it with the
 ```JSX{7-11,15-16}
 #file: app/screens/RestaurantsList.js
   render() {
-    
-    //set the title in the Navigation bar
+    // set the title in the Navigation bar
     this.props.setNavBarProps({
-        centerComponent: <Text>RESTAURANTS</Text>,
+      title: 'RESTAURANTS'
     });
     
-    //get list of restaurants from props
+    // get list of restaurants from props
     const { restaurants } = this.props;
     
-    //setup for showing loading indicator while loading data
+    // setup for showing loading indicator while loading data
     const { LOADING, IDLE } = ListView.Status;
     
     return (
