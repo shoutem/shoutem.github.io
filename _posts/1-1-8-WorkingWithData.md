@@ -136,7 +136,7 @@ import {
 
 Use that method in `mapStateToProps` function, 1st argument of `connect` function.
 
-```javascript
+```javascript{2-5}
 #file: app/screens/RestaurantsList.js
 export default connect(
   (state) => ({
@@ -148,7 +148,7 @@ export default connect(
 
 This is the final result of `RestaurantsList` screen that uses both Shoutem UI Toolkit and Shoutem Cloud Storage.
 
-```JSX{9,15,19-25,44-55,60-62,64}
+```JSX
 #file: app/screens/RestaurantsList.js
 import React, {
   Component
