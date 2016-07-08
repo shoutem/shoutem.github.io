@@ -29,7 +29,7 @@ import { ext } from '../const';
 export default combineReducers({
   restaurants: storage(ext('Restaurants')),
   allRestaurants: collection(ext('Restaurants'), 'all')
-})
+});
 ```
 
 This root reducer needs to be exported in `app/index.js` file:
@@ -97,13 +97,12 @@ import {
 
 Since `find` also needs to be dispatched, we'll bind it in the `mapDispatchToProps` function, 2nd argument of `connect` function.
 
-```javascript{4}
+```javascript{3}
 #file: app/screens/RestaurantsList.js
 export default connect(
   undefined,
-  (dispatch, ownProps) => {
-    actions: bindActionsCreators([navigateTo, find], dispatch)
-  })(RestaurantsList)
+    (dispatch) => bindActionCreators({ navigateTo, find }, dispatch)
+  })(RestaurantsList);
 ```
 
 Define a `Component` lifecycle method `componentDidMount` which will start fetching the restaurants.
@@ -135,13 +134,13 @@ import {
 
 Use that method in `mapStateToProps` function, 1st argument of `connect` function.
 
-```javascript{2-5}
+```javascript{2-4}
 #file: app/screens/RestaurantsList.js
 export default connect(
   (state) => ({
     restaurants: getCollection(state[ext()].allRestaurants, state)
   }),
-  { navigateTo, find }
+  (dispatch) => bindActionCreators({ navigateTo, find }, dispatch)
 )(RestaurantsList);
 ```
 
@@ -199,7 +198,7 @@ class RestaurantsList extends Component {
           props: { restaurant }
         })}>
   		  <Tile>
-          <Image styleName="large-wide" source={% raw %}{{ uri: restaurant.image }}{% endraw %}>
+          <Image styleName="large-wide" source={% raw %}{{ uri: restaurant.image && restaurant.image.url }}{% endraw %}>
             <Overlay styleName="dark">
               <Title>{restaurant.name}</Title>
               <Subtitle>{restaurant.address}</Subtitle>
@@ -237,7 +236,7 @@ export default connect(
   (state) => ({
     restaurants: getCollection(state[ext()].allRestaurants, state)
   }),
-  { navigateTo, find }
+  (dispatch) => bindActionCreators({ navigateTo, find }, dispatch)
 )(RestaurantsList);
 
 ```
