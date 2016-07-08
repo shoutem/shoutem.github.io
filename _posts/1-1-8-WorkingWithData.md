@@ -48,40 +48,52 @@ export const screens = {
 export { reducer };
 ```
 
-The only thing left to do is to fetch data from **Shoutem Cloud Storage** on `RestaurantsList` screen and to retrieve that data, in form of restaurants, from application's state. Meanwhile data is fetched, we'll show `Spinner` view from `@shoutem/ui`.
+The only thing left to do is to fetch data from **Shoutem Cloud Storage** on `RestaurantsList` screen and to retrieve that data, in form of restaurants, from application's state. 
 
-```javascript{6}
-#file: app/screens/RestaurantsList.js
-import {
-  Image,
-  ListView,
-  Tile,
-  Title,
-  Spinner,
-  Subtitle
-} from '@shoutem/ui';
-```
-
-Use `Spinner` in `render` method.
+First we need to get the list of `restaurants` from `props` and bind it with the `ListView` component. Notice that `ListView` can show spinner while data is being loaded. 
 
 ```JSX{3-8}
 #file: app/screens/RestaurantsList.js
   render() {
-    const { navigateTo, restaurants } = this.props;
-    return restaurants ? 
+    
+    //set the title in the Navigation bar
+    this.props.setNavBarProps({
+        centerComponent: <Text>RESTAURANTS</Text>,
+    });
+    
+    //get list of restaurants from props
+    const { restaurants } = this.props;
+    
+    //setup for showing loading indicator while loading data
+    const { LOADING, IDLE } = ListView.Status;
+    
+    return (
       <ListView
         data={restaurants}
+        status={isBusy(restaurants) ? LOADING : IDLE}
         renderRow={restaurant => this.renderRow(restaurant, navigateTo)}
-      /> :
-      <Spinner />
+      />
+    );
   }
+```
+
+Notice we're using `isBusy` function. Let's import it as well.
+
+```javascript{1-3}
+#file: app/screens/RestaurantsList.js
+import { 
+  isBusy 
+} from '@shoutem/redux-io';
 ```
 
 Once screen is mounted, if restaurants are not in the Redux store, we'll start fetching data with [find](/docs/coming-soon) action creator from `@shoutem/redux-io` package.
 
-```javascript{1}
+```javascript{3}
 #file: app/screens/RestaurantsList.js
-import { find } from '@shoutem/redux-io';
+import { 
+  isBusy,
+  find 
+} from '@shoutem/redux-io';
 ```
 
 Since `find` also needs to be dispatched, we'll bind it in the `mapDispatchToProps` function, 2nd argument of `connect` function.
@@ -97,22 +109,29 @@ export default connect(
 
 Define a `Component` lifecycle method `componentDidMount` which will start fetching the restaurants.
 
-```javascript{1-7}
+```javascript{2-9}
 #file: app/screens/RestaurantsList.js
-componentDidMount() {
-  const { actions, restaurants } = this.props;
-  const { find } = actions;
-  if (!restaurants) {
-    find(ext('Restaurants'));
+class RestaurantsList extends Component {
+  componentDidMount() {
+    const { find, restaurants } = this.props;
+    if (shouldRefresh(restaurants)) {
+      find(ext('Restaurants'), 'all', {
+          include: 'image',
+      });
+    }
   }
-}
 ```
 
-Finally, as we can see in `componentDidMount`, we want to have restaurants collection in the props. In `app/reducers/index.js` we defined that `restaurants` dictionary that will be fetched through `storage` and `allRestaurants` collection that will be fetched through `collection` reducer. We need to combine both to get an array with restaurants objects from dictionary. Do this with with `getCollection` method from `@shoutem/redux-io`.
+Finally, as we can see in `componentDidMount`, we want to have restaurants collection in the props. In `app/reducers/index.js` we defined that `restaurants` dictionary that will be fetched through `storage` and `allRestaurants` collection that will be fetched through `collection` reducer. We need to combine both to get an array with restaurants objects from dictionary. Do this with with `getCollection` method from `@shoutem/redux-io`. shouldrefresh... TBD
 
 ```javascript{1}
 #file: app/screens/RestaurantsList.js
-import { find, getCollection } from '@shoutem/redux-io';
+import {
+  isBusy,
+  find,
+  getCollection,
+  shouldRefresh
+} from '@shoutem/redux-io';
 ```
 
 Use that method in `mapStateToProps` function, 1st argument of `connect` function.
@@ -120,12 +139,11 @@ Use that method in `mapStateToProps` function, 1st argument of `connect` functio
 ```javascript{2-4}
 #file: app/screens/RestaurantsList.js
 export default connect(
-  (state, ownProps) => {
-    restaurants: getCollection(state[ext()].allRestaurants, state[ext()])
-  },
-  (dispatch, ownProps) => {
-    actions: bindActionsCreators([navigateTo, find], dispatch)
-  })(RestaurantsList)
+  (state) => ({
+    restaurants: getCollection(state[ext()].allRestaurants, state)
+  }),
+  { navigateTo, find }
+)(RestaurantsList);
 ```
 
 This is the final result of `RestaurantsList` screen that uses both Shoutem UI Toolkit and Shoutem Cloud Storage.
@@ -133,70 +151,97 @@ This is the final result of `RestaurantsList` screen that uses both Shoutem UI T
 ```JSX{9,15,19-25,44-55,60-62,64}
 #file: app/screens/RestaurantsList.js
 import React, {
-  Component,
+  Component
 } from 'react';
+
+import {
+  StyleSheet,
+  TouchableOpacity,
+} from 'react-native';
 import {
   Image,
   ListView,
+  Text,
   Tile,
   Title,
-  Spinner,
-  Subtitle
+  Subtitle,
+  Overlay,
+  Divider
 } from '@shoutem/ui';
-import { connect } from 'react-redux'
-import { navigateTo } from '@shoutem/core';
+
+import {
+  find,
+  getCollection,
+  shouldRefresh,
+  isBusy,
+} from '@shoutem/redux-io';
+
+import { connect } from 'react-redux';
+import { navigateTo } from '@shoutem/core/navigation';
 import { bindActionCreators } from 'redux';
-import { find, getCollection } from '@shoutem/redux-io';
 import { ext } from '../const';
 
 class RestaurantsList extends Component {
+
   componentDidMount() {
-    const { actions, restaurants } = this.props;
-    const { find } = this.props.actions;
-    if (!restaurants) {
-      find(ext('Restaurants'));
+    const { find, restaurants } = this.props;
+    if (shouldRefresh(restaurants)) {
+      find(ext('Restaurants'), 'all', {
+          include: 'image',
+      });
     }
   }
 
-  renderRow(restaurant, navigateTo) {
+  renderRow(restaurant) {
+ 	const { navigateTo } = this.props;
+
     return (
-      <TouchableOpacity onPress={() => navigateTo({
+    	<TouchableOpacity onPress={() => navigateTo({
           screen: ext('RestaurantDetails'),
           props: { restaurant }
         })}>
-        <Tile>
-          <Image styleName="banner" source={`../${restaurant.image}`}>
-            <Title>{restaurant.name}</Title>
-            <Subtitle>{restaurant.address}</Subtitle>
-          </Image>
+		<Tile>
+	          <Image styleName="large-wide" source={{ uri: restaurant.image }}>
+	              <Overlay styleName="dark">
+	                <Title>{restaurant.name}</Title>
+	                <Subtitle>{restaurant.address}</Subtitle>
+	               </Overlay>
+	          </Image>
+	          <Divider styleName="line" />
         </Tile>
-      <TouchableOpacity />
-    )
+	      </TouchableOpacity>
+    );
   }
 
   render() {
-    const { navigateTo, restaurants, setNavBarProps } = this.props;
-
-    setNavBarProps({
-      title: 'RESTAURANTS'
+    //set the title in the Navigation bar
+    this.props.setNavBarProps({
+      centerComponent: <Text>RESTAURANTS</Text>,
     });
 
-    return restaurants ? 
+    //get list of restaurants from props
+    const { restaurants } = this.props;
+    
+    //setup for showing loading indicator while loading data
+    const { LOADING, IDLE } = ListView.Status;
+
+    return (
       <ListView
         data={restaurants}
+        status={isBusy(restaurants) ? LOADING : IDLE}
         renderRow={restaurant => this.renderRow(restaurant, navigateTo)}
-      /> :
-      <Spinner />
+      />
+    );
   }
 }
 
 export default connect(
-  (state, ownProps) => {
-    restaurants: getCollection(state[ext()].allRestaurants, state[ext()])
-  },
-  (dispatch, ownProps) => {
-    actions: bindActionsCreators([navigateTo, find], dispatch)
-  })(RestaurantsList)
+  (state) => ({
+    restaurants: getCollection(state[ext()].allRestaurants, state)
+  }),
+  { navigateTo, find }
+)(RestaurantsList);
+
 ```
 
 Let's check how it works:
