@@ -215,7 +215,7 @@ class RestaurantsList extends Component {
   render() {
     //set the title in the Navigation bar
     this.props.setNavBarProps({
-      centerComponent: <Text>RESTAURANTS</Text>,
+      title: 'RESTAURANTS',
     });
 
     //get list of restaurants from props
