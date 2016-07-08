@@ -52,7 +52,7 @@ The only thing left to do is to fetch data from **Shoutem Cloud Storage** on `Re
 
 First we need to get the list of `restaurants` from `props` and bind it with the `ListView` component. Notice that `ListView` can show spinner while data is being loaded. 
 
-```JSX{3-8}
+```JSX{7-11,15-16}
 #file: app/screens/RestaurantsList.js
   render() {
     
@@ -124,7 +124,7 @@ class RestaurantsList extends Component {
 
 Finally, as we can see in `componentDidMount`, we want to have restaurants collection in the props. In `app/reducers/index.js` we defined that `restaurants` dictionary that will be fetched through `storage` and `allRestaurants` collection that will be fetched through `collection` reducer. We need to combine both to get an array with restaurants objects from dictionary. Do this with with `getCollection` method from `@shoutem/redux-io`. shouldrefresh... TBD
 
-```javascript{1}
+```javascript{4,5}
 #file: app/screens/RestaurantsList.js
 import {
   isBusy,
@@ -136,7 +136,7 @@ import {
 
 Use that method in `mapStateToProps` function, 1st argument of `connect` function.
 
-```javascript{2-4}
+```javascript
 #file: app/screens/RestaurantsList.js
 export default connect(
   (state) => ({
