@@ -200,10 +200,10 @@ class RestaurantsList extends Component {
         })}>
   		  <Tile>
           <Image styleName="large-wide" source={% raw %}{{ uri: restaurant.image }}{% endraw %}>
-              <Overlay styleName="dark">
-                <Title>{restaurant.name}</Title>
-                <Subtitle>{restaurant.address}</Subtitle>
-               </Overlay>
+            <Overlay styleName="dark">
+              <Title>{restaurant.name}</Title>
+              <Subtitle>{restaurant.address}</Subtitle>
+            </Overlay>
           </Image>
           <Divider styleName="line" />
         </Tile>
