@@ -54,7 +54,7 @@ This schema was immediately exported in `extension.json` file:
   }, {
     "name": "RestaurantDetails"
   }],
-  "schemas": [{
+  "dataSchemas": [{
     "name": "Restaurants",
     "path": "server/schemas/Restaurants.json"
   }]
@@ -133,7 +133,7 @@ Now in order to enter data for your schema, you need to link your extension with
   }, {
     "name": "RestaurantDetails"
   }],
-  "schemas": [{
+  "dataSchemas": [{
     "name": "Restaurants",
     "path": "server/schemas/Restaurants.json"
   }]
