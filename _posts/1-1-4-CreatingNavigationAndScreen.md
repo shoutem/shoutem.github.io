@@ -7,15 +7,15 @@ title: Creating navigation and screen
 # Creating navigation and screen
 <hr />
 
-The easiest way to understand what navigation items are, is to think of them as links to the starting screen in your extension. These links will be used to navigate to your extension from any part of the application. Extensions can expose more navigation items. Let's now create one.
+The easiest way to understand what shortcuts are, is to think of them as links to the starting screen in your extension. These links will be used to navigate to your extension from any part of the application. Extensions can expose more navigation items. Let's now create one.
 
 ```ShellSession
-$ shoutem navigation add openRestaurantsList
-Enter navigation item information.
+$ shoutem shourtcut add openRestaurantsList
+Enter shortcut information.
 Title: Restaurants
 Description: Allow users to browse through list of restaurants
 
-Navigation item `openRestaurantsList` is created.
+`openRestaurantsList` shortcut is created.
 ```
 
 Your `extension.json` was just modified:
@@ -27,7 +27,7 @@ Your `extension.json` was just modified:
   "version": "0.0.1",
   "title": "Restaurants",
   "description": "List of restaurants",
-  "navItems": [{
+  "shortcuts": [{
     "name": "openRestaurantsList",
     "title": "Restaurants",
     "description": "Allow users to browse through list of restaurants"
@@ -74,7 +74,7 @@ Screen definition was appended to extension.json.
   "version": "0.0.1",
   "title": "Restaurants",
   "description": "List of restaurants",
-  "navItems": [{
+  "shortcuts": [{
     "name": "openRestaurantsList",
     "title": "Restaurants",
     "description": "Allow users to browse through list of restaurants"
@@ -114,7 +114,7 @@ In React, `Component` specifies its UI in `render` method. Now that screen is cr
   "version": "0.0.1",
   "title": "Restaurants",
   "description": "List of restaurants",
-  "navItems": [{
+  "shortcuts": [{
     "name": "openRestaurantsList",
     "title": "Restaurants",
     "description": "Allow users to browse through list of restaurants"
