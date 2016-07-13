@@ -55,7 +55,7 @@ Remove old `render` method and add these methods:
   renderRow(restaurant) {
     return (
       <Tile>
-        <Image source={% raw %}{{ uri: restaurant.image }}{% endraw %}>
+        <Image source={% raw %}{{ uri: restaurant.image && restaurant.image.url  }}{% endraw %}>
           <Overlay styleName="dark">
             <Title>{restaurant.name}</Title>
             <Subtitle>{restaurant.address}</Subtitle>
@@ -180,7 +180,7 @@ We can access bound actions through the `props` and pass it to `renderRow` funct
           props: { restaurant }
         })}>
         <Tile>
-          <Image source={% raw %}{{ uri: restaurant.image }}{% endraw %}>
+          <Image source={% raw %}{{ uri: restaurant.image && restaurant.image.url  }}{% endraw %}>
             <Overlay styleName="dark">
               <Title>{restaurant.name}</Title>
               <Subtitle>{restaurant.address}</Subtitle>
@@ -230,7 +230,7 @@ class RestaurantsList extends Component {
           props: { restaurant }
         })}>
         <Tile>
-          <Image source={% raw %}{{ uri: restaurant.image }}{% endraw %}>
+          <Image source={% raw %}{{ uri: restaurant.image && restaurant.image.url }}{% endraw %}>
               <Overlay styleName="dark">
                 <Title>{restaurant.name}</Title>
                 <Subtitle>{restaurant.address}</Subtitle>
@@ -292,8 +292,8 @@ export default class RestaurantDetails extends Component {
     setNavBarProps({ styleName: 'clear' });
 
     return (
-      <ScrollView>
-        <Image styleName="large-portrait" source={% raw %}{{ uri: restaurant.image }}{% endraw %}>
+      <ScrollView style = {% raw %}{{marginTop:-70}}{% endraw %}>
+        <Image styleName="large-portrait" source={% raw %}{{ uri: restaurant.image && restaurant.image.url }}{% endraw %}>
           <Overlay styleName="dark">
             <Title>{restaurant.name}</Title>
             <Subtitle>{restaurant.address}</Subtitle>
@@ -305,23 +305,23 @@ export default class RestaurantDetails extends Component {
         <Divider styleName="line" />
 
         <Row>
-          <Icon name="web" />
+          <Icon name="laptop" />
           <View styleName="vertical">
             <Subtitle>Visit webpage</Subtitle>
             <Text>{restaurant.url}</Text>
           </View>
-          <Icon name="close" />
+          <Icon name="right-arrow" />
         </Row>
 
         <Divider styleName="line" />
 
         <Row>
-          <Icon name="tweets" />
+          <Icon name="pin" />
           <View styleName="vertical">
             <Subtitle>Address</Subtitle>
             <Text>{restaurant.address}</Text>
           </View>
-          <Icon name="close" />
+          <Icon name="right-arrow" />
         </Row>
 
         <Divider styleName="line" />
