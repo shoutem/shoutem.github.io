@@ -63,10 +63,9 @@ This schema was immediately exported in `extension.json` file:
 
 Let's add now properties that we want to persist for a restaurant, such as: `name`, `address`, `description`, `url`, `image` and `mail`.
 
-```JSON{4-34}
+```JSON{3-33}
 #file: server/schemas/Restaurants.json
 {
-  "name": "Restaurants",
   "properties": {
     "name": {
       "format": "single-line",
