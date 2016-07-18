@@ -231,7 +231,7 @@ Success!
 Layout tab has appeared any by selecting Small ist and hitting on preview you should be able to see the new screen.
 
 <p class="image">
-<img src='{{ site.baseurl }}/img/tutorials/alternativelayouts/builder_layout.png'/>
+<img src='{{ site.baseurl }}/img/tutorials/alternativelayouts/builder-layout.png'/>
 </p>
 
 > we should use here image with active preivew
