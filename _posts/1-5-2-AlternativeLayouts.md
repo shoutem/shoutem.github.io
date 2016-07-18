@@ -17,7 +17,6 @@ Now let’s add one additional screen that will represent an alternative layout 
 <img style='width:250px;' src='{{ site.baseurl }}/img/tutorials/alternativelayouts/list-small.png'/>
 </p>
 
->we need better image here, maybe showing both layouts, old and the new one, just to put an emphasis on change and what the goal is.
 
 Let’s create a new screen: 
 
@@ -233,8 +232,6 @@ Layout tab has appeared any by selecting Small ist and hitting on preview you sh
 <p class="image">
 <img src='{{ site.baseurl }}/img/tutorials/alternativelayouts/builder-layout.png'/>
 </p>
-
-> we should use here image with active preivew
 
 
 ## What's next?
