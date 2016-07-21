@@ -43,7 +43,6 @@ h3 code, h4 code {
 pre code.language-shellsession {
     color: #697289 !important;
     display: block;
-    line-height: 1.7;
 }
 
 pre code.language-shellsession:first-line {
@@ -52,6 +51,10 @@ pre code.language-shellsession:first-line {
 
 pre code.language-shellsession:first-letter {
     color: #697289;
+}
+
+h4[id^=jsx-declaration] {
+    margin-top: -28px;
 }
 
 h4[id^=jsx-declaration], h4[id^=style] {
@@ -83,6 +86,11 @@ pre code {
 
 pre {
     font-size: 14px; 
+    border: none;
+}
+
+pre, pre[class*="language-"] {
+    margin-bottom: 40px;
 }
 
 blockquote p {
@@ -137,4 +145,18 @@ pre[data-line] {
     &:before, &[data-end]:after {
         content: "";
     }
+}
+
+.pager li.inactive
+{
+    background-color: $lightaccent;
+    float: left;
+    width: 50%;
+    height: 88px;
+    padding-top: 32px;
+}
+
+.pager li.inactive a
+{
+    display: none  ;
 }
