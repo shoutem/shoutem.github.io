@@ -2,6 +2,7 @@
 layout: doc
 permalink: /docs/ui-toolkit/theme
 title: Theme
+section: UI toolkit
 ---
 
 # Theme

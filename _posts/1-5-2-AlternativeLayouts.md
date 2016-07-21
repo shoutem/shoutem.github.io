@@ -2,6 +2,7 @@
 layout: doc
 permalink: /docs/tutorials/alternativelayouts
 title: Alternative layouts
+section: Tutorials
 ---
 
 # Alternative layouts

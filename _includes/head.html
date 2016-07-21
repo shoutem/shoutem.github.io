@@ -3,7 +3,14 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
+  <title>
+    {% if page.title %}
+      {{ page.title }}
+      {% if page.section %} - {{ page.section }}{% endif %}
+       - 
+    {% endif %}
+    {{ site.title }}
+  </title>
   <meta name="description" content="{{ site.description }}">
 
   <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/css/bootstrap.min.css">

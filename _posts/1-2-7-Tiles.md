@@ -2,6 +2,7 @@
 layout: doc
 permalink: /docs/ui-toolkit/tiles
 title: Tiles
+section: UI toolkit
 ---
 
 # Tiles

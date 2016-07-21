@@ -2,6 +2,7 @@
 layout: doc
 permalink: /docs/ui-toolkit/cards
 title: Cards
+section: UI toolkit
 ---
 
 # Cards

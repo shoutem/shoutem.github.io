@@ -2,6 +2,7 @@
 layout: doc
 permalink: /docs/ui-toolkit/spinner
 title: Spinner
+section: UI toolkit
 ---
 
 # Spinner

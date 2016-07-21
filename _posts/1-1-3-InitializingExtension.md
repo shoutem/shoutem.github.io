@@ -2,6 +2,7 @@
 layout: doc
 permalink: /docs/getting-started/initializing-extension
 title: Initializing extension
+section: Getting Started
 ---
 
 # Initializing extension

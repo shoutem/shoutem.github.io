@@ -2,6 +2,7 @@
 layout: doc
 permalink: /docs/ui-toolkit/typography
 title: Typography
+section: UI toolkit
 ---
 
 # Typography

@@ -2,6 +2,7 @@
 layout: doc
 permalink: /docs/getting-started/introduction
 title: Introduction
+section: Getting Started
 ---
 
 # Getting Started
