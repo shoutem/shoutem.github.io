@@ -171,3 +171,12 @@ pre[data-line] {
 {
     opacity: 0;
 }
+
+.menu-group-wrapper
+{
+    display: none;
+
+    &.active {
+        display: block;
+    }
+}
