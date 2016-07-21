@@ -37,8 +37,8 @@ function showNavButtons() {
     var prevUrl = $('a', $activeLink.prev()).attr('href');
     var nextUrl = $('a', $activeLink.next()).attr('href');
     
-    prevUrl && $('#pager-wrapper .previous a').attr('href', prevUrl).parent().show();
-    nextUrl && $('#pager-wrapper .next a').attr('href', nextUrl).parent().show();
+    prevUrl && $('#pager-wrapper .previous a').attr('href', prevUrl).parent().removeClass('inactive');
+    nextUrl && $('#pager-wrapper .next a').attr('href', nextUrl).parent().removeClass('inactive');
 }
 
 function prepareCodeblocks() {
