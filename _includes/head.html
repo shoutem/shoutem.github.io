@@ -16,6 +16,11 @@
   <link rel="apple-touch-icon" sizes="152x152" href="{{ site.baseurl }}/img/apple-touch-icon-ipad@2x.png">
   <link rel="apple-touch-icon" sizes="180x180" href="{{ site.baseurl }}/img/appple-touch-icon@3x.png">
 
+  <meta property="og:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}" /> 
+  <meta property="og:image" content="{{ site.baseurl }}/img/og-image.png" />
+  <meta property="og:description" content="{{ site.description }}" /> 
+  <meta property="og:url" content="{% if page.url %}{{ page.url }}{% else %}{{ site.baseurl }}{% endif %}">
+
   <!-- Hotjar Tracking Code for http://shoutem.com -->
   <script>
     (function(h,o,t,j,a,r){
