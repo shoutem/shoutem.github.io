@@ -82,6 +82,10 @@ p {
 .section.narrow {
     max-width: 1024px;
     position: relative;
+
+    @include smaller {
+        padding: 0;
+    }
 }
 
 .section.wider {
@@ -392,9 +396,8 @@ p {
             left: 23px;
         }
 
-        @include smallest {
+        @include tiny {
             max-width: 215px;
-            left: 0;
         }
     }
 
@@ -441,6 +444,7 @@ p {
     .flex-container {
         @include medium {
             flex-direction: column;
+            overflow: hidden;
         }
     }
     
@@ -564,7 +568,7 @@ p {
                     height: 156px;
                     position: absolute;
                     bottom: -105px;
-                    right: -35px;
+                    right: -15px;
                     background: url("../img/image-analytics@2x.png")  no-repeat;
                     background-size: 100%;
                 }
