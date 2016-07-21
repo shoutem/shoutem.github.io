@@ -158,5 +158,16 @@ pre[data-line] {
 
 .pager li.inactive a
 {
-    display: none  ;
+    display: none;
+}
+
+#documentation
+{
+    opacity: 1;
+    transition: opacity 0.2s;
+}
+
+.loading #documentation
+{
+    opacity: 0;
 }

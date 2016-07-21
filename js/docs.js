@@ -61,4 +61,87 @@ function prepareCodeblocks() {
             $pre.attr('data-line', lineMatch[1]);
         }
     });
-};
+}
+
+
+
+/* Ajax loading */
+
+jQuery(window).on("popstate", ajaxLoadLink);
+
+$("body").on("click", "a", ajaxLoadLink);
+
+var animationTime = 200;
+var docsLinkRx = new RegExp(/\/docs\//);
+
+var flourish = new Flourish({
+  extractSelector: "#documentation",
+  replaceSelector: "#documentation",
+  bodyTransitionClass: " loading ",
+  replaceDelay: animationTime
+});
+
+flourish.on("post_fetch", function( options, output, self )
+{
+  setTimeout(function () {
+    jQuery("body").removeClass("loading");
+  }, animationTime * 1.5);
+});
+
+flourish.on("post_replace", function ()
+{
+  // TODO: skip slideUp if current link is in the same group
+  $(".menu-group-wrapper").slideUp(100);
+  $("#menu li.active").removeClass("active");
+  $("html, body").animate({ scrollTop: 0 });
+ 
+  setTimeout(function()
+  {
+    showMenuItems();
+    showNavButtons();
+    prepareCodeblocks();
+    Prism.highlightAll();
+  }, 100);
+});
+
+function ajaxLoadLink (e)
+{
+  if( e.ctrlKey || e.shiftKey || e.metaKey ) {
+    return;
+  }
+
+  var url = false;
+
+  if( e.type === "popstate" )
+  {
+    if( e.originalEvent.state && e.originalEvent.state.url ) {
+      url = e.originalEvent.state.url
+    }
+  }
+  else
+  {
+    url = this.href;
+  }
+
+  if( url && url.match(docsLinkRx) )
+  {
+    e.preventDefault();
+
+    if( e.type === "click" )
+    {
+      //jQuery("#site-navigation a, #colophon a").removeClass("active");
+      //jQuery(this).addClass("active");
+    }
+
+    flourish.fetch({
+      url: url,
+      eventType: e.type,
+      onerror: function( request, options, self )
+      {
+        jQuery("body").removeClass("loading");
+        jQuery("body").removeClass("overhide");
+      },
+      //replaceIgnoreClasses: calculateIgnoreClasses(e, url)
+    });
+  }
+}
