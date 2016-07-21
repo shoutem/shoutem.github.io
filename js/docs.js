@@ -9,7 +9,7 @@ $(function() {
   /* Ajax loading */
   jQuery(window).on("popstate", ajaxLoadLink);
 
-  $("body").on("click", "a", ajaxLoadLink);
+  $("body").on("click", "a:not(#signup-modal)", ajaxLoadLink);
 
   var animationTime = 200;
   var docsLinkRx = new RegExp(/\/docs\//);
@@ -31,8 +31,6 @@ $(function() {
   {
     var loc = currentLocation = getLocation();
 
-    console.log(loc);
-
     $(".menu-group-wrapper:not(#" + loc.section + ")").removeClass("active");
     $("#" + loc.section).addClass("active");
 
@@ -45,6 +43,18 @@ $(function() {
     showNavButtons();
     prepareCodeblocks();
     Prism.highlightAll();
+  });
+
+  var $signupModal = $("#signup-modal");
+
+  $("#signup-button").on("click", function(e) {
+    $signupModal.addClass("active");
+  });
+
+  $signupModal.on("click", function(e) {
+    if( e.toElement.id === $signupModal[0].id ) {
+      $signupModal.removeClass("active");
+    }
   });
 
   // CodeMirror(document.getElementsByTagName("ptrk")[0], {
@@ -127,7 +137,9 @@ $(function() {
     }
     else
     {
-      url = this.href;
+      if( this.href.indexOf("#") === -1 ) {
+        url = this.href;
+      }
     }
 
     if( url && url.match(docsLinkRx) )
