@@ -37,7 +37,8 @@
     display: inline-block;
   }
   .documentation-wrapper {
-      width: 100%;
+    min-width: 670px;
+    width: calc(100% - 285px);
   }
 }
 
