@@ -6,7 +6,10 @@ $(function() {
   prepareCodeblocks();
   Prism.highlightAll();
 
+
+
   /* Ajax loading */
+
   jQuery(window).on("popstate", ajaxLoadLink);
 
   $("body").on("click", "a:not(#signup-modal)", ajaxLoadLink);
@@ -45,16 +48,26 @@ $(function() {
     Prism.highlightAll();
   });
 
+
+
+  /* Signup modal */
+
   var $signupModal = $("#signup-modal");
 
   $("#signup-button").on("click", function(e) {
     $signupModal.addClass("active");
+    e.preventDefault();
   });
 
   $signupModal.on("click", function(e) {
     if( e.toElement.id === $signupModal[0].id ) {
       $signupModal.removeClass("active");
+      e.preventDefault();
     }
+  });
+
+  $("#mc-embedded-cancel").on("click", function(e) {
+      $signupModal.removeClass("active");
   });
 
   // CodeMirror(document.getElementsByTagName("ptrk")[0], {
