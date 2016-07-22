@@ -60,7 +60,7 @@ $(function() {
   });
 
   $signupModal.on("click", function(e) {
-    if( e.toElement.id === $signupModal[0].id ) {
+    if( (e.target || e.srcElement).id === $signupModal[0].id ) {
       $signupModal.removeClass("active");
       e.preventDefault();
     }
@@ -106,11 +106,32 @@ $(function() {
 
   function showNavButtons() {
       var $activeLink = $('.sidebar-nav .active');
-      var prevUrl = $('a', $activeLink.prev()).attr('href');
-      var nextUrl = $('a', $activeLink.next()).attr('href');
+      var $prev = $('a', $activeLink.prev());
+      var $next = $('a', $activeLink.next());
+      var prevUrl = $prev.attr('href');
+      var nextUrl = $next.attr('href');
+      var $prevLink = $('#pager-wrapper .previous a');
+      var $nextLink = $('#pager-wrapper .next a');
+      var $prevPar = $prevLink.parent();
+      var $nextPar = $nextLink.parent();
       
-      prevUrl && $('#pager-wrapper .previous a').attr('href', prevUrl).parent().removeClass('inactive');
-      nextUrl && $('#pager-wrapper .next a').attr('href', nextUrl).parent().removeClass('inactive');
+      $prevLink.attr('href', prevUrl);
+      $prevLink.text($prev.text());
+      
+      $nextLink.attr('href', nextUrl);
+      $nextLink.text($next.text());
+
+      if( prevUrl ) {
+        $prevPar.removeClass('inactive');
+      } else {
+        $prevPar.addClass('inactive');
+      }
+
+      if( nextUrl ) {
+        $nextPar.removeClass('inactive');
+      } else {
+        $nextPar.addClass('inactive');
+      }
   }
 
   function prepareCodeblocks() {

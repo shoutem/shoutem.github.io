@@ -147,20 +147,6 @@ pre[data-line] {
     }
 }
 
-.pager li.inactive
-{
-    background-color: $lightaccent;
-    float: left;
-    width: 50%;
-    height: 88px;
-    padding-top: 32px;
-}
-
-.pager li.inactive a
-{
-    display: none;
-}
-
 #documentation
 {
     opacity: 1;
