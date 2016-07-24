@@ -2,6 +2,7 @@
 layout: doc
 permalink: /docs/getting-started/working-with-data
 title: Working with data
+section: Getting Started
 ---
 
 # Working with data

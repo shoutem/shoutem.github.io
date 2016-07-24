@@ -40,8 +40,8 @@ $(function() {
 			scrollTop: p_y
 		}, 'slow');			
 	}
-	
-	$('a[href="#signup"]').on("click", function(e) {
+
+	$('.home a[href="#signup"]').on("click", function(e) {
 		
 		e.preventDefault();
 		$this = $(this);

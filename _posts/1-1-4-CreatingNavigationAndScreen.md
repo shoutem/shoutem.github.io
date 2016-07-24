@@ -2,6 +2,7 @@
 layout: doc
 permalink: /docs/getting-started/navigation-and-screen
 title: Creating navigation and screen
+section: Getting Started
 ---
 
 # Creating navigation and screen

@@ -2,6 +2,7 @@
 layout: doc
 permalink: /docs/ui-toolkit/rows
 title: Rows
+section: UI toolkit
 ---
 
 # Rows

@@ -2,6 +2,7 @@
 layout: doc
 permalink: /docs/ui-toolkit/introduction
 title: Introduction
+section: UI toolkit
 ---
 
 # Introduction

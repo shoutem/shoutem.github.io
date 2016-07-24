@@ -9,18 +9,31 @@
         text-align: center;
         background-color: #2E3854;
 
+        @include mobile {
+            padding: 0 24px;
+        }
+
         .signup-title {
             @include headline(45px, 60px, #fff);
             font-weight: 100;
             text-align: center;
             padding-top: 80px;
             margin-bottom: 25px;
+
+            @include smallest {
+                font-size: 40px;
+                line-height: 1;
+            }
         }
         .signup-description {
             color: #A3A7B3;
             line-height: 30px;
-            width: 570px;
+            max-width: 570px;
             margin: 0 auto 28px;
+
+            @include mobile {
+                width: 100%;
+            }
         }
         .signup-button {
             width: 200px;
@@ -33,7 +46,8 @@
             font-weight: bold;
             font-size: 14px;
             letter-spacing: 1px;
-            padding: 0;
+            padding: 1px 0 0;
+
             @include easeLinear;
             
             &:hover, &:focus,
@@ -60,6 +74,12 @@
                 color: $primary;
             }
             
+            @include mobile {
+                margin-bottom: 24px;
+                width: 100%;
+                max-width: 370px;
+            }
+
         }
     }
 
@@ -85,8 +105,13 @@
             @include easeLinear;
 
             @include mobile {
-                float: none;
                 margin: 0 auto;
+            }
+
+            @include smaller {
+                float: none;
+                display: block;
+                margin-bottom: 24px;
             }
             
             &:hover,
@@ -98,13 +123,22 @@
             float: right;
             opacity: 1;
             color: $footercolor;
-        }
-        .footer-menu {
             list-style: none;
+
+            @include smaller {
+                float: none;
+                padding: 0;
+                text-align: center;
+            }
         
             li {
                 float: left;
                 padding: 10px 16px;
+
+                @include smaller {
+                    float: none;
+                    display: inline;
+                }
             }
             a {
                 color: $footercolor;

@@ -2,6 +2,7 @@
 layout: doc
 permalink: /docs/ui-toolkit/navigation-bar
 title: Navigation Bar
+section: UI toolkit
 ---
 
 # NavigationBar

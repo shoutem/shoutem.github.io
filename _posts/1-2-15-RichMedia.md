@@ -2,6 +2,7 @@
 layout: doc
 permalink: /docs/ui-toolkit/rich-media
 title: Rich Media
+section: UI toolkit
 ---
 
 # RichMedia

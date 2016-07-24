@@ -2,6 +2,7 @@
 layout: doc
 permalink: /docs/getting-started/using-ui-toolkit
 title: Using UI toolkit
+section: Getting Started
 ---
 
 # Using UI toolkit

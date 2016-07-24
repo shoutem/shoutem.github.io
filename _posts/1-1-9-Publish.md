@@ -2,6 +2,7 @@
 layout: doc
 permalink: /docs/getting-started/publish
 title: Publishing your extension
+section: Getting Started
 ---
 
 # Publishing your extension!

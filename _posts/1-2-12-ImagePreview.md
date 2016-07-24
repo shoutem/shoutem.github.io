@@ -2,6 +2,7 @@
 layout: doc
 permalink: /docs/ui-toolkit/image-preview
 title: Image Preview
+section: UI toolkit
 ---
 
 # ImagePreview

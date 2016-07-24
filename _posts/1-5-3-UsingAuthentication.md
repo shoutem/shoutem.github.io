@@ -1,10 +1,11 @@
 ---
 layout: doc
-permalink: /docs/tutorials/usingauthnetication
+permalink: /docs/tutorials/usingauthentication
 title: Using authentication 
+section: Tutorials
 ---
 
-# Using authnetication
+# Using authentication
 <hr />
 
 Cooming soon!

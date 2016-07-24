@@ -38,8 +38,32 @@
   }
 }
 
+@mixin tiny {
+  @media only screen and (max-width: 479px) {
+    @content;
+  }
+}
+
+@mixin smallest {
+  @media only screen and (max-width: 480px) {
+    @content;
+  }
+}
+
+@mixin smaller {
+  @media only screen and (max-width: 576px) {
+    @content;
+  }
+}
+
 @mixin mobile {
   @media only screen and (max-width: 768px) {
+    @content;
+  }
+}
+
+@mixin medium {
+  @media only screen and (max-width: 992px) {
     @content;
   }
 }

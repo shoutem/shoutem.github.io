@@ -3,7 +3,14 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
+  <title>
+    {% if page.title %}
+      {{ page.title }}
+      {% if page.section %} - {{ page.section }}{% endif %}
+       - 
+    {% endif %}
+    {{ site.title }}
+  </title>
   <meta name="description" content="{{ site.description }}">
 
   <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/css/bootstrap.min.css">
@@ -15,6 +22,11 @@
   <link rel="apple-touch-icon" sizes="120x120" href="{{ site.baseurl }}/img/appple-touch-icon@2x.png">
   <link rel="apple-touch-icon" sizes="152x152" href="{{ site.baseurl }}/img/apple-touch-icon-ipad@2x.png">
   <link rel="apple-touch-icon" sizes="180x180" href="{{ site.baseurl }}/img/appple-touch-icon@3x.png">
+
+  <meta property="og:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}" /> 
+  <meta property="og:image" content="{{ site.baseurl }}/img/og-image.png" />
+  <meta property="og:description" content="{{ site.description }}" /> 
+  <meta property="og:url" content="{% if page.url %}{{ page.url }}{% else %}{{ site.baseurl }}{% endif %}">
 
   <!-- Hotjar Tracking Code for http://shoutem.com -->
   <script>
