@@ -96,7 +96,7 @@ Go to `Extensions` tab in [Shoutem builder](/docs/coming-soon). You'll see that 
 <img src='{{ site.baseurl }}/img/getting-started/extension-tab-extension.png'/>
 </p>
 
-However, when you go to `Navigation` tab now and click on `+` next to `Navigation`, this extension won't be shown.
+However, when you go to `Screen` tab now and click on `+` next to `Screens`, this extension won't be shown.
 
 <p class="image">
 <img src='{{ site.baseurl }}/img/getting-started/add-content-no-extension.png'/>
