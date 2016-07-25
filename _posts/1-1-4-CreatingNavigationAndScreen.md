@@ -118,8 +118,8 @@ In React, `Component` specifies its UI in `render` method. Now that screen is cr
   "shortcuts": [{
     "name": "openRestaurantsList",
     "title": "Restaurants",
-    "description": "Allow users to browse through list of restaurants"
-    "screen": "[PUT_YOUR_DEV_NAME].restaurants.RestaurantsList",
+    "description": "Allow users to browse through list of restaurants",
+    "screen": "[PUT_YOUR_DEV_NAME].restaurants.RestaurantsList"
   }],
   "screens": [{
     "name": "RestaurantsList"
