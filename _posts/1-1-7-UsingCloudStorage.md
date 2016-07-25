@@ -12,7 +12,7 @@ Shoutem Cloud Storage is a CMS solution for mobile apps. It is optimized to be u
 
 ```ShellSession
 $ shoutem schema add Restaurants
-File `server/schemas/Restaurants.json` is created.
+File `server/data-schemas/Restaurants.json` is created.
 ```
 
 Folder `schemas` inside `server` folder was created with file `Restaurants.json`. Content of that file is following:
@@ -65,7 +65,7 @@ This schema was immediately exported in `extension.json` file:
 Let's add now properties that we want to persist for a restaurant, such as: `name`, `address`, `description`, `url`, `image` and `mail`.
 
 ```JSON{3-33}
-#file: server/schemas/Restaurants.json
+#file: server/data-schemas/Restaurants.json
 {
   "properties": {
     "name": {
