@@ -1,5 +1,8 @@
 $(function() {
   var currentLocation = getLocation();
+  var $window = jQuery(window);
+  var $document = jQuery(document);
+  var $body = jQuery("body");
 
   showMenuItems();
   showNavButtons();
@@ -10,9 +13,9 @@ $(function() {
 
   /* Ajax loading */
 
-  jQuery(window).on("popstate", ajaxLoadLink);
+  $window.on("popstate", ajaxLoadLink);
 
-  $("body").on("click", "a:not(#signup-modal)", ajaxLoadLink);
+  $body.on("click", "a:not(#signup-modal)", ajaxLoadLink);
 
   var animationTime = 200;
   var docsLinkRx = new RegExp(/\/docs\//);
@@ -26,7 +29,7 @@ $(function() {
   flourish.on("post_fetch", function( options, output, self )
   {
     setTimeout(function () {
-      jQuery("body").removeClass("loading");
+      $body.removeClass("loading");
     }, animationTime * 1.5);
   });
 
@@ -70,15 +73,73 @@ $(function() {
       $signupModal.removeClass("active");
   });
 
-  // CodeMirror(document.getElementsByTagName("ptrk")[0], {
-  //   mode: 'jsx',
-  //   lineNumbers: 23,
-  //   // lineWrapping: true,
-  //   smartIndent: false, // javascript mode does bad things with jsx indents
-  //   matchBrackets: true,
-  //   theme: 'solarized-light',
-  //   readOnly: false,
-  // });
+
+
+  /* Fixed sidebar navigation */
+
+  var $sidebar = $("#sidebar-wrapper");
+
+  $window.on("scroll resize", fixedSidebar);
+
+  fixedSidebar();
+
+  // prevent document scrolling upon reaching sidebar menu scroll end
+  // http://jsfiddle.net/troyalford/4wrxq/4/
+  $(".sidebar-nav").on("wheel mousewheel DOMMouseScroll", function(ev)
+  {
+    if( $window.width() < 960 ) {
+      return;
+    }
+
+    var $this = $(this),
+      scrollTop = this.scrollTop,
+      scrollHeight = this.scrollHeight,
+      height = $this.height(),
+      delta = (ev.type == "DOMMouseScroll" ?
+        ev.originalEvent.detail * -40 :
+        ev.originalEvent.wheelDelta),
+      up = delta > 0;
+
+    if( ! up && -delta > scrollHeight - height - scrollTop ) {
+      // Scrolling down, but this will take us past the bottom.
+      $this.scrollTop(scrollHeight);
+      ev.stopPropagation();
+      ev.preventDefault();
+      ev.returnValue = false;
+      return false;
+    } else if( up && delta > scrollTop ) {
+      // Scrolling up, but this will take us past the top.
+      $this.scrollTop(0);
+      ev.stopPropagation();
+      ev.preventDefault();
+      ev.returnValue = false;
+      return false;
+    }
+  });
+
+  function fixedSidebar ()
+  {
+    if( $window.width() < 960 ) {
+      return;
+    }
+
+    var scrollTop = $window.scrollTop();
+    var dHeight = $document.height();
+    var wHeight = $window.height();
+    var bottom = dHeight - wHeight - scrollTop;
+
+    if( scrollTop > 0 ) {
+        $body.addClass("fixed-sidebar");
+    } else {
+        $body.removeClass("fixed-sidebar");
+    }
+
+    if( bottom <= 260 ) {
+      $sidebar.height("calc(100vh - 135px - " + (260 - bottom) + "px)");
+    } else {
+      $sidebar.height("");
+    }
+  }
 
   function getLocation( location ) {
     location = location || window.location.href;
@@ -190,12 +251,20 @@ $(function() {
       flourish.fetch({
         url: url,
         eventType: e.type,
-        onerror: function( request, options, self )
-        {
-          jQuery("body").removeClass("loading");
-          jQuery("body").removeClass("overhide");
+        onerror: function( request, options, self ) {
+          $body.removeClass("loading");
         }
       });
     }
   }
+
+  // CodeMirror(document.getElementsByTagName("ptrk")[0], {
+  //   mode: 'jsx',
+  //   lineNumbers: 23,
+  //   // lineWrapping: true,
+  //   smartIndent: false, // javascript mode does bad things with jsx indents
+  //   matchBrackets: true,
+  //   theme: 'solarized-light',
+  //   readOnly: false,
+  // });
 });
