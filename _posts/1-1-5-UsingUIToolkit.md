@@ -133,7 +133,7 @@ import {
 } from 'react-native';
 ```
 
-To open screen, we'll use Redux action creator `navigateTo` opens new screen in application. It accepts [Shoutem route object](/docs/coming-soon) as the only argument with `screen` property. To reference our `RestaurantDetails` screen exported in `app/index.js`, we're using `ext` helper function that was created in `app/const.js` file. This function returns an **absolute name**, e.g. `developer.restaurants.RestaurantsList`, for the extension part which is passed as its first argument, or `extension name` if no argument is passed.
+To open screen, we'll use Redux action creator `navigateTo` which opens new screen in application. It accepts [Shoutem route object](/docs/coming-soon) as the only argument with `screen` property. To reference our `RestaurantDetails` screen exported in `app/index.js`, we're using `ext` helper function that was created in `app/const.js` file. This function returns an **absolute name**, e.g. `developer.restaurants.RestaurantsList`, for the extension part which is passed as its first argument, or `extension name` if no argument is passed.
 
 ```javascript{1-2}
 #file: app/screens/RestaurantsList.js

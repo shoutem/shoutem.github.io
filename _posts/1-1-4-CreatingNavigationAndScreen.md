@@ -11,7 +11,7 @@ section: Getting Started
 The easiest way to understand what shortcuts are, is to think of them as links to the starting screen in your extension. These links will be used to navigate to your extension from any part of the application. Extensions can expose more navigation items. Let's now create one.
 
 ```ShellSession
-$ shoutem shourtcut add openRestaurantsList
+$ shoutem shortcut add openRestaurantsList
 Enter shortcut information.
 Title: Restaurants
 Description: Allow users to browse through list of restaurants
@@ -118,8 +118,8 @@ In React, `Component` specifies its UI in `render` method. Now that screen is cr
   "shortcuts": [{
     "name": "openRestaurantsList",
     "title": "Restaurants",
-    "description": "Allow users to browse through list of restaurants"
-    "screen": "[PUT_YOUR_DEV_NAME].restaurants.RestaurantsList",
+    "description": "Allow users to browse through list of restaurants",
+    "screen": "[PUT_YOUR_DEV_NAME].restaurants.RestaurantsList"
   }],
   "screens": [{
     "name": "RestaurantsList"

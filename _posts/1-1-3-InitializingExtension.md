@@ -85,8 +85,8 @@ Success!
 To test our extension, we need to install it on the Shoutem application. You can create new application in [Shoutem builder](/docs/coming-soon) or just pass flag `--new`  with the name for new application to installation command:
 
 ```ShellSession
-$ shoutem install --new RestaurantsApp
-Extension is installed onto newly created `RestaurantsApp` application.
+$ shoutem install --new Restaurants
+Extension is installed onto newly created `Restaurants` application.
 See it in browser: `https://builder.shoutem.com/apps/52634`
 ```
 
@@ -96,7 +96,7 @@ Go to `Extensions` tab in [Shoutem builder](/docs/coming-soon). You'll see that 
 <img src='{{ site.baseurl }}/img/getting-started/extension-tab-extension.png'/>
 </p>
 
-However, when you go to `Navigation` tab now and click on `+` next to `Navigation`, this extension won't be shown.
+However, when you go to `Screen` tab now and click on `+` next to `Screens`, this extension won't be shown.
 
 <p class="image">
 <img src='{{ site.baseurl }}/img/getting-started/add-content-no-extension.png'/>
