@@ -9,6 +9,21 @@ function closeMenu() {
     if (window.event.target.nodeName !== 'A')
         overlay.classList.remove('open');
 }
+
+// https://github.com/benlister/utilities/tree/master/Modernizr%20Retina%20:%20HiDPI%20test
+function isHiPDI ()
+{
+	if (window.matchMedia) { 
+		var mq = window.matchMedia("only screen and (-moz-min-device-pixel-ratio: 1.3), only screen and (-o-min-device-pixel-ratio: 2.6/2), only screen and (-webkit-min-device-pixel-ratio: 1.3), only screen  and (min-device-pixel-ratio: 1.3), only screen and (min-resolution: 1.3dppx)");
+		
+		if(mq && mq.matches) {
+			return true;
+		} 
+	}
+
+	return false;
+}
+
 $(function() {
 	
 	function onFooterResize() {

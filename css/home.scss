@@ -155,6 +155,7 @@ p {
     
     @include respond-to('large') {
         background: url("../img/image-header@2x.png") no-repeat 100% bottom / auto 85%;
+        overflow: hidden;
     }
 }
 
@@ -233,6 +234,8 @@ p {
 }
 
 .paris-cta {
+
+    z-index: 2;
     
     .sm-text-left {
         @include respond-to('small') {
@@ -942,5 +945,24 @@ p {
         &.entrepreneur {
             @include logoimage('../img/logo-entrepreneur.svg', 144px, 29px);
         }
+    }
+}
+
+
+.video-screen {
+    position: absolute;
+    width: 375px;
+    height: 667px;
+    right: 185px;
+    transform: perspective(1983px) 
+        rotateY(-35.5deg) 
+        rotateX(12deg) 
+        rotateZ(16.1deg) 
+        scale(0.711);
+    top: 63px;
+    display: none;
+
+    @include respond-to('large') {
+        display: block;
     }
 }
