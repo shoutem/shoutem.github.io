@@ -9,6 +9,25 @@
 @import "helpers";
 @import "menu-overlay";
 
+.container, .container-fluid
+{
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.row {
+    margin-left: -20px;
+    margin-right: -20px;
+}
+
+.container-fluid>.navbar-collapse, 
+.container-fluid>.navbar-header, 
+.container>.navbar-collapse, 
+.container>.navbar-header {
+    margin-left: 0;
+    margin-right: 0;
+}
+
 p {
     color: $hometext;
 }
@@ -28,7 +47,7 @@ p {
     @include smallest {
         font-size: 28px;
         line-height: 1;
-        padding: 80px 25px 0;
+        padding: 60px 25px 0;
     }
 }
 
@@ -38,8 +57,12 @@ p {
     font-size: 48px;
 
     @include smallest {
-        font-size: 40px;
-        line-height: 1;
+        font-size: 36px;
+        line-height: 46px;
+        max-width: 280px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 0;
     }
 }
 
@@ -130,6 +153,10 @@ p {
 
 .header {
     height: 606px;
+
+    @include smallest {
+        height: 475px;
+    }
 }
 
 .header-wrapper {
@@ -168,7 +195,15 @@ p {
         margin: 0 auto;
 
         @include mobile {
-            padding: 15px;
+            padding: 0;
+        }
+
+        @include smallest {
+            max-width: 280px;
+
+            br {
+                display: none;
+            }
         }
     }
     
@@ -176,12 +211,8 @@ p {
         
         @include respond-to('large') {
             text-align: left;
-        }
-        
-        @include respond-to('large') {
             margin-left: 5%;
         }
-        
         
         @media (min-width: 1340px) {
             margin-left: 13%;
@@ -196,6 +227,12 @@ p {
         margin-bottom: 0 auto 24px;
         text-align: center;
         
+        @include smallest {
+            font-size: 24px;
+            font-weight: 500;
+            line-height: 38px;
+        }
+
         @include respond-to('small') {
             font-size: 54px;
         }
@@ -368,6 +405,10 @@ p {
         @include medium {
             margin: 20px 0;
         }
+
+        @include smallest {
+            margin: 20px 0 13px;
+        }
     }
 
     .step-button {
@@ -399,8 +440,12 @@ p {
             left: 23px;
         }
 
-        @include tiny {
-            max-width: 215px;
+        @include smallest {
+            margin-right: 0;
+            left: 0;
+            border-radius: 4px;
+            width: 280px;
+            height: 75px;
         }
     }
 
@@ -419,6 +464,18 @@ p {
             width: 0;
             position: absolute;
             pointer-events: none;
+
+            @include smallest {
+                border-top-color: #00aadf;
+                border-left-color: transparent !important;
+                border-width: 138px !important;
+                border-radius: 4px;
+                transform: scaleY(0.1);
+                left: 0;
+                bottom: -153px;
+                top: auto;
+                margin-top: 0 !important;
+            }
         }
 
         &:after {            
@@ -432,6 +489,16 @@ p {
             border-width: 45px;
             margin-top: -45px;
             margin-left: 1px;
+
+            @include smallest {
+                left: 1px;
+                bottom: -152px;
+            }
+
+        }
+
+        @include smallest {
+            margin-bottom: 20px;
         }
     }
 }
@@ -442,12 +509,22 @@ p {
     .section-footer {
         width: 55%;
         margin: 0 auto 20px;
+
+        @include smallest {
+            max-width: 280px;
+            width: 100%;
+            line-height: 26px;
+        }
     }
 
     .flex-container {
         @include medium {
             flex-direction: column;
             overflow: hidden;
+        }
+
+        @include smallest {
+            margin-bottom: 42px;
         }
     }
     
