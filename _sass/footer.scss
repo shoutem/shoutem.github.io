@@ -95,13 +95,13 @@
         }
 
         .container-fluid {
-            max-width: 1170px;
+            max-width: 1210px;
         }
         .footer-logo {        
-            @include logoimage('../img/shoutem_logo_footer.png', 96px, 36px);
+            @include logoimage('../img/shoutem_logo_footer.png', 85px, 30px);
             opacity: 0.4;
             float: left;
-            margin-top: 6px;
+            margin-top: 9px;
             @include easeLinear;
 
             @include mobile {
@@ -124,6 +124,7 @@
             opacity: 1;
             color: $footercolor;
             list-style: none;
+            margin-top: 10px;
 
             @include smaller {
                 float: none;
@@ -133,16 +134,39 @@
         
             li {
                 float: left;
-                padding: 10px 16px;
 
                 @include smaller {
                     float: none;
                     display: inline;
                 }
+
+                &.icon-twitter a,
+                &.icon-github a {
+                    background-image: url(/img/icon-twitter.svg);
+                    background-repeat: no-repeat;
+                    background-size: 22px;
+                    background-position: center;
+                    text-indent: -100px;
+                    width: 24px;
+                    height: 24px;
+                    overflow: hidden;
+                    display: inline-block;
+                    margin-left: 24px;
+                    margin-top: 3px;
+                }
+
+                &.icon-github a {
+                    background-image: url(/img/icon-github.svg);
+                    background-size: 20px;
+                    margin-left: 27px;
+                }
             }
             a {
                 color: $footercolor;
                 @include easeLinear;
+                font-size: 14px;
+                padding: 10px 11px;
+                margin-left: 22px;
 
                 &:hover,
                 &:active {
