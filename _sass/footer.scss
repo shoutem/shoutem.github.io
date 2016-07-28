@@ -18,7 +18,7 @@
             font-weight: 100;
             text-align: center;
             padding-top: 80px;
-            margin-bottom: 25px;
+            margin-bottom: 15px;
 
             @include smallest {
                 font-size: 40px;
@@ -29,14 +29,14 @@
             color: #A3A7B3;
             line-height: 30px;
             max-width: 570px;
-            margin: 0 auto 28px;
+            margin: 0 auto 32px;
 
             @include mobile {
                 width: 100%;
             }
         }
         .signup-button {
-            width: 200px;
+            width: 188px;
             height: 56px;
             border: 1px solid #fff;
             border-radius: 4px;
@@ -62,11 +62,11 @@
             width: 370px;
             height: 56px;
             border-radius: 4px;
-            background-color: $lightbackground;
+            background-color: transparent;
             padding: 1px 15px 0;
             margin-bottom: 80px;
             margin-right: 8px;
-            border: none;
+            border: 1px solid rgba(136, 143, 161, 0.5);
             @include easeLinear;
             
             &:focus {

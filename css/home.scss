@@ -150,6 +150,12 @@ p {
     
     .flex-container {
         max-width: 1030px;
+        margin-bottom: 60px;
+    }
+
+    .section-header {
+        padding-top: 90px;
+        margin-bottom: 70px;
     }
 }
 
@@ -560,7 +566,7 @@ p {
     }
 
     .flex-container {
-        background: linear-gradient(to bottom, transparent 50px, rgba(0, 170, 223, 0.1) 50px);
+        background: linear-gradient(to bottom, transparent 45px, rgba(0, 170, 223, 0.1) 45px);
         max-width: 970px;
 
         @include medium {
@@ -700,6 +706,10 @@ p {
     .section-header {
         padding-top: 60px;
     }
+
+    .wider {
+        max-width: 1200px;
+    }
     
     .image-rn-code {
         
@@ -755,8 +765,8 @@ p {
                     width: 270px;
                     height: 156px;
                     position: absolute;
-                    bottom: -105px;
-                    right: -15px;
+                    bottom: -63px;
+                    right: -27px;
                     background: url("../img/image-analytics@2x.png")  no-repeat;
                     background-size: 100%;
                 }
@@ -765,14 +775,14 @@ p {
     
     @include respond-to('medium') {
         .section-header {
-            padding-top: 200px;
+            padding-top: 135px;
             text-align: left;
-            margin-bottom: 16px;
+            margin-bottom: 26px;
         }
     
         .section-sub-header {
             width: 100%;
-            margin: 0 0 22px;
+            margin: 0 0 30px;
             text-align: left;
             font-size: 16px;
             line-height: 1.9;
@@ -793,17 +803,20 @@ p {
     }
     
     .image-device {
-        @include logoimage('../img/image-device@2x.png', 458px, 560px);
-        margin-top: 75px;
+        @include logoimage('../img/image-device@2x.png', 458px, 590px);
+        margin-top: 45px;
+        margin-left: -60px;
+        margin-right: 60px;
         position: absolute;
         @include mobile {
             display: none;
         }
     }
     .mobile-screenshot {
-        @include logoimage('../img/image-mobile-screenshot-copy-2@3x.png', 387px, 490px);
-        margin-left: 48px;
-        margin-top: 145px;
+        @include logoimage('../img/image-mobile-screenshot-copy-2@3x.png', 387px, 520px);
+        margin-left: -12px;
+        margin-right: 60px;
+        margin-top: 115px;
         @include mobile {
             display: none;
         }
@@ -828,8 +841,8 @@ p {
     margin-right: 18px;
     vertical-align: middle;
 
-    width: 24px !important;
-    height: 24px !important;
+    width: 24px;
+    height: 24px;
     padding: 4px;
     background-position: 4px 3px;
 
@@ -838,23 +851,24 @@ p {
     }
     
     &.a {
-        @include logoimage('../img/icon-bullet-3.svg', 16px, 16px);
+        @include logoimage('../img/icon-bullet-3.svg', 24px, 24px);
         background-size: 16px 16px;
     }
     &.b {
-        @include logoimage('../img/icon-bullet-4.svg', 12px, 12px);
+        @include logoimage('../img/icon-bullet-4.svg', 24px, 24px);
         background-position: 6px 5px;
         background-size: 12px 12px;
     }
     &.c {
-        @include logoimage('../img/icon-bullet-3.svg', 17px, 16px);
+        @include logoimage('../img/icon-bullet-3.svg', 24px, 24px);
     }
     &.d {
-        @include logoimage('../img/icon-bullet-4.svg', 12px, 13px);
+        @include logoimage('../img/icon-bullet-4.svg', 24px, 24px);
     }
     
     &.react {
-        @include logoimage('../img/icon-react-logo.svg', 27px, 27px);
+        @include logoimage('../img/icon-react-logo.svg', 30px, 30px);
+        background-position: center;
         margin: 0 -6px 0 13px;
     }
 }
@@ -892,7 +906,7 @@ p {
 
 .chapter {
     width: 310px;
-    min-height: 410px;
+    min-height: 400px;
     background-color: #fff;
     box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.1), 0 0 2px 0 rgba(0, 0, 0, 0.1);
     transition: box-shadow ease-out 0.2s;
@@ -930,12 +944,12 @@ p {
 
         .chapter-title {
             line-height: 140%; 
-            margin-bottom: 6px;
+            margin-bottom: 10px;
         }
         
         .chapter-description {
             font-size: 15px;
-            line-height: 1.5;
+            line-height: 24px;
         }
         
         .chapter-time {
@@ -973,7 +987,7 @@ p {
         }
 
         .getting-started-icon {
-            @include logoimage('../img/icon-tutorial-getting-started.svg', 75px, 95px);
+            @include logoimage('../img/icon-tutorial-getting-started.svg', 75px, 93px);
         }
         .restaurant-app-icon {
             @include logoimage('../img/icon-tutorial-restaurant-app.svg', 80px, 82px);
@@ -1002,6 +1016,7 @@ p {
   color: $muted;
   letter-spacing: 1px;
   text-transform: uppercase;
+  line-height: 1;
 }
 
 .documentation-group {
