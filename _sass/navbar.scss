@@ -41,6 +41,7 @@
     } 
     .navbar-nav--a--link {
     	position: relative;
+        color: $hometext;
         @include easeLinear(0.4s, linear, color);
 
         &:hover, &:focus {
@@ -106,12 +107,18 @@
 }
 
 .navbar .container-fluid {
-    max-width: 1170px;
+    max-width: 1210px;
 }
 .navbar .navbar-brand {
     padding: 0;
     height: auto;
     margin-top: 21px;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+
+    @include smallest {
+       
+    }
 }
 .navbar .navbar-brand--logo {
   background-image: url('../img/logo-shoutem-for-developers.svg');

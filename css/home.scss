@@ -41,13 +41,15 @@ p {
     font-weight: 300;
     text-align: center;
     padding-top: 80px;
-    margin-bottom: 16px;
+    margin-bottom: 26px;
     color: #444f6c;
+    letter-spacing: -0.5px;
 
     @include smallest {
-        font-size: 28px;
+        font-size: 24px;
         line-height: 1;
         padding: 60px 25px 0;
+        margin-bottom: 24px;
     }
 }
 
@@ -66,26 +68,22 @@ p {
     }
 }
 
-.section-subtitle {
-    width: 55%;
-    margin: 0 auto 47px;
-    text-align: center;
-    font-size: 16px;
-	line-height: 1.9;
-	color: #888fa1;
-}
-
 .section-sub-header {
     width: 55%;
-    margin: 0 auto 47px;
+    margin: 0 auto 32px;
     text-align: center;
     font-size: 16px;
 	line-height: 1.9;
 	color: #888fa1;
+
+    @include smallest {
+        width: 100%;
+        max-width: 280px;
+    }
 }
 
 .section-footer {
-    @include headline(16px, 30px);
+    @include headline(16px, 26px);
     text-align: center;
     margin-bottom: 30px;
 }
@@ -98,8 +96,28 @@ p {
     width: 100%;
     max-width: 1170px;
     margin: 0 auto;
-    padding-left: 15px;
-    padding-right: 15px;
+    padding-left: 20px;
+    padding-right: 20px;
+
+    .row {
+        @include smallest {
+            flex-direction: column;
+        }
+    }
+
+    .bullet-points {
+        @include smallest {
+            width: 100%;
+            margin-top: 33px;
+            margin-bottom: 54px;
+        }
+
+        img {
+            max-width: 100%;
+            margin: 0 auto;
+            display: block;
+        }
+    }
 }
 
 .section.narrow {
@@ -173,15 +191,22 @@ p {
     
     position: absolute;
     left: 50%;
-    transform: translateX(-50%);
-    
+    transform: translateX(-50%);    
     z-index: 1;
+
     @media (min-width: 1340px) {
-            background-position-x: 100%;
-        }
+        background-position-x: 100%;
+    }
+
+    @media (min-width: 1200px) and (max-width: 1340px) {
+        max-width: 1170px;
+    }
     
     @include respond-to('large') {
-        background: url("../img/image-header@2x.png") no-repeat 100% bottom / auto 85%;
+        background-image: url("../img/image-header@2x.png");
+        background-repeat: no-repeat;
+        background-position: right 22px bottom 0;
+        background-size: auto 535px;
         overflow: hidden;
     }
 }
@@ -192,7 +217,7 @@ p {
     height: 100%;
     
     .header-text {
-        margin: 0 auto;
+        margin: 20px auto 0;
 
         @include mobile {
             padding: 0;
@@ -215,16 +240,17 @@ p {
         }
         
         @media (min-width: 1340px) {
-            margin-left: 13%;
+            margin-left: 245px;
         }
     }
 
     .main-heading {
         color: #FFFFFF;
         font-size: 35px;
-        line-height: 1.3;
+        line-height: 1.26;
         font-weight: 100;
-        margin-bottom: 0 auto 24px;
+        margin-top: 0;
+        margin-bottom: 0;
         text-align: center;
         
         @include smallest {
@@ -252,6 +278,8 @@ p {
     }
     
     .with-image .sub-heading {
+        margin-top: 23px;
+
         @include respond-to('large') {
             text-align: left;
         }
@@ -369,21 +397,31 @@ p {
     margin: 0 auto 21px;
 }
 
+
 .step-label {
-    display: inline-block;
-    font-size: 14px;
-    border: rgba(49, 60, 89, 0.2) solid 1px;
-    border-radius: 4px;
-    padding: 7px 14px 5px;
-    color: #313c59;
-    line-height: 1.4;
-    letter-spacing: 1.2px;
-    color: #444f6c;
-    font-weight: 700;
-    text-transform: uppercase;
-    position: relative;
-    top: -6px;
-    margin-right: 16px;
+
+    display: block;
+    margin-bottom: 19px;
+
+    strong {
+        font-size: 14px;
+        border: rgba(49, 60, 89, 0.2) solid 1px;
+        border-radius: 4px;
+        padding: 7px 14px 5px;
+        color: #313c59;
+        line-height: 1.4;
+        letter-spacing: 1.2px;
+        color: #444f6c;
+        font-weight: 700;
+        text-transform: uppercase;
+        position: relative;
+        top: -6px;
+        text-align: center;
+    }
+
+    @include smallest {
+        margin: 28px auto 20px;
+    }
 }
 
 
@@ -398,7 +436,7 @@ p {
     .step-title {
         font-weight: bold;
         text-transform: uppercase;
-        margin-bottom: 20px;
+        margin-bottom: 16px;
         font-size: 12px; 
         letter-spacing: 1px;
 
@@ -429,6 +467,10 @@ p {
             border: 1px solid $green;
             border-radius: 4px;
             position: relative;
+
+            @include smallest {
+                height: 70px;
+            }
         }
         
         span {
@@ -518,6 +560,9 @@ p {
     }
 
     .flex-container {
+        background: linear-gradient(to bottom, transparent 50px, rgba(0, 170, 223, 0.1) 50px);
+        max-width: 970px;
+
         @include medium {
             flex-direction: column;
             overflow: hidden;
@@ -525,6 +570,7 @@ p {
 
         @include smallest {
             margin-bottom: 42px;
+            background: none;
         }
     }
     
@@ -532,13 +578,25 @@ p {
         height: 88px;
         background-image: url("../img/image-arrow-blue.svg");
         background-size: contain;
-        bottom: -33px;
+        bottom: -25px;
         z-index: 3;
+
+        @include smallest {
+            bottom: -44px;
+        }
+    }
+
+    @include smallest {
+        padding-bottom: 48px;
     }
 }
 
 .section-step1 {
     background-color: white;
+
+    .section-header {
+        padding-top: 56px;
+    }
     
     .separator {
         margin-bottom: 8px;
@@ -551,40 +609,83 @@ p {
     
     .builder-image {
         align-self: flex-end;
+        margin-right: 0;
         
         img {
             max-width: 100%;
+
+            @include smallest {
+                width: 100%;
+                max-width: 335px;
+            }
+        }
+
+        @include smallest {
+            width: 100%;
+            padding: 0 20px;
+            text-align: center;
+            position: relative;
+
+            &:before {
+                content: " ";
+                height: 1px;
+                width: calc(100% - 40px);
+                max-width: 335px;
+                background: #000;
+                opacity: 0.1;
+                position: absolute;
+                bottom: 0;
+                z-index: 1050;
+            }
         }
     }
     
     .row {
         display: flex;
         align-items: center;
-    }
-    
-    .builder-image.with-arrow:after {
-        height: 88px;
-        background-image: url("../img/image-arrow-blue.svg");
-        background-size: contain;
-        bottom: -33px;
-        z-index: 3;
+        margin-left: -65px;
+        margin-bottom: -30px;
     }
     
     .bullet-points {
         margin: 0 auto;
+        padding: 0;
         
         @include respond-to('medium') {
-            margin: 0 0 0 8.33333%;
+            margin: -30px 0 0 8.3333333333%;
+
+            .bullet-point {
+                margin-right: -45px;
+            }
         }
 
         @include smallest {
             width: 100%;
+            margin-top: 33px;
+            margin-bottom: 54px;
         }
 
         img {
             max-width: 100%;
             margin: 0 auto;
             display: block;
+        }
+
+        .integrations {
+            padding-top: 5px;
+        }
+    }
+
+    &.with-arrow:after {
+        height: 88px;
+        background-image: url("../img/image-arrow-blue.svg");
+        background-size: contain;
+        bottom: -5px;
+        margin-left: -225px;
+        z-index: 3;
+
+        @include smallest {
+            bottom: -44px;
         }
     }
 }
@@ -596,6 +697,9 @@ p {
         align-items: center;
     }
     
+    .section-header {
+        padding-top: 60px;
+    }
     
     .image-rn-code {
         
@@ -611,6 +715,10 @@ p {
         
         img {
             max-width: 100%;
+        }
+
+        @include smallest {
+            order: -1;
         }
     }
 
@@ -633,7 +741,7 @@ p {
 .section-step3 {
     background-color: white;
     
-    .step-label {
+    .step-label strong {
         color: #7ed321;
         border: solid 1px #7ed321;
     }
@@ -712,20 +820,31 @@ p {
 
 .bullet-point {
     line-height: 1.5;
-    margin-bottom: 21px;
+    margin-bottom: 23px;
 }
 
 .bullet-icon {
     display: inline-block;
     margin-right: 18px;
     vertical-align: middle;
+
+    width: 24px !important;
+    height: 24px !important;
+    padding: 4px;
+    background-position: 4px 3px;
+
+    @include smallest {
+        margin-right: 20px;
+    }
     
     &.a {
         @include logoimage('../img/icon-bullet-3.svg', 16px, 16px);
+        background-size: 16px 16px;
     }
     &.b {
         @include logoimage('../img/icon-bullet-4.svg', 12px, 12px);
-        margin: 0 20px 0 2px;
+        background-position: 6px 5px;
+        background-size: 12px 12px;
     }
     &.c {
         @include logoimage('../img/icon-bullet-3.svg', 17px, 16px);
@@ -736,12 +855,18 @@ p {
     
     &.react {
         @include logoimage('../img/icon-react-logo.svg', 27px, 27px);
-        margin: 0 13px 0 -6px;
+        margin: 0 -6px 0 13px;
     }
 }
 
 .bullet-text {
     vertical-align: middle;
+    font-size: 14px;
+
+    @include smallest {
+        font-size: 15px;
+        line-height: 24px;
+    }
 }
 
 .arrow {
@@ -1028,15 +1153,11 @@ p {
 
 .video-screen {
     position: absolute;
-    width: 375px;
-    height: 667px;
-    right: 185px;
-    transform: perspective(1983px) 
-        rotateY(-35.5deg) 
-        rotateX(12deg) 
-        rotateZ(16.1deg) 
-        scale(0.711);
-    top: 63px;
+    width: 750px;
+    height: 1321px;
+    right: 34px;
+    top: -272px;
+    transform: perspective(2043px) rotateY(-35.5deg) rotateX(11.9deg) rotateZ(16.15deg) scaleX(0.37225) scaleY(0.3725);
     display: none;
 
     @include respond-to('large') {
