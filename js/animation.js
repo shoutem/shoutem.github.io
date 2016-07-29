@@ -127,5 +127,5 @@ $(function(){
 
 	// start animation
 	
-	var shoutemAni = new ShoutemAnimation(".shoutem-ani");	
+	// var shoutemAni = new ShoutemAnimation(".shoutem-ani");	
 });

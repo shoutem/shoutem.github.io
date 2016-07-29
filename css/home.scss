@@ -106,16 +106,17 @@ p {
     }
 
     .bullet-points {
-        @include smallest {
-            width: 100%;
-            margin-top: 33px;
-            margin-bottom: 54px;
-        }
 
         img {
             max-width: 100%;
             margin: 0 auto;
             display: block;
+        }
+
+        @include smallest {
+            width: 100%;
+            margin-top: 33px;
+            margin-bottom: 54px;
         }
     }
 }
@@ -141,6 +142,7 @@ p {
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
+
     @include mobile {
         flex-direction: column;
     }
@@ -193,27 +195,19 @@ p {
     height: 100%;
 }
 
-.with-image.header-wrapper {
-    
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);    
+.header-wrapper.with-image {
+
+    position: relative;
     z-index: 1;
 
-    @media (min-width: 1340px) {
-        background-position-x: 100%;
-    }
+    background-image: url("../img/image-header@2x.png");
+    background-repeat: no-repeat;
+    background-position: right 22px bottom 0;
+    background-size: 587px 535px;
+    overflow: hidden;
 
-    @media (min-width: 1200px) and (max-width: 1340px) {
+    @media (min-width: 1200px) and (max-width: 1339px) {
         max-width: 1170px;
-    }
-    
-    @include respond-to('large') {
-        background-image: url("../img/image-header@2x.png");
-        background-repeat: no-repeat;
-        background-position: right 22px bottom 0;
-        background-size: auto 535px;
-        overflow: hidden;
     }
 }
 
@@ -239,11 +233,8 @@ p {
     }
     
     .with-image .header-text {
-        
-        @include respond-to('large') {
-            text-align: left;
-            margin-left: 5%;
-        }
+        text-align: left;
+        margin-left: 5%;
         
         @media (min-width: 1340px) {
             margin-left: 245px;
@@ -265,15 +256,11 @@ p {
             line-height: 38px;
         }
 
-        @include respond-to('small') {
-            font-size: 54px;
-        }
+        font-size: 54px;
     }
     
     .with-image .main-heading {
-        @include respond-to('large') {
-            text-align: left;
-        }
+        text-align: left;
     }
 
     .p, .sub-heading {
@@ -285,10 +272,7 @@ p {
     
     .with-image .sub-heading {
         margin-top: 23px;
-
-        @include respond-to('large') {
-            text-align: left;
-        }
+        text-align: left;
     }
 }
 
@@ -304,98 +288,6 @@ p {
     width: 33px;
 }
 
-.paris-cta {
-
-    z-index: 2;
-    
-    .sm-text-left {
-        @include respond-to('small') {
-            text-align: left !important;
-        }
-    }
-    
-    .sm-text-right {
-        @include respond-to('small') {
-            text-align: right !important;
-        }
-    }
-
-    .row {
-        margin-top: 30px;
-        margin-bottom: 30px;
-    }
-    
-    .paris-text {
-        
-        vertical-align: middle;
-        @include headline(16px, 24px);
-        color: #fff;
-        text-align: center;
-        margin-bottom: 25px;
-        
-        @include respond-to('small') {
-            margin-bottom: 0;
-            height: 56px;
-            line-height: 56px;
-        }
-    }
-    
-    .paris-text:nth-child(1):before {
-        content: url("../img/icon-paris.svg");
-        display: block;
-        height: 56px;
-        margin-bottom: 25px;
-        
-        @include respond-to('small') {
-            vertical-align: middle;
-            margin-right: 24px;
-            margin-bottom: 0;
-            display: inline-block;
-        }
-    }
-    
-    .button-wrapper {
-        height: 56px;
-        line-height: 56px;
-        vertical-align: middle;
-        text-align: center;
-    }
-
-    // .paris-icon {
-    //     @include logoimage('../img/icon-paris.svg', 32px, 56px);      
-    // }
-
-    .demo-button {
-        display: inline-block;
-        width: 260px;
-        height: auto;
-        border: 1px solid #fff;
-        border-radius: 4px;
-        background-color: #fff;
-        text-transform: uppercase;
-        line-height: 22px;
-        color: $primary;
-        text-align: center;
-        padding: 10px;
-        margin-top: -6px;
-        
-        font-weight: bold;
-        font-size: 14px;
-        letter-spacing: 1px;
-
-        @include easeLinear;
-        
-        &:hover, &:focus,
-        &:active {
-            border-color: $accent;
-            background-color: $accent;
-            color: white;
-            text-decoration: none;
-        }
-    }
-
-}
-
 .separator {
     width: 100%;
     height: 1px;
@@ -403,9 +295,7 @@ p {
     margin: 0 auto 21px;
 }
 
-
 .step-label {
-
     display: block;
     margin-bottom: 19px;
 
@@ -430,14 +320,15 @@ p {
     }
 }
 
+.steps {
+    margin-left: 0;
+    padding-left: 0;
+    list-style: none;
+}
 
-.step {
+.steps li {
     text-align: center;
     min-height: 130px;
-
-    @include mobile {
-        
-    }
 
     .step-title {
         font-weight: bold;
@@ -658,15 +549,12 @@ p {
     }
     
     .bullet-points {
-        margin: 0 auto;
         padding: 0;
         
-        @include respond-to('medium') {
-            margin: -30px 0 0 8.3333333333%;
+        margin: -30px 0 0 8.3333333333%;
 
-            .bullet-point {
-                margin-right: -45px;
-            }
+        li:not(.integrations) {
+            margin-right: -45px;
         }
 
         @include smallest {
@@ -744,11 +632,7 @@ p {
     }
     
     .bullet-points {
-        margin: 0 auto;
-        
-        @include respond-to('medium') {
-            margin: -100px 0 0 8.33333%;
-        }
+        margin: -100px 0 0 8.33333%;
     }
 }
 
@@ -762,40 +646,36 @@ p {
     
     .bullets-wrapper {
             display: flex;
-            
-            @include respond-to('medium') {
-                &:after {
-                    content: "";
-                    width: 270px;
-                    height: 156px;
-                    position: absolute;
-                    bottom: -63px;
-                    right: -27px;
-                    background: url("../img/image-analytics@2x.png")  no-repeat;
-                    background-size: 100%;
-                }
+
+            &:after {
+                content: "";
+                width: 270px;
+                height: 156px;
+                position: absolute;
+                bottom: -63px;
+                right: -27px;
+                background: url("../img/image-analytics@2x.png")  no-repeat;
+                background-size: 100%;
             }
         }
     
-    @include respond-to('medium') {
-        .section-header {
-            padding-top: 135px;
-            text-align: left;
-            margin-bottom: 26px;
-        }
+    .section-header {
+        padding-top: 135px;
+        text-align: left;
+        margin-bottom: 26px;
+    }
+
+    .section-sub-header {
+        width: 100%;
+        margin: 0 0 30px;
+        text-align: left;
+        font-size: 16px;
+        line-height: 1.9;
+        color: #888fa1;
+    }
     
-        .section-sub-header {
-            width: 100%;
-            margin: 0 0 30px;
-            text-align: left;
-            font-size: 16px;
-            line-height: 1.9;
-            color: #888fa1;
-        }
-        
-        .bullets-wrapper {
-            display: block;
-        }
+    .bullets-wrapper {
+        display: block;
     }
     
     .bullet-points {
@@ -835,9 +715,16 @@ p {
     }
 }
 
-.bullet-point {
+.bullet-points {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.bullet-points li {
     line-height: 1.5;
     margin-bottom: 23px;
+    padding: 0;
 }
 
 .bullet-icon {
@@ -937,6 +824,7 @@ p {
     &:hover,
     &:active {
         box-shadow: 0 19px 38px 0 rgba(0, 0, 0, 0.3), 0 15px 12px 0 rgba(0, 0, 0, 0.2);
+        text-decoration: none;
     }
     
     &:last-child .chapter-content {
@@ -1171,15 +1059,11 @@ p {
 
 
 .video-screen {
+    width: 277px;
+    height: calc(277px * (668 / 376));
+    right: 270px;
+    top: 142.5px;
+    z-index: 100;
+    transform: perspective(1983px) rotateY(-35.5deg) rotateX(11.9deg) rotateZ(16.15deg) scaleY(1.00075);
     position: absolute;
-    width: 750px;
-    height: 1321px;
-    right: 34px;
-    top: -272px;
-    transform: perspective(2043px) rotateY(-35.5deg) rotateX(11.9deg) rotateZ(16.15deg) scaleX(0.37225) scaleY(0.3725);
-    display: none;
-
-    @include respond-to('large') {
-        display: block;
-    }
 }

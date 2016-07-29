@@ -13,9 +13,7 @@
     z-index: 100000;
     transition: opacity .5s,visibility 0s .5s;
     
-    @include respond-to('small') {
-        background: linear-gradient(to right, rgba(28,34,50,0.9) 0%,rgba(28,34,50,0.9) 50%,rgba(0, 170, 223,1) 50%);
-    }
+    background: linear-gradient(to right, rgba(28,34,50,0.9) 0%,rgba(28,34,50,0.9) 50%,rgba(0, 170, 223,1) 50%);
     
     &.open {
         visibility: visible;
@@ -26,10 +24,8 @@
     ul {
         list-style: none;
         padding: 0;
-        
-        @include respond-to('small') {
-            margin-left: 50%;
-        }
+
+        margin-left: 50%;
     }
     
     li {
