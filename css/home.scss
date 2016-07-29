@@ -38,6 +38,7 @@ p {
 
 .section-header {
     @include headline(32px, 32px, $homeheading);
+
     font-weight: 300;
     text-align: center;
     padding-top: 80px;
@@ -45,7 +46,7 @@ p {
     color: #444f6c;
     letter-spacing: -0.5px;
 
-    @include smallest {
+    @include mobile {
         font-size: 24px;
         line-height: 1;
         padding: 60px 25px 0;
@@ -58,7 +59,7 @@ p {
     margin-bottom: 60px;
     font-size: 48px;
 
-    @include smallest {
+    @include mobile {
         font-size: 36px;
         line-height: 46px;
         max-width: 280px;
@@ -76,7 +77,7 @@ p {
 	line-height: 1.9;
 	color: #888fa1;
 
-    @include smallest {
+    @include mobile {
         width: 100%;
         max-width: 280px;
     }
@@ -84,6 +85,7 @@ p {
 
 .section-footer {
     @include headline(16px, 26px);
+
     text-align: center;
     margin-bottom: 30px;
 }
@@ -100,7 +102,7 @@ p {
     padding-right: 20px;
 
     .row {
-        @include smallest {
+        @include mobile {
             flex-direction: column;
         }
     }
@@ -113,7 +115,7 @@ p {
             display: block;
         }
 
-        @include smallest {
+        @include mobile {
             width: 100%;
             margin-top: 33px;
             margin-bottom: 54px;
@@ -125,7 +127,7 @@ p {
     max-width: 1024px;
     position: relative;
 
-    @include smaller {
+    @include small {
         padding: 0;
     }
 }
@@ -143,13 +145,12 @@ p {
     align-items: center;
     flex-wrap: wrap;
 
-    @include mobile {
+    @include medium {
         flex-direction: column;
     }
 }
 
 .section-get-started  {
-    
     .flex-container {
         max-width: 1030px;
         margin-bottom: 60px;
@@ -180,7 +181,7 @@ p {
 .header {
     height: 606px;
 
-    @include smallest {
+    @include mobile {
         height: 475px;
     }
 }
@@ -196,7 +197,6 @@ p {
 }
 
 .header-wrapper.with-image {
-
     position: relative;
     z-index: 1;
 
@@ -206,8 +206,8 @@ p {
     background-size: 587px 535px;
     overflow: hidden;
 
-    @media (min-width: 1200px) and (max-width: 1339px) {
-        max-width: 1170px;
+    @media screen and (max-width: 1480px) {
+        max-width: 1210px;
     }
 }
 
@@ -219,11 +219,11 @@ p {
     .header-text {
         margin: 20px auto 0;
 
-        @include mobile {
+        @include medium {
             padding: 0;
         }
 
-        @include smallest {
+        @include mobile {
             max-width: 280px;
 
             br {
@@ -239,6 +239,10 @@ p {
         @media (min-width: 1340px) {
             margin-left: 245px;
         }
+
+        @media (max-width: 1480px) {
+            margin-left: 130px;
+        }
     }
 
     .main-heading {
@@ -250,7 +254,7 @@ p {
         margin-bottom: 0;
         text-align: center;
         
-        @include smallest {
+        @include mobile {
             font-size: 24px;
             font-weight: 500;
             line-height: 38px;
@@ -315,7 +319,7 @@ p {
         text-align: center;
     }
 
-    @include smallest {
+    @include mobile {
         margin: 28px auto 20px;
     }
 }
@@ -337,11 +341,11 @@ p {
         font-size: 12px; 
         letter-spacing: 1px;
 
-        @include medium {
+        @include large {
             margin: 20px 0;
         }
 
-        @include smallest {
+        @include mobile {
             margin: 20px 0 13px;
         }
     }
@@ -365,7 +369,7 @@ p {
             border-radius: 4px;
             position: relative;
 
-            @include smallest {
+            @include mobile {
                 height: 70px;
             }
         }
@@ -374,12 +378,12 @@ p {
             display: block;
         }
 
-        @include mobile {
+        @include medium {
             margin-right: 45px;
             left: 23px;
         }
 
-        @include smallest {
+        @include mobile {
             margin-right: 0;
             left: 0;
             border-radius: 4px;
@@ -404,7 +408,7 @@ p {
             position: absolute;
             pointer-events: none;
 
-            @include smallest {
+            @include mobile {
                 border-top-color: #00aadf;
                 border-left-color: transparent !important;
                 border-width: 138px !important;
@@ -429,14 +433,13 @@ p {
             margin-top: -45px;
             margin-left: 1px;
 
-            @include smallest {
+            @include mobile {
                 left: 1px;
                 bottom: -152px;
             }
-
         }
 
-        @include smallest {
+        @include mobile {
             margin-bottom: 20px;
         }
     }
@@ -453,7 +456,7 @@ p {
         width: 55%;
         margin: 0 auto 20px;
 
-        @include smallest {
+        @include mobile {
             max-width: 280px;
             width: 100%;
             line-height: 26px;
@@ -464,12 +467,12 @@ p {
         background: linear-gradient(to bottom, transparent 45px, rgba(0, 170, 223, 0.1) 45px);
         max-width: 970px;
 
-        @include medium {
+        @include large {
             flex-direction: column;
             overflow: hidden;
         }
 
-        @include smallest {
+        @include mobile {
             margin-bottom: 42px;
             background: none;
         }
@@ -482,12 +485,12 @@ p {
         bottom: -25px;
         z-index: 3;
 
-        @include smallest {
+        @include mobile {
             bottom: -44px;
         }
     }
 
-    @include smallest {
+    @include mobile {
         padding-bottom: 48px;
     }
 }
@@ -503,7 +506,7 @@ p {
         margin-bottom: 8px;
         width: 299px;
 
-        @include mobile {
+        @include medium {
             max-width: 100%;
         }
     }
@@ -515,13 +518,13 @@ p {
         img {
             max-width: 100%;
 
-            @include smallest {
+            @include mobile {
                 width: 100%;
                 max-width: 335px;
             }
         }
 
-        @include smallest {
+        @include mobile {
             width: 100%;
             padding: 0 20px;
             text-align: center;
@@ -550,18 +553,7 @@ p {
     
     .bullet-points {
         padding: 0;
-        
         margin: -30px 0 0 8.3333333333%;
-
-        li:not(.integrations) {
-            margin-right: -45px;
-        }
-
-        @include smallest {
-            width: 100%;
-            margin-top: 33px;
-            margin-bottom: 54px;
-        }
 
         img {
             max-width: 100%;
@@ -571,6 +563,20 @@ p {
 
         .integrations {
             padding-top: 5px;
+        }
+
+        li:not(.integrations) {
+            margin-right: -45px;
+        }
+
+        @include large {
+            margin-left: 45px;
+        }
+
+        @include mobile {
+            width: 100%;
+            margin-top: 33px;
+            margin-bottom: 54px;
         }
     }
 
@@ -582,14 +588,13 @@ p {
         margin-left: -225px;
         z-index: 3;
 
-        @include smallest {
+        @include mobile {
             bottom: -44px;
         }
     }
 }
 
 .section-step2 {
-    
     .row {
         display: flex;
         align-items: center;
@@ -604,7 +609,6 @@ p {
     }
     
     .image-rn-code {
-        
         margin-bottom: 52px;
         
         &.with-arrow:after {
@@ -619,14 +623,15 @@ p {
             max-width: 100%;
         }
 
-        @include smallest {
+        @include mobile {
             order: -1;
         }
     }
 
     .builder-screenshot {
         @include logoimage('../img/image-builder-screenshot@2x.png', 669px, 372px);
-        @include mobile {
+
+        @include medium {
             display: none;
         }
     }
@@ -688,26 +693,30 @@ p {
     
     .image-device {
         @include logoimage('../img/image-device@2x.png', 458px, 590px);
+
         margin-top: 45px;
         margin-left: -60px;
         margin-right: 60px;
         position: absolute;
-        @include mobile {
+
+        @include medium {
             display: none;
         }
     }
     .mobile-screenshot {
         @include logoimage('../img/image-mobile-screenshot-copy-2@3x.png', 387px, 520px);
+
         margin-left: -12px;
         margin-right: 60px;
         margin-top: 115px;
-        @include mobile {
+
+        @include medium {
             display: none;
         }
     }
 
     .group {
-        @include smallest {
+        @include mobile {
             display: block;
             margin-left: 30px;
             margin-top: 10px;
@@ -731,13 +740,12 @@ p {
     display: inline-block;
     margin-right: 18px;
     vertical-align: middle;
-
     width: 24px;
     height: 24px;
     padding: 4px;
     background-position: 4px 3px;
 
-    @include smallest {
+    @include mobile {
         margin-right: 20px;
     }
     
@@ -768,7 +776,7 @@ p {
     vertical-align: middle;
     font-size: 14px;
 
-    @include smallest {
+    @include mobile {
         font-size: 15px;
         line-height: 24px;
     }
@@ -776,6 +784,7 @@ p {
 
 .arrow {
     @include logoimage('../img/image-arrow-blue.svg', 28px, 88px);
+
     position: absolute;
     bottom: -40px;
     z-index: 1;
@@ -807,7 +816,7 @@ p {
     
     @include border-radius(4px);
 
-    @include medium {
+    @include large {
         width: 270px;
     }
 
@@ -816,7 +825,7 @@ p {
         width: 240px;
     }
 
-    @include mobile {
+    @include medium {
         width: calc(100% - 18px);
         max-width: 480px;
     }
@@ -914,7 +923,8 @@ p {
 .documentation-group {
     width: 270px;
     margin-bottom: 80px;
-    @include mobile {
+
+    @include medium {
        margin: 0 auto 30px;
     }
 
@@ -945,7 +955,8 @@ p {
 .feature {
     width: 270px;
     min-height: 230px;
-    @include mobile {
+
+    @include medium {
         margin: 0 auto 30px;
     }
 
@@ -1056,7 +1067,6 @@ p {
         }
     }
 }
-
 
 .video-screen {
     width: 277px;

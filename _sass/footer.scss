@@ -20,7 +20,7 @@
             padding-top: 80px;
             margin-bottom: 15px;
 
-            @include smallest {
+            @include mobile {
                 font-size: 40px;
                 line-height: 1;
             }
@@ -108,7 +108,7 @@
                 margin: 0 auto;
             }
 
-            @include smaller {
+            @include small {
                 float: none;
                 display: block;
                 margin-bottom: 24px;
@@ -126,7 +126,7 @@
             list-style: none;
             margin-top: 10px;
 
-            @include smaller {
+            @include small {
                 float: none;
                 padding: 0;
                 text-align: center;
@@ -135,7 +135,7 @@
             li {
                 float: left;
 
-                @include smaller {
+                @include small {
                     float: none;
                     display: inline;
                 }

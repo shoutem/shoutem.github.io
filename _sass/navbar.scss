@@ -115,10 +115,6 @@
     margin-top: 21px;
     margin-left: 0 !important;
     margin-right: 0 !important;
-
-    @include smallest {
-       
-    }
 }
 .navbar .navbar-brand--logo {
   background-image: url('../img/logo-shoutem-for-developers.svg');

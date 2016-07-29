@@ -44,32 +44,32 @@
   }
 }
 
-@mixin smallest {
+@mixin mobile {
   @media only screen and (max-width: 480px) {
     @content;
   }
 }
 
-@mixin smaller {
+@mixin small {
   @media only screen and (max-width: 576px) {
     @content;
   }
 }
 
-@mixin mobile {
+@mixin medium {
   @media only screen and (max-width: 768px) {
     @content;
   }
 }
 
-@mixin medium {
+@mixin large {
   @media only screen and (max-width: 992px) {
     @content;
   }
 }
 
-@mixin desktop {
-  @media only screen and (min-width: 768px) {
+@mixin larger {
+  @media only screen and (max-width: 1280px) {
     @content;
   }
 }
