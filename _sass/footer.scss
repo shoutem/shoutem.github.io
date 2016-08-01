@@ -9,9 +9,7 @@
         text-align: center;
         background-color: #2E3854;
 
-        @include mobile {
-            padding: 0 24px;
-        }
+        padding: 0 24px;
 
         .signup-title {
             @include headline(45px, 60px, #fff);
@@ -57,11 +55,13 @@
                 color: $primary;
             }
             
-            @include mobile {
+            @include small {
                 margin-bottom: 12px;
-                margin-right: 0;
+                margin-left: auto;
+                margin-right: auto;
                 width: 100%;
                 max-width: 280px;
+                display: block;
             }
         }
 
@@ -87,7 +87,7 @@
                 color: white;
             }
 
-            @include mobile {
+            @include small {
                 width: 100%;
                 max-width: 280px;
                 margin-bottom: 60px;
@@ -103,7 +103,7 @@
         color: $footercolor;
         padding-top: 22px;
     
-        @include mobile {
+        @include small {
             height: 380px;
         }
 
@@ -124,7 +124,7 @@
                 margin-bottom: 24px;
             }
 
-            @include mobile {
+            @include small {
                 margin: 8px 0 12px;
             }
             
@@ -140,20 +140,22 @@
             color: $footercolor;
             list-style: none;
             margin-top: 10px;
+            margin-left: 0;
+            padding-left: 0;
 
             @include small {
                 float: none;
                 padding: 0;
             }
 
-            @include mobile {
+            @include small {
                 margin-top: 0;
             }
 
             li {
                 float: left;
 
-                @include mobile {
+                @include small {
                     float: none;
                     display: block;
                 }
@@ -178,14 +180,14 @@
                         opacity: 1;
                     }
 
-                    @include mobile {
+                    @include small {
                         margin-top: 0;
                     }
                 }
 
                 &.icon-github {
 
-                    @include mobile {
+                    @include small {
                         &:before {
                             content: "Follow";
                             text-transform: uppercase;
@@ -203,7 +205,7 @@
                         background-size: 20px;
                         margin-left: 27px;
 
-                        @include mobile {
+                        @include small {
                             margin-left: 0;
                             float: left;
                         }
@@ -224,7 +226,7 @@
                     text-decoration: none;
                 }
 
-                @include mobile {
+                @include small {
                     margin-left: 0;
                     display: block;
                     padding: 5px 0;

@@ -38,12 +38,6 @@
   }
 }
 
-@mixin tiny {
-  @media only screen and (max-width: 479px) {
-    @content;
-  }
-}
-
 @mixin mobile {
   @media only screen and (max-width: 480px) {
     @content;
@@ -51,7 +45,7 @@
 }
 
 @mixin small {
-  @media only screen and (max-width: 576px) {
+  @media only screen and (max-width: 640px) {
     @content;
   }
 }
@@ -62,14 +56,20 @@
   }
 }
 
-@mixin large {
+@mixin medium-2 {
   @media only screen and (max-width: 992px) {
     @content;
   }
 }
 
-@mixin larger {
+@mixin large {
   @media only screen and (max-width: 1280px) {
+    @content;
+  }
+}
+
+@mixin large-2 {
+  @media only screen and (max-width: 1440px) {
     @content;
   }
 }

@@ -105,7 +105,7 @@ p {
     padding-right: 20px;
 
     .row {
-        @include mobile {
+        @include small {
             flex-direction: column;
         }
     }
@@ -118,7 +118,7 @@ p {
             display: block;
         }
 
-        @include mobile {
+        @include small {
             width: 100%;
             margin-top: 33px;
             margin-bottom: 54px;
@@ -219,10 +219,13 @@ p {
     background-size: 587px 535px;
     overflow: hidden;
 
-    @media screen and (max-width: 1480px) {
-        max-width: 1210px;
-        background-position: right 0px bottom 0;
-        background-size: 40%;
+    @include large-2 {
+        max-width: 1170px;
+        background-position: right -150px bottom -40px;
+    }
+
+    @include medium-2 {
+        background: none;
     }
 
     @include mobile {
@@ -230,10 +233,40 @@ p {
     }
 }
 
+.video-screen {
+    width: 277px;
+    height: calc(277px * (668 / 376));
+    right: 270px;
+    top: 142.5px;
+    z-index: 100;
+    transform: perspective(1983px) rotateY(-35.5deg) rotateX(11.9deg) rotateZ(16.15deg) scaleY(1.00075);
+    position: absolute;
+
+    @include large-2 {
+        right: 98px;
+        top: 182.5px;
+    }
+
+    @include medium-2 {
+        display: none;
+    }
+}
+
 .main {
     background-color: $accent;
     color: #fff; // test!
     height: 100%;
+
+    &.with-arrow:after {
+        @media screen and (min-width: 480px) {
+            bottom: 20px;
+        }
+
+        @media screen and (min-width: 992px) and (max-width: 1280px) {
+            left: 33.3333333%;
+            bottom: 20px;
+        }
+    }
     
     .header-text {
         margin: 20px auto 0;
@@ -254,45 +287,55 @@ p {
     .with-image .header-text {
         text-align: left;
         margin-left: 5%;
-        
-        @media (min-width: 1340px) {
-            margin-left: 245px;
+
+        @media (min-width: 1440px) {
+            margin-left: 235px;
         }
 
-        @media (max-width: 1480px) {
-            margin-left: 130px;
+        @include large-2 {
+            margin-left: 110px;
             max-width: 55%;
+        }
+
+        @include medium-2 {
+            margin: 20px auto 0;
+            max-width: 600px;
         }
 
         @include mobile {
             margin: -22px auto 0;
             max-width: 280px;
-            text-align: center;
         }
     }
 
     .main-heading {
         color: #FFFFFF;
-        font-size: 35px;
+        font-size: 54px;
         line-height: 1.26;
         font-weight: 100;
         margin-top: 0;
         margin-bottom: 0;
         text-align: center;
-        
+
+        @include medium-2 {
+            font-size: 48px;
+        }
+
+        @include small {
+            font-size: 36px;
+        }
+
         @include mobile {
             font-size: 24px;
             font-weight: 500;
             line-height: 38px;
         }
-
-        font-size: 54px;
     }
     
     .with-image .main-heading {
         text-align: left;
 
-        @include mobile {
+        @include medium-2 {
             text-align: center;
         }
     }
@@ -307,6 +350,31 @@ p {
     .with-image .sub-heading {
         margin-top: 23px;
         text-align: left;
+
+        @include large-2 {
+            max-width: 80%;
+
+            br {
+                display: none;
+            }
+        }
+
+        @include large {
+            max-width: 90%;
+        }
+
+        @include medium-2 {
+            text-align: center;
+            max-width: 540px;
+            font-size: 24px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        @include medium {
+            font-size: 20px;
+            max-width: 460px;
+        }
 
         @include mobile {
             text-align: center;
@@ -356,7 +424,7 @@ p {
         text-align: center;
     }
 
-    @include mobile {
+    @include small {
         margin: 5px auto 20px;
     }
 }
@@ -378,11 +446,11 @@ p {
         font-size: 12px; 
         letter-spacing: 1px;
 
-        @include large {
+        @include medium-2 {
             margin: 20px 0;
         }
 
-        @include mobile {
+        @include small {
             margin: 20px 0 15px;
         }
     }
@@ -406,7 +474,7 @@ p {
             border-radius: 4px;
             position: relative;
 
-            @include mobile {
+            @include small {
                 height: 70px;
             }
         }
@@ -416,11 +484,11 @@ p {
         }
 
         @include medium {
-            margin-right: 45px;
-            left: 23px;
+            /*margin-right: 45px;
+            left: 23px;*/
         }
 
-        @include mobile {
+        @include small {
             margin-right: 0;
             left: 0;
             border-radius: 4px;
@@ -445,7 +513,7 @@ p {
             position: absolute;
             pointer-events: none;
 
-            @include mobile {
+            @include small {
                 border-top-color: #00aadf;
                 border-left-color: transparent !important;
                 border-width: 138px !important;
@@ -470,13 +538,13 @@ p {
             margin-top: -45px;
             margin-left: 1px;
 
-            @include mobile {
+            @include small {
                 left: 1px;
                 bottom: -152px;
             }
         }
 
-        @include mobile {
+        @include small {
             margin-bottom: 20px;
         }
     }
@@ -488,7 +556,7 @@ p {
     .section-header {
         padding-top: 90px;
 
-        @include mobile {
+        @include small {
             padding-top: 40px;
         }
     }
@@ -497,7 +565,7 @@ p {
         width: 55%;
         margin: 0 auto 20px;
 
-        @include mobile {
+        @include small {
             max-width: 280px;
             width: 100%;
             line-height: 26px;
@@ -508,12 +576,13 @@ p {
         background: linear-gradient(to bottom, transparent 45px, rgba(0, 170, 223, 0.1) 45px);
         max-width: 970px;
 
-        @include large {
+        @include medium-2 {
             flex-direction: column;
             overflow: hidden;
+            background: none;
         }
 
-        @include mobile {
+        @include small {
             margin-bottom: 42px;
             background: none;
         }
@@ -526,12 +595,12 @@ p {
         bottom: -25px;
         z-index: 3;
 
-        @include mobile {
+        @include small {
             bottom: -44px;
         }
     }
 
-    @include mobile {
+    @include small {
         padding-bottom: 48px;
     }
 }
@@ -563,13 +632,20 @@ p {
         img {
             max-width: 100%;
 
-            @include mobile {
+            @include small {
                 width: 100%;
+            }
+
+            @include mobile {
                 max-width: 335px;
             }
         }
 
-        @include mobile {
+        @include medium-2 {
+            width: calc(100% - 360px);
+        }
+
+        @include small {
             width: 100%;
             padding: 0;
             text-align: center;
@@ -595,7 +671,7 @@ p {
         margin-left: -65px;
         margin-bottom: -30px;
 
-        @include mobile {
+        @include small {
             margin: 0;
         }
     }
@@ -612,21 +688,32 @@ p {
 
         .integrations {
             padding-top: 5px;
+
+            @include medium-2 {
+                img {
+                    margin: 0;
+                }
+            }
         }
 
         li:not(.integrations) {
             margin-right: -45px;
 
-            @include larger {
+            @include large {
                 margin-right: 0;
             }
         }
 
-        @include larger {
+        @include large {
             margin-left: 45px;
         }
 
-        @include mobile {
+        @include medium-2 {
+            width: 360px;
+            margin-top: 0;
+        }
+
+        @include small {
             width: 100%;
             margin-top: 33px;
             margin-bottom: 54px;
@@ -642,7 +729,7 @@ p {
         margin-left: -225px;
         z-index: 3;
 
-        @include mobile {
+        @include small {
             bottom: -44px;
             margin-left: 0;
         }
@@ -654,7 +741,7 @@ p {
         display: flex;
         align-items: center;
 
-        @include mobile {
+        @include small {
             margin: 0;
         }
     }
@@ -677,7 +764,7 @@ p {
             bottom: -83px;
             z-index: 3;
 
-            @include mobile {
+            @include small {
                 bottom: -335px;
             }
         }
@@ -686,10 +773,15 @@ p {
             max-width: 100%;
         }
 
-        @include mobile {
+        @include medium-2 {
+            width: calc(100% - 360px);
+        }
+
+        @include small {
             order: -1;
             margin-left: -20px;
             margin-right: -20px;
+            width: 100%;
         }
     }
 
@@ -704,7 +796,13 @@ p {
     .bullet-points {
         margin: -100px 0 0 8.33333%;
 
-        @include mobile {
+        @include medium-2 {
+            width: 360px;
+            margin-top: 0;
+        }
+
+        @include small {
+            width: 100%;
             margin: 0 0 50px;
         }
     }
@@ -721,14 +819,39 @@ p {
     background-repeat: no-repeat;
     min-height: 636px;
 
-    @include mobile {
-        background-size: 280px, 
-                         239px;
-        background-position: center top 310px,
-                             left calc(50% + 9px) top 351px;
-        background-repeat: no-repeat;
+    .col-md-6 {
+        margin-left: 50%;
+        width: 50%;
+
+        @include small {
+            width: 100%;
+            margin-left: 0;
+        }
+    }
+
+    @include large {
+        background-size: 410px, 358px;
+        background-position: left 48px top 25px, left 83px top 75px;
+    }
+
+    @include medium-2 {
+        background-size: 278px, 237px;
+        background-position: left 8% top 82px,left calc(7% + 31px) top 123px;
+    }
+
+    @include small {
+        background-size: 280px, 239px;
+        background-position: center top 260px,left calc(50% + 9px) top 301px;
         min-height: 1165px;
         text-align: center;
+    }
+
+    @include mobile {
+        background-position: center top 310px, left calc(50% + 9px) top 351px;
+    }
+
+    @media screen and (min-width: 1441px) {
+        background-position: left calc(50% - 320px) bottom -184px,left calc(50% - 308px) bottom -125px;
     }
     
     .step-label {
@@ -737,7 +860,7 @@ p {
             border: solid 1px #7ed321;
         }
 
-        @include mobile {
+        @include small {
             margin: 10px auto 15px;
         }
     }
@@ -747,17 +870,22 @@ p {
         text-align: left;
 
         .bullet-points {
-            margin: 0 auto;
+            margin-left: auto;
+            margin-left: auto;
+
+            @include small {
+                margin-top: 83px;
+            }
         }
 
         .bullet-text {
-            @include mobile {
+            @include small {
                 font-size: 16px;
                 line-height: 24px;
             }
         }
 
-        @include mobile {
+        @include small {
             position: relative;
             bottom: -517px;
             width: 100%;
@@ -775,7 +903,15 @@ p {
             background: url("../img/image-analytics@2x.png")  no-repeat;
             background-size: 100%;
 
-            @include mobile {
+            @media screen and (max-width: 1200px) {
+                right: 0;
+            }
+
+            @include medium-2 {
+                bottom: -180px;
+            }
+
+            @include small {
                 bottom: -200px;
                 left: calc(50% - 100px);
                 width: 200px;
@@ -788,7 +924,7 @@ p {
         text-align: left;
         margin-bottom: 26px;
 
-        @include mobile {
+        @include small {
             padding-top: 12px;
             margin-bottom: 20px;
             text-align: center;
@@ -800,9 +936,10 @@ p {
         margin: 0 0 30px;
         text-align: left;
 
-        @include mobile {
+        @include small {
             text-align: center;
             margin: 0 auto 30px;
+            max-width: 450px;
         }
     }
     
@@ -812,7 +949,7 @@ p {
     }
 
     .group {
-        @include mobile {
+        @include small {
             display: block;
             margin-left: 30px;
             margin-top: 10px;
@@ -912,7 +1049,7 @@ p {
     
     @include border-radius(4px);
 
-    @include large {
+    @include medium-2 {
         width: 270px;
     }
 
@@ -1171,16 +1308,3 @@ p {
     }
 }
 
-.video-screen {
-    width: 277px;
-    height: calc(277px * (668 / 376));
-    right: 270px;
-    top: 142.5px;
-    z-index: 100;
-    transform: perspective(1983px) rotateY(-35.5deg) rotateX(11.9deg) rotateZ(16.15deg) scaleY(1.00075);
-    position: absolute;
-
-    @media screen and (max-width: 1480px) {
-        display: none;
-    }
-}
