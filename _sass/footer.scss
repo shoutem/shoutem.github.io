@@ -35,6 +35,31 @@
                 width: 100%;
             }
         }
+
+        .signup-email {
+            width: 370px;
+            height: 56px;
+            border-radius: 4px;
+            background-color: transparent;
+            padding: 1px 15px 0;
+            margin-bottom: 80px;
+            margin-right: 8px;
+            border: 1px solid rgba(136, 143, 161, 0.5);
+            @include easeLinear;
+            
+            &:focus {
+                background-color: white;
+                color: $primary;
+            }
+            
+            @include mobile {
+                margin-bottom: 12px;
+                margin-right: 0;
+                width: 100%;
+                max-width: 280px;
+            }
+        }
+
         .signup-button {
             width: 188px;
             height: 56px;
@@ -56,31 +81,13 @@
                 background-color: $accent;
                 color: white;
             }
-                        
-        }
-        .signup-email {
-            width: 370px;
-            height: 56px;
-            border-radius: 4px;
-            background-color: transparent;
-            padding: 1px 15px 0;
-            margin-bottom: 80px;
-            margin-right: 8px;
-            border: 1px solid rgba(136, 143, 161, 0.5);
-            @include easeLinear;
-            
-            &:focus {
-                background-color: white;
-                color: $primary;
-            }
-            
-            @include mobile {
-                margin-bottom: 24px;
-                width: 100%;
-                max-width: 370px;
-            }
 
+            @include mobile {
+                width: 100%;
+                max-width: 280px;
+            }           
         }
+        
     }
 
     .bottom-footer {
@@ -91,12 +98,13 @@
         padding-top: 22px;
     
         @include mobile {
-            height: 180px;
+            height: 380px;
         }
 
         .container-fluid {
             max-width: 1210px;
         }
+
         .footer-logo {        
             @include logoimage('../img/shoutem_logo_footer.png', 85px, 30px);
             opacity: 0.4;
@@ -104,14 +112,14 @@
             margin-top: 9px;
             @include easeLinear;
 
-            @include mobile {
-                margin: 0 auto;
-            }
-
             @include small {
                 float: none;
                 display: block;
                 margin-bottom: 24px;
+            }
+
+            @include mobile {
+                margin: 0 0 10px;
             }
             
             &:hover,
@@ -119,6 +127,7 @@
                 opacity: 1;
             }
         }
+
         .footer-menu {
             float: right;
             opacity: 1;
@@ -129,15 +138,18 @@
             @include small {
                 float: none;
                 padding: 0;
-                text-align: center;
             }
-        
+
+            @include mobile {
+                margin-top: 0;
+            }
+
             li {
                 float: left;
 
-                @include small {
+                @include mobile {
                     float: none;
-                    display: inline;
+                    display: block;
                 }
 
                 &.icon-twitter a,
@@ -159,16 +171,42 @@
                     &:active {
                         opacity: 1;
                     }
+
+                    @include mobile {
+                        margin-top: 0;
+                    }
                 }
 
-                &.icon-github a {
-                    background-image: url(/img/icon-github.svg);
-                    background-size: 20px;
-                    margin-left: 27px;
+                &.icon-github {
+
+                    @include mobile {
+                        &:before {
+                            content: "Follow";
+                            text-transform: uppercase;
+                            font-size: 13px;
+                            letter-spacing: 1px;
+                            display: block;
+                            color: $text;
+                            opacity: 0.5;
+                            margin: 20px 0;
+                        }
+                    }
+
+                    a {
+                        background-image: url(/img/icon-github.svg);
+                        background-size: 20px;
+                        margin-left: 27px;
+
+                        @include mobile {
+                            margin-left: 0;
+                            float: left;
+                        }
+                    }
                 }
             }
+
             a {
-                color: $footercolor;
+                color: $text;
                 @include easeLinear;
                 font-size: 14px;
                 padding: 10px 11px;
@@ -178,6 +216,12 @@
                 &:active {
                     color:  white;
                     text-decoration: none;
+                }
+
+                @include mobile {
+                    margin-left: 0;
+                    display: block;
+                    padding: 8px 0;
                 }
             }
         }

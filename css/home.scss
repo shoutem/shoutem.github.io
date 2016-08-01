@@ -48,7 +48,7 @@ p {
 
     @include mobile {
         font-size: 24px;
-        line-height: 1;
+        line-height: 1.45;
         padding: 60px 25px 0;
         margin-bottom: 24px;
     }
@@ -66,6 +66,7 @@ p {
         margin-left: auto;
         margin-right: auto;
         margin-bottom: 0;
+        padding: 0;
     }
 }
 
@@ -74,6 +75,7 @@ p {
     margin: 0 auto 32px;
     text-align: center;
     font-size: 16px;
+    font-weight: 500;
 	line-height: 1.9;
 	color: #888fa1;
 
@@ -250,6 +252,12 @@ p {
             margin-left: 130px;
             max-width: 55%;
         }
+
+        @include mobile {
+            margin: 0 auto;
+            max-width: 280px;
+            text-align: center;
+        }
     }
 
     .main-heading {
@@ -272,6 +280,10 @@ p {
     
     .with-image .main-heading {
         text-align: left;
+
+        @include mobile {
+            text-align: center;
+        }
     }
 
     .p, .sub-heading {
@@ -284,6 +296,12 @@ p {
     .with-image .sub-heading {
         margin-top: 23px;
         text-align: left;
+
+        @include mobile {
+            text-align: center;
+            font-size: 16px;
+            font-weight: 500;
+        }
     }
 }
 
@@ -533,7 +551,7 @@ p {
 
         @include mobile {
             width: 100%;
-            padding: 0 20px;
+            padding: 0;
             text-align: center;
             position: relative;
 
@@ -592,6 +610,7 @@ p {
             width: 100%;
             margin-top: 33px;
             margin-bottom: 54px;
+            margin-left: 0;
         }
     }
 
@@ -613,6 +632,10 @@ p {
     .row {
         display: flex;
         align-items: center;
+
+        @include mobile {
+            margin: 0;
+        }
     }
     
     .section-header {
@@ -640,6 +663,8 @@ p {
 
         @include mobile {
             order: -1;
+            margin-left: -20px;
+            margin-right: -20px;
         }
     }
 
@@ -653,6 +678,10 @@ p {
     
     .bullet-points {
         margin: -100px 0 0 8.33333%;
+
+        @include mobile {
+            margin: 0;
+        }
     }
 }
 
@@ -683,8 +712,19 @@ p {
     }
     
     .bullets-wrapper {
-        display: flex;
+        display: block;
         text-align: left;
+
+        .bullet-points {
+            margin: 0 auto;
+        }
+
+        .bullet-text {
+            @include mobile {
+                font-size: 16px;
+                line-height: 24px;
+            }
+        }
 
         @include mobile {
             position: relative;
@@ -711,7 +751,7 @@ p {
             }
         }
     }
-    
+        
     .section-header {
         padding-top: 135px;
         text-align: left;
@@ -737,13 +777,6 @@ p {
         }
     }
     
-    .bullets-wrapper {
-        display: block;
-    }
-    
-    .bullet-points {
-        margin: 0 auto;
-    }
     
     p {
         font-size: 18px;
@@ -811,7 +844,7 @@ p {
     font-size: 14px;
 
     @include mobile {
-        font-size: 16px;
+        font-size: 15px;
         line-height: 24px;
     }
 }
@@ -860,8 +893,13 @@ p {
     }
 
     @include medium {
-        width: calc(100% - 18px);
+        width: 100%;
         max-width: 480px;
+    }
+
+    @include mobile {
+        width: calc(100% - 18px);
+        max-width: 280px;
     }
 
     &:hover,
