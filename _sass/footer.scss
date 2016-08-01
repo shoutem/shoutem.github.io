@@ -21,10 +21,14 @@
             margin-bottom: 15px;
 
             @include mobile {
-                font-size: 40px;
-                line-height: 1;
+                font-size: 36px;
+                line-height: 46px;
+                max-width: 240px;
+                margin: 0 auto 15px;
+                padding-top: 60px;
             }
         }
+
         .signup-description {
             color: #A3A7B3;
             line-height: 30px;
@@ -33,6 +37,7 @@
 
             @include mobile {
                 width: 100%;
+                margin-bottom: 30px;
             }
         }
 
@@ -85,6 +90,7 @@
             @include mobile {
                 width: 100%;
                 max-width: 280px;
+                margin-bottom: 60px;
             }           
         }
         
@@ -119,7 +125,7 @@
             }
 
             @include mobile {
-                margin: 0 0 10px;
+                margin: 8px 0 12px;
             }
             
             &:hover,
@@ -188,7 +194,7 @@
                             display: block;
                             color: $text;
                             opacity: 0.5;
-                            margin: 20px 0;
+                            margin: 23px 0 17px;
                         }
                     }
 
@@ -221,7 +227,7 @@
                 @include mobile {
                     margin-left: 0;
                     display: block;
-                    padding: 8px 0;
+                    padding: 5px 0;
                 }
             }
         }

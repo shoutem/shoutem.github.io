@@ -47,7 +47,7 @@ p {
     letter-spacing: -0.5px;
 
     @include mobile {
-        font-size: 24px;
+        font-size: 28px;
         line-height: 1.45;
         padding: 60px 25px 0;
         margin-bottom: 24px;
@@ -58,6 +58,7 @@ p {
     font-weight: 100;
     margin-bottom: 60px;
     font-size: 48px;
+    letter-spacing: normal;
 
     @include mobile {
         font-size: 36px;
@@ -76,7 +77,7 @@ p {
     text-align: center;
     font-size: 16px;
     font-weight: 500;
-	line-height: 1.9;
+	line-height: 30px;
 	color: #888fa1;
 
     @include mobile {
@@ -156,11 +157,21 @@ p {
     .flex-container {
         max-width: 1030px;
         margin-bottom: 60px;
+
+        @include mobile {
+            margin-bottom: 15px;
+        }
     }
 
     .section-header {
         padding-top: 90px;
         margin-bottom: 70px;
+
+        @include mobile {
+            padding-top: 0;
+            margin-top: 60px;
+            margin-bottom: 30px;
+        }
     }
 }
 
@@ -254,7 +265,7 @@ p {
         }
 
         @include mobile {
-            margin: 0 auto;
+            margin: -22px auto 0;
             max-width: 280px;
             text-align: center;
         }
@@ -301,6 +312,7 @@ p {
             text-align: center;
             font-size: 16px;
             font-weight: 500;
+            margin-top: 12px;
         }
     }
 }
@@ -345,7 +357,7 @@ p {
     }
 
     @include mobile {
-        margin: 28px auto 20px;
+        margin: 5px auto 20px;
     }
 }
 
@@ -371,7 +383,7 @@ p {
         }
 
         @include mobile {
-            margin: 20px 0 13px;
+            margin: 20px 0 15px;
         }
     }
 
@@ -475,6 +487,10 @@ p {
 
     .section-header {
         padding-top: 90px;
+
+        @include mobile {
+            padding-top: 40px;
+        }
     }
     
     .section-footer {
@@ -525,6 +541,10 @@ p {
 
     .section-header {
         padding-top: 56px;
+
+        @include mobile {
+            font-size: 24px;
+        }
     }
     
     .separator {
@@ -624,6 +644,7 @@ p {
 
         @include mobile {
             bottom: -44px;
+            margin-left: 0;
         }
     }
 }
@@ -655,6 +676,10 @@ p {
             background-size: contain;
             bottom: -83px;
             z-index: 3;
+
+            @include mobile {
+                bottom: -335px;
+            }
         }
         
         img {
@@ -680,7 +705,7 @@ p {
         margin: -100px 0 0 8.33333%;
 
         @include mobile {
-            margin: 0;
+            margin: 0 0 50px;
         }
     }
 }
@@ -706,9 +731,15 @@ p {
         text-align: center;
     }
     
-    .step-label strong {
-        color: #7ed321;
-        border: solid 1px #7ed321;
+    .step-label {
+        strong {
+           color: #7ed321;
+            border: solid 1px #7ed321;
+        }
+
+        @include mobile {
+            margin: 10px auto 15px;
+        }
     }
     
     .bullets-wrapper {
@@ -728,7 +759,7 @@ p {
 
         @include mobile {
             position: relative;
-            bottom: -560px;
+            bottom: -517px;
             width: 100%;
             margin-left: 4px;
             margin-right: 4px;
@@ -745,7 +776,7 @@ p {
             background-size: 100%;
 
             @include mobile {
-                bottom: -193px;
+                bottom: -200px;
                 left: calc(50% - 100px);
                 width: 200px;
             }
@@ -758,7 +789,8 @@ p {
         margin-bottom: 26px;
 
         @include mobile {
-            padding-top: 0;
+            padding-top: 12px;
+            margin-bottom: 20px;
             text-align: center;
         }
     }
@@ -767,9 +799,6 @@ p {
         width: 100%;
         margin: 0 0 30px;
         text-align: left;
-        font-size: 16px;
-        line-height: 1.9;
-        color: #888fa1;
 
         @include mobile {
             text-align: center;
@@ -900,6 +929,7 @@ p {
     @include mobile {
         width: calc(100% - 18px);
         max-width: 280px;
+        margin-bottom: 40px;
     }
 
     &:hover,
@@ -984,12 +1014,13 @@ p {
 
 .documentation-category,
 .chapter-category {
-  font-size: 12px;
-  font-weight: bold;
-  color: $muted;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  line-height: 1;
+    font-size: 12px;
+    font-weight: bold;
+    color: $muted;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    line-height: 1;
+    margin-top: 0;
 }
 
 .documentation-group {
