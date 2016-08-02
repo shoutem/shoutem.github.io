@@ -9,34 +9,64 @@
         text-align: center;
         background-color: #2E3854;
 
-        @include mobile {
-            padding: 0 24px;
-        }
+        padding: 0 24px;
 
         .signup-title {
             @include headline(45px, 60px, #fff);
             font-weight: 100;
             text-align: center;
             padding-top: 80px;
-            margin-bottom: 25px;
+            margin-bottom: 15px;
 
-            @include smallest {
-                font-size: 40px;
-                line-height: 1;
+            @include mobile {
+                font-size: 36px;
+                line-height: 46px;
+                max-width: 240px;
+                margin: 0 auto 15px;
+                padding-top: 60px;
             }
         }
+
         .signup-description {
             color: #A3A7B3;
             line-height: 30px;
             max-width: 570px;
-            margin: 0 auto 28px;
+            margin: 0 auto 32px;
 
             @include mobile {
                 width: 100%;
+                margin-bottom: 30px;
             }
         }
+
+        .signup-email {
+            width: 370px;
+            height: 56px;
+            border-radius: 4px;
+            background-color: transparent;
+            padding: 1px 15px 0;
+            margin-bottom: 80px;
+            margin-right: 8px;
+            border: 1px solid rgba(136, 143, 161, 0.5);
+            @include easeLinear;
+            
+            &:focus {
+                background-color: white;
+                color: $primary;
+            }
+            
+            @include small {
+                margin-bottom: 12px;
+                margin-left: auto;
+                margin-right: auto;
+                width: 100%;
+                max-width: 280px;
+                display: block;
+            }
+        }
+
         .signup-button {
-            width: 200px;
+            width: 188px;
             height: 56px;
             border: 1px solid #fff;
             border-radius: 4px;
@@ -56,31 +86,14 @@
                 background-color: $accent;
                 color: white;
             }
-                        
-        }
-        .signup-email {
-            width: 370px;
-            height: 56px;
-            border-radius: 4px;
-            background-color: $lightbackground;
-            padding: 1px 15px 0;
-            margin-bottom: 80px;
-            margin-right: 8px;
-            border: none;
-            @include easeLinear;
-            
-            &:focus {
-                background-color: white;
-                color: $primary;
-            }
-            
-            @include mobile {
-                margin-bottom: 24px;
-                width: 100%;
-                max-width: 370px;
-            }
 
+            @include small {
+                width: 100%;
+                max-width: 280px;
+                margin-bottom: 60px;
+            }           
         }
+        
     }
 
     .bottom-footer {
@@ -90,28 +103,29 @@
         color: $footercolor;
         padding-top: 22px;
     
-        @include mobile {
-            height: 180px;
+        @include small {
+            height: 380px;
         }
 
         .container-fluid {
-            max-width: 1170px;
+            max-width: 1210px;
         }
+
         .footer-logo {        
-            @include logoimage('../img/shoutem_logo_footer.png', 96px, 36px);
+            @include logoimage('../img/shoutem_logo_footer.png', 85px, 30px);
             opacity: 0.4;
             float: left;
-            margin-top: 6px;
+            margin-top: 9px;
             @include easeLinear;
 
-            @include mobile {
-                margin: 0 auto;
-            }
-
-            @include smaller {
+            @include small {
                 float: none;
                 display: block;
                 margin-bottom: 24px;
+            }
+
+            @include small {
+                margin: 8px 0 12px;
             }
             
             &:hover,
@@ -119,35 +133,103 @@
                 opacity: 1;
             }
         }
+
         .footer-menu {
             float: right;
             opacity: 1;
             color: $footercolor;
             list-style: none;
+            margin-top: 10px;
+            margin-left: 0;
+            padding-left: 0;
 
-            @include smaller {
+            @include small {
                 float: none;
                 padding: 0;
-                text-align: center;
             }
-        
+
+            @include small {
+                margin-top: 0;
+            }
+
             li {
                 float: left;
-                padding: 10px 16px;
 
-                @include smaller {
+                @include small {
                     float: none;
-                    display: inline;
+                    display: block;
+                }
+
+                &.icon-twitter a,
+                &.icon-github a {
+                    background-image: url(/img/icon-twitter.svg);
+                    background-repeat: no-repeat;
+                    background-size: 22px;
+                    background-position: center;
+                    text-indent: -100px;
+                    width: 24px;
+                    height: 24px;
+                    overflow: hidden;
+                    display: inline-block;
+                    margin-left: 24px;
+                    margin-top: 3px;
+                    opacity: 0.4;
+
+                    &:hover,
+                    &:active {
+                        opacity: 1;
+                    }
+
+                    @include small {
+                        margin-top: 0;
+                    }
+                }
+
+                &.icon-github {
+
+                    @include small {
+                        &:before {
+                            content: "Follow";
+                            text-transform: uppercase;
+                            font-size: 13px;
+                            letter-spacing: 1px;
+                            display: block;
+                            color: $text;
+                            opacity: 0.5;
+                            margin: 23px 0 17px;
+                        }
+                    }
+
+                    a {
+                        background-image: url(/img/icon-github.svg);
+                        background-size: 20px;
+                        margin-left: 27px;
+
+                        @include small {
+                            margin-left: 0;
+                            float: left;
+                        }
+                    }
                 }
             }
+
             a {
-                color: $footercolor;
+                color: $text;
                 @include easeLinear;
+                font-size: 14px;
+                padding: 10px 11px;
+                margin-left: 22px;
 
                 &:hover,
                 &:active {
                     color:  white;
                     text-decoration: none;
+                }
+
+                @include small {
+                    margin-left: 0;
+                    display: block;
+                    padding: 5px 0;
                 }
             }
         }

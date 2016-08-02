@@ -1,14 +1,11 @@
 function openMenu() {
-    var overlay = document.querySelector('#mobile-menu-overlay');
-    
-    overlay.classList.add('open');
+	$('#mobile-menu-overlay').addClass("open");
 }
 
 function closeMenu() {
-    var overlay = document.querySelector('#mobile-menu-overlay');
-    if (window.event.target.nodeName !== 'A')
-        overlay.classList.remove('open');
+    $('#mobile-menu-overlay').removeClass("open");
 }
+
 $(function() {
 	
 	function onFooterResize() {
@@ -49,4 +46,6 @@ $(function() {
 		scrollTo($(document).height());
 		
 	});
+
+	$(".close-menu-overlay").on("click", closeMenu);
 });

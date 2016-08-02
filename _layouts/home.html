@@ -1,180 +1,187 @@
 <!DOCTYPE html>
 <html lang="en-us">
 
-  {% include head.html %}
-  <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/css/home.css">
-  </head>
+{% include head.html %}
+<link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/css/home.css">
+</head>
 
-  <body class="home">
-    {% include navbar.html %}
+<body class="home">
+	{% include navbar.html %}
 
-    <div id="wrapper" class="home">      
+	<div id="wrapper" class="home">      
 
-      <div class="container-fluid">
-        <div class="header row">
-          <div class="main col-xs-12 with-arrow">
-            <div class="shoutem-ani"></div>
-            <div class="header-wrapper with-image">
-              <div class="header-text">
-                <p class="main-heading">Supercharge your<br>React&nbsp;Native development<br>with Shoutem</p>
-                <p class="sub-heading">Speed up building beautiful native apps for both<br>iOS and Android with Shoutem extensions.</p>
-              </div>
-            </div>
-          </div>
-        </div>
+		<div class="container-fluid">
+			<div class="header row">
+				<div class="main col-xs-12 with-arrow">
+					<div class="shoutem-ani"></div> 
+					<div class="header-wrapper with-image">
 
-        <div class="row blue-background section-step0 with-arrow">
-          <div class="section narrow">
-            <div class="section-header section-header--big">How does it work?</div>
-            <div class="flex-container">
-              <div class="step">
-                <div class="step-title">Step 1</div>
-                <div class="step-button arrow-box"><span class="center-v">Create 80% of the app <br>with Shoutem</span></div>
-              </div>
-              <div class="step">
-                <div class="step-title">Step 2</div>
-                <div class="step-button arrow-box"><span class="center-v">Customize final 20%<br>with React Native</span></div>
-              </div>
-              <div class="step">
-                <div class="step-title">Step 3</div>
-                <div class="step-button publish-button"><span class="center-v">Go live</span></div>
-              </div>
-            </div>
-            <div class="section-footer">Get a head start by creating 80% of your apps with Shoutem and develop only what you need to with React Native:</div>
-          </div>
-        </div>
+						<div class="header-text">
+							<h1 class="main-heading">Supercharge your<br> React Native development<br> with Shoutem</h1>
+							<h2 class="sub-heading">Speed up building beautiful native apps for both<br> iOS and Android with Shoutem extensions.</h2>
+						</div>
 
-        <div class="row section-step1">
-          <div class="section wider">
-            <div class="section-header"><span class="step-label">Step 1</span>Create 80% of the&nbsp;app</span></div>
-            <div class="section-subtitle">
-              We’ve already built most of the functionalities you’d expect from an app.
-            </div>
-            <div class="row">
-              <div class="col-sm-8 hidden-xs hidden-sm builder-image with-arrow">
-                <img src="img/image-builder@2x.png"></img>
-              </div>
-              <div class="col-md-4 bullet-points">
-                <div class="bullet-point"><span class="bullet-icon a"></span><span class="bullet-text">20+ pre-built modules</span></div>
-                <div class="bullet-point"><span class="bullet-icon b"></span><span class="bullet-text">Mobile backend as a service and CMS</span></div>
-                <div class="bullet-point"><span class="bullet-icon a"></span><span class="bullet-text">Dozens of integrations with web services</span></div>
-                <div class="separator"></div>
-                <div class="integrations">
-                  <img src="img/image-modules-and-integrations.svg" alt="">
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+						{% include home-header-video.html %}
 
-        <div class="row blue-background section-step2">
-          <div class="section wider">
-            <div class="section-header"><span class="step-label">Step 2</span>Add Magic (remaining&nbsp;20%)</div>
-            <div class="section-sub-header">Use the time you saved building the core app for innovation.</div>
-            <div class="row">
-              <div class="col-md-4 bullet-points">
-                <div class="bullet-point"><span class="bullet-icon a"></span><span class="bullet-text">Customize built-in extensions</span></div>
-                <div class="bullet-point"><span class="bullet-icon b"></span><span class="bullet-text">Write your own extensions</span></div>
-                <div class="bullet-point"><span class="bullet-icon a"></span><span class="bullet-text">Use built-in SDKs</span></div>
-                <div class="separator"></div>
-                <div class="bullet-point"><span class="bullet-icon react"></span><span class="bullet-text">Powered by React Native</span></div>
-              </div>
-              <div class="col-sm-7 col-sm-offset-1 image-rn-code with-arrow hidden-xs hidden-sm">
-                <img src="img/image-rn-code-combined@2x.png" alt="">
-              </div>
-            </div>
-          </div>
-        </div>
+					</div>
+				</div>
+			</div>
 
-        <div class="row section-step3">
-          <div class="section narrow">
-            <div class="col-md-6 hidden-xs hidden-sm">
-              <div class="image-device"></div>
-              <div class="mobile-screenshot"></div>
-            </div>
-            <div class="col-md-6">
-              <div class="section-header"><span class="step-label">Step 3</span>Go live</div>
-              <div class="section-sub-header">Publish your app on both the App Store and Google Play. Leave the rest to our automated app management.</div>
-              <div class="bullets-wrapper">
-                <div class="bullet-points">
-                  <div class="bullet-point"><span class="bullet-icon a"></span>
-                    <span class="bullet-text">Publish to: 
-                      <span class="group">
-                        <img class="app-store-logo" src="img/app-store.svg" alt=""> + <img class="app-store-logo" src="img/app-store-copy.svg" alt="">
-                      </span>
-                    </span>
-                  </div>
-                  <div class="bullet-point"><span class="bullet-icon b"></span><span class="bullet-text">Engage with your users</span></div>
-                  <div class="bullet-point"><span class="bullet-icon a"></span><span class="bullet-text">Analyze data</span></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+			<div class="row blue-background section-step0 with-arrow">
+				<div class="section narrow">
+					<h2 class="section-header section-header--big">How does it work?</h2>
+					<ol class="flex-container steps">
+						<li>
+							<div class="step-title">Step 1</div>
+							<div class="step-button arrow-box"><span class="center-v">Create 80% of the app <br>with Shoutem</span></div>
+						</li>
+						<li>
+							<div class="step-title">Step 2</div>
+							<div class="step-button arrow-box"><span class="center-v">Customize final 20%<br>with React Native</span></div>
+						</li>
+						<li>
+							<div class="step-title">Step 3</div>
+							<div class="step-button publish-button"><span class="center-v">Go live</span></div>
+						</li>
+					</ol>
+					<div class="section-footer">Get a head start by creating 80% of your apps with Shoutem and develop only what you need to with React Native:</div>
+				</div>
+			</div>
 
-        <div class="row gray-background">
-          <div class="section section-get-started">
-            <div class="section-header section-header--big">Get started now</div>
-            <div class="flex-container">
-              <div class="chapter" onclick="window.location.href='/docs/getting-started/introduction'">
-                <div class="chapter-image blue">
-                  <div class="getting-started-icon"></div>
-                </div>
-                <div class="chapter-content">
-                  <div class="chapter-category">Tutorial</div>
-                  <h4 class="chapter-title">Getting started</h4>
-                  <p class="chapter-description">Create your first custom Shoutem app/extension in three simple steps</p>
-                  <div class="chapter-time"><div class="time-icon"></div><span> 15 min &nbsp;&#8226;&nbsp; Simple</span></div>
-                </div>
-              </div>
-              <div class="chapter" onclick="window.location.href='/docs/ui-toolkit/introduction'">
-                <div class="chapter-image purple">
-                  <div class="ui-toolkit-icon"></div>
-                </div>
-                <div class="chapter-content">
-                  <div class="chapter-category">Reference</div>
-                  <h4 class="chapter-title">UI Toolkit</h4>
-                  <p class="chapter-description">Build skinnable React Native apps sing our professionally designed UI components</p>
-                </div>
-              </div>
-              <div class="chapter" onclick="window.location.href='http://www.shoutem.com'">
-                <div class="chapter-image greyblue">
-                  <div class="shoutem-icon"></div>
-                </div>
-                <div class="chapter-content">
-                  <div class="chapter-category">Explore</div>
-                  <h4 class="chapter-title">Shoutem app builder</h4>
-                  <p class="chapter-description">Shoutem enables anyone to create and manage beautiful apps with minimal effort</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+			<div class="row section-step1 with-arrow">
+				<div class="section wider">
+					<h2 class="section-header">
+						<span class="step-label"><strong>Step 1</strong></span>
+						Create 80% of the&nbsp;app
+					</h2>
+					<h3 class="section-sub-header">
+						We’ve already built most of the functionalities you’d expect from an app.
+					</h3>
+					<div class="row">
+						<div class="col-sm-8 builder-image">
+							<img src="img/image-builder@2x.png"></img>
+						</div>
+						<ul class="col-sm-3 bullet-points">
+							<li><span class="bullet-icon a"></span><span class="bullet-text">20+ pre-built modules</span></li>
+							<li><span class="bullet-icon b"></span><span class="bullet-text">Mobile backend as a service and CMS</span></li>
+							<li><span class="bullet-icon a"></span><span class="bullet-text">Dozens of integrations with web services</span></li>
+							<li class="integrations hidden-xs">
+								<img src="img/image-modules-and-integrations.svg" alt="">
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
 
-      </div>
-    </div>
-    
-    <div id="mobile-menu-overlay" class="mobile-menu-overlay"  onclick="closeMenu();">
-      <div class="close-menu-overlay">
-        <span class="close-icon"></span>
-     </div>
-      <ul>
-        <li class="nav-link primary nav-link-active"><a href="/">Home</a></li>
-        <!--<li class="nav-link primary"><a href="">Features</a></li>-->
-        <li class="nav-link primary"><a href="{{ site.baseurl }}/docs/getting-started/introduction">Docs</a></li>
-        <li class="nav-separator"></li>
-        <li class="nav-link"><a href="http://www.shoutem.com/">Shoutem Home</a></li>
-        <li class="nav-link"><a href="http://www.shoutem.com/about">About</a></li>
-        <li class="nav-link"><a href="http://www.shoutem.com/termsofservice">Terms of service</a></li>
-        <li class="nav-link"><a href="http://www.shoutem.com/privacypolicy">Privacy</a></li>
-        <li class="nav-link"><a href="http://www.shoutem.com/dmca">DMCA</a></li>
-      </ul>
-    </div>
-    {% include footer.html %}
-    <script   src="https://code.jquery.com/jquery-2.2.3.min.js"   integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo="   crossorigin="anonymous"></script>
-    <script type="text/javascript" src="{{ site.baseurl }}/js/animation.js"></script>
-    <script type="text/javascript" src="{{ site.baseurl }}/js/headroom.min.js"></script>
-    <script type="text/javascript" src="{{ site.baseurl }}/js/main.js"></script>
-    {% include ga.html %}
-  </body>
+			<div class="row blue-background section-step2">
+				<div class="section wider">
+					<h2 class="section-header">
+						<span class="step-label"><strong>Step 2</strong></span>
+						Add Magic (remaining&nbsp;20%)
+					</h2>
+					<h3 class="section-sub-header">Use the time you saved building the core app for innovation.</h3>
+					<div class="row">
+						<ul class="col-md-4 bullet-points">
+							<li><span class="bullet-icon a"></span><span class="bullet-text">Customize built-in extensions</span></li>
+							<li><span class="bullet-icon b"></span><span class="bullet-text">Write your own extensions</span></li>
+							<li><span class="bullet-icon a"></span><span class="bullet-text">Use built-in SDKs</span></li>
+							<li><span class="bullet-icon a"></span><span class="bullet-text">Powered by React Native</span><span class="bullet-icon react"></span></li>
+						</ul>
+						<div class="col-sm-7 col-sm-offset-1 image-rn-code with-arrow">
+							<img src="img/image-rn-code-combined@2x.png" alt="">
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="row section-step3">
+				<div class="section narrow">
+					
+					<div class="col-md-6">
+						<h2 class="section-header">
+							<span class="step-label"><strong>Step 3</strong></span>
+							Go live
+						</h2>
+						<h3 class="section-sub-header">Publish your app on both the App Store and Google Play. Leave the rest to our automated app management.</h3>
+						<div class="bullets-wrapper">
+							<ul class="bullet-points">
+								<li><span class="bullet-icon a"></span><span class="bullet-text">Publish to App Store and Google Play</span>
+								</li>
+								<li><span class="bullet-icon b"></span><span class="bullet-text">Engage with your users</span></li>
+								<li><span class="bullet-icon a"></span><span class="bullet-text">Analyze data</span></li>
+							</ul>
+						</div>
+					</div>
+
+				</div>
+			</div>
+
+			<div class="row gray-background">
+				<div class="section section-get-started">
+					<h2 class="section-header section-header--big">Get started now</h2>
+					<div class="flex-container">
+						<a class="chapter" href="/docs/getting-started/introduction">
+							<div class="chapter-image blue">
+								<div class="getting-started-icon"></div>
+							</div>
+							<div class="chapter-content">
+								<h3 class="chapter-category">Tutorial</h3>
+								<h4 class="chapter-title">Getting started</h4>
+								<p class="chapter-description">Create your first custom Shoutem app/extension in three simple steps</p>
+								<div class="chapter-time"><div class="time-icon"></div><span> 15 min &nbsp;&#8226;&nbsp; Simple</span></div>
+							</div>
+						</a>
+						<a class="chapter" href="/docs/ui-toolkit/introduction">
+							<div class="chapter-image purple">
+								<div class="ui-toolkit-icon"></div>
+							</div>
+							<div class="chapter-content">
+								<h3 class="chapter-category">Reference</h3>
+								<h4 class="chapter-title">UI Toolkit</h4>
+								<p class="chapter-description">Build skinnable React Native apps sing our professionally designed UI components</p>
+							</div>
+						</a>
+						<a class="chapter" href="http://www.shoutem.com">
+							<div class="chapter-image greyblue">
+								<div class="shoutem-icon"></div>
+							</div>
+							<div class="chapter-content">
+								<h3 class="chapter-category">Explore</h3>
+								<h4 class="chapter-title">Shoutem app builder</h4>
+								<p class="chapter-description">Shoutem enables anyone to create and manage beautiful apps with minimal effort</p>
+							</div>
+						</a>
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</div>
+	
+	<div id="mobile-menu-overlay" class="mobile-menu-overlay">
+		<div class="close-menu-overlay"></div>
+		<ul class="navigation">
+			<li class="primary active"><a href="/">Home</a></li>
+			<li class="primary">
+				<a href="{{ site.baseurl }}/docs/getting-started/introduction">Documentation</a>
+				<ul>
+					<li><a href="{{ site.baseurl }}/docs/getting-started/introduction/">Shoutem Extensions</a></li>
+					<li><a href="{{ site.baseurl }}/docs/ui-toolkit/introduction/">Shoutem UI Toolkit</a></li>
+				</ul>
+			</li>
+			<li><a href="http://www.shoutem.com/">Shoutem Home</a></li>
+			<li><a href="http://www.shoutem.com/about">About</a></li>
+			<li><a href="http://www.shoutem.com/termsofservice">Terms of service</a></li>
+			<li><a href="http://www.shoutem.com/privacypolicy">Privacy</a></li>
+			<li><a href="http://www.shoutem.com/dmca">DMCA</a></li>
+		</ul>
+	</div>
+
+	{% include footer.html %}
+	<script   src="https://code.jquery.com/jquery-2.2.3.min.js"   integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo="   crossorigin="anonymous"></script>
+	<script type="text/javascript" src="{{ site.baseurl }}/js/animation.js"></script>
+	<script type="text/javascript" src="{{ site.baseurl }}/js/headroom.min.js"></script>
+	<script type="text/javascript" src="{{ site.baseurl }}/js/main.js"></script>
+	{% include ga.html %}
+</body>
 </html>
