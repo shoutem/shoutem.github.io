@@ -261,11 +261,6 @@ p {
         @media screen and (min-width: 480px) {
             bottom: 20px;
         }
-
-        @media screen and (min-width: 992px) and (max-width: 1280px) {
-            left: 33.3333333%;
-            bottom: 20px;
-        }
     }
     
     .header-text {
@@ -350,35 +345,26 @@ p {
     .with-image .sub-heading {
         margin-top: 23px;
         text-align: left;
+        font-size: 16px;
+        font-weight: 500;
+        max-width: 380px;
 
         @include large-2 {
-            max-width: 80%;
 
             br {
                 display: none;
             }
         }
 
-        @include large {
-            max-width: 90%;
-        }
-
         @include medium-2 {
             text-align: center;
-            max-width: 540px;
-            font-size: 24px;
+            max-width: 360px;
             margin-left: auto;
             margin-right: auto;
         }
 
-        @include medium {
-            font-size: 20px;
-            max-width: 460px;
-        }
-
         @include mobile {
             text-align: center;
-            font-size: 16px;
             font-weight: 500;
             margin-top: 12px;
         }
@@ -829,7 +815,7 @@ p {
         }
     }
 
-    @include large {
+    @media screen and (max-width: 1152px) {
         background-size: 410px, 358px;
         background-position: left 48px top 25px, left 83px top 75px;
     }
