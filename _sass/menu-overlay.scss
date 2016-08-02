@@ -83,6 +83,10 @@
         overflow: auto;
         background: #FFF;
         transition: right .5s;
+
+        @include tiny {
+            width: 256px;
+        }
     }
     
     .close-menu-overlay {

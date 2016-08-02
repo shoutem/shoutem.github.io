@@ -38,6 +38,12 @@
   }
 }
 
+@mixin tiny {
+  @media only screen and (max-width: 359px) {
+    @content;
+  }
+}
+
 @mixin mobile {
   @media only screen and (max-width: 480px) {
     @content;
