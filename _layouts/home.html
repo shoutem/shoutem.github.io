@@ -158,24 +158,25 @@
 		</div>
 	</div>
 	
-	<div id="mobile-menu-overlay" class="mobile-menu-overlay"  onclick="closeMenu();">
-		<div class="close-menu-overlay">
-			<span class="close-icon"></span>
-		</div>
-		<ul>
-			<li class="nav-link primary nav-link-active"><a href="/">Home</a></li>
-			<!--<li class="nav-link primary"><a href="">Features</a></li>-->
-			<li class="nav-link primary"><a href="{{ site.baseurl }}/docs/getting-started/introduction">Docs</a></li>
-			<li class="nav-separator"></li>
-			<li class="nav-link"><a href="http://www.shoutem.com/">Shoutem Home</a></li>
-			<li class="nav-link"><a href="http://www.shoutem.com/about">About</a></li>
-			<li class="nav-link"><a href="http://www.shoutem.com/termsofservice">Terms of service</a></li>
-			<li class="nav-link"><a href="http://www.shoutem.com/privacypolicy">Privacy</a></li>
-			<li class="nav-link"><a href="http://www.shoutem.com/dmca">DMCA</a></li>
-			<li class="nav-link icon-github"><a href="https://github.com/shoutem/shoutem.github.io">Github</a></li>
-        	<li class="nav-link icon-twitter"><a href="https://twitter.com/shoutem">Twitter</a></li>
+	<div id="mobile-menu-overlay" class="mobile-menu-overlay">
+		<div class="close-menu-overlay"></div>
+		<ul class="navigation">
+			<li class="primary active"><a href="/">Home</a></li>
+			<li class="primary">
+				<a href="{{ site.baseurl }}/docs/getting-started/introduction">Documentation</a>
+				<ul>
+					<li><a href="{{ site.baseurl }}/docs/">Shoutem Extensions</a></li>
+					<li><a href="{{ site.baseurl }}/docs/">Shoutem UI Toolkit</a></li>
+				</ul>
+			</li>
+			<li><a href="http://www.shoutem.com/">Shoutem Home</a></li>
+			<li><a href="http://www.shoutem.com/about">About</a></li>
+			<li><a href="http://www.shoutem.com/termsofservice">Terms of service</a></li>
+			<li><a href="http://www.shoutem.com/privacypolicy">Privacy</a></li>
+			<li><a href="http://www.shoutem.com/dmca">DMCA</a></li>
 		</ul>
 	</div>
+
 	{% include footer.html %}
 	<script   src="https://code.jquery.com/jquery-2.2.3.min.js"   integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo="   crossorigin="anonymous"></script>
 	<script type="text/javascript" src="{{ site.baseurl }}/js/animation.js"></script>
