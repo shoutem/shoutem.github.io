@@ -1,91 +1,93 @@
-#wrapper .pager {
-    background: #FFFFFF;
-    position: absolute;
-    left: 0;
-    right: 0;
-    margin: 0;
-    padding-top: 80px;
+#pager-wrapper
+{
+    max-width: 1440px;
+    margin: 0 auto;
 
-    a {
-        width: 50%;
-        border: none;
-        border-radius: 0;
-        height: 88px;
-        padding-top: 32px;
-    }
+    .pager {
+        background: #FFFFFF;
+        margin: 0 0 0 280px;
 
-    .previous a {
-        background-color: $lightaccent;
-        color: $accent;
-        transition: background 0.2s linear;
-        
-        &:hover {
-            background-color: rgba(0,170,223,0.14);
+        a {
+            width: 50%;
+            border: none;
+            border-radius: 0;
+            height: 88px;
+            padding-top: 32px;
         }
 
-        &::before {
-            content: " ";
-            display: inline-block;
-            width: 13px;
-            height: 13px;
-            margin-right: 24px;
-            background: url(/img/icon-arrow-left.svg) center center no-repeat;
-            vertical-align: middle;
-            margin-bottom: 1px;
+        .previous a {
+            background-color: $lightaccent;
+            color: $accent;
+            transition: background 0.2s linear;
+            
+            &:hover {
+                background-color: rgba(0,170,223,0.14);
+            }
+
+            &::before {
+                content: " ";
+                display: inline-block;
+                width: 13px;
+                height: 13px;
+                margin-right: 24px;
+                background: url(/img/icon-arrow-left.svg) center center no-repeat;
+                vertical-align: middle;
+                margin-bottom: 1px;
+            }
         }
-    }
 
-    .next a {
-        background-color: $accent;
-        color: #fff;
-        transition: background 0.2s linear;
-        
-        &:hover {
-            background-color: #00bef7;
-        }
-
-        &::after {
-            content: " ";
-            display: inline-block;
-            width: 13px;
-            height: 13px;
-            margin-left: 24px;
-            background: url(/img/icon-arrow-right.svg) center center no-repeat;
-            vertical-align: middle;
-            margin-bottom: 1px;
-        }
-    }
-    
-    img {
-        position: relative;
-        width: 13px;
-        height: 13px;
-        bottom: 1px;
-    }
-    
-    .docs-pager-icon-left {
-        right: 24px;
-    }
-    
-    .docs-pager-icon-right {
-        left: 24px;
-    }
-
-    .inactive
-    {
-        background-color: $lightaccent;
-        float: left;
-        width: 50%;
-        height: 88px;
-        padding-top: 32px;
-
-        &.next {
+        .next a {
             background-color: $accent;
+            color: #fff;
+            transition: background 0.2s linear;
+            
+            &:hover {
+                background-color: #00bef7;
+            }
+
+            &::after {
+                content: " ";
+                display: inline-block;
+                width: 13px;
+                height: 13px;
+                margin-left: 24px;
+                background: url(/img/icon-arrow-right.svg) center center no-repeat;
+                vertical-align: middle;
+                margin-bottom: 1px;
+            }
+        }
+        
+        img {
+            position: relative;
+            width: 13px;
+            height: 13px;
+            bottom: 1px;
+        }
+        
+        .docs-pager-icon-left {
+            right: 24px;
+        }
+        
+        .docs-pager-icon-right {
+            left: 24px;
         }
 
-        a
+        .inactive
         {
-            display: none;
+            background-color: $lightaccent;
+            float: left;
+            width: 50%;
+            height: 88px;
+            padding-top: 32px;
+
+            &.next {
+                background-color: $accent;
+            }
+
+            a
+            {
+                display: none;
+            }
         }
     }
 }

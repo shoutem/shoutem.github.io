@@ -1,57 +1,6 @@
 @import "variables";
 @import "mixins";
 
-.navigation {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    background: #FFF;
-
-    ul {
-        list-style: none;
-        margin: 0 0 17px;
-        padding: 0 0 15px;
-        border-bottom: 1px solid #ececec;
-
-        li a {
-            padding-left: 40px;
-        }
-    }
-
-    li {
-        font-size: 14px;
-        
-        
-        &.primary {
-            font-size: 16px;
-            
-            > a {
-                height: 48px;
-                line-height: 48px;
-            }
-        }
-
-        &.active a {
-            background-color: $lightaccent;
-        }
-        
-        a {
-            height: 40px;
-            width: 100%;
-            display: inline-block;
-            line-height: 40px;
-            vertical-align: middle;
-            color: $primary;
-            text-decoration: none;
-            padding-left: 24px;
-
-            &:hover {
-                background-color: $lightaccent;
-            }
-        }
-    }
-}
-
 .mobile-menu-overlay {
     position: fixed;
     visibility: hidden;
@@ -83,6 +32,16 @@
         overflow: auto;
         background: #FFF;
         transition: right .5s;
+
+        ul {
+            border-bottom: 1px solid #ececec;
+            margin: 0 0 17px;
+            padding: 0 0 15px;
+
+            li a {
+                padding-left: 40px;
+            }
+        }
 
         @include tiny {
             width: 256px;

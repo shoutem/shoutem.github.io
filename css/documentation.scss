@@ -158,6 +158,52 @@ pre[data-line] {
     opacity: 0;
 }
 
+/* Navbar */
+
+.navbar {
+    border-bottom: 1px solid #ececec;
+
+    &.navbar-default .navbar-toggle {
+        margin-right: 20px;
+    }
+
+    .navbar-brand {
+        padding: 31px;
+        margin-top: 0;
+        border-right: 1px solid #ececec;
+    }
+
+    .navbar-brand--logo {
+        background-image: url('../img/icon-shoutem-mark.svg');
+        width: 18px;
+        height: 18px;
+    }
+}
+
+
+
+#documentationTab {
+    display: none;
+}
+
+/* Navigation */
+
+#sidebar-wrapper
+{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    height: calc(100% - 80px);
+    width: 280px;
+    border-right: 1px solid #ececec;
+    overflow: auto;
+    padding: 28px 0;
+
+    @media screen and (min-width: 1441px) {
+        left: calc(50% - 720px);
+    }
+}
+
 .menu-group-wrapper
 {
     display: none;

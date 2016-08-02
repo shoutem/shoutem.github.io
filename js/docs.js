@@ -73,24 +73,12 @@ $(function() {
       $signupModal.removeClass("active");
   });
 
-
-
-  /* Fixed sidebar navigation */
-
-  var $sidebar = $("#sidebar-wrapper");
-
-  $window.on("scroll resize", fixedSidebar);
-
-  fixedSidebar();
+  
 
   // prevent document scrolling upon reaching sidebar menu scroll end
   // http://jsfiddle.net/troyalford/4wrxq/4/
-  $(".sidebar-nav").on("wheel mousewheel DOMMouseScroll", function(ev)
+  $("#sidebar-wrapper").on("wheel mousewheel DOMMouseScroll", function(ev)
   {
-    if( $window.width() < 960 ) {
-      return;
-    }
-
     var $this = $(this),
       scrollTop = this.scrollTop,
       scrollHeight = this.scrollHeight,
@@ -116,30 +104,6 @@ $(function() {
       return false;
     }
   });
-
-  function fixedSidebar ()
-  {
-    if( $window.width() < 960 ) {
-      return;
-    }
-
-    var scrollTop = $window.scrollTop();
-    var dHeight = $document.height();
-    var wHeight = $window.height();
-    var bottom = dHeight - wHeight - scrollTop;
-
-    if( scrollTop > 0 ) {
-        $body.addClass("fixed-sidebar");
-    } else {
-        $body.removeClass("fixed-sidebar");
-    }
-
-    if( bottom <= 260 ) {
-      $sidebar.height("calc(100vh - 135px - " + (260 - bottom) + "px)");
-    } else {
-      $sidebar.height("");
-    }
-  }
 
   function getLocation( location ) {
     location = location || window.location.href;
