@@ -56,6 +56,8 @@ $(function() {
     showNavButtons();
     prepareCodeblocks();
     Prism.highlightAll();
+
+    $(".mobile-menu-overlay, #sidebar-wrapper").removeClass("open");
   });
 
 
@@ -146,12 +148,16 @@ $(function() {
       var $nextLink = $('#pager-wrapper .next a');
       var $prevPar = $prevLink.parent();
       var $nextPar = $nextLink.parent();
+      var $prevText = $prev.text();
+      var $nextText = $next.text();
       
       $prevLink.attr('href', prevUrl);
-      $prevLink.text($prev.text());
+      $prevLink.text($prevText);
+      $prevLink.attr("title", $prevText);
       
       $nextLink.attr('href', nextUrl);
-      $nextLink.text($next.text());
+      $nextLink.text($nextText);
+      $nextLink.attr("title", $nextText);
 
       if( prevUrl ) {
         $prevPar.removeClass('inactive');

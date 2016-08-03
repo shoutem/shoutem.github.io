@@ -163,17 +163,24 @@
     margin-left: 24px;
     background: none;
     color: $primary;
+    float: left;
 
     li:first-child {
         opacity: 0.7;
     }
 
-    li + li:before {
+    li + li {
+      &:before {
         content: "";
         display: inline-block;
         background: url(/img/icon-descriptive-next.svg) center center no-repeat;
         width: 24px;
         height: 12px;
         margin: 0 17px 0 13px;
+      }
+
+      @include small {
+        display: none;
+      }
     }
 }

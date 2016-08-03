@@ -7,12 +7,22 @@
         background: #FFFFFF;
         margin: 0 0 0 280px;
 
+        @include medium-2 {
+            margin-left: 0;
+        }
+
         a {
             width: 50%;
             border: none;
             border-radius: 0;
             height: 88px;
-            padding-top: 32px;
+            padding-top: 31px;
+
+            @include small {
+                height: 72px;
+                padding-top: 28px;
+                line-height: normal;
+            }
         }
 
         .previous a {
@@ -34,6 +44,11 @@
                 vertical-align: middle;
                 margin-bottom: 1px;
             }
+
+            @include small {
+                color: transparent;
+                width: 72px !important;
+            }
         }
 
         .next a {
@@ -54,6 +69,17 @@
                 background: url(/img/icon-arrow-right.svg) center center no-repeat;
                 vertical-align: middle;
                 margin-bottom: 1px;
+            }
+
+            @include small {
+                width: calc(100% - 72px);
+            }
+        }
+
+        .previous {
+            @include small {
+                overflow: hidden;
+                width: 72px !important;
             }
         }
         
@@ -82,11 +108,18 @@
 
             &.next {
                 background-color: $accent;
+
+                @include small {
+                    width: calc(100% - 72px);
+                }
             }
 
-            a
-            {
+            a {
                 display: none;
+            }
+
+            @include small {
+                height: 72px;
             }
         }
     }
