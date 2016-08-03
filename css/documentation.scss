@@ -244,7 +244,7 @@ pre[data-line] {
     position: fixed;
     left: 0;
     bottom: 0;
-    height: calc(100% - 80px);
+    height: calc(100% - 81px);
     width: 280px;
     border-right: 1px solid #ececec;
     overflow: auto;
@@ -303,7 +303,7 @@ pre[data-line] {
     top: 0;
     left: -100%;
     opacity: 0;
-    background-color: #1c2232;
+    background-color: rgba(68,79,108,0.5);
     z-index: 1080;
     transition: opacity 0.5s;
 
@@ -326,6 +326,8 @@ pre[data-line] {
         transition: max-height 0.5s;
         background-color: #FFF;
         overflow: hidden;
+        box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.2);
+        border-radius: 2px;
     }
 
     &.active .content {

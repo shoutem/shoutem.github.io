@@ -127,6 +127,13 @@
   overflow: hidden;
   display: block;
 }
+
+.home .navbar-brand--logo {
+    @media (min-width: 768px) {
+        margin-left: 15px;
+    }
+}
+
 #wrapper {
   padding-top: 80px;
 }

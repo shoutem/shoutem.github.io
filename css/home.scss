@@ -319,6 +319,7 @@ p {
 
         @include small {
             font-size: 36px;
+            font-weight: 300;
         }
 
         @include mobile {
