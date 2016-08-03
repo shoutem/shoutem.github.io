@@ -43,11 +43,23 @@
 
             &.menu-group-title {
                 font-size: 16px;
+                height: 48px;
+                line-height: 48px;
             }
 
             &:hover {
                 background-color: $lightaccent;
             }
+        }
+    }
+
+    &.sidebar-nav{
+        a {
+            padding-left: 48px;
+        }
+
+        ul li a {
+            padding-left: 64px;
         }
     }
 }

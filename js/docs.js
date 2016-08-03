@@ -26,8 +26,12 @@ $(function() {
     replaceDelay: animationTime
   });
 
-  flourish.on("post_fetch", function( options, output, self )
+  flourish.on("post_fetch", function( options, output )
   {
+    var title = output.title.split(/\s*-\s*/);
+    flourish.page_title = title[0];
+    flourish.page_section = title[1];
+
     setTimeout(function () {
       $body.removeClass("loading");
     }, animationTime * 1.5);
@@ -36,6 +40,9 @@ $(function() {
   flourish.on("post_replace", function ()
   {
     var loc = currentLocation = getLocation();
+
+    $(".page-title").text(flourish.page_title);
+    $(".page-section").text(flourish.page_section);
 
     $(".menu-group-wrapper:not(#" + loc.section + ")").removeClass("active");
     $("#" + loc.section).addClass("active");
@@ -156,6 +163,12 @@ $(function() {
         $nextPar.removeClass('inactive');
       } else {
         $nextPar.addClass('inactive');
+      }
+
+      if( ! prevUrl && ! nextUrl ) {
+        $('#pager-wrapper').addClass("hidden");
+      } else {
+        $('#pager-wrapper').removeClass("hidden");
       }
   }
 
