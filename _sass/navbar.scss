@@ -102,8 +102,6 @@
             border: 1px solid #00BEF7;
         }
     }
-    
-    
 }
 
 .navbar .container-fluid {
@@ -189,5 +187,9 @@
       @include small {
         display: none;
       }
+    }
+
+    @include small {
+        margin-top: 14px;
     }
 }

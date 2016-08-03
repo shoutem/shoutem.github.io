@@ -15,6 +15,7 @@ h1{
 
     @include mobile {
         font-size: 36px;
+        margin-top: 34px;
     }
 }
 
@@ -183,6 +184,11 @@ pre[data-line] {
 .navbar {
     border-bottom: 1px solid #ececec;
 
+    @include small {
+        min-height: 0;
+        height: 72px;
+    }
+
     .navbar-header {
         @media (min-width: 768px) and (max-width: 991px) {
             width: 100%;
@@ -201,6 +207,10 @@ pre[data-line] {
         padding: 31px;
         margin-top: 0;
         border-right: 1px solid #ececec;
+
+        @include small {
+            padding: 27px;
+        }
     }
 
     .navbar-brand--logo {
@@ -216,6 +226,10 @@ pre[data-line] {
 
         @media (min-width: 992px) {
             display: none;
+        }
+
+        @include small {
+            margin-top: 23px;
         }
     }
 }
