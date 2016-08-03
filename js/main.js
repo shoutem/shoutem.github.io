@@ -23,10 +23,10 @@ $(function() {
 	}
 
 	$(".close-menu-overlay").on("click", function () {
-	    $("#mobile-menu-overlay").removeClass("open");
+	    $(".mobile-menu-overlay, #sidebar-wrapper").removeClass("open");
 	});
 
 	$(".navbar-toggle").on("click", function () {
-	    $("#mobile-menu-overlay").addClass("open");
+	    $(".mobile-menu-overlay, #sidebar-wrapper").addClass("open");
 	});
 });

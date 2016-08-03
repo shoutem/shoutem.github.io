@@ -11,18 +11,20 @@
     z-index: 1060;
     transition: visibility 0.5s;
     
-    &.open {
-        visibility: visible;
+    @include medium-2 {
+        &.open {
+            visibility: visible;
 
-        .navigation {
-            right: 0;
-        }
+            .navigation {
+                right: 0;
+            }
 
-        .close-menu-overlay {
-            opacity: 1;
+            .close-menu-overlay {
+                opacity: 1;
+            }
         }
     }
-    
+
     .navigation {
         position: absolute;
         right: -100%;
