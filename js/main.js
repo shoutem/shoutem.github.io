@@ -13,6 +13,19 @@ $(function() {
 		
 		onFooterResize();
 
+		// header
+	
+		var headroom  = new Headroom($("nav.headroom").get(0), 
+			{
+				tolerance: {
+					down : 10, up : 20
+				},
+				offset : 81
+			}	
+		);
+
+		headroom.init();
+
 		$('a[href="#signup"]').on("click", function(e) {
 			e.preventDefault();
 
