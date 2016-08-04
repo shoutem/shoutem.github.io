@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <defs>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-1">
+            <stop stop-color="#DADCE2" offset="0%"></stop>
+            <stop stop-color="#000000" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Icons/Descriptive/ic-descriptive-next">
+            <polygon id="Bounds" fill="url(#linearGradient-1)" opacity="0" points="0 0 24 0 24 24 0 24"></polygon>
+            <polygon id="Icon-Shape" fill="#BDC0CB" points="9.59 18.16 15.25 12.5 9.59 6.84 8.89 7.55 13.84 12.5 8.89 17.45"></polygon>
+        </g>
+    </g>
+</svg>

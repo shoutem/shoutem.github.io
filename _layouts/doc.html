@@ -1,186 +1,98 @@
 <!DOCTYPE html>
 <html>
 
-  {% include head.html %}
-  <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/css/prism.css">
-  <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/css/documentation.css">
-  <!-- <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/lib/codemirror/codemirror.css"> -->
-  </head>
+{% include head.html %}
+<link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/css/prism.css">
+<link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/css/documentation.css">
+<!-- <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/lib/codemirror/codemirror.css"> -->
+</head>
 
-	<body>
+<body class="documentation">
   {% include navbar.html %}
 
-	<div id="wrapper">
-    <div class="container-docs clearfix">
-      <div id="sidebar-wrapper">
-  <ul class="sidebar-nav" id="menu">
+  <div id="sidebar-wrapper">
 
-    <li class="sidebar-brand">
-      <a href="/docs/">
-          Developer portal
-      </a>
-    </li>
-    <!-- Extensions -->
-    <li>
-      <a class="menu-group-title" href="{{ site.baseurl }}/docs/getting-started/introduction">Getting Started</a>
-      <div id="getting-started" class="menu-group-wrapper">
-        <ul>
-          <li>
-            <a href="{{ site.baseurl }}/docs/getting-started/introduction">Introduction</a>
-          </li>
-          <li>
-            <a href="{{ site.baseurl }}/docs/getting-started/development-environment">Setting up the environment</a>
-          </li>
-          <li>
-            <a href="{{ site.baseurl }}/docs/getting-started/initializing-extension">Initializing extension</a>
-          </li>
-          <li>
-            <a href="{{ site.baseurl }}/docs/getting-started/navigation-and-screen">Creating navigation and screen</a>
-          </li>
-          <li>
-            <a href="{{ site.baseurl }}/docs/getting-started/using-ui-toolkit">Using UI Toolkit</a>
-          </li>
-          <li>
-            <a href="{{ site.baseurl }}/docs/getting-started/using-cloud-storage">Using Cloud Storage</a>
-          </li>
-          <li>
-            <a href="{{ site.baseurl }}/docs/getting-started/working-with-data">Working with data</a>
-          </li>
-          <li>
-            <a href="{{ site.baseurl }}/docs/getting-started/publish">Publishing</a>
-          </li>
-        </ul>
-      </div>
-    </li>
-    
-        <!-- Tutorials -->
-    <li>
-      <a class="menu-group-title" href="{{ site.baseurl }}/docs/tutorials/alternativelayouts">Tutorials</a>
-      <div id="tutorials" class="menu-group-wrapper">
-        <ul>
-           <li>
-            <a href="{{ site.baseurl }}/docs/tutorials/alternativelayouts">Alternative layouts</a>
-          </li>
-          <li>
-            <a href="{{ site.baseurl }}/docs/tutorials/usingauthentication">Using authentication</a>
-          </li>
-        </ul>
-      </div>
-    </li>
+    <ul class="sidebar-nav navigation" id="menu">
 
-    <!-- Components -->
-    <li>
-      <a class="menu-group-title" href="{{ site.baseurl }}/docs/ui-toolkit/introduction">UI toolkit</a>
-      <div id="ui-toolkit" class="menu-group-wrapper">
-        <ul>
-       	   <li>
-            <a href="{{ site.baseurl }}/docs/ui-toolkit/introduction">Introduction</a>
-          </li>
-          <li>
-            <a href="{{ site.baseurl }}/docs/ui-toolkit/theme">Theme</a>
-          </li>
-       	  <li>
-            <a href="{{ site.baseurl }}/docs/ui-toolkit/typography">Typography</a>
-          </li>
-          <li>
-            <a href="{{ site.baseurl }}/docs/ui-toolkit/navigation-bar">Navigation Bar</a>
-          </li>
-          <li>
-            <a href="{{ site.baseurl }}/docs/ui-toolkit/dropdown-menu">Dropdown Menu</a>
-          </li>
-          <li>
-            <a href="{{ site.baseurl }}/docs/ui-toolkit/list-view">List View</a>
-          </li>
-          <li>
-            <a href="{{ site.baseurl }}/docs/ui-toolkit/grid-view">Grid View</a>
-          </li>
-          <li>
-            <a href="{{ site.baseurl }}/docs/ui-toolkit/cards">Cards</a>
-          </li>
-          <li>
-            <a href="{{ site.baseurl }}/docs/ui-toolkit/dividers">Dividers</a>
-          </li>
-          <li>
-            <a href="{{ site.baseurl }}/docs/ui-toolkit/rows">Rows</a>
-          </li>
-          <li>
-            <a href="{{ site.baseurl }}/docs/ui-toolkit/tiles">Tiles</a>
-          </li>
-          <li>
-            <a href="{{ site.baseurl }}/docs/ui-toolkit/image-preview">Image Preview</a>
-          </li>
-          <li>
-            <a href="{{ site.baseurl }}/docs/ui-toolkit/horizontal-pager">Horizontal Pager</a>
-          </li>
-          <li>
-            <a href="{{ site.baseurl }}/docs/ui-toolkit/image-gallery">Image Gallery</a>
-          </li>
-          <li>
-            <a href="{{ site.baseurl }}/docs/ui-toolkit/video">Video</a>
-          </li>
-          <li>
-            <a href="{{ site.baseurl }}/docs/ui-toolkit/spinner">Spinner</a>
-          </li>
-          <li>
+      <!-- Extensions -->
+      <li><a class="menu-group-title" href="{{ site.baseurl }}/docs/getting-started/introduction">Getting Started</a>
+        <ul id="getting-started" class="menu-group-wrapper">
+          <li><a href="{{ site.baseurl }}/docs/getting-started/introduction">Introduction</a></li>
+          <li><a href="{{ site.baseurl }}/docs/getting-started/development-environment">Setting up the environment</a></li>
+          <li><a href="{{ site.baseurl }}/docs/getting-started/initializing-extension">Initializing extension</a></li>
+          <li><a href="{{ site.baseurl }}/docs/getting-started/navigation-and-screen">Creating navigation and screen</a></li>
+          <li><a href="{{ site.baseurl }}/docs/getting-started/using-ui-toolkit">Using UI Toolkit</a></li>
+          <li><a href="{{ site.baseurl }}/docs/getting-started/using-cloud-storage">Using Cloud Storage</a></li>
+          <li><a href="{{ site.baseurl }}/docs/getting-started/working-with-data">Working with data</a></li>
+          <li><a href="{{ site.baseurl }}/docs/getting-started/publish">Publishing</a></li>
         </ul>
-      </div>
-    </li>
-    <!-- CLI -->
-    <li>
-      <a class="menu-group-title" href="{{ site.baseurl }}/docs/cli/reference">CLI</a>
-      <div id="cli" class="menu-group-wrapper">
-        <ul>
-       	   <li>
-            <a href="{{ site.baseurl }}/docs/cli/reference">Reference</a>
-          </li>
+      </li>
+
+      <!-- Tutorials -->
+      <li><a class="menu-group-title" href="{{ site.baseurl }}/docs/tutorials/alternativelayouts">Tutorials</a>
+        <ul id="tutorials" class="menu-group-wrapper">
+          <li><a href="{{ site.baseurl }}/docs/tutorials/alternativelayouts">Alternative layouts</a></li>
+          <li><a href="{{ site.baseurl }}/docs/tutorials/usingauthentication">Using authentication</a></li>
         </ul>
-  </ul>
-</div>
+      </li>
+
+      <!-- Components -->
+      <li>
+        <a class="menu-group-title" href="{{ site.baseurl }}/docs/ui-toolkit/introduction">UI toolkit</a>
+        <ul id="ui-toolkit" class="menu-group-wrapper">
+          <li><a href="{{ site.baseurl }}/docs/ui-toolkit/introduction">Introduction</a></li>
+          <li><a href="{{ site.baseurl }}/docs/ui-toolkit/theme">Theme</a></li>
+          <li><a href="{{ site.baseurl }}/docs/ui-toolkit/typography">Typography</a></li>
+          <li><a href="{{ site.baseurl }}/docs/ui-toolkit/navigation-bar">Navigation Bar</a></li>
+          <li><a href="{{ site.baseurl }}/docs/ui-toolkit/dropdown-menu">Dropdown Menu</a></li>
+          <li><a href="{{ site.baseurl }}/docs/ui-toolkit/list-view">List View</a></li>
+          <li><a href="{{ site.baseurl }}/docs/ui-toolkit/grid-view">Grid View</a></li>
+          <li><a href="{{ site.baseurl }}/docs/ui-toolkit/cards">Cards</a></li>
+          <li><a href="{{ site.baseurl }}/docs/ui-toolkit/dividers">Dividers</a></li>
+          <li><a href="{{ site.baseurl }}/docs/ui-toolkit/rows">Rows</a></li>
+          <li><a href="{{ site.baseurl }}/docs/ui-toolkit/tiles">Tiles</a></li>
+          <li><a href="{{ site.baseurl }}/docs/ui-toolkit/image-preview">Image Preview</a></li>
+          <li><a href="{{ site.baseurl }}/docs/ui-toolkit/horizontal-pager">Horizontal Pager</a></li>
+          <li><a href="{{ site.baseurl }}/docs/ui-toolkit/image-gallery">Image Gallery</a></li>
+          <li><a href="{{ site.baseurl }}/docs/ui-toolkit/video">Video</a></li>
+          <li><a href="{{ site.baseurl }}/docs/ui-toolkit/spinner">Spinner</a></li>
+        </ul>
+      </li>
+
+      <!-- CLI -->
+      <li>
+        <a class="menu-group-title" href="{{ site.baseurl }}/docs/cli/reference">CLI</a>
+        <ul id="cli" class="menu-group-wrapper">
+          <li><a href="{{ site.baseurl }}/docs/cli/reference">Reference</a></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+
+  <div id="wrapper">
 
     <div class="documentation-wrapper">
-      <div class="container-fluid">
-        <div id="documentation">
+      <div id="documentation">
         <!-- It will work both on page and github markdown -->
         {{ content | replace: 'http://shoutem.github.io' : site.baseurl }}
-				</div>
       </div>
-    </div>
-    <div class"clearfix"></div>
     </div>
 
     <nav id="pager-wrapper">
       <ul class="pager">
-        <li class="previous inactive">
-          <a href="#">Previous</a>
-        </li>
-        <li class="next inactive">
-          <a href="#">Next</a>
-        </li>
+        <li class="previous inactive"><a href="#">Previous</a></li>
+        <li class="next inactive"><a href="#">Next</a></li>
       </ul>
     </nav>
+
+</div>
+
+<div class="mobile-menu-overlay">
+  <div class="close-menu-overlay">
   </div>
+</div>
 
-  <div id="mobile-menu-overlay" class="mobile-menu-overlay" onclick="closeMenu()">
-      <div class="close-menu-overlay">
-        <span class="close-icon"></span>
-     </div>
-      <ul>
-        <li class="nav-link primary"><a href="/">Home</a></li>
-        <!--<li class="nav-link primary"><a href="">Features</a></li>-->
-        <li class="nav-link primary nav-link-active"><a href="{{ site.baseurl }}/docs/getting-started/introduction">Docs</a></li>
-        <li class="nav-separator"></li>
-        <li class="nav-link"><a href="http://www.shoutem.com/">Shoutem Home</a></li>
-        <li class="nav-link"><a href="http://www.shoutem.com/about">About</a></li>
-        <li class="nav-link"><a href="http://www.shoutem.com/termsofservice">Terms of service</a></li>
-        <li class="nav-link"><a href="http://www.shoutem.com/privacypolicy">Privacy</a></li>
-        <li class="nav-link"><a href="http://www.shoutem.com/dmca">DMCA</a></li>
-      </ul>
-    </div>
-
-  {% include signup-modal.html %}
-
-  {% include footer.html %}
-  <!-- Set active menu -->
+{% include signup-modal.html %}
 
   <!-- <script src="{{ site.baseurl }}/lib/codemirror/codemirror.js"></script>
   <script src="{{ site.baseurl }}/lib/codemirror/mode/javascript/javascript.js"></script>
@@ -193,7 +105,7 @@
   <script src="{{ site.baseurl }}/js/docs.js"></script>
   <script src="{{ site.baseurl }}/js/prism.js" data-manual></script>
   {% include ga.html %}
-	</body>
+</body>
 
 </html>
 

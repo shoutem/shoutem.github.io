@@ -102,8 +102,6 @@
             border: 1px solid #00BEF7;
         }
     }
-    
-    
 }
 
 .navbar .container-fluid {
@@ -113,8 +111,8 @@
     padding: 0;
     height: auto;
     margin-top: 21px;
-    margin-left: 0 !important;
-    margin-right: 0 !important;
+    margin-left: 0;
+    margin-right: 0;
 }
 .navbar .navbar-brand--logo {
   background-image: url('../img/logo-shoutem-for-developers.svg');
@@ -123,7 +121,17 @@
   background-size: 100%;
   width: 187px;
   height: 34px;
+  text-indent: -1000%;
+  overflow: hidden;
+  display: block;
 }
+
+.home .navbar-brand--logo {
+    @media (min-width: 768px) {
+        margin-left: 15px;
+    }
+}
+
 #wrapper {
   padding-top: 80px;
 }
@@ -136,7 +144,6 @@
       padding: 12px 16px 0;
       margin-right: 0px; 
   }
-  
 }
 
 
@@ -149,4 +156,40 @@
 .navbar-toggle .icon-bar {
     width: 17px;
     height: 1px;
+}
+
+.home .breadcrumb {
+    display: none;
+}
+
+.breadcrumb {
+    margin-top: 19px;
+    margin-bottom: 0;
+    margin-left: 24px;
+    background: none;
+    color: $primary;
+    float: left;
+
+    li:first-child {
+        opacity: 0.7;
+    }
+
+    li + li {
+      &:before {
+        content: "";
+        display: inline-block;
+        background: url(/img/icon-descriptive-next.svg) center center no-repeat;
+        width: 24px;
+        height: 12px;
+        margin: 0 17px 0 13px;
+      }
+
+      @include small {
+        display: none;
+      }
+    }
+
+    @include small {
+        margin-top: 14px;
+    }
 }

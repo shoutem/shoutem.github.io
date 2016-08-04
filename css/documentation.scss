@@ -1,22 +1,43 @@
 ---
 ---
 @import "colors";
+@import "mixins";
 @import "documentation-layout";
 @import "sidebar";
 @import "pager";
 @import "variables";
-@import "mixins";
 @import "footer";
 @import "menu-overlay";
 
 h1{
+    margin-top: 70px;
     margin-bottom: 33px;
+
+    @include mobile {
+        font-size: 36px;
+        margin-top: 34px;
+    }
 }
 
 h2 {
     font-weight: 300;
     margin-top: 64px;
     margin-bottom: 16px;
+
+    @include mobile {
+        font-size: 18px;
+        line-height: 32px;
+        margin-top: 48px;
+        font-weight: 500;
+    }
+}
+
+h3 {
+    @include mobile {
+        font-size: 16px;
+        line-height: 30px;
+        font-weight: 500;
+    }
 }
 
 h4 {
@@ -158,6 +179,119 @@ pre[data-line] {
     opacity: 0;
 }
 
+/* Navbar */
+
+.navbar {
+    border-bottom: 1px solid #ececec;
+
+    @include small {
+        min-height: 0;
+        height: 72px;
+    }
+
+    .navbar-header {
+        @media (min-width: 768px) and (max-width: 991px) {
+            width: 100%;
+        }
+    }
+
+    &.navbar-default .navbar-toggle {
+        margin-right: 20px;
+
+        @media (min-width: 768px) {
+            margin-right: 5px;
+        }
+    }
+
+    .navbar-brand {
+        padding: 31px;
+        margin-top: 0;
+        border-right: 1px solid #ececec;
+
+        @include small {
+            padding: 27px;
+        }
+    }
+
+    .navbar-brand--logo {
+        background-image: url('../img/icon-shoutem-mark.svg');
+        width: 18px;
+        height: 18px;
+    }
+
+    .navbar-toggle {
+        @media (min-width: 768px) {
+            display: block;
+        }
+
+        @media (min-width: 992px) {
+            display: none;
+        }
+
+        @include small {
+            margin-top: 23px;
+        }
+    }
+}
+
+.navbar-collapse {
+    &.collapse {
+        @media (min-width: 768px) {
+            display: none !important;
+        }
+        @media (min-width: 992px) {
+            display: block !important;
+        }
+    }
+}
+
+
+
+#documentationTab {
+    display: none;
+}
+
+/* Navigation */
+
+#sidebar-wrapper
+{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    height: calc(100% - 81px);
+    width: 280px;
+    border-right: 1px solid #ececec;
+    overflow: auto;
+    padding: 28px 0;
+    background: #FFF;
+    z-index: 1070;
+
+    @media screen and (min-width: 1441px) {
+        left: calc(50% - 720px);
+    }
+
+    @include medium-2 {
+        left: auto !important;
+        right: -100%;
+        transition: right 0.5s;
+        height: 100%;
+
+        &.open {
+            right: 0;
+        }
+    }
+
+    &:not(.open) {
+        a {
+            padding-left: 48px;
+        }
+
+        ul ul a {
+            padding-left: 64px;
+        }
+    }
+}
+
 .menu-group-wrapper
 {
     display: none;
@@ -183,8 +317,8 @@ pre[data-line] {
     top: 0;
     left: -100%;
     opacity: 0;
-    background-color: #1c2232;
-    z-index: 1040;
+    background-color: rgba(68,79,108,0.5);
+    z-index: 1080;
     transition: opacity 0.5s;
 
     &.active {
@@ -193,7 +327,7 @@ pre[data-line] {
     }
 
     .content {
-        position: fixed;
+        position: absolute;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%); 
@@ -206,6 +340,8 @@ pre[data-line] {
         transition: max-height 0.5s;
         background-color: #FFF;
         overflow: hidden;
+        box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.2);
+        border-radius: 2px;
     }
 
     &.active .content {
