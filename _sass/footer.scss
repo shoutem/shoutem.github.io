@@ -5,6 +5,10 @@
     width: 100%; 
     z-index: -1;
 
+    @include small {
+        position: static;
+    }
+
     .signup {
         text-align: center;
         background-color: #2E3854;
