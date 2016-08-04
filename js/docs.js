@@ -152,11 +152,11 @@ $(function() {
       var $nextText = $next.text();
       
       $prevLink.attr('href', prevUrl);
-      $prevLink.text($prevText);
+      $prevLink.html("<span>" + $prevText + "</span>");
       $prevLink.attr("title", $prevText);
       
       $nextLink.attr('href', nextUrl);
-      $nextLink.text($nextText);
+      $nextLink.html("<span>" + $nextText + "</span>");
       $nextLink.attr("title", $nextText);
 
       if( prevUrl ) {
