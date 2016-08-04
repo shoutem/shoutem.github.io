@@ -242,6 +242,8 @@ p {
     z-index: 100;
     transform: perspective(1983px) rotateY(-35.5deg) rotateX(11.9deg) rotateZ(16.15deg) scaleY(1.00075);
     position: absolute;
+    backface-visibility: hidden;
+    transform-style: preserve-3d;
 
     @include large-2 {
         right: 98px;
