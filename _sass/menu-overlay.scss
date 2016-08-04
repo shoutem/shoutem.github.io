@@ -16,7 +16,8 @@
             visibility: visible;
 
             .navigation {
-                right: 0;
+                transform: translate(0, 0);
+                transform: translate3d(0, 0, 0);
             }
 
             .close-menu-overlay {
@@ -27,13 +28,15 @@
 
     .navigation {
         position: absolute;
-        right: -100%;
+        right: 0;
         padding-top: 24px;
         width: 286px;
         height: 100%;
         overflow: auto;
         background: #FFF;
-        transition: right .5s;
+        transform: translate(100%, 0);
+        transform: translate3d(100%, 0, 0);
+        transition: transform .5s;
 
         ul {
             border-bottom: 1px solid #ececec;
