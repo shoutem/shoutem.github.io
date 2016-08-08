@@ -8,13 +8,13 @@ section: Getting Started
 # Using UI toolkit
 <hr />
 
-Shoutem UI Toolkit is a set of styleable UI components that you can use in any React Native application. It basically turns any ordinary app into an amazing app. There are plenty of components that you can use out of the box. In this tutorial we'll use some of them. Documentation for all the components can be found in the [reference]({{ site.baseurl }}/docs/ui-toolkit/introduction).
+React Native exposes plain components that you can use, but there's usually much work left to do to make them look as you wanted. Use Shoutem UI toolkit - a set of styleable UI components that you can use in any React Native application. It basically turns any ordinary app into an amazing app. There are plenty of components that you can use out of the box. In this tutorial we'll use some of them. Documentation for all the components can be found in the [reference]({{ site.baseurl }}/docs/ui-toolkit/introduction).
 
-React Native itself exposes plain components that you can use, but there's usually much work still left to do to make them look as you wanted. Shoutem UI Toolkit brings the experience of building web pages to React Native and solves the problem of not being able to use CSS classes with [Shoutem UI theme]({{ site.baseurl }}/docs/ui-toolkit/theme).
+Shoutem UI Toolkit also brings the experience of building web pages to React Native with "CSS classes"-like solution with [Shoutem UI theme]({{ site.baseurl }}/docs/ui-toolkit/theme).
 
 ## Adding static data
 
-Let's add static restaurants and show them in list. Start by UI components from the toolkit.
+Let's add static restaurants and show them in list. Start by importing UI components from the toolkit.
 
 ```javascript{4-12}
 #file: app/screens/RestaurantsList.js
@@ -32,6 +32,8 @@ import {
 } from '@shoutem/ui';
 ```
 
+We prepared some data for you. Create `app/assets` folder, which will keep the assets for application part of your extension, and extract this [content](/restaurants/restaurants.zip) inside, which contains restaurants data.
+
 Define a method in `RestaurantsList` class that returns an array of restaurants.
 
 ```javascript{3-5}
@@ -42,8 +44,6 @@ export default class RestaurantsList extends Component {
     return require('../assets/data/restaurants.json');
   }
 ```
-
-We prepared some data for you. Create `app/assets` folder, which will keep the assets for application part of your extension. Download [this `zip`](/restaurants/restaurants.zip), extract it and copy its content to `app/assets`. It contains `data/restaurants.json` file with restaurants data.
 
 Implement `render` method that will use `ListView`. `ListView` accepts data in the form of `Array` to show in the list and `renderRow` method which defines how list row should look like.
 
@@ -102,14 +102,14 @@ Try clicking on a row. Nothing happens! We want to open up a details screen when
 
 ## Creating details screen
 
-First, create that screen:
+First, create details screen:
 
 ```ShellSession
 $ shoutem screen add RestaurantDetails
 File `app/screens/RestaurantDetails.js` is created.
 ```
 
-Screen was defined in extension.json. This creates the details screen in the `RestaurantDetails.js` file. Don't forget to export it in `index.js`.
+Screen is defined in extension.json. Don't forget to export it in `index.js`.
 
 ```JSX{2,6}
 #file: app/index.js
@@ -124,51 +124,41 @@ export const screens = {
 export const reducer = {};
 ```
 
-We want to open this screen when the list item is touched. For that we will use `TouchableOpacity` component from React Native. Let's import it in `RestaurantsList.js`:
+When listem is touched, we want to open details screen. For that we need `TouchableOpacity` component from React Native and Shoutem's `navigateTo` Redux action creator. It accepts [Shoutem route object](/docs/coming-soon) as the only argument with `screen` property. To reference our `RestaurantDetails` screen exported in `app/index.js`, we're using `ext` helper function that was created in `app/const.js` file. This function returns an **absolute name**, e.g. `developer.restaurants.RestaurantsList`, for the extension part which is passed as its first argument, or `extension name` if no argument is passed.
 
-```javascript{2}
+Import that:
+
+```javascript{2,4-5}
 #file: app/screens/RestaurantsList.js
 import {
   TouchableOpacity
 } from 'react-native';
-```
-
-To open screen, we'll use Redux action creator `navigateTo` which opens new screen in application. It accepts [Shoutem route object](/docs/coming-soon) as the only argument with `screen` property. To reference our `RestaurantDetails` screen exported in `app/index.js`, we're using `ext` helper function that was created in `app/const.js` file. This function returns an **absolute name**, e.g. `developer.restaurants.RestaurantsList`, for the extension part which is passed as its first argument, or `extension name` if no argument is passed.
-
-```javascript{1-2}
-#file: app/screens/RestaurantsList.js
 import { navigateTo } from '@shoutem/core/navigation';
 import { ext } from '../const';
 ```
 
-To open a screen on touch, we need to dispatch `navigateTo` Redux action creator. We can use it directly in the screen through dispatch, but Redux standard way is to bind together `dispatch` and action creator inside `mapDispatchToProps` function, the second argument of [connect](https://github.com/reactjs/react-redux/blob/master/docs/api.md#connectmapstatetoprops-mapdispatchtoprops-mergeprops-options) function.
+To open a screen on touch, we need to dispatch `navigateTo`. We can use it directly in the screen through dispatch, but Redux standard way is to bind together `dispatch` and action creator inside `mapDispatchToProps` function, the second argument of [connect](https://github.com/reactjs/react-redux/blob/master/docs/api.md#connectmapstatetoprops-mapdispatchtoprops-mergeprops-options) function. Bound actions are accessed through the `props` which is why we need to bind `renderRow` action to the right `this` context.
 
-Import `connect` function which defined how component will connect to Redux store and also import `bindActionCreators` from Redux which will do the binding.
-
-```javascript{3-6}
+```javascript{1-8,12-15}
 #file: app/screens/RestaurantsList.js
-import { navigateTo } from '@shoutem/core/navigation';
-import { ext } from '../const';
 import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
 
-class RestaurantsList extends Component {...}
-```
+class RestaurantsList extends Component {
+  constructor(props) {
+    super(props);
 
-Note that we've also changed that the class `RestaurnatsList` is no longer exported. Instead we will export the `connect` function in which binding is defined. Place following code at the end of file:
-
-```javascript{4-7}
-#file: app/screens/RestaurantsList.js
-import {...}
-class RestaurantsList extends Component {...}
+    this.renderRow = this.renderRow.bind(this);
+  }
+  ...
+}
 
 export default connect(
   undefined,
-  (dispatch) => bindActionCreators({ navigateTo }, dispatch)
+  (dispatch) => { navigateTo })
 )(RestaurantsList);
 ```
 
-We can access bound actions through the `props` and pass it to `renderRow` function. Let's add `TouchableOpacity` and connect it to `navigateTo` function.
+Implement `renderRow` function.
 
 ```JSX{2,5-8,17}
 #file: app/screens/RestaurantsList.js
@@ -215,9 +205,14 @@ import {
 import { navigateTo } from '@shoutem/core/navigation';
 import { ext } from '../const';
 import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
 
 class RestaurantsList extends Component {
+  constructor(props) {
+    super(props);
+
+    this.renderRow = this.renderRow.bind(this);
+  }
+
   getRestaurants() {
     return require('../assets/data/restaurants.json');
   }
@@ -258,7 +253,7 @@ class RestaurantsList extends Component {
 
 export default connect(
   undefined,
-  (dispatch) => bindActionCreators({ navigateTo }, dispatch)
+  (dispatch) => { navigateTo })
 )(RestaurantsList)
 ```
 

@@ -44,11 +44,11 @@ This schema was immediately exported in `extension.json` file:
   "version": "0.0.1",
   "title": "Restaurants",
   "description": "List of restaurants",
-  "navItems": [{
+  "shortcuts": [{
     "name": "openRestaurantsList",
     "title": "Restaurants",
     "description": "Allow users to browse through list of restaurants"
-    "screen": "[PUT_YOUR_DEV_NAME].restaurants.RestaurantsList",
+    "screen": "@.RestaurantsList",
   }],
   "screens": [{
     "name": "RestaurantsList"

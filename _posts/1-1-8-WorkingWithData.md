@@ -10,8 +10,6 @@ section: Getting Started
 
 Data on the Shoutem Cloud Storage needs to be fetched in the application. First, remove all static files from the extension, so we're sure that we're actually fetching data from the Shoutem Cloud Storage, i.e. remove assets folder. Define `reducer` which will define how the state of the application should be changed when action is dispatched and how the initial state should look like. Create new folder `app/reducers` with `index.js` file.
 
-We can have one big reducer which will manage whole application state, or more little reducers which will take care of different properties in the state. 
-
 Package `@shoutem/redux-io` has [reducers](/docs/coming-soon) and [actions](/docs/coming-soon) that communicate with Shoutem Cloud Storage. Import these reducers.
 
 ```javascript{1}
@@ -49,9 +47,38 @@ export const screens = {
 export { reducer };
 ```
 
-The only thing left to do is to fetch data from **Shoutem Cloud Storage** on `RestaurantsList` screen and to retrieve that data, in form of restaurants, from application's state. 
+The only thing left to do is to fetch data from **Shoutem Cloud Storage** on `RestaurantsList` screen and to retrieve that data, in form of restaurants, from application's state. Once screen is mounted, if restaurants are not in the Redux store, we'll start fetching data with [find](/docs/coming-soon) action creator from `@shoutem/redux-io` package. Also, import still 3 helpers from that package:
+ 
+ - `isBusy` - gives feedback if data is being fetched, which we'll give through `LOADING` and `IDLE` statuses in [ListView](TODO),
+ - `shouldRefresh` - knows if data needs to be (re)fetched and
+ - `getCollection` - combines `storage` and `collection` reducer data into an `array`.
 
-First we need to get the list of `restaurants` from `props` and bind it with the `ListView` component. Notice that `ListView` can show spinner while data is being loaded. 
+```javascript{1-4}
+#file: app/screens/RestaurantsList.js
+import {
+  find,
+  isBusy,
+  shouldRefresh,
+  getCollection
+} from '@shoutem/redux-io';
+```
+
+If necessary, fetch data in `componentDidMount` lifecycle.
+
+```javascript{2-9}
+#file: app/screens/RestaurantsList.js
+class RestaurantsList extends Component {
+  componentDidMount() {
+    const { find, restaurants } = this.props;
+    if (shouldRefresh(restaurants)) {
+      find(ext('Restaurants'), 'all', {
+          include: 'image',
+      });
+    }
+  }
+```
+
+Implement rendering.
 
 ```JSX{7-11,15-16}
 #file: app/screens/RestaurantsList.js
@@ -77,63 +104,7 @@ First we need to get the list of `restaurants` from `props` and bind it with the
   }
 ```
 
-Notice we're using `isBusy` function. Let's import it as well.
-
-```javascript{1-3}
-#file: app/screens/RestaurantsList.js
-import { 
-  isBusy 
-} from '@shoutem/redux-io';
-```
-
-Once screen is mounted, if restaurants are not in the Redux store, we'll start fetching data with [find](/docs/coming-soon) action creator from `@shoutem/redux-io` package.
-
-```javascript{3}
-#file: app/screens/RestaurantsList.js
-import { 
-  isBusy,
-  find 
-} from '@shoutem/redux-io';
-```
-
-Since `find` also needs to be dispatched, we'll bind it in the `mapDispatchToProps` function, 2nd argument of `connect` function.
-
-```javascript{3}
-#file: app/screens/RestaurantsList.js
-export default connect(
-  undefined,
-    (dispatch) => bindActionCreators({ navigateTo, find }, dispatch)
-  })(RestaurantsList);
-```
-
-Define a `Component` lifecycle method `componentDidMount` which will start fetching the restaurants.
-
-```javascript{2-9}
-#file: app/screens/RestaurantsList.js
-class RestaurantsList extends Component {
-  componentDidMount() {
-    const { find, restaurants } = this.props;
-    if (shouldRefresh(restaurants)) {
-      find(ext('Restaurants'), 'all', {
-          include: 'image',
-      });
-    }
-  }
-```
-
-Finally, as we can see in `componentDidMount`, we want to have restaurants collection in the props. In `app/reducers/index.js` we defined that `restaurants` dictionary that will be fetched through `storage` and `allRestaurants` collection that will be fetched through `collection` reducer. We need to combine both to get an array with restaurants objects from dictionary. Do this with with `getCollection` method from `@shoutem/redux-io`. shouldrefresh... TBD
-
-```javascript{4,5}
-#file: app/screens/RestaurantsList.js
-import {
-  isBusy,
-  find,
-  getCollection,
-  shouldRefresh
-} from '@shoutem/redux-io';
-```
-
-Use that method in `mapStateToProps` function, 1st argument of `connect` function.
+In `render` method, we're expecting to get restaurants as an array. In `app/reducers/index.js` we defined `restaurants` dictionary that will be fetched through `storage` and `allRestaurants` collection that will be fetched through `collection` reducer. Combine both into an array with `getCollection` function from `@shoutem/redux-io` in 1st argument of `connect` function. In 2nd argument, we'll bind `find` action creator.
 
 ```javascript{2-4}
 #file: app/screens/RestaurantsList.js
@@ -141,7 +112,7 @@ export default connect(
   (state) => ({
     restaurants: getCollection(state[ext()].allRestaurants, state)
   }),
-  (dispatch) => bindActionCreators({ navigateTo, find }, dispatch)
+  (dispatch) => { navigateTo, find })
 )(RestaurantsList);
 ```
 
@@ -152,7 +123,6 @@ This is the final result of `RestaurantsList` screen that uses both Shoutem UI T
 import React, {
   Component
 } from 'react';
-
 import {
   TouchableOpacity,
 } from 'react-native';
@@ -169,17 +139,21 @@ import {
 
 import {
   find,
-  getCollection,
-  shouldRefresh,
   isBusy,
+  shouldRefresh,
+  getCollection
 } from '@shoutem/redux-io';
 
 import { connect } from 'react-redux';
 import { navigateTo } from '@shoutem/core/navigation';
-import { bindActionCreators } from 'redux';
 import { ext } from '../const';
 
 class RestaurantsList extends Component {
+  constructor(props) {
+    super(props);
+
+    this.renderRow = this.renderRow.bind(this);
+  }
 
   componentDidMount() {
     const { find, restaurants } = this.props;
@@ -237,7 +211,7 @@ export default connect(
   (state) => ({
     restaurants: getCollection(state[ext()].allRestaurants, state)
   }),
-  (dispatch) => bindActionCreators({ navigateTo, find }, dispatch)
+  (dispatch) => { navigateTo, find })
 )(RestaurantsList);
 
 ```
