@@ -63,16 +63,33 @@
             &::after {
                 content: " ";
                 display: inline-block;
+                background: url(/img/icon-arrow-right.svg) center center no-repeat;
                 width: 15px;
                 height: 13px;
-                margin-left: 24px;
-                background: url(/img/icon-arrow-right.svg) center center no-repeat;
                 vertical-align: middle;
-                margin-bottom: 1px;
+
+                @include small {
+                    height: 72px;
+                    line-height: 72px;
+                    background-size: 15px 13px;
+                    vertical-align: middle;
+                    margin-left: -24px;
+                }
+            }
+
+            span {
+                display: inline-block;
+                vertical-align: middle;
+                margin-right: 24px;
+
+                @include small {
+                    margin-right: 36px;
+                }
             }
 
             @include small {
                 width: calc(100% - 72px);
+                padding: 0 10px 0 0;
             }
         }
 

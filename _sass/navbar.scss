@@ -134,7 +134,12 @@
 
 #wrapper {
   padding-top: 80px;
+
+  @include small {
+    margin-bottom: 0 !important;
+  }
 }
+
 @media (min-width: 768px) {
   .navbar-nav>li>a {
       padding: 30px 0 28px; 

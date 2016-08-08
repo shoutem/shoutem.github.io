@@ -1,6 +1,11 @@
 $(function() {
 	
 	function onFooterResize() {
+
+		if( $(document).width() <= 640 ) {
+			return;
+		}
+
 		// throttle
 		setTimeout(function() {
 			$("#wrapper").css({ marginBottom: ($(".footer").height() + $(".pager").outerHeight()) + "px" });

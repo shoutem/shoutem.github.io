@@ -272,12 +272,15 @@ pre[data-line] {
 
     @include medium-2 {
         left: auto !important;
-        right: -100%;
-        transition: right 0.5s;
+        right: 0;
+        transform: translate(100%, 0);
+        transform: translate3d(100%, 0, 0);
+        transition: transform 0.5s;
         height: 100%;
 
         &.open {
-            right: 0;
+            transform: translate(0, 0);
+            transform: translate3d(0, 0, 0);
         }
     }
 
