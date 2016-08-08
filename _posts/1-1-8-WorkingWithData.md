@@ -49,7 +49,7 @@ export { reducer };
 
 The only thing left to do is to fetch data from **Shoutem Cloud Storage** on `RestaurantsList` screen and to retrieve that data, in form of restaurants, from application's state. Once screen is mounted, if restaurants are not in the Redux store, we'll start fetching data with [find](/docs/coming-soon) action creator from `@shoutem/redux-io` package. Also, import still 3 helpers from that package:
  
- - `isBusy` - gives feedback if data is being fetched, which we'll give through `LOADING` and `IDLE` statuses in [ListView](TODO),
+ - `isBusy` - gives feedback if data is being fetched, which we'll show with `LOADING` and `IDLE` statuses of [ListView](TODO),
  - `shouldRefresh` - knows if data needs to be (re)fetched and
  - `getCollection` - combines `storage` and `collection` reducer data into an `array`.
 
