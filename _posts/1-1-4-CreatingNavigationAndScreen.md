@@ -119,7 +119,7 @@ In React, `Component` specifies its UI in `render` method. Now that screen is cr
     "name": "openRestaurantsList",
     "title": "Restaurants",
     "description": "Allow users to browse through list of restaurants",
-    "screen": "[PUT_YOUR_DEV_NAME].restaurants.RestaurantsList"
+    "screen": "@.RestaurantsList"
   }],
   "screens": [{
     "name": "RestaurantsList"
@@ -127,12 +127,7 @@ In React, `Component` specifies its UI in `render` method. Now that screen is cr
 }
 ```
 
-Notice that object in `navItems` has property `name`, which identifies the navigation item and `screen`, which represents the screen that will be opened navigation item is tapped. In the `name` property, use **relative name** to define an extension part. In properties like `screen`, where some extension part is referenced, use **absolute name**. That's why under `screen` property, we're having `developer.restaurants.RestaurantsList` value instead of only `RestaurantsList`. Absolute name of extension part follows this structure: `{developerName}.{extensionName}.{extensionPartName}`.
-
-Change `[PUT_YOUR_DEV_NAME]` to your developer name.
-
-> #### Note
-> If you forgot what is your developer name, write `shoutem whoami`.
+Notice that object in `navItems` has property `name`, which identifies the navigation item and `screen`, which represents the screen that will be opened navigation item is tapped. In the `name` property, use **relative name** to define an extension part. In properties like `screen`, where some extension part is referenced, use **absolute name**. Absolute name of extension part follows this structure: `{developerName}.{extensionName}.{extensionPartName}`. However, for parts of the current extension, you can simply use `@.{extensionPartName}` instead. Characters `@.` replace your `{developerName}.{extensionName}.`.
 
 ## Exporting extension parts
 
