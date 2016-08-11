@@ -279,12 +279,14 @@ pre[data-line] {
         right: 0;
         transform: translate(100%, 0);
         transform: translate3d(100%, 0, 0);
-        transition: transform 0.5s;
+        transition: transform 0.5s visibility 0.5s;
         height: 100%;
+        visibility: hidden;
 
         &.open {
             transform: translate(0, 0);
             transform: translate3d(0, 0, 0);
+            visibility: visible;
         }
     }
 
