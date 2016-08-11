@@ -68,6 +68,9 @@ $(function() {
 
   $("#signup-button").on("click", function(e) {
     $signupModal.addClass("active");
+    setTimeout(function(){
+      $(".signup-email").focus();
+    }, 200);
     e.preventDefault();
   });
 
