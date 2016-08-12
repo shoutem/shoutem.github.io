@@ -1,51 +1,38 @@
 <video autoplay loop class="video-screen">
-
-	<!-- <source class="size-2x" src="/video/header@2x.webm" type="video/webm" 
-		media="all and (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)">
-	<source class="size-2x" src="/video/header@2x.mp4" type="video/mp4" 
-		media="all and (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)">
-	<source class="size-2x" src="/video/header@2x.ogv" type="video/ogg" 
-		media="all and (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)"> -->
-
-	<source class="size-1x" src="/video/header.webm" type="video/webm" />
-	<source class="size-1x" src="/video/header.mp4" type="video/mp4" />
+	<source src="/video/header.webm" type="video/webm" />
+	<source src="/video/header.mp4" type="video/mp4" />
 </video>
-
 <script>
-	// video source media attribute may be removed in the future
-	// if (window.matchMedia)
-	// {
-	// 	var mq = window.matchMedia("only screen and (-moz-min-device-pixel-ratio: 1.3), only screen and (-o-min-device-pixel-ratio: 2.6/2), only screen and (-webkit-min-device-pixel-ratio: 1.3), only screen  and (min-device-pixel-ratio: 1.3), only screen and (min-resolution: 192dpi)");
+	var vc = document.querySelector(".video-screen");
+	var vcParent = vc.parentElement;
+	var temp;
 
-	// 	var allSources = document.querySelectorAll(".video-screen source");
-	// 	var len = allSources.length;
-	// 	var i = 0;
+	if( window.matchMedia )
+	{
+		var mq = window.matchMedia("only screen and (-webkit-min-device-pixel-ratio: 2),only screen and ( min--moz-device-pixel-ratio: 2), only screen and ( o-min-device-pixel-ratio: 2/1), only screen and ( min-device-pixel-ratio: 2), only screen and ( min-resolution: 192dpi), only screen and ( min-resolution: 2dppx)");
 
-	// 	for( i = 0; i < len; i++ )
-	// 	{
-	// 		allSources[i].removeAttribute("media");
-	// 	}
+		if( mq && mq.matches )
+		{
+			vc.pause();
+			vcParent.removeChild(vc);
 
-	// 	if( mq && mq.matches ) // hiDPI display
-	// 	{
-	// 		var size1x = document.querySelectorAll(".video-screen .size-1x");
-	// 		len = size1x.length;
+			vc = document.createElement("video");
+			vc.className = "video-screen";
+			vc.setAttribute("autoplay", true);
+			vc.setAttribute("loop", true);
+			vcParent.appendChild(vc);
 
-	// 		for( i = 0; i < len; i++ )
-	// 		{
-	// 			size1x[i].parentElement.removeChild(size1x[i]);
-	// 		}
-	// 	}
-	// 	else
-	// 	{
-	// 		var size2x = document.querySelectorAll(".video-screen .size-2x");
-	// 		len = size2x.length;
+			temp = document.createElement("source");
+			temp.setAttribute("src", "/video/header@2x.webm");
+			temp.setAttribute("type", "video/webm");
+			vc.appendChild(temp);
 
-	// 		for( i = 0; i < len; i++ )
-	// 		{
-	// 			size2x[i].parentElement.removeChild(size2x[i]);
-	// 		}
-	// 	}
-	// }
+			temp = document.createElement("source");
+			temp.setAttribute("src", "/video/header@2x.mp4");
+			temp.setAttribute("type", "video/mp4");
+			vc.appendChild(temp);
 
+			vc.play();
+		}
+	}
 </script>
