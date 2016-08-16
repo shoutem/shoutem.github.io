@@ -68,7 +68,7 @@ $(function() {
 
   $("#signup-button, #signup-button-menu").on("click", function(e) {
     $(".mobile-menu-overlay, #sidebar-wrapper").removeClass("open");
-    $signupModal.addClass("active");
+    $signupModal.addClass("open");
     setTimeout(function(){
       $(".signup-email").focus();
     }, 200);
@@ -77,13 +77,13 @@ $(function() {
 
   $signupModal.on("click", function(e) {
     if( (e.target || e.srcElement).id === $signupModal[0].id ) {
-      $signupModal.removeClass("active");
+      $signupModal.removeClass("open");
       e.preventDefault();
     }
   });
 
   $("#mc-embedded-cancel").on("click", function(e) {
-      $signupModal.removeClass("active");
+      $signupModal.removeClass("open");
   });
 
   

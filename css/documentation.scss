@@ -357,7 +357,7 @@ pre[data-line] {
     z-index: 1080;
     transition: opacity 0.35s, visibility 0.35s;
 
-    &.active {
+    &.open {
         opacity: 1;
         visibility: visible;
     }
@@ -386,7 +386,7 @@ pre[data-line] {
         }
     }
 
-    &.active .content {
+    &.open .content {
         transform: scale3d(1, 1, 1) translate3d(-50%, -50%, 0);
     }
 

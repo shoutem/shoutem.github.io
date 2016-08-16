@@ -41,10 +41,28 @@ $(function() {
 	}
 
 	$(".close-menu-overlay").on("click", function () {
-	    $(".mobile-menu-overlay, #sidebar-wrapper").removeClass("open");
+		$(".mobile-menu-overlay, #sidebar-wrapper").removeClass("open");
 	});
 
 	$(".navbar-toggle").on("click", function () {
-	    $(".mobile-menu-overlay, #sidebar-wrapper").addClass("open");
+		$(".mobile-menu-overlay, #sidebar-wrapper").addClass("open");
+	});
+
+	// http://stackoverflow.com/a/3369743
+	jQuery(document).on("keydown", function(evt)
+	{
+		evt = evt || window.event;
+
+		var isEscape = false;
+
+		if ("key" in evt) {
+			isEscape = evt.key == "Escape";
+		} else {
+			isEscape = evt.keyCode == 27;
+		}
+
+		if (isEscape) {
+			$(".mobile-menu-overlay, #sidebar-wrapper, #signup-modal").removeClass("open");
+		}
 	});
 });
