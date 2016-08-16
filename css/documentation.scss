@@ -341,7 +341,7 @@ pre[data-line] {
         top: 50%;
         left: 50%;
         width: 648px;
-        height: 376px;
+        height: auto;
         max-width: calc(100% - 48px);
         max-height: calc(100% - 48px);
         padding: 55px 48px 0;
@@ -349,12 +349,19 @@ pre[data-line] {
         overflow: hidden;
         box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.2);
         border-radius: 2px;
-        transform: scale3d(0.95,0.95,0.95) translate3d(-50%, -50%, 0);
+        transform: scale3d(0.95, 0.95, 0.95) translate3d(-50%, -50%, 0);
+        transform-origin: left;
         transition: transform 0.35s;
+
+        @include mobile {
+            max-width: calc(100% - 40px);
+            max-height: calc(100% - 40px);
+            padding: 35px 20px 0;
+        }
     }
 
     &.active .content {
-        transform: scale3d(1,1,1) translate3d(-50%, -50%, 0);
+        transform: scale3d(1, 1, 1) translate3d(-50%, -50%, 0);
     }
 
     .signup-title {
@@ -413,6 +420,10 @@ pre[data-line] {
         margin: 56px -48px 0;
         background-color: #f6f7f8;
         text-align: right;
+
+        @include mobile {
+            margin-top: 32px;
+        }
     }
 
     .signup-button, .cancel-button {
@@ -429,7 +440,12 @@ pre[data-line] {
         letter-spacing: 1px;
         padding: 1px 0 0;
 
-        @include easeLinear;       
+        @include easeLinear;
+
+        @include mobile {
+            width: auto;
+            padding: 1px 16px 0;
+        }
     }
 
     .signup-button {
