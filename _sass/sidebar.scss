@@ -48,7 +48,9 @@
                 line-height: 48px;
             }
 
-            &:hover {
+            &:hover,
+            &:active,
+            &:focus {
                 background-color: $lightaccent-2;
             }
         }
