@@ -279,7 +279,7 @@ pre[data-line] {
         right: 0;
         transform: translate(100%, 0);
         transform: translate3d(100%, 0, 0);
-        transition: transform 0.5s visibility 0.5s;
+        transition: transform 0.5s, visibility 0.5s;
         height: 100%;
         visibility: hidden;
 
@@ -297,6 +297,32 @@ pre[data-line] {
 
         ul ul a {
             padding-left: 64px;
+        }
+
+        .btn-primary {
+            display: none;
+        }
+    }
+
+    .btn-primary {
+        margin-top: 16px;
+        margin-left: 24px;
+        border-radius: 4px;
+        height: 48px;
+        font-size: 16px;
+        padding-top: 12px;
+        color: #fff;
+        font-weight: bold;
+        background: $accent;
+        line-height: 1.5;
+        width: auto;
+        padding: 12px 20px !important;
+        @include easeLinear();
+        &:focus,
+        &:hover {
+            color: #fff;
+            background-color: #00BEF7;
+            border: 1px solid #00BEF7;
         }
     }
 }

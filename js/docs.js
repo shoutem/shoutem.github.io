@@ -66,7 +66,8 @@ $(function() {
 
   var $signupModal = $("#signup-modal");
 
-  $("#signup-button").on("click", function(e) {
+  $("#signup-button, #signup-button-menu").on("click", function(e) {
+    $(".mobile-menu-overlay, #sidebar-wrapper").removeClass("open");
     $signupModal.addClass("active");
     setTimeout(function(){
       $(".signup-email").focus();
