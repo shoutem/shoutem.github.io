@@ -48,6 +48,7 @@
             @include small {
                 color: transparent;
                 width: 72px !important;
+                overflow: hidden;
             }
         }
 
