@@ -44,6 +44,10 @@ h4 {
     font-size: 15px;
 }
 
+code  {
+    border-radius: 2px;
+}
+
 h3 code, h4 code {
     background: inherit;
     font-weight: inherit;
@@ -66,13 +70,14 @@ pre code.language-shellsession {
     display: block;
 }
 
-pre code.language-shellsession:first-line {
+pre code.language-shellsession::first-line {
     color: #343D59;
 }
 
-pre code.language-shellsession:first-letter {
+pre code.language-shellsession .dollar-sign {
     color: #697289;
 }
+
 
 h4[id^=jsx-declaration] {
     margin-top: -28px;
@@ -229,7 +234,7 @@ pre[data-line] {
         }
 
         @include small {
-            margin-top: 23px;
+            margin-top: 12px;
         }
     }
 }
@@ -275,12 +280,14 @@ pre[data-line] {
         right: 0;
         transform: translate(100%, 0);
         transform: translate3d(100%, 0, 0);
-        transition: transform 0.5s;
+        transition: transform 0.5s, visibility 0.5s;
         height: 100%;
+        visibility: hidden;
 
         &.open {
             transform: translate(0, 0);
             transform: translate3d(0, 0, 0);
+            visibility: visible;
         }
     }
 
@@ -291,6 +298,32 @@ pre[data-line] {
 
         ul ul a {
             padding-left: 64px;
+        }
+
+        .btn-primary {
+            display: none;
+        }
+    }
+
+    .btn-primary {
+        margin-top: 16px;
+        margin-left: 24px;
+        border-radius: 4px;
+        height: 48px;
+        font-size: 16px;
+        padding-top: 12px;
+        color: #fff;
+        font-weight: bold;
+        background: $accent;
+        line-height: 1.5;
+        width: auto;
+        padding: 12px 20px !important;
+        @include easeLinear();
+        &:focus,
+        &:hover {
+            color: #fff;
+            background-color: #00BEF7;
+            border: 1px solid #00BEF7;
         }
     }
 }
@@ -318,38 +351,44 @@ pre[data-line] {
     width: 100%;
     height: 100%;
     top: 0;
-    left: -100%;
+    left: 0;
     opacity: 0;
+    visibility: hidden;
     background-color: rgba(68,79,108,0.5);
     z-index: 1080;
-    transition: opacity 0.5s;
+    transition: opacity 0.35s, visibility 0.35s;
 
-    &.active {
-        left: 0;
+    &.open {
         opacity: 1;
+        visibility: visible;
     }
 
     .content {
         position: absolute;
         top: 50%;
         left: 50%;
-        transform: translate(-50%, -50%); 
         width: 648px;
+        height: auto;
         max-width: calc(100% - 48px);
         max-height: calc(100% - 48px);
-        height: 376px;
-        max-height: 0;
         padding: 55px 48px 0;
-        transition: max-height 0.5s;
         background-color: #FFF;
         overflow: hidden;
         box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.2);
         border-radius: 2px;
+        transform: scale3d(0.95, 0.95, 0.95) translate3d(-50%, -50%, 0);
+        transform-origin: left;
+        transition: transform 0.35s;
+
+        @include mobile {
+            max-width: calc(100% - 40px);
+            max-height: calc(100% - 40px);
+            padding: 35px 20px 0;
+        }
     }
 
-    &.active .content {
-        height: auto;
-        max-height: 376px;
+    &.open .content {
+        transform: scale3d(1, 1, 1) translate3d(-50%, -50%, 0);
     }
 
     .signup-title {
@@ -378,6 +417,21 @@ pre[data-line] {
         &:focus {
             box-shadow: inset 0 -2px 0 0 #00aadf;
         }
+
+        &::-webkit-input-placeholder {
+            color: #444f6c;
+        }
+        &::-moz-placeholder { /* Firefox 19+ */
+            color: #444f6c;
+            opacity: 1;
+        }
+        &:-ms-input-placeholder {
+            color: #444f6c;
+        }
+        &:-moz-placeholder {
+            color: #444f6c;
+            opacity: 1;
+        }
     }
 
     label {
@@ -393,11 +447,16 @@ pre[data-line] {
         margin: 56px -48px 0;
         background-color: #f6f7f8;
         text-align: right;
+
+        @include mobile {
+            margin-top: 32px;
+        }
     }
 
     .signup-button, .cancel-button {
         width: 120px;
         height: 40px;
+        line-height: 38px;
         border: 1px solid #fff;
         border-radius: 4px;
         color: #FFF;
@@ -408,7 +467,12 @@ pre[data-line] {
         letter-spacing: 1px;
         padding: 1px 0 0;
 
-        @include easeLinear;       
+        @include easeLinear;
+
+        @include mobile {
+            width: auto;
+            padding: 1px 16px 0;
+        }
     }
 
     .signup-button {
@@ -426,6 +490,7 @@ pre[data-line] {
         &:hover, &:focus,
         &:active {
             background-color: $secondaryhover;
+            outline: none;
         }
     }
 }

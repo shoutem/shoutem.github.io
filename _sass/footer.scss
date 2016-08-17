@@ -52,11 +52,29 @@
             margin-bottom: 80px;
             margin-right: 8px;
             border: 1px solid rgba(136, 143, 161, 0.5);
+            color: #FFF;
+
+            &::-webkit-input-placeholder {
+                color: #BDC0CB;
+            }
+            &::-moz-placeholder { /* Firefox 19+ */
+                color: #BDC0CB;
+                opacity: 1;
+            }
+            &:-ms-input-placeholder {
+                color: #BDC0CB;
+            }
+            &:-moz-placeholder {
+                color: #BDC0CB;
+                opacity: 1;
+            }
+
             @include easeLinear;
             
             &:focus {
-                background-color: white;
-                color: $primary;
+                color: #FFF;
+                border-color: rgba(136, 143, 161, 0.85);
+                background: none;
             }
             
             @include small {
@@ -175,7 +193,7 @@
                     height: 24px;
                     overflow: hidden;
                     display: inline-block;
-                    margin-left: 24px;
+                    margin-left: 48px;
                     margin-top: 3px;
                     opacity: 0.4;
 
@@ -207,7 +225,7 @@
                     a {
                         background-image: url(/img/icon-github.svg);
                         background-size: 20px;
-                        margin-left: 27px;
+                        margin-left: 37px;
 
                         @include small {
                             margin-left: 0;

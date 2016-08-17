@@ -132,6 +132,26 @@
     }
 }
 
+.documentation .navbar-brand {
+    @include easeLinear();
+
+    &:hover {
+        background: #00AADF;
+    }
+
+    svg {
+        display: block;
+    }
+
+    #documentation-logo {
+        @include easeLinear();
+    }
+
+    &:hover #documentation-logo {
+        fill: #FFF;
+    }
+}
+
 #wrapper {
   padding-top: 80px;
 
@@ -154,8 +174,16 @@
 
 .navbar-default .navbar-toggle {
     border: none;
-    padding: 7px 4px 6px 3px;
-    margin: 28px 0 0;
+    padding: 18px 15px;
+    margin: 16px 0 0;
+
+    &:hover {
+        background: none;
+
+        .icon-bar {
+            background-color: #00AADF;
+        }
+    }
 }
 
 .navbar-toggle .icon-bar {

@@ -83,7 +83,7 @@ p {
 
     @include mobile {
         width: 100%;
-        max-width: 280px;
+        max-width: 280px !important;
     }
 }
 
@@ -414,7 +414,7 @@ p {
         text-align: center;
     }
 
-    @include small {
+    @include medium-2 {
         margin: 5px auto 20px;
     }
 }
@@ -440,7 +440,7 @@ p {
             margin: 20px 0;
         }
 
-        @include small {
+        @include medium-2 {
             margin: 20px 0 15px;
         }
     }
@@ -464,7 +464,7 @@ p {
             border-radius: 4px;
             position: relative;
 
-            @include small {
+            @include medium-2 {
                 height: 70px;
             }
         }
@@ -473,12 +473,7 @@ p {
             display: block;
         }
 
-        @include medium {
-            /*margin-right: 45px;
-            left: 23px;*/
-        }
-
-        @include small {
+        @include medium-2 {
             margin-right: 0;
             left: 0;
             border-radius: 4px;
@@ -503,7 +498,7 @@ p {
             position: absolute;
             pointer-events: none;
 
-            @include small {
+            @include medium-2 {
                 border-top-color: #00aadf;
                 border-left-color: transparent !important;
                 border-width: 138px !important;
@@ -522,19 +517,19 @@ p {
             margin-top: -44px;
         }
 
-        &:before {           
+        &:before {
             border-left-color: $accent;
             border-width: 45px;
             margin-top: -45px;
             margin-left: 1px;
 
-            @include small {
+            @include medium-2 {
                 left: 1px;
                 bottom: -152px;
             }
         }
 
-        @include small {
+        @include medium-2 {
             margin-bottom: 20px;
         }
     }

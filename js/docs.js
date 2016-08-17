@@ -8,6 +8,7 @@ $(function() {
   showNavButtons();
   prepareCodeblocks();
   Prism.highlightAll();
+  setShell$Color();
 
 
 
@@ -56,6 +57,7 @@ $(function() {
     showNavButtons();
     prepareCodeblocks();
     Prism.highlightAll();
+    setShell$Color();
 
     $(".mobile-menu-overlay, #sidebar-wrapper").removeClass("open");
   });
@@ -66,20 +68,24 @@ $(function() {
 
   var $signupModal = $("#signup-modal");
 
-  $("#signup-button").on("click", function(e) {
-    $signupModal.addClass("active");
+  $("#signup-button, #signup-button-menu").on("click", function(e) {
+    $(".mobile-menu-overlay, #sidebar-wrapper").removeClass("open");
+    $signupModal.addClass("open");
+    setTimeout(function(){
+      $(".signup-email").focus();
+    }, 200);
     e.preventDefault();
   });
 
   $signupModal.on("click", function(e) {
     if( (e.target || e.srcElement).id === $signupModal[0].id ) {
-      $signupModal.removeClass("active");
+      $signupModal.removeClass("open");
       e.preventDefault();
     }
   });
 
   $("#mc-embedded-cancel").on("click", function(e) {
-      $signupModal.removeClass("active");
+      $signupModal.removeClass("open");
   });
 
   
@@ -239,6 +245,15 @@ $(function() {
         }
       });
     }
+  }
+
+  function setShell$Color()
+  {
+    var elements = jQuery("code.language-shellsession");
+
+    elements.each(function(){
+      this.innerHTML = this.innerHTML.replace(/^\s*\$/, "<span class='dollar-sign'>$</span>");
+    });
   }
 
   // CodeMirror(document.getElementsByTagName("ptrk")[0], {
