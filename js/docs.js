@@ -8,6 +8,7 @@ $(function() {
   showNavButtons();
   prepareCodeblocks();
   Prism.highlightAll();
+  setShell$Color();
 
 
 
@@ -56,6 +57,7 @@ $(function() {
     showNavButtons();
     prepareCodeblocks();
     Prism.highlightAll();
+    setShell$Color();
 
     $(".mobile-menu-overlay, #sidebar-wrapper").removeClass("open");
   });
@@ -243,6 +245,15 @@ $(function() {
         }
       });
     }
+  }
+
+  function setShell$Color()
+  {
+    var elements = jQuery("code.language-shellsession");
+
+    elements.each(function(){
+      this.innerHTML = this.innerHTML.replace(/^\s*\$/, "<span class='dollar-sign'>$</span>");
+    });
   }
 
   // CodeMirror(document.getElementsByTagName("ptrk")[0], {

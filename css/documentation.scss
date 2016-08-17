@@ -70,13 +70,14 @@ pre code.language-shellsession {
     display: block;
 }
 
-pre code.language-shellsession:first-line {
+pre code.language-shellsession::first-line {
     color: #343D59;
 }
 
-pre code.language-shellsession:first-letter {
+pre code.language-shellsession .dollar-sign {
     color: #697289;
 }
+
 
 h4[id^=jsx-declaration] {
     margin-top: -28px;
