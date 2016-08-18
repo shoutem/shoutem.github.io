@@ -10,7 +10,7 @@ section: UI toolkit
 ListView component is base component that is used to render Lists of items. This component is also used by GridView to create Grid-like menu structure.  
 
 ## ListView
-![alt text]({{ site.baseurl }}/img/ui-toolkit/list_view@2x.png "ListView"){:.docs-component-image}
+![alt text]({{ site.baseurl }}/img/ui-toolkit/listview/list_view@2x.png "ListView"){:.docs-component-image}
 
 #### JSX Declaration
 ```JSX

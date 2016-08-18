@@ -10,7 +10,7 @@ section: UI toolkit
 ImageGallery component renders a collection of `ImagePreview` components within `HorizontalPager`. Each preview component is rendered on a separate page.
 
 ## ImageGallery
-![alt text]({{ site.baseurl }}/img/ui-toolkit/image_gallery@2x.png "ImageGallery"){:.docs-component-image}
+![alt text]({{ site.baseurl }}/img/ui-toolkit/image-gallery/image_gallery@2x.png "ImageGallery"){:.docs-component-image}
 
 #### JSX Declaration
 ```JSX

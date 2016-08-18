@@ -10,7 +10,7 @@ section: UI toolkit
 Buttons are styled TouchableOpacities.
 
 ##  Button / Text only / Light
-![alt text]({{ site.baseurl }}/img/ui-toolkit/button-text-only-light@2x.png "Button / Text only / Light"){:.docs-component-image}
+![alt text]({{ site.baseurl }}/img/ui-toolkit/buttons/button-text-only-light@2x.png "Button / Text only / Light"){:.docs-component-image}
 
 
 #### JSX Declaration
@@ -21,7 +21,7 @@ Buttons are styled TouchableOpacities.
 ```  
 
 ##  Button / Text only / Dark
-![alt text]({{ site.baseurl }}/img/ui-toolkit/button-text-only-dark@2x.png "Button / Text only / Dark"){:.docs-component-image}
+![alt text]({{ site.baseurl }}/img/ui-toolkit/buttons/button-text-only-dark@2x.png "Button / Text only / Dark"){:.docs-component-image}
 
 
 #### JSX Declaration
@@ -32,7 +32,7 @@ Buttons are styled TouchableOpacities.
 ```  
 
 ##  Button / Icon + Text / Light
-![alt text]({{ site.baseurl }}/img/ui-toolkit/button-icon-text-light@2x.png "Button / Icon + Text / Light"){:.docs-component-image}
+![alt text]({{ site.baseurl }}/img/ui-toolkit/buttons/button-icon-text-light@2x.png "Button / Icon + Text / Light"){:.docs-component-image}
 
 
 #### JSX Declaration
@@ -44,7 +44,7 @@ Buttons are styled TouchableOpacities.
 ```  
 
 ##  Button / Icon + Text / Dark
-![alt text]({{ site.baseurl }}/img/ui-toolkit/button-icon-text-dark@2x.png "Button / Icon + Text / Dark"){:.docs-component-image}
+![alt text]({{ site.baseurl }}/img/ui-toolkit/buttons/button-icon-text-dark@2x.png "Button / Icon + Text / Dark"){:.docs-component-image}
 
 
 #### JSX Declaration
@@ -56,7 +56,7 @@ Buttons are styled TouchableOpacities.
 ```  
 
 ##  Button / Fixed size
-![alt text]({{ site.baseurl }}/img/ui-toolkit/button-fixed-size@2x.png "Button / Fixed size"){:.docs-component-image}
+![alt text]({{ site.baseurl }}/img/ui-toolkit/buttons/button-fixed-size@2x.png "Button / Fixed size"){:.docs-component-image}
 
 
 #### JSX Declaration
@@ -73,7 +73,7 @@ Buttons are styled TouchableOpacities.
 ```  
 
 ##  Button / Full width
-![alt text]({{ site.baseurl }}/img/ui-toolkit/button-full-width@2x.png "Button / Full width"){:.docs-component-image}
+![alt text]({{ site.baseurl }}/img/ui-toolkit/buttons/button-full-width@2x.png "Button / Full width"){:.docs-component-image}
 
 
 #### JSX Declaration
@@ -84,7 +84,7 @@ Buttons are styled TouchableOpacities.
 ```  
 
 ##  Button / Navbar
-![alt text]({{ site.baseurl }}/img/ui-toolkit/button-navbar@2x.png "Button / Navbar"){:.docs-component-image}
+![alt text]({{ site.baseurl }}/img/ui-toolkit/buttons/button-navbar@2x.png "Button / Navbar"){:.docs-component-image}
 
 
 #### JSX Declaration
@@ -95,7 +95,7 @@ Buttons are styled TouchableOpacities.
 ```  
 
 ##  Button / Vertical / Icon + Text
-![alt text]({{ site.baseurl }}/img/ui-toolkit/button-vertical-icon-text@2x.png "Button / Vertical / Icon + Text"){:.docs-component-image}
+![alt text]({{ site.baseurl }}/img/ui-toolkit/buttons/button-vertical-icon-text@2x.png "Button / Vertical / Icon + Text"){:.docs-component-image}
 
 
 #### JSX Declaration
@@ -107,7 +107,7 @@ Buttons are styled TouchableOpacities.
 ```  
 
 ##  Button / Full width - Normal
-![alt text]({{ site.baseurl }}/img/ui-toolkit/button-full-width-normal@2x.png "Button / Full width - Normal"){:.docs-component-image}
+![alt text]({{ site.baseurl }}/img/ui-toolkit/buttons/button-full-width-normal@2x.png "Button / Full width - Normal"){:.docs-component-image}
 
 
 #### JSX Declaration
@@ -125,7 +125,7 @@ Buttons are styled TouchableOpacities.
 ```  
 
 ##  Button / Full width - Active (Feed)
-![alt text]({{ site.baseurl }}/img/ui-toolkit/button-full-width-active@2x.png "Button / Full width - Active (Feed)"){:.docs-component-image}
+![alt text]({{ site.baseurl }}/img/ui-toolkit/buttons/button-full-width-active@2x.png "Button / Full width - Active (Feed)"){:.docs-component-image}
 
 
 #### JSX Declaration

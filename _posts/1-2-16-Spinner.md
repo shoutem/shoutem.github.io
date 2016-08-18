@@ -16,7 +16,7 @@ There are two flavours of Spinner components in Shoutem UI toolkit
 ## Spinner
 `Spinner` is wrapper for `ProgressBarAndroid` and `ActivityIndicatorIOS` React Native components for Android and iOS, respectively, with special Shoutem scent.  
 
-![alt text]({{ site.baseurl }}/img/ui-toolkit/spinner@2x.png "Spinner"){:.docs-component-image}
+![alt text]({{ site.baseurl }}/img/ui-toolkit/spinner/spinner@2x.png "Spinner"){:.docs-component-image}
 
 #### JSX Declaration
 ```JSX
@@ -40,7 +40,7 @@ There are two flavours of Spinner components in Shoutem UI toolkit
 ## FullScreenSpinner
 FullScreenSpinner is a full screen variation of Spinner.   
 
-![alt text]({{ site.baseurl }}/img/ui-toolkit/spinner@2x.png "Spinner"){:.docs-component-image}
+![alt text]({{ site.baseurl }}/img/ui-toolkit/spinner/spinner@2x.png "Spinner"){:.docs-component-image}
 
 #### JSX Declaration
 ```JSX
