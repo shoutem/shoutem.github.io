@@ -151,7 +151,7 @@ Success!
 Go to `Shoutem Builder`. There you can see an empty admin page which allows you to add restaurants.
 
 <p class="image">
-<img src='{{ site.baseurl }}/img/getting-started/empty-admin-page.png'/>
+<img src='{{ site.baseurl }}/img/getting-started/empty-admin-page.jpg'/>
 </p>
 
 Click on `Create content` to start adding content. It will redirect you to `CMS` tab where you can manage content for that extension.

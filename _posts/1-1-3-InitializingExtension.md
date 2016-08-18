@@ -12,7 +12,7 @@ Here's the mockup of the Restaurants extension that we showed [Introduction]({{ 
 
 
 <p class="image">
-<img src='{{ site.baseurl }}/img/getting-started/extension-preview.png'/>
+<img src='{{ site.baseurl }}/img/getting-started/extension-preview.jpg'/>
 </p>
  
 Left application screen lists the restaurants and the right one shows the details of one specific restaurant. 
