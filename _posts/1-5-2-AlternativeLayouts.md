@@ -1,6 +1,6 @@
 ---
 layout: doc
-permalink: /docs/tutorials/alternativelayouts
+permalink: /docs/extensions/tutorials/alternativelayouts
 title: Alternative layouts
 section: Tutorials
 ---

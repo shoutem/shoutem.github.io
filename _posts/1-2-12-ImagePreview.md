@@ -1,6 +1,6 @@
 ---
 layout: doc
-permalink: /docs/ui-toolkit/image-preview
+permalink: /docs/ui-toolkit/components/image-preview
 title: Image Preview
 section: UI toolkit
 ---

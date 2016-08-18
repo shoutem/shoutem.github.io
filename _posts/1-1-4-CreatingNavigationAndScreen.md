@@ -1,6 +1,6 @@
 ---
 layout: doc
-permalink: /docs/getting-started/shortcut-and-screen
+permalink: /docs/extensions/getting-started/shortcut-and-screen
 title: Creating shortcut and screen
 section: Getting Started
 ---

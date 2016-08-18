@@ -1,6 +1,6 @@
 ---
 layout: doc
-permalink: /docs/ui-toolkit/dividers
+permalink: /docs/ui-toolkit/components/dividers
 title: Dividers
 section: UI toolkit
 ---

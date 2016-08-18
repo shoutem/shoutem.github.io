@@ -1,6 +1,6 @@
 ---
 layout: doc
-permalink: /docs/getting-started/initializing-extension
+permalink: /docs/extensions/getting-started/initializing-extension
 title: Initializing extension
 section: Getting Started
 ---

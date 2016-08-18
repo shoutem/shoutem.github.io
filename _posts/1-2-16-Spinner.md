@@ -1,6 +1,6 @@
 ---
 layout: doc
-permalink: /docs/ui-toolkit/spinner
+permalink: /docs/ui-toolkit/components/spinner
 title: Spinner
 section: UI toolkit
 ---

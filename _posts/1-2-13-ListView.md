@@ -1,6 +1,6 @@
 ---
 layout: doc
-permalink: /docs/ui-toolkit/list-view
+permalink: /docs/ui-toolkit/components/list-view
 title: List View
 section: UI toolkit
 ---

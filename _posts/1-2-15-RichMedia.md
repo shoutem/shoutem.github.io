@@ -1,6 +1,6 @@
 ---
 layout: doc
-permalink: /docs/ui-toolkit/rich-media
+permalink: /docs/ui-toolkit/components/rich-media
 title: Rich Media
 section: UI toolkit
 ---

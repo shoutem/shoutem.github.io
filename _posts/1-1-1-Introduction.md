@@ -1,6 +1,6 @@
 ---
 layout: doc
-permalink: /docs/getting-started/introduction
+permalink: /docs/extensions/getting-started/introduction
 title: Introduction
 section: Getting Started
 ---

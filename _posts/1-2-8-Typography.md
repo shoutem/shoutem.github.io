@@ -1,6 +1,6 @@
 ---
 layout: doc
-permalink: /docs/ui-toolkit/typography
+permalink: /docs/ui-toolkit/components/typography
 title: Typography
 section: UI toolkit
 ---

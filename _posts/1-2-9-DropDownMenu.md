@@ -1,6 +1,6 @@
 ---
 layout: doc
-permalink: /docs/ui-toolkit/dropdown-menu
+permalink: /docs/ui-toolkit/components/dropdown-menu
 title: Dropdown Menu
 section: UI toolkit
 ---

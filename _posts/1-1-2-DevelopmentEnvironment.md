@@ -1,6 +1,6 @@
 ---
 layout: doc
-permalink: /docs/getting-started/development-environment
+permalink: /docs/extensions/getting-started/development-environment
 title: Setting up the environment
 section: Getting Started
 ---

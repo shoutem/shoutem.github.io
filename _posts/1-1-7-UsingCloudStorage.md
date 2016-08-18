@@ -1,6 +1,6 @@
 ---
 layout: doc
-permalink: /docs/getting-started/using-cloud-storage
+permalink: /docs/extensions/getting-started/using-cloud-storage
 title: Using Cloud Storage
 section: Getting Started
 ---
