@@ -1,6 +1,6 @@
 ---
 layout: doc
-permalink: /docs/ui-toolkit/buttons
+permalink: /docs/ui-toolkit/components/buttons
 title: Buttons
 section: UI toolkit
 ---

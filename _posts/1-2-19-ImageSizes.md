@@ -1,6 +1,6 @@
 ---
 layout: doc
-permalink: /docs/ui-toolkit/image-sizes
+permalink: /docs/ui-toolkit/components/image-sizes
 title: Image sizes
 section: UI toolkit
 ---
