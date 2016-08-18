@@ -60,6 +60,9 @@ $(function() {
     setShell$Color();
 
     $(".mobile-menu-overlay, #sidebar-wrapper").removeClass("open");
+    
+    // remove focus from the active menu link
+    document.activeElement.blur();
   });
 
 
