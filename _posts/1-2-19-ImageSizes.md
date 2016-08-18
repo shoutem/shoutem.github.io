@@ -10,7 +10,7 @@ section: UI toolkit
 This document covers Image size classes available in Shoutem UI toolkit
   
 ## List image thumbnail (65x65)
-![alt text]({{ site.baseurl }}/img/ui-toolkit/drop_down_menu@2x.png "DropDownMenu"){:.docs-component-image}  
+![alt text]({{ site.baseurl }}/img/ui-toolkit/list-image-thumbnail-65-x-65@2x.png "List image thumbnail (65x65)"){:.docs-component-image}  
 
 
 #### JSX Declaration
@@ -22,7 +22,7 @@ This document covers Image size classes available in Shoutem UI toolkit
 ```  
   
 ## List video thumbnail (145x92)
-![alt text]({{ site.baseurl }}/img/ui-toolkit/drop_down_menu@2x.png "DropDownMenu"){:.docs-component-image}
+![alt text]({{ site.baseurl }}/img/ui-toolkit/list-video-thumbnail-145-x-92@2x.png "List video thumbnail (145x92)"){:.docs-component-image}
 
 
 #### JSX Declaration
@@ -34,7 +34,7 @@ This document covers Image size classes available in Shoutem UI toolkit
 ```  
   
 ## Card image thumbnail (180x85)
-![alt text]({{ site.baseurl }}/img/ui-toolkit/drop_down_menu@2x.png "DropDownMenu"){:.docs-component-image}
+![alt text]({{ site.baseurl }}/img/ui-toolkit/card-image-thumbnail-180-85@2x.png "Card image thumbnail (180x85)"){:.docs-component-image}
 
 
 #### JSX Declaration
