@@ -47,6 +47,22 @@ All components in this section support everything that the standard React Native
 <Text>Mobile App Creator</Text>
 ```
 
+## Text strong
+![alt text]({{ site.baseurl }}/img/ui-toolkit/text-strong@2x.png "Text strong"){:.docs-component-image}
+
+#### JSX Declaration
+```JSX
+<Text styleName="bold">Mobile App Creator</Text>
+```
+
+## Description
+![alt text]({{ site.baseurl }}/img/ui-toolkit/description@2x.png "Description"){:.docs-component-image}
+
+#### JSX Declaration
+```JSX
+<Description>Mobile App Creator</Description>
+```
+
 ## Caption
 ![alt text]({{ site.baseurl }}/img/ui-toolkit/caption@2x.png "Caption"){:.docs-component-image}
 

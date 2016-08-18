@@ -32,7 +32,7 @@ Section dividers are usually used in lists, to separate groups of similar list i
 
 #### JSX Declaration
 ```JSX
-<Divider />
+<Divider styleName="section-header" />
 ```
 
 ## Section divider + Label
@@ -40,7 +40,7 @@ Section dividers are usually used in lists, to separate groups of similar list i
 
 #### JSX Declaration
 ```JSX
-<Divider>
+<Divider styleName="section-header">
   <Caption>INFORMATION</Caption>
 </Divider>
 ```
@@ -50,11 +50,9 @@ Section dividers are usually used in lists, to separate groups of similar list i
 
 #### JSX Declaration
 ```JSX
-<Divider>
-  <View styleName="horizontal">
-    <Caption styleName="flexible">PRODUCT NAME</Caption>
-    <Caption>PRICE</Caption>
-  </View>
+<Divider styleName="section-header">
+  <Caption>PRODUCT NAME</Caption>
+  <Caption>PRICE</Caption>
 </Divider>
 ```
 
