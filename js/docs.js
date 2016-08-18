@@ -73,6 +73,7 @@ $(function() {
 
   $("#signup-button, #signup-button-menu").on("click", function(e) {
     $(".mobile-menu-overlay, #sidebar-wrapper").removeClass("open");
+    $signupModal.focusedElBeforeOpen = document.activeElement;
     $signupModal.addClass("open");
     setTimeout(function(){
       $(".signup-email").focus();
@@ -82,13 +83,49 @@ $(function() {
 
   $signupModal.on("click", function(e) {
     if( (e.target || e.srcElement).id === $signupModal[0].id ) {
-      $signupModal.removeClass("open");
+      closeSignupModal();
       e.preventDefault();
     }
   });
 
   $("#mc-embedded-cancel").on("click", function(e) {
-      $signupModal.removeClass("open");
+      closeSignupModal();
+  });
+
+  function closeSignupModal(e)
+  {
+    $signupModal.removeClass("open");
+    $signupModal.focusedElBeforeOpen.focus();
+  }
+
+  // https://bitsofco.de/accessible-modal-dialog/
+  $signupModal.on("keydown", function(e)
+  {
+    var emailInput = document.querySelector("#mce-EMAIL");
+    var submitButton = document.querySelector("#mc-embedded-subscribe");
+    var KEY_TAB = 9;
+
+    function handleBackwardTab() {
+      if ( document.activeElement === emailInput ) {
+          e.preventDefault();
+          submitButton.focus();
+      }
+    }
+    function handleForwardTab() {
+      if ( document.activeElement === submitButton ) {
+          e.preventDefault();
+          emailInput.focus();
+      }
+    }
+
+    if( e.keyCode === KEY_TAB )
+    {
+      if ( e.shiftKey ) {
+        handleBackwardTab();
+      } else {
+        handleForwardTab();
+      }
+    }
   });
 
   
@@ -135,7 +172,6 @@ $(function() {
 
   function showMenuItems() {
     var loc = currentLocation;
-    console.log(loc);
 
     // Show section with links
     $('.menu-group-wrapper:not(#' + loc.section + ')').removeClass('active');
