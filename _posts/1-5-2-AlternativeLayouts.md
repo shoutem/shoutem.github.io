@@ -15,7 +15,7 @@ We’ll continue making an alternative layout on the Restaurants extension that 
 Now let’s add one additional screen that will represent an alternative layout that will feature a list with smaller images as shown on the image below:
 
 <p class="image">
-<img src='{{ site.baseurl }}/img/tutorials/alternativelayouts/list-small.png'/>
+<img src='{{ site.baseurl }}/img/tutorials/alternativelayouts/list-small.jpg'/>
 </p>
 
 
