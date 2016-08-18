@@ -1,6 +1,6 @@
 ---
 layout: doc
-permalink: /docs/ui-toolkit/tiles
+permalink: /docs/ui-toolkit/components/tiles
 title: Tiles
 section: UI toolkit
 ---

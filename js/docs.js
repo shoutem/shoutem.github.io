@@ -60,6 +60,9 @@ $(function() {
     setShell$Color();
 
     $(".mobile-menu-overlay, #sidebar-wrapper").removeClass("open");
+    
+    // remove focus from the active menu link
+    document.activeElement.blur();
   });
 
 
@@ -132,6 +135,7 @@ $(function() {
 
   function showMenuItems() {
     var loc = currentLocation;
+    console.log(loc);
 
     // Show section with links
     $('.menu-group-wrapper:not(#' + loc.section + ')').removeClass('active');
@@ -139,6 +143,7 @@ $(function() {
 
     // Show active menu item
     $('.menu-group-wrapper a[href$="' + loc.path + '"]').parent().addClass('active');
+    $('.menu-group-wrapper a[href$="' + loc.path + '"]').parents(".menu-group-wrapper").addClass('active');
 
     // Select documentation tab
     $('#documentationTab').addClass('active');

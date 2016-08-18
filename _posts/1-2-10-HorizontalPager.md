@@ -1,6 +1,6 @@
 ---
 layout: doc
-permalink: /docs/ui-toolkit/horizontal-pager
+permalink: /docs/ui-toolkit/components/horizontal-pager
 title: Horizontal Pager
 section: UI toolkit
 ---

@@ -1,6 +1,6 @@
 ---
 layout: doc
-permalink: /docs/getting-started/publish
+permalink: /docs/extensions/getting-started/publish
 title: Publishing your extension
 section: Getting Started
 ---

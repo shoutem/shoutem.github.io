@@ -1,6 +1,6 @@
 ---
 layout: doc
-permalink: /docs/getting-started/introduction
+permalink: /docs/extensions/getting-started/introduction
 title: Introduction
 section: Getting Started
 ---
@@ -13,7 +13,7 @@ This tutorial shows how to write custom **Shoutem extensions** on Shoutem platfo
 Here's a preview how completed app will look like.
 
 <p class="image">
-<img src='{{ site.baseurl }}/img/getting-started/extension-preview.png'/>
+<img src='{{ site.baseurl }}/img/getting-started/extension-preview.jpg'/>
 </p>
 
 ## So what are the extensions?

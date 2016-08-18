@@ -1,6 +1,6 @@
 ---
 layout: doc
-permalink: /docs/ui-toolkit/video
+permalink: /docs/ui-toolkit/components/video
 title: Video
 section: UI toolkit
 ---

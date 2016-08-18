@@ -1,6 +1,6 @@
 ---
 layout: doc
-permalink: /docs/ui-toolkit/cards
+permalink: /docs/ui-toolkit/components/cards
 title: Cards
 section: UI toolkit
 ---

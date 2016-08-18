@@ -1,6 +1,6 @@
 ---
 layout: doc
-permalink: /docs/ui-toolkit/image-gallery
+permalink: /docs/ui-toolkit/components/image-gallery
 title: Image Gallery
 section: UI toolkit
 ---

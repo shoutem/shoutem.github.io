@@ -1,6 +1,6 @@
 ---
 layout: doc
-permalink: /docs/ui-toolkit/rows
+permalink: /docs/ui-toolkit/components/rows
 title: Rows
 section: UI toolkit
 ---
