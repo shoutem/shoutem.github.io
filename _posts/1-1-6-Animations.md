@@ -23,9 +23,9 @@ When building an application, there is a need to create animations to enrich the
 
 ## Driver
 
-Animation is driven by the `driver`. Driver encapsulates the creation of animation [input events](https://facebook.github.io/react-native/docs/animations.html#input-events), making React Native animations even more declarative. Drivers are attached to animation components which want to listen to specific driver inputs. For now, we're supporing only `ScrollDriver`, that binds scrolling of RN `[ScrollView](https://facebook.github.io/react-native/docs/scrollview.html)` to the attaching animation components. Binding is done via passing properties to `ScrollView`:
+Animation is driven by the `driver`. Driver encapsulates the creation of animation [input events](https://facebook.github.io/react-native/docs/animations.html#input-events), making React Native animations even more declarative. Drivers are attached to animation components which want to listen to specific driver inputs. For now, we're supporing only `ScrollDriver`, that binds scrolling of RN [ScrollView](https://facebook.github.io/react-native/docs/scrollview.html) to the attaching animation components. Binding is done via passing properties to `ScrollView`:
 
-```
+```javascript
 import React from 'react';
 import { ScrollView } from 'react-native';
 import { ScrollDriver } from '@shoutem/animation';
@@ -71,7 +71,7 @@ Fades in components wrapped by it.
 
 ***Usage:***
 
-```
+```javascript
 const driver = new ScrollDriver();
 
 return (
@@ -102,7 +102,7 @@ Fades out components warped by it.
 
 ***Usage:***
 
-```
+```javascript
 const driver = new ScrollDriver();
 
 return (
@@ -134,7 +134,7 @@ Zooms in components warped by it.
 
 ***Usage:***
 
-```
+```javascript
 const driver = new ScrollDriver();
 
 return (
@@ -167,7 +167,7 @@ Zooms out components warped by it.
 
 ***Usage:***
 
-```
+```javascript
 const driver = new ScrollDriver();
 
 return (
@@ -201,7 +201,7 @@ Adds parallax effect to its children components. By default children will by tra
 
 ***Usage:***
 
-```
+```javascript
 const driver = new ScrollDriver();
 
 return (
@@ -232,7 +232,7 @@ Adds a complex, premade animation to its children components.
 
 ***Usage:***
 
-```
+```javascript
 const driver = new ScrollDriver();
 
 return (
@@ -256,7 +256,7 @@ Above code will create scroll dependent parallax animation over `Image` componen
 
 Animations can be combined simply by wrapping each other. This is an example from open-sourced [Shoutem News](#todo) extension.
 
-```
+```javascript
 import React from 'react';
 import { ScrollView } from 'react-native';
 import {
