@@ -14,10 +14,15 @@ Tiles are a convenient way to display homogeneous content. They are often used i
 
 #### JSX Declaration
 ```JSX
-<Tile>
-  <Image source="..." />
-  <Subtitle lines=2>When The Morning Dawns - DJ Silver Samples</Subtitle>
-  <Caption>20 hours ago</Caption>
+<Tile styleName="small">
+  <Image
+    styleName="medium-square"
+    source={require('../assets/examples/road.png')}
+  />
+  <View styleName="content">
+    <Subtitle numberOfLines={2}>When The Morning Dawns - DJ Silver Sample Album</Subtitle>
+    <Caption>20 hours ago</Caption>
+  </View>
 </Tile>
 ```
 
@@ -26,58 +31,75 @@ Tiles are a convenient way to display homogeneous content. They are often used i
 
 #### JSX Declaration
 ```JSX
-<Tile>
-  <Image source="...">
-    <IconButton iconName="play" onPress={...} />
+<Tile styleName="small">
+  <Image
+    styleName="medium-square"
+    source={require('../assets/examples/road.png')}
+  >
+    <Icon name="play" styleName="rounded-overlay-small" />
   </Image>
-  <Subtitle lines=2>When The Morning Dawns - DJ Silver Samples</Subtitle>
-  <Caption>20 hours ago</Caption>
+  <View styleName="content">
+    <Subtitle numberOfLines={2}>When The Morning Dawns - DJ Silver Sample Album</Subtitle>
+    <Caption>20 hours ago</Caption>
+  </View>
 </Tile>
 ```
 
-## Large tile
+## Large (featured) tile
 ![alt text]({{ site.baseurl }}/img/ui-toolkit/tiles/large-tile@2x.png "Large Tile"){:.docs-component-image}
 
 #### JSX Declaration
 ```JSX
 <Tile>
-  <Image source="...">
-    <Title>MIKE PATTON TEAMING WITH JOHN KAADA FOR COLLAB ALBUM BACTERIA CULT</Title>
-    <View styleName="horizontal">
-      <Caption>Sophia Jackson</Caption>
-      <Caption>2 hours ago</Caption>
-    </View>
+  <Image
+    styleName="featured"
+    source={require('../assets/examples/road.png')}
+  >
+    <Overlay>
+      <Title styleName="md-gutter-bottom">MIKE PATTON TEAMING WITH JOHN KAADA FOR COLLAB ALBUM BACTERIA CULT</Title>
+      <Caption>Sophia Jackson        21 hours ago</Caption>
+    </Overlay>
   </Image>
 </Tile>
 ```
 
-## Large tile + Button 
+## Large (featured) tile + Button 
 ![alt text]({{ site.baseurl }}/img/ui-toolkit/tiles/large-tile-button@2x.png "Large Tile + Button"){:.docs-component-image}
 
 #### JSX Declaration
 ```JSX
 <Tile>
-  <Image source="...">
-    <Title>A DEAL ITLE THAT BREAKS IN TWO LINES</Title>
-    <Caption styleName="strikethrough">$150.00</Caption>
-    <Heading>$99.99</Heading>
-    <Button onPress={...}>CLAIM COUPON</Button>
+  <Image
+    styleName="featured"
+    source={require('../assets/examples/road.png')}
+  >
+    <Overlay>
+      <Title>MIKE PATTON TEAMING WITH JOHN KAADA</Title>
+      <Subtitle styleName="line-through sm-gutter-top">150.00</Subtitle>
+      <Heading>99.99</Heading>
+      <Button styleName="md-gutter-top"><Text>CLAIM COUPON</Text></Button>
+    </Overlay>
   </Image>
 </Tile>
 ```
 
-## Large tile + Button + Sale tag
+## Large (featured) tile + Button + Sale tag
 ![alt text]({{ site.baseurl }}/img/ui-toolkit/tiles/large-tile-button-sale-tag@2x.png "Large Tile + Button + Sale tag"){:.docs-component-image}
 
 #### JSX Declaration
 ```JSX
 <Tile>
-  <Image source="...">
-    <Tag>-20%</Tag>
-    <Title>COOL BLACK AND WHITE STYLISH WATCHES  </Title>
-    <Subtitle styleName="strikethrough">$280.00</Subtitle>
-    <Heading>$250.00</Heading>
-    <IconButton iconName="add-to-basket" onPress={...}>ADD TO BASKET</IconButton>
+  <Image
+    styleName="featured"
+    source={require('../assets/examples/road.png')}
+  >
+    <Overlay>
+      <Overlay styleName="collapsed"><Heading>-20%</Heading></Overlay>
+      <Title styleName="md-gutter-top">COOL BLACK AND WHITE STYLISH WATCHES</Title>
+      <Subtitle styleName="line-through sm-gutter-top">$280.00</Subtitle>
+      <Heading>$250.00</Heading>
+      <Button styleName="md-gutter-top"><Icon name="cart" /><Text>ADD TO BASKET</Text></Button>
+    </Overlay>
   </Image>
 </Tile>
 ```
@@ -87,11 +109,17 @@ Tiles are a convenient way to display homogeneous content. They are often used i
 
 #### JSX Declaration
 ```JSX
-<Tile>
-  <Image source="..." />
-  <View styleName="vertical">
-    <Title>IMPACT OF EXTRINSIC MOTIVATION ON INTRINSIC MOTIVATION</Title>
-    <Caption>1 hour ago</Caption>
+<Tile styleName="light">
+  <Image
+    styleName="large-banner"
+    source={require('../assets/examples/road.png')}
+  />
+  <View styleName="content">
+    <Title>MAUI BY AIR THE BEST WAY AROUND THE ISLAND</Title>
+    <View styleName="horizontal space-between">
+      <Caption>1 hour ago</Caption>
+      <Caption>15:34</Caption>
+    </View>
   </View>
 </Tile>
 ```
@@ -101,14 +129,17 @@ Tiles are a convenient way to display homogeneous content. They are often used i
 
 #### JSX Declaration
 ```JSX
-<Tile>
-  <Image source="...">
-    <Icon iconName="play" />
+<Tile styleName="light">
+  <Image
+    styleName="large-banner"
+    source={require('../assets/examples/road.png')}
+  >
+    <Icon name="play" styleName="rounded-overlay" />
   </Image>
-  <View styleName="vertical">
+  <View styleName="content">
     <Title>MAUI BY AIR THE BEST WAY AROUND THE ISLAND</Title>
-    <View styleName="horizontal">
-      <Caption styleName="flexible">1 hour ago</Caption>
+    <View styleName="horizontal space-between">
+      <Caption>1 hour ago</Caption>
       <Caption>15:34</Caption>
     </View>
   </View>
@@ -121,9 +152,14 @@ Tiles are a convenient way to display homogeneous content. They are often used i
 #### JSX Declaration
 ```JSX
 <Tile>
-  <Image styleName="banner" source="...">
-    <Title>SMOKED SALMON, CLASSIC CONDIMENTS, BRIOCHE</Title>
-    <Tag styleName="light">$18.30</Tag>
+  <Image
+    styleName="large-banner"
+    source={require('../assets/examples/road.png')}
+  >
+    <Overlay>
+      <Title styleName="md-gutter-bottom">SMOKED SALMON, CLASSIC CONDIMENTS, BRIOCHE</Title>
+      <Overlay styleName="collapsed solid-light"><Subtitle>$18.30</Subtitle></Overlay>
+    </Overlay>
   </Image>
 </Tile>
 ```
@@ -134,12 +170,17 @@ Tiles are a convenient way to display homogeneous content. They are often used i
 #### JSX Declaration
 ```JSX
 <Tile>
-  <Image styleName="banner" source="...">
-    <View styleName="horizontal end">
-      <IconButton iconName="star" onPress={...} />
-    </View>
-    <Title>COVENTRY CITY GUIDE INCLUDING COVENTRY HOTELS</Title>
-    <Caption>6557 Americo Hills Apt. 118</Caption>
+  <Image
+    styleName="large-banner"
+    source={require('../assets/examples/road.png')}
+  >
+    <Overlay>
+      <View styleName="actions">
+        <Button styleName="tight clear"><Icon name="add-to-favorites" /></Button>
+      </View>
+      <Title>HOW TO MAINTAIN YOUR MENTAL HEALTH IN 2016</Title>
+      <Caption>6557 Americo Hills Apt. 118</Caption>
+    </Overlay>
   </Image>
 </Tile>
 ```

@@ -47,8 +47,9 @@ Components that are rendered within lists are usually implemented using the row 
 #### JSX Declaration
 ```JSX
 <Row>
-  <Icon iconName="star" />
-  <Text>Add to favorites</Text>
+    <Icon name="web" />
+    <Text>About</Text>
+    <Icon styleName="disclosure" name="right-arrow" />
 </Row>
 ```
   

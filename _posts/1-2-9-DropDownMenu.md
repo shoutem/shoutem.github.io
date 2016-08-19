@@ -16,7 +16,7 @@ DropDownMenu is a full screen contextual menu for displaying lists of links.
 #### JSX Declaration
 ```JSX
 <DropDownMenu
-      data={...}
+      items={...}
       bindings={...}
       onItemSelected={...}
       selectedItem={...}
@@ -26,7 +26,7 @@ DropDownMenu is a full screen contextual menu for displaying lists of links.
 
 #### Props
 
-* **data** : array  
+* **items** : array  
   - Array of items that are then rendered as `Button`s within `ListView`
 
 * **bindings** : array  
