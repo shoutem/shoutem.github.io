@@ -1,7 +1,7 @@
 ---
 layout: doc
-permalink: /docs/ui-toolkit/components/theme
-title: Theme
+permalink: /docs/ui-toolkit/theme/Introduction
+title: Introduction
 section: UI toolkit
 ---
 
