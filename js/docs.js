@@ -45,12 +45,13 @@ $(function() {
     $(".page-title").text(flourish.page_title);
     $(".page-section").text(flourish.page_section);
 
-    $(".menu-group-wrapper:not(#" + loc.section + ")").removeClass("active");
-    $("#" + loc.section).addClass("active");
+    $(".menu-group-wrapper").removeClass("open");
+    $("#" + loc.section).addClass("open");
 
-    var selectedItem = $('.menu-group-wrapper a[href$="' + loc.path + '"]');
-    $("#menu li.active").not(selectedItem).removeClass("active");
+    var selectedItem = $('.menu-group-wrapper a[href$="' + loc.path + '"]').parent();
+    $("#menu li.active").removeClass("active");
     selectedItem.addClass("active");
+
     $("html, body").animate({ scrollTop: 0 });
    
     showMenuItems();
@@ -174,19 +175,22 @@ $(function() {
     var loc = currentLocation;
 
     // Show section with links
-    $('.menu-group-wrapper:not(#' + loc.section + ')').removeClass('active');
-    $('#' + loc.section).addClass('active');
+    $('.menu-group-wrapper').removeClass('open');
+    $('#' + loc.section).addClass('open');
 
     // Show active menu item
     $('.menu-group-wrapper a[href$="' + loc.path + '"]').parent().addClass('active');
-    $('.menu-group-wrapper a[href$="' + loc.path + '"]').parents(".menu-group-wrapper").addClass('active');
+    $('.menu-group-wrapper a[href$="' + loc.path + '"]').parents(".menu-group-wrapper").addClass('open');
 
     // Select documentation tab
     $('#documentationTab').addClass('active');
   };
 
   function showNavButtons() {
-      var $activeLink = $('.sidebar-nav .active');
+      var $activeLink = $('.sidebar-nav li.active').filter(function() {
+        return $(this).find("li.active").length === 0;
+      });
+
       var $prev = $('a', $activeLink.prev());
       var $next = $('a', $activeLink.next());
       var prevUrl = $prev.attr('href');
@@ -256,8 +260,10 @@ $(function() {
 
     if( e.type === "popstate" )
     {
-      if( e.originalEvent.state && e.originalEvent.state.url ) {
-        url = e.originalEvent.state.url
+      var state = e.originalEvent ? e.originalEvent.state : e.state;
+
+      if( state && state.url ) {
+        url = state.url
       }
     }
     else
