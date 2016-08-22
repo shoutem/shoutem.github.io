@@ -45,13 +45,6 @@ $(function() {
     $(".page-title").text(flourish.page_title);
     $(".page-section").text(flourish.page_section);
 
-    $(".menu-group-wrapper").removeClass("open");
-    $("#" + loc.section).addClass("open");
-
-    var selectedItem = $('.menu-group-wrapper a[href$="' + loc.path + '"]').parent();
-    $("#menu li.active").removeClass("active");
-    selectedItem.addClass("active");
-
     $("html, body").animate({ scrollTop: 0 });
    
     showMenuItems();
@@ -174,25 +167,23 @@ $(function() {
   function showMenuItems() {
     var loc = currentLocation;
 
-    // Show section with links
-    $('.menu-group-wrapper').removeClass('open');
-    $('#' + loc.section).addClass('open');
+    $('.sidebar-nav .active').removeClass("active");
+    $('.sidebar-nav .open').removeClass("open");
 
     // Show active menu item
-    $('.menu-group-wrapper a[href$="' + loc.path + '"]').parent().addClass('active');
-    $('.menu-group-wrapper a[href$="' + loc.path + '"]').parents(".menu-group-wrapper").addClass('open');
+    $activeLinks = $('a[href$="' + loc.path + '"]');
+    $activeLinks.addClass("active");
+    $activeLinks.parents("ul").addClass('open');
 
     // Select documentation tab
     $('#documentationTab').addClass('active');
   };
 
   function showNavButtons() {
-      var $activeLink = $('.sidebar-nav li.active').filter(function() {
-        return $(this).find("li.active").length === 0;
-      });
+      var $activeLink = $('.sidebar-nav .active:not(.menu-group-title)').parent();
 
-      var $prev = $('a', $activeLink.prev());
-      var $next = $('a', $activeLink.next());
+      var $prev = $('>a', $activeLink.prev());
+      var $next = $('>a', $activeLink.next());
       var prevUrl = $prev.attr('href');
       var nextUrl = $next.attr('href');
       var $prevLink = $('#pager-wrapper .previous a');
