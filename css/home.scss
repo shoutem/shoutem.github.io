@@ -682,18 +682,18 @@ p {
         }
 
         li:not(.integrations) {
-            margin-right: -45px;
-
-            @include large {
-                margin-right: 0;
-            }
+            margin-right: 0;
         }
 
         @include large {
             margin-left: 45px;
         }
 
-        @include medium-2 {
+        @media (max-width: 1120px) {
+            margin-left: 15px;
+        }
+
+        @include large {
             width: 360px;
             margin-top: 0;
         }
