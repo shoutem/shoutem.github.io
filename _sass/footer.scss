@@ -126,7 +126,7 @@
         padding-top: 22px;
     
         @include small {
-            height: 366px;
+            height: 326px;
         }
 
         .container-fluid {
@@ -204,6 +204,12 @@
 
                     @include small {
                         margin-top: 0;
+                    }
+                }
+
+                &.icon-twitter a {
+                    @include small {
+                        margin-left: 24px;
                     }
                 }
 

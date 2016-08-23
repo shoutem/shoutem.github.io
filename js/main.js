@@ -2,7 +2,7 @@ $(function() {
 	
 	function onFooterResize() {
 
-		if( $(document).width() <= 640 ) {
+		if( window.outerWidth <= 640 ) {
 			return;
 		}
 
@@ -14,10 +14,6 @@ $(function() {
 	
 	if( $("body").hasClass("home") )
 	{
-		$(window).on("resize", onFooterResize);
-		
-		onFooterResize();
-
 		// header
 	
 		var headroom  = new Headroom($("nav.headroom").get(0), 
@@ -38,6 +34,10 @@ $(function() {
 				scrollTop: $(document).height()
 			}, "slow");	
 		});
+
+		$(window).on("resize", onFooterResize);
+
+		onFooterResize();
 	}
 
 	$(".close-menu-overlay").on("click", function () {
