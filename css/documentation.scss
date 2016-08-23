@@ -275,7 +275,7 @@ pre[data-line] {
         left: calc(50% - 720px);
     }
 
-    @include medium-2 {
+    @media screen and (max-width: 991px) {
         left: auto !important;
         right: 0;
         transform: translate(100%, 0);

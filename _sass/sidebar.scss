@@ -46,6 +46,14 @@
                 font-size: 16px;
                 height: 48px;
                 line-height: 48px;
+
+                span {
+                    display: none;
+
+                    @media screen and (max-width: 991px) {
+                        display: inline;
+                    }
+                }
             }
 
             &:hover,
