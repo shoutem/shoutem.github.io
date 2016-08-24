@@ -17,13 +17,11 @@
     li {
         font-size: 14px;
 
-        &.primary {
-            font-size: 16px;
-            
-            > a {
-                height: 48px;
-                line-height: 48px;
-            }
+        &.primary > a {
+            height: 48px;
+            line-height: 48px;
+            font-size: 15px;
+            font-weight: 700;
         }
 
         .active:not(.menu-group-title) {
@@ -55,5 +53,25 @@
         font-weight: 700;
         height: 48px;
         line-height: 48px;
+    }
+
+    .sidelink a {
+        font-weight: 500 !important;
+        font-size: 14px !important;
+        height: 40px !important;
+        line-height: 40px !important;
+    }
+
+    .button-signup {
+        color: #00aadf;
+        font-weight: 700;
+        font-size: 15px;
+    }
+
+    .menu-button-signup {
+        padding: 15px 0;
+        border-top: 1px solid #DDD;
+        border-bottom: 1px solid #DDD;
+        margin: 15px 0 !important;
     }
 }

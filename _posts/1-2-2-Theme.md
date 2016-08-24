@@ -1,8 +1,8 @@
 ---
 layout: doc
-permalink: /docs/ui-toolkit/theme/Introduction
+permalink: /docs/ui-toolkit/theme/introduction
 title: Introduction
-section: UI toolkit
+section: UI toolkit Theme
 ---
 
 # Theme
@@ -126,7 +126,7 @@ const theme = {
 ## Theme style rules 
 All styles defined as part of the theme may be regular React Native styles, but there are several new types of style rules that are supported in themes as well. We will explain all those rules on the Card component from the UI toolkit:
 
-![alt text]({{ site.baseurl }}/img/ui-toolkit/card@2x.png "Card grid item"){:.docs-component-image}
+![alt text]({{ site.baseurl }}/img/ui-toolkit/cards/card@2x.png "Card grid item"){:.docs-component-image}
 
 #### JSX Declaration
 ```JSX
