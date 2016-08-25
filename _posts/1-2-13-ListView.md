@@ -29,6 +29,9 @@ ListView component is base component that is used to render Lists of items. This
 
 #### Props
 
+* **autoHideHeader** : bool
+  - Prop defining should List View header automatically hide
+
 * **data** : array  
   - Prop containing items that will be rendered by ListView component
 
@@ -56,14 +59,8 @@ ListView component is base component that is used to render Lists of items. This
 
 #### Style
 
-* **list**
-  - Component is passing content from this Style Prop to `customStyles` prop of underlying `GiftedListView` component
-
 * **loadMoreSpinner**
-  - Component is passing content from this Style Prop to Style Prop of `FullScreenSpinner` component that appears during initial content loading  
+  - Component is passing content from this Style Prop to Style Prop of `Spinner` component that appears during initial content loading  
      
-* **newDataSpinner**
-  - Component is passing content from this Style Prop to Style Prop of `PlatformSpinner` component that appears when List is scrolled all way to bottom, together with calling the callback from `onLoadMore` prop
-  
-* **tintColor**
-  - Component is passing content from this Style Prop to `tintColor` prop of `RefreshControl` component that underlying `GiftedListView` is reusing. 
+* **refreshControl**
+  - Component is passing content from this Style Prop to Style Prop of `RefreshControl` component. You can also define `refreshControl.tintColor` prop in this Style, which is passed to `tintColor` prop of `RefreshControl` component.
