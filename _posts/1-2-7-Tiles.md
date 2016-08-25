@@ -308,6 +308,5 @@ Tiles are a convenient way to display homogeneous content. They are often used i
 * **text-centric**: centers content within container and applies standard margins.
 * **clear**: sets the `clear` background color, as defined in Theme (usually transparent).
 * **small**: sets the fixed width to 145px and reduces margins and paddings.
-  
 * Nested `View` component can use following Style name:
   * **content**: applies the standard margins around the content in `View`.

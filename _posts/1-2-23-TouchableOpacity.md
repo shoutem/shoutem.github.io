@@ -23,9 +23,8 @@ TouchableOpacity is a React Native `TouchableOpacity`, with additional styling t
 #### Props
 
 * `TouchableOpacity` can receive same props like React Native `TouchableOpacity` component is receiving (`onPress` etc).  
-  
-#### Style  
-  
-* `TouchableOpacity` can receive same Style props like React Native `TouchableOpacity` component is receiving (`activeOpacity`).  
 
+#### Style
+
+* `TouchableOpacity` can receive same Style props like React Native `TouchableOpacity` component is receiving (`activeOpacity`).
 * _Note that `activeOpacity` can also be set through Theme, and it defaults to 0.8._

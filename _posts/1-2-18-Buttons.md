@@ -141,6 +141,7 @@ Buttons are styled TouchableOpacities.
   </Button>
 </View>
 ```  
+
 #### Props
 
 * All Buttons can receive same Props that React Native's `TouchableOpacity` component is using

@@ -16,7 +16,7 @@ Inputs are components for inputting text into the application using keyboard.
 ```JSX
 <Input 
   placeholder={'Username or email'}
-  value={...} />
+  onChangeText={...} />
 ```
 
 ## Input / With text 
@@ -26,7 +26,7 @@ Inputs are components for inputting text into the application using keyboard.
 ```JSX
 <Input 
   placeholder={'Username or email'}
-  value={...} />
+  onChangeText={...} />
 ```
 
 ## Input / With password  
@@ -37,6 +37,12 @@ Inputs are components for inputting text into the application using keyboard.
 <Input 
   placeholder={'Username or email'}
   secureTextEntry={true}
-  value={} />
+  onChangeText={} />
 ```
-    
+  
+#### Props
+
+* **placeholder**: defines the placeholder text within Input
+* **secureTextEntry**: If true, the text input obscures the text entered so that sensitive text like passwords stay secure.
+* **onChangeText**: function 
+  - Callback that is called when the text input's text changes. Changed text is passed as an argument to the callback handler.
