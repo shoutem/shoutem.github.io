@@ -15,7 +15,7 @@ Components that are rendered within lists are usually implemented using the row 
 #### JSX Declaration
 ```JSX
 <Row>
-  <Text lines=1>Portland ugh fashion axe Helvetica, YOLO Echo Party</Text>
+  <Text numberOfLines={1}>Portland ugh fashion axe Helvetica, YOLO Echo Party</Text>
 </Row>
 ```
 
@@ -24,7 +24,7 @@ Components that are rendered within lists are usually implemented using the row 
 
 #### JSX Declaration
 ```JSX
-<Row>
+<Row styleName="small">
   <Image styleName="avatar-small" source="..." />
   <Text>Add comment</Text>
 </Row>
@@ -35,7 +35,7 @@ Components that are rendered within lists are usually implemented using the row 
 
 #### JSX Declaration
 ```JSX
-<Row>
+<Row styleName="small">
   <Icon iconName="star" />
   <Text>Add to favorites</Text>
 </Row>
@@ -46,7 +46,7 @@ Components that are rendered within lists are usually implemented using the row 
 
 #### JSX Declaration
 ```JSX
-<Row>
+<Row styleName="small">
     <Icon name="web" />
     <Text>About</Text>
     <Icon styleName="disclosure" name="right-arrow" />
@@ -58,7 +58,7 @@ Components that are rendered within lists are usually implemented using the row 
 
 #### JSX Declaration
 ```JSX
-<Row>
+<Row styleName="small">
   <Icon iconName="laptop" />
   <View styleName="vertical">
     <Subtitle>Bridges Rock Gym</Subtitle>
@@ -175,3 +175,14 @@ Components that are rendered within lists are usually implemented using the row 
   </View>
 </Row>
 ```
+  
+#### Style names  
+
+* **small**: sets the fixed height of Row to 65px.
+  
+#### Nested components can also use these Style names:
+* **disclosure**: applicable only for `Icon` components within `Row`. Pulls the icon to the right, and sets opacity to 50%.  
+* **right-icon**: applicable only for `Button` components within `Row`.  
+* **notification-dot**: applicable only for `View` components within  `Row`. Pulls the notification dot to the left of the content.  
+* **vertical**: applicable only for `View` components within `Row`. Adds bottom margin below each `View` in `Row`.
+  

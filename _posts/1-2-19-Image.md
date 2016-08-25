@@ -7,7 +7,7 @@ section: UI toolkit
 
 # Image
 
-This document covers Image component and Image size classes available in Shoutem UI toolkit
+This document covers Image component and Image size style names available in Shoutem UI toolkit
   
 ## List image thumbnail (65x65)
 ![alt text]({{ site.baseurl }}/img/ui-toolkit/image-sizes/list-image-thumbnail-65-x-65@2x.png "List image thumbnail (65x65)"){:.docs-component-image}  
