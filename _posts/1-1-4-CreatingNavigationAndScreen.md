@@ -8,7 +8,7 @@ section: Getting Started
 # Creating shortcut and screen
 <hr />
 
-The easiest way to understand what shortcuts are, is to think of them as links to the starting screen in your extension. These links will be used to navigate to your extension from any part of the application. Extensions can expose more shortcuts. Let's now create one.
+The easiest way to understand what shortcuts are, is to think of them as links to the starting screen in your extension. These links will be used to navigate to your extension from any part of the application. Extensions can expose multiple shortcuts. Let's now create one.
 
 ```ShellSession
 $ shoutem shortcut add openRestaurantsList
@@ -106,7 +106,7 @@ export default class RestaurantsList extends Component {
 }
 ```
 
-In React, `Component` specifies its UI in `render` method. Now that screen is created, we need to connect it to shortcut in extension.json.
+In React, `Component` specifies its UI in `render` method. Now when the screen is created, we need to connect it to shortcut in extension.json.
 
 ```json{10}
 #file: extension.json
