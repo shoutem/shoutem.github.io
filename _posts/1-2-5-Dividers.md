@@ -25,6 +25,8 @@ Dividers are components used to add space or any other separator between other c
 <Divider styleName="line" />
 ```
 
+* Note that line divider doesn't contain padding around the line. White space around line on image above is only for clarification purposes.
+
 ## Section divider
 Section dividers are usually used in lists, to separate groups of similar list items, for example to group contacts by the first letter of their name. ListView will automatically style all dividers added to it.
 
@@ -55,6 +57,3 @@ Section dividers are usually used in lists, to separate groups of similar list i
   <Caption>PRICE</Caption>
 </Divider>
 ```
-
-#### Style
-* **flexible**: makes a component flexible (stretchable)
