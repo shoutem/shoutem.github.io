@@ -18,10 +18,6 @@ Simply install it with:
 npm install @shoutem/animation
 ```
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 91b0a75133374c3d5a3f5b7a2c96262fc27707c8
 ## Coming soon
 
 We're working hard to open source more `animation components` and `drivers`, which are already helping us in many [Shoutem extensions](http://shoutem.github.io/docs/extensions/getting-started/introduction). Some of them are:
