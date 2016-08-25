@@ -18,19 +18,6 @@ Simply install it with:
 npm install @shoutem/animation
 ```
 
-##### Table of Contents  
-  - [Introduction]({{ site.baseurl }}/docs/ui-toolkit/animation/introduction)
-  - [Driver]({{ site.baseurl }}/docs/ui-toolkit/animation/driver)
-  - Animation components
-    - [FadeIn]({{ site.baseurl }}/docs/ui-toolkit/animation/fade-in)
-    - [FadeOut]({{ site.baseurl }}/docs/ui-toolkit/animation/fade-out)
-    - [ZoomIn]({{ site.baseurl }}/docs/ui-toolkit/animation/zoom-in)
-    - [ZoomOut]({{ site.baseurl }}/docs/ui-toolkit/animation/zoom-out)
-    - [Parallax]({{ site.baseurl }}/docs/ui-toolkit/animation/parallax)
-    - [HeroHeader]({{ site.baseurl }}/docs/ui-toolkit/animation/hero-header)
-  - [Combining animations]({{ site.baseurl }}/docs/ui-toolkit/animation/combining-animations)
-
-
 ## Coming soon
 
 We're working hard to open source more `animation components` and `drivers`, which are already helping us in many [Shoutem extensions](http://shoutem.github.io/docs/extensions/getting-started/introduction). Some of them are:
