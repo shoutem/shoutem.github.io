@@ -8,7 +8,7 @@ section: Getting Started
 # Initializing extension
 <hr />
 
-Here's the mockup of the Restaurants extension that we showed [Introduction]({{ site.baseurl }}/docs/getting-started/introduction). We're building _Restaurants_ extension.
+Here's the mockup of the Restaurants extension that we've showed in [Introduction]({{ site.baseurl }}/docs/getting-started/introduction). We're building _Restaurants_ extension.
 
 
 <p class="image">
@@ -35,7 +35,7 @@ Description: List of restaurants
 Extension initialized!
 ```
 
-These informations will be stored in `extension.json` file.
+These information will be stored in `extension.json` file.
 
 > #### Note
 > In case you can't remember the structure of some command, type: `shoutem help` or `shoutem help [command]` where you should replace '[command]' with one of the [CLI commands]({{ site.baseurl }}/docs/cli/reference)
@@ -74,7 +74,7 @@ In `extension.json` you can see:
 
 Property `name`, combined with your developer name, uniquely identifies the extension: `developer.restaurants`. We'll use property `name` to define extensions parts too.
 
-Extension is now only locally available on your machine. We need to upload it to Shoutem so you can install it on the application.
+Extension is now only locally available on your machine. We need to upload it to Shoutem so you can install it in the application.
 
 ```ShellSession
 $ shoutem push
@@ -82,7 +82,7 @@ Uploading `Restaurants` extension to Shoutem...
 Success!
 ```
 
-To test our extension, we need to install it on the Shoutem application. You can create new application in [Shoutem builder](/docs/coming-soon) or just pass flag `--new`  with the name for new application to installation command:
+To test our extension, we need to install it in the Shoutem application. You can create new application in [Shoutem builder](/docs/coming-soon) or just pass flag `--new`  with the name for new application to installation command:
 
 ```ShellSession
 $ shoutem install --new Restaurants
