@@ -275,7 +275,7 @@ pre[data-line] {
         left: calc(50% - 720px);
     }
 
-    @include medium-2 {
+    @media screen and (max-width: 991px) {
         left: auto !important;
         right: 0;
         transform: translate(100%, 0);
@@ -283,48 +283,41 @@ pre[data-line] {
         transition: transform 0.5s, visibility 0.5s;
         height: 100%;
         visibility: hidden;
+        padding: 0;
 
         &.open {
             transform: translate(0, 0);
             transform: translate3d(0, 0, 0);
             visibility: visible;
         }
+
+        
     }
 
-    &:not(.open) {
-        a {
-            padding-left: 48px;
-        }
+    .home-link {
+        padding: 16px 0;
+        border-bottom: 1px solid #DDD;
+        margin: 0 0 15px;
 
-        ul ul a {
-            padding-left: 64px;
+        @include small {
+            padding: 11px 0 12px;
         }
+    }
 
-        .btn-primary {
-            display: none;
-        }
+    a {
+        padding-left: 48px;
+    }
+
+    ul ul a {
+        padding-left: 56px;
+    }
+
+    ul ul ul a {
+        padding-left: 68px;
     }
 
     .btn-primary {
-        margin-top: 16px;
-        margin-left: 24px;
-        border-radius: 4px;
-        height: 48px;
-        font-size: 16px;
-        padding-top: 12px;
-        color: #fff;
-        font-weight: bold;
-        background: $accent;
-        line-height: 1.5;
-        width: auto;
-        padding: 12px 20px !important;
-        @include easeLinear();
-        &:focus,
-        &:hover {
-            color: #fff;
-            background-color: #00BEF7;
-            border: 1px solid #00BEF7;
-        }
+        display: none;
     }
 }
 
@@ -332,12 +325,10 @@ pre[data-line] {
 {
     display: none;
 
-    &.active {
+    &.open {
         display: block;
     }
 }
-
-
 
 /* Signup: modal version */
 

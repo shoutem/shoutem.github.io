@@ -1,6 +1,6 @@
 ---
 layout: doc
-permalink: /docs/ui-toolkit/video
+permalink: /docs/ui-toolkit/components/video
 title: Video
 section: UI toolkit
 ---
@@ -12,7 +12,7 @@ Video component is component that can be used to render all types of Video items
 - In all other cases, the video is displayed in a WebView using `WebViewVideo` component.  
 
 ## Video
-![alt text]({{ site.baseurl }}/img/ui-toolkit/video_player@2x.png "Video"){:.docs-component-image}
+![alt text]({{ site.baseurl }}/img/ui-toolkit/video/video_player@2x.png "Video"){:.docs-component-image}
 
 #### JSX Declaration
 ```JSX
@@ -47,7 +47,7 @@ Video component is component that can be used to render all types of Video items
 
 Component that previews video in a native player.
 
-![alt text]({{ site.baseurl }}/img/ui-toolkit/video_player@2x.png "NativeVideo"){:.docs-component-image}
+![alt text]({{ site.baseurl }}/img/ui-toolkit/video/video_player@2x.png "NativeVideo"){:.docs-component-image}
 
 #### JSX Declaration
 ```JSX
@@ -104,7 +104,7 @@ Component that previews video in a native player.
 
 Component that renders Video content within `WebView` component.
 
-![alt text]({{ site.baseurl }}/img/ui-toolkit/video_player@2x.png "WebViewVideo"){:.docs-component-image}
+![alt text]({{ site.baseurl }}/img/ui-toolkit/video/video_player@2x.png "WebViewVideo"){:.docs-component-image}
 
 #### JSX Declaration
 ```JSX

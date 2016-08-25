@@ -8,7 +8,7 @@
     padding-left: 280px;
     margin: 0 auto;
 
-    @include medium-2 {
+    @media screen and (max-width: 991px) {
         padding-left: 0;
     }
 }

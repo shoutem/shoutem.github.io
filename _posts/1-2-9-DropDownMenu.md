@@ -1,6 +1,6 @@
 ---
 layout: doc
-permalink: /docs/ui-toolkit/dropdown-menu
+permalink: /docs/ui-toolkit/components/dropdown-menu
 title: Dropdown Menu
 section: UI toolkit
 ---
@@ -10,13 +10,13 @@ section: UI toolkit
 DropDownMenu is a full screen contextual menu for displaying lists of links. 
 
 ## DropDownMenu
-![alt text]({{ site.baseurl }}/img/ui-toolkit/drop_down_menu@2x.png "DropDownMenu"){:.docs-component-image}
+![alt text]({{ site.baseurl }}/img/ui-toolkit/dropdownmenu/drop_down_menu@2x.png "DropDownMenu"){:.docs-component-image}
 
 
 #### JSX Declaration
 ```JSX
 <DropDownMenu
-      data={...}
+      items={...}
       bindings={...}
       onItemSelected={...}
       selectedItem={...}
@@ -26,7 +26,7 @@ DropDownMenu is a full screen contextual menu for displaying lists of links.
 
 #### Props
 
-* **data** : array  
+* **items** : array  
   - Array of items that are then rendered as `Button`s within `ListView`
 
 * **bindings** : array  

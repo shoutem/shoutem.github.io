@@ -1,6 +1,6 @@
 ---
 layout: doc
-permalink: /docs/getting-started/initializing-extension
+permalink: /docs/extensions/getting-started/initializing-extension
 title: Initializing extension
 section: Getting Started
 ---
@@ -12,7 +12,7 @@ Here's the mockup of the Restaurants extension that we showed [Introduction]({{ 
 
 
 <p class="image">
-<img src='{{ site.baseurl }}/img/getting-started/extension-preview.png'/>
+<img src='{{ site.baseurl }}/img/getting-started/extension-preview.jpg'/>
 </p>
  
 Left application screen lists the restaurants and the right one shows the details of one specific restaurant. 
@@ -102,4 +102,4 @@ However, when you go to `Screen` tab now and click on `+` next to `Screens`, thi
 <img src='{{ site.baseurl }}/img/getting-started/add-content-no-extension.png'/>
 </p>
 
-That's because `Add navigation` modal shows _navigation items_ that extensions export. We need to create navigation item in our extensions.
+That's because `Add screen` modal shows _shortcuts_ that extensions export. We need to create shortcut in our extensions.

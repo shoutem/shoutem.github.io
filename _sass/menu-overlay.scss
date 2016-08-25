@@ -38,14 +38,8 @@
         transform: translate3d(100%, 0, 0);
         transition: transform .5s;
 
-        ul {
-            border-bottom: 1px solid #ececec;
-            margin: 0 0 17px;
-            padding: 0 0 15px;
-
-            li a {
-                padding-left: 40px;
-            }
+        ul li a {
+            padding-left: 40px;
         }
 
         @include tiny {

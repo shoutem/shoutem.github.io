@@ -45,12 +45,6 @@ $(function() {
     $(".page-title").text(flourish.page_title);
     $(".page-section").text(flourish.page_section);
 
-    $(".menu-group-wrapper:not(#" + loc.section + ")").removeClass("active");
-    $("#" + loc.section).addClass("active");
-
-    var selectedItem = $('.menu-group-wrapper a[href$="' + loc.path + '"]');
-    $("#menu li.active").not(selectedItem).removeClass("active");
-    selectedItem.addClass("active");
     $("html, body").animate({ scrollTop: 0 });
    
     showMenuItems();
@@ -60,6 +54,9 @@ $(function() {
     setShell$Color();
 
     $(".mobile-menu-overlay, #sidebar-wrapper").removeClass("open");
+    
+    // remove focus from the active menu link
+    document.activeElement.blur();
   });
 
 
@@ -70,6 +67,7 @@ $(function() {
 
   $("#signup-button, #signup-button-menu").on("click", function(e) {
     $(".mobile-menu-overlay, #sidebar-wrapper").removeClass("open");
+    $signupModal.focusedElBeforeOpen = document.activeElement;
     $signupModal.addClass("open");
     setTimeout(function(){
       $(".signup-email").focus();
@@ -79,13 +77,49 @@ $(function() {
 
   $signupModal.on("click", function(e) {
     if( (e.target || e.srcElement).id === $signupModal[0].id ) {
-      $signupModal.removeClass("open");
+      closeSignupModal();
       e.preventDefault();
     }
   });
 
   $("#mc-embedded-cancel").on("click", function(e) {
-      $signupModal.removeClass("open");
+      closeSignupModal();
+  });
+
+  function closeSignupModal(e)
+  {
+    $signupModal.removeClass("open");
+    $signupModal.focusedElBeforeOpen.focus();
+  }
+
+  // https://bitsofco.de/accessible-modal-dialog/
+  $signupModal.on("keydown", function(e)
+  {
+    var emailInput = document.querySelector("#mce-EMAIL");
+    var submitButton = document.querySelector("#mc-embedded-subscribe");
+    var KEY_TAB = 9;
+
+    function handleBackwardTab() {
+      if ( document.activeElement === emailInput ) {
+          e.preventDefault();
+          submitButton.focus();
+      }
+    }
+    function handleForwardTab() {
+      if ( document.activeElement === submitButton ) {
+          e.preventDefault();
+          emailInput.focus();
+      }
+    }
+
+    if( e.keyCode === KEY_TAB )
+    {
+      if ( e.shiftKey ) {
+        handleBackwardTab();
+      } else {
+        handleForwardTab();
+      }
+    }
   });
 
   
@@ -133,21 +167,23 @@ $(function() {
   function showMenuItems() {
     var loc = currentLocation;
 
-    // Show section with links
-    $('.menu-group-wrapper:not(#' + loc.section + ')').removeClass('active');
-    $('#' + loc.section).addClass('active');
+    $('.sidebar-nav .active').removeClass("active");
+    $('.sidebar-nav .open').removeClass("open");
 
     // Show active menu item
-    $('.menu-group-wrapper a[href$="' + loc.path + '"]').parent().addClass('active');
+    $activeLinks = $('a[href$="' + loc.path + '"]');
+    $activeLinks.addClass("active");
+    $activeLinks.parents("ul").addClass('open');
 
     // Select documentation tab
     $('#documentationTab').addClass('active');
   };
 
   function showNavButtons() {
-      var $activeLink = $('.sidebar-nav .active');
-      var $prev = $('a', $activeLink.prev());
-      var $next = $('a', $activeLink.next());
+      var $activeLink = $('.sidebar-nav .active:not(.menu-group-title)').parent();
+
+      var $prev = $('>a', $activeLink.prev());
+      var $next = $('>a', $activeLink.next());
       var prevUrl = $prev.attr('href');
       var nextUrl = $next.attr('href');
       var $prevLink = $('#pager-wrapper .previous a');
@@ -215,8 +251,10 @@ $(function() {
 
     if( e.type === "popstate" )
     {
-      if( e.originalEvent.state && e.originalEvent.state.url ) {
-        url = e.originalEvent.state.url
+      var state = e.originalEvent ? e.originalEvent.state : e.state;
+
+      if( state && state.url ) {
+        url = state.url
       }
     }
     else

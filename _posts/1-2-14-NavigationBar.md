@@ -1,6 +1,6 @@
 ---
 layout: doc
-permalink: /docs/ui-toolkit/navigation-bar
+permalink: /docs/ui-toolkit/components/navigation-bar
 title: Navigation Bar
 section: UI toolkit
 ---

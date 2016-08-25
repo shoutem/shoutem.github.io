@@ -1,6 +1,6 @@
 ---
 layout: doc
-permalink: /docs/ui-toolkit/typography
+permalink: /docs/ui-toolkit/components/typography
 title: Typography
 section: UI toolkit
 ---
@@ -16,7 +16,7 @@ All components in this section support everything that the standard React Native
   - Number of lines that the component should display, the component will be sized so that it always takes up the space for the number of lines specified in this prop. This prop should not be used for text elements that should be dynamically resized depending on length of their content, use the standard `numberOfLines` prop in those cases.
 
 ## Heading
-![alt text]({{ site.baseurl }}/img/ui-toolkit/heading@2x.png "Heading"){:.docs-component-image}
+![alt text]({{ site.baseurl }}/img/ui-toolkit/typography/heading@2x.png "Heading"){:.docs-component-image}
 
 #### JSX Declaration
 ```JSX
@@ -24,7 +24,7 @@ All components in this section support everything that the standard React Native
 ```
 
 ## Title
-![alt text]({{ site.baseurl }}/img/ui-toolkit/title@2x.png "Title"){:.docs-component-image}
+![alt text]({{ site.baseurl }}/img/ui-toolkit/typography/title@2x.png "Title"){:.docs-component-image}
 
 #### JSX Declaration
 ```JSX
@@ -32,7 +32,7 @@ All components in this section support everything that the standard React Native
 ```
 
 ## Subtitle
-![alt text]({{ site.baseurl }}/img/ui-toolkit/subtitle@2x.png "Subtitle"){:.docs-component-image}
+![alt text]({{ site.baseurl }}/img/ui-toolkit/typography/subtitle@2x.png "Subtitle"){:.docs-component-image}
 
 #### JSX Declaration
 ```JSX
@@ -40,15 +40,31 @@ All components in this section support everything that the standard React Native
 ```
 
 ## Text
-![alt text]({{ site.baseurl }}/img/ui-toolkit/text@2x.png "Text"){:.docs-component-image}
+![alt text]({{ site.baseurl }}/img/ui-toolkit/typography/text@2x.png "Text"){:.docs-component-image}
 
 #### JSX Declaration
 ```JSX
 <Text>Mobile App Creator</Text>
 ```
 
+## Text strong
+![alt text]({{ site.baseurl }}/img/ui-toolkit/typography/text-strong@2x.png "Text strong"){:.docs-component-image}
+
+#### JSX Declaration
+```JSX
+<Text styleName="bold">Mobile App Creator</Text>
+```
+
+## Description
+![alt text]({{ site.baseurl }}/img/ui-toolkit/typography/description-text@2x.png "Description"){:.docs-component-image}
+
+#### JSX Declaration
+```JSX
+<Description>Mobile App Creator</Description>
+```
+
 ## Caption
-![alt text]({{ site.baseurl }}/img/ui-toolkit/caption@2x.png "Caption"){:.docs-component-image}
+![alt text]({{ site.baseurl }}/img/ui-toolkit/typography/caption@2x.png "Caption"){:.docs-component-image}
 
 #### JSX Declaration
 ```JSX

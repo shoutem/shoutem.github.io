@@ -1,6 +1,6 @@
 ---
 layout: doc
-permalink: /docs/tutorials/usingauthentication
+permalink: /docs/extensions/tutorials/usingauthentication
 title: Using authentication 
 section: Tutorials
 ---

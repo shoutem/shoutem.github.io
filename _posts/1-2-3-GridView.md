@@ -1,6 +1,6 @@
 ---
 layout: doc
-permalink: /docs/ui-toolkit/grid-view
+permalink: /docs/ui-toolkit/components/grid-view
 title: Grid View
 section: UI toolkit
 ---

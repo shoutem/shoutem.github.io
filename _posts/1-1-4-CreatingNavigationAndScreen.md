@@ -1,14 +1,14 @@
 ---
 layout: doc
-permalink: /docs/getting-started/navigation-and-screen
-title: Creating navigation and screen
+permalink: /docs/extensions/getting-started/shortcut-and-screen
+title: Creating shortcut and screen
 section: Getting Started
 ---
 
-# Creating navigation and screen
+# Creating shortcut and screen
 <hr />
 
-The easiest way to understand what shortcuts are, is to think of them as links to the starting screen in your extension. These links will be used to navigate to your extension from any part of the application. Extensions can expose more navigation items. Let's now create one.
+The easiest way to understand what shortcuts are, is to think of them as links to the starting screen in your extension. These links will be used to navigate to your extension from any part of the application. Extensions can expose more shortcuts. Let's now create one.
 
 ```ShellSession
 $ shoutem shortcut add openRestaurantsList
@@ -44,13 +44,13 @@ Uploading `Restaurants` extension to Shoutem...
 Success!
 ```
 
-Go to `Navigation` in [Shoutem builder](/docs/coming-soon) and click to `+`. You can finally see your `extension` there. You can see its navigation item that it's exposing.
+Go to `Screens` in [Shoutem builder](/docs/coming-soon) and click to `+`. You can finally see your `extension` there, its shortcut that it's exposing.
 
 <p class="image">
 <img src='{{ site.baseurl }}/img/getting-started/add-modal-shortcut.png'/>
 </p>
 
-Try clicking now on `Restaurants` in `Add navigation` modal. Navigation item is inserted into app navigation, but nothing else happens! That's exactly what our navigation item does - nothing. Let's change that so it opens `Screen`.
+Try clicking now on `Restaurants` in `Add screen` modal. Shortcut is inserted into app navigation, but nothing else happens! That's exactly what our shortcut does - nothing. Let's change that so it opens `Screen`.
 
 
 ## Creating screen
@@ -106,7 +106,7 @@ export default class RestaurantsList extends Component {
 }
 ```
 
-In React, `Component` specifies its UI in `render` method. Now that screen is created, we need to connect it to navigation item in extension.json.
+In React, `Component` specifies its UI in `render` method. Now that screen is created, we need to connect it to shortcut in extension.json.
 
 ```json{10}
 #file: extension.json
@@ -127,7 +127,7 @@ In React, `Component` specifies its UI in `render` method. Now that screen is cr
 }
 ```
 
-Notice that object in `navItems` has property `name`, which identifies the navigation item and `screen`, which represents the screen that will be opened navigation item is tapped. In the `name` property, use **relative name** to define an extension part. In properties like `screen`, where some extension part is referenced, use **absolute name**. Absolute name of extension part follows this structure: `{developerName}.{extensionName}.{extensionPartName}`. However, for parts of the current extension, you can simply use `@.{extensionPartName}` instead. Characters `@.` replace your `{developerName}.{extensionName}.`.
+Notice that object in `shortcuts` has property `name`, which identifies it and `screen`, which represents the screen to be opened when shortcut is tapped. In the `name` property, use **relative name** to define an extension part. In properties like `screen`, where some extension part is referenced, use **absolute name**. Absolute name of extension part follows this structure: `{developerName}.{extensionName}.{extensionPartName}`. However, for parts of the current extension, you can simply use `@.{extensionPartName}` instead. Characters `@.` replace your `{developerName}.{extensionName}.`.
 
 ## Exporting extension parts
 
@@ -172,7 +172,7 @@ Uploading `Restaurants` extension to Shoutem...
 Success!
 ```
 
-Try now tapping to navigation item icon on the preview in [Shoutem Builder](/docs/coming-soon). 
+Try now tapping to shortcut icon on the preview in [Shoutem Builder](/docs/coming-soon). 
 
 <p class="image">
 <img src='{{ site.baseurl }}/img/getting-started/extension-hello-world.png'/>

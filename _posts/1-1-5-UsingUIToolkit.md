@@ -1,6 +1,6 @@
 ---
 layout: doc
-permalink: /docs/getting-started/using-ui-toolkit
+permalink: /docs/extensions/getting-started/using-ui-toolkit
 title: Using UI toolkit
 section: Getting Started
 ---
@@ -32,7 +32,7 @@ import {
 } from '@shoutem/ui';
 ```
 
-We prepared some data for you. Create `app/assets` folder, which will keep the assets for application part of your extension, and extract this [content](/restaurants/restaurants.zip) inside, which contains restaurants data.
+We prepared some data for you. Create `app/assets` folder, which will keep the assets for application part of your extension, and extract [this content](/restaurants/restaurants.zip) inside, which contains restaurants data.
 
 Define a method in `RestaurantsList` class that returns an array of restaurants.
 
@@ -124,7 +124,7 @@ export const screens = {
 export const reducer = {};
 ```
 
-When listem is touched, we want to open details screen. For that we need `TouchableOpacity` component from React Native and Shoutem's `navigateTo` Redux action creator. It accepts [Shoutem route object](/docs/coming-soon) as the only argument with `screen` property. To reference our `RestaurantDetails` screen exported in `app/index.js`, we're using `ext` helper function that was created in `app/const.js` file. This function returns an **absolute name**, e.g. `developer.restaurants.RestaurantsList`, for the extension part which is passed as its first argument, or `extension name` if no argument is passed.
+When listem is touched, we want to open details screen. For that we need `TouchableOpacity` component from React Native and Shoutem's `navigateTo` Redux action creator. It accepts [Shoutem route object](/docs/coming-soon) as the only argument with `screen` property. To reference our `RestaurantDetails` screen exported in `app/index.js`, we're using `ext` helper function that was created in `app/const.js` file. This function returns an **absolute name**, e.g. `developer.restaurants.RestaurantsList`, for the extension part which is passed as its first argument, or extension `name` if no argument is passed.
 
 Import that:
 

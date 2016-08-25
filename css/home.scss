@@ -235,10 +235,10 @@ p {
 }
 
 .video-screen {
-    width: 277px;
-    height: calc(277px * (668 / 376));
-    right: 270px;
-    top: 142.5px;
+    width: 279px;
+    height: calc(279px * (650 / 368));
+    right: 269px;
+    top: 142px;
     z-index: 100;
     transform: perspective(1983px) rotateY(-35.5deg) rotateX(11.9deg) rotateZ(16.15deg) scaleY(1.00075);
     position: absolute;
@@ -682,18 +682,18 @@ p {
         }
 
         li:not(.integrations) {
-            margin-right: -45px;
-
-            @include large {
-                margin-right: 0;
-            }
+            margin-right: 0;
         }
 
         @include large {
             margin-left: 45px;
         }
 
-        @include medium-2 {
+        @media (max-width: 1120px) {
+            margin-left: 15px;
+        }
+
+        @include large {
             width: 360px;
             margin-top: 0;
         }
@@ -910,7 +910,7 @@ p {
         margin-bottom: 26px;
 
         @include small {
-            padding-top: 12px;
+            padding-top: 40px;
             margin-bottom: 20px;
             text-align: center;
         }

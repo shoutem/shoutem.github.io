@@ -1,6 +1,6 @@
 ---
 layout: doc
-permalink: /docs/ui-toolkit/list-view
+permalink: /docs/ui-toolkit/components/list-view
 title: List View
 section: UI toolkit
 ---
@@ -10,12 +10,13 @@ section: UI toolkit
 ListView component is base component that is used to render Lists of items. This component is also used by GridView to create Grid-like menu structure.  
 
 ## ListView
-![alt text]({{ site.baseurl }}/img/ui-toolkit/list_view@2x.png "ListView"){:.docs-component-image}
+![alt text]({{ site.baseurl }}/img/ui-toolkit/listview/list_view@2x.png "ListView"){:.docs-component-image}
 
 #### JSX Declaration
 ```JSX
 <ListView
     data={...}
+    loading={...}
     onLoadMore={...}
     onRefresh={...}
     renderFooter={...}
@@ -30,6 +31,9 @@ ListView component is base component that is used to render Lists of items. This
 
 * **data** : array  
   - Prop containing items that will be rendered by ListView component
+
+* **loading** : bool  
+  - Prop that defines whether the ListView should render loading spinner (still loading data) or actual items (data successfully loaded)
 
 * **onLoadMore** : function  
   - Callback function that is called when ListView is scrolled all way to the bottom of the first page. In this function you should update `data` array with additional items

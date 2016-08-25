@@ -1,6 +1,6 @@
 ---
 layout: doc
-permalink: /docs/getting-started/working-with-data
+permalink: /docs/extensions/getting-started/working-with-data
 title: Working with data
 section: Getting Started
 ---

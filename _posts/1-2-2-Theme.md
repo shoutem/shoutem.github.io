@@ -1,8 +1,8 @@
 ---
 layout: doc
-permalink: /docs/ui-toolkit/theme
-title: Theme
-section: UI toolkit
+permalink: /docs/ui-toolkit/theme/introduction
+title: Introduction
+section: UI toolkit Theme
 ---
 
 # Theme
@@ -11,9 +11,15 @@ The React Native components style is usually defined as a static variable along 
 
 ![alt text]({{ site.baseurl }}/img/ui-toolkit/theme.jpg "Theme"){:.docs-component-image}
 
-This level of customization may not be necessary for all applications, but if this is something you need, you can read more about how we accomplished it in the rest of this chapter.
-
 One of our main goals was to add support for themes to components with as little changes as possible to the components themselves. To add support for themes to your component, you only need to make two minor changes to it.
+
+## Installation
+
+`@shoutem/theme` is available on npm:
+
+```bash
+$ npm install @shoutem/theme
+```
 
 ## Building themeable components
 The main difference that you need to change is to start getting your style rules from the `props.style` property, instead of using the static variable defined alongside the component. You can define the default style of the component statically, in the same way as before, but you shouldn't use that property to get the actual style in runtime. This allows us to merge the default style with any theme style that may be active in the app, and provide the final style to components.
@@ -60,7 +66,7 @@ In order to support themes, we need to:
 
 ```JavaScript
 import React, { Component, Text, View } from 'react';
-import { connectStyle } from 'shoutem-theme';
+import { connectStyle } from '@shoutem/theme';
 
 class AvatarItem extends Component {
   render() {
@@ -105,7 +111,7 @@ With those simple changes, we have a component that can receive styles from the 
 
 ```JavaScript
 import React, { Component } from 'react';
-import { StyleProvider } from 'shoutem-theme';
+import { StyleProvider } from '@shoutem/theme';
 
 class App extends Component {
   render() {
@@ -126,7 +132,7 @@ const theme = {
 ## Theme style rules 
 All styles defined as part of the theme may be regular React Native styles, but there are several new types of style rules that are supported in themes as well. We will explain all those rules on the Card component from the UI toolkit:
 
-![alt text]({{ site.baseurl }}/img/ui-toolkit/card@2x.png "Card grid item"){:.docs-component-image}
+![alt text]({{ site.baseurl }}/img/ui-toolkit/cards/card@2x.png "Card grid item"){:.docs-component-image}
 
 #### JSX Declaration
 ```JSX

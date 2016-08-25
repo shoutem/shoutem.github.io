@@ -1,6 +1,6 @@
 ---
 layout: doc
-permalink: /docs/ui-toolkit/image-preview
+permalink: /docs/ui-toolkit/components/image-preview
 title: Image Preview
 section: UI toolkit
 ---
@@ -10,7 +10,7 @@ section: UI toolkit
 ImagePreview component renders Image in inline image preview. When clicked, image is displayed in full screen.  
 
 ## ImagePreview
-![alt text]({{ site.baseurl }}/img/ui-toolkit/image_preview@2x.png "ImagePreview"){:.docs-component-image}
+![alt text]({{ site.baseurl }}/img/ui-toolkit/image-preview/image_preview@2x.png "ImagePreview"){:.docs-component-image}
 
 #### JSX Declaration
 ```JSX
