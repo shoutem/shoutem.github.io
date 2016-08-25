@@ -10,7 +10,7 @@ section: Getting Started
 
 React Native exposes plain components that you can use, but there's usually much work left to do to make them look as you wanted. Use Shoutem UI toolkit - a set of styleable UI components that you can use in any React Native application. It basically turns any ordinary app into an amazing app. There are plenty of components that you can use out of the box. In this tutorial we'll use some of them. Documentation for all the components can be found in the [reference]({{ site.baseurl }}/docs/ui-toolkit/introduction).
 
-Shoutem UI Toolkit also brings the experience of building web pages to React Native with "CSS classes"-like solution with [Shoutem UI theme]({{ site.baseurl }}/docs/ui-toolkit/theme).
+Shoutem UI Toolkit also brings the experience of building web pages to React Native with "CSS classes"-like solution with [Shoutem UI themes]({{ site.baseurl }}/docs/ui-toolkit/theme/introduction).
 
 ## Adding static data
 
@@ -353,5 +353,5 @@ When you click on a row in the list, this is what you get:
 <img src='{{ site.baseurl }}/img/getting-started/extension-rich-details.png'/>
 </p>
 
-That's exactly what we wanted to get! Our app reached final look! However, our app is using static data. Every time we want a change, we need to update the version of extension. That would be a very long process. **Shoutem Cloud Storage** to the rescue!
+That's exactly what we wanted to get! However, our app is using static data. Let's connect it to **Shoutem Cloud Storage**. 
 
