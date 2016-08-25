@@ -9,11 +9,7 @@ section: UI toolkit
 
 ![alt text]({{ site.baseurl }}/img/ui-toolkit/introduction.jpg "UI toolkit"){:.docs-component-image}
 
-`@shoutem/ui` is a UI toolkit that enables you to build beautiful React Native apps by using our professionally designed UI components. All our components are built from the ground up to be both composable and [themeable]({{ site.baseurl }}//docs/ui-toolkit/theme/introduction). Each component has a predefined style that is compatible with the rest of the toolkit, this makes it possible to build complex components that look great without the need to manually define complex styles.
-
-To accomplish all that, we have built support for themes on top of React Native style. Each component has a built in style that will be used by default, but if you decide to add themes to your app, our components will automatically pick up custom styles from the active theme. Themes are completely optional, all UI components can be styled as normal React Native components as well, by passing the custom style rules through the `style` prop.
-
-You can find out more about themes [here]({{ site.baseurl }}/docs/ui-toolkit/theme).
+`@shoutem/ui` is a UI toolkit that enables you to build beautiful React Native apps by using our professionally designed UI components and themes. All components are built from the ground up to be both composable and [themeable]({{ site.baseurl }}//docs/ui-toolkit/theme/introduction). Each component has a predefined style within a theme and it's compatible with the rest of the toolkit, this makes it possible to build complex components that look great without the need to manually define complex styles.
 
 ## Installation
 
@@ -22,8 +18,13 @@ You can find out more about themes [here]({{ site.baseurl }}/docs/ui-toolkit/the
 ```bash
 $ npm install @shoutem/ui
 ```
+Then run `rnpm` to link fonts that toolkit is using.
 
-To use it, simply import the desired components and start using them in your layouts:
+```bash
+$ rnpm link
+```
+
+To use it, simply import the desired components and start using them in your screens:
 
 ```JavaScript
 import React, { Component } from 'react';
