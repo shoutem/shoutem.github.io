@@ -7,7 +7,7 @@ section: UI toolkit
 
 # TouchableOpacity
 
-TouchableOpacity is a React Native `TouchableOpacity`, with additional (flexbox) styling.
+TouchableOpacity is a React Native `TouchableOpacity`, with additional styling through Theme.
   
 ## TouchableOpacity
 ![alt text]({{ site.baseurl }}/img/ui-toolkit/icons/linkedin.png "TouchableOpacity"){:.docs-component-image}  
