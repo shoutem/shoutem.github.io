@@ -1,13 +1,13 @@
 ---
 layout: doc
-permalink: /docs/ui-toolkit/components/image-sizes
-title: Image sizes
+permalink: /docs/ui-toolkit/components/image
+title: Image
 section: UI toolkit
 ---
 
-# Image sizes
+# Image
 
-This document covers Image size classes available in Shoutem UI toolkit
+This document covers Image component and Image size classes available in Shoutem UI toolkit
   
 ## List image thumbnail (65x65)
 ![alt text]({{ site.baseurl }}/img/ui-toolkit/image-sizes/list-image-thumbnail-65-x-65@2x.png "List image thumbnail (65x65)"){:.docs-component-image}  
@@ -77,30 +77,6 @@ This document covers Image size classes available in Shoutem UI toolkit
 ```JSX
 <Image
   styleName="medium-square"
-  source={require('../assets/examples/road.png')}
-/>
-```  
-
-## Grid photos thumbnail (113x113) TBD
-![alt text]({{ site.baseurl }}/img/ui-toolkit/image-sizes/grid-photos-thumbnail-113-x-113@2x.png "Grid photos thumbnail (113x113)"){:.docs-component-image}
-
-
-#### JSX Declaration
-```JSX
-<Image
-  styleName="small"
-  source={require('../assets/examples/road.png')}
-/>
-```
-    
-## Up next article image (375x130)
-![alt text]({{ site.baseurl }}/img/ui-toolkit/image-sizes/up-next-article-image-375-x-130@2x.png "Up next article image (375x130)"){:.docs-component-image}
-
-
-#### JSX Declaration
-```JSX
-<Image
-  styleName="large-ultra-wide"
   source={require('../assets/examples/road.png')}
 />
 ```  
