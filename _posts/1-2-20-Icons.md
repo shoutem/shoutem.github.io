@@ -316,9 +316,3 @@ This document covers available Icons.
 ```JSX
 <Icon name="web" />
 ```  
-
-
-
-
-
-
