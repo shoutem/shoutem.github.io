@@ -26,10 +26,6 @@ Cards have become very popular in recent years. They are useful when displaying 
 </Card>
 ```
 
-#### Style
-* **medium-wide**: this style can be applied only to images (`shoutem.ui.Image`), it makes images wide and cover up the entire width of the card. Rest of image sizes are mentioned in "Image Sizes" section.
-* **content**: adds standard card margins to any child component
-
 ## Card + Icon
 ![alt text]({{ site.baseurl }}/img/ui-toolkit/cards/card-icon@2x.png "Card grid item + Icon"){:.docs-component-image}
 
@@ -49,13 +45,6 @@ Cards have become very popular in recent years. They are useful when displaying 
   </View>
 </Card>
 ```
-
-#### Style
-* **medium-wide**: this style can be applied only to images (`shoutem.ui.Image`), it makes images wide and cover up the entire width of the card. Rest of image sizes are mentioned in "Image Sizes" section.
-* **content**: adds standard card margins to any child component
-* **horizontal**: layouts the children of a component horizontally
-* **end**: aligns the children to the right of the component
-* **bottom**: aligns the children to the bottom of the component
 
 ## Card + Icon (Shop)
 ![alt text]({{ site.baseurl }}/img/ui-toolkit/cards/card-icon-shop@2x.png "Card grid item + Icon"){:.docs-component-image}
@@ -80,12 +69,7 @@ Cards have become very popular in recent years. They are useful when displaying 
 </Card>
 ```
 
-#### Style
-* **medium-wide**: this style can be applied only to images (`shoutem.ui.Image`), it makes images wide and cover up the entire width of the card. Rest of image sizes are mentioned in "Image Sizes" section.
+#### Style names
+* `Card` component doesn't have specific Style names, however `View` nested under `Card` can use following Style name:
 * **content**: adds standard card margins to any child component
-* **horizontal**: layouts the children of a component horizontally
-* **end**: aligns the children to the right of the component
-* **bottom**: aligns the children to the bottom of the component
-  
-  
-TODO: FIGURE OUT styleNames from latter 2 examples
+
