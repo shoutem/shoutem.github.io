@@ -23,5 +23,6 @@ section: UI toolkit
 * None
 
 #### Style
-* **ios** 
-  - Component is passing content from this Style Prop to Style prop of `ActivityIndicator` component 
+* Component is passing content from this Style Prop to Style prop of `ActivityIndicator` component, with exception for
+* **size** : string, `small` or `large` 
+  - you can set size of the indicator.
