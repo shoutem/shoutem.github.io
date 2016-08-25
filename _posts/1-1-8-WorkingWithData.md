@@ -80,7 +80,7 @@ class RestaurantsList extends Component {
 
 Implement rendering.
 
-```JSX{7-11,15-16}
+```JSX{7-8,12-13}
 #file: app/screens/RestaurantsList.js
   render() {
     // set the title in the Navigation bar
