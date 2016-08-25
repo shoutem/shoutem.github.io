@@ -44,22 +44,6 @@ All components in this section support every prop that the standard React Native
 <Text>Mobile App Creator</Text>
 ```
 
-## Text strong
-![alt text]({{ site.baseurl }}/img/ui-toolkit/typography/text-strong@2x.png "Text strong"){:.docs-component-image}
-
-#### JSX Declaration
-```JSX
-<Text styleName="bold">Mobile App Creator</Text>
-```
-
-## Description
-![alt text]({{ site.baseurl }}/img/ui-toolkit/typography/description-text@2x.png "Description"){:.docs-component-image}
-
-#### JSX Declaration
-```JSX
-<Description>Mobile App Creator</Description>
-```
-
 ## Caption
 ![alt text]({{ site.baseurl }}/img/ui-toolkit/typography/caption@2x.png "Caption"){:.docs-component-image}
 
@@ -67,3 +51,13 @@ All components in this section support every prop that the standard React Native
 ```JSX
 <Caption>Mobile App Creator</Caption>
 ```
+
+
+#### Style names
+
+* **line-through**: Defines a line through the text
+* **h-center**: Centers text horizontally
+* **bright**: Sets text color to `Light` color set in Theme
+* **bold**: Sets text to be bold
+* **multiline**: Increases line-height to allow text to wrap 
+* **v-center**: Works only in combination with `multiline` styleName. Applies additional top and bottom margin to compensate unsupported `textAlignVertical` prop on iOS
