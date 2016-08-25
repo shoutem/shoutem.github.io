@@ -154,7 +154,7 @@ class RestaurantsList extends Component {
 
 export default connect(
   undefined,
-  (dispatch) => { navigateTo })
+  (dispatch) => { navigateTo }
 )(RestaurantsList);
 ```
 
@@ -253,7 +253,7 @@ class RestaurantsList extends Component {
 
 export default connect(
   undefined,
-  (dispatch) => { navigateTo })
+  (dispatch) => { navigateTo }
 )(RestaurantsList)
 ```
 

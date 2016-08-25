@@ -49,7 +49,7 @@ export { reducer };
 
 The only thing left to do is to fetch data from **Shoutem Cloud Storage** on `RestaurantsList` screen and to retrieve that data, in form of restaurants, from application's state. Once screen is mounted, if restaurants are not in the Redux store, we'll start fetching data with [find](/docs/coming-soon) action creator from `@shoutem/redux-io` package. Also, import still 3 helpers from that package:
  
- - `isBusy` - gives feedback if data is being fetched, which we'll show with `LOADING` and `IDLE` statuses of [ListView](TODO),
+ - `isBusy` - gives feedback if data is being fetched,
  - `shouldRefresh` - knows if data needs to be (re)fetched and
  - `getCollection` - combines `storage` and `collection` reducer data into an `array`.
 
@@ -80,7 +80,7 @@ class RestaurantsList extends Component {
 
 Implement rendering.
 
-```JSX{7-11,15-16}
+```JSX{7-8,12-13}
 #file: app/screens/RestaurantsList.js
   render() {
     // set the title in the Navigation bar
@@ -91,13 +91,10 @@ Implement rendering.
     // get list of restaurants from props
     const { restaurants } = this.props;
     
-    // setup for showing loading indicator while loading data
-    const { LOADING, IDLE } = ListView.Status;
-    
     return (
       <ListView
         data={restaurants}
-        status={isBusy(restaurants) ? LOADING : IDLE}
+        loading={isBusy(restaurants)}
         renderRow={restaurant => this.renderRow(restaurant, navigateTo)}
       />
     );
@@ -194,8 +191,6 @@ class RestaurantsList extends Component {
     //get list of restaurants from props
     const { restaurants } = this.props;
     
-    //setup for showing loading indicator while loading data
-    const { LOADING, IDLE } = ListView.Status;
 
     return (
       <ListView
@@ -211,7 +206,7 @@ export default connect(
   (state) => ({
     restaurants: getCollection(state[ext()].allRestaurants, state)
   }),
-  (dispatch) => { navigateTo, find })
+  (dispatch) => { navigateTo, find }
 )(RestaurantsList);
 
 ```
