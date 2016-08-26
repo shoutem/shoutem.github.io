@@ -38,7 +38,7 @@ DropDownMenu is a full screen contextual menu for displaying lists of links.
 
 #### Props
  
-* **onOptionSelected** : callback function  
+* **onOptionSelected(option: Object)** : function  
   - Called after tapping an option from menu, with all Props from that option passed to the function
 
 * **options** : array  

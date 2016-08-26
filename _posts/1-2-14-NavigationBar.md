@@ -331,7 +331,7 @@ It provides a simpler way to use 3-column Navigation bar without reinventing the
 * **hasHistory** : bool
   - If this Prop is set to `true`, the leftComponent will become a back arrow and will trigger the `navigateBack` callback
 
-* **navigateBack** : callback function
+* **navigateBack()** : function
   - This callback is triggered after tapping the Back button if `hasHistory` Prop is set to `true`  
 
 #### Style names

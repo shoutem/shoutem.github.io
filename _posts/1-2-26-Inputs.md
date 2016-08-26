@@ -44,12 +44,16 @@ Text Input component is used for inputting text into the application using keybo
   
 #### Props
 
-* **placeholder**: defines the placeholder text within Input
-* **secureTextEntry**: If true, the text input obscures the text entered so that sensitive text like passwords stay secure
+* **placeholder**: string
+  - defines the placeholder text within Input
+* **secureTextEntry**: bool
+  - If true, the text input obscures the text entered so that sensitive text like passwords stay secure
 * Note that `TextInput` component has the same Props like React Native `TextInput` component has
 
 #### Style
 
-* **placeholderTextColor**: defines the placeholder text color
-* **selectionColor**: The highlight color of the text input (and the cursor color on iOS)
+* **placeholderTextColor**:  
+  - defines the placeholder text color
+* **selectionColor**:  
+  - The highlight color of the text input (and the cursor color on iOS)
 * Note that `TextInput` component has the same Style props like React Native's `TextInput` component has

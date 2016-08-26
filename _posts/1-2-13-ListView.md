@@ -38,23 +38,25 @@ ListView component is a base component used to render Lists of items. This compo
 * **loading** : bool  
   - Prop that defines whether the ListView should render loading spinner (to indicate it's still loading data) or actual items (when the data successfully loads)
 
-* **onLoadMore** : function  
-  - Callback function called when the ListView is scrolled all the way to the bottom of the first page. In this function you should update `data` array with additional items
+* **onLoadMore()** : function  
+  - Callback function called when the ListView is scrolled all the way to the bottom of the first page. 
+  - In this function you should update `data` array (state) with additional items
 
-* **onRefresh** : function  
-  - Callback function called when the ListView is pulled down, triggering the refresh action. In this function you should update `data` array with new items
+* **onRefresh()** : function  
+  - Callback function called when the ListView is pulled down, triggering the refresh action. 
+  - In this function you should update `data` array (state) with new items
   - If this function is declared, the Component will be considered refreshable
 
-* **renderRow** : function  
+* **renderRow(item: Object)** : function  
   - Callback function that renders each item from `data`
 
-* **renderFooter** : function  
+* **renderFooter()** : function  
   - Callback function that renders the Footer content
  
-* **renderHeader** : function  
+* **renderHeader()** : function  
   - Callback function that renders the Header content
 
-* **renderSectionHeader** : function  
+* **renderSectionHeader()** : function  
   - Callback function that renders the Section Header content
 
 #### Style
