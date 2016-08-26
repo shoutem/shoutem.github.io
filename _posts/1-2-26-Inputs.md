@@ -1,13 +1,13 @@
 ---
 layout: doc
-permalink: /docs/ui-toolkit/components/Inputs
-title: Inputs
+permalink: /docs/ui-toolkit/components/text-input
+title: Text Input
 section: UI toolkit
 ---
 
-# Text Inputs
+# Text Input
 
-Text Inputs are components for inputting text into the application using keyboard. 
+Text Input component is used for inputting text into the application using keyboard. 
 
 ## Input / Placeholder text 
 ![alt text]({{ site.baseurl }}/img/ui-toolkit/inputs/input-placeholder@2x.png "Input / Placeholder text"){:.docs-component-image}
