@@ -1,6 +1,6 @@
 ---
 layout: doc
-permalink: /docs/ui-toolkit/components/Icons
+permalink: /docs/ui-toolkit/components/icons
 title: Icons
 section: UI toolkit
 ---
