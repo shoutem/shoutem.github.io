@@ -35,12 +35,11 @@ It provides a simpler way to use 3-column Navigation bar without reinventing the
 ## Navbar / Clear (Image)
 ![alt text]({{ site.baseurl }}/img/ui-toolkit/navigationbar/navbar-imageoverlay-image@2x.png "Navbar / Clear (Image)"){:.docs-component-image}
 
-
 #### JSX Declaration
 ```JSX
 {% raw %}
 <Image
-  source={require('../assets/examples/road.png')}
+  source={{uri: {% endraw %}'{{site.url}}{% raw %}/img/ui-toolkit/examples/navigation-bar-header-image.png'}}
   style={{
     width: 375,
     height: 70,
@@ -62,7 +61,7 @@ It provides a simpler way to use 3-column Navigation bar without reinventing the
 ```JSX
 {% raw %}
 <Image
-  source={require('../assets/examples/road.png')}
+  source={{uri: {% endraw %}'{{site.url}}{% raw %}/img/ui-toolkit/examples/navigation-bar-header-image.png'}}
   style={{
     width: 375,
     height: 70,
@@ -171,7 +170,7 @@ It provides a simpler way to use 3-column Navigation bar without reinventing the
   navigateBack={() => {}}
   title="TITLE"
   share={{
-    link: 'http://shoutem.github.io',
+    link: 'http\://shoutem.github.io',
     text: 'This is the best',
     title: 'Super cool UI Toolkit',
   }}

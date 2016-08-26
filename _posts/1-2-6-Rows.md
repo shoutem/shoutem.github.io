@@ -90,10 +90,12 @@ Components rendered within lists are usually implemented using the row container
 
 #### JSX Declaration
 ```JSX
+{% raw %}
 <Row>
-  <Image source="..." />
+  <Image source={{uri: {% endraw %}'{{site.url}}{% raw %}/img/ui-toolkit/examples/image-11.png'}} />
   <Subtitle>Portland ugh fashion axe Helvetica, YOLO Echo Park Austin gastropub roof party.</Subtitle>
 </Row>
+{% endraw %}
 ```
 
 ## Medium list item + Description
@@ -101,13 +103,15 @@ Components rendered within lists are usually implemented using the row container
 
 #### JSX Declaration
 ```JSX
+{% raw %}
 <Row>
-  <Image source="..." />
+  <Image source={{uri: {% endraw %}'{{site.url}}{% raw %}/img/ui-toolkit/examples/image-6.png'}} />
   <View styleName="vertical">
     <Subtitle>Fact Check: Wisconsin Democratic Debate</Subtitle>
     <Caption>20 hours ago</Caption>
   </View>
 </Row>
+{% endraw %}
 ```
 
 ## Medium list item + Description + Icon
@@ -115,14 +119,16 @@ Components rendered within lists are usually implemented using the row container
 
 #### JSX Declaration
 ```JSX
+{% raw %}
 <Row>
-  <Image source="..." />
+  <Image source={{uri: {% endraw %}'{{site.url}}{% raw %}/img/ui-toolkit/examples/image-11.png'}} />
   <View styleName="vertical">
     <Subtitle>Wilco Cover David Bowie's "Space Oddity"</Subtitle>
     <Caption>June 21  •  20:00</Caption>
   </View>
   <Icon iconName="add-to-calendar" />
 </Row>
+{% endraw %}
 ```
 
 ## Medium list item + Description + Icon + Label
@@ -130,8 +136,9 @@ Components rendered within lists are usually implemented using the row container
 
 #### JSX Declaration
 ```JSX
+{% raw %}
 <Row>
-  <Image source="..." />
+  <Image source={{uri: {% endraw %}'{{site.url}}{% raw %}/img/ui-toolkit/examples/image-11.png'}} />
   <View styleName="vertical">
     <Subtitle>A really long shop item title that breaks in two lines</Subtitle>
     <View styleName="horizontal">
@@ -141,6 +148,7 @@ Components rendered within lists are usually implemented using the row container
   </View>
   <Icon iconName="add-to-basket" />
 </Row>
+{% endraw %}
 ```
 
 ## Medium list item + Notification dot
@@ -148,14 +156,16 @@ Components rendered within lists are usually implemented using the row container
 
 #### JSX Declaration
 ```JSX
+{% raw %}
 <Row>
   <Icon iconName="notification-dot" />
-  <Image source="..." />
+  <Image source={{uri: {% endraw %}'{{site.url}}{% raw %}/img/ui-toolkit/examples/image-2.png'}} />
   <View styleName="vertical">
     <Subtitle>A really long shop item title that breaks in two lines</Subtitle>
     <Caption>20 hours ago</Caption>
   </View>
 </Row>
+{% endraw %}
 ```
 
 ## Medium list item + Description + Label
@@ -163,8 +173,9 @@ Components rendered within lists are usually implemented using the row container
 
 #### JSX Declaration
 ```JSX
+{% raw %}
 <Row>
-  <Image styleName="wide" source="..." />
+  <Image styleName="wide" source={{uri: {% endraw %}'{{site.url}}{% raw %}/img/ui-toolkit/examples/image-1.png'}} />
   <View styleName="vertical">
     <Subtitle>Take A Romantic Break In A Boutique Hotel</Subtitle>
     <Divider />
@@ -174,6 +185,7 @@ Components rendered within lists are usually implemented using the row container
     </View>
   </View>
 </Row>
+{% endraw %}
 ```
   
 #### Style names  

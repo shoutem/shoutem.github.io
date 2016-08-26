@@ -15,10 +15,12 @@ This document covers Image component and Image size style names available in Sho
 
 #### JSX Declaration
 ```JSX
+{% raw %}
 <Image
   styleName="small"
-  source={require('../assets/examples/road.png')}
+  source={{uri: {% endraw %}'{{site.url}}{% raw %}/img/ui-toolkit/examples/image-3.png'}} />
 />
+{% endraw %}
 ```  
   
 ## List video thumbnail (145x92)
@@ -27,10 +29,12 @@ This document covers Image component and Image size style names available in Sho
 
 #### JSX Declaration
 ```JSX
+{% raw %}
 <Image
   styleName="medium"
-  source={require('../assets/examples/road.png')}
+  source={{uri: {% endraw %}'{{site.url}}{% raw %}/img/ui-toolkit/examples/image-3.png'}} />
 />
+{% endraw %}
 ```  
   
 ## Card image thumbnail (180x85)
@@ -39,10 +43,12 @@ This document covers Image component and Image size style names available in Sho
 
 #### JSX Declaration
 ```JSX
+{% raw %}
 <Image
   styleName="medium-wide"
-  source={require('../assets/examples/road.png')}
+  source={{uri: {% endraw %}'{{site.url}}{% raw %}/img/ui-toolkit/examples/image-3.png'}} />
 />
+{% endraw %}
 ```    
 
 ## Avatar thumbnail (25x25)
@@ -51,10 +57,12 @@ This document covers Image component and Image size style names available in Sho
 
 #### JSX Declaration
 ```JSX
+{% raw %}
 <Image
   styleName="small-avatar"
-  source={require('../assets/examples/road.png')}
+  source={{uri: {% endraw %}'{{site.url}}{% raw %}/img/ui-toolkit/examples/image-3.png'}} />
 />
+{% endraw %}
 ```      
 
 ## Avatar image (145x145)
@@ -63,10 +71,12 @@ This document covers Image component and Image size style names available in Sho
 
 #### JSX Declaration
 ```JSX
+{% raw %}
 <Image
   styleName="medium-avatar"
-  source={require('../assets/examples/road.png')}
+  source={{uri: {% endraw %}'{{site.url}}{% raw %}/img/ui-toolkit/examples/image-3.png'}} />
 />
+{% endraw %}
 ```  
 
 ## List medium image (145x145)
@@ -75,10 +85,12 @@ This document covers Image component and Image size style names available in Sho
 
 #### JSX Declaration
 ```JSX
+{% raw %}
 <Image
   styleName="medium-square"
-  source={require('../assets/examples/road.png')}
+  source={{uri: {% endraw %}'{{site.url}}{% raw %}/img/ui-toolkit/examples/image-3.png'}} />
 />
+{% endraw %}
 ```  
 
 ## List large thumbnail (375x200)
@@ -87,10 +99,12 @@ This document covers Image component and Image size style names available in Sho
 
 #### JSX Declaration
 ```JSX
+{% raw %}
 <Image
   styleName="large-banner"
-  source={require('../assets/examples/road.png')}
+  source={{uri: {% endraw %}'{{site.url}}{% raw %}/img/ui-toolkit/examples/image-3.png'}} />
 />
+{% endraw %}
 ```  
 
 ## Featured image (365x345)
@@ -99,10 +113,12 @@ This document covers Image component and Image size style names available in Sho
 
 #### JSX Declaration
 ```JSX
+{% raw %}
 <Image
   styleName="featured"
-  source={require('../assets/examples/road.png')}
+  source={{uri: {% endraw %}'{{site.url}}{% raw %}/img/ui-toolkit/examples/image-3.png'}} />
 />
+{% endraw %}
 ```  
 
 ## Detail large photo (375x581)
@@ -111,10 +127,12 @@ This document covers Image component and Image size style names available in Sho
 
 #### JSX Declaration
 ```JSX
+{% raw %}
 <Image
   styleName="large-portrait"
-  source={require('../assets/examples/road.png')}
+  source={{uri: {% endraw %}'{{site.url}}{% raw %}/img/ui-toolkit/examples/image-3.png'}} />
 />
+{% endraw %}
 ```   
 
 ## Detail medium photo (375x280)
@@ -123,10 +141,12 @@ This document covers Image component and Image size style names available in Sho
 
 #### JSX Declaration
 ```JSX
+{% raw %}
 <Image
   styleName="large"
-  source={require('../assets/examples/road.png')}
+  source={{uri: {% endraw %}'{{site.url}}{% raw %}/img/ui-toolkit/examples/image-3.png'}} />
 />
+{% endraw %}
 ```  
 
 ## Detail wide photo (375x238)
@@ -135,10 +155,12 @@ This document covers Image component and Image size style names available in Sho
 
 #### JSX Declaration
 ```JSX
+{% raw %}
 <Image
   styleName="large-wide"
-  source={require('../assets/examples/road.png')}
+  source={{uri: {% endraw %}'{{site.url}}{% raw %}/img/ui-toolkit/examples/image-3.png'}} />
 />
+{% endraw %}
 ```   
 
 ## Detail square photo (375x375)
@@ -147,8 +169,10 @@ This document covers Image component and Image size style names available in Sho
 
 #### JSX Declaration
 ```JSX
+{% raw %}
 <Image
   styleName="large-square"
-  source={require('../assets/examples/road.png')}
+  source={{uri: {% endraw %}'{{site.url}}{% raw %}/img/ui-toolkit/examples/image-3.png'}} />
 />
+{% endraw %}
 ```  

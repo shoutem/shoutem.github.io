@@ -14,16 +14,18 @@ Tiles are a convenient way to display homogeneous content. They are often used i
 
 #### JSX Declaration
 ```JSX
+{% raw %}
 <Tile styleName="small">
   <Image
     styleName="medium-square"
-    source={require('../assets/examples/road.png')}
+    source={{uri: {% endraw %}'{{site.url}}{% raw %}/img/ui-toolkit/examples/image-12.png'}} />
   />
   <View styleName="content">
     <Subtitle numberOfLines={2}>When The Morning Dawns - DJ Silver Sample Album</Subtitle>
     <Caption>20 hours ago</Caption>
   </View>
 </Tile>
+{% endraw %}
 ```
 
 ## Tile + Icon
@@ -31,10 +33,11 @@ Tiles are a convenient way to display homogeneous content. They are often used i
 
 #### JSX Declaration
 ```JSX
+{% raw %}
 <Tile styleName="small">
   <Image
     styleName="medium-square"
-    source={require('../assets/examples/road.png')}
+    source={{uri: {% endraw %}'{{site.url}}{% raw %}/img/ui-toolkit/examples/image-2.png'}} />
   >
     <Icon name="play" styleName="rounded-overlay-small" />
   </Image>
@@ -43,6 +46,7 @@ Tiles are a convenient way to display homogeneous content. They are often used i
     <Caption>20 hours ago</Caption>
   </View>
 </Tile>
+{% endraw %}
 ```
 
 ## Large (featured) tile
@@ -50,10 +54,11 @@ Tiles are a convenient way to display homogeneous content. They are often used i
 
 #### JSX Declaration
 ```JSX
+{% raw %}
 <Tile>
   <Image
     styleName="featured"
-    source={require('../assets/examples/road.png')}
+    source={{uri: {% endraw %}'{{site.url}}{% raw %}/img/ui-toolkit/examples/image-4.png'}} />
   >
     <Overlay>
       <Title styleName="md-gutter-bottom">MIKE PATTON TEAMING WITH JOHN KAADA FOR COLLAB ALBUM BACTERIA CULT</Title>
@@ -61,26 +66,7 @@ Tiles are a convenient way to display homogeneous content. They are often used i
     </Overlay>
   </Image>
 </Tile>
-```
-
-## Large (featured) tile + Button 
-![alt text]({{ site.baseurl }}/img/ui-toolkit/tiles/large-tile-button@2x.png "Large Tile + Button"){:.docs-component-image}
-
-#### JSX Declaration
-```JSX
-<Tile>
-  <Image
-    styleName="featured"
-    source={require('../assets/examples/road.png')}
-  >
-    <Overlay>
-      <Title>MIKE PATTON TEAMING WITH JOHN KAADA</Title>
-      <Subtitle styleName="line-through sm-gutter-top">150.00</Subtitle>
-      <Heading>99.99</Heading>
-      <Button styleName="md-gutter-top"><Text>CLAIM COUPON</Text></Button>
-    </Overlay>
-  </Image>
-</Tile>
+{% endraw %}
 ```
 
 ## Large (featured) tile + Button + Sale tag
@@ -88,10 +74,11 @@ Tiles are a convenient way to display homogeneous content. They are often used i
 
 #### JSX Declaration
 ```JSX
+{% raw %}
 <Tile>
   <Image
     styleName="featured"
-    source={require('../assets/examples/road.png')}
+    source={{uri: {% endraw %}'{{site.url}}{% raw %}/img/ui-toolkit/examples/image-11.png'}} />
   >
     <Overlay>
       <Overlay styleName="collapsed"><Heading>-20%</Heading></Overlay>
@@ -102,6 +89,29 @@ Tiles are a convenient way to display homogeneous content. They are often used i
     </Overlay>
   </Image>
 </Tile>
+{% endraw %}
+```
+
+## Large (featured) tile + Button 
+![alt text]({{ site.baseurl }}/img/ui-toolkit/tiles/large-tile-button@2x.png "Large Tile + Button"){:.docs-component-image}
+
+#### JSX Declaration
+```JSX
+<Tile>
+{% raw %}
+  <Image
+    styleName="featured"
+    source={{uri: {% endraw %}'{{site.url}}{% raw %}/img/ui-toolkit/examples/image-9.png'}} />
+  >
+    <Overlay>
+      <Title>MIKE PATTON TEAMING WITH JOHN KAADA</Title>
+      <Subtitle styleName="line-through sm-gutter-top">150.00</Subtitle>
+      <Heading>99.99</Heading>
+      <Button styleName="md-gutter-top"><Text>CLAIM COUPON</Text></Button>
+    </Overlay>
+  </Image>
+</Tile>
+{% endraw %}
 ```
 
 ## Large list item
@@ -109,10 +119,11 @@ Tiles are a convenient way to display homogeneous content. They are often used i
 
 #### JSX Declaration
 ```JSX
+{% raw %}
 <Tile styleName="light">
   <Image
     styleName="large-banner"
-    source={require('../assets/examples/road.png')}
+    source={{uri: {% endraw %}'{{site.url}}{% raw %}/img/ui-toolkit/examples/image-5.png'}} />
   />
   <View styleName="content">
     <Title>MAUI BY AIR THE BEST WAY AROUND THE ISLAND</Title>
@@ -122,6 +133,7 @@ Tiles are a convenient way to display homogeneous content. They are often used i
     </View>
   </View>
 </Tile>
+{% endraw %}
 ```
 
 ## Large list item + Icon + Timestamp
@@ -129,10 +141,11 @@ Tiles are a convenient way to display homogeneous content. They are often used i
 
 #### JSX Declaration
 ```JSX
+{% raw %}
 <Tile styleName="light">
   <Image
     styleName="large-banner"
-    source={require('../assets/examples/road.png')}
+    source={{uri: {% endraw %}'{{site.url}}{% raw %}/img/ui-toolkit/examples/image-7.png'}} />
   >
     <Icon name="play" styleName="rounded-overlay" />
   </Image>
@@ -144,6 +157,7 @@ Tiles are a convenient way to display homogeneous content. They are often used i
     </View>
   </View>
 </Tile>
+{% endraw %}
 ```
 
 ## Large list item + Price tag
@@ -151,10 +165,11 @@ Tiles are a convenient way to display homogeneous content. They are often used i
 
 #### JSX Declaration
 ```JSX
+{% raw %}
 <Tile>
   <Image
     styleName="large-banner"
-    source={require('../assets/examples/road.png')}
+    source={{uri: {% endraw %}'{{site.url}}{% raw %}/img/ui-toolkit/examples/image-3.png'}} />
   >
     <Overlay>
       <Title styleName="md-gutter-bottom">SMOKED SALMON, CLASSIC CONDIMENTS, BRIOCHE</Title>
@@ -162,6 +177,7 @@ Tiles are a convenient way to display homogeneous content. They are often used i
     </Overlay>
   </Image>
 </Tile>
+{% endraw %}
 ```
 
 ## Large list item + Action icon
@@ -169,10 +185,11 @@ Tiles are a convenient way to display homogeneous content. They are often used i
 
 #### JSX Declaration
 ```JSX
+{% raw %}
 <Tile>
   <Image
     styleName="large-banner"
-    source={require('../assets/examples/road.png')}
+    source={{uri: {% endraw %}'{{site.url}}{% raw %}/img/ui-toolkit/examples/image-3.png'}} />
   >
     <Overlay>
       <View styleName="actions">
@@ -183,6 +200,7 @@ Tiles are a convenient way to display homogeneous content. They are often used i
     </Overlay>
   </Image>
 </Tile>
+{% endraw %}
 ```
 
 ## Detail square + Price tag
@@ -190,10 +208,11 @@ Tiles are a convenient way to display homogeneous content. They are often used i
 
 #### JSX Declaration
 ```JSX
+{% raw %}
 <Tile>
   <Image
     styleName="large-square"
-    source={require('../assets/examples/road.png')}
+    source={{uri: {% endraw %}'{{site.url}}{% raw %}/img/ui-toolkit/examples/image-3.png'}} />
   >
     <Overlay>
       <Title styleName="md-gutter-bottom">SMOKED SALMON, CLASSIC CONDIMENTS, BRIOCHE</Title>
@@ -201,6 +220,7 @@ Tiles are a convenient way to display homogeneous content. They are often used i
     </Overlay>
   </Image>
 </Tile>
+{% endraw %}
 ```
 
 ## Detail square + Button
@@ -208,10 +228,11 @@ Tiles are a convenient way to display homogeneous content. They are often used i
 
 #### JSX Declaration
 ```JSX
+{% raw %}
 <Tile>
   <Image
     styleName="large-square"
-    source={require('../assets/examples/road.png')}
+    source={{uri: {% endraw %}'{{site.url}}{% raw %}/img/ui-toolkit/examples/image-9.png'}} />
   >
     <Overlay>
       <Title>MIKE PATTON TEAMING WITH JOHN KAADA</Title>
@@ -221,6 +242,7 @@ Tiles are a convenient way to display homogeneous content. They are often used i
     </Overlay>
   </Image>
 </Tile>
+{% endraw %}
 ```
 
 ## Detail square + Button + Sale tag
@@ -228,10 +250,11 @@ Tiles are a convenient way to display homogeneous content. They are often used i
 
 #### JSX Declaration
 ```JSX
+{% raw %}
 <Tile>
   <Image
     styleName="large-square"
-    source={require('../assets/examples/road.png')}
+    source={{uri: {% endraw %}'{{site.url}}{% raw %}/img/ui-toolkit/examples/image-11.png'}} />
   >
     <Overlay>
       <Overlay styleName="collapsed"><Heading>-20%</Heading></Overlay>
@@ -242,6 +265,7 @@ Tiles are a convenient way to display homogeneous content. They are often used i
     </Overlay>
   </Image>
 </Tile>
+{% endraw %}
 ```
 
 ## Detail large + Price tag
@@ -249,10 +273,11 @@ Tiles are a convenient way to display homogeneous content. They are often used i
 
 #### JSX Declaration
 ```JSX
+{% raw %}
 <Tile>
   <Image
     styleName="large-portrait"
-    source={require('../assets/examples/road.png')}
+    source={{uri: {% endraw %}'{{site.url}}{% raw %}/img/ui-toolkit/examples/image-3.png'}} />
   >
     <Overlay>
       <Title styleName="md-gutter-bottom">SMOKED SALMON, CLASSIC CONDIMENTS, BRIOCHE</Title>
@@ -260,6 +285,7 @@ Tiles are a convenient way to display homogeneous content. They are often used i
     </Overlay>
   </Image>
 </Tile>
+{% endraw %}
 ```
 
 ## Detail large + Button
@@ -267,10 +293,11 @@ Tiles are a convenient way to display homogeneous content. They are often used i
 
 #### JSX Declaration
 ```JSX
+{% raw %}
 <Tile>
   <Image
     styleName="large-portrait"
-    source={require('../assets/examples/road.png')}
+    source={{uri: {% endraw %}'{{site.url}}{% raw %}/img/ui-toolkit/examples/image-9.png'}} />
   >
     <Overlay>
       <Title>MIKE PATTON TEAMING WITH JOHN KAADA</Title>
@@ -280,6 +307,7 @@ Tiles are a convenient way to display homogeneous content. They are often used i
     </Overlay>
   </Image>
 </Tile>
+{% endraw %}
 ```
 
 ## Detail large + Button + Sale tag
@@ -287,10 +315,11 @@ Tiles are a convenient way to display homogeneous content. They are often used i
 
 #### JSX Declaration
 ```JSX
+{% raw %}
 <Tile>
   <Image
     styleName="large-portrait"
-    source={require('../assets/examples/road.png')}
+    source={{uri: {% endraw %}'{{site.url}}{% raw %}/img/ui-toolkit/examples/image-11.png'}} />
   >
     <Overlay>
       <Overlay styleName="collapsed"><Heading>-20%</Heading></Overlay>
@@ -301,6 +330,7 @@ Tiles are a convenient way to display homogeneous content. They are often used i
     </Overlay>
   </Image>
 </Tile>
+{% endraw %}
 ```
   
 #### Style Names
