@@ -12,7 +12,7 @@ Zooms in components wrapped by it.
 ***Properties:***
 
 - `driver`: Driver that is running the animation
-- `children`: Components to which an effect will be applied
+- `children`: Components that will be affected by the animation
 - `inputRange`: Array `[from, to]` including a `'from' animated value` and `'to' animated value`
 - `maxFactor`: Number, factor to which `children` components will be zoomed in
 
