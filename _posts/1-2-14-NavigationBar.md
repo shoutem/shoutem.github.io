@@ -13,7 +13,6 @@ It provides a simpler way to use 3-column Navigation bar without reinventing the
 ## Navbar / Solid
 ![alt text]({{ site.baseurl }}/img/ui-toolkit/navigationbar/navbar-title-only@2x.png "Navbar / Solid"){:.docs-component-image}
 
-
 #### JSX Declaration
 ```JSX
 {% raw %}
@@ -436,16 +435,16 @@ It provides a simpler way to use 3-column Navigation bar without reinventing the
 #### Props
   
 * **leftComponent** : object  
-  - Prop that presents left component in `NavigationBar` (back button for example)
+  - Prop that represents the left component in `NavigationBar` (example: back button)
 
 * **centerComponent** : object  
-  - Prop that presents center component in `NavigationBar` (for example screen title)
+  - Prop that represents the center component in `NavigationBar` (example: screen title)
 
 * **rightComponent** : object
-  - Prop that presents right component in `NavigationBar` (for example dropdown menu button)
+  - Prop that represents the right component in `NavigationBar` (example: dropdown menu button)
 
 * **hasHistory** : bool
-  - If this Prop is set to `true`, leftComponent will become a back arrow and will trigger the `navigateBack` callback
+  - If this Prop is set to `true`, the leftComponent will become a back arrow and will trigger the `navigateBack` callback
 
 * **navigateBack** : callback function
   - This callback is triggered after tapping the Back button if `hasHistory` Prop is set to `true`  
@@ -458,11 +457,14 @@ It provides a simpler way to use 3-column Navigation bar without reinventing the
 
 #### Style
 
+* **backgroundImage**
+  - Style prop for `Image` component that holds the background image 
+
 * **container**
   - Style prop for `View` that holds all components within `NavigationBar`
   
 * **componentsContainer**
-  - Style prop for `View` container that holds `leftComponent`, `centerComponent`, `rightComponent` objects
+  - Style prop for `View` container that holds `leftComponent`, `centerComponent` and `rightComponent` objects
   
 * **leftComponent**
   - Style applied to left Navigation component
