@@ -26,7 +26,7 @@ Dividers are components used to add space or any other separator between other c
 ```
 
 ## Section divider  
-Section dividers are usually used in lists, to separate groups of similar list items, for example to group contacts by the first letter of their name. ListView will automatically style all dividers added to it.
+Section dividers are usually used in lists to separate groups of similar list items, for example to group contacts by the first letter of their name. ListView will automatically style all dividers added to it.
 
 ![alt text]({{ site.baseurl }}/img/ui-toolkit/dividers/section-divider@2x.png "Section divider"){:.docs-component-image}
 
