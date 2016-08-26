@@ -7,7 +7,7 @@ section: Animation
 
 # FadeOut
 
-Fades out components wraped by it.
+Fades out components wrapped by it.
 
 ***Properties:***
 
