@@ -6,7 +6,7 @@ section: UI toolkit
 ---
 
 # Spinner
-`Spinner` is styled wrapper for `ActivityIndicator` React Native component, with special Shoutem scent.  
+`Spinner` is a styled wrapper for `ActivityIndicator` React Native component.  
 
 ## Spinner
 ![alt text]({{ site.baseurl }}/img/ui-toolkit/spinner/spinner@2x.png "Spinner"){:.docs-component-image}
@@ -23,6 +23,6 @@ section: UI toolkit
 * None
 
 #### Style
-* Component is passing content from this Style Prop to Style prop of `ActivityIndicator` component, with exception for
+* Style Props are passed to Style prop of `ActivityIndicator` component, with exception for
 * **size** : string, `small` or `large` 
-  - you can set size of the indicator.
+  - defines the size of the indicator
