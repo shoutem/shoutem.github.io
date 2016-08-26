@@ -144,15 +144,15 @@ Buttons are styled TouchableOpacities.
 
 #### Props
 
-* All Buttons can receive same Props that React Native's `TouchableOpacity` component is using
+* All Buttons have the same Props as React Native's `TouchableOpacity` component has
 
 #### Style names
 
-* **tight**: removes margin right to the `Icon` and `Text` within `Button`.
-* **clear**: removes border around button and sets `backgroundColor` to `Clear` color as defined in Theme.
-* **dark**: sets the text color to `Light` as defined in Theme, and background color to `Darker` as defined in Theme.  
-* **muted**: sets the `Icon` and `Text` component within `Button` opacity to 50%.  
-* **confirmation**: sets the border around button and applies medium margin around.  
-* **full-width**: button stretches to full width of the container.  
-* **border**: applies `Border` color as defined in Theme.  
-* **stacked**: vertically stacks `Icon` and `Text` within `Button.  
+* **tight**: removes the right margin from `Icon` and `Text` within `Button`
+* **clear**: removes the border around `Button` and sets `backgroundColor` to `Clear` color as defined in Theme
+* **dark**: sets the text color to `Light` as defined in Theme, and background color to `Darker` as defined in Theme
+* **muted**: sets the opacity of the `Icon` and `Text` components within `Button`to 50%
+* **confirmation**: sets the border around `Button` and applies a medium margin around  
+* **full-width**: `Button` stretches to full width of the container
+* **border**: applies `Border` color as defined in Theme
+* **stacked**: vertically stacks `Icon` and `Text` within `Button`
