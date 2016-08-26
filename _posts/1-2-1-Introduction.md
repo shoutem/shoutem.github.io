@@ -61,26 +61,22 @@ Style names are similar to CSS classes. Once you apply specific `styleName`, it 
 This section covers common style names that can be used in several UI toolkit components, and their variations.
 
 ### Size-based style name variations
-* **sm** : small size, defaults to 5px.  
-* **md** : medium size, defaults to 15px.  
-* **lg** : large size, defaults to 30px.  
-* **xl** : extra large size, defaults to 45px.  
-
-This means that you can apply `sm-gutter` to component, for example `Tile`, and it will have 5px gutter around content.  
+* **sm-gutter** : small size, defaults to 5px.  
+* **md-gutter** : medium size, defaults to 15px.  
+* **lg-gutter** : large size, defaults to 30px.  
+* **xl-gutter** : extra large size, defaults to 45px.  
   
-> If you want to apply gutter only to specific side of component (i.e. `right`), or to vertical sides, you can specify that by using additional position style name keywords listed below.
+> On `View`, `Tile` and `Overlay` components gutter is applied as padding, while on `Text` (Typography) and `Button` components gutter is applied as margin.    
+    
+If you want to apply gutter only to specific side of component (i.e. `right`), or to vertical sides, you can specify that by using additional position style name keywords listed below.
 
 ### Position based style name variations  
-* **left** : gutter will be applied only to left side of targeted component.  
-* **right** : gutter will be applied only to right side of targeted component.  
-* **top** : gutter will be applied only to top side of targeted component.  
-* **bottom** : gutter will be applied only to bottom side of targeted component.  
-* **horizontal** : gutter will be applied only to horizontal sides (left and right) of targeted component.  
-* **vertical** : gutter will be applied only to vertical sides (top and bottom) of targeted component.  
-  
-> Note that on `View`, `Tile` and `Overlay` components gutter is applied as padding, while on `Text` (Typography) and `Button` components gutter is applied as margin.    
-  
-<br />  
+* **_size_-gutter-left** : gutter will be applied only to left side of targeted component.  
+* **_size_-gutter-right** : gutter will be applied only to right side of targeted component.  
+* **_size_-gutter-top** : gutter will be applied only to top side of targeted component.  
+* **_size_-gutter-bottom** : gutter will be applied only to bottom side of targeted component.  
+* **_size_-gutter-horizontal** : gutter will be applied only to horizontal sides (left and right) of targeted component.  
+* **_size_-gutter-vertical** : gutter will be applied only to vertical sides (top and bottom) of targeted component.  
 
 #### rounded-corners
 - This style name applies border radius (defaults to 2 px) to targeted component.  
@@ -97,7 +93,7 @@ This means that you can apply `sm-gutter` to component, for example `Tile`, and 
 #### stretch
 - This style name causes component to fully fill parent container.  
   
-Below is one example where common Style names can be used:  
+Below is one example where and how common Style names can be used:  
 <br />  
 
 #### JSX Declaration
