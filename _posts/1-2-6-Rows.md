@@ -7,7 +7,7 @@ section: UI toolkit
 
 # Rows
 
-Components that are rendered within lists are usually implemented using the row container. Row is a container that renders its children horizontally.
+Components rendered within lists are usually implemented using the row container. Row is a container that renders its children horizontally.
 
 ## Small list item
 ![alt text]({{ site.baseurl }}/img/ui-toolkit/rows/small-list-item@2x.png "Small list item"){:.docs-component-image}
@@ -178,11 +178,11 @@ Components that are rendered within lists are usually implemented using the row 
   
 #### Style names  
 
-* **small**: sets the fixed height of Row to 65px.
+* **small**: sets the fixed height of Row to 65px
   
 #### Nested components can also use these Style names:
 * **disclosure**: applicable only for `Icon` components within `Row`. Pulls the icon to the right, and sets opacity to 50%.  
-* **right-icon**: applicable only for `Button` components within `Row`.  
+* **right-icon**: applicable only for `Button` components within `Row` 
 * **notification-dot**: applicable only for `View` components within  `Row`. Pulls the notification dot to the left of the content.  
-* **vertical**: applicable only for `View` components within `Row`. Adds bottom margin below each `View` in `Row`.
+* **vertical**: applicable only for `View` components within `Row`. Adds a bottom margin below each `View` in `Row`.
   
