@@ -9,25 +9,25 @@ section: UI toolkit
 
 ![alt text]({{ site.baseurl }}/img/ui-toolkit/introduction.jpg "UI toolkit"){:.docs-component-image}
 
-`@shoutem/ui` is a UI toolkit that enables you to build beautiful React Native apps by using our professionally designed UI components and themes. All components are built from the ground up to be both composable and [themeable]({{ site.baseurl }}//docs/ui-toolkit/theme/introduction). Each component has a predefined style within a theme and it's compatible with the rest of the toolkit, this makes it possible to build complex components that look great without the need to manually define complex styles.
+`@shoutem/ui` is a UI toolkit that enables you to build beautiful React Native apps by using our professionally designed UI components and themes. All components are built from the ground up to be both composable and [themeable]({{ site.baseurl }}//docs/ui-toolkit/theme/introduction). Each component has a predefined style within a theme and it's compatible with the rest of the toolkit, which makes it possible to build complex components that look great without the need to manually define complex styles.
 
 ## Prerequsites
-Before start make sure you have:
+Before starting make sure you have:
 
 - Installed [node](https://nodejs.org/en/)
 - Installed [npm](https://www.npmjs.com/)
 - Installed [rnpm](https://github.com/rnpm/rnpm)
 - Installed [React Native](https://facebook.github.io/react-native/docs/getting-started.html)
-- You've created a React Native project
+- Created a React Native project
 
 ## Installation
 
-In your project install `@shoutem/ui`:
+Install `@shoutem/ui` in your project:
 
 ```bash
 $ npm install @shoutem/ui
 ```
-Then run `rnpm` to link fonts that toolkit is using.
+Then run `rnpm` to link fonts that the toolkit is using.
 
 ```bash
 $ rnpm link
@@ -52,4 +52,4 @@ class NewsItem extends Component {
 }
 ```
 
-You can also use standard React Native components in your layouts anywhere you wish, but they will not inherit either the theme or parent styles, so you will need to style them manually.
+You can also use standard React Native components in your layouts anywhere you want, but they will not inherit either the theme or the parent styles, so you will need to style them manually.
