@@ -7,7 +7,7 @@ section: UI toolkit
 
 # Tiles
 
-Tiles are a convenient way to display homogeneous content. They are often used in grid views. Children will be rendered vertically in tiles, one below the other.
+Tiles are a convenient way to display homogeneous content. They are often used in grid views. Children are rendered vertically in tiles, one below the other.
 
 ## Tile
 ![alt text]({{ site.baseurl }}/img/ui-toolkit/tiles/tile@2x.png "Tile"){:.docs-component-image}
@@ -305,8 +305,8 @@ Tiles are a convenient way to display homogeneous content. They are often used i
   
 #### Style Names
 
-* **text-centric**: centers content within container and applies standard margins.
-* **clear**: sets the `clear` background color, as defined in Theme (usually transparent).
-* **small**: sets the fixed width to 145px and reduces margins and paddings.
-* Nested `View` component can use following Style name:
-  * **content**: applies the standard margins around the content in `View`.
+* **text-centric**: centers content within container and applies standard margins
+* **clear**: sets the `clear` background color, as defined in Theme (usually transparent)
+* **small**: sets the fixed width to 145px and reduces margins and paddings
+* Nested `View` component can use the following Style name:
+  * **content**: applies the standard margins around the content in `View`
