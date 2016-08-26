@@ -9,10 +9,9 @@ section: UI toolkit
 
 Similar to [ListView]({{ site.baseurl }}/docs/ui-toolkit/list-view), Grid View is used to render Grid of items.  
 
-Instead of having separate Grid View component, use `GridRow` component to encapsulate a single row of items (cells), and then pass `GridRow` as normal row to `ListView` component which does the actual content rendering.  
+Instead of having a separate Grid View component, use `GridRow` component to encapsulate a single row of items (cells), and then pass the `GridRow` as a normal row to a `ListView` component which does the actual content rendering.  
   
-Main idea behind this approach is to allow developers to have variable number of columns in Grid.  
-This means that developer can accomplish first row with 1 column, and then 1 rows with 2 columns etc.  
+The main idea behind this approach is to allow developers to have a variable number of columns in each row, for example: the first row can have only 1 column, followed by a number of rows with 2 columns.  
 
 ## GridView
 ![alt text]({{ site.baseurl }}/img/ui-toolkit/grid_view@2x.png "Grid View"){:.docs-component-image}
@@ -29,10 +28,10 @@ This means that developer can accomplish first row with 1 column, and then 1 row
 #### Props
 
 * **columns** : number  
-  - Number of columns in the Grid Row
+  - Number of columns in the GridRow
 
 * **key**: number
-  - Unique key-ID of GridRow
+  - Unique key-ID of the GridRow
 
 #### Style names
 
