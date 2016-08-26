@@ -5,18 +5,19 @@ title: Inputs
 section: UI toolkit
 ---
 
-# Inputs
+# Text Inputs
 
-Inputs are components for inputting text into the application using keyboard. 
+Text Inputs are components for inputting text into the application using keyboard. 
 
 ## Input / Placeholder text 
 ![alt text]({{ site.baseurl }}/img/ui-toolkit/inputs/input-placeholder@2x.png "Input / Placeholder text"){:.docs-component-image}
 
 #### JSX Declaration
 ```JSX
-<Input 
+<TextInput 
   placeholder={'Username or email'}
-  onChangeText={...} />
+  onChangeText={...} 
+/>
 ```
 
 ## Input / With text 
@@ -24,9 +25,10 @@ Inputs are components for inputting text into the application using keyboard.
 
 #### JSX Declaration
 ```JSX
-<Input 
+<TextInput 
   placeholder={'Username or email'}
-  onChangeText={...} />
+  onChangeText={...} 
+/>
 ```
 
 ## Input / With password  
@@ -34,15 +36,20 @@ Inputs are components for inputting text into the application using keyboard.
 
 #### JSX Declaration
 ```JSX
-<Input 
+<TextInput 
   placeholder={'Username or email'}
-  secureTextEntry={true}
-  onChangeText={} />
+  secureTextEntry
+/>
 ```
   
 #### Props
 
 * **placeholder**: defines the placeholder text within Input
-* **secureTextEntry**: If true, the text input obscures the text entered so that sensitive text like passwords stay secure.
-* **onChangeText**: function 
-  - Callback that is called when the text input's text changes. Changed text is passed as an argument to the callback handler.
+* **secureTextEntry**: If true, the text input obscures the text entered so that sensitive text like passwords stay secure
+* Note that `TextInput` component can receive and use same Props like React Native `TextInput` component can use.
+
+#### Style
+
+* **placeholderTextColor**: defines the placeholder text color
+* **selectionColor**: The highlight (and cursor on iOS) color of the text input
+* Note that `TextInput` component can receive and use same Style props like React Native `TextInput` component can use.
