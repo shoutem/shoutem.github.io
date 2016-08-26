@@ -7,12 +7,12 @@ section: Animation
 
 # FadeOut
 
-Fades out components warped by it.
+Fades out components wraped by it.
 
 ***Properties:***
 
 - `driver`: Driver that is running the animation
-- `children`: Components to which an effect will be applied
+- `children`: Components that will be affected by the animation
 - `inputRange`: Array `[from, to]` including a `'from' animated value` and `'to' animated value`
 
 ***Usage:***
@@ -34,4 +34,4 @@ return (
 );
 ```
 
-Above code will create scroll dependent fade out animation over `Image` component from scroll 100, to scroll 150 where `Image` is opaque at scroll 100, and fully transparent at scroll 150.
+The above code will create a scroll dependent fade out animation over `Image` component from scroll 100 to scroll 150 where `Image` is opaque at scroll 100, and fully transparent at scroll 150.
