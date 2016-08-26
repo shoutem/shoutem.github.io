@@ -90,21 +90,27 @@ Flourish.prototype = {
 
 	getDocumentTitle: function( text )
 	{
-		return text.match(/<title>([^\<]*?)<\/title>/)[1].trim();
+		var title = text.match(/<title>([^\<]*?)<\/title>/i);
+
+		if( title && title[1] ) {
+			return title[1].trim();
+		}
+
+		return "";
 	},
 
 	getDocumentClasses: function( text )
 	{
-		var htmlTag = text.match(/<html[^>]*>/)[0];
-		var bodyTag = text.match(/<body[^>]*>/)[0];
+		var htmlTag = text.match(/<html[^>]*>/i)[0];
+		var bodyTag = text.match(/<body[^>]*>/i)[0];
 
-		var htmlClasses = htmlTag.match(/class=['|"](.*?)['|"]/);
+		var htmlClasses = htmlTag.match(/class=['|"](.*?)['|"]/i);
 
 		if( htmlClasses && htmlClasses[1] ) {
 			htmlClasses = htmlClasses[1].trim();
 		}
 
-		var bodyClasses = bodyTag.match(/class=['|"](.*?)['|"]/);
+		var bodyClasses = bodyTag.match(/class=['|"](.*?)['|"]/i);
 
 		if( bodyClasses && bodyClasses[1] ) {
 			bodyClasses = bodyClasses[1].trim();
@@ -181,8 +187,13 @@ Flourish.prototype = {
 
 		this.fire("post_fetch", options, output, self);
 
-		if( options.extractSelector ) {
+		if( options.extractSelector )
+		{
 			output.el = output.el.querySelector(options.extractSelector);
+
+			if( ! output.el ) {
+				return false;
+			}
 		}
 
 		if( options.saveHistoryEntry && options.eventType !== "popstate" ) {
