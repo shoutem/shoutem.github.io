@@ -11,9 +11,18 @@ section: UI toolkit
 
 `@shoutem/ui` is a UI toolkit that enables you to build beautiful React Native apps by using our professionally designed UI components and themes. All components are built from the ground up to be both composable and [themeable]({{ site.baseurl }}//docs/ui-toolkit/theme/introduction). Each component has a predefined style within a theme and it's compatible with the rest of the toolkit, this makes it possible to build complex components that look great without the need to manually define complex styles.
 
+## Prerequsites
+Before start make sure you have:
+
+- Installed [node](https://nodejs.org/en/)
+- Installed [npm](https://www.npmjs.com/)
+- Installed [rnpm](https://github.com/rnpm/rnpm)
+- Installed [React Native](https://facebook.github.io/react-native/docs/getting-started.html)
+- You've created a React Native project
+
 ## Installation
 
-`@shoutem/ui` is available on npm:
+In your project install `@shoutem/ui`:
 
 ```bash
 $ npm install @shoutem/ui
