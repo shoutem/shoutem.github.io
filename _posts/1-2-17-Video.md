@@ -17,7 +17,7 @@ Video component is a component that can be used to render all types of Video ite
 #### JSX Declaration
 ```JSX
 <Video
-    videoURL={...}
+    source={...}
     height={...}
     width={...}
 />
@@ -25,7 +25,7 @@ Video component is a component that can be used to render all types of Video ite
 
 #### Props
 
-* **videoURL**  : string
+* **source**  : string
   - Prop that defines the source of the video that will be rendered
 
 * **height** : number
@@ -51,7 +51,7 @@ A component that previews video in a native player.
 #### JSX Declaration
 ```JSX
 <NativeVideo
-    videoURL={...}
+    source={...}
     height={...}
     width={...}
 />
@@ -59,7 +59,7 @@ A component that previews video in a native player.
 
 #### Props
 
-* **videoURL**  : source (uri : string)
+* **source**  : source (uri : string)
   - Prop that defines the source of the video that will be rendered
 
 * **height** : number
@@ -108,7 +108,7 @@ A component that renders Video content within a `WebView` component.
 #### JSX Declaration
 ```JSX
 <WebViewVideo
-    videoURL={...}
+    source={...}
     height={...}
     width={...}
 />
@@ -116,7 +116,7 @@ A component that renders Video content within a `WebView` component.
 
 #### Props
 
-* **videoURL**  : source (uri : string)
+* **source**  : source (uri : string)
   - Prop that defines the source of the video that will be rendered
 
 * **height** : number
