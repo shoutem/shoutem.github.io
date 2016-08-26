@@ -62,5 +62,5 @@ Headers are Tile variations.
 
 #### Style names
 
-* Headers component can use same Style names like `Tiles` component can use.
+* `Headers` component has the same Style names like `Tiles` component has
   
