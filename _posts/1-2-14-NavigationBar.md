@@ -457,9 +457,6 @@ It provides a simpler way to use 3-column Navigation bar without reinventing the
 
 #### Style
 
-* **backgroundImage**
-  - Style prop for `Image` component that holds the background image 
-
 * **container**
   - Style prop for `View` that holds all components within `NavigationBar`
   
