@@ -7,12 +7,12 @@ section: Animation
 
 # ZoomOut
 
-Zooms out components warped by it.
+Zooms out components wrapped by it.
 
 ***Properties:***
 
 - `driver`: Driver that is running the animation
-- `children`: Components to which an effect will be applied
+- `children`: Components that will be affected by the animation
 - `inputRange`: Array `[from, to]` including a `'from' animated value` and `'to' animated value`
 - `maxFactor`: Number, factor to which `children` will be zoomed out
 
@@ -36,4 +36,4 @@ return (
 );
 ```
 
-Above code will create scroll dependent zoom out animation over `Image` component from scroll 100, to scroll 150 where `Image` is scaled by maxFactor at scroll 100, and has original size at scroll 150.
+The above code will create a scroll dependent zoom out animation over `Image` component from scroll 100 to scroll 150 where `Image` is scaled by maxFactor at scroll 100, and has its original size at scroll 150.
