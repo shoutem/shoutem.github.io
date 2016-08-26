@@ -7,14 +7,14 @@ section: Animation
 
 # ZoomIn
 
-Zooms in components warped by it.
+Zooms in components wrapped by it.
 
 ***Properties:***
 
 - `driver`: Driver that is running the animation
 - `children`: Components to which an effect will be applied
 - `inputRange`: Array `[from, to]` including a `'from' animated value` and `'to' animated value`
-- `maxFactor`: Number, factor to which `children` will be zoomed in
+- `maxFactor`: Number, factor to which `children` components will be zoomed in
 
 ***Usage:***
 
@@ -36,4 +36,4 @@ return (
 );
 ```
 
-Above code will create scroll dependent zoom in animation over `Image` component from scroll 100, to scroll 150 where `Image` has original size at scroll 100, and is scaled by maxFactor at scroll 150.
+The above code will create a scroll dependent zoom in animation over `Image` component from scroll 100 to scroll 150 where `Image` has its original size at scroll 100, and is scaled by maxFactor at scroll 150.
