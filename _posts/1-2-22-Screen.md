@@ -7,7 +7,7 @@ section: UI toolkit
 
 # Screen
 
-Screen is a React Native `View`, with additional background color, defined in Theme (defaults to gray).
+Screen is a React Native's `View` with additional background color defined in Theme (defaults to gray).
   
 ## Screen
 <br />
@@ -21,4 +21,4 @@ Screen is a React Native `View`, with additional background color, defined in Th
 
 #### Style names
 
-* **full-screen**: Applies negative top margin, so that content within `Screen` covers navigation bar (usually 70 px).
+* **full-screen**: Applies negative top margin, so that the content within `Screen` covers the navigation bar (usually 70 px).
