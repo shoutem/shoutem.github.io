@@ -70,6 +70,6 @@ Cards have become very popular in recent years. They are useful when displaying 
 ```
 
 #### Style names
-* `Card` component doesn't have specific Style names, however `View` nested under `Card` can use following Style name:
+* `Card` component doesn't have specific Style names, however the `View` component nested under `Card` can use the following Style name:
 * **content**: adds standard card margins to any child component
 
