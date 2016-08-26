@@ -16,45 +16,58 @@ DropDownMenu is a full screen contextual menu for displaying lists of links.
 #### JSX Declaration
 ```JSX
 <DropDownMenu
-      items={...}
-      bindings={...}
-      onItemSelected={...}
-      selectedItem={...}
+      onOptionSelected={...}
+      options={[
+        {
+          name: 'Lifestyle',
+          id: '7',
+        },
+        {
+          name: 'Food',
+          id: '8',
+        },
+      ]}
+      selectedOption={...}
+      titleProperty={"name"}
+      valueProperty={"id"}
+      visibleOptions={...}
+      styleName={...}
       style={...}
 />
 ```
 
 #### Props
+ 
+* **onOptionSelected** : callback function  
+  - Called after a tap on some option from menu, passing all Props from that option to Callback function.
 
-* **items** : array  
-  - Array of items that are then rendered as `Button`s within `ListView`
+* **options** : array  
+  - Array of options that are then rendered as `Button`s within `ListView`.
 
-* **bindings** : array  
-  - Array of key:value attributes `{{ text: 'name', value: 'id' }}` that define binding rules for `items` array (text and id values).
-  
-* **onItemSelected** : callback function  
-  - Called after a tap on some item from menu, passing all Props from that item to Callback function
+* **selectedOption** : any 
+  - Sets a pre-selected `options`.
 
-* **selectedItem** : any 
-  - Sets a pre-selected `item`
+* **titleProperty** : string
+  - Attribute that defines what `key` from `options` Prop will be used to render option Titles in Dropdown menu.
+
+* **valueProperty** : string
+  - Attribute that defines what `key` from `options` Prop will be used to link option from `options` with `id` in Dropdown menu.
+
+* **visibleOptions** : number
+  - Sets a number of options shown without scroll in DropDown menu.
+
+#### Style names
+
+* **horizontal** : renders a full-width selected option button with background color (defaults to gray), as defined in Theme.
 
 #### Style
 
-* **popUpButton**
-  - Style prop for a dropdown `Button` that opens a full screen contextual menu
-
-* **modalContainer**
-  - Style prop for the outermost `View` within `Modal` component
-
-* **modalItems**
-  - Style prop for all items within `ListView`
+* **modal**
+  - Style prop for the outermost `View` within `Modal` component.
 
 * **modalItem**
-  - Style prop that holds single item (row) in `ListView`
+  - Style prop that holds single item (row) in `ListView`.
  
-* **modalItemText**
-  - Style prop for `Text` component in `item`.
-  - _Note:_ Text is forced to be uppercase  
- 
-* **modalCloseButton**
-  - Style prop for a close `Button` that closes a full screen contextual menu
+* **selectedOption**
+  - Style prop for a dropdown `Button` that opens a full screen contextual menu (and which is representing currently selected option).
+
