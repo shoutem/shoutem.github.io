@@ -7,11 +7,10 @@ section: UI toolkit
 
 # Screen
 
-Screen is a React Native `View`, with additional background color, defined in Theme.
+Screen is a React Native `View`, with additional background color, defined in Theme (defaults to gray).
   
 ## Screen
-![alt text]({{ site.baseurl }}/img/ui-toolkit/icons/tweet.png "Screen"){:.docs-component-image}  
-
+<br />
 
 #### JSX Declaration
 ```JSX

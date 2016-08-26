@@ -7,11 +7,11 @@ section: UI toolkit
 
 # TouchableOpacity
 
-TouchableOpacity is a React Native `TouchableOpacity`, with additional styling through Theme.
+TouchableOpacity is a React Native `TouchableOpacity`, with additional styling through Theme.  
+Basically, it is a wrapper for making components respond properly to touches. On press down, the opacity of the wrapped component is decreased, dimming it. 
   
 ## TouchableOpacity
-![alt text]({{ site.baseurl }}/img/ui-toolkit/icons/linkedin.png "TouchableOpacity"){:.docs-component-image}  
-
+<br />
 
 #### JSX Declaration
 ```JSX
