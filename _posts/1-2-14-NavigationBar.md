@@ -39,7 +39,7 @@ It provides a simpler way to use 3-column Navigation bar without reinventing the
 ```JSX
 {% raw %}
 <Image
-  source={{uri: {% endraw %}'{{site.baseurl}}{% raw %}/img/ui-toolkit/examples/navigation-bar-header-image.png'}}
+  source={{uri: {% endraw %}'{{site.url}}{% raw %}/img/ui-toolkit/examples/navigation-bar-header-image.png'}}
   style={{
     width: 375,
     height: 70,
@@ -61,7 +61,7 @@ It provides a simpler way to use 3-column Navigation bar without reinventing the
 ```JSX
 {% raw %}
 <Image
-  source={{uri: {% endraw %}'{{site.baseurl}}{% raw %}/img/ui-toolkit/examples/navigation-bar-header-image.png'}}
+  source={{uri: {% endraw %}'{{site.url}}{% raw %}/img/ui-toolkit/examples/navigation-bar-header-image.png'}}
   style={{
     width: 375,
     height: 70,

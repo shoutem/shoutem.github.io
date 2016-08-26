@@ -18,7 +18,7 @@ This document covers Image component and Image size style names available in Sho
 {% raw %}
 <Image
   styleName="small"
-  source={{uri: {% endraw %}'{{site.baseurl}}{% raw %}/img/ui-toolkit/examples/image-3.png'}} />
+  source={{uri: {% endraw %}'{{site.url}}{% raw %}/img/ui-toolkit/examples/image-3.png'}} />
 />
 {% endraw %}
 ```  
@@ -32,7 +32,7 @@ This document covers Image component and Image size style names available in Sho
 {% raw %}
 <Image
   styleName="medium"
-  source={{uri: {% endraw %}'{{site.baseurl}}{% raw %}/img/ui-toolkit/examples/image-3.png'}} />
+  source={{uri: {% endraw %}'{{site.url}}{% raw %}/img/ui-toolkit/examples/image-3.png'}} />
 />
 {% endraw %}
 ```  
@@ -46,7 +46,7 @@ This document covers Image component and Image size style names available in Sho
 {% raw %}
 <Image
   styleName="medium-wide"
-  source={{uri: {% endraw %}'{{site.baseurl}}{% raw %}/img/ui-toolkit/examples/image-3.png'}} />
+  source={{uri: {% endraw %}'{{site.url}}{% raw %}/img/ui-toolkit/examples/image-3.png'}} />
 />
 {% endraw %}
 ```    
@@ -60,7 +60,7 @@ This document covers Image component and Image size style names available in Sho
 {% raw %}
 <Image
   styleName="small-avatar"
-  source={{uri: {% endraw %}'{{site.baseurl}}{% raw %}/img/ui-toolkit/examples/image-3.png'}} />
+  source={{uri: {% endraw %}'{{site.url}}{% raw %}/img/ui-toolkit/examples/image-3.png'}} />
 />
 {% endraw %}
 ```      
@@ -74,7 +74,7 @@ This document covers Image component and Image size style names available in Sho
 {% raw %}
 <Image
   styleName="medium-avatar"
-  source={{uri: {% endraw %}'{{site.baseurl}}{% raw %}/img/ui-toolkit/examples/image-3.png'}} />
+  source={{uri: {% endraw %}'{{site.url}}{% raw %}/img/ui-toolkit/examples/image-3.png'}} />
 />
 {% endraw %}
 ```  
@@ -88,7 +88,7 @@ This document covers Image component and Image size style names available in Sho
 {% raw %}
 <Image
   styleName="medium-square"
-  source={{uri: {% endraw %}'{{site.baseurl}}{% raw %}/img/ui-toolkit/examples/image-3.png'}} />
+  source={{uri: {% endraw %}'{{site.url}}{% raw %}/img/ui-toolkit/examples/image-3.png'}} />
 />
 {% endraw %}
 ```  
@@ -102,7 +102,7 @@ This document covers Image component and Image size style names available in Sho
 {% raw %}
 <Image
   styleName="large-banner"
-  source={{uri: {% endraw %}'{{site.baseurl}}{% raw %}/img/ui-toolkit/examples/image-3.png'}} />
+  source={{uri: {% endraw %}'{{site.url}}{% raw %}/img/ui-toolkit/examples/image-3.png'}} />
 />
 {% endraw %}
 ```  
@@ -116,7 +116,7 @@ This document covers Image component and Image size style names available in Sho
 {% raw %}
 <Image
   styleName="featured"
-  source={{uri: {% endraw %}'{{site.baseurl}}{% raw %}/img/ui-toolkit/examples/image-3.png'}} />
+  source={{uri: {% endraw %}'{{site.url}}{% raw %}/img/ui-toolkit/examples/image-3.png'}} />
 />
 {% endraw %}
 ```  
@@ -130,7 +130,7 @@ This document covers Image component and Image size style names available in Sho
 {% raw %}
 <Image
   styleName="large-portrait"
-  source={{uri: {% endraw %}'{{site.baseurl}}{% raw %}/img/ui-toolkit/examples/image-3.png'}} />
+  source={{uri: {% endraw %}'{{site.url}}{% raw %}/img/ui-toolkit/examples/image-3.png'}} />
 />
 {% endraw %}
 ```   
@@ -144,7 +144,7 @@ This document covers Image component and Image size style names available in Sho
 {% raw %}
 <Image
   styleName="large"
-  source={{uri: {% endraw %}'{{site.baseurl}}{% raw %}/img/ui-toolkit/examples/image-3.png'}} />
+  source={{uri: {% endraw %}'{{site.url}}{% raw %}/img/ui-toolkit/examples/image-3.png'}} />
 />
 {% endraw %}
 ```  
@@ -158,7 +158,7 @@ This document covers Image component and Image size style names available in Sho
 {% raw %}
 <Image
   styleName="large-wide"
-  source={{uri: {% endraw %}'{{site.baseurl}}{% raw %}/img/ui-toolkit/examples/image-3.png'}} />
+  source={{uri: {% endraw %}'{{site.url}}{% raw %}/img/ui-toolkit/examples/image-3.png'}} />
 />
 {% endraw %}
 ```   
@@ -172,7 +172,7 @@ This document covers Image component and Image size style names available in Sho
 {% raw %}
 <Image
   styleName="large-square"
-  source={{uri: {% endraw %}'{{site.baseurl}}{% raw %}/img/ui-toolkit/examples/image-3.png'}} />
+  source={{uri: {% endraw %}'{{site.url}}{% raw %}/img/ui-toolkit/examples/image-3.png'}} />
 />
 {% endraw %}
 ```  

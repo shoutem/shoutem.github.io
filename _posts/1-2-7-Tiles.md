@@ -18,7 +18,7 @@ Tiles are a convenient way to display homogeneous content. They are often used i
 <Tile styleName="small">
   <Image
     styleName="medium-square"
-    source={{uri: {% endraw %}'{{site.baseurl}}{% raw %}/img/ui-toolkit/examples/image-12.png'}} />
+    source={{uri: {% endraw %}'{{site.url}}{% raw %}/img/ui-toolkit/examples/image-12.png'}} />
   />
   <View styleName="content">
     <Subtitle numberOfLines={2}>When The Morning Dawns - DJ Silver Sample Album</Subtitle>
@@ -37,7 +37,7 @@ Tiles are a convenient way to display homogeneous content. They are often used i
 <Tile styleName="small">
   <Image
     styleName="medium-square"
-    source={{uri: {% endraw %}'{{site.baseurl}}{% raw %}/img/ui-toolkit/examples/image-2.png'}} />
+    source={{uri: {% endraw %}'{{site.url}}{% raw %}/img/ui-toolkit/examples/image-2.png'}} />
   >
     <Icon name="play" styleName="rounded-overlay-small" />
   </Image>
@@ -58,7 +58,7 @@ Tiles are a convenient way to display homogeneous content. They are often used i
 <Tile>
   <Image
     styleName="featured"
-    source={{uri: {% endraw %}'{{site.baseurl}}{% raw %}/img/ui-toolkit/examples/image-4.png'}} />
+    source={{uri: {% endraw %}'{{site.url}}{% raw %}/img/ui-toolkit/examples/image-4.png'}} />
   >
     <Overlay>
       <Title styleName="md-gutter-bottom">MIKE PATTON TEAMING WITH JOHN KAADA FOR COLLAB ALBUM BACTERIA CULT</Title>
@@ -78,7 +78,7 @@ Tiles are a convenient way to display homogeneous content. They are often used i
 <Tile>
   <Image
     styleName="featured"
-    source={{uri: {% endraw %}'{{site.baseurl}}{% raw %}/img/ui-toolkit/examples/image-11.png'}} />
+    source={{uri: {% endraw %}'{{site.url}}{% raw %}/img/ui-toolkit/examples/image-11.png'}} />
   >
     <Overlay>
       <Overlay styleName="collapsed"><Heading>-20%</Heading></Overlay>
@@ -101,7 +101,7 @@ Tiles are a convenient way to display homogeneous content. They are often used i
 {% raw %}
   <Image
     styleName="featured"
-    source={{uri: {% endraw %}'{{site.baseurl}}{% raw %}/img/ui-toolkit/examples/image-9.png'}} />
+    source={{uri: {% endraw %}'{{site.url}}{% raw %}/img/ui-toolkit/examples/image-9.png'}} />
   >
     <Overlay>
       <Title>MIKE PATTON TEAMING WITH JOHN KAADA</Title>
@@ -123,7 +123,7 @@ Tiles are a convenient way to display homogeneous content. They are often used i
 <Tile styleName="light">
   <Image
     styleName="large-banner"
-    source={{uri: {% endraw %}'{{site.baseurl}}{% raw %}/img/ui-toolkit/examples/image-5.png'}} />
+    source={{uri: {% endraw %}'{{site.url}}{% raw %}/img/ui-toolkit/examples/image-5.png'}} />
   />
   <View styleName="content">
     <Title>MAUI BY AIR THE BEST WAY AROUND THE ISLAND</Title>
@@ -145,7 +145,7 @@ Tiles are a convenient way to display homogeneous content. They are often used i
 <Tile styleName="light">
   <Image
     styleName="large-banner"
-    source={{uri: {% endraw %}'{{site.baseurl}}{% raw %}/img/ui-toolkit/examples/image-7.png'}} />
+    source={{uri: {% endraw %}'{{site.url}}{% raw %}/img/ui-toolkit/examples/image-7.png'}} />
   >
     <Icon name="play" styleName="rounded-overlay" />
   </Image>
@@ -169,7 +169,7 @@ Tiles are a convenient way to display homogeneous content. They are often used i
 <Tile>
   <Image
     styleName="large-banner"
-    source={{uri: {% endraw %}'{{site.baseurl}}{% raw %}/img/ui-toolkit/examples/image-3.png'}} />
+    source={{uri: {% endraw %}'{{site.url}}{% raw %}/img/ui-toolkit/examples/image-3.png'}} />
   >
     <Overlay>
       <Title styleName="md-gutter-bottom">SMOKED SALMON, CLASSIC CONDIMENTS, BRIOCHE</Title>
@@ -189,7 +189,7 @@ Tiles are a convenient way to display homogeneous content. They are often used i
 <Tile>
   <Image
     styleName="large-banner"
-    source={{uri: {% endraw %}'{{site.baseurl}}{% raw %}/img/ui-toolkit/examples/image-3.png'}} />
+    source={{uri: {% endraw %}'{{site.url}}{% raw %}/img/ui-toolkit/examples/image-3.png'}} />
   >
     <Overlay>
       <View styleName="actions">
@@ -212,7 +212,7 @@ Tiles are a convenient way to display homogeneous content. They are often used i
 <Tile>
   <Image
     styleName="large-square"
-    source={{uri: {% endraw %}'{{site.baseurl}}{% raw %}/img/ui-toolkit/examples/image-3.png'}} />
+    source={{uri: {% endraw %}'{{site.url}}{% raw %}/img/ui-toolkit/examples/image-3.png'}} />
   >
     <Overlay>
       <Title styleName="md-gutter-bottom">SMOKED SALMON, CLASSIC CONDIMENTS, BRIOCHE</Title>
@@ -232,7 +232,7 @@ Tiles are a convenient way to display homogeneous content. They are often used i
 <Tile>
   <Image
     styleName="large-square"
-    source={{uri: {% endraw %}'{{site.baseurl}}{% raw %}/img/ui-toolkit/examples/image-9.png'}} />
+    source={{uri: {% endraw %}'{{site.url}}{% raw %}/img/ui-toolkit/examples/image-9.png'}} />
   >
     <Overlay>
       <Title>MIKE PATTON TEAMING WITH JOHN KAADA</Title>
@@ -254,7 +254,7 @@ Tiles are a convenient way to display homogeneous content. They are often used i
 <Tile>
   <Image
     styleName="large-square"
-    source={{uri: {% endraw %}'{{site.baseurl}}{% raw %}/img/ui-toolkit/examples/image-11.png'}} />
+    source={{uri: {% endraw %}'{{site.url}}{% raw %}/img/ui-toolkit/examples/image-11.png'}} />
   >
     <Overlay>
       <Overlay styleName="collapsed"><Heading>-20%</Heading></Overlay>
@@ -277,7 +277,7 @@ Tiles are a convenient way to display homogeneous content. They are often used i
 <Tile>
   <Image
     styleName="large-portrait"
-    source={{uri: {% endraw %}'{{site.baseurl}}{% raw %}/img/ui-toolkit/examples/image-3.png'}} />
+    source={{uri: {% endraw %}'{{site.url}}{% raw %}/img/ui-toolkit/examples/image-3.png'}} />
   >
     <Overlay>
       <Title styleName="md-gutter-bottom">SMOKED SALMON, CLASSIC CONDIMENTS, BRIOCHE</Title>
@@ -297,7 +297,7 @@ Tiles are a convenient way to display homogeneous content. They are often used i
 <Tile>
   <Image
     styleName="large-portrait"
-    source={{uri: {% endraw %}'{{site.baseurl}}{% raw %}/img/ui-toolkit/examples/image-9.png'}} />
+    source={{uri: {% endraw %}'{{site.url}}{% raw %}/img/ui-toolkit/examples/image-9.png'}} />
   >
     <Overlay>
       <Title>MIKE PATTON TEAMING WITH JOHN KAADA</Title>
@@ -319,7 +319,7 @@ Tiles are a convenient way to display homogeneous content. They are often used i
 <Tile>
   <Image
     styleName="large-portrait"
-    source={{uri: {% endraw %}'{{site.baseurl}}{% raw %}/img/ui-toolkit/examples/image-11.png'}} />
+    source={{uri: {% endraw %}'{{site.url}}{% raw %}/img/ui-toolkit/examples/image-11.png'}} />
   >
     <Overlay>
       <Overlay styleName="collapsed"><Heading>-20%</Heading></Overlay>
