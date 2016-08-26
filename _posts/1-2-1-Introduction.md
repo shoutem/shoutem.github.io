@@ -44,7 +44,7 @@ class NewsItem extends Component {
     return (
       <Tile>
         <Image source="..." />
-        <Subtitle lines=2>When The Morning Dawns - DJ Silver Samples</Subtitle>
+        <Subtitle lines={2}>When The Morning Dawns - DJ Silver Samples</Subtitle>
         <Caption>20 hours ago</Caption>
       </Tile>
     );
