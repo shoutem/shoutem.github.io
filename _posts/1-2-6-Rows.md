@@ -92,7 +92,7 @@ Components rendered within lists are usually implemented using the row container
 ```JSX
 {% raw %}
 <Row>
-  <Image source={{uri: {% endraw %}'{{site.url}}{% raw %}/img/ui-toolkit/examples/image-11.png'}} />
+  <Image source={{uri: {% endraw %}'{{site.baseurl}}{% raw %}/img/ui-toolkit/examples/image-11.png'}} />
   <Subtitle>Portland ugh fashion axe Helvetica, YOLO Echo Park Austin gastropub roof party.</Subtitle>
 </Row>
 {% endraw %}
@@ -105,7 +105,7 @@ Components rendered within lists are usually implemented using the row container
 ```JSX
 {% raw %}
 <Row>
-  <Image source={{uri: {% endraw %}'{{site.url}}{% raw %}/img/ui-toolkit/examples/image-6.png'}} />
+  <Image source={{uri: {% endraw %}'{{site.baseurl}}{% raw %}/img/ui-toolkit/examples/image-6.png'}} />
   <View styleName="vertical">
     <Subtitle>Fact Check: Wisconsin Democratic Debate</Subtitle>
     <Caption>20 hours ago</Caption>
@@ -121,7 +121,7 @@ Components rendered within lists are usually implemented using the row container
 ```JSX
 {% raw %}
 <Row>
-  <Image source={{uri: {% endraw %}'{{site.url}}{% raw %}/img/ui-toolkit/examples/image-11.png'}} />
+  <Image source={{uri: {% endraw %}'{{site.baseurl}}{% raw %}/img/ui-toolkit/examples/image-11.png'}} />
   <View styleName="vertical">
     <Subtitle>Wilco Cover David Bowie's "Space Oddity"</Subtitle>
     <Caption>June 21  •  20:00</Caption>
@@ -138,7 +138,7 @@ Components rendered within lists are usually implemented using the row container
 ```JSX
 {% raw %}
 <Row>
-  <Image source={{uri: {% endraw %}'{{site.url}}{% raw %}/img/ui-toolkit/examples/image-11.png'}} />
+  <Image source={{uri: {% endraw %}'{{site.baseurl}}{% raw %}/img/ui-toolkit/examples/image-11.png'}} />
   <View styleName="vertical">
     <Subtitle>A really long shop item title that breaks in two lines</Subtitle>
     <View styleName="horizontal">
@@ -159,7 +159,7 @@ Components rendered within lists are usually implemented using the row container
 {% raw %}
 <Row>
   <Icon iconName="notification-dot" />
-  <Image source={{uri: {% endraw %}'{{site.url}}{% raw %}/img/ui-toolkit/examples/image-2.png'}} />
+  <Image source={{uri: {% endraw %}'{{site.baseurl}}{% raw %}/img/ui-toolkit/examples/image-2.png'}} />
   <View styleName="vertical">
     <Subtitle>A really long shop item title that breaks in two lines</Subtitle>
     <Caption>20 hours ago</Caption>
@@ -175,7 +175,7 @@ Components rendered within lists are usually implemented using the row container
 ```JSX
 {% raw %}
 <Row>
-  <Image styleName="wide" source={{uri: {% endraw %}'{{site.url}}{% raw %}/img/ui-toolkit/examples/image-1.png'}} />
+  <Image styleName="wide" source={{uri: {% endraw %}'{{site.baseurl}}{% raw %}/img/ui-toolkit/examples/image-1.png'}} />
   <View styleName="vertical">
     <Subtitle>Take A Romantic Break In A Boutique Hotel</Subtitle>
     <Divider />

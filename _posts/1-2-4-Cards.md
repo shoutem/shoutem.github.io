@@ -18,7 +18,7 @@ Cards have become very popular in recent years. They are useful when displaying 
 <Card>
   <Image
     styleName="medium-wide"
-      source={{uri: {% endraw %}'{{site.url}}{% raw %}/img/ui-toolkit/examples/image-10.png'}}
+      source={{uri: {% endraw %}'{{site.baseurl}}{% raw %}/img/ui-toolkit/examples/image-10.png'}}
   />
   <View styleName="content">
     <Subtitle>Choosing The Right Boutique Hotel For You</Subtitle>
@@ -37,7 +37,7 @@ Cards have become very popular in recent years. They are useful when displaying 
 <Card>
   <Image
     styleName="medium-wide"
-    source={{uri: {% endraw %}'{{site.url}}{% raw %}/img/ui-toolkit/examples/image-12.png'}}
+    source={{uri: {% endraw %}'{{site.baseurl}}{% raw %}/img/ui-toolkit/examples/image-12.png'}}
   />
   <View styleName="content">
     <Subtitle>Choosing The Right Boutique Hotel For You</Subtitle>
@@ -59,7 +59,7 @@ Cards have become very popular in recent years. They are useful when displaying 
 <Card>
   <Image
     styleName="medium-wide"
-    source={{uri: {% endraw %}'{{site.url}}{% raw %}/img/ui-toolkit/examples/image-11.png'}}
+    source={{uri: {% endraw %}'{{site.baseurl}}{% raw %}/img/ui-toolkit/examples/image-11.png'}}
   />
   <View styleName="content">
     <Subtitle>Choosing The Right Boutique Hotel For You</Subtitle>
