@@ -211,6 +211,7 @@ It provides a simpler way to use 3-column Navigation bar without reinventing the
     text: 'This is the best',
     title: 'Super cool UI Toolkit',
   }}
+  styleName="no-border"
 />
 {% endraw %}
 ```
@@ -338,7 +339,7 @@ It provides a simpler way to use 3-column Navigation bar without reinventing the
 
 * **clear**: sets the `Text` color to white and background colors to transparent
 * **fade**: sets the `Text` color to white and applies linear gradient to background
-
+* **no-boder**: removes the bottom border 
 
 #### Style
 
