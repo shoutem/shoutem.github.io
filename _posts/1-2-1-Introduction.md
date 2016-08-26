@@ -25,7 +25,7 @@ Before starting make sure you have:
 Install `@shoutem/ui` in your project:
 
 ```bash
-$ npm install @shoutem/ui
+$ npm i -S @shoutem/ui
 ```
 Then run `rnpm` to link fonts that the toolkit is using.
 
