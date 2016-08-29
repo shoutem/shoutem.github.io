@@ -121,6 +121,15 @@ return (
 
 Above code will create scroll dependent fade out animation over `Image` component from scroll 100, to scroll 150 where `Image` is opaque at scroll 100, and fully transparent at scroll 150.
 
+### FadeIn/FadeOut example
+
+<div class="video-screen">
+  <video width="375" loop>
+    <source src="/video/examples/03 fade in and out.webm" type="video/webm">
+    <source src="/video/examples/03 fade in and out.mp4" type="video/mp4">
+  </video>
+</div>
+
 ### [ZoomIn](#TODO-LinkToCode)
 
 Zooms in components warped by it.
@@ -187,6 +196,15 @@ return (
 Above code will create scroll dependent zoom out animation over `Image` component from scroll 100, to scroll 150 where `Image` is scaled by maxFactor at scroll 100, and has original size at scroll 150.
 ```
 
+### ZoomIn/ZoomOut example
+
+<div class="video-screen">
+  <video width="375" loop>
+    <source src="/video/examples/04 zoom in and out.webm" type="video/webm">
+    <source src="/video/examples/04 zoom in and out.mp4" type="video/mp4">
+  </video>
+</div>
+
 ### [Parallax](#TODO-LinkToCode)
 
 Adds parallax effect to its children components. By default children will by translated dependent on scroll speed, but you can pass extrapolation options to limit translation.
@@ -221,6 +239,15 @@ return (
 
 Above code will create scroll dependent parallax animation over `Image` component where image will be scrolled 2 times faster than `Title`.
 
+### Parallax example
+
+<div class="video-screen">
+  <video width="375" loop>
+    <source src="/video/examples/01 parallax.webm" type="video/webm">
+    <source src="/video/examples/01 parallax.mp4" type="video/mp4">
+  </video>
+</div>
+
 ### [HeroHeader](#TODO-LinkToCode)
 
 Adds a complex, premade animation to its children components.
@@ -250,6 +277,15 @@ return (
 ```
 
 Above code will create scroll dependent parallax animation over `Image` component where `Image` will be scrolled 1.5 times faster than `Title` and the `Image` will have a zoom in effect when the scroll reaches the top of the screen (on bounce).
+
+### HeroHeader example
+
+<div class="video-screen">
+  <video width="375" loop>
+    <source src="/video/examples/02 hero header.webm" type="video/webm">
+    <source src="/video/examples/02 hero header.mp4" type="video/mp4">
+  </video>
+</div>
 
 
 ## Combining animations
