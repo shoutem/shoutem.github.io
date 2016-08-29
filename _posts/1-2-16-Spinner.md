@@ -13,9 +13,7 @@ section: UI toolkit
 
 #### JSX Declaration
 ```JSX
-<Spinner 
-    style={...}
-/>
+<Spinner />
 ```
 
 #### Props
