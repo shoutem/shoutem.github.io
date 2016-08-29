@@ -14,18 +14,16 @@ Tiles are a convenient way to display homogeneous content. They are often used i
 
 #### JSX Declaration
 ```JSX
-{% raw %}
-<Tile styleName="small">
+<Tile styleName="small clear">
   <Image
     styleName="medium-square"
-    source={{uri: {% endraw %}'{{site.url}}{% raw %}/img/ui-toolkit/examples/image-12.png'}} />
+    source={% raw %}{{{% endraw %} uri: 'http://shoutem.github.io/img/ui-toolkit/examples/image-12.png' }}
   />
   <View styleName="content">
     <Subtitle numberOfLines={2}>When The Morning Dawns - DJ Silver Sample Album</Subtitle>
     <Caption>20 hours ago</Caption>
   </View>
 </Tile>
-{% endraw %}
 ```
 
 ## Tile + Icon
@@ -33,11 +31,10 @@ Tiles are a convenient way to display homogeneous content. They are often used i
 
 #### JSX Declaration
 ```JSX
-{% raw %}
-<Tile styleName="small">
+<Tile styleName="small clear">
   <Image
     styleName="medium-square"
-    source={{uri: {% endraw %}'{{site.url}}{% raw %}/img/ui-toolkit/examples/image-2.png'}} />
+    source={% raw %}{{{% endraw %} uri: 'http://shoutem.github.io/img/ui-toolkit/examples/image-2.png' }}
   >
     <Icon name="play" styleName="rounded-overlay-small" />
   </Image>
@@ -46,7 +43,6 @@ Tiles are a convenient way to display homogeneous content. They are often used i
     <Caption>20 hours ago</Caption>
   </View>
 </Tile>
-{% endraw %}
 ```
 
 ## Large (featured) tile
@@ -54,19 +50,15 @@ Tiles are a convenient way to display homogeneous content. They are often used i
 
 #### JSX Declaration
 ```JSX
-{% raw %}
-<Tile>
-  <Image
-    styleName="featured"
-    source={{uri: {% endraw %}'{{site.url}}{% raw %}/img/ui-toolkit/examples/image-4.png'}} />
-  >
-    <Overlay>
-      <Title styleName="md-gutter-bottom">MIKE PATTON TEAMING WITH JOHN KAADA FOR COLLAB ALBUM BACTERIA CULT</Title>
-      <Caption>Sophia Jackson        21 hours ago</Caption>
-    </Overlay>
-  </Image>
-</Tile>
-{% endraw %}
+<Image
+  styleName="featured"
+  source={% raw %}{{{% endraw %} uri: 'http://shoutem.github.io/img/ui-toolkit/examples/image-4.png' }}
+>
+  <Tile>
+    <Title styleName="md-gutter-bottom">MIKE PATTON TEAMING WITH JOHN KAADA FOR COLLAB ALBUM BACTERIA CULT</Title>
+    <Caption>Sophia Jackson        21 hours ago</Caption>
+  </Tile>
+</Image>
 ```
 
 ## Large (featured) tile + Button + Sale tag
@@ -74,22 +66,18 @@ Tiles are a convenient way to display homogeneous content. They are often used i
 
 #### JSX Declaration
 ```JSX
-{% raw %}
-<Tile>
-  <Image
-    styleName="featured"
-    source={{uri: {% endraw %}'{{site.url}}{% raw %}/img/ui-toolkit/examples/image-11.png'}} />
-  >
-    <Overlay>
-      <Overlay styleName="collapsed"><Heading>-20%</Heading></Overlay>
-      <Title styleName="md-gutter-top">COOL BLACK AND WHITE STYLISH WATCHES</Title>
-      <Subtitle styleName="line-through sm-gutter-top">$280.00</Subtitle>
-      <Heading>$250.00</Heading>
-      <Button styleName="md-gutter-top"><Icon name="cart" /><Text>ADD TO BASKET</Text></Button>
-    </Overlay>
-  </Image>
-</Tile>
-{% endraw %}
+<Image
+  styleName="featured"
+  source={% raw %}{{{% endraw %} uri: 'http://shoutem.github.io/img/ui-toolkit/examples/image-11.png' }}
+>
+  <Tile>
+    <Overlay><Heading>-20%</Heading></Overlay>
+    <Title styleName="md-gutter-top">COOL BLACK AND WHITE STYLISH WATCHES</Title>
+    <Subtitle styleName="line-through sm-gutter-top">$280.00</Subtitle>
+    <Heading>$250.00</Heading>
+    <Button styleName="md-gutter-top"><Icon name="cart" /><Text>ADD TO BASKET</Text></Button>
+  </Tile>
+</Image>
 ```
 
 ## Large (featured) tile + Button 
@@ -97,21 +85,17 @@ Tiles are a convenient way to display homogeneous content. They are often used i
 
 #### JSX Declaration
 ```JSX
-<Tile>
-{% raw %}
-  <Image
-    styleName="featured"
-    source={{uri: {% endraw %}'{{site.url}}{% raw %}/img/ui-toolkit/examples/image-9.png'}} />
-  >
-    <Overlay>
-      <Title>MIKE PATTON TEAMING WITH JOHN KAADA</Title>
-      <Subtitle styleName="line-through sm-gutter-top">150.00</Subtitle>
-      <Heading>99.99</Heading>
-      <Button styleName="md-gutter-top"><Text>CLAIM COUPON</Text></Button>
-    </Overlay>
-  </Image>
-</Tile>
-{% endraw %}
+<Image
+  styleName="featured"
+  source={% raw %}{{{% endraw %} uri: 'http://shoutem.github.io/img/ui-toolkit/examples/image-9.png' }}
+>
+  <Tile>
+    <Title>MIKE PATTON TEAMING WITH JOHN KAADA</Title>
+    <Subtitle styleName="line-through sm-gutter-top">150.00</Subtitle>
+    <Heading>99.99</Heading>
+    <Button styleName="md-gutter-top"><Text>CLAIM COUPON</Text></Button>
+  </Tile>
+</Image>
 ```
 
 ## Large list item
@@ -119,11 +103,10 @@ Tiles are a convenient way to display homogeneous content. They are often used i
 
 #### JSX Declaration
 ```JSX
-{% raw %}
-<Tile styleName="light">
+<Tile>
   <Image
     styleName="large-banner"
-    source={{uri: {% endraw %}'{{site.url}}{% raw %}/img/ui-toolkit/examples/image-5.png'}} />
+    source={% raw %}{{{% endraw %} uri: 'http://shoutem.github.io/img/ui-toolkit/examples/image-5.png' }}
   />
   <View styleName="content">
     <Title>MAUI BY AIR THE BEST WAY AROUND THE ISLAND</Title>
@@ -133,7 +116,6 @@ Tiles are a convenient way to display homogeneous content. They are often used i
     </View>
   </View>
 </Tile>
-{% endraw %}
 ```
 
 ## Large list item + Icon + Timestamp
@@ -141,11 +123,10 @@ Tiles are a convenient way to display homogeneous content. They are often used i
 
 #### JSX Declaration
 ```JSX
-{% raw %}
-<Tile styleName="light">
+<Tile>
   <Image
     styleName="large-banner"
-    source={{uri: {% endraw %}'{{site.url}}{% raw %}/img/ui-toolkit/examples/image-7.png'}} />
+    source={% raw %}{{{% endraw %} uri: 'http://shoutem.github.io/img/ui-toolkit/examples/image-7.png' }}
   >
     <Icon name="play" styleName="rounded-overlay" />
   </Image>
@@ -157,7 +138,6 @@ Tiles are a convenient way to display homogeneous content. They are often used i
     </View>
   </View>
 </Tile>
-{% endraw %}
 ```
 
 ## Large list item + Price tag
@@ -165,19 +145,17 @@ Tiles are a convenient way to display homogeneous content. They are often used i
 
 #### JSX Declaration
 ```JSX
-{% raw %}
-<Tile>
-  <Image
-    styleName="large-banner"
-    source={{uri: {% endraw %}'{{site.url}}{% raw %}/img/ui-toolkit/examples/image-3.png'}} />
-  >
-    <Overlay>
-      <Title styleName="md-gutter-bottom">SMOKED SALMON, CLASSIC CONDIMENTS, BRIOCHE</Title>
-      <Overlay styleName="collapsed solid-light"><Subtitle>$18.30</Subtitle></Overlay>
+<Image
+  styleName="large-banner"
+  source={% raw %}{{{% endraw %} uri: 'http://shoutem.github.io/img/ui-toolkit/examples/image-3.png' }}
+>
+  <Tile>
+    <Title styleName="md-gutter-bottom">SMOKED SALMON, CLASSIC CONDIMENTS, BRIOCHE</Title>
+    <Overlay styleName="solid-light">
+      <Subtitle styleName="sm-gutter-horizontal">$18.30</Subtitle>
     </Overlay>
-  </Image>
-</Tile>
-{% endraw %}
+  </Tile>
+</Image>
 ```
 
 ## Large list item + Action icon
@@ -185,22 +163,18 @@ Tiles are a convenient way to display homogeneous content. They are often used i
 
 #### JSX Declaration
 ```JSX
-{% raw %}
-<Tile>
-  <Image
-    styleName="large-banner"
-    source={{uri: {% endraw %}'{{site.url}}{% raw %}/img/ui-toolkit/examples/image-3.png'}} />
-  >
-    <Overlay>
-      <View styleName="actions">
-        <Button styleName="tight clear"><Icon name="add-to-favorites" /></Button>
-      </View>
-      <Title>HOW TO MAINTAIN YOUR MENTAL HEALTH IN 2016</Title>
-      <Caption>6557 Americo Hills Apt. 118</Caption>
-    </Overlay>
-  </Image>
-</Tile>
-{% endraw %}
+<Image
+  styleName="large-banner"
+  source={% raw %}{{{% endraw %} uri: 'http://shoutem.github.io/img/ui-toolkit/examples/image-3.png' }}
+>
+  <Tile>
+    <View styleName="actions">
+      <Button styleName="tight clear"><Icon name="add-to-favorites" /></Button>
+    </View>
+    <Title>HOW TO MAINTAIN YOUR MENTAL HEALTH IN 2016</Title>
+    <Caption>6557 Americo Hills Apt. 118</Caption>
+  </Tile>
+</Image>
 ```
 
 ## Detail square + Price tag
@@ -208,19 +182,17 @@ Tiles are a convenient way to display homogeneous content. They are often used i
 
 #### JSX Declaration
 ```JSX
-{% raw %}
-<Tile>
-  <Image
-    styleName="large-square"
-    source={{uri: {% endraw %}'{{site.url}}{% raw %}/img/ui-toolkit/examples/image-3.png'}} />
-  >
-    <Overlay>
-      <Title styleName="md-gutter-bottom">SMOKED SALMON, CLASSIC CONDIMENTS, BRIOCHE</Title>
-      <Overlay styleName="collapsed solid-light"><Subtitle>$18.30</Subtitle></Overlay>
+<Image
+  styleName="large-square"
+  source={% raw %}{{{% endraw %} uri: 'http://shoutem.github.io/img/ui-toolkit/examples/image-3.png' }}
+>
+  <Tile>
+    <Title styleName="md-gutter-bottom">SMOKED SALMON, CLASSIC CONDIMENTS, BRIOCHE</Title>
+    <Overlay styleName="solid-light">
+      <Subtitle styleName="sm-gutter-horizontal">$18.30</Subtitle>
     </Overlay>
-  </Image>
-</Tile>
-{% endraw %}
+  </Tile>
+</Image>
 ```
 
 ## Detail square + Button
@@ -228,21 +200,17 @@ Tiles are a convenient way to display homogeneous content. They are often used i
 
 #### JSX Declaration
 ```JSX
-{% raw %}
-<Tile>
-  <Image
-    styleName="large-square"
-    source={{uri: {% endraw %}'{{site.url}}{% raw %}/img/ui-toolkit/examples/image-9.png'}} />
-  >
-    <Overlay>
-      <Title>MIKE PATTON TEAMING WITH JOHN KAADA</Title>
-      <Subtitle styleName="line-through sm-gutter-top">150.00</Subtitle>
-      <Heading>99.99</Heading>
-      <Button styleName="md-gutter-top"><Text>CLAIM COUPON</Text></Button>
-    </Overlay>
-  </Image>
-</Tile>
-{% endraw %}
+<Image
+  styleName="large-square"
+  source={% raw %}{{{% endraw %} uri: 'http://shoutem.github.io/img/ui-toolkit/examples/image-9.png' }}
+>
+  <Tile>
+    <Title>MIKE PATTON TEAMING WITH JOHN KAADA</Title>
+    <Subtitle styleName="line-through sm-gutter-top">150.00</Subtitle>
+    <Heading>99.99</Heading>
+    <Button styleName="md-gutter-top"><Text>CLAIM COUPON</Text></Button>
+  </Tile>
+</Image>
 ```
 
 ## Detail square + Button + Sale tag
@@ -250,22 +218,18 @@ Tiles are a convenient way to display homogeneous content. They are often used i
 
 #### JSX Declaration
 ```JSX
-{% raw %}
-<Tile>
-  <Image
-    styleName="large-square"
-    source={{uri: {% endraw %}'{{site.url}}{% raw %}/img/ui-toolkit/examples/image-11.png'}} />
-  >
-    <Overlay>
-      <Overlay styleName="collapsed"><Heading>-20%</Heading></Overlay>
-      <Title styleName="md-gutter-top">COOL BLACK AND WHITE STYLISH WATCHES</Title>
-      <Subtitle styleName="line-through sm-gutter-top">$280.00</Subtitle>
-      <Heading>$250.00</Heading>
-      <Button styleName="md-gutter-top"><Icon name="cart" /><Text>ADD TO BASKET</Text></Button>
-    </Overlay>
-  </Image>
-</Tile>
-{% endraw %}
+<Image
+  styleName="large-square"
+  source={% raw %}{{{% endraw %} uri: 'http://shoutem.github.io/img/ui-toolkit/examples/image-11.png' }}
+>
+  <Tile>
+    <Overlay><Heading>-20%</Heading></Overlay>
+    <Title styleName="md-gutter-top">COOL BLACK AND WHITE STYLISH WATCHES</Title>
+    <Subtitle styleName="line-through sm-gutter-top">$280.00</Subtitle>
+    <Heading>$250.00</Heading>
+    <Button styleName="md-gutter-top"><Icon name="cart" /><Text>ADD TO BASKET</Text></Button>
+  </Tile>
+</Image>
 ```
 
 ## Detail large + Price tag
@@ -273,19 +237,17 @@ Tiles are a convenient way to display homogeneous content. They are often used i
 
 #### JSX Declaration
 ```JSX
-{% raw %}
-<Tile>
-  <Image
-    styleName="large-portrait"
-    source={{uri: {% endraw %}'{{site.url}}{% raw %}/img/ui-toolkit/examples/image-3.png'}} />
-  >
-    <Overlay>
-      <Title styleName="md-gutter-bottom">SMOKED SALMON, CLASSIC CONDIMENTS, BRIOCHE</Title>
-      <Overlay styleName="collapsed solid-light"><Subtitle>$18.30</Subtitle></Overlay>
+<Image
+  styleName="large-portrait"
+  source={% raw %}{{{% endraw %} uri: 'http://shoutem.github.io/img/ui-toolkit/examples/image-3.png' }}
+>
+  <Tile>
+    <Title styleName="md-gutter-bottom">SMOKED SALMON, CLASSIC CONDIMENTS, BRIOCHE</Title>
+    <Overlay styleName="solid-light">
+      <Subtitle styleName="sm-gutter-horizontal">$18.30</Subtitle>
     </Overlay>
-  </Image>
-</Tile>
-{% endraw %}
+  </Tile>
+</Image>
 ```
 
 ## Detail large + Button
@@ -293,21 +255,17 @@ Tiles are a convenient way to display homogeneous content. They are often used i
 
 #### JSX Declaration
 ```JSX
-{% raw %}
-<Tile>
-  <Image
-    styleName="large-portrait"
-    source={{uri: {% endraw %}'{{site.url}}{% raw %}/img/ui-toolkit/examples/image-9.png'}} />
-  >
-    <Overlay>
-      <Title>MIKE PATTON TEAMING WITH JOHN KAADA</Title>
-      <Subtitle styleName="line-through sm-gutter-top">150.00</Subtitle>
-      <Heading>99.99</Heading>
-      <Button styleName="md-gutter-top"><Text>CLAIM COUPON</Text></Button>
-    </Overlay>
-  </Image>
-</Tile>
-{% endraw %}
+<Image
+  styleName="large-portrait"
+  source={% raw %}{{{% endraw %} uri: 'http://shoutem.github.io/img/ui-toolkit/examples/image-9.png' }}
+>
+  <Tile>
+    <Title>MIKE PATTON TEAMING WITH JOHN KAADA</Title>
+    <Subtitle styleName="line-through sm-gutter-top">150.00</Subtitle>
+    <Heading>99.99</Heading>
+    <Button styleName="md-gutter-top"><Text>CLAIM COUPON</Text></Button>
+  </Tile>
+</Image>
 ```
 
 ## Detail large + Button + Sale tag
@@ -315,22 +273,18 @@ Tiles are a convenient way to display homogeneous content. They are often used i
 
 #### JSX Declaration
 ```JSX
-{% raw %}
-<Tile>
-  <Image
-    styleName="large-portrait"
-    source={{uri: {% endraw %}'{{site.url}}{% raw %}/img/ui-toolkit/examples/image-11.png'}} />
-  >
-    <Overlay>
-      <Overlay styleName="collapsed"><Heading>-20%</Heading></Overlay>
-      <Title styleName="md-gutter-top">COOL BLACK AND WHITE STYLISH WATCHES</Title>
-      <Subtitle styleName="line-through sm-gutter-top">$280.00</Subtitle>
-      <Heading>$250.00</Heading>
-      <Button styleName="md-gutter-top"><Icon name="cart" /><Text>ADD TO BASKET</Text></Button>
-    </Overlay>
-  </Image>
-</Tile>
-{% endraw %}
+<Image
+  styleName="large-portrait"
+  source={% raw %}{{{% endraw %} uri: 'http://shoutem.github.io/img/ui-toolkit/examples/image-11.png' }}
+>
+  <Tile>
+    <Overlay><Heading>-20%</Heading></Overlay>
+    <Title styleName="md-gutter-top">COOL BLACK AND WHITE STYLISH WATCHES</Title>
+    <Subtitle styleName="line-through sm-gutter-top">$280.00</Subtitle>
+    <Heading>$250.00</Heading>
+    <Button styleName="md-gutter-top"><Icon name="cart" /><Text>ADD TO BASKET</Text></Button>
+  </Tile>
+</Image>
 ```
   
 #### Style Names
