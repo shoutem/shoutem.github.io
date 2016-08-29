@@ -9,7 +9,7 @@ section: UI toolkit
 
 Headers are Tile variations.
 
-## Header / article
+## Header / Article
 ![alt text]({{ site.baseurl }}/img/ui-toolkit/headers/header-article@2x.png "Header / article"){:.docs-component-image}
 
 #### JSX Declaration
