@@ -25,7 +25,7 @@ All components in this section support every prop that the standard React Native
 
 #### JSX Declaration
 ```JSX
-<Title>Mobile App Creator</Title>
+<Title>MOBILE APP CREATOR</Title>
 ```
 
 ## Subtitle

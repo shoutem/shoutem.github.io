@@ -23,7 +23,6 @@ It provides a simpler way to use 3-column Navigation bar without reinventing the
 ## Navbar / Clear (Solid color)
 ![alt text]({{ site.baseurl }}/img/ui-toolkit/navigationbar/navbar-clear-solidcolor-titleonly@2x.png "Navbar / Clear (Solid color)"){:.docs-component-image}
 
-
 #### JSX Declaration
 ```JSX
 <NavigationBar
@@ -37,54 +36,40 @@ It provides a simpler way to use 3-column Navigation bar without reinventing the
 
 #### JSX Declaration
 ```JSX
-{% raw %}
 <Image
-  source={{uri: {% endraw %}'{{site.url}}{% raw %}/img/ui-toolkit/examples/navigation-bar-header-image.png'}}
-  style={{
-    width: 375,
-    height: 70,
-  }}
+  source={% raw %}{{{% endraw %}uri: '{{site.url}}/img/ui-toolkit/examples/image-3.png'}}
 >
   <NavigationBar
     styleName="clear"
     centerComponent={<Title>TITLE</Title>}
   />
 </Image>
-{% endraw %}
+```
+
+## Navbar/ Fade (Gradient overlay + Solid color)
+![alt text]({{ site.baseurl }}/img/ui-toolkit/navigationbar/navbar-fade-gradientoverlay-solidcolor@2x.png "Navbar/ Fade (Gradient overlay + Solid color)"){:.docs-component-image}
+
+#### JSX Declaration
+```JSX
+<NavigationBar
+  styleName="fade clear"
+  centerComponent={<Title>TITLE</Title>}
+/>
 ```
 
 ## Navbar/ Fade (Gradient overlay + Image)
 ![alt text]({{ site.baseurl }}/img/ui-toolkit/navigationbar/navbar-fade-gradientoverlay-image@2x.png "Navbar/ Fade (Gradient overlay + Image)"){:.docs-component-image}
 
-
 #### JSX Declaration
 ```JSX
-{% raw %}
 <Image
-  source={{uri: {% endraw %}'{{site.url}}{% raw %}/img/ui-toolkit/examples/navigation-bar-header-image.png'}}
-  style={{
-    width: 375,
-    height: 70,
-  }}
+  source={% raw %}{{{% endraw %}uri: '{{site.url}}/img/ui-toolkit/examples/image-3.png'}}
 >
   <NavigationBar
     styleName="fade"
     centerComponent={<Title>TITLE</Title>}
   />
 </Image>
-{% endraw %}
-```
-  
-## Navbar/ Fade (Gradient overlay + Solid color)
-![alt text]({{ site.baseurl }}/img/ui-toolkit/navigationbar/navbar-fade-gradientoverlay-solidcolor@2x.png "Navbar/ Fade (Gradient overlay + Solid color)"){:.docs-component-image}
-
-
-#### JSX Declaration
-```JSX
-<NavigationBar
-  styleName="fade"
-  centerComponent={<Title>TITLE</Title>}
-/>
 ```
 
 # Navigation bar variations
@@ -164,20 +149,34 @@ It provides a simpler way to use 3-column Navigation bar without reinventing the
 
 #### JSX Declaration
 ```JSX
-{% raw %}
 <NavigationBar
   hasHistory
-  navigateBack={() => {}}
   title="TITLE"
-  share={{
+  share={% raw %}{{{% endraw %}
     link: 'http://shoutem.github.io',
     text: 'This is the best',
     title: 'Super cool UI Toolkit',
   }}
 />
-{% endraw %}
 ```
-  
+
+## Navbar (Sublevel) + Action (no border)
+![alt text]({{ site.baseurl }}/img/ui-toolkit/navigationbar/navbar-sublevel-action-no-border@2x.png "Navbar (Sublevel) + Action (no border)"){:.docs-component-image}
+
+#### JSX Declaration
+```JSX
+<NavigationBar
+  styleName="no-border"
+  hasHistory
+  title="TITLE"
+  share={% raw %}{{{% endraw %}
+    link: 'http://shoutem.github.io',
+    text: 'This is the best',
+    title: 'Super cool UI Toolkit',
+  }}
+/>
+```
+
 ## Navbar (Sublevel) + Action
 ![alt text]({{ site.baseurl }}/img/ui-toolkit/navigationbar/navbar-sublevel-action@2x.png "NavigationBar (Sublevel) + Action"){:.docs-component-image}
 
@@ -185,7 +184,6 @@ It provides a simpler way to use 3-column Navigation bar without reinventing the
 ```JSX
 <NavigationBar
   hasHistory
-  navigateBack={() => {}}
   title="TITLE"
   rightComponent={(
     <Button styleName="clear">
@@ -195,32 +193,11 @@ It provides a simpler way to use 3-column Navigation bar without reinventing the
 />
 ```
 
-## Navbar (Sublevel) + Action (no border)
-![alt text]({{ site.baseurl }}/img/ui-toolkit/navigationbar/navbar-sublevel-action-no-border@2x.png "Navbar (Sublevel) + Action (no border)"){:.docs-component-image}
-
-#### JSX Declaration
-```JSX
-{% raw %}
-<NavigationBar
-  hasHistory
-  navigateBack={() => {}}
-  title="TITLE"
-  share={{
-    link: 'http://shoutem.github.io',
-    text: 'This is the best',
-    title: 'Super cool UI Toolkit',
-  }}
-  styleName="no-border"
-/>
-{% endraw %}
-```
-
 ## Navbar (Modal) + Icon
 ![alt text]({{ site.baseurl }}/img/ui-toolkit/navigationbar/navbar-modal-icon@2x.png "Navbar (Modal) + Icon"){:.docs-component-image}
 
 #### JSX Declaration
 ```JSX
-{% raw %}
 <NavigationBar
   leftComponent={(
     <Button>
@@ -228,13 +205,12 @@ It provides a simpler way to use 3-column Navigation bar without reinventing the
     </Button>
   )}
   title="TITLE"
-  share={{
+  share={% raw %}{{{% endraw %}
     link: 'http://shoutem.github.io',
     text: 'This is the best',
     title: 'Super cool UI Toolkit',
   }}
 />
-{% endraw %}
 ```
 
 ## Navbar (Modal) + Action
@@ -302,19 +278,16 @@ It provides a simpler way to use 3-column Navigation bar without reinventing the
 
 #### JSX Declaration
 ```JSX
-{% raw %}
 <NavigationBar
   styleName="clear"
   hasHistory
-  navigateBack={() => {}}
   title="TITLE"
-  share={{
+  share={% raw %}{{{% endraw %}
     link: 'http://shoutem.github.io',
     text: 'This is the best',
     title: 'Super cool UI Toolkit',
   }}
 />
-{% endraw %}
 ```
   
 #### Props

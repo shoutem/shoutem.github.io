@@ -25,7 +25,10 @@ Components rendered within lists are usually implemented using the row container
 #### JSX Declaration
 ```JSX
 <Row styleName="small">
-  <Image styleName="avatar-small" source="..." />
+  <Image
+    styleName="small-avatar"
+    source={% raw %}{{{% endraw %} uri: 'http://shoutem.github.io/img/ui-toolkit/examples/image-9.png' }}
+  />
   <Text>Add comment</Text>
 </Row>
 ```
@@ -59,12 +62,12 @@ Components rendered within lists are usually implemented using the row container
 #### JSX Declaration
 ```JSX
 <Row styleName="small">
-  <Icon iconName="laptop" />
+  <Icon name="laptop" />
   <View styleName="vertical">
     <Subtitle>Bridges Rock Gym</Subtitle>
-    <Text>www.example.com/deal/link/that-is-real-deal</Text>
+    <Text numberOfLines={1}>www.example.com/deal/link/that-is-really-long</Text>
   </View>
-  <Icon iconName="disclosure" />
+  <Icon styleName="disclosure" name="right-arrow" />
 </Row>
 ```
 
@@ -74,13 +77,16 @@ Components rendered within lists are usually implemented using the row container
 #### JSX Declaration
 ```JSX
 <Row>
-  <Image styleName="avatar-small" source="..." />
+  <Image
+    styleName="small-avatar top"
+    source={% raw %}{{{% endraw %} uri: 'http://shoutem.github.io/img/ui-toolkit/examples/image-11.png' }}
+  />
   <View styleName="vertical">
-    <View styleName="horizontal">
-      <Subtitle>Dustin Malone</Subtitle>
+    <View styleName="horizontal space-between">
+      <Subtitle styleName="">Dustin Malone</Subtitle>
       <Caption>20 minutes ago</Caption>
     </View>
-    <Text>Banjo tote bag bicycle rights, High Life sartorial cray craft beer whatever street art fap. Hashtag typewriter banh mi, squid keffiyeh High.</Text>
+    <Text styleName="multiline">Banjo tote bag bicycle rights, High Life sartorial cray craft beer whatever street art fap. Hashtag typewriter banh mi, squid keffiyeh High.</Text>
   </View>
 </Row>
 ```
@@ -90,12 +96,13 @@ Components rendered within lists are usually implemented using the row container
 
 #### JSX Declaration
 ```JSX
-{% raw %}
 <Row>
-  <Image source={{uri: {% endraw %}'{{site.url}}{% raw %}/img/ui-toolkit/examples/image-11.png'}} />
-  <Subtitle>Portland ugh fashion axe Helvetica, YOLO Echo Park Austin gastropub roof party.</Subtitle>
+  <Image
+    styleName="small rounded-corners"
+    source={% raw %}{{{% endraw %} uri: 'http://shoutem.github.io/img/ui-toolkit/examples/image-10.png' }}
+  />
+  <Subtitle styleName="top">Portland ugh fashion axe Helvetica, YOLO Echo Park Austin gastropub roof party.</Subtitle>
 </Row>
-{% endraw %}
 ```
 
 ## Medium list item + Description
@@ -103,15 +110,16 @@ Components rendered within lists are usually implemented using the row container
 
 #### JSX Declaration
 ```JSX
-{% raw %}
 <Row>
-  <Image source={{uri: {% endraw %}'{{site.url}}{% raw %}/img/ui-toolkit/examples/image-6.png'}} />
-  <View styleName="vertical">
-    <Subtitle>Fact Check: Wisconsin Democratic Debate</Subtitle>
+  <Image
+    styleName="small rounded-corners"
+    source={% raw %}{{{% endraw %} uri: 'http://shoutem.github.io/img/ui-toolkit/examples/image-6.png' }}
+  />
+  <View styleName="vertical stretch space-between">
+    <Subtitle>Fact Check: Wisconsin Music, Film & Photography Debate</Subtitle>
     <Caption>20 hours ago</Caption>
   </View>
 </Row>
-{% endraw %}
 ```
 
 ## Medium list item + Description + Icon
@@ -119,16 +127,17 @@ Components rendered within lists are usually implemented using the row container
 
 #### JSX Declaration
 ```JSX
-{% raw %}
 <Row>
-  <Image source={{uri: {% endraw %}'{{site.url}}{% raw %}/img/ui-toolkit/examples/image-11.png'}} />
-  <View styleName="vertical">
-    <Subtitle>Wilco Cover David Bowie's "Space Oddity"</Subtitle>
-    <Caption>June 21  •  20:00</Caption>
+  <Image
+    styleName="small rounded-corners"
+    source={% raw %}{{{% endraw %} uri: 'http://shoutem.github.io/img/ui-toolkit/examples/image-3.png' }}
+  />
+  <View styleName="vertical stretch space-between">
+    <Subtitle>Wilco Cover David Bowie&#39;s "Space Oddity"</Subtitle>
+    <Caption>June 21  ·  20:00</Caption>
   </View>
-  <Icon iconName="add-to-calendar" />
+  <Button styleName="right-icon"><Icon name="add-event" /></Button>
 </Row>
-{% endraw %}
 ```
 
 ## Medium list item + Description + Icon + Label
@@ -136,19 +145,20 @@ Components rendered within lists are usually implemented using the row container
 
 #### JSX Declaration
 ```JSX
-{% raw %}
 <Row>
-  <Image source={{uri: {% endraw %}'{{site.url}}{% raw %}/img/ui-toolkit/examples/image-11.png'}} />
-  <View styleName="vertical">
-    <Subtitle>A really long shop item title that breaks in two lines</Subtitle>
+  <Image
+    styleName="small rounded-corners"
+    source={% raw %}{{{% endraw %} uri: 'http://shoutem.github.io/img/ui-toolkit/examples/image-11.png' }}
+  />
+  <View styleName="vertical stretch space-between">
+    <Subtitle>Family Safari Vacation To The Home Of The Gods</Subtitle>
     <View styleName="horizontal">
-      <Subtitle>$120.00</Subtitle>
-      <Caption styleName="strikethrough">$150.00</Caption>
+      <Subtitle styleName="md-gutter-right">$120.00</Subtitle>
+      <Caption styleName="line-through">$150.00</Caption>
     </View>
   </View>
-  <Icon iconName="add-to-basket" />
+  <Button styleName="right-icon"><Icon name="add-to-cart" /></Button>
 </Row>
-{% endraw %}
 ```
 
 ## Medium list item + Notification dot
@@ -156,16 +166,17 @@ Components rendered within lists are usually implemented using the row container
 
 #### JSX Declaration
 ```JSX
-{% raw %}
 <Row>
-  <Icon iconName="notification-dot" />
-  <Image source={{uri: {% endraw %}'{{site.url}}{% raw %}/img/ui-toolkit/examples/image-2.png'}} />
-  <View styleName="vertical">
-    <Subtitle>A really long shop item title that breaks in two lines</Subtitle>
+  <View styleName="notification-dot" />
+  <Image
+    styleName="small rounded-corners"
+    source={% raw %}{{{% endraw %} uri: 'http://shoutem.github.io/img/ui-toolkit/examples/image-2.png' }}
+  />
+  <View styleName="vertical stretch space-between">
+    <Subtitle>Fact Check: Wisconsin Music, Film & Photography Debate</Subtitle>
     <Caption>20 hours ago</Caption>
   </View>
 </Row>
-{% endraw %}
 ```
 
 ## Medium list item + Description + Label
@@ -173,19 +184,19 @@ Components rendered within lists are usually implemented using the row container
 
 #### JSX Declaration
 ```JSX
-{% raw %}
 <Row>
-  <Image styleName="wide" source={{uri: {% endraw %}'{{site.url}}{% raw %}/img/ui-toolkit/examples/image-1.png'}} />
-  <View styleName="vertical">
+  <Image
+    styleName="medium rounded-corners"
+    source={% raw %}{{{% endraw %} uri: 'http://shoutem.github.io/img/ui-toolkit/examples/image-1.png' }}
+  />
+  <View styleName="vertical stretch space-between">
     <Subtitle>Take A Romantic Break In A Boutique Hotel</Subtitle>
-    <Divider />
-    <View styleName="horizontal">
-      <Caption styleName="flexible">3 days ago</Caption>
+    <View styleName="horizontal space-between">
+      <Caption>3 days ago</Caption>
       <Caption>12:16</Caption>
     </View>
   </View>
 </Row>
-{% endraw %}
 ```
   
 #### Style names  

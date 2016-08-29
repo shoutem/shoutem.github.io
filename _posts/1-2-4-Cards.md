@@ -14,18 +14,16 @@ Cards have become very popular in recent years. They are useful when displaying 
 
 #### JSX Declaration
 ```JSX
-{% raw %}
 <Card>
   <Image
     styleName="medium-wide"
-      source={{uri: {% endraw %}'{{site.url}}{% raw %}/img/ui-toolkit/examples/image-10.png'}}
+      source={% raw %}{{{% endraw %}uri: '{{site.url}}/img/ui-toolkit/examples/image-10.png'}}
   />
   <View styleName="content">
     <Subtitle>Choosing The Right Boutique Hotel For You</Subtitle>
     <Caption>21 hours ago</Caption>
   </View>
 </Card>
-{% endraw %}
 ```
 
 ## Card + Icon
@@ -33,11 +31,10 @@ Cards have become very popular in recent years. They are useful when displaying 
 
 #### JSX Declaration
 ```JSX
-{% raw %}
 <Card>
   <Image
     styleName="medium-wide"
-    source={{uri: {% endraw %}'{{site.url}}{% raw %}/img/ui-toolkit/examples/image-12.png'}}
+    source={% raw %}{{{% endraw %}uri: '{{site.url}}/img/ui-toolkit/examples/image-12.png'}}
   />
   <View styleName="content">
     <Subtitle>Choosing The Right Boutique Hotel For You</Subtitle>
@@ -47,7 +44,6 @@ Cards have become very popular in recent years. They are useful when displaying 
     </View>
   </View>
 </Card>
-{% endraw %}
 ```
 
 ## Card + Icon (Shop)
@@ -55,11 +51,10 @@ Cards have become very popular in recent years. They are useful when displaying 
 
 #### JSX Declaration
 ```JSX
-{% raw %}
 <Card>
   <Image
     styleName="medium-wide"
-    source={{uri: {% endraw %}'{{site.url}}{% raw %}/img/ui-toolkit/examples/image-11.png'}}
+    source={% raw %}{{{% endraw %}uri: '{{site.url}}/img/ui-toolkit/examples/image-11.png'}}
   />
   <View styleName="content">
     <Subtitle>Choosing The Right Boutique Hotel For You</Subtitle>
@@ -72,7 +67,6 @@ Cards have become very popular in recent years. They are useful when displaying 
     </View>
   </View>
 </Card>
-{% endraw %}
 ```
 
 #### Style names

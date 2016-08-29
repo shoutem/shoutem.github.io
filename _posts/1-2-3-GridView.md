@@ -19,8 +19,7 @@ The main idea behind this approach is to allow developers to have a variable num
 #### JSX Declaration
 ```JSX
 <GridRow 
-    columns={...}
-    key={...}>
+    columns={3}>
   {children}
 </GridRow>
 ```
@@ -29,9 +28,6 @@ The main idea behind this approach is to allow developers to have a variable num
 
 * **columns** : number  
   - Number of columns in the GridRow
-
-* **key**: number
-  - Unique key-ID of the GridRow
 
 #### Style names
 
