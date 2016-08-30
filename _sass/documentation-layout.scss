@@ -1,10 +1,16 @@
+.container-fluid,
+.navbar .container-fluid
+{
+  max-width: 1920px;
+}
+
 #wrapper {
     width: 100%;
     background: #FFFFFF;
 }
 
 .documentation-wrapper {
-    max-width: 1440px;
+    max-width: 1920px;
     padding-left: 280px;
     margin: 0 auto;
 
@@ -37,9 +43,4 @@
 
 .navbar {
   margin-bottom: 0;
-
-  .container-fluid
-  {
-    max-width: 1440px;
-  }
 }

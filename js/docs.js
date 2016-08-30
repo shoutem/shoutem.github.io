@@ -9,6 +9,7 @@ $(function() {
   prepareCodeblocks();
   Prism.highlightAll();
   setShell$Color();
+  setupVideos();
 
 
 
@@ -52,6 +53,7 @@ $(function() {
     prepareCodeblocks();
     Prism.highlightAll();
     setShell$Color();
+    setupVideos();
 
     $(".mobile-menu-overlay, #sidebar-wrapper").removeClass("open");
     
@@ -291,6 +293,30 @@ $(function() {
 
     elements.each(function(){
       this.innerHTML = this.innerHTML.replace(/^\s*\$/, "<span class='dollar-sign'>$</span>");
+    });
+  }
+
+  function setupVideos()
+  {
+    var videos = Array.prototype.slice.call(document.querySelectorAll(".video-screen"));
+
+    videos.forEach(function(video)
+    {
+      video.addEventListener("click", function(e)
+      {
+        var c = this.className;
+        var v = this.querySelector("video");
+
+        if( c.indexOf("playing") > -1 ) {
+          c = c.replace("playing", "");
+          v.pause();
+        } else {
+          c += " playing";
+          v.play();
+        }
+
+        this.className = c;
+      });
     });
   }
 

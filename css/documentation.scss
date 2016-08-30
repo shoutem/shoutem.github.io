@@ -271,8 +271,8 @@ pre[data-line] {
     background: #FFF;
     z-index: 1070;
 
-    @media screen and (min-width: 1441px) {
-        left: calc(50% - 720px);
+    @media screen and (min-width: 1921px) {
+        left: calc(50% - 950px);
     }
 
     @media screen and (max-width: 991px) {
@@ -485,3 +485,33 @@ pre[data-line] {
         }
     }
 }
+
+.video-screen {
+    position: relative;
+    width: 375px;
+    display: inline-block;
+    cursor: pointer;
+
+    &::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 375px;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5) url("//material-design.storage.googleapis.com/images/play.svg") no-repeat center center;
+        background-size: 72px 72px;
+        transition: opacity 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    &.playing::after {
+        background-image: url("//material-design.storage.googleapis.com/images/pause.svg");
+        opacity: 0;
+    }
+
+    &.playing:hover::after {
+        opacity: 1;
+    }
+}
+
+

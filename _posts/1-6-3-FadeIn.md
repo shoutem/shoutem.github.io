@@ -35,3 +35,13 @@ return (
 ```
 
 The above code will create a scroll dependent fade in animation over `Image` component from scroll position 100 to scroll position 150 where `Image` is fully transparent at scroll position 100, and opaque at scroll position 150.
+
+
+### FadeIn / FadeOut example
+
+<div class="video-screen">
+  <video width="375" loop>
+    <source src="/video/examples/03 fade in and out.webm" type="video/webm">
+    <source src="/video/examples/03 fade in and out.mp4" type="video/mp4">
+  </video>
+</div>

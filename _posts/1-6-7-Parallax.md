@@ -38,3 +38,13 @@ return (
 ```
 
 The above code will create a scroll dependent parallax animation over `Image` component where `Image` will be scrolled 2 times faster than `Title`.
+
+
+### Parallax example
+
+<div class="video-screen">
+  <video width="375" loop>
+    <source src="/video/examples/01 parallax.webm" type="video/webm">
+    <source src="/video/examples/01 parallax.mp4" type="video/mp4">
+  </video>
+</div>

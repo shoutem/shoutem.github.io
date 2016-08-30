@@ -37,3 +37,13 @@ return (
 ```
 
 The above code will create a scroll dependent zoom out animation over `Image` component from scroll 100 to scroll 150 where `Image` is scaled by maxFactor at scroll 100, and has its original size at scroll 150.
+
+
+### ZoomIn / ZoomOut example
+
+<div class="video-screen">
+  <video width="375" loop>
+    <source src="/video/examples/04 zoom in and out.webm" type="video/webm">
+    <source src="/video/examples/04 zoom in and out.mp4" type="video/mp4">
+  </video>
+</div>
