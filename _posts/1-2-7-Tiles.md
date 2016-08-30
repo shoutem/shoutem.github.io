@@ -36,7 +36,9 @@ Tiles are a convenient way to display homogeneous content. They are often used i
     styleName="medium-square"
     source={% raw %}{{{% endraw %} uri: 'http://shoutem.github.io/img/ui-toolkit/examples/image-2.png' }}
   >
-    <Icon name="play" styleName="rounded-overlay-small" />
+    <Overlay styleName="rounded-small">
+      <Icon name="play" />
+    </Overlay>
   </Image>
   <View styleName="content">
     <Subtitle numberOfLines={2}>When The Morning Dawns - DJ Silver Sample Album</Subtitle>
@@ -128,7 +130,9 @@ Tiles are a convenient way to display homogeneous content. They are often used i
     styleName="large-banner"
     source={% raw %}{{{% endraw %} uri: 'http://shoutem.github.io/img/ui-toolkit/examples/image-7.png' }}
   >
-    <Icon name="play" styleName="rounded-overlay" />
+    <Overlay styleName="rounded-small">
+      <Icon name="play" />
+    </Overlay>
   </Image>
   <View styleName="content">
     <Title>MAUI BY AIR THE BEST WAY AROUND THE ISLAND</Title>
@@ -151,7 +155,7 @@ Tiles are a convenient way to display homogeneous content. They are often used i
 >
   <Tile>
     <Title styleName="md-gutter-bottom">SMOKED SALMON, CLASSIC CONDIMENTS, BRIOCHE</Title>
-    <Overlay styleName="solid-light">
+    <Overlay styleName="solid-bright">
       <Subtitle styleName="sm-gutter-horizontal">$18.30</Subtitle>
     </Overlay>
   </Tile>
@@ -188,7 +192,7 @@ Tiles are a convenient way to display homogeneous content. They are often used i
 >
   <Tile>
     <Title styleName="md-gutter-bottom">SMOKED SALMON, CLASSIC CONDIMENTS, BRIOCHE</Title>
-    <Overlay styleName="solid-light">
+    <Overlay styleName="solid-bright">
       <Subtitle styleName="sm-gutter-horizontal">$18.30</Subtitle>
     </Overlay>
   </Tile>
@@ -243,7 +247,7 @@ Tiles are a convenient way to display homogeneous content. They are often used i
 >
   <Tile>
     <Title styleName="md-gutter-bottom">SMOKED SALMON, CLASSIC CONDIMENTS, BRIOCHE</Title>
-    <Overlay styleName="solid-light">
+    <Overlay styleName="solid-bright">
       <Subtitle styleName="sm-gutter-horizontal">$18.30</Subtitle>
     </Overlay>
   </Tile>
