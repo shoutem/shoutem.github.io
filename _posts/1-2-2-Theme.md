@@ -99,10 +99,10 @@ const styles = {
 };
 
 // connect the component to the theme
-export default connectStyle('AvatarItem', styles)(AvatarItem);
+export default connectStyle('com.example.AvatarItem', styles)(AvatarItem);
 ```
 
-The `connectStyle` function receives two arguments. The first one represents the name that this component will be referenced by in the theme, and the second one is the default component style.
+The `connectStyle` function receives two arguments. The first one represents the fully qualified name that component will be referenced by in the theme, and the second one is the default component style. Fully qualified name of the component needs to have `namespace` prefix, separated with `.` from the component name.
 
 Any styles defined in the theme will be merged with the default style, and theme rules will override the rules from the default style. The style that is sent to `connectStyle` shouldn't be created using the `StyleSheet.create`. Style sheet will be created by the `connectStyle` function at appropriate time.
 
@@ -122,7 +122,7 @@ class App extends Component {
 }
 
 const theme = {
-  AvatarItem: {
+  'com.example.AvatarItem': {
     // overrides AvatarItem component style...
   },
 };
