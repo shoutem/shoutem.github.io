@@ -296,14 +296,23 @@ $(function() {
     });
   }
 
+
+  /* Videos */
   function setupVideos()
   {
     var videos = Array.prototype.slice.call(document.querySelectorAll(".video-screen"));
 
     videos.forEach(function(video)
     {
+      video.addEventListener("mouseleave", function(e)
+      {
+        this.className = this.className.replace("hide-controls", "").trim();
+      });
+
       video.addEventListener("click", function(e)
       {
+        e.stopPropagation();
+
         var c = this.className;
         var v = this.querySelector("video");
 
@@ -311,11 +320,11 @@ $(function() {
           c = c.replace("playing", "");
           v.pause();
         } else {
-          c += " playing";
+          c += " playing hide-controls";
           v.play();
         }
 
-        this.className = c;
+        this.className = c.trim();
       });
     });
   }
