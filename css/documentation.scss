@@ -492,6 +492,10 @@ pre[data-line] {
     display: inline-block;
     cursor: pointer;
 
+    video {
+        display: block;
+    }
+
     &::before {
         content: '';
         position: absolute;
@@ -509,7 +513,7 @@ pre[data-line] {
         opacity: 0;
     }
 
-    &.playing:hover::before {
+    &.playing:not(.hide-controls):hover::before {
         opacity: 1;
     }
 
@@ -538,7 +542,7 @@ pre[data-line] {
         opacity: 0;
     }
 
-    &.playing:hover::after {
+    &.playing:not(.hide-controls):hover::after {
         opacity: 1;
     }
 }
