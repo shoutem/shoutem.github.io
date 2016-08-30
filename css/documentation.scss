@@ -516,22 +516,21 @@ pre[data-line] {
     &::after {
         content: '';
         position: absolute;
-        left: calc(50% - 45px);
-        top: calc(50% - 45px);
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
         width: 90px;
         height: 90px;
         border-radius: 50%;
         display: block;
         background: #00aadf url("/img/icon-play.svg") no-repeat center center;
-        transition-property: width, height, left, top, opacity;
+        transition-property: width, height, opacity;
         transition-duration: 0.2s;
     }
 
     &:hover::after {
         width: 100px;
         height: 100px;
-        left: calc(50% - 50px);
-        top: calc(50% - 50px);
     }
 
     &.playing::after {
