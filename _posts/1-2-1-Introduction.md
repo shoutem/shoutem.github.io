@@ -18,9 +18,14 @@ Before starting make sure you have:
 - Installed [npm](https://www.npmjs.com/)
 - Installed [rnpm](https://github.com/rnpm/rnpm)
 - Installed [React Native](https://facebook.github.io/react-native/docs/getting-started.html)
-- Created a React Native project
 
 ## Installation
+
+Create new React Native project:
+
+```bash
+$ react-native init HelloWorld
+```
 
 Install `@shoutem/ui` in your project:
 
@@ -33,24 +38,26 @@ Then run `rnpm` to link fonts that the toolkit is using.
 $ rnpm link
 ```
 
-To use it, simply import the desired components and start using them in your screens:
+To check which components we have in UI toolkit, simply copy the following to your `index.ios.js` file of React Native project:
 
 ```JavaScript
+#file: index.ios.js
 import React, { Component } from 'react';
-import { Tile, Subtitle, Caption } from '@shoutem/ui';
+import { AppRegistry } from 'react-native';
+import { Examples } from '@shoutem/ui';
 
-class NewsItem extends Component {
+class HelloWorld extends Component {
   render() {
     return (
-      <Tile>
-        <Image source="..." />
-        <Subtitle numberOfLines={2}>When The Morning Dawns - DJ Silver Samples</Subtitle>
-        <Caption>20 hours ago</Caption>
-      </Tile>
+      <Examples />
     );
   }
 }
+
+AppRegistry.registerComponent('HelloWorld', () => HelloWorld);
 ```
+
+To see other components, just import them from `@shoutem/ui` and render them.
 
 You can also use standard React Native components in your layouts anywhere you want, but they will not inherit either the theme or the parent styles, so you will need to style them manually.
 
