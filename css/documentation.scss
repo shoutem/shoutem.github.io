@@ -492,13 +492,18 @@ pre[data-line] {
     display: inline-block;
     cursor: pointer;
 
+<<<<<<< HEAD
     &::after {
+=======
+    &::before {
+>>>>>>> feature/publish
         content: '';
         position: absolute;
         left: 0;
         top: 0;
         width: 375px;
         height: 100%;
+<<<<<<< HEAD
         background: rgba(0, 0, 0, 0.5) url("//material-design.storage.googleapis.com/images/play.svg") no-repeat center center;
         background-size: 72px 72px;
         transition: opacity 0.2s cubic-bezier(0.4, 0, 0.2, 1);
@@ -506,6 +511,45 @@ pre[data-line] {
 
     &.playing::after {
         background-image: url("//material-design.storage.googleapis.com/images/pause.svg");
+=======
+        background: rgba(0, 0, 0, 0.5);
+        opacity: 1;
+        transition-property: opacity;
+        transition-duration: 0.2s;
+    }
+
+    &.playing::before {
+        opacity: 0;
+    }
+
+    &.playing:hover::before {
+        opacity: 1;
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        left: calc(50% - 45px);
+        top: calc(50% - 45px);
+        width: 90px;
+        height: 90px;
+        border-radius: 50%;
+        display: block;
+        background: #00aadf url("/img/icon-play.svg") no-repeat center center;
+        transition-property: width, height, left, top, opacity;
+        transition-duration: 0.2s;
+    }
+
+    &:hover::after {
+        width: 100px;
+        height: 100px;
+        left: calc(50% - 50px);
+        top: calc(50% - 50px);
+    }
+
+    &.playing::after {
+        background-image: url("/img/icon-pause.svg");
+>>>>>>> feature/publish
         opacity: 0;
     }
 
@@ -513,5 +557,8 @@ pre[data-line] {
         opacity: 1;
     }
 }
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> feature/publish
