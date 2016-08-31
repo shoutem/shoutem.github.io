@@ -14,7 +14,8 @@ Shoutem UI toolkit enables you to build professionally looking React Native apps
 It consists of three libraries: 
 - @shoutem/ui: beautiful and customizable UI [components]({{ site.baseurl }}//docs/ui-toolkit/components/typography)
 - @shoutem/theme: “CSS-way” of styling the entire app with [themes]({{ site.baseurl }}//docs/ui-toolkit/theme/introduction)
-- @shoutem/animation: declarative way of applying ready-made [animations]({{ site.baseurl }}//docs/ui-toolkit/theme/animation/introduction)
+- @shoutem/animation: declarative way of applying ready-made [animations]({{ site.baseurl }}//docs/ui-toolkit/theme/animation/introduction) 
+
 
 ## Prerequsites
 Before starting make sure you have:
