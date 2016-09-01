@@ -10,74 +10,82 @@ section: Animation
 Animations can be combined simply by wrapping each other. This is an example from open-sourced [Shoutem News](#todo) extension.
 
 ```javascript
-import React from 'react';
+import React, { Component } from 'react';
 import { ScrollView } from 'react-native';
-import {
-  Screen,
-  Title,
-  Caption,
-  Icon,
-  Image,
-  Overlay,
-  RichMedia,
-} from '@shoutem/ui';
 
 import {
+  Parallax,
   HeroHeader,
   FadeOut,
   FadeIn,
-  ZoomOut,
   ScrollDriver,
-  Parallax,
 } from '@shoutem/animation';
 
-import {...}
+import {
+  Image,
+  Tile,
+  Title,
+  Text,
+  Subtitle,
+  View,
+} from '@shoutem/ui';
 
-class ArticleDetailsScreen extends React.Component {
-  static propTypes = {...};
-
-  shouldRenderNextArticle() {...}
-
-  renderUpNext() {...}
+export default class MyAnimatedScreen extends Component {
+  getRestaurant() {
+    return {
+      name: "Gaspar Brasserie",
+      address: "185 Sutter St, San Francisco, CA 94109",
+      url: "gasparbrasserie.com",
+      image: { "url": "https://shoutem.github.io/restaurants/restaurant-1.jpg"},
+      mail: "info@gasparbrasserie.com"
+    };
+  }
 
   render() {
-    const { article, setNavBarProps } = this.props;
+    const restaurant = this.getRestaurant();
     const driver = new ScrollDriver();
-
-    setNavBarProps({...});
-
     return (
-      <Screen styleName="full-screen">
-        <ScrollView {...driver.scrollViewProps}>
-          <HeroHeader driver={driver}>
-            <Image styleName="large-portrait" source={{ uri: _.get(article, 'image.url') }}>
-              <Overlay styleName="dark">
-                <Parallax driver={driver} scrollSpeed={1.2}>
-                <FadeIn driver={driver} inputRange={[-70, -50]}>
-                  <FadeOut driver={driver} inputRange={[50, 200]}>
-                    <Title styleName="centered">{article.title.toUpperCase()}</Title>
-                    <Caption>
-                      {article.newsAuthor}        {moment(article.timeUpdated).fromNow()}
-                    </Caption>
+      <ScrollView {...driver.scrollViewProps}>
+        <HeroHeader driver={driver}>
+          <Image
+            styleName="large-banner"
+            source={{ uri: restaurant.image.url }}
+            key={restaurant.name}
+          >
+            <Tile>
+              <Parallax driver={driver} scrollSpeed={1.2} header>
+                <FadeIn inputRange={[-20, 0]} driver={driver}>
+                  <FadeOut inputRange={[100, 150]} driver={driver}>
+                    <Title>{restaurant.name}</Title>
+                    <Subtitle>{restaurant.address}</Subtitle>
                   </FadeOut>
                 </FadeIn>
-                </Parallax>
-                <Icon name="down-arrow" styleName="scroll-indicator" />
-              </Overlay>
-            </Image>
-          </HeroHeader>
-          <Screen>
-            <RichMedia
-              body={article.body}
-              attachments={article.attachments}
-            />
-            {this.shouldRenderNextArticle() && this.renderUpNext()}
-          </Screen>
-        </ScrollView>
-      </Screen>
+              </Parallax>
+            </Tile>
+          </Image>
+        </HeroHeader>
+        <View
+          styleName="content"
+          style={{
+            backgroundColor: 'white',
+            height: 700,
+            padding: 15,
+          }}
+        >
+          <Text>
+            Gaspar is a delightful French restaurant in
+            San Francisco\’s Financial District that is inspired by the romantic,
+            bustling Paris of old. Located near famed Union Square, our richly-designed
+            interiors make you feel as if you are truly in Paris and provide the perfect
+            setting for enjoying our exquisite classic and modern French fare such as Duck
+            Leg Confit and always popular Steak Frites. Gaspar offers two stories of dining
+            in addition to full bars both upstairs and downstairs and an exclusive room
+            reserved to hold the largest selection of Cognac in San Francisco.
+            In addition to our all day menu, we offer live jazz music on Saturdays.
+          </Text>
+        </View>
+      </ScrollView>
     );
   }
 }
-
-export default connect(...);
 ```
