@@ -7,7 +7,7 @@ section: Animation
 
 # Combining animations
 
-Animations can be combined simply by wrapping each other. This is an example that will give you the same effect you can find in open-sourced [Shoutem News](#todo) extension.
+Animations can be combined simply by wrapping each other. This is an example that will give you the same effect as shown on gif below.
 
 ```javascript
 import React, { Component } from 'react';
