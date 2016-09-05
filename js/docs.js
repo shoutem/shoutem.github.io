@@ -9,7 +9,7 @@ $(function() {
   prepareCodeblocks();
   Prism.highlightAll();
   setShell$Color();
-  // setupVideos();
+  setupVideos();
 
 
 
@@ -53,7 +53,7 @@ $(function() {
     prepareCodeblocks();
     Prism.highlightAll();
     setShell$Color();
-    //setupVideos();
+    setupVideos();
 
     $(".mobile-menu-overlay, #sidebar-wrapper").removeClass("open");
     
@@ -304,6 +304,9 @@ $(function() {
 
     videos.forEach(function(video)
     {
+      video.querySelector("video").play();
+
+      /*
       video.addEventListener("mouseleave", function(e)
       {
         this.className = this.className.replace("hide-controls", "").trim();
@@ -326,6 +329,7 @@ $(function() {
 
         this.className = c.trim();
       });
+      */
     });
   }
 
