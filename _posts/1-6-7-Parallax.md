@@ -9,6 +9,13 @@ section: Animation
 
 Adds parallax effect to its children components. The children are translated depending on the scroll speed by default, but you can pass extrapolation options to limit the translation.
 
+<div class="video-screen">
+  <video width="280" loop autoplay>
+    <source src="/video/examples/01 parallax.webm" type="video/webm">
+    <source src="/video/examples/01 parallax.mp4" type="video/mp4">
+  </video>
+</div>
+
 ***Properties:***
 
 - `driver`: Driver that is running the animation
@@ -38,13 +45,3 @@ return (
 ```
 
 The above code will create a scroll dependent parallax animation over `Image` component where `Image` will be scrolled 2 times faster than `Title`.
-
-
-### Parallax example
-
-<div class="video-screen">
-  <video width="375" loop>
-    <source src="/video/examples/01 parallax.webm" type="video/webm">
-    <source src="/video/examples/01 parallax.mp4" type="video/mp4">
-  </video>
-</div>
