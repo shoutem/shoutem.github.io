@@ -487,62 +487,15 @@ pre[data-line] {
 }
 
 .video-screen {
-    position: relative;
-    width: 375px;
-    display: inline-block;
-    cursor: pointer;
+    width: 100%;
+    background-color: #EEE;
+    padding: 40px;
+    border-radius: 4px;
+    margin-bottom: 40px;
 
     video {
         display: block;
-    }
-
-    &::before {
-        content: '';
-        position: absolute;
-        left: 0;
-        top: 0;
-        width: 375px;
-        height: 100%;
-        background: rgba(0, 0, 0, 0.5);
-        opacity: 1;
-        transition-property: opacity;
-        transition-duration: 0.2s;
-    }
-
-    &.playing::before {
-        opacity: 0;
-    }
-
-    &.playing:not(.hide-controls):hover::before {
-        opacity: 1;
-    }
-
-    &::after {
-        content: '';
-        position: absolute;
-        left: 50%;
-        top: 50%;
-        transform: translate(-50%, -50%);
-        width: 90px;
-        height: 90px;
-        border-radius: 50%;
-        display: block;
-        background: #00aadf url("/img/icon-play.svg") no-repeat center center;
-        transition-property: width, height, opacity;
-        transition-duration: 0.2s;
-    }
-
-    &:hover::after {
-        width: 100px;
-        height: 100px;
-    }
-
-    &.playing::after {
-        background-image: url("/img/icon-pause.svg");
-        opacity: 0;
-    }
-
-    &.playing:not(.hide-controls):hover::after {
-        opacity: 1;
+        width: 280px;
+        margin: 0 auto;
     }
 }

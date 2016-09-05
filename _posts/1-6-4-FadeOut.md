@@ -9,6 +9,13 @@ section: Animation
 
 Fades out components wrapped by it.
 
+<div class="video-screen">
+  <video width="280" loop autoplay>
+    <source src="/video/examples/03 fade in and out.webm" type="video/webm">
+    <source src="/video/examples/03 fade in and out.mp4" type="video/mp4">
+  </video>
+</div>
+
 ***Properties:***
 
 - `driver`: Driver that is running the animation
@@ -35,13 +42,3 @@ return (
 ```
 
 The above code will create a scroll dependent fade out animation over `Image` component from scroll 100 to scroll 150 where `Image` is opaque at scroll 100, and fully transparent at scroll 150.
-
-
-### FadeIn / FadeOut example
-
-<div class="video-screen">
-  <video width="375" loop>
-    <source src="/video/examples/03 fade in and out.webm" type="video/webm">
-    <source src="/video/examples/03 fade in and out.mp4" type="video/mp4">
-  </video>
-</div>
