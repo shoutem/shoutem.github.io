@@ -9,7 +9,14 @@ section: UI toolkit
 
 ![alt text]({{ site.baseurl }}/img/ui-toolkit/introduction.jpg "UI toolkit"){:.docs-component-image}
 
-`@shoutem/ui` is a UI toolkit that enables you to build beautiful React Native apps by using our professionally designed UI components and themes. All components are built from the ground up to be both composable and [themeable]({{ site.baseurl }}//docs/ui-toolkit/theme/introduction). Each component has a predefined style within a theme and it's compatible with the rest of the toolkit, which makes it possible to build complex components that look great without the need to manually define complex styles.
+Shoutem UI toolkit enables you to build professionally looking React Native apps with ease.  
+
+It consists of three libraries: 
+
+- @shoutem/ui: beautiful and customizable UI [components](http://shoutem.github.io/docs/ui-toolkit/components/typography)
+- @shoutem/theme: “CSS-way” of styling the entire app with [themes](http://shoutem.github.io/docs/ui-toolkit/theme/introduction)
+- @shoutem/animation: declarative way of applying ready-made [animations](http://shoutem.github.io/docs/ui-toolkit/theme/animation/introduction) 
+
 
 ## Prerequsites
 Before starting make sure you have:
