@@ -11,8 +11,8 @@ Adds parallax effect to its children components. The children are translated dep
 
 <div class="video-screen">
   <video width="280" loop autoplay>
-    <source src="/video/examples/01 parallax.webm" type="video/webm">
     <source src="/video/examples/01 parallax.mp4" type="video/mp4">
+    <source src="/video/examples/01 parallax.webm" type="video/webm">
   </video>
 </div>
 

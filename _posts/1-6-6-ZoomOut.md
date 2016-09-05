@@ -11,8 +11,8 @@ Zooms out components wrapped by it.
 
 <div class="video-screen">
   <video width="280" loop autoplay>
-    <source src="/video/examples/04 zoom in and out.webm" type="video/webm">
     <source src="/video/examples/04 zoom in and out.mp4" type="video/mp4">
+    <source src="/video/examples/04 zoom in and out.webm" type="video/webm">
   </video>
 </div>
 
