@@ -64,7 +64,7 @@ In order to support themes, we need to:
 1. Replace the occurrences of `styles` with `this.props.style`
 2. Connect the component to the theme
 
-```JavaScript
+```JavaScript{2,6-10,15,34-35}
 import React, { Component, Text, View } from 'react';
 import { connectStyle } from '@shoutem/theme';
 
@@ -107,7 +107,7 @@ The `connectStyle` function receives two arguments. The first one represents the
 Any styles defined in the theme will be merged with the default style, and theme rules will override the rules from the default style. The style that is sent to `connectStyle` shouldn't be created using the `StyleSheet.create`. Style sheet will be created by the `connectStyle` function at appropriate time.
 
 ## Initialize the style provider 
-With those simple changes, we have a component that can receive styles from the outside. The only other thing that we need to do is to initialize the style provider in the app, so that theme styles are correctly distributed to components. To do this, we need to initialize the `StyleProvider` component, and render any customizable components within it:
+With those simple changes, we have a component that can receive styles from the outside. The only thing left to do is to initialize the style provider within the app, so that theme styles are correctly distributed to components. To do this, we need to initialize the `StyleProvider` component, and render any customizable components within it:
 
 ```JavaScript
 import React, { Component } from 'react';
@@ -121,6 +121,7 @@ class App extends Component {
   }
 }
 
+// Define a theme
 const theme = {
   'com.example.AvatarItem': {
     // overrides AvatarItem component style...
@@ -137,7 +138,7 @@ All styles defined as a part of the theme may be regular React Native styles, bu
 #### JSX Declaration
 ```JSX
 <Card>
-  <Image styleName="banner" source={{ uri: 'http://shoutem.github.io/img/ui-toolkit/examples/image-10.png' }} />
+  <Image styleName="banner" source={% raw %}{{{% endraw %} uri: 'https://shoutem.github.io/img/ui-toolkit/examples/image-10.png' }} />
   <View styleName="card-content">
     <Subtitle numberOfLines={4}>Choosing The Right Boutique Hotel For You</Subtitle>
     <Divider styleName="empty" />
