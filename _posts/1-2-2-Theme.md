@@ -24,7 +24,7 @@ $ npm install --save @shoutem/theme
 ## Building customizable components
 The main thing you need to change is to start using the style rules from the `props.style` property, instead of using the static variable defined alongside the component. You can define the default style of the component statically (the same way as before) but you shouldn't use that property to get the actual style in runtime. This allows us to merge the default style with any theme style that may be active in the app, and provide the final style to components.
 
-We will now demonstrate how simple it is to make an existing component customizable on an example. Let's start by implementing a simple component that has a static style:
+We will now demonstrate how simple it is to make an existing component customizable for an example. Let's start by implementing a simple component that has a static style:
 
 ```JavaScript
 import React, { Component, Text, View } from 'react';
