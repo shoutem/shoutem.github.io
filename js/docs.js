@@ -20,7 +20,8 @@ $(function() {
   $body.on("click", "a:not(#signup-modal)", ajaxLoadLink);
 
   var animationTime = 200;
-  var docsLinkRx = new RegExp(/\/docs\//);
+  var loc = window.location.href.replace(/http(s*):\/\//, "").split("/");
+  var docsLinkRx = new RegExp(loc[0] + "/docs/", "i");
   var flourish = new Flourish({
     extractSelector: "#documentation",
     replaceSelector: "#documentation",
@@ -305,41 +306,6 @@ $(function() {
     videos.forEach(function(video)
     {
       video.querySelector("video").play();
-
-      /*
-      video.addEventListener("mouseleave", function(e)
-      {
-        this.className = this.className.replace("hide-controls", "").trim();
-      });
-
-      video.addEventListener("click", function(e)
-      {
-        e.stopPropagation();
-
-        var c = this.className;
-        var v = this.querySelector("video");
-
-        if( c.indexOf("playing") > -1 ) {
-          c = c.replace("playing", "");
-          v.pause();
-        } else {
-          c += " playing hide-controls";
-          v.play();
-        }
-
-        this.className = c.trim();
-      });
-      */
     });
   }
-
-  // CodeMirror(document.getElementsByTagName("ptrk")[0], {
-  //   mode: 'jsx',
-  //   lineNumbers: 23,
-  //   // lineWrapping: true,
-  //   smartIndent: false, // javascript mode does bad things with jsx indents
-  //   matchBrackets: true,
-  //   theme: 'solarized-light',
-  //   readOnly: false,
-  // });
 });
