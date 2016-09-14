@@ -56,7 +56,7 @@ Remove old `render` method and add these methods:
   renderRow(restaurant) {
     return (
       <Tile>
-        <Image source={% raw %}{{ uri: restaurant.image && restaurant.image.url  }}{% endraw %}>
+        <Image styleName="large-banner" source={% raw %}{{ uri: restaurant.image && restaurant.image.url  }}{% endraw %}>
           <Overlay styleName="dark">
             <Title>{restaurant.name}</Title>
             <Subtitle>{restaurant.address}</Subtitle>
@@ -154,7 +154,7 @@ class RestaurantsList extends Component {
 
 export default connect(
   undefined,
-  (dispatch) => { navigateTo }
+  { navigateTo }
 )(RestaurantsList);
 ```
 
@@ -171,7 +171,7 @@ Implement `renderRow` function.
           props: { restaurant }
         })}>
         <Tile>
-          <Image source={% raw %}{{ uri: restaurant.image && restaurant.image.url  }}{% endraw %}>
+          <Image styleName="large-banner" source={% raw %}{{ uri: restaurant.image && restaurant.image.url  }}{% endraw %}>
             <Overlay styleName="dark">
               <Title>{restaurant.name}</Title>
               <Subtitle>{restaurant.address}</Subtitle>
@@ -226,11 +226,11 @@ class RestaurantsList extends Component {
           props: { restaurant }
         })}>
         <Tile>
-          <Image source={% raw %}{{ uri: restaurant.image && restaurant.image.url }}{% endraw %}>
-              <Overlay styleName="dark">
-                <Title>{restaurant.name}</Title>
-                <Subtitle>{restaurant.address}</Subtitle>
-               </Overlay>
+          <Image styleName="large-banner" source={% raw %}{{ uri: restaurant.image && restaurant.image.url  }}{% endraw %}>
+            <Overlay styleName="dark">
+              <Title>{restaurant.name}</Title>
+              <Subtitle>{restaurant.address}</Subtitle>
+             </Overlay>
           </Image>
         </Tile>
       </TouchableOpacity>
@@ -253,7 +253,7 @@ class RestaurantsList extends Component {
 
 export default connect(
   undefined,
-  (dispatch) => { navigateTo }
+  { navigateTo }
 )(RestaurantsList)
 ```
 
