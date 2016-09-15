@@ -49,20 +49,18 @@ Implement `render` method that will use `ListView`. `ListView` accepts data in t
 
 Remove old `render` method and add these methods:
 
-```JSX{3-14,17-27}
+```JSX{3-12,15-25}
 #file: app/screens/RestaurantsList.js
   getRestaurants() {...}
 
   renderRow(restaurant) {
     return (
-      <Tile>
-        <Image source={% raw %}{{ uri: restaurant.image && restaurant.image.url  }}{% endraw %}>
-          <Overlay styleName="dark">
-            <Title>{restaurant.name}</Title>
-            <Subtitle>{restaurant.address}</Subtitle>
-           </Overlay>
-        </Image>
-      </Tile>
+      <Image styleName="large-banner" source={% raw %}{{ uri: restaurant.image && restaurant.image.url  }}{% endraw %}>
+        <Tile>
+          <Title>{restaurant.name}</Title>
+          <Subtitle>{restaurant.address}</Subtitle>
+        </Tile>
+      </Image>
     );
   }
 
@@ -154,30 +152,28 @@ class RestaurantsList extends Component {
 
 export default connect(
   undefined,
-  (dispatch) => { navigateTo }
+  { navigateTo }
 )(RestaurantsList);
 ```
 
 Implement `renderRow` function.
 
-```JSX{2,5-8,17}
+```JSX{2,5-8,15}
 #file: app/screens/RestaurantsList.js
   renderRow(restaurant) {
     const { navigateTo } = this.props;
 
     return (
       <TouchableOpacity onPress={() => navigateTo({
-          screen: ext('RestaurantDetails'),
-          props: { restaurant }
-        })}>
-        <Tile>
-          <Image source={% raw %}{{ uri: restaurant.image && restaurant.image.url  }}{% endraw %}>
-            <Overlay styleName="dark">
-              <Title>{restaurant.name}</Title>
-              <Subtitle>{restaurant.address}</Subtitle>
-             </Overlay>
-          </Image>
-        </Tile>
+        screen: ext('RestaurantDetails'),
+        props: { restaurant }
+      })}>
+        <Image styleName="large-banner" source={% raw %}{{ uri: restaurant.image && restaurant.image.url  }}{% endraw %}>
+          <Tile>
+            <Title>{restaurant.name}</Title>
+            <Subtitle>{restaurant.address}</Subtitle>
+          </Tile>
+        </Image>
       </TouchableOpacity>
     );
   }
@@ -222,24 +218,22 @@ class RestaurantsList extends Component {
 
     return (
       <TouchableOpacity onPress={() => navigateTo({
-          screen: ext('RestaurantDetails'),
-          props: { restaurant }
-        })}>
-        <Tile>
-          <Image source={% raw %}{{ uri: restaurant.image && restaurant.image.url }}{% endraw %}>
-              <Overlay styleName="dark">
-                <Title>{restaurant.name}</Title>
-                <Subtitle>{restaurant.address}</Subtitle>
-               </Overlay>
-          </Image>
-        </Tile>
+        screen: ext('RestaurantDetails'),
+        props: { restaurant }
+      })}>
+        <Image styleName="large-banner" source={% raw %}{{ uri: restaurant.image && restaurant.image.url  }}{% endraw %}>
+          <Tile>
+            <Title>{restaurant.name}</Title>
+            <Subtitle>{restaurant.address}</Subtitle>
+          </Tile>
+        </Image>
       </TouchableOpacity>
     );
   }
 
   render() {
     this.props.setNavBarProps({
-      title: RESTAURANTS
+      title: 'RESTAURANTS'
     });
 
     return (
@@ -253,7 +247,7 @@ class RestaurantsList extends Component {
 
 export default connect(
   undefined,
-  (dispatch) => { navigateTo }
+  { navigateTo }
 )(RestaurantsList)
 ```
 

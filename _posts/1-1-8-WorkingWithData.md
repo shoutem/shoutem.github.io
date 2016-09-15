@@ -53,7 +53,7 @@ The only thing left to do is to fetch data from **Shoutem Cloud Storage** on `Re
  - `shouldRefresh` - knows if data needs to be (re)fetched and
  - `getCollection` - combines `storage` and `collection` reducer data into an `array`.
 
-```javascript{1-4}
+```javascript{1-6}
 #file: app/screens/RestaurantsList.js
 import {
   find,
@@ -103,13 +103,13 @@ Implement rendering.
 
 In `render` method, we're expecting to get restaurants as an array. In `app/reducers/index.js` we defined `restaurants` dictionary that will be fetched through `storage` and `allRestaurants` collection that will be fetched through `collection` reducer. Combine both into an array with `getCollection` function from `@shoutem/redux-io` in 1st argument of `connect` function. In 2nd argument, we'll bind `find` action creator.
 
-```javascript{2-4}
+```javascript{2-5}
 #file: app/screens/RestaurantsList.js
 export default connect(
   (state) => ({
     restaurants: getCollection(state[ext()].allRestaurants, state)
   }),
-  (dispatch) => { navigateTo, find })
+  { navigateTo, find }
 )(RestaurantsList);
 ```
 
@@ -162,23 +162,20 @@ class RestaurantsList extends Component {
   }
 
   renderRow(restaurant) {
- 	  const { navigateTo } = this.props;
+    const { navigateTo } = this.props;
 
     return (
-    	<TouchableOpacity onPress={() => navigateTo({
-          screen: ext('RestaurantDetails'),
-          props: { restaurant }
-        })}>
-  		  <Tile>
-          <Image styleName="large-wide" source={% raw %}{{ uri: restaurant.image && restaurant.image.url }}{% endraw %}>
-            <Overlay styleName="dark">
-              <Title>{restaurant.name}</Title>
-              <Subtitle>{restaurant.address}</Subtitle>
-            </Overlay>
-          </Image>
-          <Divider styleName="line" />
-        </Tile>
-     </TouchableOpacity>
+      <TouchableOpacity onPress={() => navigateTo({
+        screen: ext('RestaurantDetails'),
+        props: { restaurant }
+      })}>
+        <Image styleName="large-banner" source={% raw %}{{ uri: restaurant.image && restaurant.image.url  }}{% endraw %}>
+          <Tile>
+            <Title>{restaurant.name}</Title>
+            <Subtitle>{restaurant.address}</Subtitle>
+          </Tile>
+        </Image>
+      </TouchableOpacity>
     );
   }
 
@@ -195,7 +192,7 @@ class RestaurantsList extends Component {
     return (
       <ListView
         data={restaurants}
-        status={isBusy(restaurants) ? LOADING : IDLE}
+        status={isBusy(restaurants)}
         renderRow={restaurant => this.renderRow(restaurant, navigateTo)}
       />
     );
@@ -206,7 +203,7 @@ export default connect(
   (state) => ({
     restaurants: getCollection(state[ext()].allRestaurants, state)
   }),
-  (dispatch) => { navigateTo, find }
+  { navigateTo, find }
 )(RestaurantsList);
 
 ```
