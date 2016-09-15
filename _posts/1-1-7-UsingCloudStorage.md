@@ -57,7 +57,7 @@ This schema was immediately exported in `extension.json` file:
   }],
   "dataSchemas": [{
     "name": "Restaurants",
-    "path": "server/schemas/Restaurants.json"
+    "path": "server/data-schemas/Restaurants.json"
   }]
 }
 ```
