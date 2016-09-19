@@ -7,7 +7,7 @@ section: UI toolkit
 
 # Introduction
 
-![alt text]({{ site.baseurl }}/img/ui-toolkit/introduction.jpg "UI toolkit"){:.docs-component-image}
+![alt text]({{ site.baseurl }}/img/ui-toolkit/introduction@2x.jpg "UI toolkit"){:.docs-component-image}
 
 Shoutem UI toolkit enables you to build professionally looking React Native apps with ease.  
 
@@ -22,8 +22,7 @@ It consists of three libraries:
 Before starting make sure you have:
 
 - Installed [node](https://nodejs.org/en/)
-- Installed [npm](https://www.npmjs.com/)
-- Installed [rnpm](https://github.com/rnpm/rnpm)
+- Installed [npm]  ](https://github.com/rnpm/rnpm)
 - Installed [React Native](https://facebook.github.io/react-native/docs/getting-started.html)
 
 ## Installation
