@@ -42,7 +42,7 @@ This document covers available Icons.
 
 #### JSX Declaration
 ```JSX
-<Icon name="add-to-card" />
+<Icon name="add-to-cart" />
 ```  
             
 ## Add to favorites (full)
