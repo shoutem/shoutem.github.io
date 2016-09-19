@@ -275,6 +275,7 @@ $(function() {
       var newLoc = getLocation(url);
 
       if( curLoc.section === newLoc.section && curLoc.path === newLoc.path ) {
+        document.activeElement.blur();
         return;
       }
 

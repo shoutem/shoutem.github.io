@@ -7,7 +7,7 @@ section: UI toolkit
 
 # Introduction
 
-![alt text]({{ site.baseurl }}/img/ui-toolkit/introduction.jpg "UI toolkit"){:.docs-component-image}
+![alt text]({{ site.baseurl }}/img/ui-toolkit/introduction@2x.jpg "UI toolkit"){:.docs-component-image}
 
 Shoutem UI toolkit enables you to build professionally looking React Native apps with ease.  
 
