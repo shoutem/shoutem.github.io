@@ -112,6 +112,112 @@ Here admin can customize your theme through theme variables. These variables are
 
 ## How theme works
 
-Now that we went through basics, let's explain how theme works. Theme is a set of styling rules that customize the components connected to the theme. These components we call `customizable components`. 
+Now that we went through basics, let's explain how theme works. Theme is a set of styling rules that customize the components connected to the theme. These components we call `customizable components`. All the components in [@shoutem/ui](https://github.com/shoutem/ui) are connected to the theme and [Rubicon](todo) theme, default theme for apps, customizes them through styling rules. 
+
+Styling rules in theme object, in `app/theme/rounded.js` file, are resolved using [@shoutem/theme](https://github.com/shoutem/theme) package of the same name. In the [docs](http://shoutem.github.io/docs/ui-toolkit/theme/introduction) for package, check the [Theme style rules](http://shoutem.github.io/docs/ui-toolkit/theme/introduction#theme-style-rules) section, which describe how to write a theme. Each component is connected to the theme by the name, by which it can be targeted in theme.
+
+Open now `app/theme/rounded.js`. There are styling rules used in `Rubicon` theme. Let's now create a customizable component
+
+## Customizable component
+
+Suppose we want to create a theme which will make title in restaurant row bigger and will change the background of subtitle to white, while changing subtitle color to black.
+
+Since restaurant row is defined in `app/screens/RestaurantsList.js` we can make that component customizable or encapsulate the restaurant row as separate component. Let's go with the first one, the simpler option:
+
+```JavaScript
+#file: app/screens/RestaurantsList.js
+import React, {
+  Component
+} from 'react';
+import {
+  TouchableOpacity,
+} from 'react-native';
+import {
+  Image,
+  ListView,
+  Text,
+  Tile,
+  Title,
+  Subtitle,
+  Overlay,
+  Divider
+} from '@shoutem/ui';
+
+import {
+  find,
+  isBusy,
+  shouldRefresh,
+  getCollection
+} from '@shoutem/redux-io';
+
+import { connect } from 'react-redux';
+import { navigateTo } from '@shoutem/core/navigation';
+import { ext } from '../const';
+
+class RestaurantsList extends Component {
+  constructor(props) {
+    super(props);
+
+    this.renderRow = this.renderRow.bind(this);
+  }
+
+  componentDidMount() {
+    const { find, restaurants } = this.props;
+    if (shouldRefresh(restaurants)) {
+      find(ext('Restaurants'), 'all', {
+          include: 'image',
+      });
+    }
+  }
+
+  renderRow(restaurant) {
+    const { navigateTo } = this.props;
+
+    return (
+      <TouchableOpacity onPress={() => navigateTo({
+        screen: ext('RestaurantDetails'),
+        props: { restaurant }
+      })}>
+        <Image styleName="large-banner" source={{ uri: restaurant.image && restaurant.image.url  }}>
+          <Tile>
+            <Title>{restaurant.name}</Title>
+            <Subtitle>{restaurant.address}</Subtitle>
+          </Tile>
+        </Image>
+      </TouchableOpacity>
+    );
+  }
+
+  render() {
+    //set the title in the Navigation bar
+    this.props.setNavBarProps({
+      title: 'RESTAURANTS',
+    });
+
+    //get list of restaurants from props
+    const { restaurants } = this.props;
+    
+
+    return (
+      <ListView
+        data={restaurants}
+        status={isBusy(restaurants)}
+        renderRow={restaurant => this.renderRow(restaurant, navigateTo)}
+      />
+    );
+  }
+}
+
+export default connect(
+  (state) => ({
+    restaurants: getCollection(state[ext()].allRestaurants, state)
+  }),
+  { navigateTo, find }
+)(RestaurantsList);
+```
+
+## Modifying theme
+
+## Customizing theme with variables
 
 
