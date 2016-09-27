@@ -43,4 +43,5 @@ $ shoutem env update
 Now we can start with local development! If you want to see how your app runs on iOS (for which you need to use Mac), do:
 
 ```bash
-$ shoutem env 
+$ shoutem run ios
+```
