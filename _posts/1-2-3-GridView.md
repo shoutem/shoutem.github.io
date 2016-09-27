@@ -18,9 +18,11 @@ The main idea behind this approach is to allow developers to have a variable num
 
 #### JSX Declaration
 ```JSX
+const groupedData = GridRow.groupByRows(data, 2)
+
 <GridRow
     columns={3}>
-  {children}
+  {groupedData}
 </GridRow>
 ```
 
@@ -32,3 +34,47 @@ The main idea behind this approach is to allow developers to have a variable num
 #### Style names
 
 * None
+
+#### Methods
+
+* **groupByRows(data: *array*, columns: *number*, getColumnSpan: *func*)**
+  - **data**: *array* containing all items.
+  - **columns**: *number* defining number of columns in grid.
+  - **getColumnSpan**: *func* (optional) returns the column span of a single element. Each element has a span of 1 by default.
+  - **returns** an array of rows, where each row is an array of data elements.
+  
+#### Example
+
+```JSX
+renderRow(data) {
+  // data contains grouped data for one row, 
+  // so we need to remap it into cells and pass to GridRow
+  const cellViews = _.map(data, (item) => {
+  return (
+    <MyGridCell
+      key={item.id}
+      data={item}
+      onPress={...}
+    />
+  );
+});
+return (
+  <GridRow columns={2}>
+    {cellViews}
+  </GridRow>
+  );
+}
+
+renderArticles(data) {
+  // Group the data into rows with 2 columns
+  const groupedData = GridRow.groupByRows(data, 2)
+
+  return (
+    <ListView
+      data={groupedData}
+      renderRow={this.renderRow}
+      {...}
+    />
+  );
+}
+```
