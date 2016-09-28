@@ -95,7 +95,7 @@ Object with following fields:
 }
 ```
 
-- **fontFamily** - String. Following fonts are supported: _Rubicon_ and _Normal_ being React Native's default. Defaults to "Rubicon".
+- **fontFamily** - String. Following fonts are supported: _Rubicon_ and _Normal_ (React Native's default). Defaults to "Rubicon".
 - **fontStyle** - String. One of: `"normal", "italic"`. Defaults to "normal".
 - **fontWeight** - String. One of: `"normal", "bold", "100", "200", "300", "400", "500", "600", "700", "800", "900"`
 - **fontSize** - Number. Defaults to 12
