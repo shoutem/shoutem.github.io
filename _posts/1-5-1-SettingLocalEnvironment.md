@@ -38,19 +38,47 @@ and update it with:
 $ shoutem env update
 ```
 
-## Local development
+## Linking extensions
 
-Now we can start with local development! If you want to see how your app runs in iOS (for which you need to use Mac), do:
+Before we can can start locally developing our app, we need to link the local extension code to the app. This is done by `link` command. Locate to extension's folder and do:
 
 ```bash
-$ shoutem run ios
+$ shoutem link
 ```
+
+Every time you run an app with that extension installed, it will use the extension code that you linked to the app. To `unlink` the extension code, simply do:
+
+```bash
+$ shoutem unlink
+```
+
+from extension's folder.
+
+Use `show` command to see which extensions are linked to the app:
+
+```bash
+$ shoutem show
+```
+
+## Local development
+
+With the extensions linked, we can start with local development! Since we're locally developing app for the first time, we need to specify `appId` which we want to run. Local app could have extensions linked, but it still needs to get the configuration from concrete application on Shoutem server. Go to [Shoutem builder](/docs/coming-soon) and copy the `appId` from the `Settings` tab.
+
+To see how your app runs in iOS (for which you need to use Mac), do:
+
+```bash
+$ shoutem run ios {appId}
+```
+
+where you should replace `{appId}` with appId copied from app settings. This command can be ran from any directory, but it needs to follow the linking extension command.
 
 For Android, first you need to start emulator with creating [Android Virtual Device](https://developer.android.com/studio/run/managing-avds.html) (AVD) and then running:
 
 ```bash
-$ shoutem run android
+$ shoutem run android {appId}
 ```
+
+In case you already set some `appId` and want to run the same app again, you can leave out the `{appId}` part of the command.
 
 ## Debugging and automatic reloading
 
