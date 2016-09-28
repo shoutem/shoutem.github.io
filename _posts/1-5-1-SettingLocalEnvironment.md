@@ -40,8 +40,22 @@ $ shoutem env update
 
 ## Local development
 
-Now we can start with local development! If you want to see how your app runs on iOS (for which you need to use Mac), do:
+Now we can start with local development! If you want to see how your app runs in iOS (for which you need to use Mac), do:
 
 ```bash
 $ shoutem run ios
 ```
+
+For Android, first you need to start emulator with creating [Android Virtual Device](https://developer.android.com/studio/run/managing-avds.html) (AVD) and then running:
+
+```bash
+$ shoutem run android
+```
+
+## Debugging and automatic reloading
+
+Once you have your app (with installed extension) running on simulator, debugging is fairly easy. Just follow the [React Native guideline for debugging](https://facebook.github.io/react-native/docs/debugging.html). Automatic reloading, which will refresh your app with the new extension, is also described there.
+
+For **debugging** on Mac: Debugging is enabled through ***In-App Developer Menu***. _You can access the developer menu by shaking your device or by selecting "Shake Gesture" inside the Hardware menu in the iOS Simulator. You can also use the Command ⌘ + D keyboard shortcut when your app is running in the iPhone Simulator, or Command ⌘ + M when running in an Android emulator._
+
+For **automatic reloading** on Mac: _Instead of recompiling your app every time you make a change, you can reload your app's JavaScript code instantly. To do so, select "Reload" from the Developer Menu. You can also press Command ⌘ + R in the iOS Simulator, or press R twice on Android emulators._
