@@ -9,7 +9,7 @@ section: UI toolkit Theme
 
 The React Native components style is usually defined as a static variable along with the component itself. This makes it easy to build self contained components that always look and behave the same way. On the other hand, it complicates building customizable (or skinnable) components that could have multiple styles which could be customized without touching the component's source code.
 
-![alt text]({{ site.baseurl }}/img/ui-toolkit/theme.jpg "Theme"){:.docs-component-image}
+![Theme]({{ site.baseurl }}/img/ui-toolkit/theme.jpg "Theme"){:.docs-component-image}
 
 One of our main goals was to add support for themes to components with as little changes as possible to the components themselves. To add support for themes to your component you only need to make two minor changes to it.
 
@@ -132,7 +132,7 @@ const theme = {
 ## Theme style rules 
 All styles defined as a part of the theme may be regular React Native styles, but there are several new types of style rules that are supported in themes as well. We will explain all those rules on the `Card` component from the UI toolkit:
 
-![alt text]({{ site.baseurl }}/img/ui-toolkit/cards/card@2x.png "Card grid item"){:.docs-component-image}
+![Card grid item example]({{ site.baseurl }}/img/ui-toolkit/cards/card@2x.png "Card grid item"){:.docs-component-image}
 
 #### JSX Declaration
 ```JSX

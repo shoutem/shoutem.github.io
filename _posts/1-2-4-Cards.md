@@ -10,7 +10,7 @@ section: UI toolkit
 Cards have become very popular in recent years. They are useful when displaying interactive content composed of different elements.
 
 ## Card
-![alt text]({{ site.baseurl }}/img/ui-toolkit/cards/card@2x.png "Card grid item"){:.docs-component-image}
+![Card grid item example]({{ site.baseurl }}/img/ui-toolkit/cards/card@2x.png "Card grid item"){:.docs-component-image}
 
 #### JSX Declaration
 ```JSX
@@ -27,7 +27,7 @@ Cards have become very popular in recent years. They are useful when displaying 
 ```
 
 ## Card + Icon
-![alt text]({{ site.baseurl }}/img/ui-toolkit/cards/card-icon@2x.png "Card grid item + Icon"){:.docs-component-image}
+![Card grid item + Icon example]({{ site.baseurl }}/img/ui-toolkit/cards/card-icon@2x.png "Card grid item + Icon"){:.docs-component-image}
 
 #### JSX Declaration
 ```JSX
@@ -47,7 +47,7 @@ Cards have become very popular in recent years. They are useful when displaying 
 ```
 
 ## Card + Icon (Shop)
-![alt text]({{ site.baseurl }}/img/ui-toolkit/cards/card-icon-shop@2x.png "Card grid item + Icon"){:.docs-component-image}
+![Card grid item + Icon (Shop) example]({{ site.baseurl }}/img/ui-toolkit/cards/card-icon-shop@2x.png "Card grid item + Icon (Shop)"){:.docs-component-image}
 
 #### JSX Declaration
 ```JSX

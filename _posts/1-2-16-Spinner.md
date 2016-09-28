@@ -9,7 +9,7 @@ section: UI toolkit
 `Spinner` is a styled wrapper for `ActivityIndicator` React Native component.  
 
 ## Spinner
-![alt text]({{ site.baseurl }}/img/ui-toolkit/spinner/spinner@2x.png "Spinner"){:.docs-component-image}
+![Spinner example]({{ site.baseurl }}/img/ui-toolkit/spinner/spinner@2x.png "Spinner"){:.docs-component-image}
 
 #### JSX Declaration
 ```JSX

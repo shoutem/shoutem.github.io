@@ -13,7 +13,7 @@ Typography components are `Text` components with predefined styles. You can use 
 All components in this section support every prop that the standard React Native `Text` component supports, such as `numberOfLines` prop.
 
 ## Heading
-![alt text]({{ site.baseurl }}/img/ui-toolkit/typography/heading@2x.png "Heading"){:.docs-component-image}
+![Heading example]({{ site.baseurl }}/img/ui-toolkit/typography/heading@2x.png "Heading"){:.docs-component-image}
 
 #### JSX Declaration
 ```JSX
@@ -21,7 +21,7 @@ All components in this section support every prop that the standard React Native
 ```
 
 ## Title
-![alt text]({{ site.baseurl }}/img/ui-toolkit/typography/title@2x.png "Title"){:.docs-component-image}
+![Title example]({{ site.baseurl }}/img/ui-toolkit/typography/title@2x.png "Title"){:.docs-component-image}
 
 #### JSX Declaration
 ```JSX
@@ -29,7 +29,7 @@ All components in this section support every prop that the standard React Native
 ```
 
 ## Subtitle
-![alt text]({{ site.baseurl }}/img/ui-toolkit/typography/subtitle@2x.png "Subtitle"){:.docs-component-image}
+![Subtitle example]({{ site.baseurl }}/img/ui-toolkit/typography/subtitle@2x.png "Subtitle"){:.docs-component-image}
 
 #### JSX Declaration
 ```JSX
@@ -37,7 +37,7 @@ All components in this section support every prop that the standard React Native
 ```
 
 ## Text
-![alt text]({{ site.baseurl }}/img/ui-toolkit/typography/text@2x.png "Text"){:.docs-component-image}
+![Text example]({{ site.baseurl }}/img/ui-toolkit/typography/text@2x.png "Text"){:.docs-component-image}
 
 #### JSX Declaration
 ```JSX
@@ -45,7 +45,7 @@ All components in this section support every prop that the standard React Native
 ```
 
 ## Caption
-![alt text]({{ site.baseurl }}/img/ui-toolkit/typography/caption@2x.png "Caption"){:.docs-component-image}
+![Caption example]({{ site.baseurl }}/img/ui-toolkit/typography/caption@2x.png "Caption"){:.docs-component-image}
 
 #### JSX Declaration
 ```JSX

@@ -1,67 +1,48 @@
 ---
 layout: doc
 permalink: /docs/ui-toolkit/components/rich-media
-title: Rich Media
+title: RichMedia
 section: UI toolkit
 ---
 
 # RichMedia
 
-RichMedia component parses HTML content and replaces is with corresponding React Native components.
+RichMedia component parses HTML content and renders it using corresponding React Native and Shoutem UI toolkit components.
 
 ## JSX Declaration
 ```JSX
 <RichMedia
-    body={item.body}
-    attachments={item.attachments}
+    body={...}
+    onError={...}
+    openUrl={...}
+    renderElement={...}
+    renderText={...}
+    style={...}
 />
 ```
-#### Image
->[TBD]
 
 #### Props
 
-* **attachments** : object  
-  - Prop containing Shoutem Data Exchange Protocol compatible attachments (image, video) that are referenced in `Body` using `<attachment>` HTML tags, per 
-  
-  
-> davor: we need more explanation here like: Attachments are Shoutem specific DOM elements for video and image galleries that can be insterted within the HTML.  
-> kale: rephrased a bit, see comment below  
-> davor: Why are we not passing attachments within HTML?  
-> kale: check this https://fiveminutes.jira.com/wiki/display/SE/Data+Exchange+Protocol  
-> kale: DEP is designed to reference attachments by using `<attachment>` tags in body, and then to pull those attachments from `attachment` JSON object
-
 * **body** : string  
-  - Prop containing HTML code that will be rendered using this Component  
+  - Body of the HTML content that will be transformed by this component and rendered using React Native and Shoutem UI toolkit components.  
+* **onError** : function
+  - Triggered if RichMedia component fails to parse given HTML (in `body` prop).
+* **openURL(url)** : function
+  - Triggered when user taps on HTML link. It can be used to override default action (defaults to opening url in external browser).
+* **renderElement(node)** : function
+  - Function that can be used to define (return) custom Element transformer (`Image` and `Video` elements), which have priority in respect to default element transformers.
+* **renderText(node)** : function 
+  - Function that can be used to define (return) custom Text transformer (`p`, `pre`, `li`, `br`, `h1`, `h2`, `h3`, `h4`, `h5` HTML elements), which have priority in respect to default Text transformers.
 
 #### Style
 
-* **a**
-  - Style prop for content within HTML `a` tags
-  
-* **b**
-  - Style prop for content within HTML `b` tags
-  
-* **code**
-  - Style prop for content within HTML `code` tags
-  
-* **em**
-  - Style prop for content within HTML `em` tags
-  
-* **i**
-  - Style prop for content within HTML `i` tags
-  
+* **container**
+  - Style prop applied to `View` component surrounding transformed content.
+
 * **img**
-  - Style prop for content within HTML `img` tag
-  
-* **p**
-  - Style prop for content within HTML `p` tags
-  
-* **pre**
-  - Style prop for content within HTML `pre` tags
-  
-* **strong**
-  - Style prop for content within HTML `strong` tags
+  - Style prop for Image transformer.
+  - Height defaults to 200 px.
   
 * **video**
-  - Style prop for content withing HTML `video` tags
+  - Style prop for Video transformer.
+  - Height defaults to 200 px.

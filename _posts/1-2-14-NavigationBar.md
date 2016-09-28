@@ -1,7 +1,7 @@
 ---
 layout: doc
 permalink: /docs/ui-toolkit/components/navigation-bar
-title: Navigation Bar
+title: NavigationBar
 section: UI toolkit
 ---
 
@@ -11,7 +11,7 @@ NavigationBar component is `Node` for `Navigator` React Native component.
 It provides a simpler way to use 3-column Navigation bar without reinventing the wheel.
 
 ## Navbar / Solid
-![alt text]({{ site.baseurl }}/img/ui-toolkit/navigationbar/navbar-title-only@2x.png "Navbar / Solid"){:.docs-component-image}
+![Navbar / Solid example]({{ site.baseurl }}/img/ui-toolkit/navigationbar/navbar-title-only@2x.png "Navbar / Solid"){:.docs-component-image}
 
 #### JSX Declaration
 ```JSX
@@ -21,7 +21,7 @@ It provides a simpler way to use 3-column Navigation bar without reinventing the
 ```
 
 ## Navbar / Clear (Solid color)
-![alt text]({{ site.baseurl }}/img/ui-toolkit/navigationbar/navbar-clear-solidcolor-titleonly@2x.png "Navbar / Clear (Solid color)"){:.docs-component-image}
+![Navbar / Clear (Solid color) example]({{ site.baseurl }}/img/ui-toolkit/navigationbar/navbar-clear-solidcolor-titleonly@2x.png "Navbar / Clear (Solid color)"){:.docs-component-image}
 
 #### JSX Declaration
 ```JSX
@@ -32,7 +32,7 @@ It provides a simpler way to use 3-column Navigation bar without reinventing the
 ```
 
 ## Navbar / Clear (Image)
-![alt text]({{ site.baseurl }}/img/ui-toolkit/navigationbar/navbar-imageoverlay-image@2x.png "Navbar / Clear (Image)"){:.docs-component-image}
+![Navbar / Clear (Image) example]({{ site.baseurl }}/img/ui-toolkit/navigationbar/navbar-imageoverlay-image@2x.png "Navbar / Clear (Image)"){:.docs-component-image}
 
 #### JSX Declaration
 ```JSX
@@ -47,7 +47,7 @@ It provides a simpler way to use 3-column Navigation bar without reinventing the
 ```
 
 ## Navbar/ Fade (Gradient overlay + Solid color)
-![alt text]({{ site.baseurl }}/img/ui-toolkit/navigationbar/navbar-fade-gradientoverlay-solidcolor@2x.png "Navbar/ Fade (Gradient overlay + Solid color)"){:.docs-component-image}
+![Navbar/ Fade (Gradient overlay + Solid color) example]({{ site.baseurl }}/img/ui-toolkit/navigationbar/navbar-fade-gradientoverlay-solidcolor@2x.png "Navbar/ Fade (Gradient overlay + Solid color)"){:.docs-component-image}
 
 #### JSX Declaration
 ```JSX
@@ -58,7 +58,7 @@ It provides a simpler way to use 3-column Navigation bar without reinventing the
 ```
 
 ## Navbar/ Fade (Gradient overlay + Image)
-![alt text]({{ site.baseurl }}/img/ui-toolkit/navigationbar/navbar-fade-gradientoverlay-image@2x.png "Navbar/ Fade (Gradient overlay + Image)"){:.docs-component-image}
+![Navbar/ Fade (Gradient overlay + Image) example]({{ site.baseurl }}/img/ui-toolkit/navigationbar/navbar-fade-gradientoverlay-image@2x.png "Navbar/ Fade (Gradient overlay + Image)"){:.docs-component-image}
 
 #### JSX Declaration
 ```JSX
@@ -75,7 +75,7 @@ It provides a simpler way to use 3-column Navigation bar without reinventing the
 # Navigation bar variations
 
 ## Navbar + Drawer
-![alt text]({{ site.baseurl }}/img/ui-toolkit/navigationbar/navbar-drawernav@2x.png "Navbar + Drawer"){:.docs-component-image}
+![Navbar + Drawer example]({{ site.baseurl }}/img/ui-toolkit/navigationbar/navbar-drawernav@2x.png "Navbar + Drawer"){:.docs-component-image}
 
 #### JSX Declaration
 ```JSX
@@ -86,7 +86,7 @@ It provides a simpler way to use 3-column Navigation bar without reinventing the
 ```
 
 ## Navbar + Picker
-![alt text]({{ site.baseurl }}/img/ui-toolkit/navigationbar/navbar-picker@2x.png "Navbar + Picker"){:.docs-component-image}
+![Navbar + Picker example]({{ site.baseurl }}/img/ui-toolkit/navigationbar/navbar-picker@2x.png "Navbar + Picker"){:.docs-component-image}
 
 #### JSX Declaration
 ```JSX
@@ -113,7 +113,7 @@ It provides a simpler way to use 3-column Navigation bar without reinventing the
 ```
 
 ## Navbar + Action
-![alt text]({{ site.baseurl }}/img/ui-toolkit/navigationbar/navbar-action@2x.png "Navbar + Action"){:.docs-component-image}
+![Navbar + Action example]({{ site.baseurl }}/img/ui-toolkit/navigationbar/navbar-action@2x.png "Navbar + Action"){:.docs-component-image}
 
 #### JSX Declaration
 ```JSX
@@ -129,7 +129,7 @@ It provides a simpler way to use 3-column Navigation bar without reinventing the
 ```
 
 ## Navbar + Icon
-![alt text]({{ site.baseurl }}/img/ui-toolkit/navigationbar/navbar-icon@2x.png "Navbar + Icon"){:.docs-component-image}
+![Navbar + Icon example]({{ site.baseurl }}/img/ui-toolkit/navigationbar/navbar-icon@2x.png "Navbar + Icon"){:.docs-component-image}
 
 #### JSX Declaration
 ```JSX
@@ -145,7 +145,7 @@ It provides a simpler way to use 3-column Navigation bar without reinventing the
 ```
 
 ## Navbar (Sublevel) + Icon
-![alt text]({{ site.baseurl }}/img/ui-toolkit/navigationbar/navbar-sublevel-icon@2x.png "Navbar + (Sublevel) + icon"){:.docs-component-image}
+![Navbar (Sublevel) + Icon example]({{ site.baseurl }}/img/ui-toolkit/navigationbar/navbar-sublevel-icon@2x.png "Navbar + (Sublevel) + icon"){:.docs-component-image}
 
 #### JSX Declaration
 ```JSX
@@ -161,7 +161,7 @@ It provides a simpler way to use 3-column Navigation bar without reinventing the
 ```
 
 ## Navbar (Sublevel) + Action (no border)
-![alt text]({{ site.baseurl }}/img/ui-toolkit/navigationbar/navbar-sublevel-action-no-border@2x.png "Navbar (Sublevel) + Action (no border)"){:.docs-component-image}
+![Navbar (Sublevel) + Action (no border) example]({{ site.baseurl }}/img/ui-toolkit/navigationbar/navbar-sublevel-action-no-border@2x.png "Navbar (Sublevel) + Action (no border)"){:.docs-component-image}
 
 #### JSX Declaration
 ```JSX
@@ -178,7 +178,7 @@ It provides a simpler way to use 3-column Navigation bar without reinventing the
 ```
 
 ## Navbar (Sublevel) + Action
-![alt text]({{ site.baseurl }}/img/ui-toolkit/navigationbar/navbar-sublevel-action@2x.png "NavigationBar (Sublevel) + Action"){:.docs-component-image}
+![Navbar (Sublevel) + Action example]({{ site.baseurl }}/img/ui-toolkit/navigationbar/navbar-sublevel-action@2x.png "NavigationBar (Sublevel) + Action"){:.docs-component-image}
 
 #### JSX Declaration
 ```JSX
@@ -194,7 +194,7 @@ It provides a simpler way to use 3-column Navigation bar without reinventing the
 ```
 
 ## Navbar (Modal) + Icon
-![alt text]({{ site.baseurl }}/img/ui-toolkit/navigationbar/navbar-modal-icon@2x.png "Navbar (Modal) + Icon"){:.docs-component-image}
+![Navbar (Modal) + Icon example]({{ site.baseurl }}/img/ui-toolkit/navigationbar/navbar-modal-icon@2x.png "Navbar (Modal) + Icon"){:.docs-component-image}
 
 #### JSX Declaration
 ```JSX
@@ -214,7 +214,7 @@ It provides a simpler way to use 3-column Navigation bar without reinventing the
 ```
 
 ## Navbar (Modal) + Action
-![alt text]({{ site.baseurl }}/img/ui-toolkit/navigationbar/navbar-modal-action@2x.png "Navbar (Modal) + Action"){:.docs-component-image}
+![Navbar (Modal) + Action example]({{ site.baseurl }}/img/ui-toolkit/navigationbar/navbar-modal-action@2x.png "Navbar (Modal) + Action"){:.docs-component-image}
 
 #### JSX Declaration
 ```JSX
@@ -234,7 +234,7 @@ It provides a simpler way to use 3-column Navigation bar without reinventing the
 ```
 
 ## Navbar (Modal) + Action 2
-![alt text]({{ site.baseurl }}/img/ui-toolkit/navigationbar/navbar-modal-action-2@2x.png "Navbar (Modal) + Action"){:.docs-component-image}
+![Navbar (Modal) + Action 2 example]({{ site.baseurl }}/img/ui-toolkit/navigationbar/navbar-modal-action-2@2x.png "Navbar (Modal) + Action"){:.docs-component-image}
 
 #### JSX Declaration
 ```JSX
@@ -254,7 +254,7 @@ It provides a simpler way to use 3-column Navigation bar without reinventing the
 ```
 
 ## Navbar (Modal) + Action 2 (disabled)
-![alt text]({{ site.baseurl }}/img/ui-toolkit/navigationbar/navbar-modal-action-2-disabled@2x.png "Navbar (Modal) + Action (disabled)"){:.docs-component-image}
+![Navbar (Modal) + Action 2 (disabled) example]({{ site.baseurl }}/img/ui-toolkit/navigationbar/navbar-modal-action-2-disabled@2x.png "Navbar (Modal) + Action (disabled)"){:.docs-component-image}
 
 #### JSX Declaration
 ```JSX
@@ -274,7 +274,7 @@ It provides a simpler way to use 3-column Navigation bar without reinventing the
 ```
 
 ## Navbar / On primary color / back + share
-![alt text]({{ site.baseurl }}/img/ui-toolkit/navigationbar/navbar-sublevel-action-no-border-copy@2x.png "Navbar / On primary color / back + share"){:.docs-component-image}
+![Navbar / On primary color / back + share example]({{ site.baseurl }}/img/ui-toolkit/navigationbar/navbar-sublevel-action-no-border-copy@2x.png "Navbar / On primary color / back + share"){:.docs-component-image}
 
 #### JSX Declaration
 ```JSX

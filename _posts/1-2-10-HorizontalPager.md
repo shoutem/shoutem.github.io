@@ -10,7 +10,7 @@ section: UI toolkit
 Renders a horizontally swipable list of items (Pages) by using the provided renderPage function with data from provided dataSource (e.g. horizontal list of inline images)
 
 ## HorizontalPager
-![alt text]({{ site.baseurl }}/img/ui-toolkit/horizontal-pager/horizontal_pager@2x.png "HorizontalPager"){:.docs-component-image}
+![HorizontalPager example]({{ site.baseurl }}/img/ui-toolkit/horizontal-pager/horizontal_pager@2x.png "HorizontalPager"){:.docs-component-image}
 
 #### JSX Declaration
 ```JSX

@@ -10,7 +10,7 @@ section: UI toolkit
 Headers are Tile variations.
 
 ## Header / Article
-![alt text]({{ site.baseurl }}/img/ui-toolkit/headers/header-article@2x.png "Header / article"){:.docs-component-image}
+![Header / Article example]({{ site.baseurl }}/img/ui-toolkit/headers/header-article@2x.png "Header / article"){:.docs-component-image}
 
 #### JSX Declaration
 ```JSX
@@ -21,7 +21,7 @@ Headers are Tile variations.
 ```
   
 ## Header / Shop item
-![alt text]({{ site.baseurl }}/img/ui-toolkit/headers/header-shop-item@2x.png "Header / shop item"){:.docs-component-image}
+![Header / Shop item example]({{ site.baseurl }}/img/ui-toolkit/headers/header-shop-item@2x.png "Header / shop item"){:.docs-component-image}
 
 #### JSX Declaration
 ```JSX
@@ -35,7 +35,7 @@ Headers are Tile variations.
 ```
   
 ## Header / Deals item
-![alt text]({{ site.baseurl }}/img/ui-toolkit/headers/header-deals-item@2x.png "Large Tile + Button"){:.docs-component-image}
+![Header / Deals item example]({{ site.baseurl }}/img/ui-toolkit/headers/header-deals-item@2x.png "Large Tile + Button"){:.docs-component-image}
 
 #### JSX Declaration
 ```JSX
@@ -48,7 +48,7 @@ Headers are Tile variations.
 ```
 
 ## Header / Products item
-![alt text]({{ site.baseurl }}/img/ui-toolkit/headers/header-products-item@2x.png "Header / products item"){:.docs-component-image}
+![Header / Products item example]({{ site.baseurl }}/img/ui-toolkit/headers/header-products-item@2x.png "Header / products item"){:.docs-component-image}
 
 #### JSX Declaration
 ```JSX

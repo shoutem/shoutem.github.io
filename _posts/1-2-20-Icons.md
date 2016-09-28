@@ -10,7 +10,7 @@ section: UI toolkit
 This document covers available Icons.
   
 ## Activity
-![alt text]({{ site.baseurl }}/img/ui-toolkit/icons/activity.png "Activity"){:.docs-component-image}  
+![Activity icon example]({{ site.baseurl }}/img/ui-toolkit/icons/activity.png "Activity"){:.docs-component-image}  
 
 
 #### JSX Declaration
@@ -19,7 +19,7 @@ This document covers available Icons.
 ```  
   
 ## Add event
-![alt text]({{ site.baseurl }}/img/ui-toolkit/icons/add-event.png "Add event"){:.docs-component-image}  
+![Add event icon example]({{ site.baseurl }}/img/ui-toolkit/icons/add-event.png "Add event"){:.docs-component-image}  
 
 
 #### JSX Declaration
@@ -28,7 +28,7 @@ This document covers available Icons.
 ```  
       
 ## Add friend
-![alt text]({{ site.baseurl }}/img/ui-toolkit/icons/add-friend.png "Add friend"){:.docs-component-image}  
+![Add friend icon example]({{ site.baseurl }}/img/ui-toolkit/icons/add-friend.png "Add friend"){:.docs-component-image}  
 
 
 #### JSX Declaration
@@ -37,7 +37,7 @@ This document covers available Icons.
 ```  
   
 ## Add to cart
-![alt text]({{ site.baseurl }}/img/ui-toolkit/icons/add-to-cart.png "Add to card"){:.docs-component-image}  
+![Add to cart icon example]({{ site.baseurl }}/img/ui-toolkit/icons/add-to-cart.png "Add to cart"){:.docs-component-image}  
 
 
 #### JSX Declaration
@@ -46,7 +46,7 @@ This document covers available Icons.
 ```  
             
 ## Add to favorites (full)
-![alt text]({{ site.baseurl }}/img/ui-toolkit/icons/add-to-favorites-full.png "Add to favorites (full)"){:.docs-component-image}  
+![Add to favorites (full) icon example]({{ site.baseurl }}/img/ui-toolkit/icons/add-to-favorites-full.png "Add to favorites (full)"){:.docs-component-image}  
 
 
 #### JSX Declaration
@@ -55,16 +55,25 @@ This document covers available Icons.
 ```  
 
 ## Add to favorites (outline)
-![alt text]({{ site.baseurl }}/img/ui-toolkit/icons/add-to-favorites.png "Add to favorites"){:.docs-component-image}  
+![Add to favorites (outline) icon example]({{ site.baseurl }}/img/ui-toolkit/icons/add-to-favorites.png "Add to favorites"){:.docs-component-image}  
 
 
 #### JSX Declaration
 ```JSX
 <Icon name="add-to-favorites" />
 ```  
-  
+
+## Address (full)
+![Address (full) icon example]({{ site.baseurl }}/img/ui-toolkit/icons/address-full.png "Address (full)"){:.docs-component-image}  
+
+
+#### JSX Declaration
+```JSX
+<Icon name="address-full" />
+```  
+    
 ## Back
-![alt text]({{ site.baseurl }}/img/ui-toolkit/icons/back.png "Back"){:.docs-component-image}  
+![Back icon example]({{ site.baseurl }}/img/ui-toolkit/icons/back.png "Back"){:.docs-component-image}  
 
 
 #### JSX Declaration
@@ -73,7 +82,7 @@ This document covers available Icons.
 ```  
   
 ## Call
-![alt text]({{ site.baseurl }}/img/ui-toolkit/icons/call.png "Call"){:.docs-component-image}  
+![Call icon example]({{ site.baseurl }}/img/ui-toolkit/icons/call.png "Call"){:.docs-component-image}  
 
 
 #### JSX Declaration
@@ -82,7 +91,7 @@ This document covers available Icons.
 ```  
   
 ## Cart
-![alt text]({{ site.baseurl }}/img/ui-toolkit/icons/cart.png "Cart"){:.docs-component-image}  
+![Cart icon example]({{ site.baseurl }}/img/ui-toolkit/icons/cart.png "Cart"){:.docs-component-image}  
 
 
 #### JSX Declaration
@@ -91,7 +100,7 @@ This document covers available Icons.
 ```  
   
 ## Close
-![alt text]({{ site.baseurl }}/img/ui-toolkit/icons/close.png "Close"){:.docs-component-image}  
+![Close icon example]({{ site.baseurl }}/img/ui-toolkit/icons/close.png "Close"){:.docs-component-image}  
 
 
 #### JSX Declaration
@@ -100,7 +109,7 @@ This document covers available Icons.
 ```  
   
 ## Comment (full)
-![alt text]({{ site.baseurl }}/img/ui-toolkit/icons/comment-full.png "Comment full"){:.docs-component-image}  
+![Comment (full) icon example]({{ site.baseurl }}/img/ui-toolkit/icons/comment-full.png "Comment full"){:.docs-component-image}  
 
 
 #### JSX Declaration
@@ -109,7 +118,7 @@ This document covers available Icons.
 ```    
   
 ## Comment (outline)
-![alt text]({{ site.baseurl }}/img/ui-toolkit/icons/comment.png "Comment (outline)"){:.docs-component-image}  
+![Comment (outline) icon example]({{ site.baseurl }}/img/ui-toolkit/icons/comment.png "Comment (outline)"){:.docs-component-image}  
 
 
 #### JSX Declaration
@@ -118,7 +127,7 @@ This document covers available Icons.
 ```    
   
 ## Down arrow
-![alt text]({{ site.baseurl }}/img/ui-toolkit/icons/down-arrow.png "Down arrow"){:.docs-component-image}  
+![Down arrow icon example]({{ site.baseurl }}/img/ui-toolkit/icons/down-arrow.png "Down arrow"){:.docs-component-image}  
 
 
 #### JSX Declaration
@@ -127,7 +136,7 @@ This document covers available Icons.
 ```     
   
 ## Drop down 
-![alt text]({{ site.baseurl }}/img/ui-toolkit/icons/drop-down.png "Drop down"){:.docs-component-image}  
+![Drop down icon example]({{ site.baseurl }}/img/ui-toolkit/icons/drop-down.png "Drop down"){:.docs-component-image}  
 
 
 #### JSX Declaration
@@ -136,7 +145,7 @@ This document covers available Icons.
 ```  
    
 ## Edit
-![alt text]({{ site.baseurl }}/img/ui-toolkit/icons/edit.png "Edit "){:.docs-component-image}  
+![Edit icon example]({{ site.baseurl }}/img/ui-toolkit/icons/edit.png "Edit "){:.docs-component-image}  
 
 
 #### JSX Declaration
@@ -145,7 +154,7 @@ This document covers available Icons.
 ```  
    
 ## Email 
-![alt text]({{ site.baseurl }}/img/ui-toolkit/icons/email.png "Email"){:.docs-component-image}  
+![Email icon example]({{ site.baseurl }}/img/ui-toolkit/icons/email.png "Email"){:.docs-component-image}  
 
 
 #### JSX Declaration
@@ -153,8 +162,17 @@ This document covers available Icons.
 <Icon name="email" />
 ```  
   
+## Error 
+![Error icon example]({{ site.baseurl }}/img/ui-toolkit/icons/error.png "Error"){:.docs-component-image}  
+
+
+#### JSX Declaration
+```JSX
+<Icon name="error" />
+```  
+  
 ## Facebook
-![alt text]({{ site.baseurl }}/img/ui-toolkit/icons/facebook.png "Facebook"){:.docs-component-image}  
+![Facebook icon example]({{ site.baseurl }}/img/ui-toolkit/icons/facebook.png "Facebook"){:.docs-component-image}  
 
 
 #### JSX Declaration
@@ -162,8 +180,17 @@ This document covers available Icons.
 <Icon name="facebook" />
 ```  
   
+## Feed wall
+![Feed wall icon example]({{ site.baseurl }}/img/ui-toolkit/icons/feed_wall.png "Feed wall"){:.docs-component-image}  
+
+
+#### JSX Declaration
+```JSX
+<Icon name="feed_wall" />
+```  
+  
 ## Friends
-![alt text]({{ site.baseurl }}/img/ui-toolkit/icons/friends.png "Friends"){:.docs-component-image}  
+![Friends icon example]({{ site.baseurl }}/img/ui-toolkit/icons/friends.png "Friends"){:.docs-component-image}  
 
 
 #### JSX Declaration
@@ -171,8 +198,161 @@ This document covers available Icons.
 <Icon name="friends" />
 ```  
   
+## Inactive (muted) About
+![Inactive (muted) About icon example]({{ site.baseurl }}/img/ui-toolkit/icons/ic_about.png "Inactive (muted) About"){:.docs-component-image}  
+
+
+#### JSX Declaration
+```JSX
+<Icon name="ic_about" />
+```  
+  
+## Inactive (muted) Bell
+![Inactive (muted) Bell icon example]({{ site.baseurl }}/img/ui-toolkit/icons/ic_bell.png "Inactive (muted) Bell"){:.docs-component-image}  
+
+
+#### JSX Declaration
+```JSX
+<Icon name="ic_bell" />
+```  
+  
+## Inactive (muted) Books
+![Inactive (muted) Books icon example]({{ site.baseurl }}/img/ui-toolkit/icons/ic_books.png "Inactive (muted) Books"){:.docs-component-image}  
+
+
+#### JSX Declaration
+```JSX
+<Icon name="ic_books" />
+```  
+  
+## Inactive (muted) Deals
+![Inactive (muted) Deals icon example]({{ site.baseurl }}/img/ui-toolkit/icons/ic_deals.png "Inactive (muted) Deals"){:.docs-component-image}  
+
+
+#### JSX Declaration
+```JSX
+<Icon name="ic_deals" />
+```  
+  
+## Inactive (muted) Events
+![Inactive (muted) Events icon example]({{ site.baseurl }}/img/ui-toolkit/icons/ic_events.png "Inactive (muted) Events"){:.docs-component-image}  
+
+
+#### JSX Declaration
+```JSX
+<Icon name="ic_events" />
+```  
+  
+## Inactive (muted) Exit to app
+![Inactive (muted) Exit to app icon example]({{ site.baseurl }}/img/ui-toolkit/icons/ic_exit_to_app.png "Inactive (muted) Exit to app"){:.docs-component-image}  
+
+
+#### JSX Declaration
+```JSX
+<Icon name="ic_exit_to_app" />
+```  
+  
+## Inactive (muted) Folder
+![Inactive (muted) Folder icon example]({{ site.baseurl }}/img/ui-toolkit/icons/ic_folder.png "Inactive (muted) Folder"){:.docs-component-image}  
+
+
+#### JSX Declaration
+```JSX
+<Icon name="ic_folder" />
+```  
+  
+## Inactive (muted) More (horizontal)
+![Inactive (muted) More (horizontal) icon example]({{ site.baseurl }}/img/ui-toolkit/icons/ic_more_horiz.png "Inactive (muted) More (horizontal)"){:.docs-component-image}  
+
+
+#### JSX Declaration
+```JSX
+<Icon name="ic_more_horiz" />
+```  
+  
+## Inactive (muted) Music, Video
+![Inactive (muted) Music, Video icon example]({{ site.baseurl }}/img/ui-toolkit/icons/ic_music_video.png "Inactive (muted) Music, Video"){:.docs-component-image}  
+
+
+#### JSX Declaration
+```JSX
+<Icon name="ic_music_video" />
+```  
+  
+## Inactive (muted) People
+![Inactive (muted) People icon example]({{ site.baseurl }}/img/ui-toolkit/icons/ic_people.png "Inactive (muted) People"){:.docs-component-image}  
+
+
+#### JSX Declaration
+```JSX
+<Icon name="ic_people" />
+```  
+  
+## Inactive (muted) Photo
+![Inactive (muted) Photo icon example]({{ site.baseurl }}/img/ui-toolkit/icons/ic_photo.png "Inactive (muted) Photo"){:.docs-component-image}  
+
+
+#### JSX Declaration
+```JSX
+<Icon name="ic_photo" />
+```  
+  
+## Inactive (muted) Podcasts
+![Inactive (muted) Podcasts icon example]({{ site.baseurl }}/img/ui-toolkit/icons/ic_podcasts.png "Inactive (muted) Podcasts"){:.docs-component-image}  
+
+
+#### JSX Declaration
+```JSX
+<Icon name="ic_podcasts" />
+```  
+  
+## Inactive (muted) Products
+![Inactive (muted) Products icon example]({{ site.baseurl }}/img/ui-toolkit/icons/ic_products.png "Inactive (muted) Products"){:.docs-component-image}  
+
+
+#### JSX Declaration
+```JSX
+<Icon name="ic_products" />
+```  
+  
+## Inactive (muted) Radio
+![Inactive (muted) Radio icon example]({{ site.baseurl }}/img/ui-toolkit/icons/ic_radio.png "Inactive (muted) Radio"){:.docs-component-image}  
+
+
+#### JSX Declaration
+```JSX
+<Icon name="ic_radio" />
+```  
+  
+## Inactive (muted) Restaurant Menu
+![Inactive (muted) Restaurant Menu icon example]({{ site.baseurl }}/img/ui-toolkit/icons/ic_restaurant_menu.png "Inactive (muted) Restaurant Menu"){:.docs-component-image}  
+
+
+#### JSX Declaration
+```JSX
+<Icon name="ic_restaurant_menu" />
+```  
+  
+## Inactive (muted) Resturant
+![Inactive (muted) Resturant icon example]({{ site.baseurl }}/img/ui-toolkit/icons/ic_restaurant.png "Inactive (muted) restaurant"){:.docs-component-image}  
+
+
+#### JSX Declaration
+```JSX
+<Icon name="ic_resturant" />
+```  
+  
+## Inactive (muted) User profile
+![Inactive (muted) User profile icon example]({{ site.baseurl }}/img/ui-toolkit/icons/ic_user_profile.png "Inactive (muted) user profile"){:.docs-component-image}  
+
+
+#### JSX Declaration
+```JSX
+<Icon name="ic_user_profile" />
+```  
+  
 ## Laptop
-![alt text]({{ site.baseurl }}/img/ui-toolkit/icons/laptop.png "Laptop"){:.docs-component-image}  
+![Laptop icon example]({{ site.baseurl }}/img/ui-toolkit/icons/laptop.png "Laptop"){:.docs-component-image}  
 
 
 #### JSX Declaration
@@ -181,7 +361,7 @@ This document covers available Icons.
 ```  
   
 ## Left arrow
-![alt text]({{ site.baseurl }}/img/ui-toolkit/icons/left-arrow.png "Left arrow"){:.docs-component-image}  
+![Left arrow icon example]({{ site.baseurl }}/img/ui-toolkit/icons/left-arrow.png "Left arrow"){:.docs-component-image}  
 
 
 #### JSX Declaration
@@ -189,8 +369,17 @@ This document covers available Icons.
 <Icon name="left-arrow" />
 ```  
   
+## Like
+![Like icon example]({{ site.baseurl }}/img/ui-toolkit/icons/like.png "Like"){:.docs-component-image}  
+
+
+#### JSX Declaration
+```JSX
+<Icon name="like" />
+```  
+  
 ## Linkedin (outline)
-![alt text]({{ site.baseurl }}/img/ui-toolkit/icons/linkedin-outline.png "Linkedin (outline)"){:.docs-component-image}  
+![Linkedin (outline) icon example]({{ site.baseurl }}/img/ui-toolkit/icons/linkedin-outline.png "Linkedin (outline)"){:.docs-component-image}  
 
 
 #### JSX Declaration
@@ -199,16 +388,25 @@ This document covers available Icons.
 ```  
 
 ## Linkedin (full)
-![alt text]({{ site.baseurl }}/img/ui-toolkit/icons/linkedin.png "Linkedin (full)"){:.docs-component-image}  
+![Linkedin (full) icon example]({{ site.baseurl }}/img/ui-toolkit/icons/linkedin.png "Linkedin (full)"){:.docs-component-image}  
 
 
 #### JSX Declaration
 ```JSX
 <Icon name="linkedin" />
 ```  
+  
+## News
+![News icon example]({{ site.baseurl }}/img/ui-toolkit/icons/news.png "News"){:.docs-component-image}  
+
+
+#### JSX Declaration
+```JSX
+<Icon name="news" />
+```  
 
 ## Pause
-![alt text]({{ site.baseurl }}/img/ui-toolkit/icons/pause.png "Pause"){:.docs-component-image}  
+![Pause icon example]({{ site.baseurl }}/img/ui-toolkit/icons/pause.png "Pause"){:.docs-component-image}  
 
 
 #### JSX Declaration
@@ -216,8 +414,17 @@ This document covers available Icons.
 <Icon name="pause" />
 ```  
 
+## Photo
+![Photo icon example]({{ site.baseurl }}/img/ui-toolkit/icons/photo.png "Photo"){:.docs-component-image}  
+
+
+#### JSX Declaration
+```JSX
+<Icon name="photo" />
+```  
+  
 ## Pin
-![alt text]({{ site.baseurl }}/img/ui-toolkit/icons/pin.png "Pin"){:.docs-component-image}  
+![Pin icon example]({{ site.baseurl }}/img/ui-toolkit/icons/pin.png "Pin"){:.docs-component-image}  
 
 
 #### JSX Declaration
@@ -226,7 +433,7 @@ This document covers available Icons.
 ```  
 
 ## Play
-![alt text]({{ site.baseurl }}/img/ui-toolkit/icons/play.png "Play"){:.docs-component-image}  
+![Play icon example]({{ site.baseurl }}/img/ui-toolkit/icons/play.png "Play"){:.docs-component-image}  
 
 
 #### JSX Declaration
@@ -235,7 +442,7 @@ This document covers available Icons.
 ```  
 
 ## Refresh
-![alt text]({{ site.baseurl }}/img/ui-toolkit/icons/refresh.png "Refresh"){:.docs-component-image}  
+![Refresh icon example]({{ site.baseurl }}/img/ui-toolkit/icons/refresh.png "Refresh"){:.docs-component-image}  
 
 
 #### JSX Declaration
@@ -243,18 +450,35 @@ This document covers available Icons.
 <Icon name="refresh" />
 ```  
 
-
 ## Right arrow
-![alt text]({{ site.baseurl }}/img/ui-toolkit/icons/right-arrow.png "Right arrow"){:.docs-component-image}  
+![Right arrow icon example]({{ site.baseurl }}/img/ui-toolkit/icons/right-arrow.png "Right arrow"){:.docs-component-image}  
 
 
 #### JSX Declaration
 ```JSX
-<Icon name="Right arrow" />
+<Icon name="right-arrow" />
 ```  
 
+## Search
+![Search icon example]({{ site.baseurl }}/img/ui-toolkit/icons/search.png "Search"){:.docs-component-image}  
+
+
+#### JSX Declaration
+```JSX
+<Icon name="search" />
+``` 
+
+## Settings
+![Settings icon example]({{ site.baseurl }}/img/ui-toolkit/icons/settings.png "Settings"){:.docs-component-image}  
+
+
+#### JSX Declaration
+```JSX
+<Icon name="settings" />
+``` 
+
 ## Share (android)
-![alt text]({{ site.baseurl }}/img/ui-toolkit/icons/share-android.png "Share (android)"){:.docs-component-image}  
+![Share (android) icon example]({{ site.baseurl }}/img/ui-toolkit/icons/share-android.png "Share (android)"){:.docs-component-image}  
 
 
 #### JSX Declaration
@@ -263,7 +487,7 @@ This document covers available Icons.
 ```  
 
 ## Share
-![alt text]({{ site.baseurl }}/img/ui-toolkit/icons/share.png "Share"){:.docs-component-image}  
+![Share icon example]({{ site.baseurl }}/img/ui-toolkit/icons/share.png "Share"){:.docs-component-image}  
 
 
 #### JSX Declaration
@@ -272,17 +496,17 @@ This document covers available Icons.
 ```  
 
 ## Sidebar
-![alt text]({{ site.baseurl }}/img/ui-toolkit/icons/sidebar.png "Sidebar"){:.docs-component-image}  
+![Sidebar icon example]({{ site.baseurl }}/img/ui-toolkit/icons/sidebar.png "Sidebar"){:.docs-component-image}  
 
 
 #### JSX Declaration
 ```JSX
-<Icon name="Sidebar" />
+<Icon name="sidebar" />
 ```  
 
 
 ## Tweet
-![alt text]({{ site.baseurl }}/img/ui-toolkit/icons/tweet.png "Tweet"){:.docs-component-image}  
+![Tweet icon example]({{ site.baseurl }}/img/ui-toolkit/icons/tweet.png "Tweet"){:.docs-component-image}  
 
 
 #### JSX Declaration
@@ -291,7 +515,7 @@ This document covers available Icons.
 ```  
 
 ## Unfriend
-![alt text]({{ site.baseurl }}/img/ui-toolkit/icons/unfriend.png "Unfriend"){:.docs-component-image}  
+![Unfriend icon example]({{ site.baseurl }}/img/ui-toolkit/icons/unfriend.png "Unfriend"){:.docs-component-image}  
 
 
 #### JSX Declaration
@@ -300,7 +524,7 @@ This document covers available Icons.
 ```  
 
 ## Up arrow
-![alt text]({{ site.baseurl }}/img/ui-toolkit/icons/up-arrow.png "Up arrow"){:.docs-component-image}  
+![Up arrow icon example]({{ site.baseurl }}/img/ui-toolkit/icons/up-arrow.png "Up arrow"){:.docs-component-image}  
 
 
 #### JSX Declaration
@@ -309,7 +533,7 @@ This document covers available Icons.
 ```  
 
 ## Web
-![alt text]({{ site.baseurl }}/img/ui-toolkit/icons/web.png "Web"){:.docs-component-image}  
+![Web icon example]({{ site.baseurl }}/img/ui-toolkit/icons/web.png "Web"){:.docs-component-image}  
 
 
 #### JSX Declaration
