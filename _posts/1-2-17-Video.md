@@ -7,11 +7,11 @@ section: UI toolkit
 
 # Video
 
-`Video` component can be used to render all types of Video items.  
-It renders a Video based on the source type. If source is an url to a web player the video is displayed in a `WebView`, if not, then a `Video` `HTML` element is displayed in the `WebView`.  
+`Video` component can be used to render all types of video items.  
+It renders a Video based on the source type. If a source is `URL` to a web player, video is displayed in a `WebView`. If not, `video` `HTML` element is displayed in the `WebView`.
 
 ## Video
-![alt text]({{ site.baseurl }}/img/ui-toolkit/video/video_player@2x.png "Video"){:.docs-component-image}
+![Video example]({{ site.baseurl }}/img/ui-toolkit/video/video_player@2x.png "Video"){:.docs-component-image}
 
 #### JSX Declaration
 ```JSX

@@ -10,7 +10,7 @@ section: UI toolkit
 Text Input component is used for inputting text into the application using keyboard. 
 
 ## Input / Placeholder text 
-![alt text]({{ site.baseurl }}/img/ui-toolkit/inputs/input-placeholder@2x.png "Input / Placeholder text"){:.docs-component-image}
+![Input / Placeholder text  example]({{ site.baseurl }}/img/ui-toolkit/inputs/input-placeholder@2x.png "Input / Placeholder text"){:.docs-component-image}
 
 #### JSX Declaration
 ```JSX
@@ -21,7 +21,7 @@ Text Input component is used for inputting text into the application using keybo
 ```
 
 ## Input / With text 
-![alt text]({{ site.baseurl }}/img/ui-toolkit/inputs/input-with-value@2x.png "Input / With text"){:.docs-component-image}
+![Input / With text  example]({{ site.baseurl }}/img/ui-toolkit/inputs/input-with-value@2x.png "Input / With text"){:.docs-component-image}
 
 #### JSX Declaration
 ```JSX
@@ -32,7 +32,7 @@ Text Input component is used for inputting text into the application using keybo
 ```
 
 ## Input / With password  
-![alt text]({{ site.baseurl }}/img/ui-toolkit/inputs/input-with-password@2x.png "Input / With password "){:.docs-component-image}
+![Input / With password  example]({{ site.baseurl }}/img/ui-toolkit/inputs/input-with-password@2x.png "Input / With password "){:.docs-component-image}
 
 #### JSX Declaration
 ```JSX

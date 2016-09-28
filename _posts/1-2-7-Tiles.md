@@ -10,7 +10,7 @@ section: UI toolkit
 Tiles are a convenient way to display homogeneous content. They are often used in grid views. Children are rendered vertically in tiles, one below the other.
 
 ## Tile
-![alt text]({{ site.baseurl }}/img/ui-toolkit/tiles/tile@2x.png "Tile"){:.docs-component-image}
+![Tile example]({{ site.baseurl }}/img/ui-toolkit/tiles/tile@2x.png "Tile"){:.docs-component-image}
 
 #### JSX Declaration
 ```JSX
@@ -27,7 +27,7 @@ Tiles are a convenient way to display homogeneous content. They are often used i
 ```
 
 ## Tile + Icon
-![alt text]({{ site.baseurl }}/img/ui-toolkit/tiles/tile-icon@2x.png "Tile + Icon"){:.docs-component-image}
+![Tile + Icon example]({{ site.baseurl }}/img/ui-toolkit/tiles/tile-icon@2x.png "Tile + Icon"){:.docs-component-image}
 
 #### JSX Declaration
 ```JSX
@@ -47,8 +47,8 @@ Tiles are a convenient way to display homogeneous content. They are often used i
 </Tile>
 ```
 
-## Large (featured) tile
-![alt text]({{ site.baseurl }}/img/ui-toolkit/tiles/large-tile@2x.png "Large Tile"){:.docs-component-image}
+## Large (featured) Tile
+![Large (featured) Tile example]({{ site.baseurl }}/img/ui-toolkit/tiles/large-tile@2x.png "Large Tile"){:.docs-component-image}
 
 #### JSX Declaration
 ```JSX
@@ -64,7 +64,7 @@ Tiles are a convenient way to display homogeneous content. They are often used i
 ```
 
 ## Large (featured) tile + Button + Sale tag
-![alt text]({{ site.baseurl }}/img/ui-toolkit/tiles/large-tile-button-sale-tag@2x.png "Large Tile + Button + Sale tag"){:.docs-component-image}
+![Large (featured) tile + Button + Sale tag Tile example]({{ site.baseurl }}/img/ui-toolkit/tiles/large-tile-button-sale-tag@2x.png "Large Tile + Button + Sale tag"){:.docs-component-image}
 
 #### JSX Declaration
 ```JSX
@@ -83,7 +83,7 @@ Tiles are a convenient way to display homogeneous content. They are often used i
 ```
 
 ## Large (featured) tile + Button 
-![alt text]({{ site.baseurl }}/img/ui-toolkit/tiles/large-tile-button@2x.png "Large Tile + Button"){:.docs-component-image}
+![Large (featured) tile + Button Tile example]({{ site.baseurl }}/img/ui-toolkit/tiles/large-tile-button@2x.png "Large Tile + Button"){:.docs-component-image}
 
 #### JSX Declaration
 ```JSX
@@ -101,7 +101,7 @@ Tiles are a convenient way to display homogeneous content. They are often used i
 ```
 
 ## Large list item
-![alt text]({{ site.baseurl }}/img/ui-toolkit/tiles/large-list-item@2x.png "Large list item"){:.docs-component-image}
+![Large list item Tile example]({{ site.baseurl }}/img/ui-toolkit/tiles/large-list-item@2x.png "Large list item"){:.docs-component-image}
 
 #### JSX Declaration
 ```JSX
@@ -121,7 +121,7 @@ Tiles are a convenient way to display homogeneous content. They are often used i
 ```
 
 ## Large list item + Icon + Timestamp
-![alt text]({{ site.baseurl }}/img/ui-toolkit/tiles/large-list-item-icon-timestamp@2x.png "Large list item + icon + timestamp"){:.docs-component-image}
+![Large list item + Icon + Timestamp Tile example]({{ site.baseurl }}/img/ui-toolkit/tiles/large-list-item-icon-timestamp@2x.png "Large list item + icon + timestamp"){:.docs-component-image}
 
 #### JSX Declaration
 ```JSX
@@ -145,7 +145,7 @@ Tiles are a convenient way to display homogeneous content. They are often used i
 ```
 
 ## Large list item + Price tag
-![alt text]({{ site.baseurl }}/img/ui-toolkit/tiles/large-list-item-price-tag@2x.png "Large list item + Price tag"){:.docs-component-image}
+![Large list item + Price tag Tile example]({{ site.baseurl }}/img/ui-toolkit/tiles/large-list-item-price-tag@2x.png "Large list item + Price tag"){:.docs-component-image}
 
 #### JSX Declaration
 ```JSX
@@ -163,7 +163,7 @@ Tiles are a convenient way to display homogeneous content. They are often used i
 ```
 
 ## Large list item + Action icon
-![alt text]({{ site.baseurl }}/img/ui-toolkit/tiles/large-list-item-action-icon@2x.png "Large list item + Action icon"){:.docs-component-image}
+![Large list item + Action icon Tile example]({{ site.baseurl }}/img/ui-toolkit/tiles/large-list-item-action-icon@2x.png "Large list item + Action icon"){:.docs-component-image}
 
 #### JSX Declaration
 ```JSX
@@ -182,7 +182,7 @@ Tiles are a convenient way to display homogeneous content. They are often used i
 ```
 
 ## Detail square + Price tag
-![alt text]({{ site.baseurl }}/img/ui-toolkit/tiles/detail-square-price-tag@2x.png "Detail square + Price tag"){:.docs-component-image}
+![Detail square + Price tag Tile example]({{ site.baseurl }}/img/ui-toolkit/tiles/detail-square-price-tag@2x.png "Detail square + Price tag"){:.docs-component-image}
 
 #### JSX Declaration
 ```JSX
@@ -200,7 +200,7 @@ Tiles are a convenient way to display homogeneous content. They are often used i
 ```
 
 ## Detail square + Button
-![alt text]({{ site.baseurl }}/img/ui-toolkit/tiles/detail-square-button@2x.png "Detail square + Button"){:.docs-component-image}
+![Detail square + Button Tile example]({{ site.baseurl }}/img/ui-toolkit/tiles/detail-square-button@2x.png "Detail square + Button"){:.docs-component-image}
 
 #### JSX Declaration
 ```JSX
@@ -218,7 +218,7 @@ Tiles are a convenient way to display homogeneous content. They are often used i
 ```
 
 ## Detail square + Button + Sale tag
-![alt text]({{ site.baseurl }}/img/ui-toolkit/tiles/detail-square-button-sale-tag@2x.png "Detail square + Button + Sale tag"){:.docs-component-image}
+![Detail square + Button + Sale tag Tile example]({{ site.baseurl }}/img/ui-toolkit/tiles/detail-square-button-sale-tag@2x.png "Detail square + Button + Sale tag"){:.docs-component-image}
 
 #### JSX Declaration
 ```JSX
@@ -237,7 +237,7 @@ Tiles are a convenient way to display homogeneous content. They are often used i
 ```
 
 ## Detail large + Price tag
-![alt text]({{ site.baseurl }}/img/ui-toolkit/tiles/detail-large-price-tag@2x.png "Detail large + Price tag"){:.docs-component-image}
+![Detail large + Price tag Tile example]({{ site.baseurl }}/img/ui-toolkit/tiles/detail-large-price-tag@2x.png "Detail large + Price tag"){:.docs-component-image}
 
 #### JSX Declaration
 ```JSX
@@ -255,7 +255,7 @@ Tiles are a convenient way to display homogeneous content. They are often used i
 ```
 
 ## Detail large + Button
-![alt text]({{ site.baseurl }}/img/ui-toolkit/tiles/detail-large-button@2x.png "Detail large + Button"){:.docs-component-image}
+![Detail large + Button Tile example]({{ site.baseurl }}/img/ui-toolkit/tiles/detail-large-button@2x.png "Detail large + Button"){:.docs-component-image}
 
 #### JSX Declaration
 ```JSX
@@ -273,7 +273,7 @@ Tiles are a convenient way to display homogeneous content. They are often used i
 ```
 
 ## Detail large + Button + Sale tag
-![alt text]({{ site.baseurl }}/img/ui-toolkit/tiles/detail-large-button-sale-tag@2x.png "Detail large + Button + Sale tag"){:.docs-component-image}
+![Detail large + Button + Sale tag Tile example]({{ site.baseurl }}/img/ui-toolkit/tiles/detail-large-button-sale-tag@2x.png "Detail large + Button + Sale tag"){:.docs-component-image}
 
 #### JSX Declaration
 ```JSX

@@ -14,7 +14,7 @@ Instead of having a separate `GridView` component, use `GridRow` component to en
 The main idea behind this approach is to allow developers to have a variable number of columns in each row, for example: the first row can have only 1 column, followed by a number of rows with 2 columns.  
 
 ## GridView
-![alt text]({{ site.baseurl }}/img/ui-toolkit/grid_view@2x.png "Grid View"){:.docs-component-image}
+![GridView (GridRow) example]({{ site.baseurl }}/img/ui-toolkit/grid_view@2x.png "Grid View"){:.docs-component-image}
 
 #### JSX Declaration
 ```JSX

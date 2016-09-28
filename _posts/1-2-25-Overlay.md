@@ -10,7 +10,7 @@ section: UI toolkit
 Overlay provides a convenient way to place content over Image, through semi-transparent background.
 
 ## Overlay
-![alt text]({{ site.baseurl }}/img/ui-toolkit/tiles/large-tile@2x.png "Overlay"){:.docs-component-image}
+![Overlay example]({{ site.baseurl }}/img/ui-toolkit/tiles/large-tile@2x.png "Overlay"){:.docs-component-image}
 
 #### JSX Declaration
 ```JSX

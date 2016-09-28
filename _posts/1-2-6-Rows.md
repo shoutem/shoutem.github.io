@@ -10,7 +10,7 @@ section: UI toolkit
 Components rendered within lists are usually implemented using the row container. Row is a container that renders its children horizontally.
 
 ## Small list item
-![alt text]({{ site.baseurl }}/img/ui-toolkit/rows/small-list-item@2x.png "Small list item"){:.docs-component-image}
+![Small list item Row example]({{ site.baseurl }}/img/ui-toolkit/rows/small-list-item@2x.png "Small list item"){:.docs-component-image}
 
 #### JSX Declaration
 ```JSX
@@ -20,7 +20,7 @@ Components rendered within lists are usually implemented using the row container
 ```
 
 ## Small list item + Avatar thumbnail
-![alt text]({{ site.baseurl }}/img/ui-toolkit/rows/small-list-item-avatar@2x.png "Small list item + Avatar thumbnail"){:.docs-component-image}
+![Small list item + Avatar thumbnail Row example]({{ site.baseurl }}/img/ui-toolkit/rows/small-list-item-avatar@2x.png "Small list item + Avatar thumbnail"){:.docs-component-image}
 
 #### JSX Declaration
 ```JSX
@@ -34,7 +34,7 @@ Components rendered within lists are usually implemented using the row container
 ```
 
 ## Small list item + Icon
-![alt text]({{ site.baseurl }}/img/ui-toolkit/rows/small-list-item-icon@2x.png "Small list item + Icon"){:.docs-component-image}
+![Small list item + Icon Row example]({{ site.baseurl }}/img/ui-toolkit/rows/small-list-item-icon@2x.png "Small list item + Icon"){:.docs-component-image}
 
 #### JSX Declaration
 ```JSX
@@ -45,7 +45,7 @@ Components rendered within lists are usually implemented using the row container
 ```
 
 ## Small list item + Icon + Right Arrow
-![alt text]({{ site.baseurl }}/img/ui-toolkit/rows/small-list-item-icon-right-arrow@2x.png "Small list item + Icon + Right Arrow"){:.docs-component-image}
+![Small list item + Icon + Right Arrow Row example]({{ site.baseurl }}/img/ui-toolkit/rows/small-list-item-icon-right-arrow@2x.png "Small list item + Icon + Right Arrow"){:.docs-component-image}
 
 #### JSX Declaration
 ```JSX
@@ -57,7 +57,7 @@ Components rendered within lists are usually implemented using the row container
 ```
   
 ## Small list item + Icon + Description
-![alt text]({{ site.baseurl }}/img/ui-toolkit/rows/small-list-item-icon-description@2x.png "Small list item + Icon + Description"){:.docs-component-image}
+![Small list item + Icon + Description Row example]({{ site.baseurl }}/img/ui-toolkit/rows/small-list-item-icon-description@2x.png "Small list item + Icon + Description"){:.docs-component-image}
 
 #### JSX Declaration
 ```JSX
@@ -72,7 +72,7 @@ Components rendered within lists are usually implemented using the row container
 ```
 
 ## Small list item + Avatar + Description + Caption
-![alt text]({{ site.baseurl }}/img/ui-toolkit/rows/small-list-item-icon-description-caption@2x.png "Small list item + Avatar + Description + Caption"){:.docs-component-image}
+![Small list item + Avatar + Description + Caption Row example]({{ site.baseurl }}/img/ui-toolkit/rows/small-list-item-icon-description-caption@2x.png "Small list item + Avatar + Description + Caption"){:.docs-component-image}
 
 #### JSX Declaration
 ```JSX
@@ -92,7 +92,7 @@ Components rendered within lists are usually implemented using the row container
 ```
 
 ## Medium list item
-![alt text]({{ site.baseurl }}/img/ui-toolkit/rows/medium-list-item@2x.png "Medium list item"){:.docs-component-image}
+![Medium list item Row example]({{ site.baseurl }}/img/ui-toolkit/rows/medium-list-item@2x.png "Medium list item"){:.docs-component-image}
 
 #### JSX Declaration
 ```JSX
@@ -106,7 +106,7 @@ Components rendered within lists are usually implemented using the row container
 ```
 
 ## Medium list item + Description
-![alt text]({{ site.baseurl }}/img/ui-toolkit/rows/medium-list-item-description@2x.png "Medium list item + Description"){:.docs-component-image}
+![Medium list item + Description Row example]({{ site.baseurl }}/img/ui-toolkit/rows/medium-list-item-description@2x.png "Medium list item + Description"){:.docs-component-image}
 
 #### JSX Declaration
 ```JSX
@@ -123,7 +123,7 @@ Components rendered within lists are usually implemented using the row container
 ```
 
 ## Medium list item + Description + Icon
-![alt text]({{ site.baseurl }}/img/ui-toolkit/rows/medium-list-item-description-icon@2x.png "Medium list item + Description + Icon"){:.docs-component-image}
+![Medium list item + Description + Icon Row example]({{ site.baseurl }}/img/ui-toolkit/rows/medium-list-item-description-icon@2x.png "Medium list item + Description + Icon"){:.docs-component-image}
 
 #### JSX Declaration
 ```JSX
@@ -141,7 +141,7 @@ Components rendered within lists are usually implemented using the row container
 ```
 
 ## Medium list item + Description + Icon + Label
-![alt text]({{ site.baseurl }}/img/ui-toolkit/rows/medium-list-item-description-icon-label@2x.png "Medium list item + Description + Icon + Label"){:.docs-component-image}
+![Medium list item + Description + Icon + Label Row example]({{ site.baseurl }}/img/ui-toolkit/rows/medium-list-item-description-icon-label@2x.png "Medium list item + Description + Icon + Label"){:.docs-component-image}
 
 #### JSX Declaration
 ```JSX
@@ -162,7 +162,7 @@ Components rendered within lists are usually implemented using the row container
 ```
 
 ## Medium list item + Notification dot
-![alt text]({{ site.baseurl }}/img/ui-toolkit/rows/medium-list-item-notification-icon@2x.png "Medium list item + Notification dot"){:.docs-component-image}
+![Medium list item + Notification dot Row example]({{ site.baseurl }}/img/ui-toolkit/rows/medium-list-item-notification-icon@2x.png "Medium list item + Notification dot"){:.docs-component-image}
 
 #### JSX Declaration
 ```JSX
@@ -180,7 +180,7 @@ Components rendered within lists are usually implemented using the row container
 ```
 
 ## Medium list item + Description + Label
-![alt text]({{ site.baseurl }}/img/ui-toolkit/rows/medium-list-item-description-label@2x.png "Medium list item + Description + Label"){:.docs-component-image}
+![Medium list item + Description + Label Row example]({{ site.baseurl }}/img/ui-toolkit/rows/medium-list-item-description-label@2x.png "Medium list item + Description + Label"){:.docs-component-image}
 
 #### JSX Declaration
 ```JSX
