@@ -1,7 +1,7 @@
 ---
 layout: doc
 permalink: /docs/ui-toolkit/components/list-view
-title: List View
+title: ListView
 section: UI toolkit
 ---
 

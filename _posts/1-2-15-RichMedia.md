@@ -1,7 +1,7 @@
 ---
 layout: doc
 permalink: /docs/ui-toolkit/components/rich-media
-title: Rich Media
+title: RichMedia
 section: UI toolkit
 ---
 
@@ -25,14 +25,14 @@ RichMedia component parses HTML content and renders it using corresponding React
 
 * **body** : string  
   - Body of the HTML content that will be transformed by this component and rendered using React Native and Shoutem UI toolkit components.  
-* **onError** : func
-  - Callback function triggered if RichMedia component fails to parse given HTML (in `body` prop).
-* **openURL(url)** : func
-  - Callback function triggered when user taps on HTML link. It can be used to override default action (defaults to opening url in external browser).
-* **renderElement(element)**: function
-  - Callback function that can be used to define custom Element transformer (`Image` and `Video` elements), which have priority in respect to default element transformers.
-* **renderText**: function 
-  - Callback function that can be used to define custom Text transformer (`p`, `pre`, `li`, `br`, `h1`, `h2`, `h3`, `h4`, `h5` HTML elements), which have priority in respect to default Text transformers.
+* **onError** : function
+  - Triggered if RichMedia component fails to parse given HTML (in `body` prop).
+* **openURL(url)** : function
+  - Triggered when user taps on HTML link. It can be used to override default action (defaults to opening url in external browser).
+* **renderElement(node)** : function
+  - Function that can be used to define (return) custom Element transformer (`Image` and `Video` elements), which have priority in respect to default element transformers.
+* **renderText(node)** : function 
+  - Function that can be used to define (return) custom Text transformer (`p`, `pre`, `li`, `br`, `h1`, `h2`, `h3`, `h4`, `h5` HTML elements), which have priority in respect to default Text transformers.
 
 #### Style
 

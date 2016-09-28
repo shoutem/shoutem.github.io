@@ -7,8 +7,8 @@ section: UI toolkit
 
 # Video
 
-Video component is a component that can be used to render all types of Video items.  
-It renders a Video based on the source type. If source is an url to a web player the video is displayed in a WebView, if not, then a Video HTML element is displayed in the WebView.  
+`Video` component can be used to render all types of Video items.  
+It renders a Video based on the source type. If source is an url to a web player the video is displayed in a `WebView`, if not, then a `Video` `HTML` element is displayed in the `WebView`.  
 
 ## Video
 ![alt text]({{ site.baseurl }}/img/ui-toolkit/video/video_player@2x.png "Video"){:.docs-component-image}
@@ -25,7 +25,7 @@ It renders a Video based on the source type. If source is an url to a web player
 
 #### Props
 
-* **source**  : string
+* **source** : string
   - Prop that defines the source of the video that will be rendered
 
 * **height** : number
@@ -38,4 +38,4 @@ It renders a Video based on the source type. If source is an url to a web player
 #### Style
 
 * **container**
-  - Style prop for container `View` that holds the Video component
+  - Style prop for container `View` that holds the `Video` component

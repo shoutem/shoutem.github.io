@@ -1,7 +1,7 @@
 ---
 layout: doc
 permalink: /docs/ui-toolkit/components/dropdown-menu
-title: Dropdown Menu
+title: DropdownMenu
 section: UI toolkit
 ---
 

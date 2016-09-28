@@ -1,7 +1,7 @@
 ---
 layout: doc
 permalink: /docs/ui-toolkit/components/navigation-bar
-title: Navigation Bar
+title: NavigationBar
 section: UI toolkit
 ---
 
