@@ -283,7 +283,7 @@ This is good, but we got a request from admins using our theme that they want to
 
 To enable customization of theme, we need to create variables schema for that theme. Schema has already been created when we added theme to the project and it's in the `server/theme-variables/rounded.js` file. Variables schema is used to give the information to Shoutem which variables and their format is being used for the theme. It's Shoutem's flavored JSON Schema, just how data schema is as well. Full reference of variables schema can be found [here](/docs/extensions/reference/extension).
 
-Open `Style` tab and choose `Customize theme`. Theme variables are divided into sections, so it's easier for admins to navigate through variables. Under `properties`, add new variable with `shoutem.styles.color` format with `black` color as default value. After, reference that variable in `layout` `sections` so it's included to the interface. We'll create new section for that.
+Open `Style` tab and choose `Customize theme`. Theme variables are divided into sections, so it's easier for admins to navigate through variables. Under `properties`, add new variable with `color` format with `black` color as default value. After, reference that variable in `layout` `sections` so it's included to the interface. We'll create new section for that.
 
 ```JSON{3-8,13-15}
 #file: server/themes/rounded.js
@@ -291,7 +291,7 @@ Open `Style` tab and choose `Customize theme`. Theme variables are divided into 
   "properties": {
     "subtitleColor": {
       "type": "string",
-      "format": "shoutem.styles.color",
+      "format": "color",
       "title": "Subtitle color",
       "default": "black"
     },
