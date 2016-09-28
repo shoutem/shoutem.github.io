@@ -23,13 +23,13 @@ $ cd Restaurants
 Create a theme and fill it with basic data:
 
 ```ShellSession
-$ shoutem theme add rounded
+$ shoutem theme add restaurant
 Enter information about your theme. Press `return` to accept (default) values.
-Title: (Rounded)
-Description: Making pictures rounded
+Title: (Restaurants)
+Description: Awesome restaurant theme!
 
-File `app/themes/rounded.js` is created.
-File `server/theme-variables/rounded.js` is created.
+File `app/themes/restaurant.js` is created.
+File `server/themes/restaurantVariables.json` is created.
 ```
 
 Extension file was just modified:
@@ -64,24 +64,25 @@ Extension file was just modified:
     "path": "server/schemas/Restaurants.json"
   }],
   "themes": [{
-    "name": "rounded",
-    "title": "Rounded",
-    "variables": "@.rounded"
-    "description": "Making pictures rounded",
+    "name": "restaurant",
+    "title": "Restaurant",
+    "variables": "@.restaurant"
+    "description": "Awesome restaurant theme!",
     "showcase": ""
   }],
   "themeVariables": [{
-    "name": "rubicon",
-    "path": "server/variables-schema/rubicon.json"
+    "name": "restaurant",
+    "path": "server/themes/restaurantVariables.json"
   }]
 }
 ```
 
-Check `app/themes/rounded.js` file. It's a copy of a [Rubicon theme](/docs/coming-soon) so you can start fast.
+Check `app/themes/restaurant.js` file. It's a copy of a [Rubicon theme](/docs/coming-soon) so you can start fast.
 
 Property `showcase`, which is empty, is an array of images and videos that will showcase your theme. Download prepared [showcase](/docs/coming-soon) and copy it to `server/assets` folder. Change `showcase` to:
 
-```js
+```JavaScript
+#file: extension.json
     ...
     "showcase": ["video.mp4", "list.png", "details.png"]
     ...
@@ -111,15 +112,15 @@ Check now the `Customize theme` tab.
 
 [Picture]
 
-Here admin can customize your theme through theme variables. These variables are contained in `server/variables/schema/rubicon.json` and are the copy from the [ones of Rubicon theme](/docs/coming-soon).
+Here admin can customize your theme through theme variables. These variables are contained in `server/themes/restaurantVariables.json` and are the copy from the [ones of Rubicon theme](/docs/coming-soon).
 
 ## How theme works
 
 Now that we went through the basics, let's explain how theme works. Theme is a set of styling rules that customize the components in the app connected to the theme, no matter in which extension. We call these components `customizable components`. All the components in [@shoutem/ui](https://github.com/shoutem/ui) are connected to the theme and [Rubicon](/docs/coming-soon) theme, default theme for apps, customizes them through styling rules. Since all of the extensions developed by Shoutem use `@shoutem/ui`, all the components will be customized through theme.
 
-Styling rules in **theme function**, in `app/theme/rounded.js` file, are resolved using [@shoutem/theme](https://github.com/shoutem/theme) package of the same name. In the package's [docs](http://shoutem.github.io/docs/ui-toolkit/theme/introduction), check the [Theme style rules](http://shoutem.github.io/docs/ui-toolkit/theme/introduction#theme-style-rules) section, which describe how to write a theme. Each component is connected to the theme by the name, by which it can be targeted in theme. It's important to notice one thing: in `@shoutem/theme` docs, styling rules are written in theme object. However, when we're creating theme as extension part, we're writing theme **function**, which accepts variables and returns theme object.
+Styling rules in **theme function**, in `app/theme/restaurant.js` file, are resolved using [@shoutem/theme](https://github.com/shoutem/theme) package of the same name. In the package's [docs](http://shoutem.github.io/docs/ui-toolkit/theme/introduction), check the [Theme style rules](http://shoutem.github.io/docs/ui-toolkit/theme/introduction#theme-style-rules) section, which describe how to write a theme. Each component is connected to the theme by the name, by which it can be targeted in theme. It's important to notice one thing: in `@shoutem/theme` docs, styling rules are written in theme object. However, when we're creating theme as extension part, we're writing theme **function**, which accepts variables and returns theme object.
 
-Open now `app/theme/rounded.js` and check the styling rules used in `Rubicon` theme. Let's now create a customizable component.
+Open now `app/theme/restaurant.js` and check the styling rules used in `Rubicon` theme. Let's now create a customizable component.
 
 ## Customizable component
 
@@ -236,14 +237,14 @@ Ok, we've added style from theme to the component, but we haven't implement thos
 
 ## Modifying theme
 
-We created a theme file (`app/themes/rounded.js`) with Rubicon template. Since Shoutem app can have only 1 theme applied at certain point, it's a good thing to include styling rules for the components which might be used by apps using this theme. Since we're doing this theme for ourselves and we want to keep Rubicon look of components in `@shoutem/ui`, that was the reason to create theme with Rubicon template.
+We created a theme file (`app/themes/restaurant.js`) with Rubicon template. Since Shoutem app can have only 1 theme applied at certain point, it's a good thing to include styling rules for the components which might be used by apps using this theme. Since we're doing this theme for ourselves and we want to keep Rubicon look of components in `@shoutem/ui`, that was the reason to create theme with Rubicon template.
 
 Theme file is huge and it won't be pasted here fully. Just search for `export default` statement which exports theme function. Into object that's returned by theme function, we want to add the styling rules that we defined in the beginning: _make a title bigger in restaurant row and change the background color of subtitle to white, while changing text color to black_.
 
 Add the following styling rules to the beginning of exported object:
 
 ```JavaScript{1,6-15}
-#file: app/themes/rounded.js
+#file: app/themes/restaurant.js
 import { ext } from '../const';
 
 // constants ...
@@ -281,12 +282,12 @@ This is good, but we got a request from admins using our theme that they want to
 
 ## Customizing theme with variables
 
-To enable customization of theme, we need to create variables schema for that theme. Schema has already been created when we added theme to the project and it's in the `server/theme-variables/rounded.js` file. Variables schema is used to give the information to Shoutem which variables and their format is being used for the theme. It's Shoutem's flavored JSON Schema, just how data schema is as well. Full reference of variables schema can be found [here](/docs/extensions/reference/extension).
+To enable customization of theme, we need to create variables schema for that theme. Schema has already been created when we added theme to the project and it's in the `server/themes/restaurantVariables.json` file. Variables schema is used to give the information to Shoutem which variables and their format is being used for the theme. It's Shoutem's flavored JSON Schema, just how data schema is as well. Full reference of variables schema can be found [here](/docs/extensions/reference/extension).
 
 Open `Style` tab and choose `Customize theme`. Theme variables are divided into sections, so it's easier for admins to navigate through variables. Under `properties`, add new variable with `color` format with `black` color as default value. After, reference that variable in `layout` `sections` so it's included to the interface. We'll create new section for that.
 
 ```JSON{3-8,13-15}
-#file: server/themes/rounded.js
+#file: server/themes/restaurantVariables.json
 {
   "properties": {
     "subtitleColor": {
@@ -311,7 +312,7 @@ Open `Style` tab and choose `Customize theme`. Theme variables are divided into 
 The only thing left to do is to use this variable in theme file:
 
 ```JavaScript{11}
-#file: app/themes/rounded.js
+#file: app/themes/restaurant.js
 import { ext } from '../const';
 
 // constants ...
