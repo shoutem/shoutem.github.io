@@ -20,13 +20,13 @@ Example:
   "properties": {
     "primaryColor": {
       "type": "string",
-      "format": "shoutem.styles.color",
+      "format": "color",
       "title": "Primary color",
       "default": "rgba(12, 111, 34, 0.5)"
     },
     "textFont": {
       "type": "object",
-      "format": "shoutem.stylesfont",
+      "format": "font",
       "title": "Text font",
       "default": {
         "fontFamily": "rubicon",
@@ -51,8 +51,8 @@ Example:
 
 It's `properties` are the variable descriptors - they describe the variable to the Shoutem builder. For now, there are only 2 types of variables:
 
-- Color - `"type": "string", "format": "shoutem.styles.color"`
-- Font - `"type": "object", "format": "shoutem.styles.font"`
+- Color - `"type": "string", "format": "color"`
+- Font - `"type": "object", "format": "font"`
 
 Based on what the type is, descriptor has different fields. However, some fields are shared:
 
