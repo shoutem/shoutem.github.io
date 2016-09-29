@@ -55,7 +55,7 @@ Your `extension.json` looks as follows:
     "description": "Allow users to browse through list of restaurants"
     "screen": "@.RestaurantsList",
     "settingsPages": [{
-      "page": "shoutem.admin.CmsPage",
+      "page": "shoutem.cms.CmsPage",
       "title": "Content",
       "parameters": {
         "schema": "@.Restaurants"
@@ -148,7 +148,7 @@ export reducer = {};
     "description": "Allow users to browse through list of restaurants"
     "screen": "@.RestaurantsList",
     "settingsPages": [{
-      "page": "shoutem.admin.CmsPage",
+      "page": "shoutem.cms.CmsPage",
       "title": "Content",
       "parameters": {
         "schema": "@.Restaurants"
@@ -236,10 +236,8 @@ Check the builder again.
 
 [Picture]
 
-Input is added, but pressing the button still doesn’t set anything. We need to add the logic of setting the header and change it in the application. For communication with application, settings pages can use `@shoutem/builder-sdk`.
+Input is added, but pressing the button still doesn’t set anything. We need to add the logic of setting the header and change it in the application. For communication with the application, settings pages can use `@shoutem/builder-sdk`.
 
 ## Communication between page and application
 
-## Other use cases
-
-
+Settings pages, as the title says it, set some settings of the app. As we said on the beginning, there are 3 places settings pages can occur and that's how we make a difference between those settings. We have `extension settings`, `shortcut settings` and `screen (layout) settings`. For more detailed insight, check the `Settings reference` document on how and where to use settings. In this tutorial, we'll use `shortcut settings`, as we want to allow admin to set different header title per shortcut and it's not something that it's connected to layout information.
