@@ -8,7 +8,7 @@ section: UI toolkit
 # Video
 
 `Video` component can be used to render all types of video items.  
-It renders a Video based on the source type. If a source is `URL` to a web player, video is displayed in a `WebView`. If not, `video` `HTML` element is displayed in the `WebView`.
+It renders a Video based on the source type. If the source is `URL` to a web player, video is displayed in a `WebView`. If the source is a video stream url, a `video` `HTML` element is displayed in the `WebView`. The component does not support playback of local video files.
 
 ## Video
 ![Video example]({{ site.baseurl }}/img/ui-toolkit/video/video_player@2x.png "Video"){:.docs-component-image}
