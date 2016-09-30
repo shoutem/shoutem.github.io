@@ -5,7 +5,7 @@ title: Settings page
 section: Tutorials
 ---
 
-# Settings page
+# Writing a settings page
 <hr />
 
 From [Getting Started tutorial](http://shoutem.github.io/docs/extensions/getting-started/introduction) you might remember a mention of _settings pages_. Settings pages are web pages that appear in Shoutem builder and you as developer can write them. If you check [Extension reference](http://shoutem.github.io/docs/extensions/reference/extension) document, you can see that settings pages are defined in `pages` root field of `extension.json` and can be referenced on 3 places:
