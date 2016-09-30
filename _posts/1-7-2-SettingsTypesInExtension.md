@@ -65,9 +65,17 @@ Settings pages meant for manipulating extension settings can be found in `Extens
 
 [PICTURE]
 
-##### Manipulating extension settings in settings page
+##### Server side
 
-To get extension settings in settings page, use `getExtensionSettings` from `@shoutem/builder-sdk`. To set extension settings, use `setExtensionSettings`. Although extension settings can be manipulated from any settings page, for maximum user experience, do it only in extension settings pages.
+Properties received to root extension settings page component are:
+
+- `extension`: Extension object with fields:
+  - `name`: Name of extension
+  - `version`: Version of extension
+  - `title`: Title of extension
+  - `settings`: Extension global settings
+
+To set extension settings, use `setExtensionSettings` from `@shoutem/builder-sdk`. Although extension settings can be manipulated from any settings page, for maximum user experience, do it only in extension settings pages.
 
 ##### Client side
 
@@ -119,9 +127,22 @@ Settings pages meant for manipulating shortcut settings can be found next to app
 
 [PICTURE]
 
-##### Manipulating shortcut settings in settings page
+##### Server side
 
-To get shortcut settings in settings page, use `getShortcutSettings` from `@shoutem/builder-sdk`. To set shortcut settings, use `setShortcutSettings`. Although shortcut settings can be manipulated from shortcut and screen settings pages, for maximum user experience, do it only in shortcut settings pages.
+Properties received to root shortcut settings page component are:
+
+- `extension`: Extension object with fields:
+  - `name`: Extension's name
+  - `version`: Extension's version
+  - `title`: Extension's title
+  - `settings`: Extension global settings
+- `shortcut`: Shortcut instance object with fields:
+  - `name`: Shortcut's name
+  - `title`: Shortcut's title
+  - `settings`: Shortcut instance settings
+  - `layoutSettings`: Shortcut layout settings
+
+To set extension settings, use `setShortcutSettings` from `@shoutem/builder-sdk`. Although shortcut settings can be manipulated from any both shortcut and screen settings page, for maximum user experience, do it only in shortcut settings pages.
 
 ##### Client side
 
@@ -178,9 +199,25 @@ There's only 1 settings page per screen for manipulating screen settings. It's l
 
 [PICTURE]
 
-##### Manipulating screen settings in settings page
+##### Server side
 
-To get screen settings in settings page, use `getScreenSettings` from `@shoutem/builder-sdk`. To get screen settings, use `setScreenSettings`. Screen settings can be only manipulated in screen settings page and using these functions elsewhere will fail. It's important to say that, although default `settings` are set on each particular screen, final layout settings are merged in `layoutSettings` in shortcut. In other words, original screen and it's alternative layouts share the same namespace for default settings, which you can see from the way of fetching these settings on client side.
+Properties received to root shortcut settings page component are:
+
+- `extension`: Extension object with fields:
+  - `name`: Extension's name
+  - `version`: Extension's version
+  - `title`: Extension's title
+  - `settings`: Extension global settings
+- `shortcut`: Shortcut instance object with fields:
+  - `name`: Shortcut's name
+  - `title`: Shortcut's title
+  - `settings`: Shortcut instance settings
+  - `layoutSettings`: Shortcut layout settings
+- `screen`: Screen object with fields:
+  - `name`: Screen's name (which is also currently active layout screen)
+  - `title`: Screen's title
+
+To set screen settings in settings page, use `setScreenSettings` from `@shoutem/builder-sdk`. Screen settings can be only manipulated in screen settings page and using these functions elsewhere will fail. It's important to say that, although default `settings` can be set on each particular screen, final layout settings are merged in `layoutSettings` in shortcut. In other words, original screen and it's alternative layouts share the same namespace for default settings.
 
 ##### Client side
 
