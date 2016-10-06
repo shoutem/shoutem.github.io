@@ -38,7 +38,7 @@ Extension initialized!
 These information will be stored in `extension.json` file.
 
 > #### Note
-> In case you can't remember the structure of some command, type: `shoutem help` or `shoutem help [command]` where you should replace '[command]' with one of the [CLI commands]({{ site.baseurl }}/docs/cli/reference)
+> In case you can't remember the structure of some command, type: `shoutem help` or `shoutem help [command]` where you should replace '[command]' with one of the [CLI commands]({{ site.baseurl }}/docs/extensions/reference/cli)
 
 ## Folder structure
 Initialization process will generate the skeleton folder and file structure for you. Your structure looks as follows:
