@@ -8,9 +8,7 @@ section: Getting Started
 # Using UI toolkit
 <hr />
 
-React Native exposes plain components that you can use, but there's usually much work left to do to make them look as you wanted. Use Shoutem UI toolkit - a set of styleable UI components that you can use in any React Native application. It basically turns any ordinary app into an amazing app. There are plenty of components that you can use out of the box. In this tutorial we'll use some of them. Documentation for all the components can be found in the [reference]({{ site.baseurl }}/docs/ui-toolkit/introduction).
-
-Shoutem UI Toolkit also brings the experience of building web pages to React Native with "CSS classes"-like solution with [Shoutem UI themes]({{ site.baseurl }}/docs/ui-toolkit/theme/introduction).
+React Native exposes plain components that you can use, but there's usually much work left to do to make them look professional. Use [Shoutem UI toolki](https://shoutem.github.io/ui), a set of 3 packages for building professional UI/UX in React Native: [@shoutem/ui](https://github.com/shoutem/ui), [@shoutem/theme](https://github.com/shoutem/theme) and [@shoutem/animation](https://github.com/shoutem/animation). We'll use `@shoutem/ui`, consisting of styleable UI components that you can use in any React Native application. It basically turns any ordinary app into an amazing app. There are plenty of components that you can use out of the box. Documentation for all the components can be found on the [portal]({{ site.baseurl }}/docs/ui-toolkit/introduction).
 
 ## Adding static data
 
