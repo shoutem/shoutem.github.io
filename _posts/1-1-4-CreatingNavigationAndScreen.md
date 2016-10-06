@@ -14,7 +14,7 @@ The easiest way to understand what shortcuts are, is to think of them as links t
 $ shoutem shortcut add openRestaurantsList
 Enter shortcut information.
 Title: Restaurants
-Description: Allow users to browse through list of restaurants
+Description: Enable users to browse through list of restaurants
 
 `openRestaurantsList` shortcut is created.
 ```
@@ -31,7 +31,7 @@ Your `extension.json` was just modified:
   "shortcuts": [{
     "name": "openRestaurantsList",
     "title": "Restaurants",
-    "description": "Allow users to browse through list of restaurants"
+    "description": "Enable users to browse through list of restaurants"
   }]
 }
 ```
@@ -44,18 +44,18 @@ Uploading `Restaurants` extension to Shoutem...
 Success!
 ```
 
-Go to `Screens` in [Shoutem builder](/docs/coming-soon) and click to `+`. You can finally see your `extension` there, its shortcut that it's exposing.
+Go to `Screens` in [Shoutem builder](/docs/coming-soon) and click on `+`. You can finally see your `Restaurants` extension there. When you hover over extension, you can see exposed shortcuts.
 
 <p class="image">
 <img src='{{ site.baseurl }}/img/getting-started/add-modal-shortcut.png'/>
 </p>
 
-Try clicking now on `Restaurants` in `Add screen` modal. Shortcut is inserted into app navigation, but nothing else happens! That's exactly what our shortcut does - nothing. Let's change that so it opens `Screen`.
+Click on the only shortcut of `Restaurants` extension. Shortcut is inserted into app navigation, but nothing else happens! That's exactly what our shortcut does - nothing. Let's make it open `Screen`.
 
 
 ## Creating screen
 
-Screens are React components which are connected to Redux store, i.e. they have access to complete application's state.
+Screens are React components that represent a mobile screen.
 
 ### Creating list screen
 
