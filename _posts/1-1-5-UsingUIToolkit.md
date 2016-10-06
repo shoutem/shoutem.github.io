@@ -45,7 +45,7 @@ export default class RestaurantsList extends Component {
 
 Implement `render` method that will use `ListView`. `ListView` accepts data in the form of `Array` to show in the list and `renderRow` method which defines how list row should look like.
 
-Remove old `render` method and add these methods:
+Add `renderRow` method and replace implementation of `render` method:
 
 ```JSX{3-14,17-27}
 #file: app/screens/RestaurantsList.js
@@ -78,7 +78,7 @@ Remove old `render` method and add these methods:
   }
 ```
 
-In render we used `setNavBarProps` method provided by Shoutem to set the NavBar title.
+In render we used `setNavBarProps` method provided in `props` to screens to set the NavBar title.
 
 Upload the extension:
 
@@ -122,9 +122,9 @@ export const screens = {
 export const reducer = {};
 ```
 
-When listem is touched, we want to open details screen. For that we need `TouchableOpacity` component from React Native and Shoutem's `navigateTo` Redux action creator. It accepts [Shoutem route object](/docs/coming-soon) as the only argument with `screen` property. To reference our `RestaurantDetails` screen exported in `app/index.js`, we're using `ext` helper function that was created in `app/const.js` file. This function returns an **absolute name**, e.g. `developer.restaurants.RestaurantsList`, for the extension part which is passed as its first argument, or extension `name` if no argument is passed.
+When listem is touched, we want to open details screen. For that we need `TouchableOpacity` component from React Native and Shoutem's `navigateTo` Redux action creator. It accepts Shoutem `route object` (with `screen` and `props` properties) as the only argument. To reference our `RestaurantDetails` screen exported in `app/index.js`, we're using `ext` helper function that was created in `app/const.js` file. This function returns an **absolute name**, e.g. `developer.restaurants.RestaurantsList`, for the extension part which is passed as its first argument, or extension `name` if no argument is passed.
 
-Import that:
+Let's import these things:
 
 ```javascript{2,4-5}
 #file: app/screens/RestaurantsList.js
