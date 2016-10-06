@@ -106,4 +106,4 @@ However, when you go to `Screen` tab now and click on `+` next to `Screens`, thi
 <img src='{{ site.baseurl }}/img/getting-started/add-content-no-extension.png'/>
 </p>
 
-That's because `Add screen` modal shows _shortcuts_ that extensions export. We need to create shortcut in our extensions.
+That's because `Add screen` modal shows only extensions with _shortcuts_. We need to create shortcut in our extensions.
