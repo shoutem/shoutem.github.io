@@ -34,6 +34,8 @@ Shoutem has developed very easy and intuitive process of app publishing, once yo
 
 ## What's next?
 
+Building complex extensions is easier with local development environment being set. We've made [tutorial on how to do that]({{ site.baseurl }}/docs/extensions/tutorials/setting-local-environment).
+
 Apart from extensions, Shoutem has other products ready for boosting your mobile development. Check them out:
 
 - [Build gorgeous apps with UI Toolkit]({{ site.baseurl }}/docs/ui-toolkit/introduction)
