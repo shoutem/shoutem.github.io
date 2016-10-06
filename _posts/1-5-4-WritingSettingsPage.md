@@ -94,7 +94,7 @@ server/
 
 So far, you've only used `schemas` folder (for data schemas), while these other things are to make building settings pages easy:
 
-- `bin` folder is containing configuration file (`server.js`) to allow you to test setings pages locally and a build script (`webpack.config.js`) which builds server folder and makes it ready to be pushed to Shoutem server
+- `bin` folder is containing configuration file (`server.js`) to allow you to test settings pages locally and a build script (`webpack.config.js`) which builds server folder and makes it ready to be pushed to Shoutem server
 - `build` folder that will contain built project
 - `node_modules` folder containing npm packages for building settings pages
 - `pages` folder containing settings pages
@@ -247,7 +247,7 @@ Input is added, but pressing the button still doesn’t set anything. We need to
 
 Settings pages, as the title says it, set some settings of the app. As we said on the beginning, there are 3 types of settings: `extension settings`, `shortcut settings` and `screen settings`. We agreed to use `shortcut settings` to set the title of list. For that, we’ll use `setShortcutSettings` action creator from `@shoutem/builder-sdk` package. That package was also already installed on the initialization of the extension.
 
-We'll use `redux` as a pattern for updating the state. Every root settings page component gets `props` object depending on the type. Root component of a shortcut settings page gets both `extension` and `shortcut` objects in their prop. In this case, we need get settings from `props.shortcut.settings`.
+We'll use library `redux` which provides a pattern for updating the state. Every root settings page component gets `props` object depending on the type. Root component of a shortcut settings page gets both `extension` and `shortcut` objects in their prop. In this case, we need get settings from `props.shortcut.settings`.
 
 To set shortcut settings, we'll need to dispatch `setShortcutSettings` action creator, which we'll bind in `connect`.
 
