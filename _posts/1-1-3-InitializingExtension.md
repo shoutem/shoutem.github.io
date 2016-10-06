@@ -47,10 +47,12 @@ Initialization process will generate the skeleton folder and file structure for 
 Restaurants/
   ├ app/
   |  ├ node_modules/
+  |  |  └ ...
   |  ├ const.js
   |  ├ index.js
   |  └ package.json
   ├ server/
+  |  └ ...
   └ extension.json
 ```
 
@@ -59,6 +61,8 @@ Let's describe the structure:
 - `app/`: Application code
 - `server/`: Server code
 - `extension.json`: Extension general information
+
+Specific parts will be described a bit later.
 
 In `extension.json` you can see:
 

@@ -7,7 +7,7 @@ section: Reference
 
 # Settings types in extension
 
-Each extension has 3 different types of settings. For writing powerful extension, developers need to leverage the options that these types offer. All the types of the settings in extensions discussed here are meant for admins. Admins set these settings over `Settings pages` to customize the some functionality of the extension.
+Each extension has 3 different types of settings. For writing powerful extension, developers need to leverage the options that these types offer. All the types of the settings in extensions discussed here are meant for admins. Admins set these settings over `Settings pages` to customize some functionality of the extension.
 
 ##### Extension concepts
 
@@ -19,7 +19,7 @@ Now that we passed through extension concepts, we can enlist 3 types of settings
 
 - `Extension settings` - global settings shared through all screens within extension installation.
 - `Shortcut settings` - shared through all the screens in the navigation tree of that shortcut instance.
-- `Screen settings` - layout settings, which is why we usually call them like that as well.
+- `Screen settings` - layout settings of the screen
 
 Place of `settingsPages` (or `settingsPage` for screen settings) field in [extension.json](shoutem.github.io/docs/extensions/reference/extension) determine the type of the settings. These fields come along with `settings` field which can be of arbitrary format and represents default settings for that type.
 
@@ -140,7 +140,6 @@ Properties received to root shortcut settings page component are:
   - `name`: Shortcut's name
   - `title`: Shortcut's title
   - `settings`: Shortcut instance settings
-  - `layoutSettings`: Shortcut layout settings
 
 To set extension settings, use `setShortcutSettings` from `@shoutem/builder-sdk`. Although shortcut settings can be manipulated from any both shortcut and screen settings page, for maximum user experience, do it only in shortcut settings pages.
 
@@ -212,14 +211,13 @@ Properties received to root shortcut settings page component are:
   - `name`: Shortcut's name
   - `title`: Shortcut's title
   - `settings`: Shortcut instance settings
-  - `layoutSettings`: Shortcut layout settings
 - `screen`: Screen object with fields:
   - `name`: Screen's name (which is also currently active layout screen)
   - `title`: Screen's title
+  - `settings`: Shared namespace of settings for layouts that replace same screen
 
-To set screen settings in settings page, use `setScreenSettings` from `@shoutem/builder-sdk`. Screen settings can be only manipulated in screen settings page and using these functions elsewhere will fail. It's important to say that, although default `settings` can be set on each particular screen, final layout settings are merged in `layoutSettings` in shortcut. In other words, original screen and it's alternative layouts share the same namespace for default settings.
+To set screen settings in settings page, use `setScreenSettings` from `@shoutem/builder-sdk`. Screen settings can be only manipulated in screen settings page and using these functions elsewhere will fail. Notice that `settings` inside of `screen` are in shared namespace, which means that multiple screens which act as different layouts share these settings. If keeping separate namespace per screen is important for you, you can save the settings under key of screen `name`.
 
 ##### Client side
 
-Each screen that is connected to the state can access shortcut layouts settings. They can be found in `props`, specifically in `props.shortcut.layoutSettings`.
-
+Each screen connected to the state can access shortcut layouts settings. They can be found in `props`, specifically in `props.screen.settings`.
