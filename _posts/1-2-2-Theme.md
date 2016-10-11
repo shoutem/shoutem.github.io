@@ -115,7 +115,7 @@ import { StyleProvider } from '@shoutem/theme';
 
 class App extends Component {
   render() {
-    <StyleProvider theme={theme}>
+    <StyleProvider style={theme}>
       // any app components
     </StyleProvider>
   }
