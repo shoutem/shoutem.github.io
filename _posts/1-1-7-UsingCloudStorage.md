@@ -12,10 +12,10 @@ Shoutem Cloud Storage is a CMS solution for mobile apps. It is optimized to be u
 
 ```ShellSession
 $ shoutem schema add Restaurants
-File `server/schemas/Restaurants.json` is created.
+File `server/data-schemas/Restaurants.json` is created.
 ```
 
-Folder `schemas` inside `server` folder was created with file `Restaurants.json`. Content of that file is following:
+Folder `data-schemas` inside `server` folder was created with file `Restaurants.json`. Content of that file is following:
 
 ```JSON
 #file: server/data-schemas/Restaurants.json
@@ -118,10 +118,10 @@ Now in order to enter data for your schema, you need to link your extension with
   "shortcuts": [{
     "name": "openRestaurantsList",
     "title": "Restaurants",
-    "description": "Allow users to browse through list of restaurants"
+    "description": "Allow users to browse through list of restaurants",
     "screen": "@.RestaurantsList",
     "adminPages": [{
-      "page": "shoutem.admin.CmsPage",
+      "page": "shoutem.cms.CmsPage",
       "title": "Content",
       "parameters": {
         "schema": "@.Restaurants"
@@ -135,7 +135,7 @@ Now in order to enter data for your schema, you need to link your extension with
   }],
   "dataSchemas": [{
     "name": "Restaurants",
-    "path": "server/schemas/Restaurants.json"
+    "path": "server/data-schemas/Restaurants.json"
   }]
 }
 ```
