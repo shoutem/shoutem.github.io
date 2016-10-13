@@ -52,7 +52,11 @@ To run in iOS (for which you need to use Mac), do:
 $ shoutem run-ios --app-id={appID}
 ```
 
-... where you should replace `{appID}` with _App ID_ from _Settings_ tab. On subsequent attempts, you can omit `--app-id` if you wish to run the same app.
+... where you should replace `{appID}` with _App ID_ from _Settings_ tab. Provided _App ID_ will be set in the environment configuration so you can you can omit `--app-id` when running same app on subsequent attempts. In case you forgot which app is set in configuration, check it with:
+
+```bash
+$ shoutem env --app
+```
 
 To run in Android, set up Android Emulator with [Android Virtual Device](https://developer.android.com/studio/run/managing-avds.html): `android avd`. Once set, run:
 
