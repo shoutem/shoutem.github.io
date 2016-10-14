@@ -141,6 +141,10 @@ Properties received to root shortcut settings page component are:
   - `name`: Shortcut's name
   - `title`: Shortcut's title
   - `settings`: Shortcut instance settings
+  - `screens`: Array of screen objects, which are containing:
+    - `type`: Type of screen that has alternative layouts (that's original screen's name)
+    - `name`: Name of the layout that will be shown 
+    - `settings`: Screen settings (shared among all layouts)
 
 To set extension settings, use `setShortcutSettings` from `@shoutem/builder-sdk`. Although shortcut settings can be manipulated from any both shortcut and screen settings page, for maximum user experience, do it only in shortcut settings pages.
 
@@ -151,11 +155,11 @@ Each screen that is connected to the state can access shortcut settings. They ca
 
 ## Screen settings
 
-Screen settings are layouts settings that determine how 
+Screen settings are layouts settings that hold information specific for that layout. Check [tutorial for alternative layouts](http://shoutem.github.io/docs/extensions/tutorials/alternativelayouts) to get a better understanding on difference between screen and layouts.
 
 ##### Place
 
-```JSON{10-18}
+```JSON{14-20,25-31,33-37}
 #file: extension.json
 {
   "shoutem": "1.0",
@@ -171,20 +175,22 @@ Screen settings are layouts settings that determine how
     "name": "list",
     "title": "List of restaurants",
     "settingsPage": {
+      "title": "Settings",
       "page": "@.ListSettings"
     },
     "settings": {
-      "groupByStartingLetter": false,
+      "groupByStartingLetter": false
     }
   }, {
     "name": "grid",
     "extends": "@.list",
     "title": "Grid of restaurants",
     "settingsPage": {
+      "title": "Settings",
       "page": "@.GridSettings"
     },
     "settings": {
-      "gridCellsOfSameHeight": true,
+      "gridCellsOfSameHeight": true
     }
   }]
   "pages": [{
@@ -212,12 +218,16 @@ Properties received to root shortcut settings page component are:
   - `name`: Shortcut's name
   - `title`: Shortcut's title
   - `settings`: Shortcut instance settings
+  - `screens`: Array of screen objects, which are containing:
+    - `type`: Type of screen that has alternative layouts (that's original screen's name)
+    - `name`: Name of the layout that will be shown 
+    - `settings`: Screen settings (shared among all layouts)
 - `screen`: Screen object with fields:
   - `name`: Screen's name (which is also currently active layout screen)
   - `title`: Screen's title
-  - `settings`: Shared namespace of settings for layouts that replace same screen
+  - `settings`: Screen settings (shared among all layouts)
 
-To set screen settings in settings page, use `setScreenSettings` from `@shoutem/builder-sdk`. Screen settings can be only manipulated in screen settings page and using these functions elsewhere will fail. Notice that `settings` inside of `screen` are in shared namespace, which means that multiple screens which act as different layouts share these settings. If keeping separate namespace per screen is important for you, you can save the settings under key of screen `name`.
+To set screen settings in settings page, use `setScreenSettings` from `@shoutem/builder-sdk`. Screen settings can only be manipulated in screen settings page and using these functions elsewhere will fail. Notice that `settings` inside of `screen` are in shared namespace, which means that multiple screens which act as different layouts share these settings. If keeping separate namespace per screen is important for you, you can save the settings under key of screen `name`.
 
 ##### Client side
 
