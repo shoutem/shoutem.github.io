@@ -210,7 +210,7 @@ This is how the settings page looks now.
 
 [Picture]
 
-Input is added, but pressing the button still doesn’t set anything. We need to add the logic of setting the header and change it in the application. For communication with the application, settings pages use `@shoutem/builder-sdk`.
+Input is added, but clicking the button still doesn’t set anything. We need to add the logic of setting the header and change it in the application. For communication with the application, settings pages use `@shoutem/builder-sdk`.
 
 ## Communication between page and application
 
@@ -220,7 +220,7 @@ Use `redux` library which provides a way for updating the application state. Eve
 
 To set shortcut settings, dispatch `setShortcutSettings` action creator bounded in `connect` method.
 
-```JSX{2-4,11-13,15-27,30,41,44,54-56}
+```JSX{2-4,11-13,15-28,31,42,45,55-57}
 #file: server/pages/RestaurantsPage.js
 import React from 'react';
 import {
@@ -240,14 +240,15 @@ class RestaurantsPage extends React.Component {
   constructor(props) {
     super(props);
 
-    this.onButtonPress = this.onButtonPress.bind(this);
+    this.onButtonClick = this.onButtonClick.bind(this);
   }
 
-  onButtonPress() {
+  onButtonClick() {
     const { shortcut } = this.props;
-    shortcut.settings.headerTitle = this.refs.textInput.value;
+    const newSettings = Object.assign({}, shortcut.settings);
+    newSettings.headerTitle = this.refs.headerTitle.value;
 
-    setShortcutSettings(shortcut.settings);
+    setShortcutSettings(newSettings);
   }
 
   render () {
@@ -258,17 +259,17 @@ class RestaurantsPage extends React.Component {
         <FormGroup>
           <ControlLabel>Insert the title of header:</ControlLabel>
         </FormGroup>
-        
         <FormControl
           type="text"
+          ref="headerTitle"
           placeholder="Header title"
           value={settings.headerTitle}
         />
         <Button
-          onPress={this.onButtonPress}
+          onClick={this.onButtonClick}
           type="submit"
         >
-          Submit
+          SUBMIT
         </Button>
       </form>
     );
@@ -280,7 +281,7 @@ export connect(undefined, {
 })(RestaurantsPage);
 ```
 
-Notice that we've used `headerTitle` as a value for `FormControl`, which will be set on the initial settings page load to `RESTAURANTS` as we defined that default settings.
+Notice that we've used `headerTitle` as a value for `FormControl`, which will be set to `RESTAURANTS` on the initial settings page load as defined in default settings.
 
 Only thing left to do is to update the client side. Every screen that is being opened by shortcut, will get 4 props:
 `children`: screen components of nested shortcuts,
@@ -290,7 +291,7 @@ Only thing left to do is to update the client side. Every screen that is being o
 
 Let’s use this shortcut settings in the `RestaurantsList` screen.
 
-```JavaScript{64,67-68}
+```JavaScript{64,68}
 #file: app/screens/RestaurantsList.js
 import React, {
   Component
