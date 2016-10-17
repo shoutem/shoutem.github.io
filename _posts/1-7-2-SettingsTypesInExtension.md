@@ -65,7 +65,9 @@ Extension settings are global settings shared through all extension parts within
 
 Settings pages meant for manipulating extension settings can be found in `Extensions` tab for that extension. We call them `extension settings pages`.
 
-[PICTURE]
+<p class="image">
+<img src='{{ site.baseurl }}/img/tutorials/settings-theme/extension-tab-extension-restaurants-settings.png'/>
+</p>
 
 ##### Server side
 
@@ -126,7 +128,9 @@ Shortcut settings are settings shared through all the screens navigated from the
 
 Settings pages meant for manipulating shortcut settings can be found next to app structure in `Screens` tab.  We call them `shortcut settings pages`. Namely, for this example, there should be `Content` and `Settings`.
 
-[PICTURE]
+<p class="image">
+<img src='{{ site.baseurl }}/img/tutorials/settings-theme/screens-tab-extension-restaurants-settings.png'/>
+</p>
 
 ##### Server side
 
@@ -203,7 +207,9 @@ Screen settings are layouts settings that hold information specific for that lay
 
 There's only 1 settings page per screen for manipulating screen settings. It's located in `Layout` shortcut settings page, under the layout selector, when that screen is selected as desired layout.
 
-[PICTURE]
+<p class="image">
+<img src='{{ site.baseurl }}/img/tutorials/settings-theme/screens-tab-extension-restaurants-layout-settings.png'/>
+</p>
 
 ##### Server side
 
