@@ -10,14 +10,14 @@ section: Getting Started
 
 Data on the Shoutem Cloud Storage needs to be fetched in the application. First, remove all static files from the extension, so we're sure that we're actually fetching data from the Shoutem Cloud Storage, i.e. remove assets folder. Define `reducer` which will define how the state of the application should be changed when action is dispatched and how the initial state should look like. Create new folder `app/reducers` with `index.js` file.
 
-Package `@shoutem/redux-io` has [reducers](/docs/coming-soon) and [actions](/docs/coming-soon) that communicate with Shoutem Cloud Storage. Import these reducers.
+Package [@shoutem/redux-io](https://www.npmjs.com/package/@shoutem/redux-io) has `reducers` and `actions` that communicate with Shoutem Cloud Storage. Import these reducers.
 
 ```javascript{1}
 #file: app/reducers/index.js
 import { storage, collection } from '@shoutem/redux-io';
 ```
 
-Reducer [storage](/docs/coming-soon) retrieves resources in a dictionary while [collection](/docs/coming-soon) stores resources ID's in an array so that the order is maintained. Make use of Redux's [combineReducers](http://redux.js.org/docs/api/combineReducers.html) to create one **root reducer** from more Shoutem reducers. 
+Reducer `storage` retrieves resources in a dictionary while `collection` stores resources ID's in an array so that the order is maintained. Make use of Redux's [combineReducers](http://redux.js.org/docs/api/combineReducers.html) to create one **root reducer** from more Shoutem reducers. 
 
 ```javascript{2-8}
 #file: app/reducers/index.js
@@ -31,7 +31,7 @@ export default combineReducers({
 });
 ```
 
-This root reducer needs to be exported in `app/index.js` file:
+We've used `ext` function to get absolute name of schema. This root reducer needs to be exported in `app/index.js` file:
 
 ```javascript{1,10}
 #file: app/index.js
@@ -47,7 +47,7 @@ export const screens = {
 export { reducer };
 ```
 
-The only thing left to do is to fetch data from **Shoutem Cloud Storage** on `RestaurantsList` screen and to retrieve that data, in form of restaurants, from application's state. Once screen is mounted, if restaurants are not in the Redux store, we'll start fetching data with [find](/docs/coming-soon) action creator from `@shoutem/redux-io` package. Also, import still 3 helpers from that package:
+The only thing left to do is to fetch data from **Shoutem Cloud Storage** on `RestaurantsList` screen and to retrieve that data, in form of restaurants, from application's state. Once screen is mounted, if restaurants are not in the Redux store, we'll start fetching data with `find` action creator from `@shoutem/redux-io` package. Also, import still 3 helpers from that package:
  
  - `isBusy` - gives feedback if data is being fetched,
  - `shouldRefresh` - knows if data needs to be (re)fetched and

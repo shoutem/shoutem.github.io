@@ -8,7 +8,7 @@ section: Getting Started
 # Getting Started
 <hr />
 
-This tutorial shows how to write custom **Shoutem extensions** on Shoutem platform. It introduces the most important Shoutem extensions concepts. After completing this tutorial, you will have a running mobile app that uses components from [Shoutem UI Toolkit]({{ site.baseurl }}/docs/ui-toolkit/introduction) and retrieves content from the [Shoutem Cloud Storage](/docs/coming-soon).
+This tutorial shows how to write custom **Shoutem extensions** on Shoutem platform. It introduces the most important Shoutem extensions concepts. After completing this tutorial, you will have a running **mobile app** that uses created **custom extension** with components from [Shoutem UI Toolkit]({{ site.baseurl }}/docs/ui-toolkit/introduction) and retrieves content from the [Shoutem Cloud Storage](/docs/coming-soon).
 
 Here's a preview how completed app will look like.
 
@@ -45,7 +45,7 @@ On top of React and React Native, we're using [Redux](http://redux.js.org/), one
 <img src='{{ site.baseurl }}/img/getting-started/redux.png'/>
 </p>
 
-Each application has a [Redux store](http://redux.js.org/docs/basics/Store.html) which holds the **application state**. When the state changes, React automatically updates the UI components. Application can dispatch [Redux actions](http://redux.js.org/docs/basics/Actions.html) on events, such as tapping on the button, which holds information about the triggered event. Dispatched actions will be handled by [Redux reducers](http://redux.js.org/docs/basics/Reducers.html) which specify what is the next state given the action. Once reducers handle the action, application goes to the new state and React Native automatically updates the UI component to reflect the new state.
+Each application has a [Redux store](http://redux.js.org/docs/basics/Store.html) which holds the **application state**. When the state changes, React automatically updates the UI components. Application can dispatch [Redux actions](http://redux.js.org/docs/basics/Actions.html) on events (such as tapping on the button) which hold information about the triggered event. Dispatched actions will be handled by [Redux reducers](http://redux.js.org/docs/basics/Reducers.html) which specify what is the next state given the action. Once reducers handle the action, application goes to the new state and React automatically updates the UI component to reflect the new state.
 
 ## Create extension
-Best way to understand the power of the extensions, is to get your hands dirty. We'll start with [setting up your development environment](http://shoutem.github.io/docs/extensions/getting-started/development-environment).
+Best way to understand the power of extensions, is to get your hands dirty. We'll start with [setting up your development environment](http://shoutem.github.io/docs/extensions/getting-started/development-environment).

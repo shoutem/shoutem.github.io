@@ -8,7 +8,7 @@ section: Getting Started
 # Using Cloud Storage
 <hr />
 
-Shoutem Cloud Storage is a CMS solution for mobile apps. It is optimized to be used within React Native apps with premade `reducers` and `actions` that are available in `@shoutem/redux-io` package. To describe model of your data on Shoutem Cloud Storage, you need to define a `Data Schema`:
+Shoutem Cloud Storage is a CMS solution for mobile apps. It is optimized to be used within React Native apps with premade `reducers` and `actions` that are available in `@shoutem/redux-io` package. To describe model of your data on Shoutem Cloud Storage, you need to define a `data schema`:
 
 ```ShellSession
 $ shoutem schema add Restaurants
@@ -18,7 +18,7 @@ File `server/schemas/Restaurants.json` is created.
 Folder `schemas` inside `server` folder was created with file `Restaurants.json`. Content of that file is following:
 
 ```JSON
-#file: server/data-schemas/Restaurants.json
+#file: server/schemas/Restaurants.json
 {
   "title": "Restaurants"
   "properties": {
@@ -33,7 +33,7 @@ Folder `schemas` inside `server` folder was created with file `Restaurants.json`
 }
 ```
 
-This is for the first time that we used `server` folder for something. The reason is that data-schemas are not part of the application code, but rather server side for extension. Data Schemas are nothing more than Shoutem-flavored [JSON Schemas](http://json-schema.org/). At the end, there are some properties describing the schema itself.
+This is for the first time that we used `server` folder for something. The reason is that data schemas are not part of the application code, but rather server side for extension. Data Schemas are nothing more than Shoutem-flavored [JSON Schemas](http://json-schema.org/). At the end, there are some properties describing the schema itself.
 
 This schema was immediately exported in `extension.json` file:
 
@@ -106,7 +106,7 @@ Let's add now properties that we want to persist for a restaurant, such as: `nam
 }
 ```
 
-Now in order to enter data for your schema, you need to link your extension with Shoutem CMS admin page. Shortly, **Admin Pages** are web pages that you as developer can write to allow admin to manage your extension. They are shown inside Shoutem builder when admin clicks on the shortcut. In this example we’re using predefined Shoutem CMS admin page. Add Admin Page to `openRestaurantsList` shortcut and specify for which Data Schema you want to enter the data:
+Now in order to enter data for your schema, you need to link your extension with Shoutem CMS settings page. Shortly, **Settings Pages** are web pages that you as developer can write to enable admins to manage your extension. They are shown inside Shoutem builder when admin clicks on the shortcut. In this example we’re using predefined Shoutem CMS settings page. Add Admin Page to `openRestaurantsList` shortcut and specify for which Data Schema you want to enter the data:
 
 ```JSON{11-17}
 #file: extension.json
@@ -120,8 +120,8 @@ Now in order to enter data for your schema, you need to link your extension with
     "title": "Restaurants",
     "description": "Allow users to browse through list of restaurants"
     "screen": "@.RestaurantsList",
-    "adminPages": [{
-      "page": "shoutem.admin.CmsPage",
+    "settingsPages": [{
+      "page": "shoutem.cms.CmsPage",
       "title": "Content",
       "parameters": {
         "schema": "@.Restaurants"
@@ -148,7 +148,7 @@ Uploading `Restaurants` extension to Shoutem...
 Success!
 ```
 
-Go to `Shoutem Builder`. There you can see an empty admin page which allows you to add restaurants.
+Go to `Shoutem Builder`. There you can see an empty settings page which allows you to add restaurants.
 
 <p class="image">
 <img src='{{ site.baseurl }}/img/getting-started/empty-admin-page.jpg'/>
@@ -166,7 +166,7 @@ Click on `Add item`. This will open a modal for inserting data for `Restaurants`
 <img src='{{ site.baseurl }}/img/getting-started/cms-modal.png'/>
 </p>
 
-Add some restaurants to the admin page.
+Add some restaurants to the settings page.
 
 <p class="image">
 <img src='{{ site.baseurl }}/img/getting-started/full-cms.png'/>

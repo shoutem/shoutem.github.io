@@ -38,7 +38,7 @@ Extension initialized!
 These information will be stored in `extension.json` file.
 
 > #### Note
-> In case you can't remember the structure of some command, type: `shoutem help` or `shoutem help [command]` where you should replace '[command]' with one of the [CLI commands]({{ site.baseurl }}/docs/cli/reference)
+> In case you can't remember the structure of some command, type: `shoutem help` or `shoutem help [command]` where you should replace '[command]' with one of the [CLI commands]({{ site.baseurl }}/docs/extensions/reference/cli)
 
 ## Folder structure
 Initialization process will generate the skeleton folder and file structure for you. Your structure looks as follows:
@@ -47,10 +47,12 @@ Initialization process will generate the skeleton folder and file structure for 
 Restaurants/
   ├ app/
   |  ├ node_modules/
+  |  |  └ ...
   |  ├ const.js
   |  ├ index.js
   |  └ package.json
   ├ server/
+  |  └ ...
   └ extension.json
 ```
 
@@ -59,6 +61,8 @@ Let's describe the structure:
 - `app/`: Application code
 - `server/`: Server code
 - `extension.json`: Extension general information
+
+Specific parts will be described a bit later.
 
 In `extension.json` you can see:
 
@@ -102,4 +106,4 @@ However, when you go to `Screen` tab now and click on `+` next to `Screens`, thi
 <img src='{{ site.baseurl }}/img/getting-started/add-content-no-extension.png'/>
 </p>
 
-That's because `Add screen` modal shows _shortcuts_ that extensions export. We need to create shortcut in our extensions.
+That's because `Add screen` modal shows only extensions with _shortcuts_. We need to create shortcut in our extensions.
