@@ -64,7 +64,9 @@ Based on what the type is, descriptor has different fields. However, some fields
 
 Variable of type color will result in color picker in interface for customizing theme.
 
-[Picture]
+<p class="image">
+<img src='shoutem.github.io/img/tutorials/settings-theme/style-tab-themes-customize_theme-color.png'/>
+</p>
 
 ###### Default value
 
@@ -79,7 +81,10 @@ Currently, there are no additional properties variable descriptor supports.
 
 Variable of type font will result in complex control in interface for customizing theme.
 
-[Picture]
+<p class="image">
+<img src='shoutem.github.io/img/tutorials/settings-theme/style-tab-themes-customize_theme-font.png'/>
+</p>
+
 
 ###### Default value
 
