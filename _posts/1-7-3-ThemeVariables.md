@@ -10,7 +10,7 @@ section: Reference
 Adjustment of theme is done through theme variables. These variables can be set through Shoutem builder, which interprets the variables schema.
 
 <p class="image">
-<img src='shoutem.github.io/img/tutorials/settings-theme/style-tab-themes-customise_theme-no_picker.png'/>
+<img src='{{ site.baseurl }}/img/tutorials/settings-theme/style-tab-themes-customise_theme-no_picker.png'/>
 </p>
 
 ## Structure of variables schema file
@@ -69,7 +69,7 @@ Based on what the type is, descriptor has different fields. However, some fields
 Variable of type color will result in color picker in interface for customizing theme.
 
 <p class="image">
-<img src='shoutem.github.io/img/tutorials/settings-theme/style-tab-themes-customize_theme-color.png'/>
+<img src='{{ site.baseurl }}/img/tutorials/settings-theme/style-tab-themes-customize_theme-color.png'/>
 </p>
 
 ###### Default value
@@ -86,7 +86,7 @@ Currently, there are no additional properties variable descriptor supports.
 Variable of type font will result in complex control in interface for customizing theme.
 
 <p class="image">
-<img src='shoutem.github.io/img/tutorials/settings-theme/style-tab-themes-customize_theme-font.png'/>
+<img src='{{ site.baseurl }}/img/tutorials/settings-theme/style-tab-themes-customize_theme-font.png'/>
 </p>
 
 

@@ -161,7 +161,7 @@ Success!
 Check `Screens` tab under the Shoutem builder. Under `Restaurants` shortcut in app structure, on the right side, there are 2 settings pages with their navigation items: `Content` and `Settings`. Click on `Settings` to see your _Hello World!_
 
 <p class="image">
-<img src='shoutem.github.io/img/tutorials/settings-theme/screens-restaurants-settings-hello_world.png'/>
+<img src='{{ site.baseurl }}/img/tutorials/settings-theme/screens-restaurants-settings-hello_world.png'/>
 </p>
 
 ## Managing settings
@@ -211,7 +211,7 @@ Success!
 This is how the settings page looks now.
 
 <p class="image">
-<img src='shoutem.github.io/img/tutorials/settings-theme/screens-restaurants-settings-form+button.png'/>
+<img src='{{ site.baseurl }}/img/tutorials/settings-theme/screens-restaurants-settings-form+button.png'/>
 </p>
 
 Input is added, but clicking the button still doesn’t set anything. We need to add the logic of setting the header and change it in the application. For communication with the application, settings pages use `@shoutem/builder-sdk`.
