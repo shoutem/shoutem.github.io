@@ -80,13 +80,17 @@ Success!
 
 Since Restaurants extension is already installed, so is your theme. However, it's not applied yet. Navigate now to `Styles` tab. Selected theme is `Rubicon`, but click the `Change theme` button. Here you can find all the installed themes. Yours is also there! Select it and you'll see its showcase.
 
-[Picture]
+<p class="image">
+<img src='shoutem.github.io/img/tutorials/settings-theme/style-tab-themes-theme-change_theme-theme_showcase.png'/>
+</p>
 
 Select `Apply theme`.
 
 Now check the `Customize theme` tab.
 
-[Picture]
+<p class="image">
+<img src='shoutem.github.io/img/tutorials/settings-theme/style-tab-themes-customise_theme-no_picker.png'/>
+</p>
 
 Here owner can customize your theme through theme variables. These variables are contained in `server/themes/restaurantVariables.json` and are the copy from the [ones of Rubicon theme](/docs/coming-soon).
 
@@ -250,7 +254,9 @@ Success!
 
 Now, now the app in the builder preview. It looks how we wanted!
 
-[Picture]
+<p class="image">
+<img src='shoutem.github.io/img/tutorials/settings-theme/style-tab-themes-customize_theme-font.png'/>
+</p>
 
 This is good, but we got a request from owners using our theme that they want to be able to modify subtitle text color. We can do that with variables.
 
@@ -318,4 +324,6 @@ Success!
 
 Check the `Customize theme` under `Style` tab. You can see `Restaurants` section with color picker for subtitle text color. Well done!
 
-[Picture]
+<p class="image">
+<img src='shoutem.github.io/img/tutorials/settings-theme/style-tab-themes-customise_theme-color_picker_preview.png'/>
+</p>

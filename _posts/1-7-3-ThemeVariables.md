@@ -9,6 +9,10 @@ section: Reference
 
 Adjustment of theme is done through theme variables. These variables can be set through Shoutem builder, which interprets the variables schema.
 
+<p class="image">
+<img src='shoutem.github.io/img/tutorials/settings-theme/style-tab-themes-customise_theme-no_picker.png'/>
+</p>
+
 ## Structure of variables schema file
 
 Variables schema file is nothing else than Shoutem flavored [JSON Schema](https://spacetelescope.github.io/understanding-json-schema/UnderstandingJSONSchema.pdf).
