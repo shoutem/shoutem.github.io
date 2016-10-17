@@ -37,7 +37,7 @@ File `server/themes/restaurantVariables.json` is created.
 
 Extension file was just modified:
 
-```JSON{28-38}
+```JSON{9-19}
 #file: extension.json
 {
   "name": "restaurants",
@@ -92,7 +92,7 @@ Here owner can customize your theme through theme variables. These variables are
 
 ## How theme works
 
-Theme is a set of styling rules that customize the components in the app connected to the theme, called `customizable components`. All the components in [@shoutem/ui](https://github.com/shoutem/ui) package are connected to the theme so they all share the same style.
+Theme is a set of styling rules that customize components in the app connected to the theme, called `customizable components`. All the components in [@shoutem/ui](https://github.com/shoutem/ui) package are connected to the theme so they all share the same style.
 
 Theme file, `app/theme/restaurant.js` exports **theme function** that resolves theme variables and returns **theme object**. Theme object consists of [styling rules](http://shoutem.github.io/docs/ui-toolkit/theme/introduction#theme-style-rules) defined by [@shoutem/theme](https://github.com/shoutem/theme) package. Each component is connected to the theme by the `name`, by which it can be targeted in theme.
 
@@ -205,7 +205,7 @@ export default connect(
 );
 ```
 
-As you can see, `connectStyle` takes the same format as `connect` method from Redux. Notice that we added extension prefix to the component name. It's a good practise to do so to prevent namespace collision.
+As you can see, `connectStyle` takes the same format as `connect` method from Redux. Notice that we added extension prefix to the component name. It's a good practice to do so to prevent namespace collision.
 
 Ok, we've added style from theme to the component, but we haven't implemented those styling rules in the theme. Let's modify our theme.
 
@@ -223,7 +223,7 @@ import { ext } from '../const';
 
 // constants ...
 
-export default (vars) => ({
+export default (variables = {}) => ({
   [ext('RestaurantsList')]: {
     title: {
       fontSize: 15,
@@ -248,7 +248,7 @@ Uploading `Restaurants` extension to Shoutem...
 Success!
 ```
 
-Check now the app in the builder preview. It looks how we wanted!
+Now, now the app in the builder preview. It looks how we wanted!
 
 [Picture]
 
@@ -256,11 +256,13 @@ This is good, but we got a request from owners using our theme that they want to
 
 ## Customizing theme with variables
 
-To enable customization of theme, we need to create variables schema for that theme. Schema has already been created when we added theme to the project and it's in the `server/themes/restaurantVariables.json` file. Variables schema is used to give the information to Shoutem which variables and their format is being used for the theme. It's Shoutem's flavored JSON Schema, just how data schema is as well. Full reference of variables schema can be found [here](/docs/extensions/reference/extension).
+Exposes variables and defines UI editor types to edit these variables.
 
-Open `Style` tab and choose `Customize theme`. Theme variables are divided into sections, so it's easier for owners to navigate through variables. Under `properties`, add new variable with `color` format with `black` color as default value. After, reference that variable in `layout` `sections` so it's included to the interface. We'll create new section for that.
+To enable customization of theme, use theme variables schema. Schema has already been created when we added theme to the project and it's in the `server/themes/restaurantVariables.json` file. It is used to define UI editor for adjusting theme variables used in styling rules. give the information to Shoutem which variables and their format is being used for the theme. Full schema reference can be found [here](/docs/extensions/reference/theme-variables).
 
-```JSON{3-8,13-15}
+Open `Style` tab and choose `Customize theme`. Theme variables are grouped into sections. Under `properties`, add new variable with `color` format with `black` color as default value. Afterwards, reference that variable in `layout.sections` so it's included to the interface. We'll create a new section for that.
+
+```JSON{3-7,13-15}
 #file: server/themes/restaurantVariables.json
 {
   "properties": {
@@ -291,7 +293,7 @@ import { ext } from '../const';
 
 // constants ...
 
-export default (vars) => ({
+export default (variables = {}) => ({
   [ext('RestaurantsList')]: {
     title: {
       fontSize: 15,
@@ -306,7 +308,7 @@ export default (vars) => ({
 })
 ```
 
-We're done! Push theme to Shoutem server.
+We're done! Push extension containing theme to Shoutem.
 
 ```ShellSession
 $ shoutem push
