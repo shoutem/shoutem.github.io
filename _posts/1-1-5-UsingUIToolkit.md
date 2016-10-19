@@ -47,7 +47,7 @@ Implement `render` method that will use `ListView`. `ListView` accepts data in t
 
 Add `renderRow` method and replace implementation of `render` method:
 
-```JSX{3-13,16-26}
+```JSX{3-13,16-25}
 #file: app/screens/RestaurantsList.js
   getRestaurants() {...}
 
