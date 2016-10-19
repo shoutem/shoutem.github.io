@@ -166,7 +166,8 @@ Implement `renderRow` function.
         screen: ext('RestaurantDetails'),
         props: { restaurant }
       })}>
-        <Image styleName="large-banner" source={% raw %}{{ uri: restaurant.image && restaurant.image.url  }}{% endraw %}>
+        <Image styleName="large-banner" source={% raw %}{{ uri: restaurant.image &&
+          restaurant.image.url  }}{% endraw %}>
           <Tile>
             <Title>{restaurant.name}</Title>
             <Subtitle>{restaurant.address}</Subtitle>
@@ -219,7 +220,8 @@ class RestaurantsList extends Component {
         screen: ext('RestaurantDetails'),
         props: { restaurant }
       })}>
-        <Image styleName="large-banner" source={% raw %}{{ uri: restaurant.image && restaurant.image.url  }}{% endraw %}>
+        <Image styleName="large-banner" source={% raw %}{{ uri: restaurant.image &&
+          restaurant.image.url  }}{% endraw %}>
           <Tile>
             <Title>{restaurant.name}</Title>
             <Subtitle>{restaurant.address}</Subtitle>
@@ -281,7 +283,8 @@ export default class RestaurantDetails extends Component {
 
     return (
       <ScrollView style = {% raw %}{{marginTop:-70}}{% endraw %}>
-        <Image styleName="large-portrait" source={% raw %}{{ uri: restaurant.image && restaurant.image.url }}{% endraw %}>
+        <Image styleName="large-portrait" source={% raw %}{{ uri: restaurant.image &&
+          restaurant.image.url  }}{% endraw %}>
           <Overlay styleName="dark">
             <Title>{restaurant.name}</Title>
             <Subtitle>{restaurant.address}</Subtitle>
