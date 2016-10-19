@@ -53,7 +53,8 @@ Add `renderRow` method and replace implementation of `render` method:
 
   renderRow(restaurant) {
     return (
-      <Image styleName="large-banner" source={% raw %}{{ uri: restaurant.image && restaurant.image.url ? restaurant.image.url : undefined  }}{% endraw %}>
+      <Image styleName="large-banner" source={% raw %}{{ uri: restaurant.image &&
+        restaurant.image.url ? restaurant.image.url : undefined  }}{% endraw %}>
         <Tile>
           <Title>{restaurant.name}</Title>
           <Subtitle>{restaurant.address}</Subtitle>
