@@ -20,7 +20,7 @@ Folder `schemas` inside `server` folder was created with file `Restaurants.json`
 ```JSON
 #file: server/schemas/Restaurants.json
 {
-  "title": "Restaurants"
+  "title": "Restaurants",
   "properties": {
     "name": {
       "format": "single-line",
