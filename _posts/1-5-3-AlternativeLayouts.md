@@ -51,7 +51,7 @@ Check your extension.json now. New screen is added.
   }, 
   {
     "name":"RestaurantsDetails",
-    "title":"Detauls"
+    "title":"Details"
   },
   {
     "name":"RestaurantsSmallList"
