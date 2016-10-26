@@ -11,11 +11,16 @@ Each extension has 3 different types of settings that can be used by application
 
 ##### Extension concepts
 
-Before we dive into settings types, let’s refresh our memory extension concepts. Each extension can have multiple versions, but only one can be installed at one point on the app, called `extension installation`. Extension can expose multiple shortcuts and each of them can be added more than once to the app, called `shortcut instances`. These shortcut instances open a starting screen, which can then open the next screen and so on. Each screen can have multiple representations, called `layouts`.
+Before we dive into settings types, let’s refresh our memory on extension concepts:
+
+- Each extension can have multiple versions, but only one can be installed at a time - that's what we refer to as an `extension installation`
+- An extension can expose multiple shortcuts, called `shortcut instances`, and each of them can be added more than once to the app.
+- Each shortcut instance opens a starting screen, which can then open the next screen, and so on.
+- Each screen can have multiple representations, called `layouts`.
 
 ##### Settings pages
 
-Settings pages are web pages that extension developers write and appear in Shoutem builder. Their purpose is to enable application owners to customize extension through settings. Check [tutorial on how to create a settings page](shoutem.github.io/docs/extensions/tutorials/writing-settings-page). Settings pages are exported in `pages` field in `extension.json` and can be used on 3 different places which determine settings type.
+Settings pages are web pages written by extension developers, and they appear in Shoutem builder. Their purpose is to enable application owners extension customizations through settings. Check the [tutorial on how to create a settings page](shoutem.github.io/docs/extensions/tutorials/writing-settings-page) for more info. Settings pages are exported via the `pages` field in `extension.json` and can be used on 3 different places which determine settings type.
 
 ##### Settings types
 
@@ -25,15 +30,15 @@ Settings pages are web pages that extension developers write and appear in Shout
 
 ##### Default settings
 
-Each settings can have its default value, so you don’t need to check whether setting is undefined. This value is defined in `settings` fields, which is adjacent to `settingsPage(s)` fields, for every settings type.
+Each settings can have its default value, so you don’t need to check if the setting is undefined. This default value is defined in `settings` fields, which is adjacent to `settingsPage(s)` fields, for every settings type.
 
 ##### Manipulation of settings
 
-Settings can be manipulated with the functions inside of `@shoutem/builder-sdk` package.
+Settings can be manipulated using various functions available in the `@shoutem/builder-sdk` package.
 
 ## Extension settings
 
-Extension settings are global settings shared through all extension parts within extension installation.
+Extension settings are global settings shared throughout all extension parts within an extension installation.
 
 ##### Place
 
@@ -63,7 +68,7 @@ Extension settings are global settings shared through all extension parts within
 }
 ```
 
-Settings pages meant for manipulating extension settings can be found in `Extensions` tab for that extension. We call them `extension settings pages`.
+Settings pages meant for manipulating extension settings can be found in the `Extensions` tab for that extension. We call them `extension settings pages`.
 
 <p class="image">
 <img src='{{ site.baseurl }}/img/tutorials/settings-theme/extension-tab-extension-restaurants-settings.png'/>
@@ -74,9 +79,9 @@ Settings pages meant for manipulating extension settings can be found in `Extens
 Properties received to the root extension settings page component are:
 
 - `extension`: Extension object with fields:
-  - `name`: Name of extension
-  - `version`: Version of extension
-  - `title`: Title of extension
+  - `name`: Extension name
+  - `version`: Extension version
+  - `title`: Extension title
   - `settings`: Extension global settings
 
 To set extension settings, use `setExtensionSettings` from `@shoutem/builder-sdk`. Although extension settings can be manipulated from any settings page, for maximum user experience, do it only in extension settings pages.
@@ -87,7 +92,7 @@ Each screen that is connected to the state can access extension settings. They c
 
 ## Shortcut settings
 
-Shortcut settings are settings shared through all the screens navigated from the starting screen of the shortcut instance.
+Shortcut settings are settings shared throughout all the screens that were navigated to from the starting screen of the shortcut instance.
 
 ##### Place
 
@@ -126,7 +131,7 @@ Shortcut settings are settings shared through all the screens navigated from the
 }
 ```
 
-Settings pages meant for manipulating shortcut settings can be found next to app structure in `Screens` tab.  We call them `shortcut settings pages`. Namely, for this example, there should be `Content` and `Settings`.
+Settings pages meant for manipulating shortcut settings can be found next to app structure in the `Screens` tab.  We call them `shortcut settings pages`. Namely, for this example, there should be `Content` and `Settings`.
 
 <p class="image">
 <img src='{{ site.baseurl }}/img/tutorials/settings-theme/screens-tab-extension-restaurants-settings.png'/>
@@ -137,20 +142,20 @@ Settings pages meant for manipulating shortcut settings can be found next to app
 Properties received to root shortcut settings page component are:
 
 - `extension`: Extension object with fields:
-  - `name`: Extension's name
-  - `version`: Extension's version
-  - `title`: Extension's title
+  - `name`: Extension name
+  - `version`: Extension version
+  - `title`: Extension title
   - `settings`: Extension global settings
 - `shortcut`: Shortcut instance object with fields:
-  - `name`: Shortcut's name
-  - `title`: Shortcut's title
-  - `settings`: Shortcut instance settings
-  - `screens`: Array of screen objects, which are containing:
+  - `name`: A shortcut's name
+  - `title`: A shortcut's title
+  - `settings`: A shortcut instance settings
+  - `screens`: Array of screen objects, each containing:
     - `type`: Type of screen that has alternative layouts (that's original screen's name)
     - `name`: Name of the layout that will be shown 
     - `settings`: Screen settings (shared among all layouts)
 
-To set extension settings, use `setShortcutSettings` from `@shoutem/builder-sdk`. Although shortcut settings can be manipulated from any both shortcut and screen settings page, for maximum user experience, do it only in shortcut settings pages.
+To set extension settings, use `setShortcutSettings` from `@shoutem/builder-sdk`. Although shortcut settings can be manipulated from both the shortcut and the screen settings page, for maximum user experience, do it only from the shortcut settings pages.
 
 ##### Client side
 
@@ -159,7 +164,7 @@ Each screen that is connected to the state can access shortcut settings. They ca
 
 ## Screen settings
 
-Screen settings are layouts settings that hold information specific for that layout. Check [tutorial for alternative layouts](http://shoutem.github.io/docs/extensions/tutorials/alternativelayouts) to get a better understanding on difference between screen and layouts.
+Screen settings are layouts settings that hold information specific for that layout. Check the [tutorial for alternative layouts](http://shoutem.github.io/docs/extensions/tutorials/alternativelayouts) to get a better understanding on difference between screen and layouts.
 
 ##### Place
 
@@ -205,7 +210,7 @@ Screen settings are layouts settings that hold information specific for that lay
 }
 ```
 
-There's only 1 settings page per screen for manipulating screen settings. It's located in `Layout` shortcut settings page, under the layout selector, when that screen is selected as desired layout.
+There's only 1 settings page per screen for manipulating screen settings. It's located in the `Layout` shortcut settings page, under the layout selector, when that screen is selected as the desired layout.
 
 <p class="image">
 <img src='{{ site.baseurl }}/img/tutorials/settings-theme/screens-tab-extension-restaurants-layout-settings.png'/>
@@ -216,15 +221,15 @@ There's only 1 settings page per screen for manipulating screen settings. It's l
 Properties received to root shortcut settings page component are:
 
 - `extension`: Extension object with fields:
-  - `name`: Extension's name
-  - `version`: Extension's version
-  - `title`: Extension's title
+  - `name`: Extension name
+  - `version`: Extension version
+  - `title`: Extension title
   - `settings`: Extension global settings
 - `shortcut`: Shortcut instance object with fields:
-  - `name`: Shortcut's name
-  - `title`: Shortcut's title
+  - `name`: A shortcut's name
+  - `title`: A shortcut's title
   - `settings`: Shortcut instance settings
-  - `screens`: Array of screen objects, which are containing:
+  - `screens`: Array of screen objects, each containing:
     - `type`: Type of screen that has alternative layouts (that's original screen's name)
     - `name`: Name of the layout that will be shown 
     - `settings`: Screen settings (shared among all layouts)
