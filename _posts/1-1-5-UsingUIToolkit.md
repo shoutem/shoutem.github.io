@@ -168,7 +168,7 @@ Implement `renderRow` function.
         props: { restaurant }
       })}>
         <Image styleName="large-banner" source={% raw %}{{ uri: restaurant.image &&
-          restaurant.image.url  }}{% endraw %}>
+        restaurant.image.url ? restaurant.image.url : undefined }}{% endraw %}>
           <Tile>
             <Title>{restaurant.name}</Title>
             <Subtitle>{restaurant.address}</Subtitle>
@@ -222,7 +222,7 @@ class RestaurantsList extends Component {
         props: { restaurant }
       })}>
         <Image styleName="large-banner" source={% raw %}{{ uri: restaurant.image &&
-          restaurant.image.url  }}{% endraw %}>
+        restaurant.image.url ? restaurant.image.url : undefined }}{% endraw %}>
           <Tile>
             <Title>{restaurant.name}</Title>
             <Subtitle>{restaurant.address}</Subtitle>
@@ -285,7 +285,7 @@ export default class RestaurantDetails extends Component {
     return (
       <ScrollView style = {% raw %}{{marginTop:-70}}{% endraw %}>
         <Image styleName="large-portrait" source={% raw %}{{ uri: restaurant.image &&
-          restaurant.image.url  }}{% endraw %}>
+        restaurant.image.url ? restaurant.image.url : undefined }}{% endraw %}>
           <Overlay styleName="dark">
             <Title>{restaurant.name}</Title>
             <Subtitle>{restaurant.address}</Subtitle>
