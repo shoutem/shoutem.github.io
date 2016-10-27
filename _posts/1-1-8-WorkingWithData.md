@@ -170,7 +170,7 @@ class RestaurantsList extends Component {
         props: { restaurant }
       })}>
         <Image styleName="large-banner" source={% raw %}{{ uri: restaurant.image &&
-          restaurant.image.url  }}{% endraw %}>
+        restaurant.image.url ? restaurant.image.url : undefined }}{% endraw %}>
           <Tile>
             <Title>{restaurant.name}</Title>
             <Subtitle>{restaurant.address}</Subtitle>
