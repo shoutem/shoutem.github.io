@@ -120,7 +120,7 @@ Now in order to enter data for your schema, you need to link your extension with
     "title": "Restaurants",
     "description": "Allow users to browse through list of restaurants"
     "screen": "@.RestaurantsList",
-    "settingsPages": [{
+    "adminPages": [{
       "page": "shoutem.cms.CmsPage",
       "title": "Content",
       "parameters": {
