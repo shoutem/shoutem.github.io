@@ -49,10 +49,10 @@ Now you can run applications locally. Go to Shoutem builder and copy _App ID_ fr
 To run in iOS (for which you need to use Mac), do:
 
 ```bash
-$ shoutem run-ios --app-id={appID}
+$ shoutem run-ios {appID}
 ```
 
-... where you should replace `{appID}` with _App ID_ from _Settings_ tab. Provided _App ID_ will be set in the environment configuration so you can you can omit `--app-id` when running same app on subsequent attempts. In case you forgot which app is set in configuration, check it with:
+... where you should replace `{appID}` with _App ID_ from _Settings_ tab. Provided _App ID_ will be set in the environment configuration so you can you can omit it when running same app on subsequent attempts. In case you forgot which app is set in configuration, check it with:
 
 ```bash
 $ shoutem env --app
