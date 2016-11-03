@@ -8,7 +8,7 @@ section: Getting Started
 # Getting Started
 <hr />
 
-This tutorial shows how to write custom **Shoutem extensions** on Shoutem platform. It introduces the most important Shoutem extensions concepts. After completing this tutorial, you will have a running **mobile app** that uses created **custom extension** with components from [Shoutem UI Toolkit]({{ site.baseurl }}/docs/ui-toolkit/introduction) and retrieves content from the [Shoutem Cloud Storage](/docs/coming-soon).
+This tutorial shows how to write custom **Shoutem extensions** on Shoutem platform. It introduces the most important Shoutem extensions concepts. After completing this tutorial, you will have a running **mobile app** that uses created **custom extension** with components from [Shoutem UI Toolkit]({{ site.baseurl }}/docs/ui-toolkit/introduction) and retrieves content from the _Shoutem Cloud Storage_.
 
 Here's a preview how completed app will look like.
 
@@ -23,7 +23,7 @@ As shown on the following picture, every Shoutem application is made of extensio
 <img src='{{ site.baseurl }}/img/getting-started/apps-are-made-of-extensions.png'/>
 </p>
 
-Extensions represent small features that are connected to application through [navigation items](/docs/coming-soon). Application admin just connects wanted extensions to application's [main navigation](/docs/coming-soon) through Shoutem Builder and fill out the content! Shoutem prepared a bunch of **open sourced** extensions which you can easily checkout and customize to your needs.
+Extensions represent small features that are connected to application through [shortcuts]({{ site.baseurl }}/docs/extensions/getting-started/shortcut-and-screen). Application admin just connects wanted extensions to application's main navigation through Shoutem Builder and fills out the content! Shoutem prepared a bunch of **open sourced** extensions which you can easily customize to your needs.
 
 <p class="image">
 <img src='{{ site.baseurl }}/img/getting-started/shoutem-extensions.png'/>
@@ -33,13 +33,13 @@ Extensions represent small features that are connected to application through [n
 
 <hr />
 
-Shoutem uses [React](https://facebook.github.io/react/) and [React Native](https://facebook.github.io/react-native/) as frameworks for building cross-platform apps. React is an open source JavaScript library providing a **View** from M**V**C framework, while React Native exposes iOS and Android **native** components to React environment. We're also using [JSX](https://facebook.github.io/react/docs/jsx-in-depth.html) as a simpler way to define UI components. Making a screen in JSX looks like this:
+Shoutem uses [React](https://facebook.github.io/react/) and [React Native](https://facebook.github.io/react-native/) as frameworks for building cross-platform apps. React is an open source JavaScript library providing a **View** from M**V**C pattern, while React Native exposes iOS and Android **native** components to React environment. We're also using [JSX](https://facebook.github.io/react/docs/jsx-in-depth.html) as a simpler way to define UI components. Making a screen in JSX looks like this:
 
 <p class="image">
 <img src='{{ site.baseurl }}/img/getting-started/jsx-component-example.png'/>
 </p>
 
-On top of React and React Native, we're using [Redux](http://redux.js.org/), one-way data flow pattern for predictive application behavior. There are several constructs in Redux shown on next picture.
+On top of React and React Native, we're using [Redux](http://redux.js.org/), one-way data flow pattern for predictive application behavior. There are several constructs in Redux explained on the next picture.
 
 <p class="image">
 <img src='{{ site.baseurl }}/img/getting-started/redux.png'/>
