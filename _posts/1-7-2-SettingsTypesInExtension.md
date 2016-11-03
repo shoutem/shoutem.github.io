@@ -13,7 +13,7 @@ Each extension has 3 different types of settings that can be used by application
 
 Before we dive into settings types, let’s refresh our memory on extension concepts:
 
-- Each extension can have multiple versions, but only one can be installed at a time - that's what we refer to as an `extension installation`
+- Each extension can have multiple versions, but only one can be installed at a time - that's what we refer to as an `extension installation`.
 - An extension can expose multiple shortcuts, called `shortcut instances`, and each of them can be added more than once to the app.
 - Each shortcut instance opens a starting screen, which can then open the next screen, and so on.
 - Each screen can have multiple representations, called `layouts`.
