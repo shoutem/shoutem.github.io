@@ -8,16 +8,14 @@ section: Getting Started
 # Setting up the environment
 <hr />
 
-Before making an extension, set the development environment. Download Shoutem [Command Line Interface](https://www.npmjs.com/package/@shoutem/cli) (CLI), tool available through `npm`, the package management system for `Node.js`.
-
-> #### Note
-> In case you don't have `npm` installed, the best way to install it is by [installing](https://nodejs.org/en/download/) `Node.js`, which includes `npm`.
-
-Once you have `npm` installed, write:
+Before making an extension, set the development environment. Download Shoutem [Command Line Interface](https://www.npmjs.com/package/@shoutem/cli) (CLI), tool available through `npm`, the package management system for `Node.js`:
 
 ```ShellSession
 $ npm install -g @shoutem/cli
 ``` 
+
+> #### Note
+> In case you don't have `npm` installed, the best way to install it is by [installing](https://nodejs.org/en/download/) `Node.js`, which includes `npm`. If previous command fails because of _permission_ issues, you need to run it with `sudo` permission.
 
 Flag ```-g``` is to install CLI globally, so you can use `shoutem` command from any folder.
 
