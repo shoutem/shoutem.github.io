@@ -36,30 +36,11 @@ Your `extension.json` was just modified:
 }
 ```
 
-Upload your extension:
-
-```ShellSession
-$ shoutem push
-Uploading `Restaurants` extension to Shoutem...
-Success!
-```
-
-Go to `Screens` in [Shoutem builder](/docs/coming-soon) and click on `+`. You can finally see your `Restaurants` extension there. When you hover over extension, you can see exposed shortcuts.
-
-<p class="image">
-<img src='{{ site.baseurl }}/img/getting-started/add-modal-shortcut.png'/>
-</p>
-
-Click on the only shortcut of `Restaurants` extension. Shortcut is inserted into app navigation, but nothing else happens! That's exactly what our shortcut does - nothing. Let's make it open `Screen`.
-
-
-## Creating screen
-
-Screens are React components that represent a mobile screen.
+Let's add a screen now. Screens are React components that represent a mobile screen.
 
 ### Creating list screen
 
-Let's create new screen.
+Create a new screen:
 
 ```ShellSession
 $ shoutem screen add RestaurantsList
@@ -172,10 +153,25 @@ Uploading `Restaurants` extension to Shoutem...
 Success!
 ```
 
-Try now tapping to shortcut icon on the preview in [Shoutem Builder](/docs/coming-soon). 
+
+Upload your extension:
+
+```ShellSession
+$ shoutem push
+Uploading `Restaurants` extension to Shoutem...
+Success!
+```
+
+Go to `Screens` in [Shoutem builder](/docs/coming-soon) and click on `+`. You can finally see your `Restaurants` extension there. When you hover over extension, you can see exposed shortcuts.
+
+<p class="image">
+<img src='{{ site.baseurl }}/img/getting-started/add-modal-shortcut.png'/>
+</p>
+
+Click on the only shortcut of `Restaurants` extension. Shortcut is inserted into app navigation.
 
 <p class="image">
 <img src='{{ site.baseurl }}/img/getting-started/extension-hello-world.png'/>
 </p>
 
-Great! New screen is opened. Let's fill our screen with UI.
+In the preview, you can see the _Hello World_ screen. Let's put some UI components on the screen.
