@@ -15,23 +15,47 @@ Renders a horizontally swipable list of items (Pages) by using the provided rend
 #### JSX Declaration
 ```JSX
 <HorizontalPager
+    bounces={...}
     data={...}
-    height={...}
+    onIndexSelected={...}
+    onFullPageSelected={...}
+    pageMargin={...}
     renderPage={...}
+    selectedIndex={...}
+    showNextPage={...}
+    scrollEnabled={...}
 />
 ```
 
 #### Props
 
-* **data** : array
-  -  Array that will be passed to renderPage callback function
+* **bounces** : bool
+  - Prop defining whether the Pager will bounce back when user tries to swipe beyond end of content (iOS only)
 
-* **height** : number  
-  - Prop defines height of items (Android only)
+* **data** : array
+  - Array of objects that will be passed to renderPage callback function
+
+* **onIndexSelected(index: number)** : function  
+  - Callback function called when user swipes between pages (images)
+
+* **onFullPageSelected** : function
+  - Triggered when full new page gets selected (100% of new page becomes visible)
+
+* **pageMargin** : number
+  - Margin between pages (visible only when swiping)
+  - Defaults to `0`
 
 * **renderPage** : function  
-  - Callback function that renders one Page
-  
-#### Style
+  - Function that renders one Page
 
-* None
+* **selectedIndex** : number
+  - Initially selected page in Gallery
+
+* **showNextPage** : bool
+  - Prop that reduces page width by `pageMargin`, allowing 'sneak peak' of next page
+  - Defaults to `false`
+
+* **scrollEnabled**: bool
+  - Prop that enables or disables swiping
+  
+* _Note that current page (Dot) indicators aren't implemented, yet_

@@ -7,31 +7,43 @@ section: UI toolkit
 
 # ImageGallery
 
-ImageGallery component renders a collection of `ImagePreview` components within `HorizontalPager`. Each preview component is rendered on a separate page.
+ImageGallery component renders a collection of transformable `Image` components within `HorizontalPager`, together with additional image info, such as image title and description (optional).
+Transform options include pan, pinch to zoom, double tap to zoom-in or zoom-out. 
 
 ## ImageGallery
-![ImageGallery example]({{ site.baseurl }}/img/ui-toolkit/image-gallery/image_gallery@2x.png "ImageGallery"){:.docs-component-image}
+![ImageGallery example (right image)]({{ site.baseurl }}/img/ui-toolkit/image-gallery/image_gallery@2x.png "ImageGallery"){:.docs-component-image}
 
 #### JSX Declaration
 ```JSX
 <ImageGallery
     data={...}
-    height={...}
-    width={...}
+    forceHideAllControls={...}
+    onInteractiveMode={...}
+    onIndexSelected={...}
+    pageMargin={...}
+    selectedIndex={...}
 />
 ```
 
 #### Props
 
-* **sources** : array  
+* **data** : array of objects 
   - Prop that defines source (array of URIs) of Images that will be rendered 
 
-* **height** : number  
-  - Prop that defines height of rendered Images 
+* **forceHideAllControls**: boolean
+  - Prop that forces full screen mode (black background)
 
-* **width** : number  
-  - Prop that defines width of rendered Image 
-  
-#### Style
+* **onInteractiveMode**: function
+  - Triggered when user taps on single photo, or when user transforms image.
+  - Triggered only if `forceHideAllControls` is false
+  - Useful for hidingexternal controls, such as Navigation bar.
 
-* None
+* **onIndexSelected(index: number)** : function  
+  - Callback function called when user swipes between pages (images)
+
+* **pageMargin**: number
+  - Margin between pages (visible only when swiping). Defaults to `0`
+ 
+* **selectedIndex**: number
+  - Initially selected page in Gallery
+
