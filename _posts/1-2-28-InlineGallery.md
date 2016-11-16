@@ -29,7 +29,8 @@ ImageGallery component renders a collection of `Image` components within `Horizo
 #### Props
 
 * **data** : array of objects 
-  - Prop that defines source (array of URIs) of Images that will be rendered 
+  - Prop that defines source array of Images that will be rendered 
+  - Shape of single object in array ``` { source: { uri: string } ```
 
 * **onPress** : function  
   - Callback function called when user taps on single item (image) in gallery

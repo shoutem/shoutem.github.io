@@ -17,7 +17,7 @@ Transform options include pan, pinch to zoom, double tap to zoom-in or zoom-out.
 ```JSX
 <ImageGallery
     data={...}
-    forceHideAllControls={...}
+    forceInteractiveMode={...}
     onInteractiveMode={...}
     onIndexSelected={...}
     pageMargin={...}
@@ -28,10 +28,11 @@ Transform options include pan, pinch to zoom, double tap to zoom-in or zoom-out.
 #### Props
 
 * **data** : array of objects 
-  - Prop that defines source (array of URIs) of Images that will be rendered 
+  - Prop that defines source (array of objects) of Images that will be rendered 
+  - Shape of single object in array ``` { source: { uri: string }, description: string, title: string } ```
 
-* **forceHideAllControls**: boolean
-  - Prop that forces full screen mode (black background)
+* **forceInteractiveMode**: boolean
+  - Prop that forces interactive mode (full screen) mode (usually with black background)
 
 * **onInteractiveMode**: function
   - Triggered when user taps on single photo, or when user transforms image.
