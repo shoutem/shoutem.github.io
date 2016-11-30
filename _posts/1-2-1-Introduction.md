@@ -23,7 +23,6 @@ Before starting make sure you have:
 
 - Installed [node](https://nodejs.org/en/)
 - Installed [npm](https://www.npmjs.com/)
-- Installed [rnpm](https://github.com/rnpm/rnpm)
 - Installed [React Native](https://facebook.github.io/react-native/docs/getting-started.html)
 
 ## Installation
@@ -37,12 +36,7 @@ $ react-native init HelloWorld
 Install `@shoutem/ui` in your project:
 
 ```bash
-$ npm i -S @shoutem/ui
-```
-Then run `rnpm` to link fonts that the toolkit is using.
-
-```bash
-$ rnpm link
+$ react-native install @shoutem/ui
 ```
 
 To check which components we have in UI toolkit, simply copy the following to your `index.ios.js` file of React Native project:
