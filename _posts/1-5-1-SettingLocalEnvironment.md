@@ -21,7 +21,7 @@ Before setting up local environment for writing Shoutem extensions, set up React
 Once React Native environment is set, use [Shoutem CLI](https://www.npmjs.com/package/@shoutem/cli). It's as easy as:
 
 ```bash
-$ shotuem env install
+$ shoutem env install
 Setting up Shoutem environment:
 Downloading environment for mobile app...
 Downloaded!
