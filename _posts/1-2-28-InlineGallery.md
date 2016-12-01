@@ -7,7 +7,7 @@ section: UI toolkit
 
 # InlineGallery
 
-ImageGallery component renders a collection of `Image` components within `HorizontalPager`. Each preview component is rendered on a separate page.
+InlineGallery component renders a collection of `Image` components within `HorizontalPager`. Each preview component is rendered on a separate page.
 
 ## InlineGallery
 ![Inline Gallery example (left image)]({{ site.baseurl }}/img/ui-toolkit/image-gallery/image_gallery@2x.png "InlineGallery"){:.docs-component-image}
@@ -18,7 +18,8 @@ ImageGallery component renders a collection of `Image` components within `Horizo
     data={...}
     onPress={...}
     onIndexSelected={...}
-    pageMargin={...}
+    renderOverlay={...}
+    renderPlaceholder={...}
     selectedIndex={...}
     showNextPage={...}
     style={...}
@@ -41,12 +42,14 @@ ImageGallery component renders a collection of `Image` components within `Horizo
 * **selectedIndex**: number
   - Initially selected page in Gallery
 
-* **pageMargin**: number
-  - Margin between pages (visible only when swiping)
-  - Defaults to `0`
+* **renderOverlay(selectedIndex: number, data: object)**: function
+ - Callback function that can be used to render overlay over pages (such as page indicators using `PageIndicators` component)
+
+* **renderPlaceholder** function
+ - Callback function that can be used to define placeholder that appears when content is loading
 
 * **showNextPage**: bool
-  - Prop that reduces page width by `pageMargin`, allowing 'sneak peak' of next page
+  - Prop that reduces page width by `nextPageInsetSize` and `pageMargin` (defined in theme/style), allowing 'sneak peak' of next page
   - Defaults to `false`
   
 #### StyleNames

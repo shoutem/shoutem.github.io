@@ -18,8 +18,10 @@ Transform options include pan, pinch to zoom, double tap to zoom-in or zoom-out.
 <ImageGallery
     data={...}
     onIndexSelected={...}
-    pageMargin={...}
+    onModeChanged={...}
     selectedIndex={...}
+    renderOverlay={...}
+    renderPlaceholder={...}
 />
 ```
 
@@ -31,10 +33,17 @@ Transform options include pan, pinch to zoom, double tap to zoom-in or zoom-out.
 
 * **onIndexSelected(index: number)** : function  
   - Callback function called when user swipes between pages (images)
-
-* **pageMargin**: number
-  - Margin between pages (visible only when swiping). Defaults to `0`
  
 * **selectedIndex**: number
   - Initially selected page in Gallery
 
+* **onModeChanged(mode: string)**: function
+  - Triggered when user taps on single photo, or when user transforms (zooms etc.) image
+  - Useful for hiding external controls (i.e. navigation bar)
+  - Mode can be `gallery` or `imagePreview` 
+
+* **renderOverlay(selectedIndex: number, data: object)**: function
+ - Callback function that can be used to render overlay over pages (such as page indicators using `PageIndicators` component)
+
+* **renderPlaceholder** function
+ - Callback function that can be used to define placeholder that appears when content is loading

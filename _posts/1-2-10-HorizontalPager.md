@@ -38,14 +38,17 @@ Renders a horizontally swipable list of items (Pages) by using the provided rend
 * **onIndexSelected(index: number)** : function  
   - Callback function called when user swipes between pages (images)
 
-* **onFullPageSelected** : function
-  - Triggered when full new page gets selected (100% of new page becomes visible)
-
 * **pageMargin** : number
   - Margin between pages (visible only when swiping)
   - Defaults to `0`
 
-* **renderPage** : function  
+* **renderOverlay(selectedIndex: number, data: object)**: function
+ - Callback function that can be used to render overlay over pages (such as page indicators using `PageIndicators` component)
+
+* **renderPlaceholder** function
+ - Callback function that can be used to define placeholder that appears when content is loading
+
+* **renderPage(data: object)** : function  
   - Function that renders one Page
 
 * **selectedIndex** : number
