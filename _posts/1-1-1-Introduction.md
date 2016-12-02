@@ -23,7 +23,7 @@ As shown on the following picture, every Shoutem application is made of extensio
 <img src='{{ site.baseurl }}/img/getting-started/apps-are-made-of-extensions.png'/>
 </p>
 
-Extensions represent small features that are connected to application through [shortcuts]({{ site.baseurl }}/docs/extensions/getting-started/shortcut-and-screen). Application admin just connects wanted extensions to application's main navigation through Shoutem Builder and fills out the content! Shoutem prepared a bunch of **open sourced** extensions which you can easily customize to your needs.
+Extensions represent small features that are connected to application. Application owner connects wanted extensions to application's main navigation through Shoutem Builder and fills out the content! Shoutem prepared a bunch of **open sourced** extensions which you can easily customize to your needs.
 
 <p class="image">
 <img src='{{ site.baseurl }}/img/getting-started/shoutem-extensions.png'/>
