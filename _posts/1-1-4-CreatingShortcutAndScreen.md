@@ -8,7 +8,7 @@ section: Getting Started
 # Creating shortcut and screen
 <hr />
 
-The easiest way to understand what shortcuts are, is to think of them as links to the starting screen in your extension. These links will be used to navigate to your extension from any part of the application. Extensions can expose multiple shortcuts. Let's now create one.
+The easiest way to understand what shortcuts are, is to think of them as **links** to the starting screen of your extension. These links will be used to navigate to your extension from any part of the application. Extensions can expose multiple shortcuts. Let's create one now.
 
 ```ShellSession
 $ shoutem shortcut add openRestaurantsList
@@ -153,22 +153,13 @@ Uploading `Restaurants` extension to Shoutem...
 Success!
 ```
 
-
-Upload your extension:
-
-```ShellSession
-$ shoutem push
-Uploading `Restaurants` extension to Shoutem...
-Success!
-```
-
-Go to `Screens` in [Shoutem builder](/docs/coming-soon) and click on `+`. You can finally see your `Restaurants` extension there. When you hover over extension, you can see exposed shortcuts.
+Go to `Screens` in [Shoutem builder](/docs/coming-soon) and click on `+`. You can finally see your `Restaurants` extension there. If extension has more shortcuts, you can see them when you hover over the extension.
 
 <p class="image">
 <img src='{{ site.baseurl }}/img/getting-started/add-modal-shortcut.png'/>
 </p>
 
-Click on the only shortcut of `Restaurants` extension. Shortcut is inserted into app navigation.
+Click on the `Restaurants` extension. Shortcut is inserted into app navigation.
 
 <p class="image">
 <img src='{{ site.baseurl }}/img/getting-started/extension-hello-world.png'/>
