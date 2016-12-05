@@ -83,20 +83,17 @@ Implement rendering.
 ```JSX{7-8,12-13}
 #file: app/screens/RestaurantsList.js
   render() {
-    // set the title in the Navigation bar
-    this.props.setNavBarProps({
-      title: 'RESTAURANTS'
-    });
-    
-    // get list of restaurants from props
     const { restaurants } = this.props;
     
     return (
-      <ListView
-        data={restaurants}
-        loading={isBusy(restaurants)}
-        renderRow={restaurant => this.renderRow(restaurant, navigateTo)}
-      />
+      <Screen>
+        <NavigationBar title="RESTAURANTS" />
+        <ListView
+          data={restaurants}
+          loading={isBusy(restaurants)}
+          renderRow={restaurant => this.renderRow(restaurant, navigateTo)}
+        />
+      </Screen>
     );
   }
 ```
@@ -131,8 +128,10 @@ import {
   Title,
   Subtitle,
   Overlay,
-  Divider
+  Divider,
+  Screen
 } from '@shoutem/ui';
+import { NavigationBar } from '@shoutem/ui/navigation';
 
 import {
   find,
@@ -181,21 +180,18 @@ class RestaurantsList extends Component {
   }
 
   render() {
-    //set the title in the Navigation bar
-    this.props.setNavBarProps({
-      title: 'RESTAURANTS',
-    });
-
     //get list of restaurants from props
     const { restaurants } = this.props;
     
-
     return (
-      <ListView
-        data={restaurants}
-        status={isBusy(restaurants)}
-        renderRow={restaurant => this.renderRow(restaurant, navigateTo)}
-      />
+      <Screen>
+        <NavigationBar title="RESTAURANTS" />
+        <ListView
+          data={restaurants}
+          status={isBusy(restaurants)}
+          renderRow={restaurant => this.renderRow(restaurant, navigateTo)}
+        />
+      </Screen>
     );
   }
 }
