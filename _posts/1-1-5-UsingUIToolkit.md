@@ -8,7 +8,7 @@ section: Getting Started
 # Using UI toolkit
 <hr />
 
-React Native exposes plain components that you can use, but there's usually much work left to do to make them look professional. Use [Shoutem UI toolkit](https://shoutem.github.io/ui), a set of 3 packages for building professional UI/UX in React Native: [@shoutem/ui](https://github.com/shoutem/ui), [@shoutem/theme](https://github.com/shoutem/theme) and [@shoutem/animation](https://github.com/shoutem/animation). We'll use `@shoutem/ui`, consisting of styleable UI components that you can use in any React Native application. It basically turns any ordinary app into an amazing app. There are plenty of components that you can use out of the box. Documentation for all the components can be found on the [portal]({{ site.baseurl }}/docs/ui-toolkit/introduction).
+React Native exposes plain components that you can use, but there's usually much work left to do to make them look professional. Use [Shoutem UI toolkit](https://shoutem.github.io/ui), a set of 3 packages for building professional UI/UX in React Native: [@shoutem/ui](https://github.com/shoutem/ui), [@shoutem/theme](https://github.com/shoutem/theme) and [@shoutem/animation](https://github.com/shoutem/animation). We'll use `@shoutem/ui`, consisting of styleable UI components that you can use in any React Native application. It basically turns any ordinary app into an amazing app. There are plenty of components that you can use out of the box. Documentation for all the components can be found on the [this portal]({{ site.baseurl }}/docs/ui-toolkit/introduction).
 
 ## Adding static data
 
@@ -27,7 +27,9 @@ import {
   Title,
   Subtitle,
   Overlay,
+  Screen
 } from '@shoutem/ui';
+import { NavigationBar } from '@shoutem/ui/navigation';
 ```
 
 We prepared some data for you. Create `app/assets` folder, which will keep the assets for application part of your extension, and extract [this content](/restaurants/restaurants.zip) inside, which contains restaurants data.
@@ -64,20 +66,17 @@ Add `renderRow` method and replace implementation of `render` method:
   }
 
   render() {
-    this.props.setNavBarProps({
-      title: 'RESTAURANTS'
-    });
-
     return (
-      <ListView
-        data={this.getRestaurants()}
-        renderRow={restaurant => this.renderRow(restaurant)}
-      />
+      <Screen>
+        <NavigationBar title="RESTAURANTS" />
+        <ListView
+          data={this.getRestaurants()}
+          renderRow={restaurant => this.renderRow(restaurant)}
+        />
+      </Screen>
     );
   }
 ```
-
-In render we used `setNavBarProps` method provided in `props` to screens to set the NavBar title.
 
 Upload the extension:
 
@@ -121,11 +120,13 @@ export const screens = {
 export const reducer = {};
 ```
 
-When listem is touched, we want to open details screen. For that we need `TouchableOpacity` component from React Native and Shoutem's `navigateTo` Redux action creator. It accepts Shoutem `route object` (with `screen` and `props` properties) as the only argument. To reference our `RestaurantDetails` screen exported in `app/index.js`, we're using `ext` helper function that was created in `app/const.js` file. This function returns an **absolute name**, e.g. `developer.restaurants.RestaurantsList`, for the extension part which is passed as its first argument, or extension `name` if no argument is passed.
+When list item is touched, we want to open details screen. For that we need `TouchableOpacity` component from React Native and Shoutem's `navigateTo` Redux action creator. It accepts Shoutem `route object` (with `screen` and `props` properties) as the only argument.
+
+To reference our `RestaurantDetails` screen exported in `app/index.js`, we're using `ext` helper function that was created in `app/const.js` file. This function returns an **absolute name**, e.g. `developer.restaurants.RestaurantsList`, for the extension part which is passed as its first argument, or extension `name` if no argument is passed.
 
 Let's import these things:
 
-```javascript{2,4-5}
+```javascript{1-5}
 #file: app/screens/RestaurantsList.js
 import {
   TouchableOpacity
@@ -157,7 +158,7 @@ export default connect(
 
 Implement `renderRow` function.
 
-```JSX{2,5-8,15}
+```JSX{2,5-8,16}
 #file: app/screens/RestaurantsList.js
   renderRow(restaurant) {
     const { navigateTo } = this.props;
@@ -197,7 +198,9 @@ import {
   Title,
   Subtitle,
   Overlay,
+  Screen
 } from '@shoutem/ui';
+import { NavigationBar } from '@shoutem/ui/navigation';
 import { navigateTo } from '@shoutem/core/navigation';
 import { ext } from '../const';
 import { connect } from 'react-redux';
@@ -233,15 +236,14 @@ class RestaurantsList extends Component {
   }
 
   render() {
-    this.props.setNavBarProps({
-      title: 'RESTAURANTS'
-    });
-
     return (
-      <ListView
-        data={this.getRestaurants()}
-        renderRow={restaurant => this.renderRow(restaurant)}
-      />
+      <Screen>
+        <NavigationBar title="RESTAURANTS" />
+        <ListView
+          data={this.getRestaurants()}
+          renderRow={restaurant => this.renderRow(restaurant)}
+        />
+      </Screen>
     );
   }
 }
