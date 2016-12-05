@@ -285,7 +285,7 @@ export default class RestaurantDetails extends Component {
       <ScrollView style = {% raw %}{{marginTop:-70}}{% endraw %}>
         <Image styleName="large-portrait" source={% raw %}{{ uri: restaurant.image &&
         restaurant.image.url ? restaurant.image.url : undefined }}{% endraw %}>
-          <Overlay styleName="dark">
+          <Overlay styleName="fill-parent">
             <Title>{restaurant.name}</Title>
             <Subtitle>{restaurant.address}</Subtitle>
           </Overlay>
