@@ -80,7 +80,7 @@ class RestaurantsList extends Component {
 
 Implement rendering.
 
-```JSX{7-8,12-13}
+```JSX{2,8-9}
 #file: app/screens/RestaurantsList.js
   render() {
     const { restaurants } = this.props;
