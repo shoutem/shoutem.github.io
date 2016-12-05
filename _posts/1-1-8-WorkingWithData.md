@@ -180,7 +180,6 @@ class RestaurantsList extends Component {
   }
 
   render() {
-    //get list of restaurants from props
     const { restaurants } = this.props;
     
     return (
