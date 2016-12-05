@@ -292,7 +292,7 @@ export default class RestaurantDetails extends Component {
         </Image>
 
         <Row>
-          <Text styleName="inset">{restaurant.description}</Text>
+          <Text>{restaurant.description}</Text>
         </Row>
 
         <Divider styleName="line" />
