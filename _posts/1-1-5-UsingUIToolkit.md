@@ -279,10 +279,7 @@ import {
 
 export default class RestaurantDetails extends Component {
   render() {
-    const { restaurant, setNavBarProps } = this.props;
-    
-    // make NavigationBar transparent
-    setNavBarProps({ styleName: 'clear' });
+    const { restaurant } = this.props;
 
     return (
       <ScrollView style = {% raw %}{{marginTop:-70}}{% endraw %}>
