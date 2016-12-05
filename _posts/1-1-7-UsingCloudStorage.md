@@ -118,7 +118,7 @@ Now in order to enter data for your schema, you need to link your extension with
   "shortcuts": [{
     "name": "openRestaurantsList",
     "title": "Restaurants",
-    "description": "Allow users to browse through list of restaurants"
+    "description": "Allow users to browse through list of restaurants",
     "screen": "@.RestaurantsList",
     "adminPages": [{
       "page": "shoutem.cms.CmsPage",
