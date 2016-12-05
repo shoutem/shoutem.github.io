@@ -201,7 +201,6 @@ export default connect(
   }),
   { navigateTo, find }
 )(RestaurantsList);
-
 ```
 
 Let's check how it works:
