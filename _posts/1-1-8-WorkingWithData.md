@@ -123,7 +123,6 @@ import {
 import {
   Image,
   ListView,
-  Text,
   Tile,
   Title,
   Subtitle,
