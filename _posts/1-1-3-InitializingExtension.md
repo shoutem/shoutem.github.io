@@ -46,13 +46,11 @@ Initialization process will generate the skeleton folder and file structure for 
 ```
 Restaurants/
   ├ app/
-  |  ├ node_modules/
-  |  |  └ ...
   |  ├ const.js
   |  ├ index.js
   |  └ package.json
   ├ server/
-  |  └ ...
+  |  └ package.json
   └ extension.json
 ```
 

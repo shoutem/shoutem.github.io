@@ -14,7 +14,7 @@ React Native exposes plain components that you can use, but there's usually much
 
 Let's add static restaurants and show them in list. Start by importing UI components from the toolkit.
 
-```javascript{4-12}
+```javascript{4-14}
 #file: app/screens/RestaurantsList.js
 import React, {
   Component
