@@ -33,10 +33,11 @@ Create new React Native project:
 $ react-native init HelloWorld && cd HelloWorld
 ```
 
-Install `@shoutem/ui` in your project:
+Install and link `@shoutem/ui` in your project:
 
 ```bash
 $ react-native install @shoutem/ui
+$ react-native link
 ```
 
 To check which components we have in UI toolkit, simply copy the following to your `index.ios.js` file of React Native project:
