@@ -39,7 +39,7 @@ $ shoutem env --version
 and update it with:
 
 ```bash
-$ shoutem env update
+$ shoutem env install
 ```
 
 ## Running applications
