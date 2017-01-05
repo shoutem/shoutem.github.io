@@ -8,79 +8,130 @@ section: Tutorials
 # Writing a settings page
 <hr />
 
-From [Getting started tutorial](http://shoutem.github.io/docs/extensions/getting-started/introduction) you might remember a mention of _settings pages_. Settings pages are web pages that appear in Shoutem builder and you as developer can write them. If you check [Extension reference](http://shoutem.github.io/docs/extensions/reference/extension) document, you can see that settings pages are defined in `pages` root field of `extension.json` and can be referenced on 3 places:
+From [Getting started tutorial]({{ site.baseurl }}/docs/extensions/getting-started/introduction) you might remember a mention of _settings pages_. Settings pages are web pages that appear in Shoutem builder which you as developer can write. If you check [Extension reference]({{ site.baseurl }}/docs/extensions/reference/extension) document, you can see that settings pages are defined in `pages` root field of `extension.json` and can be referenced on 3 places:
 
 - `settingsPages` in the root of `extension.json`: array of pages for adjusting global extension settings
-- `settingsPages` in `shortcuts` field: array of pages for adjusting settings for shortcuts
+- `adminPages` in `shortcuts` field: array of pages for adjusting settings for shortcuts
 - `settingsPage` in `screens` field: one page for adjusting layout settings
 
-On each of these places, adjacent property `settings` can come along which represent default settings these pages will be receive if there are no other settings. Value of property `settings` is in arbitrary format. Although same in format, each of these 3 places is used for different settings type. You can read more on [settings types in reference](shoutem.github.io/docs/extensions/reference/settings-types).
+On each of these places, adjacent property `settings` can be present which represent default settings these pages will receive. Value of property `settings` is of an arbitrary format. Although same in format, each of these 3 places is used for different settings type. You can read more on [settings types in reference]({{ site.baseurl }}/docs/extensions/reference/settings-types).
 
 ## Enabling application owners to customize extension
 
-For example, we want to create an extension for restaurants, the same one from [Getting started](http://shoutem.github.io/docs/extensions/getting-started/introduction). However, we want to enable application owners (who will use your extension) to customize the header of the list showing restaurants. Until now, it was hardcoded to `RESTAURANTS`, but with settings pages we can enable the customization of that text.
-
-> #### Note
-> This tutorial continues on [Getting started](http://shoutem.github.io/docs/extensions/getting-started/introduction). If you don't have an app which is result from Getting started chapter, find the `Restaurants` extension on [Github](/docs/coming-soon), install it onto new app and fill with some restaurants. If, however, you have this step ready, but passed more tutorials, some code examples will have specifics from those tutorials.
+The possibilities that you can do with settings pages are countless. In this tutorial, we'll show you an example of how to allow application owners to customize simple text in the settings page and get it in the extension.
 
 ## Creating your first settings page
 
-Locate to folder where you keep extension code:
+Initialize new extension project:
 
 ```bash
-$ cd Restaurants
+$ mkdir HelloWorldPage && cd HelloWorldPage
+$ shoutem init hello-world-page
 ```
 
-and create a settings page with `RestaurantsPage` name:
+Create a settings page with `HelloWorld` name:
 
 ```bash
-$ shoutem page add RestaurantsPage
-File `server/pages/RestaurantsPage.js` was created!
+$ shoutem page add HelloWorld
+Page `HelloWorld` is created in folder `server/pages/HelloWorld`!
 ```
 
-Your `extension.json` looks as follows:
+Page was added to `extension.json`:
 
-```JSON{9-11}
+```JSON{6-9}
 #file: extension.json
 {
-  "name": "restaurants",
+  "name": "hello-world-page",
   "version": "0.0.1",
-  "title": "Restaurants",
-  "description": "List of restaurants",
-  "shortcuts": [{ ... }],
-  "dataSchemas": [{ ... }],
-  "screens": [{ ... }],
+  "title": "HelloWorldPage",
+  "description": "",
   "pages": [{
-    "name": "RestaurantsPage",
+    "name": "HelloWorld",
+    "path": "server/pages/HelloWorld/index.html"
   }]
 }
 ```
 
-When we initialized extension project, there were some folders, like `server/bin` and `server/build` that we didn't explain in detail. This is the folder structure of `server` folder what you're seeing right now:
+Folder `server/pages/HelloWorld` contains three files. This is the structure of `server` folder:
 
 ```
 server/
-├ bin/
-|  ├ server.js
-|  └ webpack.config.js
-├ node_modules/
-├ schemas/
-|  └ Restaurants.json
 ├ pages/
-|  └ RestaurantsPage.js
-├ index.js
+|  └ HelloWorld
+|    ├ index.html
+|    ├ index.js
+|    └ style.css
 └ package.json
 ```
 
-Apart from `schemas` folder which is used for data schemas, other files and folders are here to make settings pages easy:
+File `index.html` includes the boilerplate HTML to get you going with development of settings pages with `Hello World` paragraph.
 
-- `bin` folder is containing configuration file (`server.js`) to allow you to test settings pages locally and a build script (`webpack.config.js`) which builds server folder and makes it ready to be pushed to Shoutem server
-- `node_modules` folder containing npm packages for building settings pages
-- `pages` folder containing settings pages
-- `index.js` file as starting point
-- `package.json` file containing usual package information and references to building scripts
+```HTML
+#file: server/pages/HelloWorld/index.html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://s3.amazonaws.com/extension-resources/styles/0.1.0/bootstrap.css">
+    <link rel="stylesheet" href="https://s3.amazonaws.com/extension-resources/styles/0.1.0/web-ui.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-This setup lets you use modern JavaScript (ES6) along with JSX, which we already used in React Native. When making an app we didn’t need special build environment, because the building process of client extension parts was done when app itself was built. Now, however, everything that you submit will be directly shown in the builder, hence we need to prepare it first.
+<p>
+Hello World!
+</p>
+
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+<script src="https://s3.amazonaws.com/extension-resources/styles/0.1.0/bootstrap.min.js"></script>
+<script src="https://s3.amazonaws.com/extension-resources/builder-sdk/0.1.0/lib.js"></script>
+<script src="https://s3.amazonaws.com/extension-resources/extension-sandbox/0.1.0/lib.js"></script>
+<script src="index.js"></script>
+</html>
+```
+
+It references:
+
+- CSS
+  - Bootstrap v3 - with customized flow for Shoutem Web UI
+  - Web UI - adding Shoutem design on top of Bootstrap design
+  - style.css - where you write your CSS code
+- JavaScript
+  - Bootstrap v3
+  - builder-sdk - exposing `shoutem` variable globally for easier access of Shoutem API
+  - extension-sandbox - enabling the communication between your page and Shoutem builder
+  - index.js - where you write your own JS code with lifecycle methods already prepared
+
+File `index.js` comes with prepared lifecycle methods for your settings page:
+
+```JS
+#file: server/pages/HelloWorld/index.js
+document.addEventListener('sandboxready', onSandboxReady, false);
+
+function onSandboxReady(event) {
+  const config = event.detail;
+
+  $(document).ready(function() {
+    shoutem.sdk.init(config);
+    appReady(config);
+  });
+};
+
+function appReady(config) {
+  // put your custom code here
+}
+```
+
+Finally, we have a simple CSS file `style.css` where you can store your custom CSS:
+
+```CSS
+#file: server/pages/HelloWorld/style.css
+.footer {
+  margin-top: 15px;
+}
+```
 
 Open now `server/pages/RestaurantsPage.js`.
 
