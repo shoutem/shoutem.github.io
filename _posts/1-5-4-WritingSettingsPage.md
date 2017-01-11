@@ -206,7 +206,7 @@ Let's see how this settings page looks like now. Push it to Shoutem and install 
 
 ```ShellSession
 $ shoutem push
-Uploading `Restaurants` extension to Shoutem...
+Uploading `Hello!` extension to Shoutem...
 Success!
 ```
 ```ShellSession
@@ -220,326 +220,151 @@ Open the link from the terminal. Click to `Add Screen` and add shortcut to your 
 
 ![Hello World settings page]({{ site.baseurl }}/img/tutorials/writting-settings-page/hello-world-settings-page.png "Hello World settings page"){:.docs-component-image}
 
-### Accessing shortcut settings in the application
+### Managing the shortcut settings
 
-All that is left to do is to access these 
+Our admin page is plain right now - it just shows `HelloWorld`. We want to enable application owners to set the person name who we're greeting to in the application. For that, we need to add a `form` and a save `button` in `index.html`.
 
+```HTML{12-21}
+#file: server/pages/HelloWorld/index.html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://s3.amazonaws.com/extension-resources/styles/0.1.0/bootstrap.css">
+    <link rel="stylesheet" href="https://s3.amazonaws.com/extension-resources/styles/0.1.0/web-ui.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-## Creating React settings page
+<form id="hello-form" action="#">
+  <h3>Choose your greeting</h3>
+  <div class="form-group">
+    <label class="control-label" for="greeting">Name:</label>
+    <input id="greeting" name="greeting" type="text" class="form-control required">
+  </div>
+  <div class="footer">
+    <button class="btn btn-primary" type="submit">Save</button>
+  </div>
+</form>
 
-This part is coming soon, stay tuned!
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+<script src="https://s3.amazonaws.com/extension-resources/styles/0.1.0/bootstrap.min.js"></script>
+<script src="https://s3.amazonaws.com/extension-resources/builder-sdk/0.1.0/lib.js"></script>
+<script src="https://s3.amazonaws.com/extension-resources/extension-sandbox/0.1.0/lib.js"></script>
+<script src="index.js"></script>
+</html>
+```
 
+When the user clicks `Save`, we want to save the settings entered in the `<input` field. Once settings page is loaded, we want to access this shortcut settings. These 2 actions we'll do in the 2 functions (`handleSubmit` and `initForm`) in `index.js`. We'll use `builder-sdk` which simplifies the communication with Shoutem API, such as updating and getting shortcut settings.
 
+```JS{3-21}
+#file: server/pages/HelloWorld/index.js
+function appReady(config) {
 
-Open now `server/pages/RestaurantsPage.js`.
+  function handleSubmit(e) {
+    // prevent default action and bubbling
+    e.preventDefault();
+    e.stopPropagation();
 
-```JSX
-#file: server/pages/RestaurantsPage.js
-import React from 'react';
+    const greeting = $('#greeting').val();
 
-export default class RestaurantsPage extends React.Component {
-  render () {
-    return (
-      <div>
-        Hello World!
-      </div>
-    );
+    // updates current shortcut settings by patching with current settings
+    shoutem.api.updateShortcutSettings({ greeting });
   }
+
+  function initForm(settings) {
+    $('#greeting').val(settings.greeting);
+  }
+
+  $('button[type="submit"]').click(handleSubmit);
+
+  // shoutem.api knows current shortcut and returns promise with fetched settings
+  shoutem.api.getShortcutSettings().then(initForm);
 }
 ```
 
-This code represents the default root settings page component. To see it in the builder, export it in `index.js` with the same `name`, as it has in `extension.json` and reference it on one of the 3 settings pages places. To enable owners to set restaurants' list title per shortcut instance, reference settings page in `shortcuts` field. For more details on settings pages types, check the [reference](shoutem.github.io/docs/extensions/reference/settings-types).
+The reference for the `builder-sdk` is [here](/coming-soon).
 
-First, export the page:
+Finally, let's add default setting in `extension.json`, so there's some value on the first load of the shortcut settings page:
 
-```JavaScript
-#file: server/index.js
-import RestaurantsPage from './pages/PageName.js';
-
-export pages = {
-  RestaurantsPage
-}
-
-export reducer = {};
-```
-
-... and then use it in `extension.json`.
-
-```JSON{3,17-23}
+```JSON
 #file: extension.json
 {
-  "name": "restaurants",
-  "version": "0.0.2",
-  "title": "Restaurants",
-  "description": "List of restaurants",
+  "name": "hello-world-page",
+  "version": "0.0.1",
+  "title": "Hello!",
+  "description": "Writing my first settings page!",
   "shortcuts": [{
-    "name": "openRestaurantsList",
-    "title": "Restaurants",
-    "description": "Allow users to browse through list of restaurants"
-    "screen": "@.RestaurantsList",
-    "settingsPages": [{
-      "page": "shoutem.cms.CmsPage",
-      "title": "Content",
-      "parameters": {
-        "schema": "@.Restaurants"
-      }
-    }, {
-      "page": "@.RestaurantsPage",
-      "title": "Settings"
+    "name": "ShowGreeting",
+    "title": "Show Greeting",
+    "adminPages": [{
+      "page": "@.ShowGreeting",
+      "title": "Greetings"
     }],
     "settings": {
-      "headerTitle": "RESTAURANTS"
+      "greeting": "World"
     }
   }],
-  "screens": [{ ... }],
-  "dataSchemas": [{ ... }],
   "pages": [{
-    "name": "RestaurantsPage"
+    "name": "HelloWorld",
+    "type": "plain",
+    "path": "server/pages/HelloWorld/index.html"
   }]
 }
 ```
 
-Notice that we've set default setting `headerTitle` to `RESTAURANTS`. We've also increased version to `0.0.2` in case you've already published the extension. Push the new version.
+Let's see the changes we've made:
 
-```bash
 $ shoutem push
-Uploading `Restaurants` extension to Shoutem...
+Uploading `Hello!` extension to Shoutem...
 Success!
 ```
 
-Check `Screens` tab under the Shoutem builder. Under `Restaurants` shortcut in app structure, on the right side, there are 2 settings pages with their navigation items: `Content` and `Settings`. Click on `Settings` to see your _Hello World!_
+This should be shown in the Shoutem Builder:
 
-<p class="image">
-<img src='{{ site.baseurl }}/img/tutorials/settings-theme/screens-restaurants-settings-hello_world.png'/>
-</p>
+// Image coming soon
 
-## Managing settings
+### Accessing shortcut settings in the application
 
-Let’s now add text input component that will enable owners to customize the header of the list. Use [React Bootstrap](https://react-bootstrap.github.io/) to build UI, which was already installed on extension initialization. Shoutem Builder is styling _React Bootstrap_ components, so using those components will make design of your pages match Shoutem design for maximal user experience.
+All that is left to do is to access these settings in the `GreetingsScreen`. Check setting types reference to see how to get it. Update screen file:
 
-```JSX{2-7,12-25}
-#file: server/pages/RestaurantsPage.js
-import React from 'react';
-import {
-  FormGroup,
-  ControlLabel,
-  FormControl,
-  Button
-} from 'react-bootstrap';
-
-export default class RestaurantsPage extends React.Component {
-  render () {
-    return (
-      <form>
-        <FormGroup>
-          <ControlLabel>Insert the title of header:</ControlLabel>
-        </FormGroup>
-        <FormControl
-          type="text"
-          placeholder="Header title"
-        />
-        <Button
-          type="submit"
-        >
-          SUBMIT
-        </Button>
-      </form>
-    );
-  }
-}
-```
-
-Push the extension:
-
-```bash
-$ shoutem push
-Uploading `Restaurants` extension to Shoutem...
-Success!
-```
-
-This is how the settings page looks now.
-
-<p class="image">
-<img src='{{ site.baseurl }}/img/tutorials/settings-theme/screens-restaurants-settings-form+button.png'/>
-</p>
-
-Input is added, but clicking the button still doesn’t set anything. We need to add the logic of setting the header and change it in the application. For communication with the application, settings pages use `@shoutem/builder-sdk`.
-
-## Communication between page and application
-
-Settings pages, as the name says it, set some settings of the app. As we said on the beginning, there are 3 types of settings: `extension settings`, `shortcut settings` and `screen settings`. We agreed to use `shortcut settings` to set the title of list. For that, we’ll use `setShortcutSettings` action creator from `@shoutem/builder-sdk` package. That package was also already installed on the extension initialization.
-
-Use `redux` library which provides a way for updating the application state. Every root settings page component gets `props` object. Root component of a shortcut settings page gets both `extension` and `shortcut` objects in their prop. In this case, we need get settings from `props.shortcut.settings`.
-
-To set shortcut settings, dispatch `setShortcutSettings` action creator bounded in `connect` method.
-
-```JSX{2-4,11-13,15-28,31,42,45,55-57}
-#file: server/pages/RestaurantsPage.js
-import React from 'react';
-import {
-  connect
-} from 'react-redux';
-import {
-  FormGroup,
-  ControlLabel,
-  FormControl,
-  Button
-} from 'react-bootstrap';
-import {
-  setShortcutSettings
-} from '@shoutem/builder-sdk'
-
-class RestaurantsPage extends React.Component {
-  constructor(props) {
-    super(props);
-
-    this.onButtonClick = this.onButtonClick.bind(this);
-  }
-
-  onButtonClick() {
-    const { shortcut } = this.props;
-    const newSettings = Object.assign({}, shortcut.settings);
-    newSettings.headerTitle = this.refs.headerTitle.value;
-
-    setShortcutSettings(newSettings);
-  }
-
-  render () {
-    const { settings } = this.props.shortcut;
-
-    return (
-      <form>
-        <FormGroup>
-          <ControlLabel>Insert the title of header:</ControlLabel>
-        </FormGroup>
-        <FormControl
-          type="text"
-          ref="headerTitle"
-          placeholder="Header title"
-          value={settings.headerTitle}
-        />
-        <Button
-          onClick={this.onButtonClick}
-          type="submit"
-        >
-          SUBMIT
-        </Button>
-      </form>
-    );
-  }
-}
-
-export connect(undefined, {
-  setShortcutSettings
-})(RestaurantsPage);
-```
-
-Notice that we've used `headerTitle` as a value for `FormControl`, which will be set to `RESTAURANTS` on the initial settings page load as defined in default settings.
-
-Only thing left to do is to update the client side. Every screen that is being opened by shortcut, will get 4 props:
-`children`: screen components of nested shortcuts,
-`setNavBarProps`: function for setting NavBar component,
-`extension`: extension object and
-`shortcut`: shortcut instance object.
-
-Let’s use this shortcut settings in the `RestaurantsList` screen.
-
-```JavaScript{64,68}
-#file: app/screens/RestaurantsList.js
+```JS{6,11-16}
+#file app/screens/GreetingsScreen.js
 import React, {
-  Component
+  Component,
 } from 'react';
+
 import {
-  TouchableOpacity,
-} from 'react-native';
-import {
-  Image,
-  ListView,
-  Text,
-  Tile,
   Title,
-  Subtitle,
-  Overlay,
-  Divider
 } from '@shoutem/ui';
 
-import {
-  find,
-  isBusy,
-  shouldRefresh,
-  getCollection
-} from '@shoutem/redux-io';
-
-import { connect } from 'react-redux';
-import { navigateTo } from '@shoutem/core/navigation';
-import { ext } from '../const';
-
-class RestaurantsList extends Component {
-  constructor(props) {
-    super(props);
-
-    this.renderRow = this.renderRow.bind(this);
-  }
-
-  componentDidMount() {
-    const { find, restaurants } = this.props;
-    if (shouldRefresh(restaurants)) {
-      find(ext('Restaurants'), 'all', {
-          include: 'image',
-      });
-    }
-  }
-
-  renderRow(restaurant) {
-    const { navigateTo } = this.props;
-
-    return (
-      <TouchableOpacity onPress={() => navigateTo({
-        screen: ext('RestaurantDetails'),
-        props: { restaurant }
-      })}>
-        <Image styleName="large-banner" source={{ uri: restaurant.image && restaurant.image.url  }}>
-          <Tile>
-            <Title>{restaurant.name}</Title>
-            <Subtitle>{restaurant.address}</Subtitle>
-          </Tile>
-        </Image>
-      </TouchableOpacity>
-    );
-  }
-
+export default class GreetingsScreen extends Component {
   render() {
-    const { restaurants, setNavBarProps, shortcut } = this.props;
-    
-    // set the title in the Navigation bar
-    setNavBarProps({
-      title: shortcut.settings.headerTitle
-    });
+    const { shortcut } = this.props;
+    const { greeting } = shortcut.settings;
 
     return (
-      <ListView
-        data={restaurants}
-        status={isBusy(restaurants)}
-        renderRow={restaurant => this.renderRow(restaurant, navigateTo)}
-      />
+      <Title>Hello, {greeting}</Title>
     );
   }
 }
-
-export default connect(
-  (state) => ({
-    restaurants: getCollection(state[ext()].allRestaurants, state)
-  }),
-  { navigateTo, find }
-)(RestaurantsList);
 ```
 
-Push the extension:
+Update the extension:
 
-```bash
 $ shoutem push
-Uploading `Restaurants` extension to Shoutem...
+Uploading `Hello!` extension to Shoutem...
 Success!
 ```
 
-... and we're done!
+Run the preview to see the greetings.
+
+// Image coming soon
+
+Try changing the settings and see the change in the preview.
+
+## Creating React settings page
+
+This part is coming soon, so stay tuned!
