@@ -7,7 +7,7 @@ section: Animation
 
 # Combining animations
 
-Animations can be combined simply by wrapping each other. This is an example that will give you the same effect as shown on gif below.
+Animations can be combined simply by wrapping each other.
 
 ```javascript
 import React, { Component } from 'react';
@@ -49,7 +49,7 @@ export default class MyAnimatedScreen extends Component {
         <HeroHeader driver={driver}>
           <Image
             styleName="large-banner"
-            source={{ uri: restaurant.image.url }}
+            source={% raw %}{{{% endraw %} uri: restaurant.image.url }}
             key={restaurant.name}
           >
             <Tile>
@@ -66,7 +66,7 @@ export default class MyAnimatedScreen extends Component {
         </HeroHeader>
         <View
           styleName="content"
-          style={{
+          style={% raw %}{{{% endraw %}
             backgroundColor: 'white',
             height: 700,
             padding: 15,

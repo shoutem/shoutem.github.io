@@ -7,12 +7,36 @@ section: UI toolkit
 
 # Buttons
 
-Buttons are styled TouchableOpacities.
+Buttons are additionally styled [TouchableOpacity]({{ site.baseurl }}/docs/ui-toolkit/components/touchable-opacity) components.
 
-##  Button / Text only / Light
+## API
+
+#### Props
+
+* `Button` component doesn't have specific (custom) Props, however, it supports every prop that the standard React Native `TouchableOpacity` component supports. For full list of available props, visit 
+[React Native TouchableOpacity component documentation](https://facebook.github.io/react-native/docs/touchableopacity.html "React Native TouchableOpacity component documentation")  
+
+#### Style names
+
+* **action**: increases `fontSize` for `Text` component within `Button`
+* **border**: applies `Border` color as defined in Theme
+* **clear**: removes the border around `Button` and sets `backgroundColor` to `Clear` color as defined in Theme
+* **confirmation**: sets the border around `Button` and applies a medium margin around  
+* **dark**: sets the text color to `Light` as defined in Theme, and background color to `Darker` as defined in Theme
+* **full-width**: `Button` stretches to full width of the container
+* **muted**: sets the opacity of the `Icon` and `Text` components within `Button`to 50%
+* **stacked**: vertically stacks `Icon` and `Text` within `Button`
+* **tight**: removes the right margin from `Icon` and `Text` within `Button`
+
+#### Style
+* **underlayColor**: the color that will show through when the `Button` is pressed
+* Also, supports every `Style` prop that the standard React Native `View` component supports 
+
+## Examples
+
+###  Button / Text only / Light
 ![Button / Text only / Light example]({{ site.baseurl }}/img/ui-toolkit/buttons/button-text-only-light@2x.png "Button / Text only / Light"){:.docs-component-image}
 
-
 #### JSX Declaration
 ```JSX
 <Button>
@@ -20,10 +44,9 @@ Buttons are styled TouchableOpacities.
 </Button>
 ```  
 
-##  Button / Text only / Dark
+###  Button / Text only / Dark
 ![Button / Text only / Dark example]({{ site.baseurl }}/img/ui-toolkit/buttons/button-text-only-dark@2x.png "Button / Text only / Dark"){:.docs-component-image}
 
-
 #### JSX Declaration
 ```JSX
 <Button styleName="dark">
@@ -31,9 +54,8 @@ Buttons are styled TouchableOpacities.
 </Button>
 ```  
 
-##  Button / Icon + Text / Light
+###  Button / Icon + Text / Light
 ![Button / Icon + Text / Light example]({{ site.baseurl }}/img/ui-toolkit/buttons/button-icon-text-light@2x.png "Button / Icon + Text / Light"){:.docs-component-image}
-
 
 #### JSX Declaration
 ```JSX
@@ -43,9 +65,8 @@ Buttons are styled TouchableOpacities.
 </Button>
 ```  
 
-##  Button / Icon + Text / Dark
+###  Button / Icon + Text / Dark
 ![Button / Icon + Text / Dark example]({{ site.baseurl }}/img/ui-toolkit/buttons/button-icon-text-dark@2x.png "Button / Icon + Text / Dark"){:.docs-component-image}
-
 
 #### JSX Declaration
 ```JSX
@@ -55,9 +76,8 @@ Buttons are styled TouchableOpacities.
 </Button>
 ```  
 
-##  Button / Fixed size
+###  Button / Fixed size
 ![Button / Fixed size example]({{ site.baseurl }}/img/ui-toolkit/buttons/button-fixed-size@2x.png "Button / Fixed size"){:.docs-component-image}
-
 
 #### JSX Declaration
 ```JSX
@@ -72,9 +92,8 @@ Buttons are styled TouchableOpacities.
 </View>
 ```  
 
-##  Button / Full width
+###  Button / Full width
 ![Button / Full width example]({{ site.baseurl }}/img/ui-toolkit/buttons/button-full-width@2x.png "Button / Full width"){:.docs-component-image}
-
 
 #### JSX Declaration
 ```JSX
@@ -83,9 +102,8 @@ Buttons are styled TouchableOpacities.
 </Button>
 ```  
 
-##  Button / Navbar
+### Button / Navbar
 ![Button / Navbar example]({{ site.baseurl }}/img/ui-toolkit/buttons/button-navbar@2x.png "Button / Navbar"){:.docs-component-image}
-
 
 #### JSX Declaration
 ```JSX
@@ -94,9 +112,8 @@ Buttons are styled TouchableOpacities.
 </Button>
 ```  
 
-##  Button / Vertical / Icon + Text
+### Button / Vertical / Icon + Text
 ![Button / Vertical / Icon + Text example]({{ site.baseurl }}/img/ui-toolkit/buttons/button-vertical-icon-text@2x.png "Button / Vertical / Icon + Text"){:.docs-component-image}
-
 
 #### JSX Declaration
 ```JSX
@@ -106,15 +123,14 @@ Buttons are styled TouchableOpacities.
 </Button>
 ```  
 
-##  Button / Full width - Normal
+### Button / Full width - Normal
 ![Button / Full width - Normal example]({{ site.baseurl }}/img/ui-toolkit/buttons/button-full-width-normal@2x.png "Button / Full width - Normal"){:.docs-component-image}
 
-
 #### JSX Declaration
 ```JSX
 <View styleName="horizontal flexible">
   <Button styleName="full-width muted">
-    <Icon name="add-to-favorites-full" />
+    <Icon name="like" />
     <Text>LIKE</Text>
   </Button>
   <Button styleName="full-width muted">
@@ -124,15 +140,14 @@ Buttons are styled TouchableOpacities.
 </View>
 ```  
 
-##  Button / Full width - Active (Feed)
+### Button / Full width - Active (Feed)
 ![Button / Full width - Active (Feed) example]({{ site.baseurl }}/img/ui-toolkit/buttons/button-full-width-active@2x.png "Button / Full width - Active (Feed)"){:.docs-component-image}
 
-
 #### JSX Declaration
 ```JSX
 <View styleName="horizontal flexible">
   <Button styleName="full-width">
-    <Icon name="add-to-favorites-full" />
+    <Icon name="like" />
     <Text>LIKE</Text>
   </Button>
   <Button styleName="full-width">
@@ -141,18 +156,3 @@ Buttons are styled TouchableOpacities.
   </Button>
 </View>
 ```  
-
-#### Props
-
-* All Buttons have the same Props as React Native's `TouchableOpacity` component has
-
-#### Style names
-
-* **tight**: removes the right margin from `Icon` and `Text` within `Button`
-* **clear**: removes the border around `Button` and sets `backgroundColor` to `Clear` color as defined in Theme
-* **dark**: sets the text color to `Light` as defined in Theme, and background color to `Darker` as defined in Theme
-* **muted**: sets the opacity of the `Icon` and `Text` components within `Button`to 50%
-* **confirmation**: sets the border around `Button` and applies a medium margin around  
-* **full-width**: `Button` stretches to full width of the container
-* **border**: applies `Border` color as defined in Theme
-* **stacked**: vertically stacks `Icon` and `Text` within `Button`

@@ -16,7 +16,9 @@ Adds parallax effect to its children components. The children are translated dep
   </video>
 </div>
 
-***Properties:***
+## API
+
+#### Props
 
 - `driver`: Driver that is running the animation
 - `children`: Components that will be affected by the animation
@@ -24,8 +26,11 @@ Adds parallax effect to its children components. The children are translated dep
 - `scrollSpeed`: Number, how fast will the children be translated
 - `insideScroll` Bool, defines if the parallax placed is inside or outside of the `ScrollView`
 
-***Usage:***
 
+## Example
+<br />  
+  
+#### JSX declaration
 ```javascript
 const driver = new ScrollDriver();
 

@@ -292,19 +292,19 @@ It provides a simpler way to use 3-column Navigation bar without reinventing the
   
 #### Props
   
-* **leftComponent** : object  
+* **leftComponent**: object  
   - Prop that represents the left component in `NavigationBar` (example: back button)
 
-* **centerComponent** : object  
+* **centerComponent**: object  
   - Prop that represents the center component in `NavigationBar` (example: screen title)
 
-* **rightComponent** : object
+* **rightComponent**: object
   - Prop that represents the right component in `NavigationBar` (example: dropdown menu button)
 
-* **hasHistory** : bool
+* **hasHistory**: bool
   - If this Prop is set to `true`, the leftComponent will become a back arrow and will trigger the `navigateBack` callback
 
-* **navigateBack()** : function
+* **navigateBack()**: function
   - This callback is triggered after tapping the Back button if `hasHistory` Prop is set to `true`  
 
 #### Style names

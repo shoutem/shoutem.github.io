@@ -9,7 +9,22 @@ section: UI toolkit
 
 Cards have become very popular in recent years. They are useful when displaying interactive content composed of different elements.
 
-## Card
+![Card grid item example]({{ site.baseurl }}/img/ui-toolkit/cards/card@2x.png "Card grid item"){:.docs-component-image}
+
+## API
+
+#### Props
+
+* `Card` component doesn't have specific (custom) Props, however, it supports every prop that the standard React Native `View` component supports. For full list of available props, visit 
+[React Native View component documentation](https://facebook.github.io/react-native/docs/view.html "React Native View component documentation")  
+
+#### Style names
+* `Card` component doesn't have specific Style names, however the `View` component nested under `Card` can use the following Style name:
+  * **content**: adds standard card margins to any child component
+
+## Examples
+
+#### Card grid item
 ![Card grid item example]({{ site.baseurl }}/img/ui-toolkit/cards/card@2x.png "Card grid item"){:.docs-component-image}
 
 #### JSX Declaration
@@ -39,7 +54,7 @@ Cards have become very popular in recent years. They are useful when displaying 
   <View styleName="content">
     <Subtitle>Choosing The Right Boutique Hotel For You</Subtitle>
     <View styleName="horizontal v-center space-between">
-      <Caption>Dec 21, 13:45</Caption>
+      <Caption>21 hours ago</Caption>
       <Button styleName="tight clear"><Icon name="add-event" /></Button>
     </View>
   </View>
@@ -68,8 +83,4 @@ Cards have become very popular in recent years. They are useful when displaying 
   </View>
 </Card>
 ```
-
-#### Style names
-* `Card` component doesn't have specific Style names, however the `View` component nested under `Card` can use the following Style name:
-* **content**: adds standard card margins to any child component
 

@@ -9,26 +9,17 @@ section: UI toolkit
 
 Similar to [ListView]({{ site.baseurl }}/docs/ui-toolkit/components/list-view), `GridView` is used to render Grid of items.  
 
-Instead of having a separate `GridView` component, use `GridRow` component to encapsulate a single row of items (cells), and then pass the `GridRow` as a normal row to a `ListView` component which does the actual content rendering.  
-
-The main idea behind this approach is to allow developers to have a variable number of columns in each row, for example: the first row can have only 1 column, followed by a number of rows with 2 columns.  
-
-## GridView
 ![GridView (GridRow) example]({{ site.baseurl }}/img/ui-toolkit/grid_view@2x.png "Grid View"){:.docs-component-image}
 
-#### JSX Declaration
-```JSX
-const groupedData = GridRow.groupByRows(data, 2)
+Instead of having a separate `GridView` component, you should use `GridRow` component to encapsulate a single row of items (cells), and then pass the `GridRow` as a normal row to a `ListView` component which does the actual content rendering.  
 
-<GridRow
-    columns={3}>
-  {groupedData}
-</GridRow>
-```
+The main idea behind this approach is to allow developers to have a variable number of columns in each row, for example, the first row can have only 1 column, followed by a number of rows with 2 columns.  
+
+## API
 
 #### Props
 
-* **columns** : number  
+* **columns**: number  
   - Number of columns in the GridRow
 
 #### Style names
@@ -37,13 +28,24 @@ const groupedData = GridRow.groupByRows(data, 2)
 
 #### Methods
 
-* **groupByRows(data: *array*, columns: *number*, getColumnSpan: *func*)**
-  - **data** : *array* containing all items.
-  - **columns** : *number* defining number of columns in grid.
-  - **getColumnSpan** : *function* (optional) returns the column span of a single element. Each element has a span of 1 by default.
+* **groupByRows(data: *array*, columns: *number*, getColumnSpan: *function*)**
+  - **data**: *array* containing all items.
+  - **columns**: *number* defining number of columns in grid.
+  - **getColumnSpan**: *function* (optional) returns the column span of a single element. Each element has a span of 1 by default.
   - **returns** an array of rows, where each row is an array of data elements.
   
-#### Example
+## Examples
+
+#### Minimal example
+```JSX
+const groupedData = GridRow.groupByRows(data, 2)
+
+<GridRow columns={3}>
+  {groupedData}
+</GridRow>
+```  
+
+#### Full example
 
 ```JSX
 renderRow(data) {

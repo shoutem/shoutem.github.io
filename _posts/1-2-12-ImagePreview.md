@@ -23,13 +23,13 @@ ImagePreview component renders Image in inline image preview. When clicked, imag
 
 #### Props
 
-* **imageURL** : Image URL  
+* **imageURL**: Image URL  
   - Prop that defines URL of Image that will be rendered 
 
-* **height** : number  
+* **height**: number  
   - Prop that defines height of rendered Image
 
-* **width** : number  
+* **width**: number  
   - Prop that defines width of rendered Image 
   
 #### Style

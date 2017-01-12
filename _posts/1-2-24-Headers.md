@@ -7,20 +7,26 @@ section: UI toolkit
 
 # Headers 
 
-Headers are Tile variations.
+Headers are Tile variations - Headers do not have `Image` as parent component of `Tile` component.
 
-## Header / Article
+## API
+
+See [Tiles]({{ site.baseurl }}/docs/ui-toolkit/components/tiles) for API reference.
+
+## Examples
+
+### Header / Article
 ![Header / Article example]({{ site.baseurl }}/img/ui-toolkit/headers/header-article@2x.png "Header / article"){:.docs-component-image}
 
 #### JSX Declaration
 ```JSX
 <Tile styleName="text-centric">
   <Title styleName="sm-gutter-bottom">MIKE PATTON TEAMING WITH JOHN KAADA FOR COLLAB ALBUM BACTERIA CULT</Title>
-  <Caption>Sophia Jackson        21 hours ago</Caption>
+  <Caption>Sophia Jackson        2 hours ago</Caption>
 </Tile>
 ```
   
-## Header / Shop item
+### Header / Shop item
 ![Header / Shop item example]({{ site.baseurl }}/img/ui-toolkit/headers/header-shop-item@2x.png "Header / shop item"){:.docs-component-image}
 
 #### JSX Declaration
@@ -34,20 +40,20 @@ Headers are Tile variations.
 </Tile>
 ```
   
-## Header / Deals item
+### Header / Deals item
 ![Header / Deals item example]({{ site.baseurl }}/img/ui-toolkit/headers/header-deals-item@2x.png "Large Tile + Button"){:.docs-component-image}
 
 #### JSX Declaration
 ```JSX
 <Tile styleName="text-centric">
   <Title>MIKE PATTON TEAMING WITH JOHN KAADA</Title>
-  <Subtitle styleName="line-through sm-gutter-top">150.00</Subtitle>
-  <Heading>99.99</Heading>
+  <Subtitle styleName="line-through sm-gutter-top">$150.00</Subtitle>
+  <Heading>$99.99</Heading>
   <Button styleName="dark md-gutter-top"><Text>CLAIM COUPON</Text></Button>
 </Tile>
 ```
 
-## Header / Products item
+### Header / Products item
 ![Header / Products item example]({{ site.baseurl }}/img/ui-toolkit/headers/header-products-item@2x.png "Header / products item"){:.docs-component-image}
 
 #### JSX Declaration
@@ -59,8 +65,3 @@ Headers are Tile variations.
   </Overlay>
 </Tile>
 ```
-
-#### Style names
-
-* `Headers` component has the same Style names like `Tiles` component has
-  

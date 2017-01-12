@@ -71,42 +71,42 @@ You can also use standard React Native components in your layouts anywhere you w
 
 ## Style names
 
-Style names are similar to CSS classes. Once you apply specific `styleName`, it will inherit styling rules that are defined in Theme.
+Style names are similar to CSS classes that allows you to style components in "CSS way". Once `styleName` is applied to some component component will inherit styling rules that are defined in Theme for that component and `styleName`.
 
-This section covers common style names that can be used in several UI toolkit components, and their variations.
+This section covers common style names that can be used in several UI toolkit components and their variations.
 
 ### Size-based style name variations
-* **sm-gutter** : small size, defaults to 5px.  
-* **md-gutter** : medium size, defaults to 15px.  
-* **lg-gutter** : large size, defaults to 30px.  
-* **xl-gutter** : extra large size, defaults to 45px.  
+* **sm-gutter**: small size, defaults to 5px.  
+* **md-gutter**: medium size, defaults to 15px.  
+* **lg-gutter**: large size, defaults to 30px.  
+* **xl-gutter**: extra large size, defaults to 45px.  
   
 > On `View`, `Tile` and `Overlay` components gutter is applied as padding, while on `Text` (Typography) and `Button` components gutter is applied as margin.    
     
-If you want to apply gutter only to specific side of component (i.e. `right`), or to vertical sides, you can specify that by using additional position style name keywords listed below.
+If you want to apply gutter only to the specific side of component (i.e. `right`), or to vertical sides, you can specify that by using additional position style name keywords listed below.
 
 ### Position based style name variations  
-* **_size_-gutter-left** : gutter will be applied only to left side of targeted component.  
-* **_size_-gutter-right** : gutter will be applied only to right side of targeted component.  
-* **_size_-gutter-top** : gutter will be applied only to top side of targeted component.  
-* **_size_-gutter-bottom** : gutter will be applied only to bottom side of targeted component.  
-* **_size_-gutter-horizontal** : gutter will be applied only to horizontal sides (left and right) of targeted component.  
-* **_size_-gutter-vertical** : gutter will be applied only to vertical sides (top and bottom) of targeted component.  
+* **_size_-gutter-left**: gutter will be applied only to the left side of targeted component.  
+* **_size_-gutter-right**: gutter will be applied only to the right side of targeted component.  
+* **_size_-gutter-top**: gutter will be applied only to top side of targeted component.  
+* **_size_-gutter-bottom**: gutter will be applied only to the bottom side of targeted component.  
+* **_size_-gutter-horizontal**: gutter will be applied only to horizontal sides (left and right) of targeted component.  
+* **_size_-gutter-vertical**: gutter will be applied only to vertical sides (top and bottom) of targeted component.  
 
 #### rounded-corners
 - This style name applies border radius (defaults to 2 px) to targeted component.  
 
 #### flexible
-- This style name applies flexbox to targeted component, so that it fills parent container component.  
+- This style name applies flexbox to targeted component so that it fills parent container component.  
 
 #### inflexible
-- With this style name, component is sized according to its width/height properties, but makes it fully inflexible.  
+- With this style name, the component is sized according to its width/height properties but makes it fully inflexible.  
 
 #### collapsible
-- This style name causes component to shrink if it overflows parent container.  
+- This style name causes the component to shrink if it overflows parent container.  
 
 #### stretch
-- This style name causes component to fully fill parent container.  
+- This style name causes the component to fully fill parent container.  
   
 Below is one example where and how common Style names can be used:  
 <br />  
@@ -121,3 +121,5 @@ Below is one example where and how common Style names can be used:
   <Button styleName="md-gutter-top"><Icon name="cart" /><Text>ADD TO BASKET</Text></Button>
 </Overlay>
 ```
+
+If you want to learn how you can define your own `styleNames`, check out [Shoutem Theme]({{ site.baseurl }}/img/ui-toolkit/theme/introduction "Shoutem Theme")

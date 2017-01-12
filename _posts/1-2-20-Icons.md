@@ -8,8 +8,80 @@ section: UI toolkit
 # Icons
 
 This document covers available Icons.
+
+![All icons]({{ site.baseurl }}/img/ui-toolkit/icons/all-icons.png "All icons"){:.docs-component-image}  
+
+### API
+
+#### Props
+
+* None
+
+### Style names
   
-## Activity
+* **activity**: callout baloon with three dots inside
+* **add-event**: calendar silhouette with + sign, add event
+* **add-friend**: add friend icon
+* **add-to-cart**: add to cart icon, shopping cart with + sign
+* **add-to-favorites**: add to favorites (star), outline only
+* **add-to-favorites-full**: add to favorites (star) icon (full)
+* **address-full**: map pin (full)
+* **back**: back arrow icon
+* **call**: phone silhouette
+* **cart**: shopping cart icon
+* **close**: close (X) icon
+* **comment**: comment / callout baloon icon (outline)
+* **comment-full**: comment / callout baloon icon (full)
+* **down-arrow**: down arrow
+* **drop-down**: drop down / caret icon
+* **edit**: edit / pencil icon
+* **email**: email / envelope / letter icon
+* **error**: error icon (exclamation mark in circle)
+* **facebook**: Facebook icon
+* **feed_wall**: feed wall message icon
+* **friends**: two person silhouette, one next to other
+* **ic_about**: about (i) icon
+* **ic_bell**: bell icon
+* **ic_books**: book icon
+* **ic_deals**: deals / discount icon
+* **ic_events**: events / calendar icon
+* **ic_exit_to_app**: exit / exit to app icon
+* **ic_folder**: folder icon
+* **ic_more_horiz**: three horizontal dots (more) icon
+* **ic_music_video**: music / video play button icon
+* **ic_people**: two person silhouette, one behind second
+* **ic_photo**: image silhouette
+* **ic_podcasts**: music note icon with additional text
+* **ic_products**: product tag icon
+* **ic_radio**: music note icon
+* **ic_restaurant**: spoon and knife crossed icon
+* **ic_restaurant_menu**: person reading book / menu icon
+* **ic_user_profile**: user profile / user silhouette icon
+* **laptop**: laptop / notebook icon
+* **left-arrow**: left-arrow
+* **like**: like icon (hand)
+* **linkedin-outline**: LinkedIn logo (outline only)
+* **linkedin**: LinkedIn logo (filled)
+* **news**: news icon
+* **pause**: pause icon
+* **photo**: camera icon
+* **pin**: map pin (similar to address icon, outline only)
+* **play**: play icon
+* **refresh**: self-closing arrow
+* **right-arrow**: right arrow
+* **search**: magnifiying glass icon
+* **settings**: gear icon
+* **share**: share icon
+* **share-android**: android-specific share icon
+* **sidebar**: sandwich / hamburger icon often used for slide-in menu
+* **tweet**: Twitter / Tweet icon
+* **unfriend**: unfriend icon
+* **up-arrow**: up arrow icon
+* **web**: globe icon
+
+### Examples
+
+#### Activity
 ![Activity icon example]({{ site.baseurl }}/img/ui-toolkit/icons/activity.png "Activity"){:.docs-component-image}  
 
 
@@ -18,7 +90,7 @@ This document covers available Icons.
 <Icon name="activity" />
 ```  
   
-## Add event
+#### Add event
 ![Add event icon example]({{ site.baseurl }}/img/ui-toolkit/icons/add-event.png "Add event"){:.docs-component-image}  
 
 
@@ -27,7 +99,7 @@ This document covers available Icons.
 <Icon name="add-event" />
 ```  
       
-## Add friend
+#### Add friend
 ![Add friend icon example]({{ site.baseurl }}/img/ui-toolkit/icons/add-friend.png "Add friend"){:.docs-component-image}  
 
 
@@ -36,7 +108,7 @@ This document covers available Icons.
 <Icon name="add-friend" />
 ```  
   
-## Add to cart
+### Add to cart
 ![Add to cart icon example]({{ site.baseurl }}/img/ui-toolkit/icons/add-to-cart.png "Add to cart"){:.docs-component-image}  
 
 
@@ -45,7 +117,7 @@ This document covers available Icons.
 <Icon name="add-to-cart" />
 ```  
             
-## Add to favorites (full)
+### Add to favorites (full)
 ![Add to favorites (full) icon example]({{ site.baseurl }}/img/ui-toolkit/icons/add-to-favorites-full.png "Add to favorites (full)"){:.docs-component-image}  
 
 
@@ -54,7 +126,7 @@ This document covers available Icons.
 <Icon name="add-to-favorites-full" />
 ```  
 
-## Add to favorites (outline)
+### Add to favorites (outline)
 ![Add to favorites (outline) icon example]({{ site.baseurl }}/img/ui-toolkit/icons/add-to-favorites.png "Add to favorites"){:.docs-component-image}  
 
 
@@ -63,7 +135,7 @@ This document covers available Icons.
 <Icon name="add-to-favorites" />
 ```  
 
-## Address (full)
+### Address (full)
 ![Address (full) icon example]({{ site.baseurl }}/img/ui-toolkit/icons/address-full.png "Address (full)"){:.docs-component-image}  
 
 
@@ -72,7 +144,7 @@ This document covers available Icons.
 <Icon name="address-full" />
 ```  
     
-## Back
+### Back
 ![Back icon example]({{ site.baseurl }}/img/ui-toolkit/icons/back.png "Back"){:.docs-component-image}  
 
 
@@ -81,7 +153,7 @@ This document covers available Icons.
 <Icon name="back" />
 ```  
   
-## Call
+### Call
 ![Call icon example]({{ site.baseurl }}/img/ui-toolkit/icons/call.png "Call"){:.docs-component-image}  
 
 
@@ -90,7 +162,7 @@ This document covers available Icons.
 <Icon name="call" />
 ```  
   
-## Cart
+### Cart
 ![Cart icon example]({{ site.baseurl }}/img/ui-toolkit/icons/cart.png "Cart"){:.docs-component-image}  
 
 
@@ -99,7 +171,7 @@ This document covers available Icons.
 <Icon name="cart" />
 ```  
   
-## Close
+### Close
 ![Close icon example]({{ site.baseurl }}/img/ui-toolkit/icons/close.png "Close"){:.docs-component-image}  
 
 
@@ -108,7 +180,7 @@ This document covers available Icons.
 <Icon name="close" />
 ```  
   
-## Comment (full)
+### Comment (full)
 ![Comment (full) icon example]({{ site.baseurl }}/img/ui-toolkit/icons/comment-full.png "Comment full"){:.docs-component-image}  
 
 
@@ -117,7 +189,7 @@ This document covers available Icons.
 <Icon name="comment-full" />
 ```    
   
-## Comment (outline)
+### Comment (outline)
 ![Comment (outline) icon example]({{ site.baseurl }}/img/ui-toolkit/icons/comment.png "Comment (outline)"){:.docs-component-image}  
 
 
@@ -126,7 +198,7 @@ This document covers available Icons.
 <Icon name="comment" />
 ```    
   
-## Down arrow
+### Down arrow
 ![Down arrow icon example]({{ site.baseurl }}/img/ui-toolkit/icons/down-arrow.png "Down arrow"){:.docs-component-image}  
 
 
@@ -135,7 +207,7 @@ This document covers available Icons.
 <Icon name="down-arrow" />
 ```     
   
-## Drop down 
+### Drop down 
 ![Drop down icon example]({{ site.baseurl }}/img/ui-toolkit/icons/drop-down.png "Drop down"){:.docs-component-image}  
 
 
@@ -144,7 +216,7 @@ This document covers available Icons.
 <Icon name="drop-down" />
 ```  
    
-## Edit
+### Edit
 ![Edit icon example]({{ site.baseurl }}/img/ui-toolkit/icons/edit.png "Edit "){:.docs-component-image}  
 
 
@@ -153,7 +225,7 @@ This document covers available Icons.
 <Icon name="edit" />
 ```  
    
-## Email 
+### Email 
 ![Email icon example]({{ site.baseurl }}/img/ui-toolkit/icons/email.png "Email"){:.docs-component-image}  
 
 
@@ -162,7 +234,7 @@ This document covers available Icons.
 <Icon name="email" />
 ```  
   
-## Error 
+### Error 
 ![Error icon example]({{ site.baseurl }}/img/ui-toolkit/icons/error.png "Error"){:.docs-component-image}  
 
 
@@ -171,7 +243,7 @@ This document covers available Icons.
 <Icon name="error" />
 ```  
   
-## Facebook
+### Facebook
 ![Facebook icon example]({{ site.baseurl }}/img/ui-toolkit/icons/facebook.png "Facebook"){:.docs-component-image}  
 
 
@@ -180,7 +252,7 @@ This document covers available Icons.
 <Icon name="facebook" />
 ```  
   
-## Feed wall
+### Feed wall
 ![Feed wall icon example]({{ site.baseurl }}/img/ui-toolkit/icons/feed_wall.png "Feed wall"){:.docs-component-image}  
 
 
@@ -189,7 +261,7 @@ This document covers available Icons.
 <Icon name="feed_wall" />
 ```  
   
-## Friends
+### Friends
 ![Friends icon example]({{ site.baseurl }}/img/ui-toolkit/icons/friends.png "Friends"){:.docs-component-image}  
 
 
@@ -198,7 +270,7 @@ This document covers available Icons.
 <Icon name="friends" />
 ```  
   
-## Inactive (muted) About
+### Inactive (muted) About
 ![Inactive (muted) About icon example]({{ site.baseurl }}/img/ui-toolkit/icons/ic_about.png "Inactive (muted) About"){:.docs-component-image}  
 
 
@@ -207,7 +279,7 @@ This document covers available Icons.
 <Icon name="ic_about" />
 ```  
   
-## Inactive (muted) Bell
+### Inactive (muted) Bell
 ![Inactive (muted) Bell icon example]({{ site.baseurl }}/img/ui-toolkit/icons/ic_bell.png "Inactive (muted) Bell"){:.docs-component-image}  
 
 
@@ -216,7 +288,7 @@ This document covers available Icons.
 <Icon name="ic_bell" />
 ```  
   
-## Inactive (muted) Books
+### Inactive (muted) Books
 ![Inactive (muted) Books icon example]({{ site.baseurl }}/img/ui-toolkit/icons/ic_books.png "Inactive (muted) Books"){:.docs-component-image}  
 
 
@@ -225,7 +297,7 @@ This document covers available Icons.
 <Icon name="ic_books" />
 ```  
   
-## Inactive (muted) Deals
+### Inactive (muted) Deals
 ![Inactive (muted) Deals icon example]({{ site.baseurl }}/img/ui-toolkit/icons/ic_deals.png "Inactive (muted) Deals"){:.docs-component-image}  
 
 
@@ -234,7 +306,7 @@ This document covers available Icons.
 <Icon name="ic_deals" />
 ```  
   
-## Inactive (muted) Events
+### Inactive (muted) Events
 ![Inactive (muted) Events icon example]({{ site.baseurl }}/img/ui-toolkit/icons/ic_events.png "Inactive (muted) Events"){:.docs-component-image}  
 
 
@@ -243,7 +315,7 @@ This document covers available Icons.
 <Icon name="ic_events" />
 ```  
   
-## Inactive (muted) Exit to app
+### Inactive (muted) Exit to app
 ![Inactive (muted) Exit to app icon example]({{ site.baseurl }}/img/ui-toolkit/icons/ic_exit_to_app.png "Inactive (muted) Exit to app"){:.docs-component-image}  
 
 
@@ -252,7 +324,7 @@ This document covers available Icons.
 <Icon name="ic_exit_to_app" />
 ```  
   
-## Inactive (muted) Folder
+### Inactive (muted) Folder
 ![Inactive (muted) Folder icon example]({{ site.baseurl }}/img/ui-toolkit/icons/ic_folder.png "Inactive (muted) Folder"){:.docs-component-image}  
 
 
@@ -261,7 +333,7 @@ This document covers available Icons.
 <Icon name="ic_folder" />
 ```  
   
-## Inactive (muted) More (horizontal)
+### Inactive (muted) More (horizontal)
 ![Inactive (muted) More (horizontal) icon example]({{ site.baseurl }}/img/ui-toolkit/icons/ic_more_horiz.png "Inactive (muted) More (horizontal)"){:.docs-component-image}  
 
 
@@ -270,7 +342,7 @@ This document covers available Icons.
 <Icon name="ic_more_horiz" />
 ```  
   
-## Inactive (muted) Music, Video
+### Inactive (muted) Music, Video
 ![Inactive (muted) Music, Video icon example]({{ site.baseurl }}/img/ui-toolkit/icons/ic_music_video.png "Inactive (muted) Music, Video"){:.docs-component-image}  
 
 
@@ -279,7 +351,7 @@ This document covers available Icons.
 <Icon name="ic_music_video" />
 ```  
   
-## Inactive (muted) People
+### Inactive (muted) People
 ![Inactive (muted) People icon example]({{ site.baseurl }}/img/ui-toolkit/icons/ic_people.png "Inactive (muted) People"){:.docs-component-image}  
 
 
@@ -288,7 +360,7 @@ This document covers available Icons.
 <Icon name="ic_people" />
 ```  
   
-## Inactive (muted) Photo
+### Inactive (muted) Photo
 ![Inactive (muted) Photo icon example]({{ site.baseurl }}/img/ui-toolkit/icons/ic_photo.png "Inactive (muted) Photo"){:.docs-component-image}  
 
 
@@ -297,7 +369,7 @@ This document covers available Icons.
 <Icon name="ic_photo" />
 ```  
   
-## Inactive (muted) Podcasts
+### Inactive (muted) Podcasts
 ![Inactive (muted) Podcasts icon example]({{ site.baseurl }}/img/ui-toolkit/icons/ic_podcasts.png "Inactive (muted) Podcasts"){:.docs-component-image}  
 
 
@@ -306,7 +378,7 @@ This document covers available Icons.
 <Icon name="ic_podcasts" />
 ```  
   
-## Inactive (muted) Products
+### Inactive (muted) Products
 ![Inactive (muted) Products icon example]({{ site.baseurl }}/img/ui-toolkit/icons/ic_products.png "Inactive (muted) Products"){:.docs-component-image}  
 
 
@@ -315,7 +387,7 @@ This document covers available Icons.
 <Icon name="ic_products" />
 ```  
   
-## Inactive (muted) Radio
+### Inactive (muted) Radio
 ![Inactive (muted) Radio icon example]({{ site.baseurl }}/img/ui-toolkit/icons/ic_radio.png "Inactive (muted) Radio"){:.docs-component-image}  
 
 
@@ -324,7 +396,7 @@ This document covers available Icons.
 <Icon name="ic_radio" />
 ```  
   
-## Inactive (muted) Restaurant Menu
+### Inactive (muted) Restaurant Menu
 ![Inactive (muted) Restaurant Menu icon example]({{ site.baseurl }}/img/ui-toolkit/icons/ic_restaurant_menu.png "Inactive (muted) Restaurant Menu"){:.docs-component-image}  
 
 
@@ -333,7 +405,7 @@ This document covers available Icons.
 <Icon name="ic_restaurant_menu" />
 ```  
   
-## Inactive (muted) Resturant
+### Inactive (muted) Resturant
 ![Inactive (muted) Resturant icon example]({{ site.baseurl }}/img/ui-toolkit/icons/ic_restaurant.png "Inactive (muted) restaurant"){:.docs-component-image}  
 
 
@@ -342,7 +414,7 @@ This document covers available Icons.
 <Icon name="ic_resturant" />
 ```  
   
-## Inactive (muted) User profile
+### Inactive (muted) User profile
 ![Inactive (muted) User profile icon example]({{ site.baseurl }}/img/ui-toolkit/icons/ic_user_profile.png "Inactive (muted) user profile"){:.docs-component-image}  
 
 
@@ -351,7 +423,7 @@ This document covers available Icons.
 <Icon name="ic_user_profile" />
 ```  
   
-## Laptop
+### Laptop
 ![Laptop icon example]({{ site.baseurl }}/img/ui-toolkit/icons/laptop.png "Laptop"){:.docs-component-image}  
 
 
@@ -360,7 +432,7 @@ This document covers available Icons.
 <Icon name="laptop" />
 ```  
   
-## Left arrow
+### Left arrow
 ![Left arrow icon example]({{ site.baseurl }}/img/ui-toolkit/icons/left-arrow.png "Left arrow"){:.docs-component-image}  
 
 
@@ -369,7 +441,7 @@ This document covers available Icons.
 <Icon name="left-arrow" />
 ```  
   
-## Like
+### Like
 ![Like icon example]({{ site.baseurl }}/img/ui-toolkit/icons/like.png "Like"){:.docs-component-image}  
 
 
@@ -378,8 +450,8 @@ This document covers available Icons.
 <Icon name="like" />
 ```  
   
-## Linkedin (outline)
-![Linkedin (outline) icon example]({{ site.baseurl }}/img/ui-toolkit/icons/linkedin-outline.png "Linkedin (outline)"){:.docs-component-image}  
+### LinkedIn (outline)
+![LinkedIn (outline) icon example]({{ site.baseurl }}/img/ui-toolkit/icons/linkedin-outline.png "LinkedIn (outline)"){:.docs-component-image}  
 
 
 #### JSX Declaration
@@ -387,8 +459,8 @@ This document covers available Icons.
 <Icon name="linkedin-outline" />
 ```  
 
-## Linkedin (full)
-![Linkedin (full) icon example]({{ site.baseurl }}/img/ui-toolkit/icons/linkedin.png "Linkedin (full)"){:.docs-component-image}  
+### LinkedIn (full)
+![LinkedIn (full) icon example]({{ site.baseurl }}/img/ui-toolkit/icons/linkedin.png "LinkedInLinkedIn (full)"){:.docs-component-image}  
 
 
 #### JSX Declaration
@@ -396,7 +468,7 @@ This document covers available Icons.
 <Icon name="linkedin" />
 ```  
   
-## News
+### News
 ![News icon example]({{ site.baseurl }}/img/ui-toolkit/icons/news.png "News"){:.docs-component-image}  
 
 
@@ -405,7 +477,7 @@ This document covers available Icons.
 <Icon name="news" />
 ```  
 
-## Pause
+### Pause
 ![Pause icon example]({{ site.baseurl }}/img/ui-toolkit/icons/pause.png "Pause"){:.docs-component-image}  
 
 
@@ -414,7 +486,7 @@ This document covers available Icons.
 <Icon name="pause" />
 ```  
 
-## Photo
+### Photo
 ![Photo icon example]({{ site.baseurl }}/img/ui-toolkit/icons/photo.png "Photo"){:.docs-component-image}  
 
 
@@ -423,7 +495,7 @@ This document covers available Icons.
 <Icon name="photo" />
 ```  
   
-## Pin
+### Pin
 ![Pin icon example]({{ site.baseurl }}/img/ui-toolkit/icons/pin.png "Pin"){:.docs-component-image}  
 
 
@@ -432,7 +504,7 @@ This document covers available Icons.
 <Icon name="pin" />
 ```  
 
-## Play
+### Play
 ![Play icon example]({{ site.baseurl }}/img/ui-toolkit/icons/play.png "Play"){:.docs-component-image}  
 
 
@@ -441,7 +513,7 @@ This document covers available Icons.
 <Icon name="play" />
 ```  
 
-## Refresh
+### Refresh
 ![Refresh icon example]({{ site.baseurl }}/img/ui-toolkit/icons/refresh.png "Refresh"){:.docs-component-image}  
 
 
@@ -450,7 +522,7 @@ This document covers available Icons.
 <Icon name="refresh" />
 ```  
 
-## Right arrow
+### Right arrow
 ![Right arrow icon example]({{ site.baseurl }}/img/ui-toolkit/icons/right-arrow.png "Right arrow"){:.docs-component-image}  
 
 
@@ -459,7 +531,7 @@ This document covers available Icons.
 <Icon name="right-arrow" />
 ```  
 
-## Search
+### Search
 ![Search icon example]({{ site.baseurl }}/img/ui-toolkit/icons/search.png "Search"){:.docs-component-image}  
 
 
@@ -468,7 +540,7 @@ This document covers available Icons.
 <Icon name="search" />
 ``` 
 
-## Settings
+### Settings
 ![Settings icon example]({{ site.baseurl }}/img/ui-toolkit/icons/settings.png "Settings"){:.docs-component-image}  
 
 
@@ -477,7 +549,7 @@ This document covers available Icons.
 <Icon name="settings" />
 ``` 
 
-## Share (android)
+### Share (android)
 ![Share (android) icon example]({{ site.baseurl }}/img/ui-toolkit/icons/share-android.png "Share (android)"){:.docs-component-image}  
 
 
@@ -486,7 +558,7 @@ This document covers available Icons.
 <Icon name="share-android" />
 ```  
 
-## Share
+### Share
 ![Share icon example]({{ site.baseurl }}/img/ui-toolkit/icons/share.png "Share"){:.docs-component-image}  
 
 
@@ -495,7 +567,7 @@ This document covers available Icons.
 <Icon name="share" />
 ```  
 
-## Sidebar
+### Sidebar
 ![Sidebar icon example]({{ site.baseurl }}/img/ui-toolkit/icons/sidebar.png "Sidebar"){:.docs-component-image}  
 
 
@@ -505,7 +577,7 @@ This document covers available Icons.
 ```  
 
 
-## Tweet
+### Tweet
 ![Tweet icon example]({{ site.baseurl }}/img/ui-toolkit/icons/tweet.png "Tweet"){:.docs-component-image}  
 
 
@@ -514,7 +586,7 @@ This document covers available Icons.
 <Icon name="tweet" />
 ```  
 
-## Unfriend
+### Unfriend
 ![Unfriend icon example]({{ site.baseurl }}/img/ui-toolkit/icons/unfriend.png "Unfriend"){:.docs-component-image}  
 
 
@@ -523,7 +595,7 @@ This document covers available Icons.
 <Icon name="unfriend" />
 ```  
 
-## Up arrow
+### Up arrow
 ![Up arrow icon example]({{ site.baseurl }}/img/ui-toolkit/icons/up-arrow.png "Up arrow"){:.docs-component-image}  
 
 
@@ -532,7 +604,7 @@ This document covers available Icons.
 <Icon name="up-arrow" />
 ```  
 
-## Web
+### Web
 ![Web icon example]({{ site.baseurl }}/img/ui-toolkit/icons/web.png "Web"){:.docs-component-image}  
 
 

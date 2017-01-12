@@ -9,6 +9,23 @@ section: UI toolkit
 
 Screen is a React Native's `View` with additional background color defined in Theme (defaults to gray).
   
+## API
+
+#### Props
+
+* `Screen` component doesn't have specific (custom) Props, however, it supports every prop that the standard React Native `View` component supports. For full list of available props, visit 
+[React Native View component documentation](https://facebook.github.io/react-native/docs/view.html "React Native View component documentation")  
+
+#### Style names
+
+* **full-screen**: Applies negative top margin, so that the content within `Screen` covers the navigation bar (usually 70 pixels)
+* **paper**: Applies a `Light` color, as defined in Theme
+
+#### Style
+* Supports every `Style` prop that the standard React Native `View` component supports 
+
+## Examples
+
 ## Screen
 <br />
 
@@ -18,7 +35,3 @@ Screen is a React Native's `View` with additional background color defined in Th
     {...}
 </Screen>
 ```  
-
-#### Style names
-
-* **full-screen**: Applies negative top margin, so that the content within `Screen` covers the navigation bar (usually 70 px).

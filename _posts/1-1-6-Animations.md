@@ -23,7 +23,7 @@ When building an application, there is a need to create animations to enrich the
 
 ## Driver
 
-Animation is driven by the `driver`. Driver encapsulates the creation of animation [input events](https://facebook.github.io/react-native/docs/animations.html#input-events), making React Native animations even more declarative. Drivers are attached to animation components which want to listen to specific driver inputs. For now, we're supporing only `ScrollDriver`, that binds scrolling of RN [ScrollView](https://facebook.github.io/react-native/docs/scrollview.html) to the attaching animation components. Binding is done via passing properties to `ScrollView`:
+The animation is driven by the `driver`. Driver encapsulates the creation of animation [input events](https://facebook.github.io/react-native/docs/animations.html#input-events), making React Native animations even more declarative. Drivers are attached to animation components which want to listen to specific driver inputs. For now, we're supporting only `ScrollDriver`, that binds scrolling of RN [ScrollView](https://facebook.github.io/react-native/docs/scrollview.html) to the attaching animation components. Binding is done via passing properties to `ScrollView`:
 
 ```javascript
 import React from 'react';
@@ -119,7 +119,7 @@ return (
 );
 ```
 
-Above code will create scroll dependent fade out animation over `Image` component from scroll 100, to scroll 150 where `Image` is opaque at scroll 100, and fully transparent at scroll 150.
+Above code will create scroll dependent fade out animation over `Image` component from scroll 100, to scroll 150 where `Image` is opaque at scroll 100 and fully transparent at scroll 150.
 
 ### FadeIn/FadeOut example
 
@@ -161,7 +161,7 @@ return (
 );
 ```
 
-Above code will create scroll dependent zoom in animation over `Image` component from scroll 100, to scroll 150 where `Image` has original size at scroll 100, and is scaled by maxFactor at scroll 150.
+Above code will create scroll dependent zoom in animation over `Image` component from scroll 100, to scroll 150 where `Image` has original size at scroll 100 and is scaled by maxFactor at scroll 150.
 
 ### [ZoomOut](#TODO-LinkToCode)
 
@@ -193,7 +193,7 @@ return (
   </ScrollView>
 );
 
-Above code will create scroll dependent zoom out animation over `Image` component from scroll 100, to scroll 150 where `Image` is scaled by maxFactor at scroll 100, and has original size at scroll 150.
+Above code will create scroll dependent zoom out animation over `Image` component from scroll 100, to scroll 150 where `Image` is scaled by maxFactor at scroll 100 and has original size at scroll 150.
 ```
 
 ### ZoomIn/ZoomOut example

@@ -23,13 +23,13 @@ Renders a horizontally swipable list of items (Pages) by using the provided rend
 
 #### Props
 
-* **data** : array
+* **data**: array
   -  Array that will be passed to renderPage callback function
 
-* **height** : number  
+* **height**: number  
   - Prop defines height of items (Android only)
 
-* **renderPage** : function  
+* **renderPage**: function  
   - Callback function that renders one Page
   
 #### Style

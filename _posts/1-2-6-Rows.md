@@ -7,9 +7,30 @@ section: UI toolkit
 
 # Rows
 
-Components rendered within lists are usually implemented using the row container. Row is a container that renders its children horizontally.
+`Row` is a container that renders its children horizontally.
 
-## Small list item
+![Small list item + Icon + Description Row example]({{ site.baseurl }}/img/ui-toolkit/rows/small-list-item-icon-description@2x.png "Small list item + Icon + Description"){:.docs-component-image}
+
+## API
+
+#### Props
+
+* `Row` component doesn't have specific (custom) Props, however, it supports every prop that the standard React Native `View` component supports. For full list of available props, visit 
+[React Native View component documentation](https://facebook.github.io/react-native/docs/view.html "React Native View component documentation")  
+
+#### Style names  
+  
+* **small**: sets the fixed height of Row to 65px  
+* Nested components can also use these Style names:  
+  * **disclosure**: applicable only for `Icon` components within `Row`. Pulls the icon to the right, and sets opacity to 50%  
+  * **notification-dot**: applicable only for `View` components within  `Row`. Pulls the notification dot to the left of the content  
+  * **right-icon**: applicable only for `Button` components within `Row` 
+  * **top**: applicable to any component nested within `Row`. Positions the component with `top` style to the beginning of `Row` component
+  * **vertical**: applicable only for `View` components within `Row`. Adds a bottom margin below each `View` in `Row`
+
+## Examples
+
+### Small list item
 ![Small list item Row example]({{ site.baseurl }}/img/ui-toolkit/rows/small-list-item@2x.png "Small list item"){:.docs-component-image}
 
 #### JSX Declaration
@@ -19,7 +40,7 @@ Components rendered within lists are usually implemented using the row container
 </Row>
 ```
 
-## Small list item + Avatar thumbnail
+### Small list item + Avatar thumbnail
 ![Small list item + Avatar thumbnail Row example]({{ site.baseurl }}/img/ui-toolkit/rows/small-list-item-avatar@2x.png "Small list item + Avatar thumbnail"){:.docs-component-image}
 
 #### JSX Declaration
@@ -33,7 +54,7 @@ Components rendered within lists are usually implemented using the row container
 </Row>
 ```
 
-## Small list item + Icon
+### Small list item + Icon
 ![Small list item + Icon Row example]({{ site.baseurl }}/img/ui-toolkit/rows/small-list-item-icon@2x.png "Small list item + Icon"){:.docs-component-image}
 
 #### JSX Declaration
@@ -44,7 +65,7 @@ Components rendered within lists are usually implemented using the row container
 </Row>
 ```
 
-## Small list item + Icon + Right Arrow
+### Small list item + Icon + Right Arrow
 ![Small list item + Icon + Right Arrow Row example]({{ site.baseurl }}/img/ui-toolkit/rows/small-list-item-icon-right-arrow@2x.png "Small list item + Icon + Right Arrow"){:.docs-component-image}
 
 #### JSX Declaration
@@ -56,13 +77,13 @@ Components rendered within lists are usually implemented using the row container
 </Row>
 ```
   
-## Small list item + Icon + Description
+### Small list item + Icon + Description
 ![Small list item + Icon + Description Row example]({{ site.baseurl }}/img/ui-toolkit/rows/small-list-item-icon-description@2x.png "Small list item + Icon + Description"){:.docs-component-image}
 
 #### JSX Declaration
 ```JSX
 <Row styleName="small">
-  <Icon name="laptop" />
+  <Icon name="share" />
   <View styleName="vertical">
     <Subtitle>Bridges Rock Gym</Subtitle>
     <Text numberOfLines={1}>www.example.com/deal/link/that-is-really-long</Text>
@@ -71,7 +92,7 @@ Components rendered within lists are usually implemented using the row container
 </Row>
 ```
 
-## Small list item + Avatar + Description + Caption
+### Small list item + Avatar + Description + Caption
 ![Small list item + Avatar + Description + Caption Row example]({{ site.baseurl }}/img/ui-toolkit/rows/small-list-item-icon-description-caption@2x.png "Small list item + Avatar + Description + Caption"){:.docs-component-image}
 
 #### JSX Declaration
@@ -91,7 +112,7 @@ Components rendered within lists are usually implemented using the row container
 </Row>
 ```
 
-## Medium list item
+### Medium list item
 ![Medium list item Row example]({{ site.baseurl }}/img/ui-toolkit/rows/medium-list-item@2x.png "Medium list item"){:.docs-component-image}
 
 #### JSX Declaration
@@ -105,7 +126,7 @@ Components rendered within lists are usually implemented using the row container
 </Row>
 ```
 
-## Medium list item + Description
+### Medium list item + Description
 ![Medium list item + Description Row example]({{ site.baseurl }}/img/ui-toolkit/rows/medium-list-item-description@2x.png "Medium list item + Description"){:.docs-component-image}
 
 #### JSX Declaration
@@ -122,7 +143,7 @@ Components rendered within lists are usually implemented using the row container
 </Row>
 ```
 
-## Medium list item + Description + Icon
+### Medium list item + Description + Icon
 ![Medium list item + Description + Icon Row example]({{ site.baseurl }}/img/ui-toolkit/rows/medium-list-item-description-icon@2x.png "Medium list item + Description + Icon"){:.docs-component-image}
 
 #### JSX Declaration
@@ -140,7 +161,7 @@ Components rendered within lists are usually implemented using the row container
 </Row>
 ```
 
-## Medium list item + Description + Icon + Label
+### Medium list item + Description + Icon + Label
 ![Medium list item + Description + Icon + Label Row example]({{ site.baseurl }}/img/ui-toolkit/rows/medium-list-item-description-icon-label@2x.png "Medium list item + Description + Icon + Label"){:.docs-component-image}
 
 #### JSX Declaration
@@ -161,7 +182,7 @@ Components rendered within lists are usually implemented using the row container
 </Row>
 ```
 
-## Medium list item + Notification dot
+### Medium list item + Notification dot
 ![Medium list item + Notification dot Row example]({{ site.baseurl }}/img/ui-toolkit/rows/medium-list-item-notification-icon@2x.png "Medium list item + Notification dot"){:.docs-component-image}
 
 #### JSX Declaration
@@ -179,7 +200,7 @@ Components rendered within lists are usually implemented using the row container
 </Row>
 ```
 
-## Medium list item + Description + Label
+### Medium list item + Description + Label
 ![Medium list item + Description + Label Row example]({{ site.baseurl }}/img/ui-toolkit/rows/medium-list-item-description-label@2x.png "Medium list item + Description + Label"){:.docs-component-image}
 
 #### JSX Declaration
@@ -198,14 +219,3 @@ Components rendered within lists are usually implemented using the row container
   </View>
 </Row>
 ```
-  
-#### Style names  
-
-* **small**: sets the fixed height of Row to 65px
-  
-#### Nested components can also use these Style names:
-* **disclosure**: applicable only for `Icon` components within `Row`. Pulls the icon to the right, and sets opacity to 50%.  
-* **right-icon**: applicable only for `Button` components within `Row` 
-* **notification-dot**: applicable only for `View` components within  `Row`. Pulls the notification dot to the left of the content.  
-* **vertical**: applicable only for `View` components within `Row`. Adds a bottom margin below each `View` in `Row`.
-  

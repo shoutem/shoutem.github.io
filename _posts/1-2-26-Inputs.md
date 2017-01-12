@@ -1,15 +1,36 @@
 ---
 layout: doc
 permalink: /docs/ui-toolkit/components/text-input
-title: Text Input
+title: TextInput
 section: UI toolkit
 ---
 
-# Text Input
+# TextInput
 
-Text Input component is used for inputting text into the application using keyboard. 
+`TextInput` component is used for inputting text into the application using keyboard. 
 
-## Input / Placeholder text 
+## API
+
+#### Props
+
+* `TextInput` component doesn't have specific (custom) Props, however, it supports every prop that the standard React Native `TextInput` component supports. For full list of available props, visit 
+[React Native TextInput component documentation](https://facebook.github.io/react-native/docs/textinput.html "React Native TextInput component documentation")  
+
+#### Style names
+
+* None
+
+#### Style
+
+* **placeholderTextColor**:  
+  - defines the placeholder text color
+* **selectionColor**:  
+  - The highlight color of the text input (and the cursor color on iOS)
+* Also, supports every `Style` prop that the standard React Native `TextInput` component supports 
+
+## Examples
+
+### Input / Placeholder text 
 ![Input / Placeholder text  example]({{ site.baseurl }}/img/ui-toolkit/inputs/input-placeholder@2x.png "Input / Placeholder text"){:.docs-component-image}
 
 #### JSX Declaration
@@ -20,40 +41,24 @@ Text Input component is used for inputting text into the application using keybo
 />
 ```
 
-## Input / With text 
+### Input / With text 
 ![Input / With text  example]({{ site.baseurl }}/img/ui-toolkit/inputs/input-with-value@2x.png "Input / With text"){:.docs-component-image}
 
 #### JSX Declaration
 ```JSX
 <TextInput 
-  placeholder={'Username or email'}
+  defaultValue={'Username or email'}
   onChangeText={...} 
 />
 ```
 
-## Input / With password  
+### Input / With password  
 ![Input / With password  example]({{ site.baseurl }}/img/ui-toolkit/inputs/input-with-password@2x.png "Input / With password "){:.docs-component-image}
 
 #### JSX Declaration
 ```JSX
 <TextInput 
-  placeholder={'Username or email'}
+  placeholder={'SecurePasswordGoesHere'}
   secureTextEntry
 />
 ```
-  
-#### Props
-
-* **placeholder**: string
-  - defines the placeholder text within Input
-* **secureTextEntry**: bool
-  - If true, the text input obscures the text entered so that sensitive text like passwords stay secure
-* Note that `TextInput` component has the same Props like React Native `TextInput` component has
-
-#### Style
-
-* **placeholderTextColor**:  
-  - defines the placeholder text color
-* **selectionColor**:  
-  - The highlight color of the text input (and the cursor color on iOS)
-* Note that `TextInput` component has the same Style props like React Native's `TextInput` component has

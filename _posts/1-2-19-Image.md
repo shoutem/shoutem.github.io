@@ -7,11 +7,44 @@ section: UI toolkit
 
 # Image
 
-This document covers Image component and Image size style names available in Shoutem UI toolkit.
-  
-## List image thumbnail (65x65)
-![List image thumbnail (65x65) example]({{ site.baseurl }}/img/ui-toolkit/image-sizes/list-image-thumbnail-65-x-65@2x.png "List image thumbnail (65x65)"){:.docs-component-image}  
+This document covers `Image` component and Image size style names available in Shoutem UI toolkit.
 
+![List large thumbnail (375x200) example]({{ site.baseurl }}/img/ui-toolkit/image-sizes/list-large-thumbnail-375-x-200@2x.png "List large thumbnail (375x200)"){:.docs-component-image}
+
+## API
+
+#### Props
+
+* `Image` component doesn't have specific (custom) Props, however, it supports every prop that the standard React Native `Image` component supports. For full list of available props, visit 
+[React Native Image component documentation](https://facebook.github.io/react-native/docs/image.html "React Native Image component documentation")  
+
+
+#### Style names
+
+For most of available `Image` style names, Image dimensions are scaled depending on screen dimensions. As example, `Image` with `featured` style name applied will have dimensions of `365x345px (width, height respectively)` on device with screen width of `375px`. If device's screen width is larger, then the image dimensions will be larger than 365x345px and similar, if device screen width is smaller than 375px, actual image will be smaller than 365x345px.
+
+* **featured**: width: `(365 / 375) * window.width` height: `(345 / 375) * window.width`
+* **large**: width: `window.width` height: `(280 / 375) * window.width`
+* **large-portrait**: width: `window.width` height: `(280 / 375) * window.width`
+* **large-banner**: width: `window.width` height: `(200 / 375) * window.width`
+* **large-square**: width: `window.width` height: `window.width`
+* **large-wide**: width: `window.width` height: `(238 / 375) * window.width`
+* **medium-avatar**: rounded image, 72.5px radius
+* **medium**: width: `145px` x height: `92px`
+* **medium-wide**: width: `(180/375)` height: `window.width x 85px`
+* **medium-square**: width: `145px` height: `145px`
+* **rounded-corners**: defines rounded corners, as defined in Theme 
+* **small-avatar**: rounded image, 25px radius
+* **small**: width: `65px` height: `65px`
+
+#### Style
+* Supports every `Style` prop that the standard React Native `Image` component supports 
+
+
+## Examples
+
+### List image thumbnail (65x65)
+![List image thumbnail (65x65) example]({{ site.baseurl }}/img/ui-toolkit/image-sizes/list-image-thumbnail-65-x-65@2x.png "List image thumbnail (65x65)"){:.docs-component-image}  
 
 #### JSX Declaration
 ```JSX
@@ -21,9 +54,8 @@ This document covers Image component and Image size style names available in Sho
 />
 ```  
   
-## List video thumbnail (145x92)
+### List video thumbnail (145x92)
 ![List video thumbnail (145x92) example]({{ site.baseurl }}/img/ui-toolkit/image-sizes/list-video-thumbnail-145-x-92@2x.png "List video thumbnail (145x92)"){:.docs-component-image}
-
 
 #### JSX Declaration
 ```JSX
@@ -33,9 +65,8 @@ This document covers Image component and Image size style names available in Sho
 />
 ```  
   
-## Card image thumbnail (180x85)
+### Card image thumbnail (180x85)
 ![Card image thumbnail (180x85) example]({{ site.baseurl }}/img/ui-toolkit/image-sizes/card-image-thumbnail-180-85@2x.png "Card image thumbnail (180x85)"){:.docs-component-image}
-
 
 #### JSX Declaration
 ```JSX
@@ -45,9 +76,8 @@ This document covers Image component and Image size style names available in Sho
 />
 ```    
 
-## Avatar thumbnail (25x25)
+### Avatar thumbnail (25x25)
 ![Avatar thumbnail (25x25) example]({{ site.baseurl }}/img/ui-toolkit/image-sizes/avatar-thumbnail-25-x-25@2x.png "Avatar thumbnail (25x25)"){:.docs-component-image}
-
 
 #### JSX Declaration
 ```JSX
@@ -57,9 +87,8 @@ This document covers Image component and Image size style names available in Sho
 />
 ```      
 
-## Avatar image (145x145)
+### Avatar image (145x145)
 ![Avatar image (145x145) example]({{ site.baseurl }}/img/ui-toolkit/image-sizes/avatar-image-145-x-145@2x.png "Avatar image (145x145)"){:.docs-component-image}
-
 
 #### JSX Declaration
 ```JSX
@@ -69,9 +98,8 @@ This document covers Image component and Image size style names available in Sho
 />
 ```  
 
-## List medium image (145x145)
+### List medium image (145x145)
 ![List medium image (145x145) example]({{ site.baseurl }}/img/ui-toolkit/image-sizes/list-medium-image-145-x-145@2x.png "List medium image (145x145)"){:.docs-component-image}
-
 
 #### JSX Declaration
 ```JSX
@@ -81,9 +109,8 @@ This document covers Image component and Image size style names available in Sho
 />
 ```  
 
-## List large thumbnail (375x200)
+### List large thumbnail (375x200)
 ![List large thumbnail (375x200) example]({{ site.baseurl }}/img/ui-toolkit/image-sizes/list-large-thumbnail-375-x-200@2x.png "List large thumbnail (375x200)"){:.docs-component-image}
-
 
 #### JSX Declaration
 ```JSX
@@ -93,9 +120,8 @@ This document covers Image component and Image size style names available in Sho
 />
 ```  
 
-## Featured image (365x345)
+### Featured image (365x345)
 ![Featured image (365x345) example]({{ site.baseurl }}/img/ui-toolkit/image-sizes/featured-image-365-345@2x.png "Featured image (365x345)"){:.docs-component-image}
-
 
 #### JSX Declaration
 ```JSX
@@ -105,9 +131,8 @@ This document covers Image component and Image size style names available in Sho
 />
 ```  
 
-## Detail large photo (375x581)
-![Detail large photo (375x581) example]({{ site.baseurl }}/img/ui-toolkit/image-sizes/detail-large-photo-375-581@2x.png "Detail large photo (375x581)"){:.docs-component-image}
-
+### Detail large photo (375x518)
+![Detail large photo (375x518) example]({{ site.baseurl }}/img/ui-toolkit/image-sizes/detail-large-photo-375-581@2x.png "Detail large photo (375x518)"){:.docs-component-image}
 
 #### JSX Declaration
 ```JSX
@@ -117,9 +142,8 @@ This document covers Image component and Image size style names available in Sho
 />
 ```   
 
-## Detail medium photo (375x280)
+### Detail medium photo (375x280)
 ![Detail medium photo (375x280) example]({{ site.baseurl }}/img/ui-toolkit/image-sizes/detail-medium-photo-375-280@2x.png "Detail medium photo (375x280)"){:.docs-component-image}
-
 
 #### JSX Declaration
 ```JSX
@@ -129,9 +153,8 @@ This document covers Image component and Image size style names available in Sho
 />
 ```  
 
-## Detail wide photo (375x238)
+### Detail wide photo (375x238)
 ![Detail wide photo (375x238) example]({{ site.baseurl }}/img/ui-toolkit/image-sizes/detail-wide-photo-375-238@2x.png "Detail wide photo (375x238)"){:.docs-component-image}
-
 
 #### JSX Declaration
 ```JSX
@@ -141,9 +164,8 @@ This document covers Image component and Image size style names available in Sho
 />
 ```   
 
-## Detail square photo (375x375)
+### Detail square photo (375x375)
 ![Detail square photo (375x375) example]({{ site.baseurl }}/img/ui-toolkit/image-sizes/detail-square-photo-375-375@2x.png "Detail square photo (375x375)"){:.docs-component-image}
-
 
 #### JSX Declaration
 ```JSX

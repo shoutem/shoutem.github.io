@@ -7,12 +7,37 @@ section: UI toolkit
 
 # Typography
 
-Typography components are `Text` components with predefined styles. You can use them instead of `Text` components to avoid defining the same styles in multiple places. These components are connected to our themes, so using them instead of `Text` components makes it easy to change the typography of the entire application by installing a new theme.
+Typography components consist of several flavors of `Text` components with predefined styles. Available components are: 
+
+```JSX
+<Heading>...</Heading>
+<Title>...</Title>
+<Subtitle>...</Subtitle>
+<Text>...</Text>
+<Caption>...</Caption>
+```
+
+![Title example]({{ site.baseurl }}/img/ui-toolkit/typography/title@2x.png "Title"){:.docs-component-image}
+
+## API
 
 #### Props
-All components in this section support every prop that the standard React Native `Text` component supports, such as `numberOfLines` prop.
+* All components in this section support every prop that the standard React Native `Text` component supports, such as `numberOfLines` prop. For full list of available props, visit 
+[React Native Text component documentation](https://facebook.github.io/react-native/docs/text.html "React Native Text component documentation")  
 
-## Heading
+#### Style names
+
+* **bold**: Sets text to be bold
+* **bright**: Sets text color to the `Light` color set in Theme
+* **h-center**: Centers the text horizontally
+* **line-through**: Defines a line through the text
+* **multiline**: Increases line-height to allow text to wrap 
+  * **v-center**: Works only in combination with `multiline` styleName. Applies additional top and bottom margins to compensate the unsupported `textAlignVertical` prop on iOS
+
+
+## Examples
+
+### Heading
 ![Heading example]({{ site.baseurl }}/img/ui-toolkit/typography/heading@2x.png "Heading"){:.docs-component-image}
 
 #### JSX Declaration
@@ -20,7 +45,7 @@ All components in this section support every prop that the standard React Native
 <Heading>Mobile App Creator</Heading>
 ```
 
-## Title
+### Title
 ![Title example]({{ site.baseurl }}/img/ui-toolkit/typography/title@2x.png "Title"){:.docs-component-image}
 
 #### JSX Declaration
@@ -28,7 +53,7 @@ All components in this section support every prop that the standard React Native
 <Title>MOBILE APP CREATOR</Title>
 ```
 
-## Subtitle
+### Subtitle
 ![Subtitle example]({{ site.baseurl }}/img/ui-toolkit/typography/subtitle@2x.png "Subtitle"){:.docs-component-image}
 
 #### JSX Declaration
@@ -36,7 +61,7 @@ All components in this section support every prop that the standard React Native
 <Subtitle>Mobile App Creator</Subtitle>
 ```
 
-## Text
+### Text
 ![Text example]({{ site.baseurl }}/img/ui-toolkit/typography/text@2x.png "Text"){:.docs-component-image}
 
 #### JSX Declaration
@@ -44,20 +69,10 @@ All components in this section support every prop that the standard React Native
 <Text>Mobile App Creator</Text>
 ```
 
-## Caption
+### Caption
 ![Caption example]({{ site.baseurl }}/img/ui-toolkit/typography/caption@2x.png "Caption"){:.docs-component-image}
 
 #### JSX Declaration
 ```JSX
 <Caption>Mobile App Creator</Caption>
 ```
-
-
-#### Style names
-
-* **line-through**: Defines a line through the text
-* **h-center**: Centers the text horizontally
-* **bright**: Sets text color to `Light` color set in Theme
-* **bold**: Sets text to be bold
-* **multiline**: Increases line-height to allow text to wrap 
-* **v-center**: Works only in combination with `multiline` styleName. Applies additional top and bottom margins to compensate the unsupported `textAlignVertical` prop on iOS

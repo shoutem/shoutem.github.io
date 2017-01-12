@@ -23,13 +23,13 @@ ImageGallery component renders a collection of `ImagePreview` components within 
 
 #### Props
 
-* **sources** : array  
+* **sources**: array  
   - Prop that defines source (array of URIs) of Images that will be rendered 
 
-* **height** : number  
+* **height**: number  
   - Prop that defines height of rendered Images 
 
-* **width** : number  
+* **width**: number  
   - Prop that defines width of rendered Image 
   
 #### Style
