@@ -9,7 +9,7 @@ section: UI toolkit
 
 Similar to [ListView]({{ site.baseurl }}/docs/ui-toolkit/components/list-view), `GridView` is used to render Grid of items.  
 
-![GridView (GridRow) example]({{ site.baseurl }}/img/ui-toolkit/grid_view@2x.png "Grid View"){:.docs-component-image}
+![GridView (GridRow) example]({{ site.baseurl }}/img/ui-toolkit/gridview/grid_view@2x.png "Grid View"){:.docs-component-image}
 
 Instead of having a separate `GridView` component, you should use `GridRow` component to encapsulate a single row of items (cells), and then pass the `GridRow` as a normal row to a `ListView` component which does the actual content rendering.  
 
@@ -34,49 +34,98 @@ The main idea behind this approach is to allow developers to have a variable num
   - **getColumnSpan**: *function* (optional) returns the column span of a single element. Each element has a span of 1 by default.
   - **returns** an array of rows, where each row is an array of data elements.
   
-## Examples
+## Example
 
-#### Minimal example
+![GridView (GridRow) example]({{ site.baseurl }}/img/ui-toolkit/gridview/gridview-example.png "Grid View"){:.docs-component-image}
+
+
+#### JSX declaration
 ```JSX
-const groupedData = GridRow.groupByRows(data, 2)
+  constructor(props) {
+    super(props);
+    this.renderRow = this.renderRow.bind(this);
+    this.state = {
+      restaurants: [{
+        "name": "Gaspar Brasserie",
+        "address": "185 Sutter St, San Francisco, CA 94109",
+        "image": { "url": "https://shoutem.github.io/restaurants/restaurant-1.jpg" },
+      }, {
+        "name": "Chalk Point Kitchen",
+        "address": "527 Broome St, New York, NY 10013",
+        "image": { "url": "https://shoutem.github.io/restaurants/restaurant-2.jpg" },
+      }, {
+        "name": "Gaspar Brasserie",
+        "address": "185 Sutter St, San Francisco, CA 94109",
+        "image": { "url": "https://shoutem.github.io/restaurants/restaurant-1.jpg" },
+      }],
+    }
+  }
 
-<GridRow columns={3}>
-  {groupedData}
-</GridRow>
-```  
+  renderRow(rowData, sectionId, index) {
+    // rowData contains grouped data for one row, 
+    // so we need to remap it into cells and pass to GridRow
 
-#### Full example
+    if (index === '0') {
+      return (
+        <TouchableOpacity key={index}>
+          <Image
+            styleName="large"
+            source={{ uri: rowData[0].image.url }}
+          >
+            <Tile>
+              <Title styleName="md-gutter-bottom">{rowData[0].name}</Title>
+              <Subtitle styleName="sm-gutter-horizontal">{rowData[0].address}</Subtitle>
+            </Tile>
+          </Image>
+          <Divider styleName="line" />
+        </TouchableOpacity>
+      );
+    }
 
-```JSX
-renderRow(data) {
-  // data contains grouped data for one row, 
-  // so we need to remap it into cells and pass to GridRow
-  const cellViews = _.map(data, (item) => {
-  return (
-    <MyGridCell
-      key={item.id}
-      data={item}
-      onPress={...}
-    />
-  );
-});
-return (
-  <GridRow columns={2}>
-    {cellViews}
-  </GridRow>
-  );
-}
+    const cellViews = rowData.map((restaurant, id) => {
+    return (
+        <TouchableOpacity key={id} styleName="flexible">
+          <Card styleName="flexible">
+            <Image
+              styleName="medium-wide"
+              source={{ uri: restaurant.image.url  }}
+            />
+            <View styleName="content">
+              <Subtitle numberOfLines={3}>{restaurant.name}</Subtitle>
+              <View styleName="horizontal">
+                <Caption styleName="collapsible" numberOfLines={2}>{restaurant.address}</Caption>
+              </View>
+            </View>
+          </Card>
+        </TouchableOpacity>
+      );
+    });
+    return (
+      <GridRow columns={2}>
+        {cellViews}
+      </GridRow>
+    );
+  }
 
-renderArticles(data) {
-  // Group the data into rows with 2 columns
-  const groupedData = GridRow.groupByRows(data, 2)
+  render() {
+    // Group the restaurants into rows with 2 columns, except for the
+    // first article. The first article is treated as a featured article
+    let isFirstArticle = true;
+    const groupedData = GridRow.groupByRows(this.state.restaurants, 2, () => {
+      if (isFirstArticle) {
+        isFirstArticle = false;
+        return 2;
+      }
 
-  return (
-    <ListView
-      data={groupedData}
-      renderRow={this.renderRow}
-      {...}
-    />
-  );
-}
+      return 1;
+    });
+    return (
+      <Screen>
+        <ListView
+          data={groupedData}
+          renderRow={this.renderRow}
+        />
+      </Screen>
+    );
+  }
 ```

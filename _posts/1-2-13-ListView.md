@@ -61,20 +61,51 @@ ListView component is a base component used to render Lists of items. This compo
   - You can also define `refreshControl.tintColor` prop in this Style, which is passed to the `tintColor` prop of the `RefreshControl` component.
 
 ## Examples
+![ListView example]({{ site.baseurl }}/img/ui-toolkit/listview/listview-example.png "ListView"){:.docs-component-image}
 
-#### Minimal example
+#### JSX declaration
 ```JSX
-<ListView
-    data={...}
-    loading={...}
-    onLoadMore={...}
-    onRefresh={...}
-    renderFooter={...}
-    renderHeader={...}
-    renderRow={...}
-    renderSectionHeader={...}
-    style={...}
-/>
-```
+  constructor(props) {
+    super(props);
+    this.renderRow = this.renderRow.bind(this);
+    this.state = {
+      restaurants: [{
+        "name": "Gaspar Brasserie",
+        "address": "185 Sutter St, San Francisco, CA 94109",
+        "image": { "url": "https://shoutem.github.io/restaurants/restaurant-1.jpg" },
+      }, {
+        "name": "Chalk Point Kitchen",
+        "address": "527 Broome St, New York, NY 10013",
+        "image": { "url": "https://shoutem.github.io/restaurants/restaurant-2.jpg" },
+      }],
+    }
+  }
 
-#### Full example
+  renderRow(restaurant) {
+    return (
+      <View>
+        <Image
+          styleName="large-banner"
+          source={{ uri: restaurant.image.url }}
+        >
+          <Tile>
+            <Title styleName="md-gutter-bottom">{restaurant.name}</Title>
+            <Subtitle styleName="sm-gutter-horizontal">{restaurant.address}</Subtitle>
+          </Tile>
+        </Image>
+        <Divider styleName="line" />
+      </View>
+    );
+  }
+
+  render() {
+    return (
+      <Screen>
+        <ListView
+          data={this.state.restaurants}
+          renderRow={this.renderRow}
+        />
+      </Screen>
+    );
+  }
+```
