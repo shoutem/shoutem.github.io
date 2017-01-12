@@ -55,24 +55,29 @@ DropDownMenu is a full-screen contextual menu for displaying lists of items.
 
 #### JSX declaration
 ```JSX
-  render() {
-    const cars = [
-      { title: 'Car A', value: 'Brand A' },
-      { title: 'Car B ', value: 'Brand B' },
-      { title: 'Car C', value: 'Brand C' },
+  constructor(props){
+    super(props);
+    this.state = {
+      cars: [
+        { title: 'Car A', value: 'Brand A' },
+        { title: 'Car B ', value: 'Brand B' },
+        { title: 'Car C', value: 'Brand C' },
+      ],
+    }
+  }
 
-    ];
+  render() {
     return (
       <Screen>
         <DropDownMenu
           styleName="horizontal"
-          options={cars}
-          selectedOption={this.state.selectedCar ? this.state.selectedCar : cars[0]}
+          options={this.state.cars}
+          selectedOption={this.state.selectedCar ? this.state.selectedCar : this.state.cars[0]}
           onOptionSelected={(car) => this.setState({ selectedCar: car })}
           titleProperty="title"
           valueProperty="value"
         />
-        <Text>{this.state.selectedCar ? this.state.selectedCar.value : cars[0].value}</Text>
+        <Text>{this.state.selectedCar ? this.state.selectedCar.value : this.state.cars[0].value}</Text>
       </Screen>
     );
   }
