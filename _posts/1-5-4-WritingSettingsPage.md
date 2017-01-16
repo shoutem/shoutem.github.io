@@ -276,11 +276,11 @@ function appReady(config) {
     const greeting = $('#greeting').val();
 
     // updates current shortcut settings by patching with current settings
-    shoutem.api.updateShortcutSettings({ greeting });
+    shoutem.api.updateShortcutSettings({ greetingName });
   }
 
   function initForm(settings) {
-    $('#greeting').val(settings.greeting);
+    $('#greeting').val(settings.greetingName);
   }
 
   $('button[type="submit"]').click(handleSubmit);
@@ -338,7 +338,7 @@ Success!
 All that is left to do is to access the shortcut in the `GreetingsScreen`. Check setting types reference to see how to get it. Update screen file:
 
 ```JS{6,11-16}
-#file app/screens/GreetingsScreen.js
+#file: app/screens/GreetingsScreen.js
 import React, {
   Component,
 } from 'react';
@@ -350,10 +350,10 @@ import {
 export default class GreetingsScreen extends Component {
   render() {
     const { shortcut } = this.props;
-    const { greeting } = shortcut.settings;
+    const { greetingName } = shortcut.settings;
 
     return (
-      <Title>Hello, {greeting}</Title>
+      <Title>Hello {greetingName}!</Title>
     );
   }
 }
@@ -361,16 +361,15 @@ export default class GreetingsScreen extends Component {
 
 Update the extension:
 
+```
 $ shoutem push
 Uploading `Hello!` extension to Shoutem...
 Success!
 ```
 
-Run the preview to see the greetings.
-
-// Image coming soon
-
 Try changing the settings and see the change in the preview.
+
+![Page with default settings]({{ site.baseurl }}/img/tutorials/writting-settings-page/hello-tom.png "Page with default settings"){:.docs-component-image}
 
 ## Creating React settings page
 
