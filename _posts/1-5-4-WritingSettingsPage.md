@@ -26,12 +26,12 @@ These are the 3 types of settings pages. On each of these places, adjacent prope
 
 ## Creating your first settings page
 
-The possibilities that you can do with settings pages are countless. In this tutorial, we'll show you an example of how to allow application owners to customize simple text in the settings page and get that text in the extension.
+The possibilities that you can do with settings pages are countless. In this tutorial, we'll show you an example of how to allow application owners to customize simple text in the settings page and get that text in the extension. Final extension code can be found [here](https://github.com/shoutem/extension-examples/tree/master/hello-world-page).
 
 Initialize new extension project:
 
 ```ShellSession
-$ mkdir HelloWorldPage && cd HelloWorldPage
+$ mkdir hello-world-page && cd hello-world-page
 ```
 ```ShellSession
 $ shoutem init hello-world-page
@@ -243,10 +243,10 @@ Our admin page is plain right now - it just shows _Hello World_. We want to enab
 <body>
 
 <form id="hello-form" action="#">
-  <h3>Choose your greeting</h3>
+  <h3>Choose your greeting:</h3>
   <div class="form-group">
-    <label class="control-label" for="greeting">Name:</label>
-    <input id="greeting" name="greeting" type="text" class="form-control required">
+    <label class="control-label" for="greetingName">Name:</label>
+    <input id="greetingName" name="greetingName" type="text" class="form-control required">
   </div>
   <div class="footer">
     <button class="btn btn-primary" type="submit">Save</button>
@@ -273,14 +273,14 @@ function appReady(config) {
     e.preventDefault();
     e.stopPropagation();
 
-    const greeting = $('#greeting').val();
+    const greetingName = $('#greetingName').val();
 
     // updates current shortcut settings by patching with current settings
     shoutem.api.updateShortcutSettings({ greetingName });
   }
 
   function initForm(settings) {
-    $('#greeting').val(settings.greetingName);
+    $('#greetingName').val(settings.greetingName);
   }
 
   $('button[type="submit"]').click(handleSubmit);
@@ -310,7 +310,7 @@ Finally, let's add default setting in `extension.json`, so there's some value on
       "title": "Greetings"
     }],
     "settings": {
-      "greeting": "World"
+      "greetingName": "World"
     }
   }],
   "screens": [{
