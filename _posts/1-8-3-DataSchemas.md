@@ -17,11 +17,11 @@ Create data schema with:
 $ shoutem schema add <schema-name>
 ```
 
-where you should replace <schema-name> with the name of your Data Schema name. Example:
+where you should replace `<schema-name>` with the name of your Data Schema name. Example:
 
 ```ShellSession
 $ shoutem schema add Restaurants
-Schema `Restaurnats` is created in file `server/schemas/Restaurants.json`!
+Schema `Restaurants` is created in file `server/schemas/Restaurants.json`!
 File `extension.json` was modified.
 ```
 
@@ -43,6 +43,7 @@ Data schema is created in `server/data-schemas` folder. Its default content is:
 ```
 
 Root JSON fields that are immediately included are:
+
 - `title`: Title of the schema shown on the CMS page
 - `properties`: Properties of each object created from that data schema
 - `titleProperty`: Property used as title of object in the list
@@ -310,9 +311,9 @@ Example:
 
 Value descriptor along with _value type_ can also describe additional information for particular value. These fields are inherited from JSON Schema specification:
 
-- `properties.pattern` - regex pattern constraint, applicable only to string primitive type
+- `properties.pattern` - regex pattern constraint, applicable only to `string` primitive type
 - `properties.required` - required constraint
-- `properties.minLength` and `properties.maxLength` - string length constraints, applicable only to string primitive type
+- `properties.minLength` and `properties.maxLength` - `string` length constraints, applicable only to `string` primitive type
 - `properties.maximum` and `properties.minimum` - value range constraints, applicable only to number and integer primitive types
 
 
