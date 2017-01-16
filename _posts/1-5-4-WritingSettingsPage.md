@@ -103,8 +103,8 @@ Hello World!
 </body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
 <script src="https://s3.amazonaws.com/extension-resources/styles/0.1.0/bootstrap.min.js"></script>
-<script src="https://s3.amazonaws.com/extension-resources/builder-sdk/0.1.0/lib.js"></script>
-<script src="https://s3.amazonaws.com/extension-resources/extension-sandbox/0.1.0/lib.js"></script>
+<script src="https://s3.amazonaws.com/extension-resources/builder-sdk/0.1.1/lib.js"></script>
+<script src="https://s3.amazonaws.com/extension-resources/extension-sandbox/0.1.1/lib.js"></script>
 <script src="index.js"></script>
 </html>
 ```
@@ -256,8 +256,8 @@ Our admin page is plain right now - it just shows _Hello World_. We want to enab
 </body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
 <script src="https://s3.amazonaws.com/extension-resources/styles/0.1.0/bootstrap.min.js"></script>
-<script src="https://s3.amazonaws.com/extension-resources/builder-sdk/0.1.0/lib.js"></script>
-<script src="https://s3.amazonaws.com/extension-resources/extension-sandbox/0.1.0/lib.js"></script>
+<script src="https://s3.amazonaws.com/extension-resources/builder-sdk/0.1.1/lib.js"></script>
+<script src="https://s3.amazonaws.com/extension-resources/extension-sandbox/0.1.1/lib.js"></script>
 <script src="index.js"></script>
 </html>
 ```
