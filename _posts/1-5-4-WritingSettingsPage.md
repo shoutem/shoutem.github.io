@@ -121,7 +121,7 @@ It's using:
   - extension-sandbox - enabling the communication between your page and Shoutem builder
   - index.js - a place where you write your own JS code with lifecycle methods already prepared
 
-File `index.js` comes with prepared lifecycle methods for your settings page:
+File `index.js` comes with ready lifecycle methods for your settings page:
 
 ```JS
 #file: server/pages/HelloWorldPage/index.js
@@ -146,7 +146,7 @@ function appReady(config) {
 }
 ```
 
-Sandbox is a container where your settings page is loaded. Once it's ready `onSandboxReady` function is triggered. By default, logic for extracting the configuration for your extension and initializing jQuery is inside of that function. You can customize everything that comes after `onSandboxReady`.
+Sandbox is a container where your settings page is loaded. Once it's ready, `onSandboxReady` function is triggered. By default, logic for extracting the configuration for your extension and initializing jQuery is inside of that function. You can customize everything that comes after `onSandboxReady`.
 
 Finally, we have a simple CSS file `style.css` where you can store your custom CSS:
 
