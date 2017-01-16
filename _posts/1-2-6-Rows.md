@@ -39,7 +39,7 @@ Components rendered within lists are usually implemented using the row container
 #### JSX Declaration
 ```JSX
 <Row styleName="small">
-  <Icon iconName="star" />
+  <Icon name="star" />
   <Text>Add to favorites</Text>
 </Row>
 ```

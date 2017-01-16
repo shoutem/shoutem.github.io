@@ -13,9 +13,9 @@ Shoutem UI toolkit enables you to build professionally looking React Native apps
 
 It consists of three libraries: 
 
-- @shoutem/ui: beautiful and customizable UI [components](http://shoutem.github.io/docs/ui-toolkit/components/typography)
-- @shoutem/theme: “CSS-way” of styling the entire app with [themes](http://shoutem.github.io/docs/ui-toolkit/theme/introduction)
-- @shoutem/animation: declarative way of applying ready-made [animations](http://shoutem.github.io/docs/ui-toolkit/theme/animation/introduction) 
+- [@shoutem/ui](https://github.com/shoutem/ui): beautiful and customizable UI [components](http://shoutem.github.io/docs/ui-toolkit/components/typography)
+- [@shoutem/theme](https://github.com/shoutem/theme): “CSS-way” of styling the entire app with [themes](http://shoutem.github.io/docs/ui-toolkit/theme/introduction)
+- [@shoutem/animation](https://github.com/shoutem/animation): declarative way of applying ready-made [animations](http://shoutem.github.io/docs/ui-toolkit/theme/animation/introduction) 
 
 
 ## Prerequsites
@@ -30,13 +30,14 @@ Before starting make sure you have:
 Create new React Native project:
 
 ```bash
-$ react-native init HelloWorld
+$ react-native init HelloWorld && cd HelloWorld
 ```
 
-Install `@shoutem/ui` in your project:
+Install and link `@shoutem/ui` in your project:
 
 ```bash
 $ react-native install @shoutem/ui
+$ react-native link
 ```
 
 To check which components we have in UI toolkit, simply copy the following to your `index.ios.js` file of React Native project:
@@ -56,6 +57,12 @@ class HelloWorld extends Component {
 }
 
 AppRegistry.registerComponent('HelloWorld', () => HelloWorld);
+```
+
+Finally, run the app!
+
+```bash
+$ react-native run-ios
 ```
 
 To see other components, just import them from `@shoutem/ui` and render them.

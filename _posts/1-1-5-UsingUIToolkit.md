@@ -14,7 +14,7 @@ React Native exposes plain components that you can use, but there's usually much
 
 Let's add static restaurants and show them in list. Start by importing UI components from the toolkit.
 
-```javascript{4-12}
+```javascript{4-13}
 #file: app/screens/RestaurantsList.js
 import React, {
   Component
@@ -22,7 +22,6 @@ import React, {
 import {
   Image,
   ListView,
-  Text,
   Tile,
   Title,
   Subtitle,
@@ -32,7 +31,7 @@ import {
 import { NavigationBar } from '@shoutem/ui/navigation';
 ```
 
-We prepared some data for you. Create `app/assets` folder, which will keep the assets for application part of your extension, and extract [this content](/restaurants/restaurants.zip) inside, which contains restaurants data.
+We prepared some data for you. Create `app/assets` folder, which will keep the assets for application part of your extension, and extract [this JSON file](/restaurants/restaurants.zip) inside, which contains restaurants data.
 
 Define a method in `RestaurantsList` class that returns an array of restaurants.
 
@@ -41,7 +40,7 @@ Define a method in `RestaurantsList` class that returns an array of restaurants.
 export default class RestaurantsList extends Component {
 
   getRestaurants() {
-    return require('../assets/data/restaurants.json');
+    return require('../assets/restaurants.json');
   }
 ```
 
@@ -193,7 +192,6 @@ import {
 import {
   Image,
   ListView,
-  Text,
   Tile,
   Title,
   Subtitle,
@@ -213,7 +211,7 @@ class RestaurantsList extends Component {
   }
 
   getRestaurants() {
-    return require('../assets/data/restaurants.json');
+    return require('../assets/restaurants.json');
   }
 
   renderRow(restaurant) {

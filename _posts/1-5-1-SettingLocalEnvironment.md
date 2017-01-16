@@ -39,7 +39,7 @@ $ shoutem env --version
 and update it with:
 
 ```bash
-$ shoutem env update
+$ shoutem env install
 ```
 
 ## Running applications
@@ -69,13 +69,13 @@ $ shoutem run-android
 To start locally develop our extension, we need to tell where is local extension code. This is done by `link` command. Locate to extension's folder and do:
 
 ```bash
-$ shoutem link
+$ shoutem env link
 ```
 
 Every time you run an app with that extension installed, it will use the extension code that you linked to the app. To `unlink` the extension code, simply do:
 
 ```bash
-$ shoutem unlink
+$ shoutem env unlink
 ```
 
 from extension's folder. To unlink all extensions, pass `--all` flag.
@@ -83,7 +83,7 @@ from extension's folder. To unlink all extensions, pass `--all` flag.
 Use `show` command to see which extensions are linked to for local development:
 
 ```bash
-$ shoutem show
+$ shoutem env show
 ```
 
 ## Debugging and automatic reloading
