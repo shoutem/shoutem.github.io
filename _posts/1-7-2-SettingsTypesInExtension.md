@@ -25,12 +25,12 @@ Settings pages are web pages written by extension developers, and they appear in
 ##### Settings types
 
 - `Extension settings` - Single global settings for the extension installation, placed in settingsPages in the root of extension.json
-- `Shortcut settings` - Shortcut instance settings, placed in settingsPages in the shortcut object
-- `Screen settings` - Settings of the layout presented by the screen, placed in settingsPages in the screen object.
+- `Shortcut settings` - Shortcut instance settings, placed in adminPages in the shortcut object
+- `Screen settings` - Settings of the layout presented by the screen, placed in settingsPage in the screen object.
 
 ##### Default settings
 
-Each settings can have its default value, so you don’t need to check if the setting is undefined. This default value is defined in `settings` fields, which is adjacent to `settingsPage(s)` fields, for every settings type.
+Each settings can have its default value, so you don’t need to check if the setting is undefined. This default value is defined in `settings` fields, which is adjacent to `settingsPage(s)` or `adminPages` fields, for every settings type.
 
 ##### Manipulation of settings
 
@@ -107,7 +107,7 @@ Shortcut settings are settings shared throughout all the screens that were navig
     "name": "RestaurantsList",
     "title": "Restaurants",
     "screen": "@.list",
-    "settingsPages": [{
+    "adminPages": [{
       "page": "shoutem.cms.CmsPage",
       "title": "Content",
       "parameters": {
