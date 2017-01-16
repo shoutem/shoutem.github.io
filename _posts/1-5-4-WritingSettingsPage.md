@@ -16,17 +16,17 @@ Settings pages are used to enable application owners to customize the extension 
 
 ## Types of settings pages and default settings
 
-There are 3 types of settings pages. Pages are defined in `pages` root field of `extension.json` and can be referenced in 3 different places:
+Pages are defined in `pages` root field in `extension.json` and can be referenced in 3 different places:
 
 - `settingsPages` in the root of `extension.json`: array of pages for adjusting global extension settings
 - `adminPages` in `shortcuts` field: array of pages for adjusting settings for shortcuts
 - `settingsPage` in `screens` field: single page for adjusting layout settings
 
-On each of these places, adjacent property `settings` can be present which represents default settings these pages will receive. Read more in the [reference for settings types]({{ site.baseurl }}/docs/extensions/reference/settings-types).
+These are the 3 types of settings pages. On each of these places, adjacent property `settings` can be present which represents default settings these pages will receive. Read more in the [reference for settings types]({{ site.baseurl }}/docs/extensions/reference/settings-types).
 
 ## Creating your first settings page
 
-The possibilities that you can do with settings pages are countless. In this tutorial, we'll show you an example of how to allow application owners to customize simple text in the settings page and get it in the extension.
+The possibilities that you can do with settings pages are countless. In this tutorial, we'll show you an example of how to allow application owners to customize simple text in the settings page and get that text in the extension.
 
 Initialize new extension project:
 
@@ -178,7 +178,7 @@ File `extension.json` was modified.
 File `app/extension.js` was modified.
 ```
 
-Shortcut was created in `extension.json`. Reference the `HelloWorldPage` page in the `ShowGreeting` shortcut.
+Shortcut and screen were created and connected in `extension.json`. Reference the `HelloWorldPage` page in the `ShowGreeting` shortcut.
 
 ```JSON{10-13}
 #file: extension.json
@@ -227,7 +227,7 @@ Open the link from the terminal. Click to `Add Screen` and add shortcut to your 
 
 ### Managing the shortcut settings
 
-Our admin page is plain right now - it just shows _Hello World_. We want to enable application owners to set the person name who we're greeting to in the application. For that, we need to add a `form` and a save `button` in `index.html`.
+Our admin page is plain right now - it just shows _Hello World_. We want to enable application owners to set the person name who we're greeting to in the application. For that, add a `form` and a save `button` in `index.html`.
 
 ```HTML{12-21}
 #file: server/pages/HelloWorldPage/index.html
@@ -262,7 +262,7 @@ Our admin page is plain right now - it just shows _Hello World_. We want to enab
 </html>
 ```
 
-When the user clicks `Save`, we want to save the settings entered in the `<input` field. Once settings page is loaded, we want to access this shortcut settings. These 2 actions we'll do in the 2 functions (`handleSubmit` and `initForm`) in `index.js`. We'll use `builder-sdk` which simplifies the communication with Shoutem API, such as updating and getting shortcut settings.
+When the user clicks `Save`, we want to save the settings entered in the `<input>` field. Once settings page is loaded, access the shortcut settings. This is present in the 2 functions (`handleSubmit` and `initForm`) in `index.js`. For simplified communication with Shoutem API, such as updating and getting shortcut settings, we'll use `builder-sdk`. It puts `shoutem` object to the global environment.
 
 ```JS{3-21}
 #file: server/pages/HelloWorldPage/index.js
@@ -290,7 +290,7 @@ function appReady(config) {
 }
 ```
 
-The reference for the `builder-sdk` is [here](/coming-soon).
+The reference for the `builder-sdk` (`shoutem` object) is [here](/coming-soon).
 
 Finally, let's add default setting in `extension.json`, so there's some value on the first load of the shortcut settings page:
 
@@ -325,18 +325,17 @@ Finally, let's add default setting in `extension.json`, so there's some value on
 
 Let's see the changes we've made:
 
+```
 $ shoutem push
 Uploading `Hello!` extension to Shoutem...
 Success!
 ```
 
-This should be shown in the Shoutem Builder:
+![Page with default settings]({{ site.baseurl }}/img/tutorials/writting-settings-page/page-with-default-settings.png "Page with default settings"){:.docs-component-image}
 
-// Image coming soon
+### Accessing the shortcut settings in the application
 
-### Accessing shortcut settings in the application
-
-All that is left to do is to access these settings in the `GreetingsScreen`. Check setting types reference to see how to get it. Update screen file:
+All that is left to do is to access the shortcut in the `GreetingsScreen`. Check setting types reference to see how to get it. Update screen file:
 
 ```JS{6,11-16}
 #file app/screens/GreetingsScreen.js
