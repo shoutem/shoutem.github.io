@@ -26,7 +26,7 @@ These are the 3 types of settings pages. On each of these places, adjacent prope
 
 ## Creating your first settings page
 
-The possibilities that you can do with settings pages are countless. In this tutorial, we'll show you an example of how to allow application owners to customize simple text in the settings page and get that text in the extension. Final extension code can be found [here](https://github.com/shoutem/extension-examples/tree/master/hello-world-page).
+The possibilities that you can do with settings pages are countless. In this tutorial, we'll show you an example of how to allow application owners to customize the simple text in the settings page and get that text in the extension. Final extension code can be found [here](https://github.com/shoutem/extension-examples/tree/master/hello-world-page).
 
 Initialize new extension project:
 
