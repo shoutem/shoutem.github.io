@@ -26,7 +26,7 @@ These are the 3 types of settings pages. On each of these places, adjacent prope
 
 ## Creating your first settings page
 
-The possibilities that you can do with settings pages are countless. In this tutorial, we'll show you an example of how to allow application owners to customize simple text in the settings page and get that text in the extension. Final extension code can be found [here](https://github.com/shoutem/extension-examples/tree/master/hello-world-page).
+The possibilities that you can do with settings pages are countless. In this tutorial, we'll show you an example of how to allow application owners to customize the simple text in the settings page and get that text in the extension. Final extension code can be found [here](https://github.com/shoutem/extension-examples/tree/master/hello-world-page).
 
 Initialize new extension project:
 
@@ -121,7 +121,7 @@ It's using:
   - extension-sandbox - enabling the communication between your page and Shoutem builder
   - index.js - a place where you write your own JS code with lifecycle methods already prepared
 
-File `index.js` comes with prepared lifecycle methods for your settings page:
+File `index.js` comes with ready lifecycle methods for your settings page:
 
 ```JS
 #file: server/pages/HelloWorldPage/index.js
@@ -146,7 +146,7 @@ function appReady(config) {
 }
 ```
 
-Sandbox is a container where your settings page is loaded. Once it's ready `onSandboxReady` function is triggered. By default, logic for extracting the configuration for your extension and initializing jQuery is inside of that function. You can customize everything that comes after `onSandboxReady`.
+Sandbox is a container where your settings page is loaded. Once it's ready, `onSandboxReady` function is triggered. By default, logic for extracting the configuration for your extension and initializing jQuery is inside of that function. You can customize everything that comes after `onSandboxReady`.
 
 Finally, we have a simple CSS file `style.css` where you can store your custom CSS:
 
