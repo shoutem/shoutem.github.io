@@ -480,4 +480,4 @@ Also, on each screen where you want to have NavigationBar, you'll need to define
 />
 ```
 
-For a full example, refer to RestaurantApp [example](https://github.com/shoutem/ui/blob/develop/examples/RestaurantsApp/app/), where `App` is root application component holding code above.
+Note that example above is just a part of required code. For a full example, refer to RestaurantApp [example](https://github.com/shoutem/ui/blob/develop/examples/RestaurantsApp/app/), where `App` is root application component holding code above.
