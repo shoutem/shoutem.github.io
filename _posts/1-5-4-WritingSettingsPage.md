@@ -8,21 +8,21 @@ section: Tutorials
 # Writing a settings page
 <hr />
 
-From [Getting started tutorial]({{ site.baseurl }}/docs/extensions/getting-started/introduction) you might remember a mention of _settings pages_. Settings pages are web pages that appear in Shoutem builder which you as developer can write.
+From [Getting started tutorial]({{ site.baseurl }}/docs/extensions/getting-started/introduction) you might remember a mention of _settings pages_. Settings pages are web pages that appear in Shoutem builder which you as a developer can write.
 
 ![Shortcut settings page example]({{ site.baseurl }}/img/tutorials/writting-settings-page/shortcut-settings-page.png "Shortcut settings page"){:.docs-component-image}
 
-Settings pages are used to allow application owners to customize the extension behaviour through builder. You can use any web technology to write settings pages (pure HTML with jQuery, React or even AngularJS).
+Settings pages are used to enable application owners to customize the extension behaviour through the builder. You can use any web technology to write settings pages (pure HTML with jQuery, React or even AngularJS).
 
 ## Types of settings pages and default settings
 
-There are 3 types of settings pages. They're defined in `pages` root field of `extension.json` and can be referenced on 3 different places:
+There are 3 types of settings pages. Pages are defined in `pages` root field of `extension.json` and can be referenced in 3 different places:
 
 - `settingsPages` in the root of `extension.json`: array of pages for adjusting global extension settings
 - `adminPages` in `shortcuts` field: array of pages for adjusting settings for shortcuts
-- `settingsPage` in `screens` field: one page for adjusting layout settings
+- `settingsPage` in `screens` field: single page for adjusting layout settings
 
-On each of these places, adjacent property `settings` can be present which represents default settings these pages will receive. Although same in format, each of these 3 places is used for different settings type. Read more in the [reference for settings types]({{ site.baseurl }}/docs/extensions/reference/settings-types).
+On each of these places, adjacent property `settings` can be present which represents default settings these pages will receive. Read more in the [reference for settings types]({{ site.baseurl }}/docs/extensions/reference/settings-types).
 
 ## Creating your first settings page
 
@@ -46,16 +46,16 @@ Extension initialized!
 
 ### Creating plain settings page
 
-Create a plain (HTML and jQuery) settings `HelloWorld` page. Writing `React` and `AngularJS` settings page is covered in the end of this document.
+Create a plain (HTML and jQuery) settings `HelloWorldPage` page. Writing `React` and `AngularJS` settings page is covered in the end of this document.
 
 ```ShellSession
-$ shoutem page add HelloWorld --plain
-Page `HelloWorld` is created in `server/pages/HelloWorld` folder!
+$ shoutem page add HelloWorldPage
+Page `HelloWorldPage` is created in `server/pages/HelloWorldPage` folder!
 ```
 
 Page was added to `extension.json`:
 
-```JSON{6-10}
+```JSON{6-9}
 #file: extension.json
 {
   "name": "hello-world-page",
@@ -63,19 +63,18 @@ Page was added to `extension.json`:
   "title": "Hello!",
   "description": "Writing my first settings page!",
   "pages": [{
-    "name": "HelloWorld",
-    "type": "plain",
-    "path": "server/pages/HelloWorld/index.html"
+    "name": "HelloWorldPage",
+    "path": "server/pages/HelloWorldPage/index.html"
   }]
 }
 ```
 
-Folder `server/pages/HelloWorld` contains three files. This is the structure of `server` folder:
+Folder `server/pages/HelloWorldPage` contains three files. This is the structure of `server` folder:
 
 ```
 server/
 ├ pages/
-|  └ HelloWorld
+|  └ HelloWorldPage
 |    ├ index.html
 |    ├ index.js
 |    └ style.css
@@ -85,7 +84,7 @@ server/
 File `index.html` includes the boilerplate HTML to get you going with development of settings pages with `Hello World` paragraph.
 
 ```HTML
-#file: server/pages/HelloWorld/index.html
+#file: server/pages/HelloWorldPage/index.html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -113,19 +112,19 @@ Hello World!
 It's using:
 
 - CSS
-  - Bootstrap v3 - with customized flow for Shoutem Web UI
+  - [Bootstrap v3](http://getbootstrap.com/)
   - Web UI - adding Shoutem design on top of Bootstrap design
-  - style.css - where you write your CSS code
+  - style.css - a place where you write your own CSS
 - JavaScript
-  - Bootstrap v3
+  - [Bootstrap v3](http://getbootstrap.com/)
   - builder-sdk - exposing `shoutem` variable globally for easier access of Shoutem API
   - extension-sandbox - enabling the communication between your page and Shoutem builder
-  - index.js - where you write your own JS code with lifecycle methods already prepared
+  - index.js - a place where you write your own JS code with lifecycle methods already prepared
 
 File `index.js` comes with prepared lifecycle methods for your settings page:
 
 ```JS
-#file: server/pages/HelloWorld/index.js
+#file: server/pages/HelloWorldPage/index.js
 // listen for sandbox initialization complete
 document.addEventListener('sandboxready', onSandboxReady, false);
 
@@ -147,10 +146,12 @@ function appReady(config) {
 }
 ```
 
+Sandbox is a container where your settings page is loaded. Once it's ready `onSandboxReady` function is triggered. By default, logic for extracting the configuration for your extension and initializing jQuery is inside of that function. You can customize everything that comes after `onSandboxReady`.
+
 Finally, we have a simple CSS file `style.css` where you can store your custom CSS:
 
 ```CSS
-#file: server/pages/HelloWorld/style.css
+#file: server/pages/HelloWorldPage/style.css
 .footer {
   margin-top: 15px;
 }
@@ -160,7 +161,7 @@ This page is now created, but it's not referenced anywhere.
 
 ### Referencing settings page in the shortcut
 
-Remember that there are 3 places where we can show them. We're going to use this page as a `shortcut settings page`.
+Remember that there are 3 places where we can show settings pages. We're going to use this page as a `shortcut settings page`.
 
 Create a shortcut with a screen which we'll use later in the app:
 
@@ -171,15 +172,15 @@ Enter shortcut information:
 Title: Show Greeting
 
 Shortcut `ShowGreeting` is created!
-Screen `GreetingsScreen` is created in file `app/screens/Greetings/Screen.js`!
+Screen `GreetingsScreen` is created in file `app/screens/GreetingsScreen.js`!
 Shortcut and screen are connected.
 File `extension.json` was modified.
 File `app/extension.js` was modified.
 ```
 
-Shortcut was created in `extension.json`. Reference the `HelloWorld` in the `ShowGreeting` shortcut.
+Shortcut was created in `extension.json`. Reference the `HelloWorldPage` page in the `ShowGreeting` shortcut.
 
-```JSON{9-12}
+```JSON{10-13}
 #file: extension.json
 {
   "name": "hello-world-page",
@@ -189,15 +190,19 @@ Shortcut was created in `extension.json`. Reference the `HelloWorld` in the `Sho
   "shortcuts": [{
     "name": "ShowGreeting",
     "title": "Show Greeting",
+    "screen": "@.GreetingsScreen",
     "adminPages": [{
-      "page": "@.ShowGreeting",
+      "page": "@.HelloWorldPage",
       "title": "Greetings"
     }]
   }],
+  "screens": [{
+    "name": "GreetingsScreen"
+  }],
   "pages": [{
-    "name": "HelloWorld",
+    "name": "HelloWorldPage",
     "type": "plain",
-    "path": "server/pages/HelloWorld/index.html"
+    "path": "server/pages/HelloWorldPage/index.html"
   }]
 }
 ```
@@ -222,10 +227,10 @@ Open the link from the terminal. Click to `Add Screen` and add shortcut to your 
 
 ### Managing the shortcut settings
 
-Our admin page is plain right now - it just shows `HelloWorld`. We want to enable application owners to set the person name who we're greeting to in the application. For that, we need to add a `form` and a save `button` in `index.html`.
+Our admin page is plain right now - it just shows _Hello World_. We want to enable application owners to set the person name who we're greeting to in the application. For that, we need to add a `form` and a save `button` in `index.html`.
 
 ```HTML{12-21}
-#file: server/pages/HelloWorld/index.html
+#file: server/pages/HelloWorldPage/index.html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -260,7 +265,7 @@ Our admin page is plain right now - it just shows `HelloWorld`. We want to enabl
 When the user clicks `Save`, we want to save the settings entered in the `<input` field. Once settings page is loaded, we want to access this shortcut settings. These 2 actions we'll do in the 2 functions (`handleSubmit` and `initForm`) in `index.js`. We'll use `builder-sdk` which simplifies the communication with Shoutem API, such as updating and getting shortcut settings.
 
 ```JS{3-21}
-#file: server/pages/HelloWorld/index.js
+#file: server/pages/HelloWorldPage/index.js
 function appReady(config) {
 
   function handleSubmit(e) {
@@ -289,7 +294,7 @@ The reference for the `builder-sdk` is [here](/coming-soon).
 
 Finally, let's add default setting in `extension.json`, so there's some value on the first load of the shortcut settings page:
 
-```JSON
+```JSON{14-16}
 #file: extension.json
 {
   "name": "hello-world-page",
@@ -299,18 +304,21 @@ Finally, let's add default setting in `extension.json`, so there's some value on
   "shortcuts": [{
     "name": "ShowGreeting",
     "title": "Show Greeting",
+    "screen": "@.GreetingsScreen",
     "adminPages": [{
-      "page": "@.ShowGreeting",
+      "page": "@.HelloWorldPage",
       "title": "Greetings"
     }],
     "settings": {
       "greeting": "World"
     }
   }],
+  "screens": [{
+    "name": "GreetingsScreen"
+  }],
   "pages": [{
-    "name": "HelloWorld",
-    "type": "plain",
-    "path": "server/pages/HelloWorld/index.html"
+    "name": "HelloWorldPage",
+    "path": "server/pages/HelloWorldPage/index.html"
   }]
 }
 ```
