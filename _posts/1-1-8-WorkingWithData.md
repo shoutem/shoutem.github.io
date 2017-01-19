@@ -66,7 +66,7 @@ import _ from 'lodash';
 
 If necessary, fetch data in `componentDidMount` lifecycle.
 
-```javascript{2-9}
+```javascript{2-11}
 #file: app/screens/RestaurantsList.js
 class RestaurantsList extends Component {
   componentDidMount() {
