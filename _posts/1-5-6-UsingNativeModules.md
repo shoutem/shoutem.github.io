@@ -55,9 +55,7 @@ $(SRCROOT)/../../../ios/Pods
 
 Set this path for both the **_Debug_** and **_Release_** builds, and mark it as recursive. The following picture shows how this setting looks like for the Shopify bridge when viewed in XCode:
 
-<p class="image">
-<img src='{{ site.baseurl }}/img/tutorials/native-modules/header-search-paths.png'/>
-</p>
+![Xcode and Header Search Paths]({{ site.baseurl }}/img/tutorials/native-modules/header-search-paths.png "Xcode and Header search paths"){:.docs-component-image}
 
 ## Including the bridge in our Shopify extension
 
