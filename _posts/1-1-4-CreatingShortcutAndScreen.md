@@ -87,7 +87,7 @@ export default class RestaurantsList extends Component {
 }
 ```
 
-In React, `Component` specifies its UI in `render` method. Now when the screen is created, we need to connect it to shortcut in extension.json.
+In React, `Component` specifies its UI in `render` method. Now when the screen is created, we need to manually connect it to shortcut in extension.json.
 
 ```json{10}
 #file: extension.json
@@ -132,7 +132,7 @@ export const screens = {};
 export const reducer = {};
 ```
 
-Export created screen.
+Manually export created screen in `app/index.js`.
 
 ```javascript{1,4}
 #file: app/index.js
