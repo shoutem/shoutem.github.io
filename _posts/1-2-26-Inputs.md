@@ -26,7 +26,7 @@ Text Input component is used for inputting text into the application using keybo
 #### JSX Declaration
 ```JSX
 <TextInput 
-  placeholder={'Username or email'}
+  defaultValue={'Aryeh'}
   onChangeText={...} 
 />
 ```
