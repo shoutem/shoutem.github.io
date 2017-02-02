@@ -93,7 +93,7 @@ Signature:
 
 Example:
 
-```
+```JSON
 "description": {
   "type": "string",
   "format": "multi-line",
@@ -135,7 +135,7 @@ Signature:
 
 Example:
 
-```
+```JSON
 "offersWifi": {
   "type": "boolean",
   "format": "boolean",
