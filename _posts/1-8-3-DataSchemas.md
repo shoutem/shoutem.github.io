@@ -93,7 +93,7 @@ Signature:
 
 Example:
 
-```
+```JSON
 "description": {
   "type": "string",
   "format": "multi-line",
@@ -135,7 +135,7 @@ Signature:
 
 Example:
 
-```
+```JSON
 "offersWifi": {
   "type": "boolean",
   "format": "boolean",
@@ -324,7 +324,7 @@ These additional descriptor properties allow us to create arbitrary types, such 
   "type": "string",
   "format": "single-line",
   "title": "Email",
-  "minLength": 3
+  "minLength": 3,
   "maxLength": 100,
   "pattern": "[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?"
 },
