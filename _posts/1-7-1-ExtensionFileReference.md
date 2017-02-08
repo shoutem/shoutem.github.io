@@ -16,9 +16,9 @@ Following structure shows only `root` fields of the extension.json. Detailed des
 ```json
 {
   // required
-  "shoutem": "1.0",
   "name": "restaurants",
   "version": "0.0.1",
+  "platform": "1.0.*",
 
   // recommended
   "title": "Restaurants",
@@ -37,13 +37,13 @@ Following structure shows only `root` fields of the extension.json. Detailed des
   "dataSchemas": [{...}],
   "pages": [{...}],
   "themes": [{...}],
-  "variablesSchemas": [{...}]
+  "themeVariables": [{...}]
 }
 ```
 
 ## Identifying and referencing extension parts
 
-As you see in _Structure of extension.json_ chapter, extension exports multiple extension parts (shortcuts, screens, dataSchemas, pages, themes, variablesSchemas). In order to be able to use these extension parts, we need to identify them, so we can later reference them in other parts. Identifying is done with `name` field which value needs to be unique for that extension part (`RestaurantsList` can be only used for 1 shortcut, but also for 1 screen, etc.). 
+As you see in _Structure of extension.json_ chapter, extension exports multiple extension parts (shortcuts, screens, dataSchemas, pages, themes, themeVariables). In order to be able to use these extension parts, we need to identify them, so we can later reference them in other parts. Identifying is done with `name` field which value needs to be unique for that extension part (`RestaurantsList` can be only used for 1 shortcut, but also for 1 screen, etc.). 
 
 On the other hand, when referencing extension parts, fully qualified name needs to be used. Fully qualified name of extension is done by prefixing `developerName.` to `name` field (for above example written by Shoutem as developer, extension would have identity of `shoutem.restaurants`). Fully qualified name of extension parts is done by suffixing `developerName.extensionName.` with the unique identifier for that extension part, e.g. `shoutem.restaurants.RestaurantsList` for shortcut. Shorthand for `developerName.extensionName.` prefix is `@.`, so we can reference it with `@.RestaurantsList` instead.
 
@@ -52,17 +52,17 @@ On the other hand, when referencing extension parts, fully qualified name needs 
 
 Here you can find field explanations in the same order fields appeared in the upper example:
 
-#### shoutem
-
-Required field. Indicates version of Shoutem extension standard. There's currently only `"1.0"` standard.
-
 #### name
 
 Required field. Defines extension's identity. Must be unique among your extensions and not longer than 32 characters.
 
 #### version
 
-Version of your extension.
+Required field. Version of your extension.
+
+#### platform
+
+Required field. Version of Shoutem platform which includes the app project that your extension will be built with.
 
 #### title
 
@@ -286,7 +286,7 @@ Each object in pages array, extensions page object, consists of these fields:
 
   // optional
   "icons": "app/themes/Rubicon/assets/icons/",
-  "variablesSchema": "@.Rubicon"
+  "themeVariables": "@.Rubicon"
 }]
 ```
 
@@ -297,24 +297,24 @@ Each object in themes array, theme object, consists of these fields:
 - `description:` Theme's description
 - `showcase`: Array of strings which represent paths to multimedia files in `server` folder, such as videos and images, which present your theme. Dimensions for @2x quality resolution are 750 × 1334.
 - `icons`: Path to icons of theme, should be stored in `app` asset's folder
-- `variablesSchema`: Reference to a variable schema used by theme
+- `variables`: Reference to variables used by theme
 
-#### variablesSchemas
+#### themeVariables
 
-Variable schemas are used to define the structure of the variables used by theme. These variables can be used to customize the theme.
+Theme variables are used to define the structure of the variables used by theme. These variables can be used to customize the theme.
 
 ```json
 [{
   // required
   "name": "Rubicon",
-  "path": "server/variables-schema/rubicon.json"
+  "path": "server/themes/rubiconVariables.json"
 }]
 ```
 
-Each object in variable schemas array, variable schema object, consists of these fields:
+Each object in theme variables array, theme variables object, consists of these fields:
 
-- `name`: Required field, defines variables schema name
-- `path`: Required field, path to actual variables schema implementation. Should be stored in `server` folder
+- `name`: Required field, defines theme variables name
+- `path`: Required field, path to actual theme variables implementation. Should be stored in `server` folder
 
 
 ## Full example of extension.json
@@ -388,22 +388,22 @@ Finally, here's the full example of extension.json:
   "themes": [{
     "name": "Rubicon",
     "title": "Rubicon",
-    "variablesSchema": "@.Rubicon",
+    "variables": "@.Rubicon",
     "description": "Rubicon is a beautiful template built...",
     "showcase": ["server/assets/theme/rubicon.mp4","server/assets/theme/rubicon1.jpg", "server/assets/theme/rubicon2.jpg", "server/assets/theme/rubicon3.jpg"],
     "icons": "app/themes/Rubicon/assets/icons/"
   }, {
     "name": "Arno",
     "title": "Arno",
-    "variablesSchema": "@.Rubicon",
+    "variables": "@.Rubicon",
     "description": "Arno is a beautiful template built...",
     "showcase": ["server/assets/theme/arno1.jpg", "server/assets/theme/arno2.jpg"],
     "icons": "app/themes/Arno/assets/icons/"
   }],
 
-  "variablesSchemas": [{
+  "themeVariables": [{
     "name": "Rubicon",
-    "path": "server/variables-schema/rubicon.json"
+    "path": "server/themes/rubiconVariables.json"
   }]
 }
 ```
