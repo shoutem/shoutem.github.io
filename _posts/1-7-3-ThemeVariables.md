@@ -137,7 +137,7 @@ Object with following fields:
 - **fontFamily** - String. One of the font families listed in `constraints.fontFamily` field. Defaults to "Rubicon".
 - **fontStyle** - String. One of the font styles listed in `constraints.fontSize` field. Defaults to "normal".
 - **fontWeight** - String. One of the font weights listed in `constraints.fontWeight` field. Defaults to "normal".
-- **fontSize** - Number. Defaults to 20
+- **fontSize** - Number. Defaults to 12
 - **color** - String. One of the React Native supported [Color formats](https://facebook.github.io/react-native/docs/colors.html). Defaults to `"rgba(0,0,0,1)"`
 
 ###### Fields 
