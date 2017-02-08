@@ -37,11 +37,12 @@ This is for the first time that we used `server` folder for something. The reaso
 
 This schema was immediately exported in `extension.json` file:
 
-```JSON{17-20}
+```JSON{18-21}
 #file: extension.json
 {
   "name": "restaurants",
   "version": "0.0.1",
+  "platform": "1.0.*",
   "title": "Restaurants",
   "description": "List of restaurants",
   "shortcuts": [{
@@ -108,11 +109,12 @@ Let's add now properties that we want to persist for a restaurant, such as: `nam
 
 Now in order to enter data for your schema, you need to link your extension with Shoutem CMS settings page. Shortly, **Settings Pages** are web pages that you as developer can write to enable admins to manage your extension. They are shown inside Shoutem builder when admin clicks on the shortcut. In this example we’re using predefined Shoutem CMS settings page. Add Admin Page to `openRestaurantsList` shortcut and specify for which Data Schema you want to enter the data:
 
-```JSON{11-17}
+```JSON{12-18}
 #file: extension.json
 {
   "name": "restaurants",
   "version": "0.0.1",
+  "platform": "1.0.*",
   "title": "Restaurants",
   "description": "List of restaurants",
   "shortcuts": [{

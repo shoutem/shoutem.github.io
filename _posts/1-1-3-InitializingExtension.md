@@ -28,9 +28,12 @@ Initialize the extension with basic extension data.
 ```ShellSession
 $ shoutem init restaurants
 Enter information about your extension. Press `return` to accept (default) values.
-Title: (Restaurants)
-Version: (0.0.1)
+Title: Restaurants
+Version: 0.0.1
 Description: List of restaurants
+
+Initializing extension...
+...
 
 Extension initialized!
 ```
@@ -46,10 +49,12 @@ Initialization process will generate the skeleton folder and file structure for 
 ```
 Restaurants/
   ├ app/
+  |  ├ node_modules/
   |  ├ const.js
   |  ├ index.js
   |  └ package.json
   ├ server/
+  |  ├ node_modules/
   |  └ package.json
   └ extension.json
 ```
@@ -69,12 +74,15 @@ In `extension.json` you can see:
 {
   "name": "restaurants",
   "version": "0.0.1",
+  "platform": "1.0.*",
   "title": "Restaurants",
   "description": "List of restaurants"
 }
 ```
 
-Property `name`, combined with your developer name, uniquely identifies the extension: `developer.restaurants`. We'll use property `name` to define extensions parts too.
+- `name` uniquely identifies the extension when combined with your developer name (e.g. `tom.restaurants`)
+- `version` is the extension version
+- `platform` indicates the version of Shoutem plaform, i.e. version of the app project that extension will be built with
 
 Extension is now only locally available on your machine. We need to upload it to Shoutem so you can install it in the application.
 

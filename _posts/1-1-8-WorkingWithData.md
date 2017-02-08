@@ -53,7 +53,7 @@ The only thing left to do is to fetch data from **Shoutem Cloud Storage** on `Re
  - `shouldRefresh` - knows if data needs to be (re)fetched and
  - `getCollection` - combines `storage` and `collection` into an `array` of objects.
 
-```javascript{1-7}
+```javascript{1-6}
 #file: app/screens/RestaurantsList.js
 import {
   find,
@@ -61,22 +61,19 @@ import {
   shouldRefresh,
   getCollection
 } from '@shoutem/redux-io';
-import _ from 'lodash';
 ```
 
-If necessary, fetch data in `componentDidMount` lifecycle.
+Fetch data in `componentDidMount` lifecycle.
 
-```javascript{2-11}
+```javascript{2-9}
 #file: app/screens/RestaurantsList.js
 class RestaurantsList extends Component {
   componentDidMount() {
     const { find, restaurants } = this.props;
     if (shouldRefresh(restaurants)) {
-      _.defer(() =>
-        find(ext('Restaurants'), 'all', {
-            include: 'image',
-        })
-      );
+      find(ext('Restaurants'), 'all', {
+          include: 'image',
+      })
     }
   }
 ```
@@ -141,7 +138,6 @@ import {
   shouldRefresh,
   getCollection
 } from '@shoutem/redux-io';
-import _ from 'lodash';
 
 import { connect } from 'react-redux';
 import { navigateTo } from '@shoutem/core/navigation';
@@ -157,11 +153,9 @@ class RestaurantsList extends Component {
   componentDidMount() {
     const { find, restaurants } = this.props;
     if (shouldRefresh(restaurants)) {
-      _.defer(() =>
-        find(ext('Restaurants'), 'all', {
-            include: 'image',
-        })
-      );
+      find(ext('Restaurants'), 'all', {
+          include: 'image',
+      })
     }
   }
 

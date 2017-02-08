@@ -21,11 +21,12 @@ Description: Enable users to browse through list of restaurants
 
 Your `extension.json` was just modified:
 
-```json{6-10}
+```json{7-11}
 #file: extension.json
 {
   "name": "restaurants",
   "version": "0.0.1",
+  "platform": "1.0.*",
   "title": "Restaurants",
   "description": "List of restaurants",
   "shortcuts": [{
@@ -49,11 +50,12 @@ File `app/screens/RestaurantsList.js` is created.
 
 Screen definition was appended to extension.json.
 
-```json{11-13}
+```json{12-14}
 #file: extension.json
 {
   "name": "restaurants",
   "version": "0.0.1",
+  "platform": "1.0.*",
   "title": "Restaurants",
   "description": "List of restaurants",
   "shortcuts": [{
@@ -89,11 +91,12 @@ export default class RestaurantsList extends Component {
 
 In React, `Component` specifies its UI in `render` method. Now when the screen is created, we need to manually connect it to shortcut in extension.json.
 
-```json{10}
+```json{11}
 #file: extension.json
 {
   "name": "restaurants",
   "version": "0.0.1",
+  "platform": "1.0.*",
   "title": "Restaurants",
   "description": "List of restaurants",
   "shortcuts": [{
