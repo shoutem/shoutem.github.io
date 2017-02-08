@@ -11,12 +11,11 @@ section: Getting Started
 The easiest way to understand what shortcuts are, is to think of them as **links** to the starting screen of your extension. These links will be used to navigate to your extension from any part of the application. Extensions can expose multiple shortcuts. Let's create one now.
 
 ```ShellSession
-$ shoutem shortcut add openRestaurantsList
+$ shoutem shortcut add openList
 Enter shortcut information.
 Title: Restaurants
-Description: Enable users to browse through list of restaurants
 
-`openRestaurantsList` shortcut is created.
+`openList` shortcut is created.
 ```
 
 Your `extension.json` was just modified:
@@ -30,7 +29,7 @@ Your `extension.json` was just modified:
   "title": "Restaurants",
   "description": "List of restaurants",
   "shortcuts": [{
-    "name": "openRestaurantsList",
+    "name": "openList",
     "title": "Restaurants",
     "description": "Enable users to browse through list of restaurants"
   }]
@@ -44,8 +43,8 @@ Let's add a screen now. Screens are React components that represent a mobile scr
 Create a new screen:
 
 ```ShellSession
-$ shoutem screen add RestaurantsList
-File `app/screens/RestaurantsList.js` is created.
+$ shoutem screen add List
+File `app/screens/List.js` is created.
 ```
 
 Screen definition was appended to extension.json.
@@ -59,20 +58,20 @@ Screen definition was appended to extension.json.
   "title": "Restaurants",
   "description": "List of restaurants",
   "shortcuts": [{
-    "name": "openRestaurantsList",
+    "name": "openList",
     "title": "Restaurants",
     "description": "Allow users to browse through list of restaurants"
   }],
   "screens": [{
-    "name": "RestaurantsList"
+    "name": "List"
   }]
 }
 ```
 
-Shoutem CLI also created `app/screens/` folder with `RestaurantsList.js` file:
+Shoutem CLI also created `app/screens/` folder with `List.js` file:
 
 ```javascript
-#file: app/screens/RestaurantList.js
+#file: app/screens/List.js
 import React, {
   Component
 } from 'react';
@@ -80,7 +79,7 @@ import {
   Text
 } from 'react-native';
 
-export default class RestaurantsList extends Component {
+export default class List extends Component {
   render() {
     return (
       <Text>Hello World!</Text>
@@ -100,13 +99,13 @@ In React, `Component` specifies its UI in `render` method. Now when the screen i
   "title": "Restaurants",
   "description": "List of restaurants",
   "shortcuts": [{
-    "name": "openRestaurantsList",
+    "name": "openList",
     "title": "Restaurants",
     "description": "Allow users to browse through list of restaurants",
-    "screen": "@.RestaurantsList"
+    "screen": "@.List"
   }],
   "screens": [{
-    "name": "RestaurantsList"
+    "name": "List"
   }]
 }
 ```
@@ -139,10 +138,10 @@ Manually export created screen in `app/index.js`.
 
 ```javascript{1,4}
 #file: app/index.js
-import RestaurantsList from './screens/RestaurantsList.js'
+import List from './screens/List.js'
 
 export const screens = {
-  RestaurantsList
+  List
 };
 
 export const reducer = {};

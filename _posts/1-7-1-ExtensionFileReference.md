@@ -43,9 +43,9 @@ Following structure shows only `root` fields of the extension.json. Detailed des
 
 ## Identifying and referencing extension parts
 
-As you see in _Structure of extension.json_ chapter, extension exports multiple extension parts (shortcuts, screens, dataSchemas, pages, themes, themeVariables). In order to be able to use these extension parts, we need to identify them, so we can later reference them in other parts. Identifying is done with `name` field which value needs to be unique for that extension part (`RestaurantsList` can be only used for 1 shortcut, but also for 1 screen, etc.). 
+As you see in _Structure of extension.json_ chapter, extension exports multiple extension parts (shortcuts, screens, dataSchemas, pages, themes, themeVariables). In order to be able to use these extension parts, we need to identify them, so we can later reference them in other parts. Identifying is done with `name` field which value needs to be unique for that extension part (`List` can be only used for 1 shortcut, but also for 1 screen, etc.). 
 
-On the other hand, when referencing extension parts, fully qualified name needs to be used. Fully qualified name of extension is done by prefixing `developerName.` to `name` field (for above example written by Shoutem as developer, extension would have identity of `shoutem.restaurants`). Fully qualified name of extension parts is done by suffixing `developerName.extensionName.` with the unique identifier for that extension part, e.g. `shoutem.restaurants.RestaurantsList` for shortcut. Shorthand for `developerName.extensionName.` prefix is `@.`, so we can reference it with `@.RestaurantsList` instead.
+On the other hand, when referencing extension parts, fully qualified name needs to be used. Fully qualified name of extension is done by prefixing `developerName.` to `name` field (for above example written by Shoutem as developer, extension would have identity of `shoutem.restaurants`). Fully qualified name of extension parts is done by suffixing `developerName.extensionName.` with the unique identifier for that extension part, e.g. `shoutem.restaurants.List` for shortcut. Shorthand for `developerName.extensionName.` prefix is `@.`, so we can reference it with `@.List` instead.
 
 
 ## Fields
@@ -126,10 +126,10 @@ Dictionary of arbitrary key/value pairs that represent default extensions's sett
 ```json
 [{
   // required
-  "name": "RestaurantsList",
+  "name": "List",
 
   // required (pick one)
-  "screen": "@.RestaurantsList",
+  "screen": "@.List",
   "action": "visitRestaurants"
 
   // recommended
@@ -341,7 +341,7 @@ Finally, here's the full example of extension.json:
   },
 
   "shortcuts": [{
-    "name": "RestaurantsList",
+    "name": "List",
     "title": "Restaurants",
     "description": "Allow users...",
     "screen": "@.list",

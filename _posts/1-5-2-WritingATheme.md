@@ -104,7 +104,7 @@ Open `app/theme/restaurant.js` and check the styling rules used in `Rubicon` the
 
 ## Customizable component
 
-Suppose we want to create a theme which will make a title in restaurant row bigger and will change the background color of subtitle to white, while changing text color to black. Since restaurant row is defined in `app/screens/RestaurantsList.js` we can make that component customizable or encapsulate a separate restaurant row component. Let's go with the first, simpler solution.
+Suppose we want to create a theme which will make a title in restaurant row bigger and will change the background color of subtitle to white, while changing text color to black. Since restaurant row is defined in `app/screens/List.js` we can make that component customizable or encapsulate a separate restaurant row component. Let's go with the first, simpler solution.
 
 From the docs on how to use `@shoutem/theme` package, in order to support the theme, we need to:
 
@@ -114,7 +114,7 @@ From the docs on how to use `@shoutem/theme` package, in order to support the th
 We didn't use `style`, but now we're going to use it from `this.props.style` in `renderRow` method. Also, import `connectStyle` from `@shoutem/theme` to connect the component to the theme and assign it a `name`.
 
 ```JavaScript{18,48,57-58,90-92}
-#file: app/screens/RestaurantsList.js
+#file: app/screens/List.js
 import React, {
   Component
 } from 'react';
@@ -145,7 +145,7 @@ import { connect } from 'react-redux';
 import { navigateTo } from '@shoutem/core/navigation';
 import { ext } from '../const';
 
-class RestaurantsList extends Component {
+class List extends Component {
   constructor(props) {
     super(props);
 
@@ -166,7 +166,7 @@ class RestaurantsList extends Component {
 
     return (
       <TouchableOpacity onPress={() => navigateTo({
-        screen: ext('RestaurantDetails'),
+        screen: ext('Details'),
         props: { restaurant }
       })}>
         <Image styleName="large-banner" source={{ uri: restaurant.image && restaurant.image.url  }}>
@@ -205,7 +205,7 @@ export default connect(
   }),
   { navigateTo, find }
 )(
-  connectStyle(ext('RestaurantsList'))(RestaurantsList)
+  connectStyle(ext('List'))(List)
 );
 ```
 
@@ -228,7 +228,7 @@ import { ext } from '../const';
 // constants ...
 
 export default (variables = {}) => ({
-  [ext('RestaurantsList')]: {
+  [ext('List')]: {
     title: {
       fontSize: 15,
     },
@@ -300,7 +300,7 @@ import { ext } from '../const';
 // constants ...
 
 export default (variables = {}) => ({
-  [ext('RestaurantsList')]: {
+  [ext('List')]: {
     title: {
       fontSize: 15,
     },

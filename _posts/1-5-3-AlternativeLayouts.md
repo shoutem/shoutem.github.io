@@ -43,14 +43,14 @@ Check your extension.json now. New screen is added.
      {...}
   ],
   "screens": [{
-    "name": "RestaurantsList",
+    "name": "List",
     "Title":"List",
     "navigatesTo": [
-      "DEVELOPER.restaurants.RestaurantsDetails"
+      "DEVELOPER.restaurants.Details"
     ]
   }, 
   {
-    "name":"RestaurantsDetails",
+    "name":"Details",
     "title":"Details"
   },
   {
@@ -67,7 +67,7 @@ Check your extension.json now. New screen is added.
 ```
 
 <br/>
-In order to get a list item with the small image we can extend `RestaurantsList` and override only the `renderRow` method. 
+In order to get a list item with the small image we can extend `List` and override only the `renderRow` method. 
 You can c&p code below to `RestaurantsSmallList`.
 
 
@@ -98,10 +98,10 @@ import { bindActionCreators } from 'redux';
 import { ext } from '../const';
 
 import {
-	RestaurantsList
-} from './RestaurantsList';
+	List
+} from './List';
 
-class RestaurantsSmallList extends RestaurantsList {
+class RestaurantsSmallList extends List {
 
   //only overriding the renderRow function
   renderRow(restaurant) {
@@ -109,7 +109,7 @@ class RestaurantsSmallList extends RestaurantsList {
 
     return (
       <TouchableOpacity onPress={() => navigateTo({
-          screen: ext('RestaurantDetails'),
+          screen: ext('Details'),
           props: { restaurant }
         })}>
         <Row>
@@ -136,12 +136,12 @@ export default connect(
 
 
 <br/>
-From the `RestaurantsList.js` we need to export class `RestaurantsList`.
+From the `List.js` we need to export class `List`.
 
 ```javascript{2}
-#file: app/screens/RestaurantsList.js
+#file: app/screens/List.js
 ...
-export class RestaurantsList extends Component {
+export class List extends Component {
     componentDidMount() {...
 ```
 
@@ -154,13 +154,13 @@ Last thing we need to do is export the `RestaurantsSmallList` in index.js.
 // It is important to use those exact names
 
 import reducer from './reducers';
-import RestaurantsList from './screens/RestaurantsList.js';
-import RestaurantDetails from './screens/RestaurantDetails';
+import List from './screens/List.js';
+import Details from './screens/Details';
 import RestaurantsSmallList from './screens/RestaurantsSmallList';
 
 export const screens = {
-  RestaurantsList,
-  RestaurantDetails,
+  List,
+  Details,
   RestaurantsSmallList
 };
 
@@ -168,27 +168,27 @@ export {reducer};
 ```
 
 <br/>
-In order for Shoutem Builder to know that there is an alternative screen to RestaurantsList we need to extend that screen in Extensions.json as well. It behaves the same way as extend in javascript does, inherits all properties from origin and overrides ones that we explicitly define. 
+In order for Shoutem Builder to know that there is an alternative screen to List we need to extend that screen in Extensions.json as well. It behaves the same way as extend in javascript does, inherits all properties from origin and overrides ones that we explicitly define. 
 One more thing we’re missing are images that will represent these screens. You can download them [here]({{ site.baseurl }}/img/tutorials/alternativelayouts/images.zip) and add them to your server/assets/screens folder.
 
 ```json{4-5,15-17}
 #file: extension.json
 ...  
 "screens": [{
-    "name": "RestaurantsList",
+    "name": "List",
     "title":"List",
     "image":"./server/assets/screens/restaurants-list.png",
     "navigatesTo": [
-      "DEVELOPER.restaurants.RestaurantsDetails"
+      "DEVELOPER.restaurants.Details"
     ]
   }, 
   {
-    "name":"RestaurantsDetails"
+    "name":"Details"
   },
     {
     "name":"RestaurantsSmallList",
     "title":"Small list",
-    "extends":"DEVELOPER.restaurants.RestaurantsList",
+    "extends":"DEVELOPER.restaurants.List",
     "image":"./server/assets/screens/restaurants-smalllist.png"
   }
 ],
@@ -203,8 +203,8 @@ Once we have this set up, we need to add layout admin page to the list of admin 
   "shortcuts": [{
       "title": "Restaurants",
       "description": "Allow users to browse through list of restaurants",
-      "name": "openRestaurantsList",
-      "screen": "DEVELOPER.restaurants.openRestaurantsList",
+      "name": "openList",
+      "screen": "DEVELOPER.restaurants.openList",
       "adminPages": [{
         "page": "shoutem.admin.CmsPage",
         "title": "Content",

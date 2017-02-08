@@ -50,7 +50,7 @@ Initialization process will generate the skeleton folder and file structure for 
 Restaurants/
   ├ app/
   |  ├ node_modules/
-  |  ├ const.js
+  |  ├ extension.js
   |  ├ index.js
   |  └ package.json
   ├ server/

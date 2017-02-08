@@ -104,7 +104,7 @@ Shortcut settings are settings shared throughout all the screens that were navig
   "version": "0.0.1",
   "title": "Restaurants",
   "shortcuts": [{
-    "name": "RestaurantsList",
+    "name": "List",
     "title": "Restaurants",
     "screen": "@.list",
     "adminPages": [{
@@ -176,7 +176,7 @@ Screen settings are layouts settings that hold information specific for that lay
   "version": "0.0.1",
   "title": "Restaurants",
   "shortcuts": [{
-    "name": "RestaurantsList",
+    "name": "List",
     "title": "Restaurants",
     "screen": "@.list"
   }],
