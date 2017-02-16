@@ -92,7 +92,7 @@ Based on what the type is, descriptor has different fields. However, some fields
 - **disabled**: Whether admin can set the variable or not. Defaults to `false`.
 
 There is also field `formats`. It is used to describe default values and constraints of specific format. 
-All the variables of the same format thus _inherits_ values defined in `formats`, but can also override each field with its own value.
+Each variable of the same format thus _inherits_ values defined in `formats`, but can also override each field with its own value.
 
 #### Color
 
