@@ -21,6 +21,33 @@ Example:
 
 ```JSON
 {
+  "formats": {
+    "font": {
+      "title": "Font",
+      "default": {
+        "fontFamily": "Rubicon",
+        "fontStyle": "normal",
+        "fontWeight": "normal",
+        "fontSize": 20,
+        "color": "rgba(255,255,255,1)"
+      },
+      "constraints": {
+        "fontFamily": {
+          "enum": [ "normal", "Rubicon"]
+        },
+        "fontStyle": {
+          "enum": ["normal", "italic"]
+        },
+        "fontWeight": {
+          "enum": ["normal", "bold", "100", "200", "300", "400", "500", "600", "700", "800", "900"]
+        },
+        "fontSize": {
+          "minimum": 12,
+          "maximum": 42
+        }
+      }
+    }
+  },
   "properties": {
     "primaryColor": {
       "type": "string",
@@ -33,7 +60,7 @@ Example:
       "format": "font",
       "title": "Text font",
       "default": {
-        "fontFamily": "rubicon",
+        "fontFamily": "Rubicon",
         "fontStyle": "normal",
         "fontWeight": "regular",
         "fontSize": 15,
@@ -63,6 +90,9 @@ Based on what the type is, descriptor has different fields. However, some fields
 - **title**: Title of the variable on builder interface.
 - **default**: Default value of the interface control. Value depends on the type.
 - **disabled**: Whether admin can set the variable or not. Defaults to `false`.
+
+There is also field `formats`. It is used to describe default values and constraints of specific format. 
+Each variable of the same format thus _inherits_ values defined in `formats`, but can also override each field with its own value.
 
 #### Color
 
@@ -96,7 +126,7 @@ Object with following fields:
 
 ```JSON
 {
-  "fontFamily": "rubicon",
+  "fontFamily": "Rubicon",
   "fontStyle": "normal",
   "fontWeight": "normal",
   "fontSize": 20,
@@ -104,15 +134,17 @@ Object with following fields:
 }
 ```
 
-- **fontFamily** - String. Following fonts are supported: _Rubicon_ and _Normal_ (React Native's default). Defaults to "Rubicon".
-- **fontStyle** - String. One of: `"normal", "italic"`. Defaults to "normal".
-- **fontWeight** - String. One of: `"normal", "bold", "100", "200", "300", "400", "500", "600", "700", "800", "900"`
+- **fontFamily** - String. One of the font families listed in `constraints.fontFamily` field. Defaults to "Rubicon".
+- **fontStyle** - String. One of the font styles listed in `constraints.fontSize` field. Defaults to "normal".
+- **fontWeight** - String. One of the font weights listed in `constraints.fontWeight` field. Defaults to "normal".
 - **fontSize** - Number. Defaults to 12
 - **color** - String. One of the React Native supported [Color formats](https://facebook.github.io/react-native/docs/colors.html). Defaults to `"rgba(0,0,0,1)"`
 
 ###### Fields 
 
-These are the additional properties font variable descriptor supports:
+Font variable descriptor defines additional property `constraints`, which describes values that are available for each field: 
 
-- **minFontSize**: Minimal font size. Number. Defaults to 8.
-- **maxFontSize**: Maximal font size. Number. Defaults to 42.
+- **fontFamily**: enum of Strings. All available font families should  be listed here. Default values: `"normal", "Rubicon"`.
+- **fontStyle**: enum of Strings. All available font styles should be listed here. Default values: `"normal", "italic"`.
+- **fontWeight**: enum of Strings. All available font weights should be listed here. Default values: `"normal", "bold", "100", "200", "300", "400", "500", "600", "700", "800", "900"`.
+- **fontSize**: object that defines minimal and maximal font size. It has two fields of type Number: `"minimum"` - defaults to 12 and `"maximum"` - defaults to 42.
