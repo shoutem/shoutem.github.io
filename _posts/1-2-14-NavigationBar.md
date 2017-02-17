@@ -7,37 +7,45 @@ section: UI toolkit
 
 # NavigationBar
 
-- Shoutem UI toolkit consists of two different `NavigationBar` components. 
+Shoutem UI toolkit contains two different `NavigationBar` components:
 
-1. Simple `NavigationBar` (`import { NavigationBar } from '@shoutem/ui'`) provides a simpler way to use 3-column Navigation bar without reinventing the wheel. This `NavigationBar` can be used on any screen or Modal window  
-
-2. Redux and Stack-based `NavigationBar` (`import { NavigationBar } from '@shoutem/ui/navigation'`) allow any view to act as a navigation view and using reducers to manipulate state at a top-level object. Note that this `NavigationBar` can be used only on components that are within the Stack (it cannot be used on i.e. `Modal` window). Internally, this `NavigationBar` relies on [`NavigationExperimental`](https://facebook.github.io/react-native/docs/navigation.html#navigationexperimental) component from React-Native 
+1. Simple 3-column `NavigationBar` that can be used on any screen or `Modal` window
 
 ![Navbar / Solid example]({{ site.baseurl }}/img/ui-toolkit/navigationbar/navbar-title-only@2x.png "Navbar / Solid"){:.docs-component-image}
 
-## Simple NavigationBar (@shoutem/ui)
+2. `Redux` and stack-based `NavigationBar` enables any view to act as a navigation view using reducers to manipulate state at a top-level object. Can be used only on components that are within the stack (i.e. it cannot be used on `Modal` window). Internally, it relies on [`NavigationExperimental`](https://facebook.github.io/react-native/docs/navigation.html#navigationexperimental) from React-Native 
 
-NavigationBar component is `Node` for `Navigator` React Native component. 
-It provides a simpler way to use 3-column Navigation bar without reinventing the wheel.
+
+
+# Simple NavigationBar
+
+## Import
+
+```JSX
+import { NavigationBar } from '@shoutem/ui'
+```
+
+`NavigationBar` is `node` for [Navigator](https://facebook.github.io/react-native/docs/navigator.html#navigationbar) React Native component. It provides a simpler way to use 3-column navigation bar.
+
 
 ## API
 
 #### Props
 
 * **centerComponent**: object  
-  - Prop that represents the center component in `NavigationBar` (example: screen title)
-
-* **hasHistory**: bool
-  - If this Prop is set to `true`, the leftComponent will become a back arrow and will trigger the `navigateBack` callback
+  - represents the center component in `NavigationBar` (i.e. screen title)
   
 * **leftComponent**: object  
-  - Prop that represents the left component in `NavigationBar` (example: back button)
+  - represents the left component in `NavigationBar` (i.e. back button)
 
 * **rightComponent**: object
-  - Prop that represents the right component in `NavigationBar` (example: drop-down menu button)
+  - represents the right component in `NavigationBar` (i.e. drop-down menu button)
 
-* **navigateBack()**: function
-  - This callback is triggered after tapping the Back button if `hasHistory` Prop is set to `true`  
+* **hasHistory**: bool
+  - If set to `true`, the `leftComponent` will become a back arrow which triggers `navigateBack` on tap
+
+* **navigateBack**: function
+  - callback triggered after tapping the `Back` button if `hasHistory` is set to `true`  
 
 #### Style names
 
@@ -49,25 +57,25 @@ It provides a simpler way to use 3-column Navigation bar without reinventing the
 #### Style
 
 * **centerComponent**
-  - Style applied to center Navigation component
+  - Style applied to center navigation component
 
 * **container**
-  - Style prop for `View` that holds all components within `NavigationBar`
+  - Style for `View` that holds all components within `NavigationBar`
   
 * **componentsContainer**
-  - Style prop for `View` container that holds `leftComponent`, `centerComponent` and `rightComponent` objects
+  - Style for `View` container that holds `leftComponent`, `centerComponent` and `rightComponent` objects
   
 * **leftComponent**
-  - Style applied to left Navigation component
+  - Style applied to left navigation component
 
 * **rightComponent**
-  - Style applied to right Navigation component
+  - Style applied to right navigation component
 
 
 ## Examples
 
-### Navbar / Solid
-![Navbar / Solid example]({{ site.baseurl }}/img/ui-toolkit/navigationbar/navbar-title-only@2x.png "Navbar / Solid"){:.docs-component-image}
+### Solid
+![Solid example]({{ site.baseurl }}/img/ui-toolkit/navigationbar/navbar-title-only@2x.png "Solid"){:.docs-component-image}
 
 #### JSX Declaration
 ```JSX
@@ -76,19 +84,8 @@ It provides a simpler way to use 3-column Navigation bar without reinventing the
 />
 ```
 
-### Navbar / Clear (Solid color)
-![Navbar / Clear (Solid color) example]({{ site.baseurl }}/img/ui-toolkit/navigationbar/navbar-clear-solidcolor-titleonly@2x.png "Navbar / Clear (Solid color)"){:.docs-component-image}
-
-#### JSX Declaration
-```JSX
-<NavigationBar
-  styleName="clear"
-  centerComponent={<Title>TITLE</Title>}
-/>
-```
-
-### Navbar / Clear (Image)
-![Navbar / Clear (Image) example]({{ site.baseurl }}/img/ui-toolkit/navigationbar/navbar-imageoverlay-image@2x.png "Navbar / Clear (Image)"){:.docs-component-image}
+### Clear (Image)
+![Clear (Image) example]({{ site.baseurl }}/img/ui-toolkit/navigationbar/navbar-imageoverlay-image@2x.png "Clear (Image)"){:.docs-component-image}
 
 #### JSX Declaration
 ```JSX
@@ -102,8 +99,8 @@ It provides a simpler way to use 3-column Navigation bar without reinventing the
 </Image>
 ```
 
-### Navbar/ Fade (Gradient overlay + Solid color)
-![Navbar/ Fade (Gradient overlay + Solid color) example]({{ site.baseurl }}/img/ui-toolkit/navigationbar/navbar-fade-gradientoverlay-solidcolor@2x.png "Navbar/ Fade (Gradient overlay + Solid color)"){:.docs-component-image}
+### Fade (Gradient overlay + Solid color)
+![Fade (Gradient overlay + Solid color) example]({{ site.baseurl }}/img/ui-toolkit/navigationbar/navbar-fade-gradientoverlay-solidcolor@2x.png "Fade (Gradient overlay + Solid color)"){:.docs-component-image}
 
 #### JSX Declaration
 ```JSX
@@ -113,8 +110,8 @@ It provides a simpler way to use 3-column Navigation bar without reinventing the
 />
 ```
 
-### Navbar/ Fade (Gradient overlay + Image)
-![Navbar/ Fade (Gradient overlay + Image) example]({{ site.baseurl }}/img/ui-toolkit/navigationbar/navbar-fade-gradientoverlay-image@2x.png "Navbar/ Fade (Gradient overlay + Image)"){:.docs-component-image}
+### Fade (Gradient overlay + Image)
+![Fade (Gradient overlay + Image) example]({{ site.baseurl }}/img/ui-toolkit/navigationbar/navbar-fade-gradientoverlay-image@2x.png "Fade (Gradient overlay + Image)"){:.docs-component-image}
 
 #### JSX Declaration
 ```JSX
@@ -344,11 +341,19 @@ It provides a simpler way to use 3-column Navigation bar without reinventing the
 />
 ```
 
-## Redux and Stack based NavigationBar (@shoutem/ui/navigation) and CardStack
+# Redux and stack-based NavigationBar with CardStack
 
-This `NavigationBar` and `CardStack` components provide simpler API for navigation between Screens (scenes) with respect to its underlying Redux-based `NavigationExperimental` React-Native component. Still, for proper usage of these components, it is necessary that you're familiar with [Redux concept](https://github.com/reactjs/redux).
+## Import
 
-## NavigationBar API
+```JSX
+import { NavigationBar } from '@shoutem/ui/navigation'
+```
+
+This `NavigationBar` and `CardStack` components provide simpler API for navigation between `Screens` (scenes) with respect to its underlying [Redux](https://github.com/reactjs/redux)-based `NavigationExperimental` React Native component.
+
+## NavigationBar
+
+## API
 
 #### Props
 
@@ -393,7 +398,9 @@ This `NavigationBar` and `CardStack` components provide simpler API for navigati
 * **rightComponent**
   - Style applied to right Navigation component
 
-## CardStack API
+## CardStack
+
+## API
 
 #### Props
 
