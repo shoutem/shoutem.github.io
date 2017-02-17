@@ -15,7 +15,7 @@ DropDownMenu is a full-screen contextual menu for displaying lists of items.
 
 #### Props
  
-* **onOptionSelected(option: Object)**: function  
+* **onOptionSelected(option: object)**: function  
   - Called after tapping an option from menu, with all Props from that option passed to the function
 
 * **options**: array  
@@ -53,7 +53,6 @@ DropDownMenu is a full-screen contextual menu for displaying lists of items.
 
 ## Examples
 
-#### JSX declaration
 ```JSX
   constructor(props){
     super(props);
