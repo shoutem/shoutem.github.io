@@ -18,11 +18,10 @@ It consists of three libraries:
 - [@shoutem/animation](https://github.com/shoutem/animation): declarative way of applying ready-made [animations](http://shoutem.github.io/docs/ui-toolkit/theme/animation/introduction) 
 
 
-## Prerequsites
+## Prerequisites
 Before starting make sure you have:
 
-- Installed [node](https://nodejs.org/en/)
-- Installed [npm](https://www.npmjs.com/)
+- Installed [npm](https://www.npmjs.com/) (installed with [Node.js](https://nodejs.org/en/))
 - Installed [React Native](https://facebook.github.io/react-native/docs/getting-started.html)
 
 ## Installation
@@ -30,7 +29,8 @@ Before starting make sure you have:
 Create new React Native project:
 
 ```bash
-$ react-native init HelloWorld && cd HelloWorld
+$ react-native init HelloWorld
+$ cd HelloWorld
 ```
 
 Install and link `@shoutem/ui` in your project:
@@ -40,7 +40,7 @@ $ react-native install @shoutem/ui
 $ react-native link
 ```
 
-To check which components we have in UI toolkit, simply copy the following to your `index.ios.js` file of React Native project:
+To check components in UI toolkit, simply copy the following to your `index.ios.js` file of React Native project:
 
 ```JavaScript
 #file: index.ios.js
@@ -65,50 +65,52 @@ Finally, run the app!
 $ react-native run-ios
 ```
 
-To see other components, just import them from `@shoutem/ui` and render them.
+To see other components, import them from `@shoutem/ui` and render them.
 
 You can also use standard React Native components in your layouts anywhere you want, but they will not inherit either the theme or the parent styles, so you will need to style them manually.
 
-## Style names
+## Styling components
 
-Style names are similar to CSS classes that allows you to style components in "CSS way". Once `styleName` is applied to some component component will inherit styling rules that are defined in Theme for that component and `styleName`.
+All components have default style defined by theme in [theme.js](https://github.com/shoutem/ui/blob/develop/theme.js) file in the root of `@shoutem/ui` package. Theme uses [styling rules](http://shoutem.github.io/docs/ui-toolkit/theme/introduction) interpreted by [@shoutem/theme](https://github.com/shoutem/theme) package.
 
-This section covers common style names that can be used in several UI toolkit components and their variations.
+Each component can be customized with React Native inline styles or by using `styleName` properties. Style name is similar to CSS class - it contains a set of styles that is applied to a component, defined in theme
 
-### Size-based style name variations
-* **sm-gutter**: small size, defaults to 5px.  
-* **md-gutter**: medium size, defaults to 15px.  
-* **lg-gutter**: large size, defaults to 30px.  
-* **xl-gutter**: extra large size, defaults to 45px.  
+Listed below are common style names that can be used in several UI toolkit components and their variations.
+
+### Gutters
+
+A gutter is an empty space between a component's boundaries and the component's content.
+
+Set the same gutter for each side:
+
+* **sm-gutter**: small size, defaults to 5px
+* **md-gutter**: medium size, defaults to 15px
+* **lg-gutter**: large size, defaults to 30px
+* **xl-gutter**: extra large size, defaults to 45px
   
-> On `View`, `Tile` and `Overlay` components gutter is applied as padding, while on `Text` (Typography) and `Button` components gutter is applied as margin.    
+> On `View`, `Tile` and `Overlay` components, gutter is applied as padding, while on `Text` (Typography) and `Button` components gutter is applied as margin.    
     
-If you want to apply gutter only to the specific side of component (i.e. `right`), or to vertical sides, you can specify that by using additional position style name keywords listed below.
+Set the gutter for specific side:
+ 
+* **_size_-gutter-left**: applied to the left side of component
+* **_size_-gutter-right**: applied to the right side of component
+* **_size_-gutter-top**: applied to the top side of component
+* **_size_-gutter-bottom**: applied to the bottom side of component
+* **_size_-gutter-horizontal**: applied to horizontal sides (left and right) of component
+* **_size_-gutter-vertical**: applied only to vertical sides (top and bottom) of component
 
-### Position based style name variations  
-* **_size_-gutter-left**: gutter will be applied only to the left side of targeted component.  
-* **_size_-gutter-right**: gutter will be applied only to the right side of targeted component.  
-* **_size_-gutter-top**: gutter will be applied only to top side of targeted component.  
-* **_size_-gutter-bottom**: gutter will be applied only to the bottom side of targeted component.  
-* **_size_-gutter-horizontal**: gutter will be applied only to horizontal sides (left and right) of targeted component.  
-* **_size_-gutter-vertical**: gutter will be applied only to vertical sides (top and bottom) of targeted component.  
+### Other common style names
 
-#### rounded-corners
-- This style name applies border radius (defaults to 2 px) to targeted component.  
+* **rounded-corners**: applies border radius (defaults to 2 px) to component
+* **flexible**: applies `flexbox` to component so it fills parent container component
+* **inflexible**: component is sized according to its width/height properties but completely inflexible
+* **collapsible**: causes the component to shrink if it overflows parent container
+* **stretch**: causes the component to fully fill parent container
 
-#### flexible
-- This style name applies flexbox to targeted component so that it fills parent container component.  
 
-#### inflexible
-- With this style name, the component is sized according to its width/height properties but makes it fully inflexible.  
-
-#### collapsible
-- This style name causes the component to shrink if it overflows parent container.  
-
-#### stretch
-- This style name causes the component to fully fill parent container.  
+### Example
   
-Below is one example where and how common Style names can be used:  
+Below is one example where and how common style names can be used:  
 <br />  
 
 #### JSX Declaration
@@ -122,4 +124,4 @@ Below is one example where and how common Style names can be used:
 </Overlay>
 ```
 
-If you want to learn how you can define your own `styleNames`, check out [Shoutem Theme]({{ site.baseurl }}/img/ui-toolkit/theme/introduction "Shoutem Theme")
+Check [Shoutem Theme]({{ site.baseurl }}/img/ui-toolkit/theme/introduction "Shoutem Theme") to learn more about styling rules, style names and how to define your own style name.
