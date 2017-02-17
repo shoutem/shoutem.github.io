@@ -22,17 +22,16 @@ Typography components consist of several flavors of `Text` components with prede
 ## API
 
 #### Props
-* All components in this section support every prop that the standard React Native `Text` component supports, such as `numberOfLines` prop. For full list of available props, visit 
-[React Native Text component documentation](https://facebook.github.io/react-native/docs/text.html "React Native Text component documentation")  
+* Every component in this section supports every `prop` that the standard React Native `Text` component supports (i.e. `numberOfLines`). See full list of available props on  React Native [Text component documentation](https://facebook.github.io/react-native/docs/text.html "React Native Text component documentation")  
 
 #### Style names
 
 * **bold**: Sets text to be bold
-* **bright**: Sets text color to the `Light` color set in Theme
+* **bright**: Sets text color to the `Light` color set in the theme
 * **h-center**: Centers the text horizontally
 * **line-through**: Defines a line through the text
 * **multiline**: Increases line-height to allow text to wrap 
-  * **v-center**: Works only in combination with `multiline` styleName. Applies additional top and bottom margins to compensate the unsupported `textAlignVertical` prop on iOS
+* **v-center**: Works only in combination with `multiline` styleName. Applies additional top and bottom margins to compensate the unsupported `textAlignVertical` prop on iOS
 
 
 ## Examples
