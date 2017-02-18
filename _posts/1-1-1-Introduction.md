@@ -33,7 +33,9 @@ Extensions represent small features that are connected to application. Applicati
 
 <hr />
 
-Shoutem uses [React](https://facebook.github.io/react/) and [React Native](https://facebook.github.io/react-native/) as frameworks for building cross-platform apps. React is an open source JavaScript library providing a **View** from M**V**C pattern, while React Native exposes iOS and Android **native** components to React environment. We're also using [JSX](https://facebook.github.io/react/docs/jsx-in-depth.html) as a simpler way to use UI components. Making a screen in JSX looks like this:
+Shoutem uses [React](https://facebook.github.io/react/) and [React Native](https://facebook.github.io/react-native/) as frameworks for building cross-platform apps. React is an open source JavaScript library providing a **View** from M**V**C pattern, while React Native exposes iOS and Android **native** components to React environment. If you never used these technologies, check out our [React Native school](http://school.shoutem.com/)!
+
+We use [JSX](https://facebook.github.io/react/docs/jsx-in-depth.html) as a simpler way to write UI components. Making a screen in JSX looks like this:
 
 <p class="image">
 <img src='{{ site.baseurl }}/img/getting-started/jsx-component-example.png'/>
