@@ -46,7 +46,7 @@ This schema was immediately exported in `extension.json` file:
   "title": "Restaurants",
   "description": "List of restaurants",
   "shortcuts": [{
-    "name": "openList",
+    "name": "Restaurants",
     "title": "Restaurants",
     "description": "Allow users to browse through list of restaurants"
     "screen": "@.List",
@@ -118,7 +118,7 @@ Now in order to enter data for your schema, you need to link your extension with
   "title": "Restaurants",
   "description": "List of restaurants",
   "shortcuts": [{
-    "name": "openList",
+    "name": "Restaurants",
     "title": "Restaurants",
     "description": "Allow users to browse through list of restaurants",
     "screen": "@.List",
