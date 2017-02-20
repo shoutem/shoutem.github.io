@@ -8,17 +8,18 @@ section: Getting Started
 # Using UI toolkit
 <hr />
 
-React Native exposes plain components that you can use, but there's usually much work left to do to make them look professional. Use [Shoutem UI toolkit](https://shoutem.github.io/ui), a set of 3 packages for building professional UI/UX in React Native: [@shoutem/ui](https://github.com/shoutem/ui), [@shoutem/theme](https://github.com/shoutem/theme) and [@shoutem/animation](https://github.com/shoutem/animation). We'll use `@shoutem/ui`, consisting of styleable UI components that you can use in any React Native application. It basically turns any ordinary app into an amazing app. There are plenty of components that you can use out of the box. Documentation for all the components can be found on the [this portal]({{ site.baseurl }}/docs/ui-toolkit/introduction).
+React Native exposes plain components that you can use, but there's usually much work left to do just to make them look beautiful. Instead, you can use [@shoutem/ui](https://github.com/shoutem/ui), a set of customizable UI components. There are [plenty of components]({{ site.baseurl }}/docs/ui-toolkit/components/typography) that you can use out of the box.
 
-## Adding static data
+## Creating restaurants list
 
-Let's add static restaurants and show them in list. Start by importing UI components from the toolkit.
+Let's create a list of restaurants. Start by importing UI components from the toolkit.
 
-```javascript{4-13}
+```javascript{5-15}
 #file: app/screens/List.js
 import React, {
   Component
 } from 'react';
+
 import {
   Image,
   ListView,
@@ -28,10 +29,11 @@ import {
   Overlay,
   Screen
 } from '@shoutem/ui';
+
 import { NavigationBar } from '@shoutem/ui/navigation';
 ```
 
-We prepared some data for you. Create `app/assets` folder, which will keep the assets for application part of your extension, and extract [this JSON file](/restaurants/restaurants.zip) inside, which contains restaurants data.
+We prepared some data for you. Download [this compressed file](/restaurants/restaurants.zip), extract it and copy the `assets` folder inside of `app` folder. The `assets` folder contain static restaurants data in of `restaurants.json` file.
 
 Define a method in `List` class that returns an array of restaurants.
 
@@ -104,20 +106,7 @@ $ shoutem screen add Details
 File `app/screens/Details.js` is created.
 ```
 
-Screen is defined in extension.json. Don't forget to export it in `index.js`.
-
-```JSX{2,6}
-#file: app/index.js
-import List from './screens/List';
-import Details from './screens/Details';
-
-export const screens = {
-  List,
-  Details
-};
-
-export const reducer = {};
-```
+We didn't need to create `shortcut` with this screen as it's not going to be the first screen of an extension. Screen is defined in `extension.json`.
 
 When list item is touched, we want to open details screen. For that we need `TouchableOpacity` component from React Native and Shoutem's `navigateTo` Redux action creator. It accepts Shoutem `route object` (with `screen` and `props` properties) as the only argument.
 
@@ -186,9 +175,11 @@ This is what you should have end up with in `app/screens/List.js`:
 import React, {
   Component
 } from 'react';
+
 import {
   TouchableOpacity,
 } from 'react-native';
+
 import {
   Image,
   ListView,
@@ -198,6 +189,7 @@ import {
   Overlay,
   Screen
 } from '@shoutem/ui';
+
 import { NavigationBar } from '@shoutem/ui/navigation';
 import { navigateTo } from '@shoutem/core/navigation';
 import { ext } from '../extension';
@@ -259,9 +251,11 @@ To `Details` screen, just copy the following code. We're not introducing anythin
 import React, {
   Component
 } from 'react';
+
 import {
   ScrollView,
 } from 'react-native';
+
 import {
   Icon,
   Row,
