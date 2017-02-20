@@ -34,7 +34,8 @@ Data schema is created in `server/data-schemas` folder. Its default content is:
     "name": {
       "format": "single-line",
       "title": "Name",
-      "type": "string"
+      "type": "string",
+      "displayPriority": 1
     }
   },
   "titleProperty": "name",
@@ -116,11 +117,11 @@ Example:
 
 ```JSON
 "rating": {
-    "type": "number",
-    "format": "number",
-    "title": "Rating",
-    "minimum": 0,
-    "maximum": 10
+  "type": "number",
+  "format": "number",
+  "title": "Rating",
+  "minimum": 0,
+  "maximum": 10
 }
 ```
 
@@ -305,6 +306,10 @@ Example:
   "title": "Binary Data Encoded to Base64"
 }
 ```
+
+### Property order
+
+As `properties` are a dictionary and there is no order in dictionaries, we added `displayPriority` property in value descriptor which you can use to define order of the properties shown on the Shoutem CMS interface. A valid value of `displayPriority` property is an integer greater than zero (0).
 
 
 ### Additional descriptor properties
