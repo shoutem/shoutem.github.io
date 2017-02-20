@@ -201,6 +201,25 @@ Example:
 }
 ```
 
+#### Location
+
+Signature:
+
+```JSON
+"type": "object",
+"format": "geolocation"
+```
+
+Example:
+
+```JSON
+"placeOfBirth": {
+  "type": "object",
+  "format": "geolocation",
+  "title": "Place of birth"
+}
+```
+
 #### Image
 
 Signature:
@@ -288,28 +307,11 @@ Example:
 ```
 
 
-#### Binary data
-
-Signature:
-
-```JSON
-"type": "object",
-"format": "binary"
-```
-
-Example:
-
-```JSON
-"binaryData": {  
-  "type": "string",
-  "format": "binary",
-  "title": "Binary Data Encoded to Base64"
-}
-```
-
 ### Property order
 
-As `properties` are a dictionary and there is no order in dictionaries, we added `displayPriority` property in value descriptor which you can use to define order of the properties shown on the Shoutem CMS interface. A valid value of `displayPriority` property is an integer greater than zero (0).
+As `properties` are a dictionary and dictionaries are by nature unordered, we added `displayPriority` property in value descriptor which you can use to define the order in which properties are shown on the Shoutem CMS interface. A valid value of `displayPriority` property is an integer - the lower the integer, the higher the property will be shown in the interface.
+
+Display priority is an optional property. Properties which omit it will be rendered in an arbitrary order after all the properties with `displayPriority` defined.
 
 
 ### Additional descriptor properties
