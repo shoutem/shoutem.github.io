@@ -19,8 +19,8 @@ Title: Restaurants
 
 Screen `List` is created in file `app/screens/List.js`!
 Shortcut `Restaurants` is created.
-File `extension.json` was modified.
 File `app/extension.js` was modified.
+File `extension.json` was modified.
 ```
 
 Your `extension.json` was just modified:
