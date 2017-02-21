@@ -33,7 +33,7 @@ import {
 import { NavigationBar } from '@shoutem/ui/navigation';
 ```
 
-We prepared some data for you. Download [this compressed file](/restaurants/restaurants.zip), extract it and copy the `assets` folder inside of `app` folder. The `assets` folder contain static restaurants data in of `restaurants.json` file.
+We prepared mockup restaurants data for you. Download [this compressed file](/restaurants/restaurants.zip), extract it and copy the extracted `assets` folder inside of `app` folder. The `assets` folder contain static restaurants data in `restaurants.json` file.
 
 Define a method in `List` class that returns an array of restaurants.
 
@@ -46,7 +46,7 @@ export default class List extends Component {
   }
 ```
 
-Implement `render` method that will use `ListView`. `ListView` accepts data in the form of `Array` to show in the list and `renderRow` method which defines how list row should look like.
+Implement `render` method that will use `ListView`. [ListView]({{ site.baseurl }}/docs/ui-toolkit/components/list-view) accepts `data` in the form of `array` to show in the list and `renderRow` callback function which defines how list row should look like.
 
 Add `renderRow` method and replace implementation of `render` method:
 
@@ -87,7 +87,7 @@ Uploading `Restaurants` extension to Shoutem...
 Success!
 ```
 
-`List` is now showing list of restaurants. 
+Since we changed extension, preview will be shown after Shoutem builds the new app. `List` is now showing list of restaurants. 
 
 <p class="image">
 <img src='{{ site.baseurl }}/img/getting-started/extension-rich-list.png'/>
@@ -104,13 +104,15 @@ First, create details screen:
 ```ShellSession
 $ shoutem screen add Details
 File `app/screens/Details.js` is created.
+File `app/extension.js` was modified.
+File `extension.json` was modified.
 ```
 
 We didn't need to create `shortcut` with this screen as it's not going to be the first screen of an extension. Screen is defined in `extension.json`.
 
-When list item is touched, we want to open details screen. For that we need `TouchableOpacity` component from React Native and Shoutem's `navigateTo` Redux action creator. It accepts Shoutem `route object` (with `screen` and `props` properties) as the only argument.
+When list item is touched, we want to open details screen. For that we need [TouchableOpacity](https://facebook.github.io/react-native/docs/touchableopacity.html) component from React Native, wrapper for making views respond to touches. We also need Shoutem's `navigateTo` redux action creator, which we use to navigate to another screen. It accepts Shoutem `route object`, with `screen` (screen to navigate to) and `props` (to be passed to screen) properties, as the only argument.
 
-To reference our `Details` screen exported in `app/index.js`, we're using `ext` helper function that was created in `app/extension.js` file. This function returns an **absolute name**, e.g. `developer.restaurants.List`, for the extension part which is passed as its first argument, or extension `name` if no argument is passed.
+To open `Details` screen we'll use `ext` function from `app/extension.js`. This function returns full name for the extension part passed as its first argument (e.g. returns `developer.restaurants.Details` for `Details`) or extension `name` if no argument is passed.
 
 Let's import these things:
 

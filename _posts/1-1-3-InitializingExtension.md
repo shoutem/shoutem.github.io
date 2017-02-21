@@ -26,7 +26,7 @@ Title: Restaurants
 Version: 0.0.1
 Description: List of restaurants
 
-Initializing extension...
+Initializing extension:
 ...
 
 Extension initialized!

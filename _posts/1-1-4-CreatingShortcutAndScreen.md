@@ -104,10 +104,14 @@ Go to `Custom` under `Add Screen` modal [Shoutem builder](/docs/coming-soon). Yo
 
 Click on the `Restaurants`, which will get that screen inserted into navigation.
 
-Start the preview now or check out your app on the phone using Mobilizer app. It might take some time while the app preview shows, since every time you change extension inside of your app, we need to build an app with that extension.
+Start the preview now or check out your app on the phone using Mobilizer app.
+
+> #### Note
+> It might take some time while the app preview shows. Every time you change an extension, we need to rebuild apps using that extension. Development process is much faster with [local development environment]({{ site.baseurl }}/docs/extensions/tutorials/setting-local-environment), but you're fine without it for passing this tutorial.
 
 <p class="image">
 <img src='{{ site.baseurl }}/img/getting-started/extension-hello-world.png'/>
 </p>
+
 
 In the preview, you can see the _Hello World_ screen. Let's put some UI components on the screen.
