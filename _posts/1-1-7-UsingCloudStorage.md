@@ -25,7 +25,8 @@ Folder `data-schemas` inside `server` folder was created with file `Restaurants.
     "name": {
       "format": "single-line",
       "title": "Name",
-      "type": "string"
+      "type": "string",
+      "displayPriority": 1
     },
   },
   "titleProperty": "name",
@@ -33,27 +34,28 @@ Folder `data-schemas` inside `server` folder was created with file `Restaurants.
 }
 ```
 
-This is for the first time that we used `server` folder for something. The reason is that data schemas are not part of the application code, but rather server side for extension. Data Schemas are nothing more than Shoutem-flavored [JSON Schemas](http://json-schema.org/). At the end, there are some properties describing the schema itself.
+This is the first time that we used `server` folder. The reason is that data schemas are not part of the application code, but rather server side for extension. Data Schemas are nothing more than Shoutem-flavored [JSON Schemas](http://json-schema.org/). At the end, there are some properties describing the schema itself. All the properties are explained in [data schema reference]({{ site.baseurl }}/docs/cloud/data-schemas).
 
 This schema was immediately exported in `extension.json` file:
 
-```JSON{17-20}
+```JSON{18-21}
 #file: extension.json
 {
   "name": "restaurants",
   "version": "0.0.1",
+  "platform": "1.0.*",
   "title": "Restaurants",
   "description": "List of restaurants",
   "shortcuts": [{
-    "name": "openRestaurantsList",
+    "name": "Restaurants",
     "title": "Restaurants",
     "description": "Allow users to browse through list of restaurants"
-    "screen": "@.RestaurantsList",
+    "screen": "@.List",
   }],
   "screens": [{
-    "name": "RestaurantsList"
+    "name": "List"
   }, {
-    "name": "RestaurantDetails"
+    "name": "Details"
   }],
   "dataSchemas": [{
     "name": "Restaurants",
@@ -72,33 +74,39 @@ Let's add now properties that we want to persist for a restaurant, such as: `nam
     "name": {
       "format": "single-line",
       "title": "Restaurant name",
-      "type": "string"
+      "type": "string",
+      "displayPriority": 1
     },
     "address": {
       "format": "single-line",
       "title": "Address",
-      "type": "string"
+      "type": "string",
+      "displayPriority": 2
     },
     "description": {
       "format": "multi-line",
       "title": "Description",
-      "type": "string"
+      "type": "string",
+      "displayPriority": 3
     },
     "url": {
       "format": "uri",
       "title": "Website",
-      "type": "string"
+      "type": "string",
+      "displayPriority": 4
     },
     "image": {
       "format": "attachment",
       "title": "Image",
       "type": "object",
-      "referencedSchema": "shoutem.core.image-attachments"
+      "referencedSchema": "shoutem.core.image-attachments",
+      "displayPriority": 5
     },
     "mail": {
       "format": "single-line",
       "title": "E-mail",
-      "type": "string"
+      "type": "string",
+      "displayPriority": 6
     }
   },
   "titleProperty": "name",
@@ -106,20 +114,21 @@ Let's add now properties that we want to persist for a restaurant, such as: `nam
 }
 ```
 
-Now in order to enter data for your schema, you need to link your extension with Shoutem CMS settings page. Shortly, **Settings Pages** are web pages that you as developer can write to enable admins to manage your extension. They are shown inside Shoutem builder when admin clicks on the shortcut. In this example we’re using predefined Shoutem CMS settings page. Add Admin Page to `openRestaurantsList` shortcut and specify for which Data Schema you want to enter the data:
+Now in order to enter data for your schema, you need to link your extension with Shoutem CMS settings page. Shortly, **Settings Pages** are web pages that you as developer can write to enable admins to manage your extension. They are shown inside Shoutem builder when admin clicks on the shortcut. In this example we’re using predefined Shoutem CMS settings page. Add Admin Page to `Restaurants` shortcut and specify for which Data Schema you want to enter the data:
 
-```JSON{11-17}
+```JSON{12-18}
 #file: extension.json
 {
   "name": "restaurants",
   "version": "0.0.1",
+  "platform": "1.0.*",
   "title": "Restaurants",
   "description": "List of restaurants",
   "shortcuts": [{
-    "name": "openRestaurantsList",
+    "name": "Restaurants",
     "title": "Restaurants",
     "description": "Allow users to browse through list of restaurants",
-    "screen": "@.RestaurantsList",
+    "screen": "@.List",
     "adminPages": [{
       "page": "shoutem.cms.CmsPage",
       "title": "Content",
@@ -129,9 +138,9 @@ Now in order to enter data for your schema, you need to link your extension with
     }]
   }],
   "screens": [{
-    "name": "RestaurantsList"
+    "name": "List"
   }, {
-    "name": "RestaurantDetails"
+    "name": "Details"
   }],
   "dataSchemas": [{
     "name": "Restaurants",

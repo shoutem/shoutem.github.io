@@ -34,7 +34,8 @@ Data schema is created in `server/data-schemas` folder. Its default content is:
     "name": {
       "format": "single-line",
       "title": "Name",
-      "type": "string"
+      "type": "string",
+      "displayPriority": 1
     }
   },
   "titleProperty": "name",
@@ -116,11 +117,11 @@ Example:
 
 ```JSON
 "rating": {
-    "type": "number",
-    "format": "number",
-    "title": "Rating",
-    "minimum": 0,
-    "maximum": 10
+  "type": "number",
+  "format": "number",
+  "title": "Rating",
+  "minimum": 0,
+  "maximum": 10
 }
 ```
 
@@ -197,6 +198,25 @@ Example:
   "type": "object",
   "format": "date-time",
   "title": "Opened Since"
+}
+```
+
+#### Location
+
+Signature:
+
+```JSON
+"type": "object",
+"format": "geolocation"
+```
+
+Example:
+
+```JSON
+"placeOfBirth": {
+  "type": "object",
+  "format": "geolocation",
+  "title": "Place of birth"
 }
 ```
 
@@ -287,24 +307,11 @@ Example:
 ```
 
 
-#### Binary data
+### Property order
 
-Signature:
+As `properties` are a dictionary and dictionaries are by nature unordered, we added `displayPriority` property in value descriptor which you can use to define the order in which properties are shown on the Shoutem CMS interface. A valid value of `displayPriority` property is an integer - the lower the integer, the higher the property will be shown in the interface.
 
-```JSON
-"type": "object",
-"format": "binary"
-```
-
-Example:
-
-```JSON
-"binaryData": {  
-  "type": "string",
-  "format": "binary",
-  "title": "Binary Data Encoded to Base64"
-}
-```
+Display priority is an optional property. Properties which omit it will be rendered in an arbitrary order after all the properties with `displayPriority` defined.
 
 
 ### Additional descriptor properties

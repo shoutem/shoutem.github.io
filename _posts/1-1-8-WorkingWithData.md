@@ -23,7 +23,7 @@ Reducer `storage` retrieves resources in a dictionary while `collection` stores 
 #file: app/reducers/index.js
 import { storage, collection } from '@shoutem/redux-io';
 import { combineReducers } from 'redux';
-import { ext } from '../const';
+import { ext } from '../extension';
 
 export default combineReducers({
   restaurants: storage(ext('Restaurants')),
@@ -36,47 +36,44 @@ We've used `ext` function to get absolute name of schema. This root reducer need
 ```javascript{1,10}
 #file: app/index.js
 import reducer from './reducers';
-import RestaurantsList from './screens/RestaurantsList';
-import RestaurantDetails from './screens/RestaurantDetails';
+import List from './screens/List';
+import Details from './screens/Details';
 
 export const screens = {
-  RestaurantsList,
-  RestaurantDetails
+  List,
+  Details
 };
 
 export { reducer };
 ```
 
-The only thing left to do is to fetch data from **Shoutem Cloud Storage** on `RestaurantsList` screen and to retrieve that data, in form of restaurants, from application's state. Once screen is mounted, if restaurants are not in the Redux store, we'll start fetching data with `find` action creator from `@shoutem/redux-io` package. Also, import 3 helper functions from that package:
+The only thing left to do is to fetch data from **Shoutem Cloud Storage** on `List` screen and to retrieve that data, in form of restaurants, from application's state. Once screen is mounted, if restaurants are not in the Redux store, we'll start fetching data with `find` action creator from `@shoutem/redux-io` package. Also, import 3 helper functions from that package:
  
  - `isBusy` - gives feedback if data is being fetched,
  - `shouldRefresh` - knows if data needs to be (re)fetched and
  - `getCollection` - combines `storage` and `collection` into an `array` of objects.
 
-```javascript{1-7}
-#file: app/screens/RestaurantsList.js
+```javascript{1-6}
+#file: app/screens/List.js
 import {
   find,
   isBusy,
   shouldRefresh,
   getCollection
 } from '@shoutem/redux-io';
-import _ from 'lodash';
 ```
 
-If necessary, fetch data in `componentDidMount` lifecycle.
+Fetch data in `componentDidMount` lifecycle.
 
-```javascript{2-11}
-#file: app/screens/RestaurantsList.js
-class RestaurantsList extends Component {
+```javascript{2-9}
+#file: app/screens/List.js
+class List extends Component {
   componentDidMount() {
     const { find, restaurants } = this.props;
     if (shouldRefresh(restaurants)) {
-      _.defer(() =>
-        find(ext('Restaurants'), 'all', {
-            include: 'image',
-        })
-      );
+      find(ext('Restaurants'), 'all', {
+          include: 'image',
+      })
     }
   }
 ```
@@ -84,7 +81,7 @@ class RestaurantsList extends Component {
 Implement rendering.
 
 ```JSX{2,8-9}
-#file: app/screens/RestaurantsList.js
+#file: app/screens/List.js
   render() {
     const { restaurants } = this.props;
     
@@ -104,19 +101,19 @@ Implement rendering.
 In `render` method, we're expecting to get restaurants as an array. In `app/reducers/index.js` we defined `restaurants` dictionary that will be fetched through `storage` and `allRestaurants` collection that will be fetched through `collection` reducer. Combine both into an array with `getCollection` function from `@shoutem/redux-io` in 1st argument of `connect` function. In 2nd argument, we'll bind `find` action creator.
 
 ```javascript{2-5}
-#file: app/screens/RestaurantsList.js
+#file: app/screens/List.js
 export default connect(
   (state) => ({
     restaurants: getCollection(state[ext()].allRestaurants, state)
   }),
   { navigateTo, find }
-)(RestaurantsList);
+)(List);
 ```
 
-This is the final result of `RestaurantsList` screen that uses both Shoutem UI Toolkit and Shoutem Cloud Storage.
+This is the final result of `List` screen that uses both Shoutem UI Toolkit and Shoutem Cloud Storage.
 
 ```JSX
-#file: app/screens/RestaurantsList.js
+#file: app/screens/List.js
 import React, {
   Component
 } from 'react';
@@ -141,13 +138,12 @@ import {
   shouldRefresh,
   getCollection
 } from '@shoutem/redux-io';
-import _ from 'lodash';
 
 import { connect } from 'react-redux';
 import { navigateTo } from '@shoutem/core/navigation';
-import { ext } from '../const';
+import { ext } from '../extension';
 
-class RestaurantsList extends Component {
+class List extends Component {
   constructor(props) {
     super(props);
 
@@ -157,11 +153,9 @@ class RestaurantsList extends Component {
   componentDidMount() {
     const { find, restaurants } = this.props;
     if (shouldRefresh(restaurants)) {
-      _.defer(() =>
-        find(ext('Restaurants'), 'all', {
-            include: 'image',
-        })
-      );
+      find(ext('Restaurants'), 'all', {
+          include: 'image',
+      })
     }
   }
 
@@ -170,7 +164,7 @@ class RestaurantsList extends Component {
 
     return (
       <TouchableOpacity onPress={() => navigateTo({
-        screen: ext('RestaurantDetails'),
+        screen: ext('Details'),
         props: { restaurant }
       })}>
         <Image styleName="large-banner" source={% raw %}{{ uri: restaurant.image &&
@@ -205,7 +199,7 @@ export default connect(
     restaurants: getCollection(state[ext()].allRestaurants, state)
   }),
   { navigateTo, find }
-)(RestaurantsList);
+)(List);
 ```
 
 Let's check how it works:

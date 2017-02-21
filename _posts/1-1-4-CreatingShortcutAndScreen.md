@@ -1,76 +1,57 @@
 ---
 layout: doc
 permalink: /docs/extensions/getting-started/shortcut-and-screen
-title: Creating shortcut and screen
+title: Creating screen and shortcut
 section: Getting Started
 ---
 
-# Creating shortcut and screen
+# Creating screen and shortcut
 <hr />
 
-The easiest way to understand what shortcuts are, is to think of them as **links** to the starting screen of your extension. These links will be used to navigate to your extension from any part of the application. Extensions can expose multiple shortcuts. Let's create one now.
+Extension can have multiple screens in the app. Screens are [React components](https://facebook.github.io/react/docs/react-component.html) that represent a mobile screen. We want our extension to have 2 screens: one for the list of the restaurants and another for the details of one particular restaurant.
+
+Since app needs to know which screen it needs to open first for some extension, we need to create a _shortcut_ along with creating a screen. Shortcut is a link to the starting screen of the extension. List of the restaurants is going to be the first screen, so let's create it with shortcut:
 
 ```ShellSession
-$ shoutem shortcut add openRestaurantsList
-Enter shortcut information.
+$ shoutem screen add List --shortcut Restaurants
+Enter shortcut information:
 Title: Restaurants
-Description: Enable users to browse through list of restaurants
 
-`openRestaurantsList` shortcut is created.
+Screen `List` is created in file `app/screens/List.js`!
+Shortcut `Restaurants` is created.
+File `extension.json` was modified.
+File `app/extension.js` was modified.
 ```
 
 Your `extension.json` was just modified:
 
-```json{6-10}
+```json{7-14}
 #file: extension.json
 {
   "name": "restaurants",
   "version": "0.0.1",
+  "platform": "1.0.*",
   "title": "Restaurants",
   "description": "List of restaurants",
   "shortcuts": [{
-    "name": "openRestaurantsList",
-    "title": "Restaurants",
-    "description": "Enable users to browse through list of restaurants"
-  }]
-}
-```
-
-Let's add a screen now. Screens are React components that represent a mobile screen.
-
-### Creating list screen
-
-Create a new screen:
-
-```ShellSession
-$ shoutem screen add RestaurantsList
-File `app/screens/RestaurantsList.js` is created.
-```
-
-Screen definition was appended to extension.json.
-
-```json{11-13}
-#file: extension.json
-{
-  "name": "restaurants",
-  "version": "0.0.1",
-  "title": "Restaurants",
-  "description": "List of restaurants",
-  "shortcuts": [{
-    "name": "openRestaurantsList",
-    "title": "Restaurants",
-    "description": "Allow users to browse through list of restaurants"
+    "name": "Restaurants",
+    "title": "Restaurants"
+    "screen": "@.List"
   }],
   "screens": [{
-    "name": "RestaurantsList"
+    "name": "List"
   }]
 }
 ```
 
-Shoutem CLI also created `app/screens/` folder with `RestaurantsList.js` file:
+Screen and shortcut were added to `extension.json` inside arrays. Property `name` uniquely identifies these extension parts. Shortcut's title is what will be shown in the app navigation.
+
+Property `screen` inside of `shortcuts` array references the screen to be opened when shortcut is tapped inside navigation. When referencing any extension part, we need to say from which extension it came from. Full name of extension part follows this structure: `<developer-name>.<extension-name>.<extension-part-name>`. For extension parts within the same extension, use `@.<extension-part-name>` instead. Character `@.` stands for `<developer-name>.<extension-name>.` of the current extension.
+
+Shoutem CLI also created `app/screens/` folder with `List.js` file:
 
 ```javascript
-#file: app/screens/RestaurantList.js
+#file: app/screens/List.js
 import React, {
   Component
 } from 'react';
@@ -78,7 +59,7 @@ import {
   Text
 } from 'react-native';
 
-export default class RestaurantsList extends Component {
+export default class List extends Component {
   render() {
     return (
       <Text>Hello World!</Text>
@@ -87,63 +68,23 @@ export default class RestaurantsList extends Component {
 }
 ```
 
-In React, `Component` specifies its UI in `render` method. Now when the screen is created, we need to manually connect it to shortcut in extension.json.
-
-```json{10}
-#file: extension.json
-{
-  "name": "restaurants",
-  "version": "0.0.1",
-  "title": "Restaurants",
-  "description": "List of restaurants",
-  "shortcuts": [{
-    "name": "openRestaurantsList",
-    "title": "Restaurants",
-    "description": "Allow users to browse through list of restaurants",
-    "screen": "@.RestaurantsList"
-  }],
-  "screens": [{
-    "name": "RestaurantsList"
-  }]
-}
-```
-
-Notice that object in `shortcuts` has property `name`, which identifies it and `screen`, which represents the screen to be opened when shortcut is tapped. In the `name` property, use **relative name** to define an extension part. In properties like `screen`, where some extension part is referenced, use **absolute name**. Absolute name of extension part follows this structure: `{developerName}.{extensionName}.{extensionPartName}`. However, for parts of the current extension, you can simply use `@.{extensionPartName}` instead. Characters `@.` replace your `{developerName}.{extensionName}.`.
+In React, `Component` specifies its UI in `render` method.
 
 ## Exporting extension parts
 
-Application needs to know where it can find extension parts. To give you freedom to use any folder structure for your extension, we expect your `app` folder to contain file named `index.js` which exports all the extension parts, such as:
-
-- screens,
-- reducer,
-- actions,
-- middleware and
-- application lifecycle methods.
-
-We won't use the last three in this tutorial, but you can find more information [here](/docs/coming-soon). Current `index.js` looks as follows:
+Application needs to know where it can find extension parts, so it expects your `app` folder to contain file named `index.js`. This file exports all the extension parts, such as `screens` and `reducer`. You can find more information about extension parts [here]({{ site.baseurl }}/docs/extensions/reference/extension-exports). Current `index.js` looks as follows:
 
 ```JSX
 #file: app/index.js
-// Constants `screens` and `reducer` are exported via named export
-// It is important to use those exact names
+// Reference for app/index.js can be found here:
+// http://shoutem.github.io/docs/extensions/reference/extension-exports
 
-export const screens = {};
+import * as extension from './extension.js';
 
-export const reducer = {};
+export const screens = extension.screens;
 ```
 
-Manually export created screen in `app/index.js`.
-
-```javascript{1,4}
-#file: app/index.js
-import RestaurantsList from './screens/RestaurantsList.js'
-
-export const screens = {
-  RestaurantsList
-};
-
-export const reducer = {};
-```
+On the other hand, `app/extension.js` file is managed by CLI and you should not change it. CLI locates the screens upon creating them, so you don't need to export them manually in `app/index.js`.
 
 Upload your extension:
 
@@ -153,13 +94,15 @@ Uploading `Restaurants` extension to Shoutem...
 Success!
 ```
 
-Go to `Screens` in [Shoutem builder](/docs/coming-soon) and click on `+`. You can finally see your `Restaurants` extension there. If extension has more shortcuts, you can see them when you hover over the extension.
+Go to `Screens` in [Shoutem builder](/docs/coming-soon) and click on `+`. You can finally see your `Restaurants` screen there.
 
 <p class="image">
 <img src='{{ site.baseurl }}/img/getting-started/add-modal-shortcut.png'/>
 </p>
 
-Click on the `Restaurants` extension. Shortcut is inserted into app navigation.
+Click on the `Restaurants`, which will get that screen inserted into navigation.
+
+Start the preview now or check out your app on the phone using Mobilizer app. It might take some time while the app preview shows, since everytime you change extension inside of your app, we need to build a new one.
 
 <p class="image">
 <img src='{{ site.baseurl }}/img/getting-started/extension-hello-world.png'/>
