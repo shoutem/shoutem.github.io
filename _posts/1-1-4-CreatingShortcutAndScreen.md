@@ -44,9 +44,9 @@ Your `extension.json` was just modified:
 }
 ```
 
-Screen and shortcut were added to `extension.json` inside arrays. Property `name` uniquely identifies these extension parts. Shortcut's title is what will be shown in the app navigation.
+Screen and shortcut were added to `extension.json` inside arrays. Property `name` uniquely identifies these extension parts. Shortcut's `title` is what will be shown in the app navigation.
 
-Property `screen` inside of `shortcuts` array references the screen to be opened when shortcut is tapped inside navigation. When referencing any extension part, we need to say from which extension it came from. Full name of extension part follows this structure: `<developer-name>.<extension-name>.<extension-part-name>`. For extension parts within the same extension, use `@.<extension-part-name>` instead. Character `@.` stands for `<developer-name>.<extension-name>.` of the current extension.
+Property `screen` inside of `shortcuts` array references the screen to be opened when users taps on the shortcut inside navigation. When referencing any extension part, we need to say which extension it came from. Full name of extension part follows this structure: `<developer-name>.<extension-name>.<extension-part-name>`. For extension parts within the same extension, use `@.<extension-part-name>` instead. Characters `@.` stands for `<developer-name>.<extension-name>.` of the current extension.
 
 Shoutem CLI also created `app/screens/` folder with `List.js` file:
 
@@ -82,9 +82,11 @@ Application needs to know where it can find extension parts, so it expects your 
 import * as extension from './extension.js';
 
 export const screens = extension.screens;
+
+export const reducer = {};
 ```
 
-On the other hand, `app/extension.js` file is managed by CLI and you should not change it. CLI locates the screens upon creating them, so you don't need to export them manually in `app/index.js`.
+On the other hand, `app/extension.js` file is managed by CLI and you should not change it. When creating screens, CLI writes their location in the `app/extension.js` and exports them in `app/index.js`.
 
 Upload your extension:
 
@@ -94,7 +96,7 @@ Uploading `Restaurants` extension to Shoutem...
 Success!
 ```
 
-Go to `Screens` in [Shoutem builder](/docs/coming-soon) and click on `+`. You can finally see your `Restaurants` screen there.
+Go to `Custom` under `Add Screen` modal [Shoutem builder](/docs/coming-soon). You can finally see your `Restaurants` screen there.
 
 <p class="image">
 <img src='{{ site.baseurl }}/img/getting-started/add-modal-shortcut.png'/>
@@ -102,7 +104,7 @@ Go to `Screens` in [Shoutem builder](/docs/coming-soon) and click on `+`. You ca
 
 Click on the `Restaurants`, which will get that screen inserted into navigation.
 
-Start the preview now or check out your app on the phone using Mobilizer app. It might take some time while the app preview shows, since everytime you change extension inside of your app, we need to build a new one.
+Start the preview now or check out your app on the phone using Mobilizer app. It might take some time while the app preview shows, since every time you change extension inside of your app, we need to build an app with that extension.
 
 <p class="image">
 <img src='{{ site.baseurl }}/img/getting-started/extension-hello-world.png'/>
