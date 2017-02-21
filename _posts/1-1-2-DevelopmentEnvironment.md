@@ -21,7 +21,7 @@ The ```-g``` flag is to install CLI globally, so you can use `shoutem` command f
 
 <hr />
 
-Each Shoutem user can become Shoutem developer. If you haven't already, go to [Shoutem](http://builder.beta.shoutem.com) and create a new account. Now you can register as a developer with:
+Each Shoutem user can become Shoutem developer. If you haven't already, go to [Shoutem]({{ site.shoutem.builderURL }}) and create a new account. Now you can register as a developer with:
 
 ```ShellSession
 $ shoutem login

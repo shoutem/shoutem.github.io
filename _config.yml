@@ -17,3 +17,7 @@ kramdown:
 
 url: "http://shoutem.github.io"
 exclude: ['api-src/']
+
+# Variables
+shoutem:
+    builderURL: "http://builder.beta.shoutem.com"
