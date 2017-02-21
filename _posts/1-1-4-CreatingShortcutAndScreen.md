@@ -10,7 +10,7 @@ section: Getting Started
 
 Extension can have multiple screens in the app. Screens are [React components](https://facebook.github.io/react/docs/react-component.html) that represent a mobile screen. We want our extension to have 2 screens: one for the list of the restaurants and another for the details of one particular restaurant.
 
-Since app needs to know which screen it needs to open first for some extension, we need to create a _shortcut_ along with creating a screen. Shortcut is a link to the starting screen of the extension. List of the restaurants is going to be the first screen, so let's create it with shortcut:
+Since app needs to know which screen it needs to open first for some extension, we need to create a ***shortcut*** along with creating a screen. Shortcut is a link to the starting screen of the extension. List of the restaurants is going to be the first screen, so let's create it with shortcut:
 
 ```ShellSession
 $ shoutem screen add List --shortcut Restaurants
@@ -33,13 +33,13 @@ Your `extension.json` was just modified:
   "platform": "1.0.*",
   "title": "Restaurants",
   "description": "List of restaurants",
+  "screens": [{
+    "name": "List"
+  }],
   "shortcuts": [{
     "name": "Restaurants",
     "title": "Restaurants"
     "screen": "@.List"
-  }],
-  "screens": [{
-    "name": "List"
   }]
 }
 ```

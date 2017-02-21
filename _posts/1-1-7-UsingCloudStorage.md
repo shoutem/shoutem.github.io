@@ -46,16 +46,16 @@ This schema was immediately exported in `extension.json` file:
   "platform": "1.0.*",
   "title": "Restaurants",
   "description": "List of restaurants",
+  "screens": [{
+    "name": "List"
+  }, {
+    "name": "Details"
+  }],
   "shortcuts": [{
     "name": "Restaurants",
     "title": "Restaurants",
     "description": "Allow users to browse through list of restaurants"
     "screen": "@.List",
-  }],
-  "screens": [{
-    "name": "List"
-  }, {
-    "name": "Details"
   }],
   "dataSchemas": [{
     "name": "Restaurants",
@@ -116,7 +116,7 @@ Let's add now properties that we want to persist for a restaurant, such as: `nam
 
 Now in order to enter data for your schema, you need to link your extension with Shoutem CMS settings page. Shortly, **Settings Pages** are web pages that you as developer can write to enable admins to manage your extension. They are shown inside Shoutem builder when admin clicks on the shortcut. In this example we’re using predefined Shoutem CMS settings page. Add Admin Page to `Restaurants` shortcut and specify for which Data Schema you want to enter the data:
 
-```JSON{12-18}
+```JSON{17-23}
 #file: extension.json
 {
   "name": "restaurants",
@@ -124,6 +124,11 @@ Now in order to enter data for your schema, you need to link your extension with
   "platform": "1.0.*",
   "title": "Restaurants",
   "description": "List of restaurants",
+  "screens": [{
+    "name": "List"
+  }, {
+    "name": "Details"
+  }],
   "shortcuts": [{
     "name": "Restaurants",
     "title": "Restaurants",
@@ -136,11 +141,6 @@ Now in order to enter data for your schema, you need to link your extension with
         "schema": "@.Restaurants"
       }
     }]
-  }],
-  "screens": [{
-    "name": "List"
-  }, {
-    "name": "Details"
   }],
   "dataSchemas": [{
     "name": "Restaurants",
