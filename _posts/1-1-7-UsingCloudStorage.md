@@ -8,11 +8,12 @@ section: Getting Started
 # Using Cloud Storage
 <hr />
 
-Shoutem Cloud Storage is a CMS solution for mobile apps. It is optimized to be used within React Native apps with premade `reducers` and `actions` that are available in `@shoutem/redux-io` package. To describe model of your data on Shoutem Cloud Storage, you need to define a `data schema`:
+Shoutem Cloud Storage is a CMS solution for mobile apps. We prepared `@shoutem/redux-io` package that communicates with our CMS. Define a `data schema` to describe your data model.
 
 ```ShellSession
 $ shoutem schema add Restaurants
-File `server/data-schemas/Restaurants.json` is created.
+Schema `Restaurants` is created in file `server/data-schemas/Restaurants.json`!
+File `extension.json` was modified.
 ```
 
 Folder `data-schemas` inside `server` folder was created with file `Restaurants.json`. Content of that file is following:
@@ -34,9 +35,9 @@ Folder `data-schemas` inside `server` folder was created with file `Restaurants.
 }
 ```
 
-This is the first time that we used `server` folder. The reason is that data schemas are not part of the application code, but rather server side for extension. Data Schemas are nothing more than Shoutem-flavored [JSON Schemas](http://json-schema.org/). At the end, there are some properties describing the schema itself. All the properties are explained in [data schema reference]({{ site.baseurl }}/docs/cloud/data-schemas).
+This is the first time that we used `server` folder. The reason is that data schemas are not part of the application code, but rather server side for extension. Data schemas are nothing more than Shoutem-flavored [JSON Schemas](http://json-schema.org/). At the end, there are some properties describing the schema itself. All properties are explained in [data schema reference]({{ site.baseurl }}/docs/cloud/data-schemas).
 
-This schema was immediately exported in `extension.json` file:
+This schema is exported in `extension.json` file:
 
 ```JSON{18-21}
 #file: extension.json
@@ -66,7 +67,7 @@ This schema was immediately exported in `extension.json` file:
 
 Let's add now properties that we want to persist for a restaurant, such as: `name`, `address`, `description`, `url`, `image` and `mail`.
 
-```JSON{4-34}
+```JSON{4-40}
 #file: server/data-schemas/Restaurants.json
 {
   "title": "Restaurant",
@@ -114,7 +115,9 @@ Let's add now properties that we want to persist for a restaurant, such as: `nam
 }
 ```
 
-Now in order to enter data for your schema, you need to link your extension with Shoutem CMS settings page. Shortly, **Settings Pages** are web pages that you as developer can write to enable admins to manage your extension. They are shown inside Shoutem builder when admin clicks on the shortcut. In this example we’re using predefined Shoutem CMS settings page. Add Admin Page to `Restaurants` shortcut and specify for which Data Schema you want to enter the data:
+To enter data for your schema, you need to use Shoutem CMS settings page. Shortly, [settings pages]({{ site.baseurl }}/docs/extensions/tutorials/writing-settings-page) are web pages that you as developer can write to enable application owners to manage your extension. They are shown inside of the Shoutem builder when application owner clicks on the starting screen in the navigation bar (shortcut).
+
+Shoutem prepared predefined CMS page inside [shoutem.cms](https://github.com/shoutem/extensions/tree/master/shoutem-cms) extension that you can connect with your `schema` through parameters. Add that admin page to `Restaurants` shortcut and specify data schema to be used:
 
 ```JSON{17-23}
 #file: extension.json
@@ -157,13 +160,13 @@ Uploading `Restaurants` extension to Shoutem...
 Success!
 ```
 
-Go to `Shoutem Builder`. There you can see an empty settings page which allows you to add restaurants.
+Go to `Shoutem Builder`. When you select `Restaurants` under `Main navigation`, you can see a Shoutem CMS page.
 
 <p class="image">
 <img src='{{ site.baseurl }}/img/getting-started/empty-admin-page.jpg'/>
 </p>
 
-Click on `Create content` to start adding content. It will redirect you to `CMS` tab where you can manage content for that extension.
+Click on `Create items` to start adding content. It will redirect you to `CMS` tab where you can manage content for that extension.
 
 <p class="image">
 <img src='{{ site.baseurl }}/img/getting-started/empty-cms.png'/>

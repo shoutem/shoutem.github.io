@@ -50,10 +50,11 @@ Implement `render` method that will use `ListView`. [ListView]({{ site.baseurl }
 
 Add `renderRow` method and replace implementation of `render` method:
 
-```JSX{3-13,16-25}
+```JSX{3-14,17-25}
 #file: app/screens/List.js
   getRestaurants() {...}
 
+  // defines the UI of each row in the list
   renderRow(restaurant) {
     return (
       <Image styleName="large-banner" source={% raw %}{{ uri: restaurant.image &&
@@ -95,7 +96,7 @@ Since we changed extension, preview will be shown after Shoutem builds the new a
 
 This looks exactly how we wanted.
 
-Try clicking on a row. Nothing happens! We want to open up a details screen when list row item is clicked.
+Try clicking on a row. Nothing happens! We want to open up the details screen when user touches a list row item.
 
 ## Creating details screen
 
@@ -108,11 +109,11 @@ File `app/extension.js` was modified.
 File `extension.json` was modified.
 ```
 
-We didn't need to create `shortcut` with this screen as it's not going to be the first screen of an extension. Screen is defined in `extension.json`.
+We didn't create `shortcut` as this screen is not going to be the first screen of an extension.
 
-When list item is touched, we want to open details screen. For that we need [TouchableOpacity](https://facebook.github.io/react-native/docs/touchableopacity.html) component from React Native, wrapper for making views respond to touches. We also need Shoutem's `navigateTo` redux action creator, which we use to navigate to another screen. It accepts Shoutem `route object`, with `screen` (screen to navigate to) and `props` (to be passed to screen) properties, as the only argument.
+When restaurant in the list is touched, we will open details screen for that restaurant. To make views respond to touches, use [TouchableOpacity](https://facebook.github.io/react-native/docs/touchableopacity.html) component from React Native. Shoutem's `navigateTo` redux action creator is used to navigate to another screen.
 
-To open `Details` screen we'll use `ext` function from `app/extension.js`. This function returns full name for the extension part passed as its first argument (e.g. returns `developer.restaurants.Details` for `Details`) or extension `name` if no argument is passed.
+To get the full name of `Details` screen, use `ext` function from `app/extension.js`. This function returns the full name for the extension part passed as its first argument (e.g. returns `michael.restaurants.Details` for `Details`) or extension `name` if no argument is passed.
 
 Let's import these things:
 
@@ -125,9 +126,9 @@ import { navigateTo } from '@shoutem/core/navigation';
 import { ext } from '../extension';
 ```
 
-To open a screen on touch, we need to dispatch `navigateTo`. We can use it directly in the screen through dispatch, but Redux standard way is to bind together `dispatch` and action creator inside `mapDispatchToProps` function, the second argument of [connect](https://github.com/reactjs/react-redux/blob/master/docs/api.md#connectmapstatetoprops-mapdispatchtoprops-mergeprops-options) function. Bound actions are accessed through the `props` which is why we need to bind `renderRow` action to the right `this` context.
+[Connect](https://github.com/reactjs/react-redux/blob/master/docs/api.md#connectmapstatetoprops-mapdispatchtoprops-mergeprops-options) `navigateTo` action to redux store.
 
-```javascript{1-8,12-15}
+```javascript{1,3-9,13-17}
 #file: app/screens/List.js
 import { connect } from 'react-redux';
 
@@ -135,18 +136,21 @@ class List extends Component {
   constructor(props) {
     super(props);
 
+    // bind renderRow function to get the correct props
     this.renderRow = this.renderRow.bind(this);
   }
   ...
 }
 
+// connect screen to redux store
 export default connect(
   undefined,
   { navigateTo }
 )(List);
 ```
 
-Implement `renderRow` function.
+Open restaurants details screen in the `renderRow` function. Action `navigateTo` accepts Shoutem `route object` as the only argument with `screen` (full name of screen to navigate to) and `props` (passed to screen) properties.
+
 
 ```JSX{2,5-8,16}
 #file: app/screens/List.js
@@ -201,6 +205,7 @@ class List extends Component {
   constructor(props) {
     super(props);
 
+    // bind renderRow function to get the correct props
     this.renderRow = this.renderRow.bind(this);
   }
 
@@ -208,6 +213,7 @@ class List extends Component {
     return require('../assets/restaurants.json');
   }
 
+  // defines the UI of each row in the list
   renderRow(restaurant) {
     const { navigateTo } = this.props;
 
@@ -240,13 +246,14 @@ class List extends Component {
   }
 }
 
+// connect screen to redux store
 export default connect(
   undefined,
   { navigateTo }
 )(List)
 ```
 
-To `Details` screen, just copy the following code. We're not introducing anything new, just using some new components.
+For `Details` screen just copy the following code. We're not introducing any new concept here, just using different components.
 
 ```JSX
 #file: app/screens/Details.js
@@ -344,5 +351,5 @@ When you click on a row in the list, this is what you get:
 <img src='{{ site.baseurl }}/img/getting-started/extension-rich-details.png'/>
 </p>
 
-That's exactly what we wanted to get! However, our app is using static data. Let's connect it to **Shoutem Cloud Storage**. 
+That's exactly what we wanted to get! However, our app is using static data. Let's connect it to **Shoutem Cloud**. 
 

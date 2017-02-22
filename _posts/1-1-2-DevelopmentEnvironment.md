@@ -25,7 +25,7 @@ Each Shoutem user can become Shoutem developer. If you haven't already, go to [S
 
 ```ShellSession
 $ shoutem login
-Enter your Shoutem credentials.
+Enter your Shoutem credentials (obtained at https://builder.beta.shoutem.com):
 Email: michael@developer.com
 Password:
 ```
@@ -33,7 +33,7 @@ Password:
 Once you entered correct Shoutem credentials, you will be asked to specify your developer name (`michael` is used in this example).
 
 ```ShellSession
-
+...
 Logged in as `michael@developer.com`.
 Enter developer name.
 Developer name: michael
