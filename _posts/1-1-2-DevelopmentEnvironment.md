@@ -8,7 +8,7 @@ section: Getting Started
 # Setting up the environment
 <hr />
 
-Before making an extension, set the development environment. Download Shoutem [Command Line Interface](https://www.npmjs.com/package/@shoutem/cli) (CLI), tool available through `npm`, the package management system for `Node.js`:
+Before building an extension, set the development environment. Download Shoutem [Command Line Interface](https://www.npmjs.com/package/@shoutem/cli) (CLI), tool available through `npm`, the package management system for `Node.js`:
 
 ```ShellSession
 $ npm install -g @shoutem/cli
@@ -17,15 +17,15 @@ $ npm install -g @shoutem/cli
 > #### Note
 > `Node.js` includes `npm` by itself. We recommend installing `Node.js` with [nvm](https://github.com/creationix/nvm). If previous command fails because of _permission_ issues, you need to run it with `sudo` permission.
 
-Flag ```-g``` is to install CLI globally, so you can use `shoutem` command from any folder.
+The ```-g``` flag is to install CLI globally, so you can use `shoutem` command from any folder.
 
 <hr />
 
-Each Shoutem user can become Shoutem developer. If you haven't already, go to [Shoutem](http://builder.beta.shoutem.com) and create a new account. Now you can register as a developer with:
+Each Shoutem user can become Shoutem developer. If you haven't already, go to [Shoutem]({{ site.shoutem.builderURL }}) and create a new account. Now you can register as a developer with:
 
 ```ShellSession
 $ shoutem login
-Enter your Shoutem credentials.
+Enter your Shoutem credentials (obtained at https://builder.beta.shoutem.com):
 Email: michael@developer.com
 Password:
 ```
@@ -33,7 +33,7 @@ Password:
 Once you entered correct Shoutem credentials, you will be asked to specify your developer name (`michael` is used in this example).
 
 ```ShellSession
-
+...
 Logged in as `michael@developer.com`.
 Enter developer name.
 Developer name: michael

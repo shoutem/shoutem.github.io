@@ -17,7 +17,7 @@ Here's the mockup of the Restaurants extension that we've showed in [Introductio
  
 Left application screen lists the restaurants and the right one shows the details of one specific restaurant. 
 
-Let's start building! Initialize the extension with basic information.
+Let's start building! Initialize the extension with basic information. Following command will create a folder and bootstrap the extension files.
 
 ```ShellSession
 $ shoutem init restaurants
@@ -26,13 +26,13 @@ Title: Restaurants
 Version: 0.0.1
 Description: List of restaurants
 
-Initializing extension...
+Initializing extension:
 ...
 
 Extension initialized!
 ```
 
-These information will be stored in `extension.json` file.
+These information are stored in `extension.json` file.
 
 > #### Note
 > In case you can't remember the structure of some command, type: `shoutem -h` or `shoutem <command> -h` where you should replace '[command]' with one of the [CLI commands]({{ site.baseurl }}/docs/extensions/reference/cli)
@@ -47,7 +47,7 @@ $ cd restaurants
 Initialization process will generate the skeleton folder and file structure for you. Your structure looks as follows:
 
 ```
-Restaurants/
+restaurants/
   ├ app/
   |  ├ node_modules/
   |  ├ extension.js
@@ -61,8 +61,8 @@ Restaurants/
 
 Let's describe the structure:
 
-- `app/`: Application code
-- `server/`: Server code
+- `app/`: Files for functionalities in the app
+- `server/`: Files for customizing extension over Shoutem builder
 - `extension.json`: Extension general information
 
 Specific parts will be described a bit later.
@@ -82,10 +82,12 @@ In `extension.json` you can see:
 
 Brief property explanations:
 
-- `name` uniquely identifies the extension when combined with your developer name (e.g. `tom.restaurants`)
+- `name` uniquely identifies the extension when combined with your developer name (e.g. `michael.restaurants`)
 - `version` is the extension version
-- `platform` indicates the version of [plaform]({{ site.baseurl }}/docs/extensions/reference/platform), (version of app project and Shoutem basic extensions)
+- `platform` indicates the version of the [plaform]({{ site.baseurl }}/docs/extensions/reference/platform) (version of app project combined with Shoutem basic extensions)
 - `title` and `description` are extension descriptors
+
+<br />
 
 Extension is now only locally available on your machine. We need to upload it to Shoutem so you can install it in the application.
 
@@ -95,7 +97,7 @@ Uploading `Restaurants` extension to Shoutem...
 Success!
 ```
 
-To test our extension, we need to install it in the Shoutem application. You can create new application in [Shoutem builder](builder.beta.shoutem.com) or just pass flag `--new`  with the name for new application to installation command:
+To test our extension, we need to install it in the Shoutem application. You can create new application in [Shoutem builder]({{ site.shoutem.builderURL }}) or just pass flag `--new`  with the name for new application to installation command:
 
 ```ShellSession
 $ shoutem install --new Restaurants
@@ -103,13 +105,13 @@ Extension is installed onto newly created `Restaurants` application.
 See it in browser: `https://builder.shoutem.com/apps/52634`
 ```
 
-Go to `Extensions` tab in Shoutem builder. You'll see that extension is installed on your application.
+Go to `Extensions` tab in Shoutem builder. You'll see that extension is installed on your application under Custom.
 
 <p class="image">
 <img src='{{ site.baseurl }}/img/getting-started/extension-tab-extension.png'/>
 </p>
 
-However, when you go to `Screen` tab now and click on `+` next to `Screens`, this extension won't be shown.
+However, when you go to `Screen` tab and click on `+` to add new screen, under `Custom` category we won't see our extension.
 
 <p class="image">
 <img src='{{ site.baseurl }}/img/getting-started/add-content-no-extension.png'/>

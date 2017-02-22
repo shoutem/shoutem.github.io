@@ -10,7 +10,7 @@ section: Getting Started
 
 Extension can have multiple screens in the app. Screens are [React components](https://facebook.github.io/react/docs/react-component.html) that represent a mobile screen. We want our extension to have 2 screens: one for the list of the restaurants and another for the details of one particular restaurant.
 
-Since app needs to know which screen it needs to open first for some extension, we need to create a _shortcut_ along with creating a screen. Shortcut is a link to the starting screen of the extension. List of the restaurants is going to be the first screen, so let's create it with shortcut:
+Since app needs to know which screen it needs to open first for some extension, we need to create a ***shortcut*** along with creating a screen. Shortcut is a link to the starting screen of the extension. List of the restaurants is going to be the first screen, so let's create it with shortcut:
 
 ```ShellSession
 $ shoutem screen add List --shortcut Restaurants
@@ -19,8 +19,8 @@ Title: Restaurants
 
 Screen `List` is created in file `app/screens/List.js`!
 Shortcut `Restaurants` is created.
-File `extension.json` was modified.
 File `app/extension.js` was modified.
+File `extension.json` was modified.
 ```
 
 Your `extension.json` was just modified:
@@ -33,20 +33,20 @@ Your `extension.json` was just modified:
   "platform": "1.0.*",
   "title": "Restaurants",
   "description": "List of restaurants",
+  "screens": [{
+    "name": "List"
+  }],
   "shortcuts": [{
     "name": "Restaurants",
     "title": "Restaurants"
     "screen": "@.List"
-  }],
-  "screens": [{
-    "name": "List"
   }]
 }
 ```
 
-Screen and shortcut were added to `extension.json` inside arrays. Property `name` uniquely identifies these extension parts. Shortcut's title is what will be shown in the app navigation.
+Screen and shortcut were added to `extension.json` inside arrays. Property `name` uniquely identifies these extension parts. Shortcut's `title` is what will be shown in the app navigation.
 
-Property `screen` inside of `shortcuts` array references the screen to be opened when shortcut is tapped inside navigation. When referencing any extension part, we need to say from which extension it came from. Full name of extension part follows this structure: `<developer-name>.<extension-name>.<extension-part-name>`. For extension parts within the same extension, use `@.<extension-part-name>` instead. Character `@.` stands for `<developer-name>.<extension-name>.` of the current extension.
+Property `screen` inside of `shortcuts` array references the screen to be opened when users taps on the shortcut inside navigation. When referencing any extension part, we need to say which extension it came from. Full name of extension part follows this structure: `<developer-name>.<extension-name>.<extension-part-name>`. For extension parts within the same extension, use `@.<extension-part-name>` instead. Characters `@.` stands for `<developer-name>.<extension-name>.` of the current extension.
 
 Shoutem CLI also created `app/screens/` folder with `List.js` file:
 
@@ -82,9 +82,11 @@ Application needs to know where it can find extension parts, so it expects your 
 import * as extension from './extension.js';
 
 export const screens = extension.screens;
+
+export const reducer = {};
 ```
 
-On the other hand, `app/extension.js` file is managed by CLI and you should not change it. CLI locates the screens upon creating them, so you don't need to export them manually in `app/index.js`.
+On the other hand, `app/extension.js` file is managed by CLI and you should not change it. When creating screens, CLI writes their location in the `app/extension.js` and exports them in `app/index.js`.
 
 Upload your extension:
 
@@ -94,7 +96,7 @@ Uploading `Restaurants` extension to Shoutem...
 Success!
 ```
 
-Go to `Screens` in [Shoutem builder](/docs/coming-soon) and click on `+`. You can finally see your `Restaurants` screen there.
+Go to `Custom` under `Add Screen` modal [Shoutem builder](/docs/coming-soon). You can finally see your `Restaurants` screen there.
 
 <p class="image">
 <img src='{{ site.baseurl }}/img/getting-started/add-modal-shortcut.png'/>
@@ -102,10 +104,14 @@ Go to `Screens` in [Shoutem builder](/docs/coming-soon) and click on `+`. You ca
 
 Click on the `Restaurants`, which will get that screen inserted into navigation.
 
-Start the preview now or check out your app on the phone using Mobilizer app. It might take some time while the app preview shows, since everytime you change extension inside of your app, we need to build a new one.
+Start the preview now or check out your app on the phone using Mobilizer app.
+
+> #### Note
+> It might take some time while the app preview shows. Every time you change an extension, we need to rebuild apps using that extension. Development process is much faster with [local development environment]({{ site.baseurl }}/docs/extensions/tutorials/setting-local-environment), but you're fine without it for passing this tutorial.
 
 <p class="image">
 <img src='{{ site.baseurl }}/img/getting-started/extension-hello-world.png'/>
 </p>
+
 
 In the preview, you can see the _Hello World_ screen. Let's put some UI components on the screen.
