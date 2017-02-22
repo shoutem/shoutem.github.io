@@ -8,50 +8,43 @@ section: Getting Started
 # Working with data
 <hr />
 
-Data on the Shoutem Cloud Storage needs to be fetched in the application. First, remove all static files from the extension, so we're sure that we're actually fetching data from the Shoutem Cloud Storage, i.e. remove assets folder. Define `reducer` which will define how the state of the application should be changed when action is dispatched and how the initial state should look like. Create new folder `app/reducers` with `index.js` file.
+Let's fetch data from the Shoutem Cloud storage to the app. First, remove assets folder. We don't need it anymore. Create `app/reducer.js` file which will contain `reducer` defining initial app state and how state changes.
 
-Package [@shoutem/redux-io](https://www.npmjs.com/package/@shoutem/redux-io) has `reducers` and `actions` that communicate with Shoutem Cloud Storage. Import these reducers.
+Package [@shoutem/redux-io](https://github.com/shoutem/redux-io) has `reducers` and `actions` that communicate with Shoutem CMS. Reducer `storage` retrieves data (e.g. restaurants) in a dictionary while `collection` stores data ID's in an array to persist its order.
 
-```javascript{1}
-#file: app/reducers/index.js
-import { storage, collection } from '@shoutem/redux-io';
-```
-
-Reducer `storage` retrieves resources in a dictionary while `collection` stores resources ID's in an array so that the order is maintained. Make use of Redux's [combineReducers](http://redux.js.org/docs/api/combineReducers.html) to create one **root reducer** from more Shoutem reducers. 
-
-```javascript{2-8}
-#file: app/reducers/index.js
+```javascript{1-9}
+#file: app/reducer.js
 import { storage, collection } from '@shoutem/redux-io';
 import { combineReducers } from 'redux';
-import { ext } from '../extension';
+import { ext } from './extension';
 
+// export root reducer from Shoutem reducers
 export default combineReducers({
   restaurants: storage(ext('Restaurants')),
   allRestaurants: collection(ext('Restaurants'), 'all')
 });
 ```
 
-We've used `ext` function to get absolute name of schema. This root reducer needs to be exported in `app/index.js` file:
+We've used `ext` function to get schema full name. Export the root reducer in `app/index.js` file:
 
-```javascript{1,10}
+```javascript{4,9}
 #file: app/index.js
-import reducer from './reducers';
-import List from './screens/List';
-import Details from './screens/Details';
+// Reference for app/index.js can be found here:
+// http://shoutem.github.io/docs/extensions/reference/extension-exports
 
-export const screens = {
-  List,
-  Details
-};
+import reducer from './reducer';
+import * as extension from './extension.js';
+
+export const screens = extension.screens;
 
 export { reducer };
 ```
 
-The only thing left to do is to fetch data from **Shoutem Cloud Storage** on `List` screen and to retrieve that data, in form of restaurants, from application's state. Once screen is mounted, if restaurants are not in the Redux store, we'll start fetching data with `find` action creator from `@shoutem/redux-io` package. Also, import 3 helper functions from that package:
+We will fetch restaurants from **Shoutem Cloud Storage** in `List` screen with `find` action creator. Also, we'll use 3 helper functions from the `@shoutem/redux-io` package:
  
- - `isBusy` - gives feedback if data is being fetched,
- - `shouldRefresh` - knows if data needs to be (re)fetched and
- - `getCollection` - combines `storage` and `collection` into an `array` of objects.
+ - `isBusy` - is data being fetched,
+ - `shouldRefresh` - should data be (re)fetched,
+ - `getCollection` - combines `storage` dictionary and `collection` array of ID's into an `array` of objects.
 
 ```javascript{1-6}
 #file: app/screens/List.js
@@ -98,28 +91,31 @@ Implement rendering.
   }
 ```
 
-In `render` method, we're expecting to get restaurants as an array. In `app/reducers/index.js` we defined `restaurants` dictionary that will be fetched through `storage` and `allRestaurants` collection that will be fetched through `collection` reducer. Combine both into an array with `getCollection` function from `@shoutem/redux-io` in 1st argument of `connect` function. In 2nd argument, we'll bind `find` action creator.
+Once fetched, restaurants will get to the app state. Get them in array format with `getCollection` function and connect `find` to redux store.
 
 ```javascript{2-5}
 #file: app/screens/List.js
 export default connect(
   (state) => ({
+    // get an array of restaurants from allRestaurants collection
     restaurants: getCollection(state[ext()].allRestaurants, state)
   }),
   { navigateTo, find }
 )(List);
 ```
 
-This is the final result of `List` screen that uses both Shoutem UI Toolkit and Shoutem Cloud Storage.
+This is the final result of `List` screen:
 
 ```JSX
 #file: app/screens/List.js
 import React, {
   Component
 } from 'react';
+
 import {
   TouchableOpacity,
 } from 'react-native';
+
 import {
   Image,
   ListView,
@@ -127,10 +123,13 @@ import {
   Title,
   Subtitle,
   Overlay,
-  Divider,
   Screen
 } from '@shoutem/ui';
+
 import { NavigationBar } from '@shoutem/ui/navigation';
+import { navigateTo } from '@shoutem/core/navigation';
+import { ext } from '../extension';
+import { connect } from 'react-redux';
 
 import {
   find,
@@ -139,14 +138,11 @@ import {
   getCollection
 } from '@shoutem/redux-io';
 
-import { connect } from 'react-redux';
-import { navigateTo } from '@shoutem/core/navigation';
-import { ext } from '../extension';
-
 class List extends Component {
   constructor(props) {
     super(props);
 
+    // bind renderRow function to get the correct props
     this.renderRow = this.renderRow.bind(this);
   }
 
@@ -159,6 +155,7 @@ class List extends Component {
     }
   }
 
+  // defines the UI of each row in the list
   renderRow(restaurant) {
     const { navigateTo } = this.props;
 
@@ -167,8 +164,8 @@ class List extends Component {
         screen: ext('Details'),
         props: { restaurant }
       })}>
-        <Image styleName="large-banner" source={% raw %}{{ uri: restaurant.image &&
-        restaurant.image.url ? restaurant.image.url : undefined }}{% endraw %}>
+        <Image styleName="large-banner" source={{ uri: restaurant.image &&
+        restaurant.image.url ? restaurant.image.url : undefined }}>
           <Tile>
             <Title>{restaurant.name}</Title>
             <Subtitle>{restaurant.address}</Subtitle>
@@ -186,7 +183,7 @@ class List extends Component {
         <NavigationBar title="RESTAURANTS" />
         <ListView
           data={restaurants}
-          status={isBusy(restaurants)}
+          loading={isBusy(restaurants)}
           renderRow={restaurant => this.renderRow(restaurant, navigateTo)}
         />
       </Screen>
@@ -194,8 +191,10 @@ class List extends Component {
   }
 }
 
+// connect screen to redux store
 export default connect(
   (state) => ({
+    // get an array of restaurants from allRestaurants collection
     restaurants: getCollection(state[ext()].allRestaurants, state)
   }),
   { navigateTo, find }
@@ -216,4 +215,4 @@ Everything should work as charm!
 <img src='{{ site.baseurl }}/img/getting-started/working-with-data.png'/>
 </p>
 
-This is it! You've done it. You've just made your first extension using powerful services as **Shoutem UI Toolkit** and **Shoutem Cloud Storage**. Well Done!
+This is it! You've done it. You've just made your first extension using **Shoutem UI Toolkit** and **Shoutem Cloud Storage**. Great job!

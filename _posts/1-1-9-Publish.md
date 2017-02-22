@@ -8,7 +8,7 @@ section: Getting Started
 # Publishing your extension!
 <hr />
 
-Once your extension is done, you can publish it. Although your extension is already uploaded and installed to application, that application can't be published until extension is published.
+Once your extension is done, you can publish it. Although your extension is already uploaded and installed to application, that application can't be published until all extensions that it's using are published.
 
 By default, every extension that you publish to the market is only visible to you. So, let's publish it!
 
