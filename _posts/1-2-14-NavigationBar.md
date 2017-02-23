@@ -50,7 +50,6 @@ import { NavigationBar } from '@shoutem/ui'
 #### Style names
 
 * **clear**: sets the `Text` color to white and background colors to transparent
-* **fade**: sets the `Text` color to white and applies linear gradient to background
 * **inline**: forces relative positioning of `NavigationBar` component, allowing component to be used inline with other components, i.e. `ListView`, without its content overlapping `NavigationBar`
 * **no-border**: removes the bottom border 
 
@@ -91,35 +90,10 @@ import { NavigationBar } from '@shoutem/ui'
 ```JSX
 <Image
   source={% raw %}{{{% endraw %}uri: '{{site.url}}/img/ui-toolkit/examples/image-3.png'}}
+  style={% raw %}{{{% endraw %} width: 375, height: 70 }}
 >
   <NavigationBar
     styleName="clear"
-    centerComponent={<Title>TITLE</Title>}
-  />
-</Image>
-```
-
-### Fade (Gradient overlay + Solid color)
-![Fade (Gradient overlay + Solid color) example]({{ site.baseurl }}/img/ui-toolkit/navigationbar/navbar-fade-gradientoverlay-solidcolor@2x.png "Fade (Gradient overlay + Solid color)"){:.docs-component-image}
-
-#### JSX Declaration
-```JSX
-<NavigationBar
-  styleName="fade clear"
-  centerComponent={<Title>TITLE</Title>}
-/>
-```
-
-### Fade (Gradient overlay + Image)
-![Fade (Gradient overlay + Image) example]({{ site.baseurl }}/img/ui-toolkit/navigationbar/navbar-fade-gradientoverlay-image@2x.png "Fade (Gradient overlay + Image)"){:.docs-component-image}
-
-#### JSX Declaration
-```JSX
-<Image
-  source={% raw %}{{{% endraw %}uri: '{{site.url}}/img/ui-toolkit/examples/image-3.png'}}
->
-  <NavigationBar
-    styleName="fade"
     centerComponent={<Title>TITLE</Title>}
   />
 </Image>
