@@ -373,4 +373,4 @@ Try changing the settings and see the change in the preview.
 
 ## Creating React settings page
 
-This part is coming soon, so stay tuned!
+Shoutem extensions already use React for settings pages, but we're currently working on more developer friendly way to do so. This part is coming soon, so stay tuned!
