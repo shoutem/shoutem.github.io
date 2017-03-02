@@ -7,11 +7,11 @@ section: Data Schemas
 
 # Data Schemas
 
-Data Schema describes how the data will look like. Schemas are `type` of data. The format of data schema is nothing more than Shoutem flavored [JSON schema](https://spacetelescope.github.io/understanding-json-schema/UnderstandingJSONSchema.pdf).
+Data Schema describes what the data will look like. Schemas are a `type` of data. The format of the data schema is nothing more than a Shoutem flavored [JSON schema](https://spacetelescope.github.io/understanding-json-schema/UnderstandingJSONSchema.pdf).
 
 ## Usage in extensions
 
-Create data schema with:
+Create a data schema with:
 
 ```ShellSession
 $ shoutem schema add <schema-name>
@@ -25,7 +25,7 @@ Schema `Restaurants` is created in file `server/schemas/Restaurants.json`!
 File `extension.json` was modified.
 ```
 
-Data schema is created in `server/data-schemas` folder. Its default content is:
+Data schema is created in the `server/data-schemas` folder. Its default content is:
 
 ```JSON
 {
@@ -54,14 +54,14 @@ Field `properties` is an object containing _keys_ as names of object properties 
 
 ## Value descriptor reference
 
-With value descriptor Shoutem builder knows which input fields to render on the CMS page. These input fields along with property `title` explain application owner which kind of data they expect.
+With the value descriptor Shoutem builder knows which input fields to render on the CMS page. These input fields along with the `title` property explain to the application owner which kind of data they expect.
 
 ### Value types
 
 Each value type has a combination of `type`, `format` and sometimes additional properties in the value descriptor which define type of the value. We call them _value signatures_. Referencing other data schemas is enabled by using `referencedSchema` field. Below are the signatures and examples for each value type that can be created with data schemas.
 
 > #### Note
-> JSON schema defines the types that can be used. It also provides with some built-in formats. However, Shoutem uses it's own flavored formats.
+> JSON schema defines the types that can be used. It also provides some built-in formats. However, Shoutem uses its own flavored formats.
 
 #### Single-line string
 
@@ -283,7 +283,7 @@ Example:
 ```
 
 > #### Note
-> Absolute data schema reference is formated following structure {developerName}.{extensionName}.{extensionPartName} as explained in [Creating shortcut and screen]({{ site.baseurl }}/docs/extensions/getting-started/shortcut-and-screen) tutorial
+> The absolute data schema reference is formated following structure {developerName}.{extensionName}.{extensionPartName} as explained in [Creating shortcut and screen]({{ site.baseurl }}/docs/extensions/getting-started/shortcut-and-screen) tutorial
 
 #### Custom referenced schema - array
 
@@ -309,14 +309,14 @@ Example:
 
 ### Property order
 
-As `properties` are a dictionary and dictionaries are by nature unordered, we added `displayPriority` property in value descriptor which you can use to define the order in which properties are shown on the Shoutem CMS interface. A valid value of `displayPriority` property is an integer - the lower the integer, the higher the property will be shown in the interface.
+As `properties` are a dictionary and dictionaries are by nature unordered, we added a `displayPriority` property in the value descriptor which you can use to define the order in which properties are shown on the Shoutem CMS interface. A valid value of `displayPriority` property is an integer - the lower the integer, the higher the property will be shown in the interface.
 
 Display priority is an optional property. Properties which omit it will be rendered in an arbitrary order after all the properties with `displayPriority` defined.
 
 
 ### Additional descriptor properties
 
-Value descriptor along with _value type_ can also describe additional information for particular value. These fields are inherited from JSON Schema specification:
+The value descriptor along with _value type_ can also describe additional information for a particular value. These fields are inherited from the JSON Schema specification:
 
 - `properties.pattern` - regex pattern constraint, applicable only to `string` primitive type
 - `properties.required` - required constraint
