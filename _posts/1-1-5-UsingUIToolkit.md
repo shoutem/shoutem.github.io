@@ -33,7 +33,7 @@ import {
 import { NavigationBar } from '@shoutem/ui/navigation';
 ```
 
-Notice that we didn't need to install packages like `react`, `@shoutem/ui`, `react-native`, etc. They are all added as peer dependencies to `app/package.json` on initializing the extension and their version is managed by [platform]({{ site.baseurl }}/docs/extensions/reference/platform).
+Notice that we didn't need to install packages like `react`, `@shoutem/ui`, `react-native`, etc. They are all added as peer dependencies to `app/package.json` on initializing the extension and their versions are managed by the [platform]({{ site.baseurl }}/docs/extensions/reference/platform).
 
 We prepared mockup restaurants data for you. Download [this compressed file](/restaurants/restaurants.zip), extract it and copy the extracted `assets` folder inside of `app` folder. The `assets` folder contain static restaurants data in `restaurants.json` file.
 
