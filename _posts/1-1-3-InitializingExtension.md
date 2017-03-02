@@ -84,7 +84,7 @@ Brief property explanations:
 
 - `name` uniquely identifies the extension when combined with your developer name (e.g. `michael.restaurants`)
 - `version` is the extension version
-- `platform` indicates the version of the [plaform]({{ site.baseurl }}/docs/extensions/reference/platform) (version of app project combined with Shoutem basic extensions)
+- `platform` indicates the version of the [plaform]({{ site.baseurl }}/docs/extensions/reference/platform) (version of React, React Native, Redux and some other packages...)
 - `title` and `description` are extension descriptors
 
 <br />
