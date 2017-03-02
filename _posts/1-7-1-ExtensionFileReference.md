@@ -62,7 +62,7 @@ Required field. Version of your extension.
 
 #### platform
 
-Required field. Version of Shoutem platform which includes the app project that your extension will be built with.
+Required field. Version of [Shoutem platform]({{ site.baseurl }}/docs/extensions/reference/platform) which includes the app project that your extension will be built with. This defines the version of React, React Native, Redux and some other packages.
 
 #### title
 
