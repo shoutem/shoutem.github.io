@@ -17,4 +17,4 @@ exclude: ['api-src/']
 
 # Variables
 shoutem:
-    builderURL: "http://builder.beta.shoutem.com"
+  builderURL: "http://builder.beta.shoutem.com"
