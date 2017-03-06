@@ -15,7 +15,7 @@ jspm_packages
 .DS_Store
 
 ### Jekyll ###
-_site/
+#_site/
 .sass-cache/
 .jekyll-metadata
 

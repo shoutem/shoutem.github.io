@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="15px" height="13px" viewBox="0 0 15 13" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: sketchtool 3.8.2 (29753) - http://www.bohemiancoding.com/sketch -->
+    <title>AFDE750D-E898-4557-A729-2CE040C0103E</title>
+    <desc>Created with sketchtool.</desc>
+    <defs>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-1">
+            <stop stop-color="#FF0000" stop-opacity="0.1" offset="0%"></stop>
+            <stop stop-color="#FF0000" stop-opacity="0.2" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Artcle-Pagination" transform="translate(-1285.000000, -38.000000)">
+            <g id="Group-11" transform="translate(721.000000, 0.000000)">
+                <g id="icon-arrow-right" transform="translate(560.000000, 32.000000)">
+                    <rect id="Rectangle-1769" fill="url(#linearGradient-1)" opacity="0" x="0" y="0" width="24" height="24"></rect>
+                    <polygon id="Shape" fill="#FFFFFF" transform="translate(11.920000, 12.500000) scale(-1, 1) translate(-11.920000, -12.500000) " points="19 13 6.75 13 12 18.25 11.34 19 4.84 12.5 11.34 6 12 6.75 6.75 12 19 12"></polygon>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

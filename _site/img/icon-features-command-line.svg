@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="9px" height="16px" viewBox="0 0 9 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: sketchtool 3.6.1 (26313) - http://www.bohemiancoding.com/sketch -->
+    <title>icon-features-command-line</title>
+    <desc>Created with sketchtool.</desc>
+    <defs></defs>
+    <g id="A-Landing" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="A01-Home-(Desktop)" transform="translate(-1037.000000, -4342.000000)">
+            <g id="Group-42" transform="translate(0.000000, 4088.000000)">
+                <g id="Group-18" transform="translate(135.000000, 174.000000)">
+                    <g id="icon-features-command-line" transform="translate(900.000000, 72.000000)">
+                        <g id="ic_chevron_right">
+                            <path d="M0,0 L32,0 L32,32 L0,32 L0,0 Z" id="Bounds" fill-opacity="0.100000001" fill="#D0011B" opacity="0"></path>
+                            <path d="M4.28245385,8.94912052 C3.75826907,8.42493573 2.9161004,8.41723293 2.39333333,8.94 L2.39333333,8.94 C1.87418567,9.45914766 1.87306926,10.3006524 2.39411706,10.8228378 L7.56,16 L2.39411706,21.1771622 C1.87453656,21.6978771 1.87056627,22.5372329 2.39333333,23.06 L2.39333333,23.06 C2.912481,23.5791477 3.75218435,23.581149 4.28245385,23.0508795 L10.3842128,16.9491205 C10.9083976,16.4249357 10.9144823,15.581149 10.3842128,15.0508795 L4.28245385,8.94912052 Z" id="Icon-Shape" fill="#444F6C"></path>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
