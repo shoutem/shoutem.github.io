@@ -15,7 +15,7 @@ $ npm install -g @shoutem/cli
 ``` 
 
 > #### Note
-> If previous command fails because of _permission_ issues, you need to run it with `sudo` permission.
+> If previous command fails because of _permission_ issues, you need to run it with `sudo` permission: :`sudo npm install -g @shoutem/cli`.
 
 > #### Note
 > If you don't have `npm`, install `Node.js` which includes `npm` by itself. We recommend installing `Node.js` with [nvm](https://github.com/creationix/nvm).
