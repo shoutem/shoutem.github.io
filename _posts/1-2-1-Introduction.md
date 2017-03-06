@@ -36,7 +36,7 @@ $ react-native init HelloWorld && cd HelloWorld
 Install and link `@shoutem/ui` in your project:
 
 ```bash
-$ react-native install @shoutem/ui
+$ react-native install @shoutem/ui --save
 $ react-native link
 ```
 
