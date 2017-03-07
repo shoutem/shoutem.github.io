@@ -46,7 +46,7 @@ export default class List extends Component {
   }
 ```
 
-Implement `render` method that will use `ListView`. [ListView]({{ site.baseurl }}/docs/ui-toolkit/components/list-view) accepts `data` in the form of `array` to show in the list and `renderRow` callback function which defines how list row should look like.
+Implement `render` method that will use `ListView`. [ListView]({{ site.baseurl }}/docs/ui-toolkit/components/list-view) accepts `data` in the form of `array` to show in the list and `renderRow` callback function which defines how row in the list should look like.
 
 Add `renderRow` method and replace implementation of `render` method:
 
@@ -88,7 +88,7 @@ Uploading `Restaurants` extension to Shoutem...
 Success!
 ```
 
-Since we changed extension, preview will be shown after Shoutem builds the new app. `List` is now showing list of restaurants. 
+Since we changed the extension, the app preview will be shown after Shoutem builds the new app. `List` is now showing the list of restaurants. 
 
 <p class="image">
 <img src='{{ site.baseurl }}/img/getting-started/extension-rich-list.png'/>
@@ -96,7 +96,7 @@ Since we changed extension, preview will be shown after Shoutem builds the new a
 
 This looks exactly how we wanted.
 
-Try clicking on a row. Nothing happens! We want to open up the details screen when user touches a list row item.
+Try clicking on a row. Nothing happens! We want to open up the details screen when user touches a row in the list.
 
 ## Creating details screen
 
