@@ -7,16 +7,45 @@ section: Tutorials
 
 # Setting up environment for local development
 
-This tutorial explains how to build extensions locally, so you can [debug React Native](https://facebook.github.io/react-native/docs/debugging.html) code.
-
-> #### Note
-> This tutorial continues on concepts that were introduced in [Getting started](http://shoutem.github.io/docs/extensions/getting-started/introduction) tutorial.
+This tutorial explains how to build extensions without the need to _push_ them to Shoutem. Setting local development will help you develop your extension much faster with the ability to debug and test it on your device. Make sure you understand concepts introduced in the [Getting started]({{ site.baseurl }}/docs/extensions/getting-started/introduction) before reading this tutorial.
 
 ## React Native environment
 
-Before setting up local environment for writing Shoutem extensions, set up React Native environment as described in their [Getting started tutorial](https://facebook.github.io/react-native/docs/getting-started.html). As it's written in that document, local building of iOS applications is only available through Mac.
+Before setting up local environment for building Shoutem extensions, set up React Native environment as described in their [Getting started tutorial](https://facebook.github.io/react-native/docs/getting-started.html).
 
-## Shoutem environment
+As it's written in that tutorial, building iOS apps locally is only available on Mac. However, with Shoutem, you can test your React Native apps built on Windows on iOS platform by: using [Mobilizer]({{ site.shoutem.mobilizer }}) for testing your app on iOS device or [Shoutem Builder]({{ site.shoutem.builderURL }}) for testing it on iOS simulator.
+
+## Local preview
+
+Once you create an app on Shoutem, you can preview it on local simulator or your device:
+
+```bash
+$ shoutem run-ios
+
+```
+
+## Local development
+
+_Pushing_ your extension to Shoutem and waiting for Shoutem to build the new app is time consuming. Instead, you can _link_ your extension to the local environment (similar to [react-native link](https://facebook.github.io/react-native/docs/linking-libraries-ios.html)). Navigate to your extension directory and link the extension:
+
+```bash
+$ shoutem link
+Directory successfully linked. Please, kill the packager before running the app.
+```
+
+Now, you can preview
+
+
+
+
+To see which extension are linked 
+
+Unlink your extensions with
+
+To test your extension, first you need to 
+
+## App project
+
 
 Once React Native environment is set, use [Shoutem CLI](https://www.npmjs.com/package/@shoutem/cli). It's as easy as:
 
