@@ -10,7 +10,7 @@ section: Getting Started
 
 This tutorial shows how to write custom **Shoutem extensions** on Shoutem platform. It introduces the most important concepts. After completing it, you will have a running **mobile app** that uses the created **custom extension** with components from [Shoutem UI Toolkit]({{ site.baseurl }}/docs/ui-toolkit/introduction) and retrieves content from the [Shoutem Cloud]({{ site.baseurl }}/docs/cloud/introduction). Final result of extension is [open sourced](https://github.com/shoutem/extension-examples/tree/master/restaurants-getting-started).
 
-Here's a preview how completed app will look like.
+Here's the preview how completed app will look like.
 
 <p class="image">
 <img src='{{ site.baseurl }}/img/getting-started/extension-preview.jpg'/>
