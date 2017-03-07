@@ -17,7 +17,7 @@ $ npm install -g @shoutem/cli
 The ```-g``` flag is to install CLI globally, so you can use `shoutem` command from any folder.
 
 > #### Note
-> `Node.js` includes `npm` by itself. We recommend installing `Node.js` with [nvm](https://github.com/creationix/nvm). If previous command fails because of _permission_ issues, you need to run it with `sudo` permission.
+> If previous command fails because of _permission_ issues, you need to run it with `sudo` permission: :`sudo npm install -g @shoutem/cli`. If you don't have `npm`, install `Node.js` which includes `npm` by itself. We recommend installing `Node.js` with [nvm](https://github.com/creationix/nvm).
 
 
 <br />
