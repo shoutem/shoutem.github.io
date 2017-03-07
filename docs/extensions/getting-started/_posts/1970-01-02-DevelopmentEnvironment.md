@@ -8,37 +8,38 @@ section: Getting Started
 # Setting up the environment
 <hr />
 
-Before building an extension, set the development environment. Download Shoutem [Command Line Interface](https://www.npmjs.com/package/@shoutem/cli) (CLI), tool available through `npm`, the package management system for `Node.js`:
+Before building an extension, download Shoutem [Command Line Interface](https://www.npmjs.com/package/@shoutem/cli) (CLI), tool available through `npm`, the package management system for `Node.js`:
 
 ```ShellSession
 $ npm install -g @shoutem/cli
 ``` 
 
-> #### Note
-> If previous command fails because of _permission_ issues, you need to run it with `sudo` permission: :`sudo npm install -g @shoutem/cli`. If you don't have `npm`, install `Node.js` which includes `npm` by itself. We recommend installing `Node.js` with [nvm](https://github.com/creationix/nvm).
-
 The ```-g``` flag is to install CLI globally, so you can use `shoutem` command from any folder.
 
-<hr />
+> #### Note
+> `Node.js` includes `npm` by itself. We recommend installing `Node.js` with [nvm](https://github.com/creationix/nvm). If previous command fails because of _permission_ issues, you need to run it with `sudo` permission.
+
+
+<br />
 
 Each Shoutem user can become Shoutem developer. If you haven't already, go to [Shoutem]({{ site.shoutem.builderURL }}) and create a new account. Now you can register as a developer with:
 
 ```ShellSession
 $ shoutem login
-Enter your Shoutem credentials (obtained at https://builder.beta.shoutem.com):
-Email: michael@developer.com
+Enter your Shoutem credentials (obtained at {{ site.shoutem.builderURL }}):
+Email: tom@shoutem.com
 Password:
 ```
 
-Once you entered correct Shoutem credentials, you will be asked to specify your developer name (`michael` is used in this example).
+Once you entered correct Shoutem credentials, you will be asked to specify your developer name (`tom` is used in this example).
 
 ```ShellSession
 ...
-Logged in as `michael@developer.com`.
+Logged in as `tom@developer.com`.
 Enter developer name.
-Developer name: michael
+Developer name: tom
 
-Registered as `michael`.
+Registered as `tom`.
 ```
 
 ## Editor

@@ -33,8 +33,6 @@ import {
 import { NavigationBar } from '@shoutem/ui/navigation';
 ```
 
-Notice that we didn't need to install packages like `react`, `@shoutem/ui`, `react-native`, etc. They are all added as peer dependencies to `app/package.json` on initializing the extension and their versions are managed by the [platform]({{ site.baseurl }}/docs/extensions/reference/platform).
-
 We prepared mockup restaurants data for you. Download [this compressed file](/restaurants/restaurants.zip), extract it and copy the extracted `assets` folder inside of `app` folder. The `assets` folder contain static restaurants data in `restaurants.json` file.
 
 Define a method in `List` class that returns an array of restaurants.
@@ -115,7 +113,7 @@ We didn't create `shortcut` as this screen is not going to be the first screen o
 
 When restaurant in the list is touched, we will open details screen for that restaurant. To make views respond to touches, use [TouchableOpacity](https://facebook.github.io/react-native/docs/touchableopacity.html) component from React Native. Shoutem's `navigateTo` redux action creator is used to navigate to another screen.
 
-To get the full name of `Details` screen, use `ext` function from `app/extension.js`. This function returns the full name for the extension part passed as its first argument (e.g. returns `michael.restaurants.Details` for `Details`) or extension `name` if no argument is passed.
+To get the full name of `Details` screen, use `ext` function from `app/extension.js`. This function returns the full name for the extension part passed as its first argument (e.g. returns `tom.restaurants.Details` for `Details`) or extension `name` if no argument is passed.
 
 Let's import these things:
 
@@ -354,4 +352,3 @@ When you click on a row in the list, this is what you get:
 </p>
 
 That's exactly what we wanted to get! However, our app is using static data. Let's connect it to **Shoutem Cloud**. 
-
