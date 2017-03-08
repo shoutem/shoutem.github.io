@@ -200,7 +200,8 @@ Screens are nothing more than React components which represent full mobile scree
   },
   "settings": {
     "any-parameter": "any-value"
-  }
+  },
+  "groupTitle": "any-value"
 }, {
   "name": "Grid",
   "title": "Grid",
@@ -219,6 +220,7 @@ Each object in screens array, screen object, consists of these fields:
 
 - `name`: Required field, defines screen's identity
 - `title`: Screen's title that will be shown in [layout selector](/docs/coming-soon)
+- `groupTitle`: Title of screen group that will be shown in [layout selector](/docs/coming-soon)
 - `image`: Path to screen's image that shows it's layout
 - `navigatesTo`: Array of key/value pairs that indicates to which screens the current one can navigate to
 - `settingsPage`: Screen's settings page. Object consists of:
