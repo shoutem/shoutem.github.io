@@ -104,7 +104,7 @@ To test extension, install it in the Shoutem app. You can create new app in the 
 ```ShellSession
 $ shoutem install --new Restaurants
 Extension is installed onto newly created `Restaurants` application.
-See it in browser: `{{ site.shoutem.builderURL }}/52634`
+See it in browser: `{{ site.shoutem.builderURL }}/app/{{ site.example.appId }}`
 ```
 
 Follow the link printed by the CLI. Go to `Extensions` tab in Shoutem builder. where you can see that your extension is installed on the application under **Custom** category.
