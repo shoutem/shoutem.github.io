@@ -8,7 +8,7 @@ section: Getting Started
 # Using UI toolkit
 <hr />
 
-React Native exposes plain components that you can use, but there's usually much work left to do just to make them look beautiful. Instead, you can use [@shoutem/ui](https://github.com/shoutem/ui), a set of customizable UI components. There are [plenty of components]({{ site.baseurl }}/docs/ui-toolkit/components/typography) that you can use out of the box.
+React Native exposes plain iOS and Android native components that you can use, but there's usually much work left to do just to make them look beautiful. Instead, you can use [@shoutem/ui](https://github.com/shoutem/ui), a set of customizable UI components. There are [plenty of components]({{ site.baseurl }}/docs/ui-toolkit/components/typography) that you can use out of the box.
 
 ## Creating restaurants list
 
@@ -33,7 +33,7 @@ import {
 import { NavigationBar } from '@shoutem/ui/navigation';
 ```
 
-We prepared mockup restaurants data for you. Download [this compressed file](/restaurants/restaurants.zip), extract it and copy the extracted `assets` folder inside of `app` folder. The `assets` folder contain static restaurants data in `restaurants.json` file.
+We prepared mockup restaurants data for you. Download [this compressed file](/restaurants/restaurants.zip), extract it and copy the extracted `assets` folder inside of the `app` folder. The `assets` folder contain static restaurants data in `restaurants.json` file.
 
 Define a method in `List` class that returns an array of restaurants.
 
@@ -46,7 +46,7 @@ export default class List extends Component {
   }
 ```
 
-Implement `render` method that will use `ListView`. [ListView]({{ site.baseurl }}/docs/ui-toolkit/components/list-view) accepts `data` in the form of `array` to show in the list and `renderRow` callback function which defines how row in the list should look like.
+Implement `render` method that will use `ListView` component. [ListView]({{ site.baseurl }}/docs/ui-toolkit/components/list-view) accepts `data` in the form of an `array` to show in the list and `renderRow` callback function which defines how row in the list should look like.
 
 Add `renderRow` method and replace implementation of `render` method:
 
@@ -96,24 +96,11 @@ Since we changed the extension, the app preview will be shown after Shoutem buil
 
 This looks exactly how we wanted.
 
-Try clicking on a row. Nothing happens! We want to open up the details screen when user touches a row in the list.
+Try clicking on a row. Nothing happens! We want to open up the screen with restaurant's details when user touches a row in the list.
 
 ## Creating details screen
 
-First, create details screen:
-
-```ShellSession
-$ shoutem screen add Details
-File `app/screens/Details.js` is created.
-File `app/extension.js` was modified.
-File `extension.json` was modified.
-```
-
-We didn't create `shortcut` as this screen is not going to be the first screen of an extension.
-
-When restaurant in the list is touched, we will open details screen for that restaurant. To make views respond to touches, use [TouchableOpacity](https://facebook.github.io/react-native/docs/touchableopacity.html) component from React Native. Shoutem's `navigateTo` redux action creator is used to navigate to another screen.
-
-To get the full name of `Details` screen, use `ext` function from `app/extension.js`. This function returns the full name for the extension part passed as its first argument (e.g. returns `tom.restaurants.Details` for `Details`) or extension `name` if no argument is passed.
+When restaurant in the list is touched, we will open details screen for that restaurant. To make components respond to touches, use [TouchableOpacity](https://facebook.github.io/react-native/docs/touchableopacity.html) component from React Native. We'll also import Shoutem's `navigateTo` action creator to navigate to another screen and `ext` function for the name of screen we're navigating to.
 
 Let's import these things:
 
@@ -126,9 +113,9 @@ import { navigateTo } from '@shoutem/core/navigation';
 import { ext } from '../extension';
 ```
 
-[Connect](https://github.com/reactjs/react-redux/blob/master/docs/api.md#connectmapstatetoprops-mapdispatchtoprops-mergeprops-options) `navigateTo` action to redux store.
+[Connect](https://github.com/reactjs/react-redux/blob/master/docs/api.md#connectmapstatetoprops-mapdispatchtoprops-mergeprops-options) `navigateTo` action creator to redux store.
 
-```javascript{1,3-9,13-17}
+```javascript{1,3-9,14-18}
 #file: app/screens/List.js
 import { connect } from 'react-redux';
 
@@ -139,7 +126,8 @@ class List extends Component {
     // bind renderRow function to get the correct props
     this.renderRow = this.renderRow.bind(this);
   }
-  ...
+
+  getRestaurants() ...
 }
 
 // connect screen to redux store
@@ -149,7 +137,18 @@ export default connect(
 )(List);
 ```
 
-Open restaurants details screen in the `renderRow` function. Action `navigateTo` accepts Shoutem `route object` as the only argument with `screen` (full name of screen to navigate to) and `props` (passed to screen) properties.
+Now, create details screen:
+
+```ShellSession
+$ shoutem screen add Details
+File `app/screens/Details.js` is created.
+File `app/extension.js` was modified.
+File `extension.json` was modified.
+```
+
+We didn't create `shortcut` as this screen is not going to be the first screen of an extension.
+
+Open restaurants details screen in the `renderRow` function. Action `navigateTo` accepts Shoutem `route object` as the only argument with `screen` (full name of screen to navigate to) and `props` (passed to screen) properties. To get the full name of the screen, we'll use `ext` function, which returns the full name for the extension part passed as its first argument (e.g. returns `tom.restaurants.Details` for `Details`) or full extension name (e.g. `tom.restaurants`) if no argument is passed.
 
 
 ```JSX{2,5-8,16}
@@ -174,7 +173,7 @@ Open restaurants details screen in the `renderRow` function. Action `navigateTo`
   }
 ```
 
-This is what you should have end up with in `app/screens/List.js`:
+This is what you should end up with in `app/screens/List.js`:
 
 ```JSX
 #file: app/screens/List.js
@@ -253,7 +252,7 @@ export default connect(
 )(List)
 ```
 
-For `Details` screen just copy the following code. We're not introducing any new concept here, just using different components.
+For `Details` screen just copy the following code. We're not introducing any new concept here, just using some additional components.
 
 ```JSX
 #file: app/screens/Details.js
@@ -335,8 +334,6 @@ export default class Details extends Component {
 }
 ```
 
-We'll skip implementing the handling of web and e-mail properties and just render them.
-
 Upload the extension:
 
 ```ShellSession
@@ -351,4 +348,4 @@ When you click on a row in the list, this is what you get:
 <img src='{{ site.baseurl }}/img/getting-started/extension-rich-details.png'/>
 </p>
 
-That's exactly what we wanted to get! However, our app is using static data. Let's connect it to **Shoutem Cloud**. 
+That's exactly what we wanted to get! However, our app is using static data. Let's connect it to the **Shoutem Cloud**. 

@@ -46,7 +46,7 @@ Check your extension.json now. New screen is added.
     "name": "List",
     "Title":"List",
     "navigatesTo": [
-      "DEVELOPER.restaurants.Details"
+      "{{ site.example.devName }}.restaurants.Details"
     ]
   }, 
   {
@@ -68,7 +68,7 @@ Check your extension.json now. New screen is added.
 
 <br/>
 In order to get a list item with the small image we can extend `List` and override only the `renderRow` method. 
-You can c&p code below to `RestaurantsSmallList`.
+You can c/p code below to `RestaurantsSmallList`.
 
 
 ```javascript
@@ -179,7 +179,7 @@ One more thing we’re missing are images that will represent these screens. You
     "title":"List",
     "image":"./server/assets/screens/restaurants-list.png",
     "navigatesTo": [
-      "DEVELOPER.restaurants.Details"
+      "{{ site.example.devName }}.restaurants.Details"
     ]
   }, 
   {
@@ -188,7 +188,7 @@ One more thing we’re missing are images that will represent these screens. You
     {
     "name":"RestaurantsSmallList",
     "title":"Small list",
-    "extends":"DEVELOPER.restaurants.List",
+    "extends":"{{ site.example.devName }}.restaurants.List",
     "image":"./server/assets/screens/restaurants-smalllist.png"
   }
 ],
@@ -204,12 +204,12 @@ Once we have this set up, we need to add layout admin page to the list of admin 
       "title": "Restaurants",
       "description": "Allow users to browse through list of restaurants",
       "name": "openList",
-      "screen": "DEVELOPER.restaurants.openList",
+      "screen": "{{ site.example.devName }}.restaurants.openList",
       "adminPages": [{
         "page": "shoutem.admin.CmsPage",
         "title": "Content",
         "parameters": {
-          "schema": "DEVELOPER.restaurants.Restaurants"
+          "schema": "{{ site.example.devName }}.restaurants.Restaurants"
         }
       }, {
           "page":"shoutem.admin.LayoutPage",

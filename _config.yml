@@ -13,9 +13,14 @@ kramdown:
     disable : true
 
 url: "http://shoutem.github.io"
-exclude: ['api-src/']
 
 # Variables
 shoutem:
   builderURL: "https://builder.beta.shoutem.com"
   mobilizer: "/docs/coming-soon"
+  school: "http://school.shoutem.com/"
+
+# Examples
+example:
+  devName: tom
+  devEmail: tom@shoutem.com

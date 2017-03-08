@@ -27,19 +27,19 @@ Each Shoutem user can become Shoutem developer. If you haven't already, go to [S
 ```ShellSession
 $ shoutem login
 Enter your Shoutem credentials (obtained at {{ site.shoutem.builderURL }}):
-Email: tom@shoutem.com
+Email: {{ site.example.devEmail }}
 Password:
 ```
 
-Once you entered correct Shoutem credentials, you will be asked to specify your developer name (`tom` is used in this example).
+Once you entered correct Shoutem credentials, you will be asked to specify your developer name (`{{ site.example.devName }}` is used in this example).
 
 ```ShellSession
 ...
-Logged in as `tom@developer.com`.
+Logged in as {{ site.example.devEmail }}.
 Enter developer name.
-Developer name: tom
+Developer name: {{ site.example.devName }}
 
-Registered as `tom`.
+Registered as `{{ site.example.devName }}`.
 ```
 
 ## Editor
