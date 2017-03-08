@@ -84,7 +84,7 @@ In `extension.json` you can see:
 
 Brief property explanations:
 
-- `name` uniquely identifies the extension when combined with your developer name (e.g. `tom.restaurants`)
+- `name` uniquely identifies the extension when combined with your developer name (e.g. `{{ site.example.devName }}.restaurants`)
 - `version` is the extension version
 - `platform` indicates the version of the [plaform]({{ site.baseurl }}/docs/extensions/reference/platform) (versions of React, React Native and other packages available to all extensions by default)
 - `title` and `description` are extension descriptors

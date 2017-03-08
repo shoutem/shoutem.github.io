@@ -18,3 +18,8 @@ url: "http://shoutem.github.io"
 shoutem:
   builderURL: "https://builder.beta.shoutem.com"
   mobilizer: "/docs/coming-soon"
+
+# Examples
+example:
+  devName: tom
+  devEmail: tom@shoutem.com

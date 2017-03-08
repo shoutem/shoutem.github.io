@@ -8,7 +8,7 @@ section: Getting Started
 # Using UI toolkit
 <hr />
 
-React Native exposes plain components that you can use, but there's usually much work left to do just to make them look beautiful. Instead, you can use [@shoutem/ui](https://github.com/shoutem/ui), a set of customizable UI components. There are [plenty of components]({{ site.baseurl }}/docs/ui-toolkit/components/typography) that you can use out of the box.
+React Native exposes plain iOS and Android native components that you can use, but there's usually much work left to do just to make them look beautiful. Instead, you can use [@shoutem/ui](https://github.com/shoutem/ui), a set of customizable UI components. There are [plenty of components]({{ site.baseurl }}/docs/ui-toolkit/components/typography) that you can use out of the box.
 
 ## Creating restaurants list
 
@@ -33,7 +33,7 @@ import {
 import { NavigationBar } from '@shoutem/ui/navigation';
 ```
 
-We prepared mockup restaurants data for you. Download [this compressed file](/restaurants/restaurants.zip), extract it and copy the extracted `assets` folder inside of `app` folder. The `assets` folder contain static restaurants data in `restaurants.json` file.
+We prepared mockup restaurants data for you. Download [this compressed file](/restaurants/restaurants.zip), extract it and copy the extracted `assets` folder inside of the `app` folder. The `assets` folder contain static restaurants data in `restaurants.json` file.
 
 Define a method in `List` class that returns an array of restaurants.
 
@@ -46,7 +46,7 @@ export default class List extends Component {
   }
 ```
 
-Implement `render` method that will use `ListView`. [ListView]({{ site.baseurl }}/docs/ui-toolkit/components/list-view) accepts `data` in the form of `array` to show in the list and `renderRow` callback function which defines how row in the list should look like.
+Implement `render` method that will use `ListView` component. [ListView]({{ site.baseurl }}/docs/ui-toolkit/components/list-view) accepts `data` in the form of an `array` to show in the list and `renderRow` callback function which defines how row in the list should look like.
 
 Add `renderRow` method and replace implementation of `render` method:
 
@@ -113,7 +113,7 @@ We didn't create `shortcut` as this screen is not going to be the first screen o
 
 When restaurant in the list is touched, we will open details screen for that restaurant. To make views respond to touches, use [TouchableOpacity](https://facebook.github.io/react-native/docs/touchableopacity.html) component from React Native. Shoutem's `navigateTo` redux action creator is used to navigate to another screen.
 
-To get the full name of `Details` screen, use `ext` function from `app/extension.js`. This function returns the full name for the extension part passed as its first argument (e.g. returns `tom.restaurants.Details` for `Details`) or extension `name` if no argument is passed.
+To get the full name of `Details` screen, use `ext` function from `app/extension.js`. This function returns the full name for the extension part passed as its first argument (e.g. returns `{{ site.example.devName }}.restaurants.Details` for `Details`) or extension `name` if no argument is passed.
 
 Let's import these things:
 
