@@ -1,7 +1,7 @@
 ---
 layout: doc
 permalink: /docs/extensions/tutorials/best-practises
-title: Using native API
+title: Best practises
 section: Tutorials
 ---
 
