@@ -13,7 +13,6 @@ kramdown:
     disable : true
 
 url: "http://shoutem.github.io"
-exclude: ['api-src/']
 
 # Variables
 shoutem:
