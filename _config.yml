@@ -18,6 +18,7 @@ url: "http://shoutem.github.io"
 shoutem:
   builderURL: "https://builder.beta.shoutem.com"
   mobilizer: "/docs/coming-soon"
+  school: "http://school.shoutem.com/"
 
 # Examples
 example:

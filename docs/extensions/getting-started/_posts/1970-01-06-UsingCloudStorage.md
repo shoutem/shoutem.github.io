@@ -8,7 +8,7 @@ section: Getting Started
 # Using Cloud Storage
 <hr />
 
-Shoutem Cloud Storage is a CMS solution for mobile apps. We prepared `@shoutem/redux-io` package that communicates with our CMS. Define a `data schema` to describe your data model.
+Shoutem Cloud Storage is a CMS solution for mobile apps. We prepared [@shoutem/redux-io](https://github.com/shoutem/redux-io) package that simplifies the communication with Shoutem CMS. Define a `data schema` to describe your data model.
 
 ```ShellSession
 $ shoutem schema add Restaurants
@@ -35,9 +35,9 @@ Folder `data-schemas` inside `server` folder was created with file `Restaurants.
 }
 ```
 
-This is the first time that we used `server` folder. The reason is that data schemas are not part of the application code, but rather server side for extension. Data schemas are nothing more than Shoutem-flavored [JSON Schemas](http://json-schema.org/). At the end, there are some properties describing the schema itself. All properties are explained in [data schema reference]({{ site.baseurl }}/docs/cloud/data-schemas).
+This is the first time that we used `server` folder. The reason is that data schemas are not part of the app code, but rather server side of extension. Data schemas are nothing more than Shoutem-flavored [JSON Schemas](http://json-schema.org/). They describe data to be stored on Shoutem Cloud Storage.
 
-This schema is exported in `extension.json` file:
+All fields are explained in [data schema reference]({{ site.baseurl }}/docs/cloud/data-schemas). This schema is exported in `extension.json` file:
 
 ```JSON{18-21}
 #file: extension.json
@@ -65,7 +65,7 @@ This schema is exported in `extension.json` file:
 }
 ```
 
-Let's add now properties that we want to persist for a restaurant, such as: `name`, `address`, `description`, `url`, `image` and `mail`.
+Currently, schema only has the `name` property, which we'll use for restaurant name. Let's add additional properties which we want to store for each restaurant, such as: `address`, `description`, `url`, `image` and `mail`.
 
 ```JSON{4-40}
 #file: server/data-schemas/Restaurants.json
@@ -74,7 +74,7 @@ Let's add now properties that we want to persist for a restaurant, such as: `nam
   "properties": {
     "name": {
       "format": "single-line",
-      "title": "Restaurant name",
+      "title": "Restaurant's name",
       "type": "string",
       "displayPriority": 1
     },
@@ -115,9 +115,9 @@ Let's add now properties that we want to persist for a restaurant, such as: `nam
 }
 ```
 
-To enter data for your schema, you need to use Shoutem CMS settings page. Shortly, [settings pages]({{ site.baseurl }}/docs/extensions/tutorials/writing-settings-page) are web pages that you as developer can write to enable application owners to manage your extension. They are shown inside of the Shoutem builder when application owner clicks on the starting screen in the navigation bar (shortcut).
+To enter data for your schema, you need to use settings page. Shortly, [settings pages]({{ site.baseurl }}/docs/extensions/tutorials/writing-settings-page) are web pages shown inside of the Shoutem builder. Extension developers write them to enable app owners to manage extensions.
 
-Shoutem prepared predefined CMS page inside [shoutem.cms](https://github.com/shoutem/extensions/tree/master/shoutem-cms) extension that you can connect with your `schema` through parameters. Add that admin page to `Restaurants` shortcut and specify data schema to be used:
+Shoutem prepared CMS settings page inside [shoutem.cms](https://github.com/shoutem/extensions/tree/master/shoutem-cms) extension that you can use to manage data for your `schema` on Shoutem Cloud. Reference that settings page in `Restaurants` shortcut and pass it the `Restaurants` schema. Page will appear when app owner selects `Restaurants` shortcut on the builder:
 
 ```JSON{17-23}
 #file: extension.json
@@ -160,28 +160,28 @@ Uploading `Restaurants` extension to Shoutem...
 Success!
 ```
 
-Go to `Shoutem Builder`. When you select `Restaurants` under `Main navigation`, you can see a Shoutem CMS page.
+Go to `Shoutem Builder`. When you select `Restaurants` under `Main navigation`, you can see the Shoutem CMS page.
 
 <p class="image">
-<img src='{{ site.baseurl }}/img/getting-started/empty-admin-page.jpg'/>
+<img src='{{ site.baseurl }}/img/getting-started/empty-admin-page.png'/>
 </p>
 
-Click on `Create items` to start adding content. It will redirect you to `CMS` tab where you can manage content for that extension.
+Click on `Create items` to start adding content. This will redirect you to `CMS` interface where you can manage the content for your extension.
 
 <p class="image">
 <img src='{{ site.baseurl }}/img/getting-started/empty-cms.png'/>
 </p>
 
-Click on `Add item`. This will open a modal for inserting data for `Restaurants` model, which you defined with your Data Schema.
+Click on `Add item`. This will open a modal for inserting data for `Restaurants` model, which you defined with your data schema.
 
 <p class="image">
 <img src='{{ site.baseurl }}/img/getting-started/cms-modal.png'/>
 </p>
 
-Add some restaurants to the settings page.
+Add some restaurants and click "X" afterwards.
 
 <p class="image">
 <img src='{{ site.baseurl }}/img/getting-started/full-cms.png'/>
 </p>
 
-Although you've added them, your extension is still using static data. Let's go to fetch the data from Shoutem Cloud Storage using `@shoutem/redux-io` package.
+Although you've added them, your extension is still using static data. Let's fetch the data from Shoutem Cloud Storage using `@shoutem/redux-io` package.
