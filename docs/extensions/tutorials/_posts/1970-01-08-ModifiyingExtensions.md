@@ -7,7 +7,7 @@ section: Tutorials
 
 # Modifying extensions
 
-The Shoutem's mission is simple - **do not solve already solved problems**. Quite often apps that we build need common features you've seen already numerous times: push notifications, analytics, ads, authentication, RSS readers, eCommerce integrations and so on. This is what extensions are for - just pick and choose extensions which suit your need.
+The Shoutem's mission is simple - **do not solve already solved problems**. Quite often apps that we build need common features you've seen already numerous times: push notifications, analytics, ads, authentication, RSS readers, eCommerce integrations and so on. This is what extensions are for - just reuse ready features.
 
 However, for the app to succeed, it needs to be **unique**. Recreating RSS reader just to make it unique is a redundant work. Sometimes, it's enough to customize your app in the dashboard, customize the theme, or [write a new theme]({{ site.baseurl }}/docs/extensions/tutorials/writing-a-theme), but sometimes we need to modify the currently available extensions.
 
@@ -20,15 +20,17 @@ In both ways, a new extension is created.
 
 ## 1) Directly modify the extension code
 
-As all Shoutem extensions are [open sourced](https://github.com/shoutem/extensions), you can directly take the code of some extension, modify it and push as your own extension.
+As all Shoutem extensions are [open sourced](https://github.com/shoutem/extensions), you can directly take the code of some extension, modify it and _push_ as your own extension to Shoutem.
 
-Say you're using **News RSS** extension (its screen) and that you want a different layout than what's provided as layout options.
+For the purpose of the demo, create new app (e.g. called **News App**) and add **News RSS** screen inside of the navigation. In the **Layout** section, select `List` as the default layout.
+
+This is what it should look like:
 
 <p class="image">
 <img src='{{ site.baseurl }}/img/tutorials/modifying-extensions/provided-layouts.png'/>
 </p>
 
-You do want list layout, but with large images in `Tiles`, such as the ones provided in the [UI toolkit]({{ site.baseurl }}/docs/ui-toolkit/components/tiles).
+You do want list layout, but with large images in `Tiles`, such as the ones provided in the [UI toolkit]({{ site.baseurl }}/docs/ui-toolkit/components/tiles). Let's modify News RSS extension directly.
 
 Download the [News RSS extension](https://github.com/shoutem/extensions/tree/master/shoutem-rss-news) from the repository and locate inside of the extension's folder:
 
