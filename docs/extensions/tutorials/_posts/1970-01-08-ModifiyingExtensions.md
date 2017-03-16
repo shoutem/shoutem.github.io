@@ -14,7 +14,7 @@ However, for the app to succeed, it needs to be **unique**. Recreating RSS reade
 There are 2 ways to achieve this:
 
 - 1) Directly modify the extension code - new extension will **not** get the future updates
-- 2) Extend the extension part - new extension will get the future updates
+- 2) Extend the extension - new extension will get the future updates
 
 In both ways, a new extension is created.
 
@@ -137,8 +137,157 @@ This is the result that we wanted! It was quite easy and straightforward. Howeve
 
 To get the updates from Shoutem, we want to extend the extension, instead of changing its code directly.
 
-## 2) Extend the extension part
+## 2) Extend the extension
 
-## How to customize the extensions
+Extending the extension is preferred way of modifying extension.
 
-Customizing authentication or push notifications is documented in the repository.
+##### When to do it?
+
+For bigger modifications, such as changing the data schema being used, it's not possible to modify functionality without directly modifying the extension. Extending the extension is usually used for writing alternative layouts.
+
+##### How to do it?
+
+[Here](https://github.com/shoutem/extension-examples/tree/master/extending-extension) is the open sourced extension as the final result of this chapter . Let's create a new extension:
+
+```ShellSession
+$ shoutem init news-rss
+...
+Extension initialized!
+```
+
+Locate to created directory:
+
+```ShellSession
+$ cd shoutem init news-rss
+```
+
+Create a new screen which will extend the List screen from the original Shoutem **News RSS** extension:
+
+```ShellSession
+$ shoutem screen add List
+Screen `List` is created in file `app/screens/List.js`!
+File `app/extension.js` was modified.
+File `extension.json` was modified.
+```
+
+Now we need to say which screen our `List` screen extends. Do this in `extension.json` in `extends` field:
+
+```JSON{9-11}
+#file: extension.json
+{
+  "name": "news-rss",
+  "title": "My news RSS",
+  "version": "0.0.1",
+  "description": "",
+  "platform": "1.0.*",
+  "screens": [{
+    "name": "List",
+    "title": "List with big pictures",
+    "image": "./server/assets/large-news-list.png",
+    "extends": "shoutem.rss-news.ArticlesGridScreen"
+  }]
+}
+```
+
+We extended `ArticlesGridScreen` from Shoutem **News RSS** extension, as it's the [original screen](https://github.com/shoutem/extensions/blob/master/shoutem-rss-news/extension.json#L29). We've also added `title` and `image` which will both be shown in the layout selector. Download the image [here]({{ site.baseurl }}/static/modifying-extension/assets.zip), extract it and paste the `assets` folder in the extension `server` folder.
+
+> #### Note
+> If you can't remember the fields in the `extension.json`, all the fields are documented in the [reference](http://shoutem.github.io/docs/extensions/reference/extension).
+
+Let's implement our `List` screen. In `extension.json`, we are extending `ArticlesGridScreen`, but that's only for layout selector. In the implemention, we actually want to extend the `ArticlesListScreen`.
+
+`ArticlesListScreen` renders the `ListArticleView` component from Shoutem **News RSS**. When overriding that method, we could immediately implement the `ListArticleView` functionality inside. However, since we want to get updates from the `ListArticleView` component too, we'll create a new component extending that one and use it in the overridden `renderRow` function.
+
+Create the `components` folder and a component file inside:
+
+```ShellSession
+$ mkdir app/components
+$ touch app/components/Item.js
+```
+
+Implement the `Item` component:
+
+```javascript
+#file: app/components/Item.js
+import { components } from 'shoutem.rss-news';
+import moment from 'moment';
+import {
+  TouchableOpacity,
+  Caption,
+  Image,
+  Tile,
+  Title
+} from '@shoutem/ui';
+
+import { getLeadImageUrl } from 'shoutem.rss';
+
+export default class Item extends components.ListArticleView {
+  render() {
+    const { article } = this.props;
+    const dateFormat = moment(article.timeUpdated).isBefore(0) ?
+    null : (<Caption>{moment(article.timeUpdated).fromNow()}</Caption>);
+
+    return (
+      <TouchableOpacity key={article.id} onPress={this.onPress}>
+        <Image
+          styleName="featured"
+          source={{ uri: getLeadImageUrl(article) }}
+        >
+          <Tile>
+            <Title styleName="md-gutter-bottom">{article.title}</Title>
+            <Caption>{dateFormat}</Caption>
+          </Tile>
+        </Image>
+      </TouchableOpacity>
+    );
+  }
+}
+```
+
+We're importing `components` from `shoutem.rss-news` extension. That means it's in the public API of the extension and that you can find it in the `app/index.js` file. Always check what is the public API of an extension either in the `README.md` file or in the source code.
+
+We've implemented new `render` function and deleted everything we didn't need to override from `ListArticleView` component.
+
+Now, override the `renderRow` method in the screen:
+
+```javascript
+#file: app/screens/List.js
+import { screens } from 'shoutem.rss-news';
+import { Item } from '../components/Item';
+
+export default class List extends screens.ArticlesListScreen {
+  renderRow(article) {
+    return (
+      <Item
+        article={article}
+        onPress={this.openDetailsScreen}
+      />
+    );
+  }
+}
+```
+
+And we're done! Push the extension to Shoutem.
+
+```ShellSession
+$ shoutem push
+Uploading `My news RSS` extension to Shoutem...
+Success!
+```
+
+Install it to a new app:
+
+```ShellSession
+shoutem install --new "News App"
+...
+```
+
+Open the app in the builder. Now, add the screen, but from the Shoutem **News RSS** extension. In our new extension, we only extended a screen and didn't create a new shortcut. However, since both **News RSS** and **My news RSS** extensions are installed, layout selector will recognize the new `List with big pictures` layout and show it in the layout list.
+
+Select the new layout and run the app. This is what you should get:
+
+<p class="image">
+<img src='{{ site.baseurl }}/img/tutorials/modifying-extensions/new-layout.png'/>
+</p>
+
+This way, we only extended Shoutem **News RSS** extension and we will our extension will automatically get the all updates from Shoutem extension.
