@@ -1,6 +1,7 @@
 title: Shoutem Developers
 description: Supercharge your React Native development with Shoutem
 tracking_id: UA-807293-5
+repository: shoutem/shoutem.github.io
 
 sass:
   style: compressed

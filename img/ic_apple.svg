@@ -1,0 +1,18 @@
+<svg width="32" height="32" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:figma="http://www.figma.com/figma/ns">
+<title>ic_apple</title>
+<desc>Created using Figma</desc>
+<g id="Canvas" transform="translate(-672 -488)" figma:type="canvas">
+<g id="ic_apple" style="mix-blend-mode:normal;" figma:type="frame">
+<g id="Bounds" style="mix-blend-mode:normal;isolation:isolate;" opacity="0.01" figma:type="vector">
+<use xlink:href="#path0_fill" transform="translate(672 488)" fill="#D0021B" fill-opacity="0.1" style="mix-blend-mode:normal;"/>
+</g>
+<g id="Icon Shape" style="mix-blend-mode:normal;" figma:type="vector-operation">
+<use xlink:href="#path1_fill" transform="translate(675 489.5)" fill="#FFFFFF" style="mix-blend-mode:normal;"/>
+</g>
+</g>
+</g>
+<defs>
+<path id="path0_fill" fill-rule="evenodd" d="M 0 0L 32 0L 32 32L 0 32L 0 0Z"/>
+<path id="path1_fill" fill-rule="evenodd" d="M 17.8615 0C 16.3824 0.0599365 14.5926 1.00488 13.5129 2.24988C 12.5662 3.38977 11.7379 5.1897 11.9598 6.91455C 13.6164 7.04956 15.3026 6.05957 16.3232 4.78467C 17.3586 3.52478 18.0538 1.75488 17.8615 0ZM 17.4474 29.953C 19.4294 29.923 20.7311 28.1082 21.9588 26.2483C 23.2287 24.3838 23.8243 22.5431 23.9677 22.0999C 23.9847 22.0475 23.9953 22.0146 24 22.0035C 23.9556 21.9885 20.0803 20.4736 20.0359 15.944C 20.0073 12.2803 22.874 10.4481 23.192 10.245L 23.216 10.2294C 21.4855 7.64954 18.7934 7.30457 17.832 7.25952C 16.4267 7.11243 15.0603 7.65845 13.9474 8.10315C 13.2447 8.38391 12.643 8.62439 12.1964 8.62439C 11.6879 8.62439 11.0588 8.37158 10.3544 8.08838C 9.44031 7.72095 8.39932 7.30261 7.33003 7.31946C 4.83028 7.3645 2.52281 8.80444 1.23596 11.0842C -1.36734 15.674 0.570344 22.4985 3.09969 26.2032C 4.34216 28.0182 5.80652 30.073 7.7442 29.998C 8.61716 29.9631 9.23457 29.6951 9.87254 29.4181C 10.6074 29.099 11.3696 28.7681 12.581 28.7681C 13.7264 28.7681 14.4533 29.0873 15.153 29.3945C 15.8267 29.6904 16.4751 29.9751 17.4474 29.953Z"/>
+</defs>
+</svg>
