@@ -63,6 +63,7 @@ Fetch data in `componentDidMount` lifecycle method.
 class List extends Component {
   componentDidMount() {
     const { find, restaurants } = this.props;
+    
     if (shouldRefresh(restaurants)) {
       find(ext('Restaurants'), 'all', {
           include: 'image',
