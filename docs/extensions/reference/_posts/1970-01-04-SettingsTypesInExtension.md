@@ -151,7 +151,7 @@ Properties received to root shortcut settings page component are:
   - `title`: A shortcut's title
   - `settings`: A shortcut instance settings
   - `screens`: Array of screen objects, each containing:
-    - `type`: Type of screen that has alternative layouts (that's original screen's name)
+    - `type`: Type of screen that has layouts (that's original screen's name)
     - `name`: Name of the layout that will be shown 
     - `settings`: Screen settings (shared among all layouts)
 
@@ -164,7 +164,7 @@ Each screen that is connected to the state can access shortcut settings. They ca
 
 ## Screen settings
 
-Screen settings are layouts settings that hold information specific for that layout. Check the [tutorial for alternative layouts](http://shoutem.github.io/docs/extensions/tutorials/alternative-layouts) to get a better understanding on difference between screen and layouts.
+Screen settings are layouts settings that hold information specific for that layout. Check the [tutorial for screen layouts](http://shoutem.github.io/docs/extensions/tutorials/screen-layouts) to get a better understanding on difference between screen and layouts.
 
 ##### Place
 
@@ -230,7 +230,7 @@ Properties received to root shortcut settings page component are:
   - `title`: A shortcut's title
   - `settings`: Shortcut instance settings
   - `screens`: Array of screen objects, each containing:
-    - `type`: Type of screen that has alternative layouts (that's original screen's name)
+    - `type`: Type of screen that has layouts (that's original screen's name)
     - `name`: Name of the layout that will be shown 
     - `settings`: Screen settings (shared among all layouts)
 - `screen`: Screen object with fields:
