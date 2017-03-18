@@ -8,71 +8,35 @@ section: Tutorials
 # Alternative layouts
 <hr />
 
-Alternative layouts are very useful if you want let application owners to choose which layout they want to use in their app (e.g. for Political news they want to use layout with smaller images, but for Fashion they want to show large images). Additionally, by adding a little bit more logic, you can easily set A/B test where you test performance of one layout against another.
+Creating alternative layouts is a way to let app owners choose which screen layout they want to use in their app (e.g. for news from politics they might want to use layout with smaller images, and for fashion large images). As alternative layouts are just plain screens, they can contain different logic than the screen they are altering (called **original screen**) and can be easily used for A/B testing.
 
-We’ll continue making an alternative layout on the Restaurants extension that is covered in [Getting started]({{ site.baseurl }}/docs/getting-started/introduction) tutorial. Int that tutorial we’ve created the app with onle list screen and one details screen and connected it to Shoutem CMS.
+We’ll create an alternative layout in the **Restaurants** extension from [Getting started]({{ site.baseurl }}/docs/extensions/getting-started/introduction) tutorial, which you can [get here](https://github.com/shoutem/extension-examples/tree/master/restaurants-getting-started). Restaurants extension has the `List` screen (for listing all the restaurants) and `Details` screen (for details of one particular restaurant).
 
-Now let’s add one additional screen that will represent an alternative layout that will feature a list with smaller images as shown on the image below:
+Let’s add one additional screen that will represent an alternative layout for `List` screen with smaller images as shown on the image:
 
 <p class="image">
-<img src='{{ site.baseurl }}/img/tutorials/alternativelayouts/list-small.jpg'/>
+<img src='{{ site.baseurl }}/img/tutorials/alternative-layouts/list-small.png'/>
 </p>
 
-
-Let’s create a new screen: 
+Download the open sourced extension and locate to it:
 
 ```ShellSession
-$ shoutem screen add RestaurantsSmallList
-Enter screen information:
-Title: Small list of restaurants
-
-File `app/screens/RestaurantsSmallList.js` is successfully created.
+$ cd restaurants-getting-started
 ```
 
-<br/>
-Check your extension.json now. New screen is added.
+Create an additional screen:
 
-```json{20-22}
-#file: extension.json
-{
-  "name": "restaurants",
-  "title": "Restaurants",
-  "version": "0.0.1",
-  "description": "Show the cool restaurants!",
-  "shortcuts": [
-     {...}
-  ],
-  "screens": [{
-    "name": "List",
-    "Title":"List",
-    "navigatesTo": [
-      "{{ site.example.devName }}.restaurants.Details"
-    ]
-  }, 
-  {
-    "name":"Details",
-    "title":"Details"
-  },
-  {
-    "name":"RestaurantsSmallList"
-  }
-  ],
-  "dataSchemas": [
-    {
-      "name": "Restaurants",
-      "path": "server/data-schemas/Restaurants.json"
-    }
-  ]
-}
+```ShellSession
+$ shoutem screen add SmallList
+Screen `SmallList` is created in file `app/screens/SmallList.js`!
+File `app/extension.js` was modified.
+File `extension.json` was modified.
 ```
 
-<br/>
-In order to get a list item with the small image we can extend `List` and override only the `renderRow` method. 
-You can c/p code below to `RestaurantsSmallList`.
-
+Extend `List` screen and override its `renderRow` method. We're going to use the `Row` component from [UI toolkit]({{ site.baseurl }}/docs/ui-toolkit/components/rows). This is the complete code for `SmallList.js` file with the main parts being highlighted.
 
 ```javascript
-#file: app/screens/RestaurantSmallList.js
+#file: app/screens/SmallList.js
 import React, {
   Component
 } from 'react';
@@ -134,6 +98,21 @@ export default connect(
 )(RestaurantsSmallList);
 ```
 
+Restaurants extension uses `CMS settings page`, so app owners can manage data in the app. Now we need to give them option to chose which layout they want to use. For that, we're going to use `layout settings page` from [shoutem-layouts](https://github.com/shoutem/extensions/tree/master/shoutem-layouts) extension.
+
+Layout settings page resolves which **original screens** have multiple layouts and shows the `layout selectors` for them. Multiple original screens can have different layouts. Example of 2 layout selectors for News RSS extension is shown in the image below.
+
+<p class="image">
+<img src='{{ site.baseurl }}/img/tutorials/alternative-layouts/news-rss-layouts.png'/>
+</p>
+
+Since we built this extension, we can immediately add additional layouts to it directly. However
+
+navigatesTo
+
+Now we need to add layout settings page
+
+/docs/extensions/tutorials/modifying-extensions
 
 <br/>
 From the `List.js` we need to export class `List`.
@@ -148,28 +127,10 @@ export class List extends Component {
 <br/>
 Last thing we need to do is export the `RestaurantsSmallList` in index.js. 
 
-```javascript{7,12}
-#file: app/index.js
-// Constants `screens`, `actions` and `reducer` are exported via named export
-// It is important to use those exact names
-
-import reducer from './reducers';
-import List from './screens/List.js';
-import Details from './screens/Details';
-import RestaurantsSmallList from './screens/RestaurantsSmallList';
-
-export const screens = {
-  List,
-  Details,
-  RestaurantsSmallList
-};
-
-export {reducer};
-```
 
 <br/>
 In order for Shoutem Builder to know that there is an alternative screen to List we need to extend that screen in Extensions.json as well. It behaves the same way as extend in javascript does, inherits all properties from origin and overrides ones that we explicitly define. 
-One more thing we’re missing are images that will represent these screens. You can download them [here]({{ site.baseurl }}/img/tutorials/alternativelayouts/images.zip) and add them to your server/assets/screens folder.
+One more thing we’re missing are images that will represent these screens. You can download them [here]({{ site.baseurl }}/img/tutorials/alternative-layouts/images.zip) and add them to your server/assets/screens folder.
 
 ```json{4-5,15-17}
 #file: extension.json
@@ -231,7 +192,7 @@ Success!
 Layout tab has appeared any by selecting Small ist and hitting on preview you should be able to see the new screen.
 
 <p class="image">
-<img src='{{ site.baseurl }}/img/tutorials/alternativelayouts/builder-layout.png'/>
+<img src='{{ site.baseurl }}/img/tutorials/alternative-layouts/builder-layout.png'/>
 </p>
 
 

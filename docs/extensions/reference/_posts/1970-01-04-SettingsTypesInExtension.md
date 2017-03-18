@@ -164,7 +164,7 @@ Each screen that is connected to the state can access shortcut settings. They ca
 
 ## Screen settings
 
-Screen settings are layouts settings that hold information specific for that layout. Check the [tutorial for alternative layouts](http://shoutem.github.io/docs/extensions/tutorials/alternativelayouts) to get a better understanding on difference between screen and layouts.
+Screen settings are layouts settings that hold information specific for that layout. Check the [tutorial for alternative layouts](http://shoutem.github.io/docs/extensions/tutorials/alternative-layouts) to get a better understanding on difference between screen and layouts.
 
 ##### Place
 
