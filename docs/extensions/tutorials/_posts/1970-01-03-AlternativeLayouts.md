@@ -106,81 +106,22 @@ Layout settings page resolves which **original screens** have multiple layouts a
 <img src='{{ site.baseurl }}/img/tutorials/alternative-layouts/news-rss-layouts.png'/>
 </p>
 
-Since we built this extension, we can immediately add additional layouts to it directly. However
+For layout settings page to be able to resolve for which screens to show layout selectors, we need to add `extends` property to altering screens showing their original screen. Altering screens inherit all the properties from extending screen and can override them.
 
-navigatesTo
+Reference layout settings page in shortcut `adminPages` and extend the screens in `extension.json`.
 
-Now we need to add layout settings page
-
-/docs/extensions/tutorials/modifying-extensions
-
-<br/>
-From the `List.js` we need to export class `List`.
-
-```javascript{2}
-#file: app/screens/List.js
-...
-export class List extends Component {
-    componentDidMount() {...
-```
-
-<br/>
-Last thing we need to do is export the `RestaurantsSmallList` in index.js. 
-
-
-<br/>
-In order for Shoutem Builder to know that there is an alternative screen to List we need to extend that screen in Extensions.json as well. It behaves the same way as extend in javascript does, inherits all properties from origin and overrides ones that we explicitly define. 
-One more thing we’re missing are images that will represent these screens. You can download them [here]({{ site.baseurl }}/img/tutorials/alternative-layouts/images.zip) and add them to your server/assets/screens folder.
-
-```json{4-5,15-17}
+```JSON
 #file: extension.json
-...  
-"screens": [{
-    "name": "List",
-    "title":"List",
-    "image":"./server/assets/screens/restaurants-list.png",
-    "navigatesTo": [
-      "{{ site.example.devName }}.restaurants.Details"
-    ]
-  }, 
-  {
-    "name":"Details"
-  },
-    {
-    "name":"RestaurantsSmallList",
-    "title":"Small list",
-    "extends":"{{ site.example.devName }}.restaurants.List",
-    "image":"./server/assets/screens/restaurants-smalllist.png"
-  }
-],
-...
 ```
 
-<br />
-Once we have this set up, we need to add layout admin page to the list of admin pages. Add it to extension.json. 
+We also included additional properties like `title` and `image` to screens which will be shown in the layout selector, so they can look nicer. [Download this file]({{ site.baseurl }}/static/alternative-layouts/assets.zip) including screen images, extract the folder and place it in the `server` folder of the extension. Here you can find the [list]({{ site.baseurl }}/docs/extensions/reference/extension) of all the available properties in `extension.json`. 
 
-```json{12-15}
-#file: extension.json
-  "shortcuts": [{
-      "title": "Restaurants",
-      "description": "Allow users to browse through list of restaurants",
-      "name": "openList",
-      "screen": "{{ site.example.devName }}.restaurants.openList",
-      "adminPages": [{
-        "page": "shoutem.admin.CmsPage",
-        "title": "Content",
-        "parameters": {
-          "schema": "{{ site.example.devName }}.restaurants.Restaurants"
-        }
-      }, {
-          "page":"shoutem.admin.LayoutPage",
-          "title": "Layout"
-      }]
-  }],
-```
+> #### Note
+> Since we built this extension, we can add additional layouts to it directly. However, sometimes we want to add additional layouts for another extension, essentially to modify extensions. This is explained in [Modifying extensions]({{ site.baseurl }}/docs/extensions/tutorials/modifying-extensions) tutorial.
 
-<br />
-Now, push the changes and reload page in Shoutem builder to see the Layout tab.
+If we would want to show layout selector for `Details` screen, we would need to add `navigatesTo` property original screen. That way, layout settings page could calculate the screen hierarchy.
+
+Ok, now we're done! Let's push the extension.
 
 ```ShellSession
 $ shoutem push
@@ -188,19 +129,12 @@ Uploading `Restaurants` extension to Shoutem...
 Success!
 ```
 
-<br />
-Layout tab has appeared any by selecting Small ist and hitting on preview you should be able to see the new screen.
+If you don't have installed on any app, you can install with `shoutem install`. Go to builder and run the preview. Default layout should be original `List` screen.
+
+Switch to `Layout` and select **List with small images**. This is the result which you should get:
 
 <p class="image">
-<img src='{{ site.baseurl }}/img/tutorials/alternative-layouts/builder-layout.png'/>
+<img src='{{ site.baseurl }}/img/tutorials/alternative-layouts/news-rss-layouts.png'/>
 </p>
 
-
-## What's next?
-
-Apart from extensions, Shoutem has other products ready for boosting your mobile development. Check them out:
-
-- [Build gorgeous apps with UI Toolkit]({{ site.baseurl }}/docs/ui-toolkit/introduction)
-- [Use scalable Cloud Storage optimized for React Native apps]({{ site.baseurl }}/docs/coming-soon)
-
-Good coding!
+Great job! Now you know how to create alternative screens and all the possibilities with it.
