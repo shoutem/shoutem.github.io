@@ -223,7 +223,7 @@ Add the following styling rules to the beginning of exported object:
 
 ```JavaScript{1,6-14}
 #file: app/themes/restaurant.js
-import { ext } from '../const';
+import { ext } from '../extension';
 
 // constants ...
 
