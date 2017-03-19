@@ -282,7 +282,7 @@ Open `Style` tab and choose `Customize theme`. Theme variables are grouped into 
   },
   "layout": {
     "sections": [{
-      "title": "Restaurants"
+      "title": "Restaurants",
       "properties": ["subtitleColor"]
     }, {
       // other sections
@@ -305,7 +305,7 @@ export default (variables = {}) => ({
       fontSize: 15,
     },
     subtitle: {
-      color: vars.subtitleColor
+      color: variables.subtitleColor,
       backgroundColor: 'white'
     }
   },
