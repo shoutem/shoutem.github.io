@@ -194,8 +194,7 @@ p {
 }
 
 .header {
-    height: 606px;
-
+    height: 600px;
     background-image: url("../img/shoutem-developers-header.jpg");
     background-repeat: no-repeat;
     background-position: center;
@@ -248,7 +247,7 @@ p {
     }
     
     .header-text {
-        margin: 20px auto 0;
+        margin: 44px auto 0;
 
         @include medium {
             padding: 0;
@@ -290,7 +289,7 @@ p {
     .main-heading {
         color: #FFFFFF;
         font-size: 54px;
-        line-height: 1.26;
+        line-height: 61px;
         font-weight: 100;
         margin-top: 0;
         margin-bottom: 0;
@@ -324,12 +323,14 @@ p {
     .p, .sub-heading {
         color: #EFEFF2;
         font-size: 16px;
+        font-weight: normal;
         line-height: 26px;
         margin-bottom: 0;
         margin-left: auto;
         margin-right: auto;
         text-align: center;
         max-width: 550px;
+        margin-top: 27px;
     }
     
     .with-image .sub-heading {
@@ -362,10 +363,16 @@ p {
 
     .os-icons {
         text-align: center;
-        margin-top: 32px;
+        margin-top: 27px;
+        font-size: 0;
 
         img:not(:last-child) {
             margin-right: 32px;
+        }
+
+        .icon-android {
+            position: relative;
+            margin-top: 3px;
         }
     }
 }
@@ -415,7 +422,6 @@ p {
 }
 
 .steps {
-    margin-left: 0;
     padding-left: 0;
     list-style: none;
 }
@@ -428,8 +434,10 @@ p {
         font-weight: bold;
         text-transform: uppercase;
         margin-bottom: 16px;
-        font-size: 12px; 
-        letter-spacing: 1px;
+        font-size: 13px; 
+        line-height: 20 px;
+        letter-spacing: 1.08333px;
+        color: #444F6C;
 
         @include medium-2 {
             margin: 20px 0;
@@ -546,6 +554,7 @@ p {
     .section-footer {
         width: 60%;
         margin: 0 auto;
+        font-weight: normal;
 
         @include small {
             max-width: 280px;
@@ -575,7 +584,7 @@ p {
         height: 88px;
         background-image: url("../img/image-arrow-blue.svg");
         background-size: contain;
-        bottom: -25px;
+        bottom: -32px;
         z-index: 3;
 
         @include small {
@@ -593,7 +602,7 @@ p {
     padding-bottom: 100px;
 
     .section-header {
-        padding-top: 56px;
+        padding-top: 82px;
 
         @include mobile {
             font-size: 24px;
@@ -796,8 +805,8 @@ p {
             .card-title {
                 margin: 16px 0 0;
                 padding: 0 16px;
-                font-size: 15px;
-                line-height: 1.1875;
+                font-size: 16px;
+                line-height: 20px;
                 font-weight: normal;
                 text-transform: none;
                 color: $primary;
@@ -805,10 +814,11 @@ p {
             }
 
             p {
-                font-size: 13px;
-                margin: 2px 0 0;
+                font-size: 14px;
+                margin: 3px 0 0;
                 padding: 0 16px;
-                line-height: 1.54;
+                line-height: 22px
+                ;
                 height: 3em;
                 overflow: hidden;
             }
@@ -844,7 +854,7 @@ p {
         margin-top: 60px;
 
         .card {
-            width: 170px;
+            width: 180px;
 
             .inner {
                 width: auto;
@@ -878,8 +888,8 @@ p {
     }
     
     .section-header {
-        padding-top: 85px;
-        margin-bottom: 104px;
+        padding-top: 89px;
+        margin-bottom: 107px;
     }
 
     .wider {
@@ -929,7 +939,11 @@ p {
     }
     
     .bullet-points {
-        margin: -100px 0 0 128px;
+        margin: -106px 0 0 128px;
+
+        .bullet-icon {
+            margin-right: 20px;
+        }
 
         @include medium-2 {
             width: 360px;
@@ -977,7 +991,7 @@ p {
 
         .bullet-points {
             margin-left: auto;
-            margin-left: auto;
+            margin-right: -3px;
             max-width: 380px;
             width: 100%;
 
@@ -1006,15 +1020,15 @@ p {
                 }
 
                 &.bullet-publish {
-                    background: url(../img/publish.svg) 100% top no-repeat;
+                    background: url(../img/publish.svg) 100% 6px no-repeat;
                 }
 
                 &.bullet-manage {
-                    background: url(../img/manage.svg) calc(100% - 16px) top no-repeat;
+                    background: url(../img/manage.svg) calc(100% - 19px) 12px no-repeat;
                 }
 
                 &.bullet-analyse {
-                    background: url(../img/analyse.svg) calc(100% - 12px) top no-repeat;
+                    background: url(../img/analyse.svg) calc(100% - 14px) 25px no-repeat;
                 }
             }
 
@@ -1033,7 +1047,7 @@ p {
     }
         
     .section-header {
-        padding-top: 92px;
+        padding-top: 75px;
         text-align: center;
         margin-bottom: 0;
         color: #F2F2F5;
@@ -1058,12 +1072,12 @@ p {
         }
     }
 
-    .col-md-6 {
+    .col {
         margin-top: 52px;
 
         &.text {
-            margin-top: 144px;
-            margin-bottom: 204px;
+            margin-top: 147px;
+            margin-bottom: 191px;
         }
 
         &.carousel {
@@ -1093,7 +1107,7 @@ p {
 
     .section.fullwidth {
         max-width: 100%;
-        padding: 0;
+        padding: 0 0 0 46px;
     }
 }
 
@@ -1141,7 +1155,7 @@ p {
     &.react {
         @include logoimage('../img/icon-react-logo.svg', 30px, 30px);
         background-position: center;
-        margin: 0 -6px 0 13px;
+        margin: -7px 0 0 8px;
     }
 }
 
