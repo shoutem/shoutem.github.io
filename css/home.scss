@@ -1197,30 +1197,53 @@ p {
 .section-step4 {
     background: #ffffff;
     padding-bottom: 100px;
+
+    .section-header {
+        padding-top: 90px;
+        margin-bottom: 23px;
+        font-size: 45px;
+    }
 }
 
 .section-featured
 {
     .featured-apps {
         text-align: center;
+        margin-top: 64px;
 
         a {
-            width: 85px;
-            height: 85px;
+            width: 145px;
+            height: auto;
             display: inline-block;
+            vertical-align: top;
 
             &:not(:last-child) {
-                margin-right: 110px;
+                margin-right: 48px;
             }
 
             img {
                 width: 100%;
+                max-width: 85px;
+            }
+
+            p {
+                font-size: 14px;
+                font-weight: normal;
+                line-height: 20px;
+                color: #222B35;
+                margin-top: 26px;
             }
         }
     }
 
     p {
         text-align: center;
+        font-size: 15px;
+        font-weight: normal;
+        color: #888fa1;
+        line-height: 25px;
+        max-width: 380px;
+        margin: 0 auto;
     }
 }
 
