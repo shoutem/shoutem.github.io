@@ -281,7 +281,7 @@ function onPageReady(config) {
     const greeting = $('#greetingName').val();
 
     // updates current shortcut settings by patching with current settings
-    shoutem.api.shortcuts.updateSettings({ greetingName })
+    shoutem.api.shortcuts.updateSettings({ greeting })
       .catch(errorHandler);
 
     return false;
@@ -292,7 +292,7 @@ function onPageReady(config) {
       return;
     }
 
-    $('#greetingName').val(settings.greetingName);
+    $('#greetingName').val(settings.greeting);
   }
 
   $('button[type="submit"]').click(handleSubmit);
@@ -323,7 +323,7 @@ Finally, let's add default setting in `extension.json`, so there's some value on
       "title": "Greetings"
     }],
     "settings": {
-      "greetingName": "World"
+      "greeting": "World"
     }
   }],
   "screens": [{
@@ -364,10 +364,10 @@ import {
 export default class GreetingsScreen extends Component {
   render() {
     const { shortcut } = this.props;
-    const { greetingName } = shortcut.settings;
+    const { greeting } = shortcut.settings;
 
     return (
-      <Title>Hello {greetingName}!</Title>
+      <Title>Hello {greeting}!</Title>
     );
   }
 }
