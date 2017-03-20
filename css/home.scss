@@ -825,31 +825,6 @@ p {
         }
     }
 
-    .layout-cards {
-        margin-top: 60px;
-
-        .card {
-            width: 80px;
-
-            .inner {
-                width: 80px;
-                height: 152px;
-                padding: 16px 4px;
-                background-color: rgba(49, 60, 89, 0.05);
-                border-radius: 8px;
-                box-shadow: none;
-            }        
-
-            &:not(:last-child) {
-                width: 118px;
-
-                .inner {
-                    margin-right: 38px;
-                }
-            }
-        }
-    }
-
     .visual-style-cards {
         margin-top: 60px;
 

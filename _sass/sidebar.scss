@@ -8,9 +8,30 @@
         list-style: none;
         padding: 0;
         margin: 0;
+        position: relative;
 
         li a {
             padding-left: 40px;
+        }
+
+        &.level-2 {
+            .menu-group-title {
+                font-size: 14px;
+                font-weight: 700;
+            }
+        }
+
+        &.level-3 {
+            &::before {
+                content: "";
+                width: 1px;
+                height: 100%;
+                background-color: #d8d8d8;
+                opacity: 0.5;
+                position: absolute;
+                left: 56px;
+                top: 0;
+            }
         }
     }
 
@@ -24,8 +45,12 @@
             font-weight: 700;
         }
 
-        .active:not(.menu-group-title) {
-            background-color: $lightaccent;
+        .active {
+            color: $accent;
+
+            &:not(.menu-group-title) {
+                background-color: $lightaccent;
+            }
         }
         
         a {
@@ -48,11 +73,13 @@
         }
     }
 
-    &.level-1 > li > a {
-        font-size: 15px;
-        font-weight: 700;
-        height: 48px;
-        line-height: 48px;
+    &.level-1 {
+        > li > a {
+            font-size: 15px;
+            font-weight: 700;
+            height: 48px;
+            line-height: 48px;
+        }
     }
 
     .sidelink a {
