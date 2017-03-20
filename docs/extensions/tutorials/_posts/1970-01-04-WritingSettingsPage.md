@@ -64,6 +64,7 @@ Page was added to `extension.json`:
   "description": "Writing my first settings page!",
   "pages": [{
     "name": "HelloWorldPage",
+    "type": "html",
     "path": "server/pages/HelloWorldPage/index.html"
   }]
 }
@@ -90,8 +91,7 @@ File `index.html` includes the boilerplate HTML to get you going with developmen
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <link rel="stylesheet" href="https://s3.amazonaws.com/extension-resources/styles/0.1.0/bootstrap.css">
-    <link rel="stylesheet" href="https://s3.amazonaws.com/extension-resources/styles/0.1.0/web-ui.css">
+    <link rel="stylesheet" href="https://static.shoutem.com/libs/web-ui/0.1.17/web-ui.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -102,10 +102,11 @@ Hello World!
 
 </body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
-<script src="https://s3.amazonaws.com/extension-resources/styles/0.1.0/bootstrap.min.js"></script>
-<script src="https://s3.amazonaws.com/extension-resources/builder-sdk/0.1.1/lib.js"></script>
-<script src="https://s3.amazonaws.com/extension-resources/extension-sandbox/0.1.1/lib.js"></script>
-<script src="index.js"></script>
+<script src="https://static.shoutem.com/libs/web-ui/0.1.17/bootstrap.min.js"></script>
+<script src="https://static.shoutem.com/libs/iframe-resizer/3.5.8/iframeResizer.contentWindow.min.js"></script>
+<script src="https://static.shoutem.com/libs/api-sdk/0.1.6/api-sdk.js"></script>
+<script src="https://static.shoutem.com/libs/extension-sandbox/0.1.2/extension-sandbox.js"></script>
+<script src="helloWorld.js"></script>
 </html>
 ```
 
@@ -117,7 +118,7 @@ It's using:
   - style.css - a place where you write your own CSS
 - JavaScript
   - [Bootstrap v3](http://getbootstrap.com/)
-  - builder-sdk - exposing `shoutem` variable globally for easier access of Shoutem API
+  - api-sdk - exposing `shoutem` variable globally for easier access of Shoutem API
   - extension-sandbox - enabling the communication between your page and Shoutem builder
   - index.js - a place where you write your own JS code with lifecycle methods already prepared
 
@@ -125,28 +126,28 @@ File `index.js` comes with ready lifecycle methods for your settings page:
 
 ```JS
 #file: server/pages/HelloWorldPage/index.js
-// listen for sandbox initialization complete
-document.addEventListener('sandboxready', onSandboxReady, false);
+// listen for Shoutem initialization complete
+document.addEventListener('shoutemready', onShoutemReady, false);
 
-// handler for sandbox initialization finished
-function onSandboxReady(event) {
-  // config object containing buidler extension configuration, can be accessed via event
+// handler for Shoutem initialization finished
+function onShoutemReady(event) {
+  // config object containing builder extension configuration, can be accessed via event
   // or by shoutem.sandbox.config
-  const config = event.detail;
+  const config = event.detail.config;
 
-  // Waiting for DOM to be ready to initialize shoutem.api and call app start function
+  // Waiting for DOM to be ready to initialize shoutem.api and call page start function
   $(document).ready(function() {
-    shoutem.api.init(config);
-    appReady(config);
+    shoutem.api.init(config.context);
+    onPageReady(config);
   });
 };
 
-// Put your settings page logic here, executes when sandbox and DOm are initalized
-function appReady(config) {
+// Put your settings page logic here, executes when sandbox and DOM are initalized
+function onPageReady(config) {
 }
 ```
 
-Sandbox is a container where your settings page is loaded. Once it's ready, `onSandboxReady` function is triggered. By default, logic for extracting the configuration for your extension and initializing jQuery is inside of that function. You can customize everything that comes after `onSandboxReady`.
+Sandbox is a container where your settings page is loaded. Once it's ready, `onShoutemReady` function is triggered. By default, logic for extracting the configuration for your extension and initializing jQuery is inside of that function. You can customize everything that comes after `onShoutemReady`.
 
 Finally, we have a simple CSS file `style.css` where you can store your custom CSS:
 
@@ -201,7 +202,7 @@ Shortcut and screen were created and connected in `extension.json`. Reference th
   }],
   "pages": [{
     "name": "HelloWorldPage",
-    "type": "plain",
+    "type": "html",
     "path": "server/pages/HelloWorldPage/index.html"
   }]
 }
@@ -236,8 +237,7 @@ Our admin page is plain right now - it just shows _Hello World_. We want to enab
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <link rel="stylesheet" href="https://s3.amazonaws.com/extension-resources/styles/0.1.0/bootstrap.css">
-    <link rel="stylesheet" href="https://s3.amazonaws.com/extension-resources/styles/0.1.0/web-ui.css">
+    <link rel="stylesheet" href="https://static.shoutem.com/libs/web-ui/0.1.17/web-ui.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -255,42 +255,55 @@ Our admin page is plain right now - it just shows _Hello World_. We want to enab
 
 </body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
-<script src="https://s3.amazonaws.com/extension-resources/styles/0.1.0/bootstrap.min.js"></script>
-<script src="https://s3.amazonaws.com/extension-resources/builder-sdk/0.1.1/lib.js"></script>
-<script src="https://s3.amazonaws.com/extension-resources/extension-sandbox/0.1.1/lib.js"></script>
+<script src="https://static.shoutem.com/libs/web-ui/0.1.17/bootstrap.min.js"></script>
+<script src="https://static.shoutem.com/libs/iframe-resizer/3.5.8/iframeResizer.contentWindow.min.js"></script>
+<script src="https://static.shoutem.com/libs/api-sdk/0.1.6/api-sdk.js"></script>
+<script src="https://static.shoutem.com/libs/extension-sandbox/0.1.2/extension-sandbox.js"></script>
 <script src="index.js"></script>
 </html>
 ```
 
-When the user clicks `Save`, we want to save the settings entered in the `<input>` field. Once settings page is loaded, access the shortcut settings. This is present in the 2 functions (`handleSubmit` and `initForm`) in `index.js`. For simplified communication with Shoutem API, such as updating and getting shortcut settings, we'll use `builder-sdk`. It puts `shoutem` object to the global environment.
+When the user clicks `Save`, we want to save the settings entered in the `<input>` field. Once settings page is loaded, access the shortcut settings. This is present in the 2 functions (`handleSubmit` and `initForm`) in `index.js`. For simplified communication with Shoutem API, such as updating and getting shortcut settings, we'll use `api-sdk`. It puts `shoutem` object to the global environment.
 
 ```JS{3-21}
 #file: server/pages/HelloWorldPage/index.js
-function appReady(config) {
+function onPageReady(config) {
+
+  function errorHandler(err) {
+    console.log('Something went wrong:', err);
+  }
 
   function handleSubmit(e) {
     // prevent default action and bubbling
     e.preventDefault();
     e.stopPropagation();
 
-    const greetingName = $('#greetingName').val();
+    const greeting = $('#greetingName').val();
 
     // updates current shortcut settings by patching with current settings
-    shoutem.api.updateShortcutSettings({ greetingName });
+    shoutem.api.shortcuts.updateSettings({ greetingName })
+      .catch(errorHandler);
+
+    return false;
   }
 
   function initForm(settings) {
+    if(!settings) {
+      return;
+    }
+
     $('#greetingName').val(settings.greetingName);
   }
 
   $('button[type="submit"]').click(handleSubmit);
 
   // shoutem.api knows current shortcut and returns promise with fetched settings
-  shoutem.api.getShortcutSettings().then(initForm);
+  shoutem.api.shortcuts.getSettings()
+    .then(initForm, errorHandler);
 }
 ```
 
-The reference for the `builder-sdk` (`shoutem` object) is [here](/coming-soon).
+The reference for the `api-sdk` (`shoutem` object) is [here](https://bitbucket.org/fiveminutes/api-sdk).
 
 Finally, let's add default setting in `extension.json`, so there's some value on the first load of the shortcut settings page:
 
@@ -318,6 +331,7 @@ Finally, let's add default setting in `extension.json`, so there's some value on
   }],
   "pages": [{
     "name": "HelloWorldPage",
+    "type": "html",
     "path": "server/pages/HelloWorldPage/index.html"
   }]
 }
