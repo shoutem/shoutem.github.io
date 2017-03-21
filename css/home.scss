@@ -1005,19 +1005,34 @@ p {
                     }
                 }
 
+                @include medium-2 {
+                    padding-left: 106px;
+                }
+
+                @include mobile {
+                    padding-left: 72px;
+                }
+
                 &.bullet-publish {
                     background: url(../img/publish.svg) 100% 6px no-repeat;
 
+                    @include medium-2 {
+                        background-position: 0% 6px;
+                    }
+
                     @include mobile {
-                        background-size: 60px;
+                        background-size: 45px;
                     }
                 }
 
                 &.bullet-manage {
                     background: url(../img/manage.svg) calc(100% - 19px) 12px no-repeat;
 
+                    @include medium-2 {
+                        background-position: 0% 6px;
+                    }
+
                     @include mobile {
-                        background-position: 100% 6px;
                         background-size: 45px;
                     }
                 }
@@ -1025,8 +1040,11 @@ p {
                 &.bullet-analyse {
                     background: url(../img/analyse.svg) calc(100% - 14px) 25px no-repeat;
 
+                    @include medium-2 {
+                        background-position: 0% 25px;
+                    }
+
                     @include mobile {
-                        background-position: 100% 25px;
                         background-size: 45px;
                     }
                 }
