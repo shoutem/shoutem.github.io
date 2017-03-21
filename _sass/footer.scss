@@ -103,11 +103,11 @@
 
             @include easeLinear;
             
-            &:hover, &:focus,
+            &:hover,
+            &:focus,
             &:active {
-                border-color: $accent;
-                background-color: $accent;
-                color: white;
+                background-color: #f4f4f4;
+                border-color: #f4f4f4;
             }
 
             @include small {

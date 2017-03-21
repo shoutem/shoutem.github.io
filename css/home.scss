@@ -64,7 +64,6 @@ p {
     @include mobile {
         font-size: 36px;
         line-height: 46px;
-        max-width: 280px;
         margin-left: auto;
         margin-right: auto;
         margin-bottom: 0;
@@ -133,12 +132,16 @@ p {
     position: relative;
 
     @include small {
-        padding: 0;
+        padding: 0 15px;
     }
 }
 
 .section.wider {
     max-width: 1172px;
+
+    .section-content {
+        overflow: hidden;
+    }
 }
 
 .flex-container {
@@ -867,6 +870,11 @@ p {
     .section-header {
         padding-top: 89px;
         margin-bottom: 107px;
+
+        @include medium-2 {
+            margin-bottom: 48px;
+            padding-top: 48px;
+        }
     }
 
     .wider {
@@ -897,6 +905,7 @@ p {
 
         @include medium-2 {
             width: calc(100% - 360px);
+            margin-bottom: 48px;
         }
 
         @include small {
@@ -1009,17 +1018,9 @@ p {
                 }
             }
 
-            @include small {
-                margin-top: 83px;
+            @include medium-2 {
+                margin: auto;
             }
-        }
-
-        @include small {
-            position: relative;
-            bottom: -517px;
-            width: 100%;
-            margin-left: 4px;
-            margin-right: 4px;
         }
     }
         
@@ -1055,6 +1056,11 @@ p {
         &.text {
             margin-top: 147px;
             margin-bottom: 191px;
+
+            @include medium-2 {
+                margin-bottom: 64px;
+                margin-top: 48px;
+            }
         }
 
         &.carousel {
@@ -1062,10 +1068,23 @@ p {
             height: 580px;
             overflow: hidden;
 
+            @include medium-2 {
+                background-position: calc(50% + 3px) 0;
+                padding: 0;
+                margin-top: 0;
+            }
+
             .images {
                 position: relative;
                 top: 57px;
                 left: 66px;
+
+                @include medium-2 {
+                    text-align: center;
+                    left: 0;
+                    margin-left: auto;
+                    margin-right: auto;
+                }
             }
         }
     }    
@@ -1085,6 +1104,10 @@ p {
     .section.fullwidth {
         max-width: 100%;
         padding: 0 0 0 46px;
+
+        @include medium-2 {
+            padding: 0;
+        }
     }
 }
 
@@ -1179,6 +1202,11 @@ p {
         padding-top: 90px;
         margin-bottom: 23px;
         font-size: 45px;
+
+        @include medium-2 {
+            font-size: 36px;
+            padding-top: 48px;
+        }
     }
 }
 

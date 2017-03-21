@@ -25,12 +25,13 @@
             &::before {
                 content: "";
                 width: 1px;
-                height: 100%;
-                background-color: #d8d8d8;
-                opacity: 0.5;
                 position: absolute;
-                left: 56px;
-                top: 0;
+                background-color: #000;
+                opacity: 0.08;
+                left: 58px;
+                top: 11px;
+                bottom: 11px;
+                height: initial;
             }
         }
     }
