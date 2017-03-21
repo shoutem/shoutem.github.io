@@ -750,6 +750,8 @@ p {
         position: relative;
         max-width: 1170px;
         padding-bottom: 3px;
+        padding-left: 0;
+        padding-right: 0;
         overflow: hidden;
         border-radius: 4px;
         margin-top: 60px;
@@ -842,10 +844,10 @@ p {
             }        
 
             &:not(:last-child) {
-                width: 194px;
+                width: 186px;
 
                 .inner {
-                    margin-right: 40px;
+                    margin-right: 32px;
                 }
             }
         }
