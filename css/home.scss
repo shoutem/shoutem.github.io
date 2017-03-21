@@ -1007,14 +1007,28 @@ p {
 
                 &.bullet-publish {
                     background: url(../img/publish.svg) 100% 6px no-repeat;
+
+                    @include mobile {
+                        background-size: 60px;
+                    }
                 }
 
                 &.bullet-manage {
                     background: url(../img/manage.svg) calc(100% - 19px) 12px no-repeat;
+
+                    @include mobile {
+                        background-position: 100% 6px;
+                        background-size: 45px;
+                    }
                 }
 
                 &.bullet-analyse {
                     background: url(../img/analyse.svg) calc(100% - 14px) 25px no-repeat;
+
+                    @include mobile {
+                        background-position: 100% 25px;
+                        background-size: 45px;
+                    }
                 }
             }
 
@@ -1064,7 +1078,7 @@ p {
         }
 
         &.carousel {
-            background: url(../img/mbp-bezel.svg) top left no-repeat;
+            background: url(../img/mbp-bezel.svg) left top no-repeat;
             height: 580px;
             overflow: hidden;
 
@@ -1072,6 +1086,11 @@ p {
                 background-position: calc(50% + 3px) 0;
                 padding: 0;
                 margin-top: 0;
+            }
+
+            @include small {
+                background-position: calc(50% + 2px) 0;
+                background-size: 641px auto;
             }
 
             .images {
@@ -1084,6 +1103,15 @@ p {
                     left: 0;
                     margin-left: auto;
                     margin-right: auto;
+                }
+
+                @include small {
+                    width: 521px;
+                    top: 40px;
+
+                    img {
+                        max-width: 100%;
+                    }
                 }
             }
         }
