@@ -143,7 +143,7 @@ Extending the extension is preferred way of modifying extension.
 
 ##### When to do it?
 
-For bigger modifications, such as changing the data schema being used, it's not possible to modify functionality without directly modifying the extension. Extending the extension is usually used for writing alternative layouts.
+For bigger modifications, such as changing the data schema being used, it's not possible to modify functionality without directly modifying the extension. Extending the extension is usually used for writing screen layouts.
 
 ##### How to do it?
 

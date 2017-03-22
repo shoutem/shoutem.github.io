@@ -227,7 +227,7 @@ Each object in screens array, screen object, consists of these fields:
 - `settings`: Dictionary of arbitrary key/value pairs that represent default Shortcut's settings passed to admin pages
 - `extends`: References screen that the current one is extending
 
-In the example above, we included 2 screen objects inside of the `screens` array. We wanted to show you the usage of `extends` field. Extending makes it possible to [switch between multiple alternative layouts](/docs/extensions/tutorials/alternativelayouts).
+In the example above, we included 2 screen objects inside of the `screens` array. We wanted to show you the usage of `extends` field. Extending makes it possible to [switch between multiple screen layouts](/docs/extensions/tutorials/screen-layouts).
 
 
 #### dataSchemas
