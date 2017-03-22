@@ -60,7 +60,7 @@ Fetch data in `componentDidMount` lifecycle method.
 
 ```javascript{2-9}
 #file: app/screens/List.js
-class List extends Component {
+export class List extends Component {
   componentDidMount() {
     const { find, restaurants } = this.props;
     if (shouldRefresh(restaurants)) {
@@ -140,7 +140,7 @@ import {
   getCollection
 } from '@shoutem/redux-io';
 
-class List extends Component {
+export class List extends Component {
   constructor(props) {
     super(props);
 
