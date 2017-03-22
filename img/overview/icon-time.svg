@@ -1,0 +1,18 @@
+<svg width="24" height="24" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:figma="http://www.figma.com/figma/ns">
+<title>icon-time copy</title>
+<desc>Created using Figma</desc>
+<g id="Canvas" transform="translate(-4338 -1107)" figma:type="canvas">
+<g id="icon-time copy" opacity="0.6" figma:type="frame">
+<g id="Bounds" opacity="0.01" figma:type="vector">
+<use xlink:href="#path0_fill" transform="translate(4338 1107)" fill="#D0021B" fill-opacity="0.1"/>
+</g>
+<g id="Icon Shape" figma:type="vector-operation">
+<use xlink:href="#path1_fill" transform="translate(4340 1109.99)" fill="#444F6C"/>
+</g>
+</g>
+</g>
+<defs>
+<path id="path0_fill" fill-rule="evenodd" d="M 0 0L 24 0L 24 23.9314L 0 23.9314L 0 0Z"/>
+<path id="path1_fill" fill-rule="evenodd" d="M 9.5 0C 14.75 0 19 4.23792 19 9.4729C 19 14.7079 14.75 18.9457 9.5 18.9457C 4.25 18.9457 0 14.7079 0 9.4729C 0 4.23792 4.25 0 9.5 0ZM 9.5 0.997192C 4.81006 0.997192 1 4.79626 1 9.4729C 1 14.1495 4.81006 17.9486 9.5 17.9486C 14.1899 17.9486 18 14.1495 18 9.4729C 18 4.79626 14.1899 0.997192 9.5 0.997192ZM 10 9.39307L 10 3.98853L 9 3.98853L 9 9.97144L 14.2002 12.9628L 14.7002 12.0953L 10 9.39307Z"/>
+</defs>
+</svg>

@@ -1,0 +1,22 @@
+<svg width="90" height="90" viewBox="0 0 90 90" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:figma="http://www.figma.com/figma/ns">
+<title>Play button</title>
+<desc>Created using Figma</desc>
+<g id="Canvas" transform="translate(-3875 -442)" figma:type="canvas">
+<g id="Play button" figma:type="frame">
+<g id="Rectangle 4" figma:type="vector">
+<use xlink:href="#path0_fill" transform="translate(3875 442)" fill="#FFFFFF"/>
+</g>
+<g id="ic_play" figma:type="frame">
+<g id="Group" figma:type="frame">
+<g id="Icon Shape" figma:type="vector-operation">
+<use xlink:href="#path1_fill" transform="translate(3913 475.807)" fill="#00AADF"/>
+</g>
+</g>
+</g>
+</g>
+</g>
+<defs>
+<path id="path0_fill" fill-rule="evenodd" d="M 0 45C 0 20.1472 20.1472 0 45 0C 69.8528 0 90 20.1472 90 45C 90 69.8528 69.8528 90 45 90C 20.1472 90 0 69.8528 0 45Z"/>
+<path id="path1_fill" fill-rule="evenodd" d="M 0 20.7862C 0 22.3571 1.72778 23.3148 3.06006 22.4822L 18.0864 13.0907C 19.3398 12.3074 19.3398 10.482 18.0864 9.69872L 3.06006 0.307211C 1.72778 -0.52537 0 0.432333 0 2.00319L 0 20.7862ZM 2 1.99471L 17 11.3947L 2 20.7947L 2 1.99471Z"/>
+</defs>
+</svg>

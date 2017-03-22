@@ -1,0 +1,67 @@
+<svg width="107" height="65" viewBox="0 0 107 65" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:figma="http://www.figma.com/figma/ns">
+<title>icon-code-editor</title>
+<desc>Created using Figma</desc>
+<g id="Canvas" transform="translate(-4386 -1738)" figma:type="canvas">
+<g id="icon-code-editor" figma:type="frame">
+<g id="Group 17" figma:type="frame">
+<g id="Rectangle 9" figma:type="vector">
+<mask id="mask0_outline_ins">
+<use xlink:href="#path0_fill" fill="white" transform="translate(4386 1738)"/>
+</mask>
+<g mask="url(#mask0_outline_ins)">
+<use xlink:href="#path1_stroke_2x" transform="translate(4386 1738)" fill="#444F6C"/>
+</g>
+</g>
+<g id="Rectangle" figma:type="vector">
+<use xlink:href="#path2_fill" transform="translate(4412 1748)" fill="#444F6C"/>
+</g>
+<g id="Rectangle" figma:type="vector">
+<use xlink:href="#path3_fill" transform="translate(4388 1746)" fill="#444F6C"/>
+</g>
+<g id="Rectangle" figma:type="vector">
+<use xlink:href="#path4_fill" transform="translate(4392 1754)" fill="#444F6C"/>
+</g>
+<g id="Rectangle" figma:type="vector">
+<use xlink:href="#path4_fill" transform="translate(4394 1759)" fill="#444F6C"/>
+</g>
+<g id="Rectangle" figma:type="vector">
+<use xlink:href="#path5_fill" transform="translate(4394 1764)" fill="#444F6C"/>
+</g>
+<g id="Rectangle" figma:type="vector">
+<use xlink:href="#path6_fill" transform="translate(4394 1769)" fill="#444F6C"/>
+</g>
+<g id="Rectangle" figma:type="vector">
+<use xlink:href="#path7_fill" transform="translate(4394 1774)" fill="#444F6C"/>
+</g>
+<g id="Rectangle" figma:type="vector">
+<use xlink:href="#path6_fill" transform="translate(4394 1779)" fill="#444F6C"/>
+</g>
+<g id="Group 10" figma:type="frame">
+<g id="Rectangle 10" figma:type="vector">
+<use xlink:href="#path8_stroke" transform="matrix(0.707107 0.707107 -0.707107 0.707107 4442 1767.27)" fill="#444F6C"/>
+</g>
+<g id="Group 3" figma:type="frame">
+<g id="Line" figma:type="vector">
+<use xlink:href="#path9_stroke" transform="matrix(0.848048 -0.529919 0.529919 0.848048 4439.79 1771.8)" fill="#444F6C"/>
+</g>
+</g>
+<g id="Rectangle 10" figma:type="vector">
+<use xlink:href="#path8_stroke" transform="matrix(-0.707107 0.707107 0.707107 0.707107 4461 1767.27)" fill="#444F6C"/>
+</g>
+</g>
+</g>
+</g>
+</g>
+<defs>
+<path id="path0_fill" fill-rule="evenodd" d="M 0 4C 0 1.79086 1.79086 0 4 0L 103 0C 105.209 0 107 1.79086 107 4L 107 61C 107 63.2091 105.209 65 103 65L 4 65C 1.79086 65 0 63.2091 0 61L 0 4Z"/>
+<path id="path1_stroke_2x" d="M 4 2L 103 2L 103 -2L 4 -2L 4 2ZM 105 4L 105 61L 109 61L 109 4L 105 4ZM 103 63L 4 63L 4 67L 103 67L 103 63ZM 2 61L 2 4L -2 4L -2 61L 2 61ZM 4 -2C 0.686292 -2 -2 0.686292 -2 4L 2 4C 2 2.89543 2.89543 2 4 2L 4 -2ZM 103 2C 104.105 2 105 2.89543 105 4L 109 4C 109 0.686292 106.314 -2 103 -2L 103 2ZM 105 61C 105 62.1046 104.105 63 103 63L 103 67C 106.314 67 109 64.3137 109 61L 105 61ZM 4 63C 2.89543 63 2 62.1046 2 61L -2 61C -2 64.3137 0.686292 67 4 67L 4 63Z"/>
+<path id="path2_fill" fill-rule="evenodd" d="M 0 0L 2 0L 2 53L 0 53L 0 0Z"/>
+<path id="path3_fill" fill-rule="evenodd" d="M 0 0L 103 0L 103 2L 0 2L 0 0Z"/>
+<path id="path4_fill" fill-rule="evenodd" d="M 0 1C 0 0.447715 0.447715 0 1 0L 11 0C 11.5523 0 12 0.447716 12 1C 12 1.55228 11.5523 2 11 2L 1 2C 0.447715 2 0 1.55228 0 1Z"/>
+<path id="path5_fill" fill-rule="evenodd" d="M 0 1C 0 0.447715 0.447715 0 1 0L 9 0C 9.55229 0 10 0.447716 10 1C 10 1.55228 9.55229 2 9 2L 1 2C 0.447715 2 0 1.55228 0 1Z"/>
+<path id="path6_fill" fill-rule="evenodd" d="M 0 1C 0 0.447715 0.447715 0 1 0L 10 0C 10.5523 0 11 0.447716 11 1C 11 1.55228 10.5523 2 10 2L 1 2C 0.447715 2 0 1.55228 0 1Z"/>
+<path id="path7_fill" fill-rule="evenodd" d="M 0 1C 0 0.447715 0.447715 0 1 0L 8 0C 8.55229 0 9 0.447716 9 1C 9 1.55228 8.55229 2 8 2L 1 2C 0.447715 2 0 1.55228 0 1Z"/>
+<path id="path8_stroke" d="M 10 11C 10.5523 11 11 10.5523 11 10C 11 9.44771 10.5523 9 10 9L 10 11ZM 0 10L -1 10C -1 10.5523 -0.552285 11 2.22045e-16 11L 0 10ZM 10 9L 0 9L 0 11L 10 11L 10 9ZM 1 10L 1 0L -1 0L -1 10L 1 10Z"/>
+<path id="path9_stroke" d="M -0.207107 15.7929C -0.597631 16.1834 -0.597631 16.8166 -0.207107 17.2071C 0.183417 17.5976 0.816582 17.5976 1.20711 17.2071L -0.207107 15.7929ZM 16.7313 1.68293C 17.1218 1.29241 17.1218 0.659243 16.7313 0.268719C 16.3408 -0.121806 15.7076 -0.121806 15.3171 0.268719L 16.7313 1.68293ZM 1.20711 17.2071L 16.7313 1.68293L 15.3171 0.268719L -0.207107 15.7929L 1.20711 17.2071Z"/>
+</defs>
+</svg>
