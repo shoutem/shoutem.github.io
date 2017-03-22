@@ -1,0 +1,30 @@
+<svg width="63" height="34" viewBox="0 0 63 34" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:figma="http://www.figma.com/figma/ns">
+<title>Group 14</title>
+<desc>Created using Figma</desc>
+<g id="Canvas" transform="translate(-535 -3782)" figma:type="canvas">
+<g id="Group 14" style="mix-blend-mode:normal;" figma:type="frame">
+<g id="Rectangle 91" style="mix-blend-mode:normal;" figma:type="vector">
+<use xlink:href="#path0_fill" transform="translate(535 3785)" fill="#7B8397" style="mix-blend-mode:normal;"/>
+</g>
+<g id="Rectangle 91 Copy 10" style="mix-blend-mode:normal;" figma:type="vector">
+<use xlink:href="#path1_fill" transform="translate(535 3800)" fill="#7B8397" style="mix-blend-mode:normal;"/>
+</g>
+<g id="Rectangle 91 Copy 11" style="mix-blend-mode:normal;" figma:type="vector">
+<use xlink:href="#path2_fill" transform="translate(535 3807)" fill="#7B8397" style="mix-blend-mode:normal;"/>
+</g>
+<g id="Rectangle 91 Copy 12" style="mix-blend-mode:normal;" figma:type="vector">
+<use xlink:href="#path3_fill" transform="translate(535 3814)" fill="#7B8397" style="mix-blend-mode:normal;"/>
+</g>
+<g id="Icon Shape" style="mix-blend-mode:normal;" figma:type="vector-operation">
+<use xlink:href="#path4_fill" transform="translate(584 3782)" fill="#7B8397" style="mix-blend-mode:normal;"/>
+</g>
+</g>
+</g>
+<defs>
+<path id="path0_fill" fill-rule="evenodd" d="M 0 0L 34 0L 34 3L 0 3L 0 0Z"/>
+<path id="path1_fill" fill-rule="evenodd" d="M 0 0L 40 0L 40 2L 0 2L 0 0Z"/>
+<path id="path2_fill" fill-rule="evenodd" d="M 0 0L 26 0L 26 2L 0 2L 0 0Z"/>
+<path id="path3_fill" fill-rule="evenodd" d="M 0 0L 33 0L 33 2L 0 2L 0 0Z"/>
+<path id="path4_fill" fill-rule="evenodd" d="M 13.7725 2.04724C 14.0758 2.35046 14.0758 2.84045 13.7725 3.14368L 12.3494 4.56689L 9.43314 1.65063L 10.8563 0.227417C 11.1596 -0.0758057 11.6495 -0.0758057 11.9528 0.227417L 13.7725 2.04724ZM 0 14L 0 11.0837L 8.60103 2.48267L 11.5173 5.39893L 2.91626 14L 0 14Z"/>
+</defs>
+</svg>

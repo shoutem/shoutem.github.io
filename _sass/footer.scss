@@ -11,7 +11,7 @@
 
     .signup {
         text-align: center;
-        background-color: #2E3854;
+        background-color: #00AADF;
 
         padding: 0 24px;
 
@@ -32,7 +32,7 @@
         }
 
         .signup-description {
-            color: #A3A7B3;
+            color: rgba(#ffffff, 0.8);
             line-height: 30px;
             max-width: 570px;
             margin: 0 auto 32px;
@@ -46,34 +46,35 @@
         .signup-email {
             width: 370px;
             height: 56px;
-            border-radius: 4px;
+            border-radius: 0;
             background-color: transparent;
-            padding: 1px 15px 0;
+            padding: 1px 0 0;
             margin-bottom: 80px;
             margin-right: 8px;
-            border: 1px solid rgba(136, 143, 161, 0.5);
+            border: none;
+            border-bottom: 1px solid rgba(#ffffff, 0.7);
             color: #FFF;
 
             &::-webkit-input-placeholder {
-                color: #BDC0CB;
+                color: rgba(#ffffff, 0.7);
             }
             &::-moz-placeholder { /* Firefox 19+ */
-                color: #BDC0CB;
+                color: rgba(#ffffff, 0.7);
                 opacity: 1;
             }
             &:-ms-input-placeholder {
-                color: #BDC0CB;
+                color: rgba(#ffffff, 0.7);
             }
             &:-moz-placeholder {
-                color: #BDC0CB;
+                color: rgba(#ffffff, 0.7);
                 opacity: 1;
             }
 
             @include easeLinear;
             
             &:focus {
-                color: #FFF;
-                border-color: rgba(136, 143, 161, 0.85);
+                color: #ffffff;
+                border-color: #ffffff;
                 background: none;
             }
             
@@ -98,15 +99,15 @@
             font-weight: bold;
             font-size: 14px;
             letter-spacing: 1px;
-            padding: 1px 0 0;
+            padding: 0;
 
             @include easeLinear;
             
-            &:hover, &:focus,
+            &:hover,
+            &:focus,
             &:active {
-                border-color: $accent;
-                background-color: $accent;
-                color: white;
+                background-color: #f4f4f4;
+                border-color: #f4f4f4;
             }
 
             @include small {

@@ -1,0 +1,30 @@
+<svg width="69" height="43" viewBox="0 0 69 43" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:figma="http://www.figma.com/figma/ns">
+<title>Group 2</title>
+<desc>Created using Figma</desc>
+<g id="Canvas" transform="translate(-535 -3911)" figma:type="canvas">
+<g id="Group 2" style="mix-blend-mode:normal;" figma:type="frame">
+<g id="Path 2" style="mix-blend-mode:normal;" figma:type="vector">
+<use xlink:href="#path0_stroke" transform="translate(538 3914)" fill="#7B8397" style="mix-blend-mode:normal;"/>
+</g>
+<g id="Oval 2" style="mix-blend-mode:normal;" figma:type="vector">
+<use xlink:href="#path1_fill" transform="translate(551 3932)" fill="#7B8397" style="mix-blend-mode:normal;"/>
+</g>
+<g id="Oval 2 Copy 2" style="mix-blend-mode:normal;" figma:type="vector">
+<use xlink:href="#path1_fill" transform="translate(567 3941)" fill="#7B8397" style="mix-blend-mode:normal;"/>
+</g>
+<g id="Oval 2 Copy 4" style="mix-blend-mode:normal;" figma:type="vector">
+<use xlink:href="#path1_fill" transform="translate(582 3923)" fill="#7B8397" style="mix-blend-mode:normal;"/>
+</g>
+<g id="Oval 2 Copy 5" style="mix-blend-mode:normal;" figma:type="vector">
+<use xlink:href="#path1_fill" transform="translate(598 3911)" fill="#7B8397" style="mix-blend-mode:normal;"/>
+</g>
+<g id="Oval 2 Copy" style="mix-blend-mode:normal;" figma:type="vector">
+<use xlink:href="#path1_fill" transform="translate(535 3948)" fill="#7B8397" style="mix-blend-mode:normal;"/>
+</g>
+</g>
+</g>
+<defs>
+<path id="path0_stroke" d="M -0.707107 36.2929C -1.09763 36.6834 -1.09763 37.3166 -0.707107 37.7071C -0.316583 38.0976 0.316583 38.0976 0.707107 37.7071L -0.707107 36.2929ZM 16 21L 16.4903 20.1284C 16.0994 19.9086 15.61 19.9758 15.2929 20.2929L 16 21ZM 32 30L 31.5097 30.8716C 31.9301 31.1081 32.4594 31.0107 32.7682 30.6402L 32 30ZM 47 12L 46.4 11.2C 46.3379 11.2466 46.2815 11.3002 46.2318 11.3598L 47 12ZM 63.6 0.8C 64.0418 0.468629 64.1314 -0.158172 63.8 -0.6C 63.4686 -1.04183 62.8418 -1.13137 62.4 -0.8L 63.6 0.8ZM 0.707107 37.7071L 16.7071 21.7071L 15.2929 20.2929L -0.707107 36.2929L 0.707107 37.7071ZM 15.5097 21.8716L 31.5097 30.8716L 32.4903 29.1284L 16.4903 20.1284L 15.5097 21.8716ZM 32.7682 30.6402L 47.7682 12.6402L 46.2318 11.3598L 31.2318 29.3598L 32.7682 30.6402ZM 47.6 12.8L 63.6 0.8L 62.4 -0.8L 46.4 11.2L 47.6 12.8Z"/>
+<path id="path1_fill" fill-rule="evenodd" d="M 3 6C 4.65685 6 6 4.65685 6 3C 6 1.34315 4.65685 0 3 0C 1.34315 0 0 1.34315 0 3C 0 4.65685 1.34315 6 3 6Z"/>
+</defs>
+</svg>
