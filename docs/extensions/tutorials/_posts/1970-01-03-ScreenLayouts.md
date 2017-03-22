@@ -18,10 +18,10 @@ Let’s add one additional screen that will represent an alternative layout for 
 <img src='{{ site.baseurl }}/img/tutorials/screen-layouts/list-small.png'/>
 </p>
 
-Download the open sourced extension and locate to it:
+Locate to the extension folder:
 
 ```ShellSession
-$ cd restaurants-getting-started
+$ cd restaurants
 ```
 
 Create an additional screen:
@@ -35,11 +35,9 @@ File `extension.json` was modified.
 
 Extend `List` screen and override its `renderRow` method. We're going to use the `Row` component from [UI toolkit]({{ site.baseurl }}/docs/ui-toolkit/components/rows). This is the complete code for `SmallList.js` file with the main parts being highlighted.
 
-```javascript
+```javascript{15-17,27-50}
 #file: app/screens/SmallList.js
-import React, {
-  Component
-} from 'react';
+import React from 'react';
 import {
   TouchableOpacity
 } from 'react-native';
@@ -52,22 +50,22 @@ import {
   Divider,
   Icon
 } from '@shoutem/ui';
+
+import {
+  List
+} from './List';
+
 import {
   find,
   getCollection
 } from '@shoutem/redux-io';
 import { connect } from 'react-redux';
 import { navigateTo } from '@shoutem/core/navigation';
-import { bindActionCreators } from 'redux';
-import { ext } from '../const';
+import { ext } from '../extension';
 
-import {
-	List
-} from './List';
+export class SmallList extends List {
 
-class RestaurantsSmallList extends List {
-
-  //only overriding the renderRow function
+  // overriding the renderRow function
   renderRow(restaurant) {
     const { navigateTo } = this.props;
 
@@ -77,10 +75,10 @@ class RestaurantsSmallList extends List {
           props: { restaurant }
         })}>
         <Row>
-          <Image style={%raw%}{{width:90, height:70}}{%endraw%} source={%raw%}{{ uri: restaurant.image && restaurant.image.url }}{%endraw%} />
+          <Image style={{width:90, height:70}} source={{ uri: restaurant.image && restaurant.image.url }} />
           <View styleName="vertical">
-              <Subtitle>{restaurant.name}</Subtitle>
-              <Caption>{restaurant.address}</Caption>
+            <Subtitle>{restaurant.name}</Subtitle>
+            <Caption>{restaurant.address}</Caption>
           </View>
           <Icon name="right-arrow" styleName="disclosure"/>
         </Row>
@@ -94,8 +92,8 @@ export default connect(
     (state) => ({
     restaurants: getCollection(state[ext()].allRestaurants, state)
   }),
-     (dispatch) => bindActionCreators({ navigateTo, find }, dispatch)
-)(RestaurantsSmallList);
+  { navigateTo, find }
+)(SmallList);
 ```
 
 Restaurants extension uses `CMS settings page`, so app owners can manage data in the app. Now we need to give them option to chose which layout they want to use. For that, we're going to use `layout settings page` from [shoutem-layouts](https://github.com/shoutem/extensions/tree/master/shoutem-layouts) extension.
@@ -110,8 +108,47 @@ For layout settings page to be able to resolve for which screens to show layout 
 
 Reference layout settings page in shortcut `adminPages` and extend the screens in `extension.json`.
 
-```JSON
+```JSON{9-10,15-17,30-33}
 #file: extension.json
+{
+  "name": "restaurants",
+  "version": "0.0.1",
+  "platform": "1.0.*",
+  "title": "Restaurants",
+  "description": "List of restaurants",
+  "screens": [{
+    "name": "List",
+    "title": "List with large images",
+    "image": "./server/assets/large-image-list.png"
+  }, {
+    "name": "Details"
+  }, {
+    "name": "SmallList",
+    "title": "List with small images",
+    "image": "./server/assets/small-image-list.png",
+    "extends": "@.List"
+  }],
+  "shortcuts": [{
+    "name": "Restaurants",
+    "title": "Restaurants",
+    "description": "Allow users to browse through list of restaurants",
+    "screen": "@.List",
+    "adminPages": [{
+      "page": "shoutem.cms.CmsPage",
+      "title": "Content",
+      "parameters": {
+        "schema": "@.Restaurants"
+      }
+    }, {
+      "page": "shoutem.layouts.LayoutPage",
+      "title": "Layout"
+    }]
+  }],
+  "dataSchemas": [{
+    "name": "Restaurants",
+    "path": "server/data-schemas/Restaurants.json"
+  }]
+}
 ```
 
 We also included additional properties like `title` and `image` to screens which will be shown in the layout selector, so they can look nicer. [Download this file]({{ site.baseurl }}/static/screen-layouts/assets.zip) including screen images, extract the folder and place it in the `server` folder of the extension. Here you can find the [list]({{ site.baseurl }}/docs/extensions/reference/extension) of all the available properties in `extension.json`. 
@@ -125,13 +162,14 @@ $ shoutem push
 Uploading `Restaurants` extension to Shoutem...
 Success!
 ```
+
 > #### Note
 > If you don't have this extension installed on any app, you can install with `shoutem install`. Add the screen through the builder, import the CSV file as described in the bottom of [Using cloud storage](/docs/extensions/getting-started/using-cloud-storage) chapter and run the preview.
 
 Default layout will be the `List` screen. Switch to `Layout` and select **List with small images**. This is the result which you should get:
 
 <p class="image">
-<img src='{{ site.baseurl }}/img/tutorials/screen-layouts/news-rss-layouts.png'/>
+<img src='{{ site.baseurl }}/img/tutorials/screen-layouts/restaurants-small-list.png'/>
 </p>
 
 Great job! Now you know how to create additional layouts for your extension.
