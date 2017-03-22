@@ -1,0 +1,18 @@
+<svg width="32" height="32" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:figma="http://www.figma.com/figma/ns">
+<title>ic_android</title>
+<desc>Created using Figma</desc>
+<g id="Canvas" transform="translate(-736 -490)" figma:type="canvas">
+<g id="ic_android" style="mix-blend-mode:normal;" figma:type="frame">
+<g id="Bounds" style="mix-blend-mode:normal;isolation:isolate;" opacity="0.01" figma:type="vector">
+<use xlink:href="#path0_fill" transform="translate(736 490)" fill="#D0021B" fill-opacity="0.1" style="mix-blend-mode:normal;"/>
+</g>
+<g id="Icon Shape" style="mix-blend-mode:normal;" figma:type="vector-operation">
+<use xlink:href="#path1_fill" transform="translate(738.667 490)" fill="#FFFFFF" style="mix-blend-mode:normal;"/>
+</g>
+</g>
+</g>
+<defs>
+<path id="path0_fill" fill-rule="evenodd" d="M 0 0L 32 0L 32 32L 0 32L 0 0Z"/>
+<path id="path1_fill" fill-rule="evenodd" d="M 19.7733 1.14661L 18.04 2.88C 20.04 4.33337 21.3333 6.68005 21.3333 9.33337L 5.33334 9.33337C 5.33334 6.68005 6.62668 4.34668 8.60001 2.89331L 6.85333 1.14661C 6.58667 0.880005 6.58667 0.466675 6.85333 0.199951C 7.12003 -0.0666504 7.53336 -0.0666504 7.80002 0.199951L 9.78668 2.17334C 10.8533 1.64001 12.0533 1.33337 13.3333 1.33337C 14.6 1.33337 15.8 1.64001 16.8533 2.17334L 18.8267 0.199951C 19.0934 -0.0666504 19.5067 -0.0666504 19.7733 0.199951C 20.04 0.466675 20.04 0.880005 19.7733 1.14661ZM 0 12.6666C 0 11.5601 0.893341 10.6666 2 10.6666C 3.10669 10.6666 4 11.5601 4 12.6666L 4 22C 4 23.1067 3.10669 24 2 24C 0.893341 24 0 23.1067 0 22L 0 12.6666ZM 6.66669 25.3334C 5.93335 25.3334 5.33334 24.7333 5.33334 24L 5.33334 10.6666L 21.3333 10.6666L 21.3333 24C 21.3333 24.7333 20.7333 25.3334 20 25.3334L 18.6667 25.3334L 18.6667 30C 18.6667 31.1067 17.7733 32 16.6667 32C 15.56 32 14.6667 31.1067 14.6667 30L 14.6667 25.3334L 12 25.3334L 12 30C 12 31.1067 11.1067 32 10 32C 8.89334 32 8 31.1067 8 30L 8 25.3334L 6.66669 25.3334ZM 24.6667 10.6666C 23.56 10.6666 22.6667 11.5601 22.6667 12.6666L 22.6667 22C 22.6667 23.1067 23.56 24 24.6667 24C 25.7733 24 26.6667 23.1067 26.6667 22L 26.6667 12.6666C 26.6667 11.5601 25.7733 10.6666 24.6667 10.6666ZM 10.6667 6.66663L 9.33334 6.66663L 9.33334 5.33337L 10.6667 5.33337L 10.6667 6.66663ZM 16 6.66663L 17.3333 6.66663L 17.3333 5.33337L 16 5.33337L 16 6.66663Z"/>
+</defs>
+</svg>

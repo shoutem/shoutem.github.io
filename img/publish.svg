@@ -1,0 +1,40 @@
+<svg width="80" height="32" viewBox="0 0 80 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:figma="http://www.figma.com/figma/ns">
+<title>Group 19</title>
+<desc>Created using Figma</desc>
+<g id="Canvas" transform="translate(-535 -3654)" figma:type="canvas">
+<g id="Group 19" style="mix-blend-mode:normal;" figma:type="frame">
+<g id="Rectangle 473" style="mix-blend-mode:normal;" figma:type="vector">
+<mask id="mask0_outline_ins">
+<use xlink:href="#path0_fill" fill="white" transform="translate(535 3654)"/>
+</mask>
+<g mask="url(#mask0_outline_ins)">
+<use xlink:href="#path1_stroke_2x" transform="translate(535 3654)" fill="#7ED321" style="mix-blend-mode:normal;"/>
+</g>
+</g>
+<g id="Group 16" style="mix-blend-mode:normal;" figma:type="frame">
+<g id="LIVE" style="mix-blend-mode:normal;" figma:type="text">
+<use xlink:href="#path2_fill" transform="translate(566 3661)" fill="#AAFD4F" style="mix-blend-mode:normal;"/>
+</g>
+<g id="Oval 2" style="mix-blend-mode:normal;" filter="url(#filter0_d)" figma:type="vector">
+<use xlink:href="#path3_fill" transform="translate(550 3667)" fill="#AAFD4F" style="mix-blend-mode:normal;"/>
+</g>
+</g>
+</g>
+</g>
+<defs>
+<filter id="filter0_d" filterUnits="userSpaceOnUse" x="545" y="3662" width="17" height="17" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<desc>type="dropShadow" x="0" y="0" size="5" spread="0" color="0.494118,0.827451,0.129412,0.24" blend="normal"</desc>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 255 0"/>
+<feOffset dx="0" dy="0"/>
+<feGaussianBlur stdDeviation="2.5"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0.494118 0 0 0 0 0.827451 0 0 0 0 0.129412 0 0 0 0.24 0"/>
+<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow"/>
+<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape"/>
+</filter>
+<path id="path0_fill" fill-rule="evenodd" d="M 0 4C 0 1.79086 1.79086 0 4 0L 76 0C 78.2091 0 80 1.79086 80 4L 80 28C 80 30.2091 78.2091 32 76 32L 4 32C 1.79086 32 0 30.2091 0 28L 0 4Z"/>
+<path id="path1_stroke_2x" d="M 4 1L 76 1L 76 -1L 4 -1L 4 1ZM 79 4L 79 28L 81 28L 81 4L 79 4ZM 76 31L 4 31L 4 33L 76 33L 76 31ZM 1 28L 1 4L -1 4L -1 28L 1 28ZM 4 -1C 1.23858 -1 -1 1.23858 -1 4L 1 4C 1 2.34315 2.34315 1 4 1L 4 -1ZM 76 1C 77.6569 1 79 2.34315 79 4L 81 4C 81 1.23858 78.7614 -1 76 -1L 76 1ZM 79 28C 79 29.6569 77.6569 31 76 31L 76 33C 78.7614 33 81 30.7614 81 28L 79 28ZM 4 31C 2.34315 31 1 29.6569 1 28L -1 28C -1 30.7614 1.23858 33 4 33L 4 31Z"/>
+<path id="path2_fill" d="M 1.57169 14L 7.23969 14L 7.23969 12.557L 3.24869 12.557L 3.24869 4.77L 1.57169 4.77L 1.57169 14ZM 9.66284 14L 11.3398 14L 11.3398 4.77L 9.66284 4.77L 9.66284 14ZM 16.9419 14L 18.6059 14L 21.9729 4.77L 20.1789 4.77L 18.1379 10.789C 17.9559 11.322 17.7999 12.141 17.7869 12.141L 17.7609 12.141C 17.7479 12.141 17.5919 11.322 17.4099 10.789L 15.3819 4.77L 13.5749 4.77L 16.9419 14ZM 24.2074 14L 29.9404 14L 29.9404 12.557L 25.8844 12.557L 25.8844 10.074L 28.9914 10.074L 28.9914 8.631L 25.8844 8.631L 25.8844 6.213L 29.7324 6.213L 29.7324 4.77L 24.2074 4.77L 24.2074 14Z"/>
+<path id="path3_fill" fill-rule="evenodd" d="M 3.5 7C 5.433 7 7 5.433 7 3.5C 7 1.567 5.433 0 3.5 0C 1.567 0 0 1.567 0 3.5C 0 5.433 1.567 7 3.5 7Z"/>
+</defs>
+</svg>
