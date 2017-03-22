@@ -119,7 +119,7 @@ import { ext } from '../extension';
 #file: app/screens/List.js
 import { connect } from 'react-redux';
 
-class List extends Component {
+export class List extends Component {
   constructor(props) {
     super(props);
 
@@ -200,7 +200,7 @@ import { navigateTo } from '@shoutem/core/navigation';
 import { ext } from '../extension';
 import { connect } from 'react-redux';
 
-class List extends Component {
+export class List extends Component {
   constructor(props) {
     super(props);
 
