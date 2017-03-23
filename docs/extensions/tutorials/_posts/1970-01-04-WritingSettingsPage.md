@@ -8,31 +8,28 @@ section: Tutorials
 # Writing a settings page
 <hr />
 
-From [Getting started tutorial]({{ site.baseurl }}/docs/extensions/getting-started/introduction) you might remember a mention of _settings pages_. Settings pages are web pages that appear in Shoutem builder which you as a developer can write.
+From [Getting started tutorial]({{ site.baseurl }}/docs/extensions/getting-started/introduction) you might remember a mention of _settings pages_. Settings pages are web pages that appear in Shoutem builder which extension developers can write.
 
 ![Shortcut settings page example]({{ site.baseurl }}/img/tutorials/writting-settings-page/shortcut-settings-page.png "Shortcut settings page"){:.docs-component-image}
 
-Settings pages are used to enable application owners to customize the extension behaviour through the builder. You can use any web technology to write settings pages (pure HTML with jQuery, React or even AngularJS).
+Settings pages are used to enable app owners to customize the extension through the builder. You can use any web technology to write settings pages (pure HTML with jQuery, React or even AngularJS).
 
 ## Types of settings pages and default settings
 
-Pages are defined in `pages` root field in `extension.json` and can be referenced in 3 different places:
+Pages are defined in `pages` root field in `extension.json` and can be referenced in 3 different places (3 types of settings pages):
 
 - `settingsPages` in the root of `extension.json`: array of pages for adjusting global extension settings
 - `adminPages` in `shortcuts` field: array of pages for adjusting settings for shortcuts
 - `settingsPage` in `screens` field: single page for adjusting layout settings
 
-These are the 3 types of settings pages. On each of these places, adjacent property `settings` can be present which represents default settings these pages will receive. Read more in the [reference for settings types]({{ site.baseurl }}/docs/extensions/reference/settings-types).
+On each of these places, adjacent property `settings` can be present which represents default settings for either extension, shortcut or screen. Read more in the [reference for settings types]({{ site.baseurl }}/docs/extensions/reference/settings-types).
 
 ## Creating your first settings page
 
-The possibilities that you can do with settings pages are countless. In this tutorial, we'll show you an example of how to allow application owners to customize the simple text in the settings page and get that text in the extension. Final extension code can be found [here](https://github.com/shoutem/extension-examples/tree/master/hello-world-page).
+The possibilities that you can do with settings pages are endless. In this tutorial, we'll show you an example of how to allow app owners to enter simple text in the settings page and get it in the app. Final extension code can be found [here](https://github.com/shoutem/extension-examples/tree/master/hello-world-page).
 
 Initialize new extension project:
 
-```ShellSession
-$ mkdir hello-world-page && cd hello-world-page
-```
 ```ShellSession
 $ shoutem init hello-world-page
 Enter information about your extension. Press `return` to accept (defualt) values.
@@ -41,12 +38,18 @@ Title: Hello!
 Version: 0.0.1
 Description: Writing my first settings page!
 
-Extension initialized!
+...
+```
+
+Locate to extension folder:
+
+```ShellSession
+cd hello-world-page
 ```
 
 ### Creating plain settings page
 
-Create a plain (HTML and jQuery) settings `HelloWorldPage` page. Writing `React` and `AngularJS` settings page is covered in the end of this document.
+Create a plain (HTML and jQuery) settings `HelloWorldPage` page. Writing `React` and `AngularJS` settings page is covered in the end of this document, but you can use any technology when creating HTML settings page as well.
 
 ```ShellSession
 $ shoutem page add HelloWorldPage
@@ -55,13 +58,14 @@ Page `HelloWorldPage` is created in `server/pages/HelloWorldPage` folder!
 
 Page was added to `extension.json`:
 
-```JSON{6-9}
+```JSON{7-10}
 #file: extension.json
 {
   "name": "hello-world-page",
   "version": "0.0.1",
   "title": "Hello!",
   "description": "Writing my first settings page!",
+  "platform": "1.0.*",
   "pages": [{
     "name": "HelloWorldPage",
     "type": "html",
@@ -106,18 +110,19 @@ Hello World!
 <script src="https://static.shoutem.com/libs/iframe-resizer/3.5.8/iframeResizer.contentWindow.min.js"></script>
 <script src="https://static.shoutem.com/libs/api-sdk/0.1.6/api-sdk.js"></script>
 <script src="https://static.shoutem.com/libs/extension-sandbox/0.1.2/extension-sandbox.js"></script>
-<script src="helloWorld.js"></script>
+<script src="index.js"></script>
 </html>
 ```
 
 It's using:
 
 - CSS
-  - [Bootstrap v3](http://getbootstrap.com/)
-  - Web UI - adding Shoutem design on top of Bootstrap design
+  - Web UI - adding Shoutem components and design styled on top of [Bootstrap v3](http://getbootstrap.com/)
   - style.css - a place where you write your own CSS
 - JavaScript
+  - jQuery
   - [Bootstrap v3](http://getbootstrap.com/)
+  - iframeResizer - for managing the size of the iFrame in which settings page is set
   - api-sdk - exposing `shoutem` variable globally for easier access of Shoutem API
   - extension-sandbox - enabling the communication between your page and Shoutem builder
   - index.js - a place where you write your own JS code with lifecycle methods already prepared
@@ -164,19 +169,19 @@ This page is now created, but it's not referenced anywhere.
 
 Remember that there are 3 places where we can show settings pages. We're going to use this page as a `shortcut settings page`.
 
-Create a shortcut with a screen which we'll use later in the app:
+Create a screen with a shortcut which we'll use later in the app:
 
 ```ShellSession
-$ shoutem shortcut add ShowGreeting --screen=GreetingsScreen
+$ shoutem screen add GreetingScreen --shortcut ShowGreeting
 Enter shortcut information:
-
 Title: Show Greeting
 
+Title: Show Greeting
+Screen `GreetingScreen` is created in file `app/screens/GreetingScreen.js`!
 Shortcut `ShowGreeting` is created!
-Screen `GreetingsScreen` is created in file `app/screens/GreetingsScreen.js`!
-Shortcut and screen are connected.
-File `extension.json` was modified.
+Shortcut `ShowGreeting` opens `GreetingScreen` screen.
 File `app/extension.js` was modified.
+File `extension.json` was modified.
 ```
 
 Shortcut and screen were created and connected in `extension.json`. Reference the `HelloWorldPage` page in the `ShowGreeting` shortcut.
@@ -188,17 +193,18 @@ Shortcut and screen were created and connected in `extension.json`. Reference th
   "version": "0.0.1",
   "title": "Hello!",
   "description": "Writing my first settings page!",
+  "platform": "1.0.*",
   "shortcuts": [{
     "name": "ShowGreeting",
     "title": "Show Greeting",
-    "screen": "@.GreetingsScreen",
+    "screen": "@.GreetingScreen",
     "adminPages": [{
       "page": "@.HelloWorldPage",
       "title": "Greetings"
     }]
   }],
   "screens": [{
-    "name": "GreetingsScreen"
+    "name": "GreetingScreen"
   }],
   "pages": [{
     "name": "HelloWorldPage",
@@ -215,11 +221,11 @@ $ shoutem push
 Uploading `Hello!` extension to Shoutem...
 Success!
 ```
+
 ```ShellSession
 $ shoutem install --new HelloApp
-Installing `Hello!` extension to the new app...
-Extension successfully installed to the new app. Check it here:
-https://builder.shoutem.com/app/5128
+Extension is installed onto newly created `Restaurants` application.
+See it in browser: {{ site.shoutem.builderURL }}/app/{{ site.example.appId }}
 ```
 
 Open the link from the terminal. Click to `Add Screen` and add shortcut to your app. This is what you should see:
@@ -317,7 +323,7 @@ Finally, let's add default setting in `extension.json`, so there's some value on
   "shortcuts": [{
     "name": "ShowGreeting",
     "title": "Show Greeting",
-    "screen": "@.GreetingsScreen",
+    "screen": "@.GreetingScreen",
     "adminPages": [{
       "page": "@.HelloWorldPage",
       "title": "Greetings"
@@ -327,7 +333,7 @@ Finally, let's add default setting in `extension.json`, so there's some value on
     }
   }],
   "screens": [{
-    "name": "GreetingsScreen"
+    "name": "GreetingScreen"
   }],
   "pages": [{
     "name": "HelloWorldPage",
@@ -349,10 +355,10 @@ Success!
 
 ### Accessing the shortcut settings in the application
 
-All that is left to do is to access the shortcut in the `GreetingsScreen`. Check setting types reference to see how to get it. Update screen file:
+All that is left to do is to access the shortcut in the `GreetingScreen`. Check setting types reference to see how to get it. Update screen file:
 
 ```JS{6,11-16}
-#file: app/screens/GreetingsScreen.js
+#file: app/screens/GreetingScreen.js
 import React, {
   Component,
 } from 'react';
@@ -361,7 +367,7 @@ import {
   Title,
 } from '@shoutem/ui';
 
-export default class GreetingsScreen extends Component {
+export default class GreetingScreen extends Component {
   render() {
     const { shortcut } = this.props;
     const { greeting } = shortcut.settings;
