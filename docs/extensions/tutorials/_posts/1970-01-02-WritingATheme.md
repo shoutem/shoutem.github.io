@@ -13,7 +13,7 @@ Shoutem comes with a dozen of available themes, but if you want a custom one, yo
 - Theme variables: schema for Shoutem builder describing what application owners can customize in your theme
 
 > #### Note
-> This tutorial continues on [Getting started](http://shoutem.github.io/docs/extensions/getting-started/introduction). If you don't have an app which is result from Getting started chapter, find the `Restaurants` extension on [Github](/docs/coming-soon), install it onto new app and fill with some restaurants.
+> This tutorial continues on [Getting started](http://shoutem.github.io/docs/extensions/getting-started/introduction). If you don't have an app which is result from Getting started chapter, find the `Restaurants` extension on [Github](https://github.com/shoutem/extension-examples/tree/master/restaurants-getting-started), install it onto new app and fill with some restaurants.
 
 ## Creating a theme
 
@@ -61,7 +61,7 @@ Extension file was just modified:
 }
 ```
 
-Check `app/themes/restaurant.js` file. It's a copy of [Rubicon theme](/docs/coming-soon), Shoutem's default theme.
+Check `app/themes/restaurant.js` file. It's a copy of Shoutem's default theme - Rubicon.
 
 Property `showcase`, which is empty, is an array of images and videos that will showcase your theme. Download prepared [showcase](/docs/coming-soon) and copy it to `server/assets` folder. Change `showcase` to:
 
@@ -223,7 +223,7 @@ Add the following styling rules to the beginning of exported object:
 
 ```JavaScript{1,6-14}
 #file: app/themes/restaurant.js
-import { ext } from '../const';
+import { ext } from '../extension';
 
 // constants ...
 
@@ -282,7 +282,7 @@ Open `Style` tab and choose `Customize theme`. Theme variables are grouped into 
   },
   "layout": {
     "sections": [{
-      "title": "Restaurants"
+      "title": "Restaurants",
       "properties": ["subtitleColor"]
     }, {
       // other sections
@@ -305,7 +305,7 @@ export default (variables = {}) => ({
       fontSize: 15,
     },
     subtitle: {
-      color: vars.subtitleColor
+      color: variables.subtitleColor,
       backgroundColor: 'white'
     }
   },

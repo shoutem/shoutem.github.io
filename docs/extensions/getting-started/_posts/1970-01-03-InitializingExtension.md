@@ -63,9 +63,9 @@ restaurants/
 
 Let's describe the structure:
 
-- `app/`: Folder with files for functionalities in the app
-- `server/`: Folder with files for customizing extension over Shoutem builder
-- `extension.json`: Extension general information
+- `app/`: Folder where you will keep your mobile app side code
+- `server/`: Folder where you will keep your server side code
+- `extension.json`: File that describes your extension
 
 Specific parts will be described soon.
 
