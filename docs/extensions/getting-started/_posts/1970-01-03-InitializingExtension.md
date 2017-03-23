@@ -63,7 +63,7 @@ restaurants/
 
 Let's describe the structure:
 
-- `app/`: Folder where you will keep your client side code
+- `app/`: Folder where you will keep your mobile app side code
 - `server/`: Folder where you will keep your server side code
 - `extension.json`: File that describes your extension
 
