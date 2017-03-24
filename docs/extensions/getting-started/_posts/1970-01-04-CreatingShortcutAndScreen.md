@@ -109,7 +109,7 @@ Go to `Custom` under `Add Screen` modal in Shoutem builder. You can finally see 
 
 Click on the `Restaurants`, which will get that shortcut inserted into the navigation.
 
-Start the preview now or check out your app on the phone using Mobilizer app.
+Start the preview now to check out your app.
 
 > #### Note
 > It might take some time while the app preview shows. Every time you change an extension, we need to rebuild app using that extension. Development process is much faster with [local development environment]({{ site.baseurl }}/docs/extensions/tutorials/setting-local-environment), but you're fine without it for passing this tutorial.
@@ -118,5 +118,10 @@ Start the preview now or check out your app on the phone using Mobilizer app.
 <img src='{{ site.baseurl }}/img/getting-started/extension-hello-world.png'/>
 </p>
 
+You can also get your app on the phone using Mobilizer app. The easiest way to get the Mobilizer on your phone is to scan the QR code from the preview when you click on **PREVIEW ON DEVICE**.
 
-In the preview, you can see the _Hello World_ screen. Let's put some UI components on the screen.
+<p class="image">
+<img src='{{ site.baseurl }}/img/getting-started/qr.png'/>
+</p>
+
+Our app only has a simple  _Hello World_ screen. Let's put some UI components on the screen.
