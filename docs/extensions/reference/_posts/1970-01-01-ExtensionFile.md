@@ -11,7 +11,7 @@ The main file that describes every extension is `extension.json`, which is locat
 
 ## Structure of extension.json
 
-Following structure shows only `root` fields of the extension.json. Detailed description about each of those fields is [below](#fields).
+Following structure shows only `root` fields of the extension.json. Detailed description about each of those fields is below.
 
 ```json
 {
@@ -27,7 +27,6 @@ Following structure shows only `root` fields of the extension.json. Detailed des
   "icon": "server/assets/extension/icon.png",
 
   // optional
-  "defaultLocale": "en",
   "settingsPages": [{...}],
   "settings": {...},
 
@@ -41,11 +40,11 @@ Following structure shows only `root` fields of the extension.json. Detailed des
 }
 ```
 
-## Identifying and referencing extension parts
+## Defining and referencing extension parts
 
-As you see in _Structure of extension.json_ chapter, extension exports multiple extension parts (shortcuts, screens, dataSchemas, pages, themes, themeVariables). In order to be able to use these extension parts, we need to identify them, so we can later reference them in other parts. Identifying is done with `name` field which value needs to be unique for that extension part (`List` can be only used for 1 shortcut, but also for 1 screen, etc.). 
+As you see in _Structure of extension.json_ chapter, extension exports multiple extension parts (shortcuts, screens, dataSchemas, pages, themes, themeVariables). In order to be able to use these extension parts, we need to define them, so we can later reference them in other parts. Defining is done in `name` field which value needs to be unique for that extension part (name `List` can be only used for 1 shortcut, but also for 1 screen, etc.). 
 
-On the other hand, when referencing extension parts, fully qualified name needs to be used. Fully qualified name of extension is done by prefixing `developerName.` to `name` field (for above example written by Shoutem as developer, extension would have identity of `shoutem.restaurants`). Fully qualified name of extension parts is done by suffixing `developerName.extensionName.` with the unique identifier for that extension part, e.g. `shoutem.restaurants.List` for shortcut. Shorthand for `developerName.extensionName.` prefix is `@.`, so we can reference it with `@.List` instead.
+On the other hand, when referencing extension parts, fully qualified name needs to be used. Fully qualified name of **extension** is done by prefixing `<developer-name>.` to `name` field (for `restaurants` extension developed by `shoutem`, extension would have unique identifier `shoutem.restaurants`). Fully qualified name of **extension parts** is done by suffixing `<developer-name>.<extension-name>.` with the unique identifier for that extension part, e.g. `shoutem.restaurants.List` for shortcut. If you're referencing the extension part from within the same extension, use `@.` instead of `<developer-name>.<extension-name>.` (e.g. `@.List`).
 
 
 ## Fields
@@ -62,7 +61,7 @@ Required field. Version of your extension.
 
 #### platform
 
-Required field. Version of [Shoutem platform]({{ site.baseurl }}/docs/extensions/reference/platform) which includes the app project that your extension will be built with. This defines the version of React, React Native, Redux and some other packages.
+Required field. Version of [Shoutem platform]({{ site.baseurl }}/docs/extensions/reference/platform), which defines versions of React, React Native, Redux and some other packages.
 
 #### title
 
@@ -74,19 +73,15 @@ Description of your extension.
 
 #### website
 
-Website showing your extension.
+Website that promotes your extension.
 
 #### icon
 
 Path to extension's icon that will be present in Shoutem Extension Market. Store the icon in `server` asset's folder, as it will be used on Shoutem's server side.
 
-#### defaultLocale
+#### settingsPages
 
-Default locale of your extension. Check [localization](/docs/coming-soon) on how to localize your extension.
-
-#### settingsPage
-
-Array of [extension pages](/docs/coming-soon) used to manage the global settings of the extension.
+Array of [extension settings pages](/docs/extensions/reference/settings-types) used to manage the global settings of the extension.
 
 ```json
 [{
@@ -107,11 +102,11 @@ Each object in settings pages array, settings page object, consist of these fiel
 
 - `page`: Required field, references the extension page
 - `title`: Title of extension page
-- `parameters`: Dictionary of arbitrary key/value pairs that will be passed to admin page instance
+- `parameters`: Dictionary of arbitrary key/value pairs that will be passed to extension settings page
 
 #### settings
 
-Dictionary of arbitrary key/value pairs that represent default extensions's settings passed to settings pages objects.
+Dictionary of arbitrary key/value pairs that represent **default** extensions's settings passed to settings pages objects.
 
 ```json
 {
@@ -130,12 +125,12 @@ Dictionary of arbitrary key/value pairs that represent default extensions's sett
 
   // required (pick one)
   "screen": "@.List",
-  "action": "visitRestaurants"
+  "action": "@.visitRestaurants"
 
   // recommended
   "title": "Restaurants",
   "description": "Allow users...",
-  "iconUrl": "server/assets/shortcuts/restaurants-list.png",
+  "icon": "server/assets/shortcuts/restaurants-list.png",
 
   // optional
   "type": "navigation",
@@ -160,13 +155,13 @@ Dictionary of arbitrary key/value pairs that represent default extensions's sett
 Each object in shortcuts array, shortcut object, consists of these fields:
 
 - `name`: Required field, defines shortcut's identity
-- `screen/action`: Shortcut can either open a `Screen` or call an `Action`
+- `screen/action`: Shortcut can either open a `Screen` or call an `Action` (see example in [Shoutem Auth](https://github.com/shoutem/extensions/blob/master/shoutem-auth/extension.json) extension)
 - `title`: Shortcut's title
 - `description`: Shortcut's description
-- `iconUrl`: Path to shortcut's icon that will be shown in builder. Store in `server` asset's folder
+- `icon`: Path to shortcut's icon that will be shown in builder. Store in `server` asset's folder
 - `type`: Indicates the type of shortcut. It can be `navigation` or `undefined`. If `navigation`, it will be possible to nest other shortcuts below the current
 - `adminPages`: Array of shortcut's admin pages. Admin page object inside of array consists of:
-  - `page`: Required field, references an [extension page](/docs/coming-soon)
+  - `page`: Required field, references an [settings page](/docs/extensions/tutorials/writing-settings-page)
   - `title`: Title of admin page
   - `parameters` Dictionary of arbitrary key/value pairs that will be passed to admin page instance
 - `settings`: Dictionary of arbitrary key/value pairs that represent default Shortcut's settings passed to admin pages
@@ -218,16 +213,16 @@ Screens are nothing more than React components which represent full mobile scree
 Each object in screens array, screen object, consists of these fields:
 
 - `name`: Required field, defines screen's identity
-- `title`: Screen's title that will be shown in [layout selector](/docs/coming-soon)
+- `title`: Screen's title that will be shown in [layout selector](/docs/extensions/tutorials/screen-layouts)
 - `image`: Path to screen's image that shows it's layout
 - `navigatesTo`: Array of key/value pairs that indicates to which screens the current one can navigate to
 - `settingsPage`: Screen's settings page. Object consists of:
-  - `page`: Required field, references an [extension page](/docs/coming-soon)
+  - `page`: Required field, references an [settings page](/docs/extensions/tutorials/writing-settings-page)
   - `parameters`: Dictionary of arbitrary key/value pairs that will be passed to settings page instance
 - `settings`: Dictionary of arbitrary key/value pairs that represent default Shortcut's settings passed to admin pages
 - `extends`: References screen that the current one is extending
 
-In the example above, we included 2 screen objects inside of the `screens` array. We wanted to show you the usage of `extends` field. Extending makes it possible to [switch between multiple alternative layouts](/docs/extensions/tutorials/alternativelayouts).
+In the example above, we included 2 screen objects inside of the `screens` array. We wanted to show you the usage of `extends` field. Extending makes it possible to [switch between multiple screen layouts](/docs/extensions/tutorials/screen-layouts).
 
 
 #### dataSchemas
@@ -250,16 +245,17 @@ Each object in data schemas array, data schema object, consists of these fields:
 
 #### pages
 
-[Extension pages](/docs/coming-soon) are Webpages that extension can use for multiple extension parts:
+[Settings pages](/docs/extensions/reference/settings-types) are web pages written by extension developers. They can be used to manage 3 different types of settings:
 
 - global settings of the extensions (referenced from `settingsPages` in the root of extension.json)
-- settings of the shortcut (referenced from `adminPages` in the shortcut object)
+- settings of the shortcut instance (referenced from `adminPages` in the shortcut object)
 - settings of the screen (referenced from `settingsPage` in the screen object)
 
 ```json
 [{
   // required
   "name": "List",
+  "type": "html",
   "path": "server/assets/pages/tab-bar/index.html"
 }],
 ```
@@ -267,12 +263,13 @@ Each object in data schemas array, data schema object, consists of these fields:
 Each object in pages array, extensions page object, consists of these fields:
 
 - `name`: Required field, defines extension page's identity
+- `type`: Required field, defines type of an extension. Only `html` available for now
 - `path`: Required field, path to actual extension page implementation. Should be stored in `server` folder
 
 
 #### themes
 
-[Themes](/docs/coming-soon) represent files where you can provide set of styles for your UI components.
+[Themes](/docs/extensions/tutorials/writing-a-theme) represent files where you can provide set of styles for your UI components.
 
 ```json
 [{
@@ -345,7 +342,7 @@ Finally, here's the full example of extension.json:
     "title": "Restaurants",
     "description": "Allow users...",
     "screen": "@.list",
-    "iconUrl": "server/assets/extension/icon.png",
+    "icon": "theme://events.png",
     "adminPages": [{
       "page": "@.CmsPage",
       "title": "Content",

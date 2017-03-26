@@ -16,7 +16,7 @@ Make sure you understand concepts introduced in the [Getting started]({{ site.ba
 
 ## React Native environment
 
-Before setting up local environment for building Shoutem extensions, set up React Native environment as described in their [Getting started tutorial](https://facebook.github.io/react-native/docs/getting-started.html).
+Before setting up local environment for building Shoutem extensions, set up React Native environment as described in their [Getting started tutorial](https://facebook.github.io/react-native/docs/getting-started.html). Make sure you stricly pass through all the steps described there.
 
 <p class="image">
 <img src='{{ site.baseurl }}/img/tutorials/setting-local-environment/rn-getting-started.png'/>

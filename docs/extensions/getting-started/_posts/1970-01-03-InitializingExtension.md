@@ -8,7 +8,7 @@ section: Getting Started
 # Initializing extension
 <hr />
 
-Here's the mockup of the Restaurants extension that we've showed in the [Introduction]({{ site.baseurl }}/docs/getting-started/introduction). We're building **Restaurants** extension.
+Here's the mockup of the Restaurants extension that we've showed in the [Introduction]({{ site.baseurl }}/docs/extensions/getting-started/introduction). We're building **Restaurants** extension.
 
 
 <p class="image">
@@ -37,7 +37,7 @@ Extension initialized!
 We passed `restaurants` extension name to `shoutem init` command. Extension information is stored in `extension.json` file.
 
 > #### Note
-> In case you can't remember the structure of some command, type: `shoutem -h` or `shoutem <command> -h` where you should replace '<command>' with one of the [CLI commands]({{ site.baseurl }}/docs/extensions/reference/cli).
+> In case you can't remember the structure of some command, type: `shoutem -h` or `shoutem <command> -h` where you should replace `<command>` with one of the [CLI commands]({{ site.baseurl }}/docs/extensions/reference/cli).
 
 Locate to extension folder:
 
@@ -63,9 +63,9 @@ restaurants/
 
 Let's describe the structure:
 
-- `app/`: Folder with files for functionalities in the app
-- `server/`: Folder with files for customizing extension over Shoutem builder
-- `extension.json`: Extension general information
+- `app/`: Folder where you will keep your mobile app side code
+- `server/`: Folder where you will keep your server side code
+- `extension.json`: File that describes your extension
 
 Specific parts will be described soon.
 

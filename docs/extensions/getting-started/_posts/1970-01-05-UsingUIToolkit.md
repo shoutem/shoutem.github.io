@@ -33,7 +33,7 @@ import {
 import { NavigationBar } from '@shoutem/ui/navigation';
 ```
 
-We prepared mockup restaurants data for you. Download [this compressed file](/restaurants/restaurants.zip), extract it and copy the extracted `assets` folder inside of the `app` folder. The `assets` folder contain static restaurants data in `restaurants.json` file.
+We prepared mockup restaurants data for you. Download [this compressed file](/static/getting-started/restaurants.zip), extract it and copy the extracted `assets` folder inside of the `app` folder. The `assets` folder contain static restaurants data in `restaurants.json` file.
 
 Define a method in `List` class that returns an array of restaurants.
 
@@ -119,7 +119,7 @@ import { ext } from '../extension';
 #file: app/screens/List.js
 import { connect } from 'react-redux';
 
-class List extends Component {
+export class List extends Component {
   constructor(props) {
     super(props);
 
@@ -200,7 +200,7 @@ import { navigateTo } from '@shoutem/core/navigation';
 import { ext } from '../extension';
 import { connect } from 'react-redux';
 
-class List extends Component {
+export class List extends Component {
   constructor(props) {
     super(props);
 
