@@ -8,6 +8,7 @@
 @import "variables";
 @import "footer";
 @import "menu-overlay";
+@import "cards";
 
 h1{
     margin-top: 70px;
@@ -510,7 +511,8 @@ pre[data-line] {
     }
 
     .section {
-        width: 870px;
+        width: 100%;
+        max-width: 870px;
 
         &.section-intro {
             margin-top: 48px;
@@ -522,29 +524,30 @@ pre[data-line] {
             clear: both;
         }
 
-        h2 {
-            font-size: 13px;
-            font-weight: bold;
-            line-height: 32px;
-            letter-spacing: 1px;
-            color: rgba(#444f6c, 0.7);
-            text-transform: uppercase;
-            padding: 27px 0 32px;
-            border-bottom: 1px solid rgba(#ededed, 0.7);
-        }
+    }
 
-        h3 {
-            line-height: 32px;
-            font-weight: 300;
-            margin-top: 48px;
-        }
+    h2 {
+        font-size: 13px;
+        font-weight: bold;
+        line-height: 32px;
+        letter-spacing: 1px;
+        color: rgba(#444f6c, 0.7);
+        text-transform: uppercase;
+        padding: 27px 0 32px;
+        border-bottom: 1px solid rgba(#ededed, 0.7);
+    }
 
-        p {
-            font-size: 15px;
-            font-weight: normal;
-            line-height: 25px;
-            color: #888fa1;
-        }
+    h3 {
+        line-height: 32px;
+        font-weight: 300;
+        margin-top: 48px;
+    }
+
+    p {
+        font-size: 15px;
+        font-weight: normal;
+        line-height: 25px;
+        color: #888fa1;
     }
 
     .intro-video {
@@ -616,6 +619,142 @@ pre[data-line] {
         img {
             display: block;
             margin: 32px 0 16px;
+        }
+    }
+
+    .card {
+        text-decoration: none;
+        max-width: 260px;
+        
+        .card-title {
+            margin-top: 12px;
+        }
+
+        .card-image {
+            min-height: 148px;
+            background: #444f6c;
+            text-align: center;
+
+            img {
+                margin-top: 24px;
+            }
+
+            &.extensions img {
+                margin-top: 32px;
+                margin-left: 18px;
+            }
+
+            &.themes img {
+                margin-top: 36px;
+            }
+        }
+
+        .card-content {
+            padding: 24px;
+
+            p:last-child {
+                margin-bottom: 0;
+            }
+        }
+
+        .card-category {
+            font-size: 12px;
+            font-weight: bold;
+            color: #888fa1;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            line-height: initial;
+        }
+
+        .card-time {
+            @include headline(14px, 24px, $chapterfooter);
+            @include flexcontainer();
+            justify-content: initial;
+
+            color: #969CAC;
+            font-size: 14px;
+            font-weight: normal;
+
+            .icon-time {
+                display: inline-block;
+                @include logoimage('../img/icon-time.svg', 19px, 19px);
+                margin-right: 8px;
+                position: relative;
+                top: -2px;
+            }
+
+            .difficulty {
+                padding-left: 19px;
+                position: relative;
+
+                &::before {
+                    content: "";
+                    position: absolute;
+                    width: 4px;
+                    height: 4px;
+                    left: 8px;
+                    top: calc(50% - 3px);
+                    background: #969CAC;
+                    border-radius: 50%;
+                }
+            }
+        }
+    }
+
+    .list-cards.row-2 {
+        .card {
+            .card-title {
+                font-size: 15px;
+            }
+
+            .card-time {
+                margin-top: 48px;
+            }
+        }
+    }
+
+    .logotypes {
+        margin: 44px 0 0;
+        padding: 0;
+        list-style: none;
+
+        li {
+            margin: 0;
+            padding: 88px 0 0;
+            width: 25%;
+            float: left;
+            font-size: 14px;
+            font-weight: normal;
+            line-height: 22px;
+            background: url(../img/overview/logo-js.svg) 0 0 no-repeat;
+
+            &.react-native {
+                background-image: url(../img/overview/icon-react-native.svg);
+            }
+
+            &.shoutem-ui-toolkit {
+                background-image: url(../img/overview/icon-ui-toolkit.svg);
+            }
+
+            &.code-editor {
+                background-image: url(../img/overview/icon-code-editor.svg);
+            }
+        }
+    }
+
+    .section-faq {
+        padding-bottom: 120px;
+
+        dt,
+        dd {
+            font-size: 15px;
+            line-height: 32px;
+            font-weight: 500;
+            color: #444f6c;
+        }
+
+        dd {
+            color: #888fa1;
         }
     }
 }
