@@ -5,7 +5,7 @@ title: Introduction
 section: My first extension
 ---
 
-# Getting Started
+# My first extension
 <hr />
 
 This tutorial shows how to write custom **Shoutem extensions** on Shoutem platform. It introduces the most important concepts. After completing it, you will have a running **mobile app** that uses the created **custom extension** with components from [Shoutem UI Toolkit]({{ site.baseurl }}/docs/ui-toolkit/introduction) and retrieves content from the [Shoutem Cloud]({{ site.baseurl }}/docs/cloud/introduction). Final result of extension is [open sourced](https://github.com/shoutem/extension-examples/tree/master/restaurants-getting-started).
