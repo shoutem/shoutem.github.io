@@ -1,29 +1,26 @@
 
 # Shoutem
 
-Shoutem is a platform for building beautiful React Native mobile apps. The easiest way to understand how Shoutem is used is to think of it as a Wordpress for mobile apps. Shoutem plugins are called Extensions. Entire apps are build out of extensions. 
-
-
-## Marketplace
-
-Shoutem has already prepared number of fully functional extensions to kick off your app development. You can use extensions like User Authentication that contains all screens like login, register etc. session handling logic and integration with various auth providers. Just install it in your app and use it. 
-You can find a full list of extension [here](https://github.com/shoutem/extensions). 
-
-
-## Customization
-
-Everything is open sourced. You can checkout Shoutem’s extensions and make modifications on them, or you can write your own from the scratch. Whatever fits your needs. 
-
-To make developer’s life easier, we’ve prepared number of tools and libraries like [Shoutem CLI](http://shoutem.github.io/docs/extensions/reference/cli), [Shoutem UI toolkit](https://shoutem.github.io/ui/) and even this developer’s [documentation](http://shoutem.github.io/). 
-
+Shoutem is a platform for building beautiful React Native mobile apps. The easiest way to understand what Shoutem is to think of it as the WordPress for mobile apps. Apps are divided into smaller modules, called `extensions`. On WordPress you build a website out of plugins; on Shoutem you build a mobile app out of extensions. This architecture helps us achieve big development efficiency.
 
 ## React Native
 
-Shoutem app is a React Native app. We designed extensions’ architecture with the goal not to add overhead over pure React Native. If you know React Native, you will know how to write Shoutem extensions.
+Shoutem app is a React Native app. We designed extensions’ architecture with the goal not to add overhead over pure React Native. If you know React Native, you will know how to write Shoutem extensions. If you're just starting with React Native, check out our [React Native School](https://school.shoutem.com/).
 
+## Marketplace
+
+Shoutem prepared and open sourced a lot of extensions that you can use in your apps. Don’t reinvent the wheel: reuse extensions which are suitable for you, customize them or create new ones. You can find the full list of extensions [here](https://github.com/shoutem/extensions).
+
+## Customization
+
+All our extensions are open sourced, so you can modify anything you want by simply forking them. You can also write your own ones from scratch.
+
+## Tools and docs
+
+We've prepared tools to speed up your extension development like [Shoutem CLI](http://shoutem.github.io/docs/extensions/reference/cli), [Shoutem UI toolkit](https://shoutem.github.io/ui/) for faster component development and documented all the concepts on this [developer's portal](http://shoutem.github.io/).
+
+If you find some bug or have a suggestion on how to improve anything, feel free to contribute or raise an issue!
+
+## Start creating your apps!
 
 If you’re not already using Shoutem, you can create your account [here](https://new.shoutem.com), and start developing beautiful mobile apps.
-
-
-
-[API Reference](https://github.com/shoutem/redux-io/tree/develop/docs/api)
