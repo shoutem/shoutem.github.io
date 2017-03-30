@@ -118,7 +118,7 @@ Start the preview now to check out your app.
 <img src='{{ site.baseurl }}/img/getting-started/extension-hello-world.png'/>
 </p>
 
-You can also get your app on the phone using Mobilizer app. The easiest way to get the Mobilizer on your phone is to scan the QR code from the preview when you click on **PREVIEW ON DEVICE**.
+You can also get your app on the phone using [Shoutem Preview app]({{ site.shoutem.previewApp }}). The easiest way to get the ** Shoutem Preview** app on your phone is to scan the QR code when you click on **PREVIEW ON DEVICE** button. Once the app is installed, it will load your app automatically.
 
 <p class="image">
 <img src='{{ site.baseurl }}/img/getting-started/qr.png'/>

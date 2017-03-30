@@ -18,7 +18,8 @@ url: "http://shoutem.github.io"
 # Variables
 shoutem:
   builderURL: "https://builder.beta.shoutem.com"
-  mobilizer: "/docs/coming-soon"
+  previewApp: "/docs/coming-soon"
+  cli: "https://www.npmjs.com/package/@shoutem/cli"
   school: "http://school.shoutem.com/"
 
 # Examples
