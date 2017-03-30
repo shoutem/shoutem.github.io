@@ -147,7 +147,7 @@ For bigger modifications, such as changing the data schema being used, it's not 
 
 ##### How to do it?
 
-[Here](https://github.com/shoutem/extension-examples/tree/master/extending-extension) is the open sourced extension as the final result of this chapter . Let's create a new extension:
+[Here](https://github.com/shoutem/extension-examples/tree/master/extending-extension) is the open sourced extension as the final result of this chapter. Let's create a new extension:
 
 ```ShellSession
 $ shoutem init news-rss
@@ -158,7 +158,7 @@ Extension initialized!
 Locate to created directory:
 
 ```ShellSession
-$ cd shoutem init news-rss
+$ cd shoutem news-rss
 ```
 
 Create a new screen which will extend the List screen from the original Shoutem **News RSS** extension:
@@ -209,7 +209,7 @@ Implement the `Item` component:
 
 ```javascript
 #file: app/components/Item.js
-import { components } from 'shoutem.rss-news';
+import ListArticleView from 'shoutem.rss-news';
 import moment from 'moment';
 import {
   TouchableOpacity,
@@ -221,7 +221,7 @@ import {
 
 import { getLeadImageUrl } from 'shoutem.rss';
 
-export default class Item extends components.ListArticleView {
+export default class Item extends ListArticleView {
   render() {
     const { article } = this.props;
     const dateFormat = moment(article.timeUpdated).isBefore(0) ?
@@ -244,7 +244,9 @@ export default class Item extends components.ListArticleView {
 }
 ```
 
-We're importing `components` from `shoutem.rss-news` extension. That means it's in the public API of the extension and that you can find it in the `app/index.js` file. Always check what is the public API of an extension either in the `README.md` file or in the source code.
+We're importing `ListArticleView` from `shoutem.rss-news` extension. That means it's in the public API of the extension and that you can find it in the `app/index.js` file. Always check what is the public API of an extension either in the `README.md` file or in the source code.
+
+As the `app` folder from extension is what will be bundled in the app, you could have imported it directly from `shoutem.rss/components/ListArticleView`. However, that's not recommended as it means it's not in the public API and could be changed.
 
 We've implemented new `render` function and deleted everything we didn't need to override from `ListArticleView` component.
 
