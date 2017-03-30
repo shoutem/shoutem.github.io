@@ -7,135 +7,11 @@
 <!-- <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/lib/codemirror/codemirror.css"> -->
 </head>
 
-<body class="documentation">
+<body class="documentation overview">
 	{% include navbar.html %}
 
 	<div id="sidebar-wrapper">
-
-		<ul class="sidebar-nav navigation level-1" id="menu">
-
-			<li class="hidden-md hidden-lg home-link"><a href="/">Shoutem Developers</a></li>
-
-			<!-- Extensions -->
-			<li>
-				<a class="menu-group-title" href="{{ site.baseurl }}/docs/extensions/overview">Shoutem Extensions</a>
-				<ul id="extensions" class="menu-group-wrapper level-2">
-					<!-- Getting started -->
-					<li>
-						<a class="menu-group-title" href="{{ site.baseurl }}/docs/extensions/getting-started/introduction">Getting Started</a>
-						<ul id="extensions-getting-started" class="menu-group-wrapper level-3">
-							<li><a href="{{ site.baseurl }}/docs/extensions/getting-started/introduction">Introduction</a></li>
-							<li><a href="{{ site.baseurl }}/docs/extensions/getting-started/development-environment">Setting up the environment</a></li>
-							<li><a href="{{ site.baseurl }}/docs/extensions/getting-started/initializing-extension">Initializing extension</a></li>
-							<li><a href="{{ site.baseurl }}/docs/extensions/getting-started/shortcut-and-screen">Creating screen and shortcut</a></li>
-							<li><a href="{{ site.baseurl }}/docs/extensions/getting-started/using-ui-toolkit">Using UI Toolkit</a></li>
-							<li><a href="{{ site.baseurl }}/docs/extensions/getting-started/using-cloud-storage">Using Cloud Storage</a></li>
-							<li><a href="{{ site.baseurl }}/docs/extensions/getting-started/working-with-data">Working with data</a></li>
-							<li><a href="{{ site.baseurl }}/docs/extensions/getting-started/publish">Publishing</a></li>
-						</ul>
-					</li>
-					<!-- Tutorials -->
-					<li>
-						<a class="menu-group-title" href="{{ site.baseurl }}/docs/extensions/tutorials/setting-local-environment">Tutorials</a>
-						<ul id="extensions-tutorials" class="menu-group-wrapper level-3">
-							<li><a href="{{ site.baseurl }}/docs/extensions/tutorials/setting-local-environment">Setting local environment</a></li>
-							<li><a href="{{ site.baseurl }}/docs/extensions/tutorials/writing-a-theme">Writing a theme</a></li>
-							<li><a href="{{ site.baseurl }}/docs/extensions/tutorials/alternative-layouts">Alternative layouts</a></li>
-							<li><a href="{{ site.baseurl }}/docs/extensions/tutorials/writing-settings-page">Writing settings page</a></li>
-							<li><a href="{{ site.baseurl }}/docs/extensions/tutorials/modifying-extensions">Modifying extensions</a></li>
-							<li><a href="{{ site.baseurl }}/docs/extensions/tutorials/using-native-api">Using native API</a></li>
-						</ul>
-					</li>
-					<!-- Reference -->
-					<li>
-						<a class="menu-group-title" href="{{ site.baseurl }}/docs/extensions/reference/extension">Reference</a>
-						<ul id="extensions-tutorials" class="menu-group-wrapper level-3">
-							<li><a href="{{ site.baseurl }}/docs/extensions/reference/extension">Extension file format</a></li>
-							<li><a href="{{ site.baseurl }}/docs/extensions/reference/platform">Platform</a></li>
-							<li><a href="{{ site.baseurl }}/docs/extensions/reference/extension-exports">Extension exports</a></li>
-							<li><a href="{{ site.baseurl }}/docs/extensions/reference/settings-types">Settings types</a></li>
-							<li><a href="{{ site.baseurl }}/docs/extensions/reference/theme-variables">Theme variables</a></li>
-							<li><a href="{{ site.baseurl }}/docs/extensions/reference/cli">CLI</a></li>
-						</ul>
-					</li>
-				</ul>
-			</li>
-
-			<!-- UI toolkit -->
-			<li>
-				<a class="menu-group-title" href="{{ site.baseurl }}/docs/ui-toolkit/introduction">Shoutem UI toolkit</a>
-				<ul id="ui-toolkit" class="menu-group-wrapper level-2">
-					<!-- Introduction -->
-					<li><a href="{{ site.baseurl }}/docs/ui-toolkit/introduction">Introduction</a></li>
-					<!-- Components -->
-					<li>
-						<a class="menu-group-title" href="{{ site.baseurl }}/docs/ui-toolkit/components/typography">Components</a>
-						<ul id="ui-toolkit-components" class="menu-group-wrapper level-3">
-							<li><a href="{{ site.baseurl }}/docs/ui-toolkit/components/typography">Typography</a></li>
-							<li><a href="{{ site.baseurl }}/docs/ui-toolkit/components/navigation-bar">NavigationBar</a></li>
-							<li><a href="{{ site.baseurl }}/docs/ui-toolkit/components/dropdown-menu">DropDownMenu</a></li>
-							<li><a href="{{ site.baseurl }}/docs/ui-toolkit/components/list-view">ListView</a></li>
-							<li><a href="{{ site.baseurl }}/docs/ui-toolkit/components/grid-view">GridView</a></li>
-							<li><a href="{{ site.baseurl }}/docs/ui-toolkit/components/cards">Cards</a></li>
-							<li><a href="{{ site.baseurl }}/docs/ui-toolkit/components/dividers">Dividers</a></li>
-							<li><a href="{{ site.baseurl }}/docs/ui-toolkit/components/rows">Rows</a></li>
-							<li><a href="{{ site.baseurl }}/docs/ui-toolkit/components/tiles">Tiles</a></li>
-							<!--<li><a href="{{ site.baseurl }}/docs/ui-toolkit/components/image-preview">ImagePreview</a></li>-->
-							<!--<li><a href="{{ site.baseurl }}/docs/ui-toolkit/components/horizontal-pager">HorizontalPager</a></li>-->
-							<!--<li><a href="{{ site.baseurl }}/docs/ui-toolkit/components/image-gallery">ImageGallery</a></li>-->
-							<li><a href="{{ site.baseurl }}/docs/ui-toolkit/components/spinner">Spinner</a></li>
-							<li><a href="{{ site.baseurl }}/docs/ui-toolkit/components/buttons">Buttons</a></li>
-							<li><a href="{{ site.baseurl }}/docs/ui-toolkit/components/image">Image</a></li>
-							<li><a href="{{ site.baseurl }}/docs/ui-toolkit/components/icons">Icons</a></li>
-							<li><a href="{{ site.baseurl }}/docs/ui-toolkit/components/view">View</a></li>
-							<li><a href="{{ site.baseurl }}/docs/ui-toolkit/components/screen">Screen</a></li>
-							<li><a href="{{ site.baseurl }}/docs/ui-toolkit/components/touchable-opacity">TouchableOpacity</a></li>
-							<li><a href="{{ site.baseurl }}/docs/ui-toolkit/components/headers">Headers</a></li>
-							<li><a href="{{ site.baseurl }}/docs/ui-toolkit/components/overlay">Overlay</a></li>
-							<li><a href="{{ site.baseurl }}/docs/ui-toolkit/components/text-input">TextInput</a></li>
-							<li><a href="{{ site.baseurl }}/docs/ui-toolkit/components/video">Video</a></li>
-							<li><a href="{{ site.baseurl }}/docs/ui-toolkit/components/lightbox">Lightbox</a></li>
-							<li><a href="{{ site.baseurl }}/docs/ui-toolkit/components/rich-media">RichMedia</a></li>
-						</ul>
-					</li>
-					<!-- Theme -->
-					<li>
-						<a href="{{ site.baseurl }}/docs/ui-toolkit/theme/introduction">Theme</a>
-					</li>
-					<!-- Animation -->
-					<li>
-						<a class="menu-group-title" href="{{ site.baseurl }}/docs/ui-toolkit/animation/introduction">Animation</a>
-						<ul id="ui-toolkit-animation" class="menu-group-wrapper level-3">
-							<li><a href="{{ site.baseurl }}/docs/ui-toolkit/animation/introduction">Introduction</a></li>
-							<li><a href="{{ site.baseurl }}/docs/ui-toolkit/animation/driver">Driver</a></li>
-							<li><a href="{{ site.baseurl }}/docs/ui-toolkit/animation/fade-in">FadeIn</a></li>
-							<li><a href="{{ site.baseurl }}/docs/ui-toolkit/animation/fade-out">FadeOut</a></li>
-							<li><a href="{{ site.baseurl }}/docs/ui-toolkit/animation/zoom-in">ZoomIn</a></li>
-							<li><a href="{{ site.baseurl }}/docs/ui-toolkit/animation/zoom-out">ZoomOut</a></li>
-							<li><a href="{{ site.baseurl }}/docs/ui-toolkit/animation/parallax">Parallax</a></li>
-							<li><a href="{{ site.baseurl }}/docs/ui-toolkit/animation/combining-animations">Combining Animations</a></li>
-						</ul>
-					</li>
-				</ul>
-			</li>
-
-			<!-- Shoutem Cloud -->
-			<li>
-			<a class="menu-group-title" href="{{ site.baseurl }}/docs/cloud/introduction">Shoutem Cloud</a>
-				<ul id="ui-toolkit" class="menu-group-wrapper level-2">
-					<!-- Introduction -->
-					<li><a href="{{ site.baseurl }}/docs/cloud/introduction">Introduction</a></li>
-					<li><a href="{{ site.baseurl }}/docs/cloud/data-schemas">Data Schemas Reference</a></li>
-					<li><a href="{{ site.baseurl }}/docs/cloud/redux-io">Redux IO</a></li>
-				</ul>
-			</li>
-
-			<li id="signup-button-menu" class="menu-button-signup hidden-md hidden-lg"><a href="#signup" class="button-signup">Stay informed</a></li>
-			<li class="sidelink hidden-md hidden-lg"><a href="http://www.shoutem.com">Shoutem Home</a></li>
-			<li class="sidelink hidden-md hidden-lg"><a href="http://www.shoutem.com/about">About</a></li>
-			<li class="sidelink hidden-md hidden-lg"><a href="http://www.shoutem.com/legal">Legal</a></li>
-			<li class="sidelink hidden-md hidden-lg"><a href="http://www.shoutem.com/contact">Contact us</a></li>
-		</ul>
+		{% include sidebar-nav.html %}
 	</div>
 
 	<div id="wrapper">
@@ -143,7 +19,7 @@
 		<div class="documentation-wrapper">
 			<div id="documentation">
 				<!-- It will work both on page and github markdown -->
-				{{ content }}
+				{% include overview-content.html %}
 			</div>
 		</div>
 

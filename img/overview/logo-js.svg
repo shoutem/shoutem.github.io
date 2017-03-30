@@ -1,0 +1,22 @@
+<svg width="63" height="63" viewBox="0 0 63 63" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:figma="http://www.figma.com/figma/ns">
+<title>logo-js</title>
+<desc>Created using Figma</desc>
+<g id="Canvas" transform="translate(-3705 -1739)" figma:type="canvas">
+<g id="logo-js" figma:type="frame">
+<g id="Unofficial_JavaScript_logo_2" figma:type="frame">
+<g id="Group" figma:type="frame">
+<g id="Rectangle-path" figma:type="vector">
+<use xlink:href="#path0_fill" transform="translate(3705 1739)" fill="#444F6C"/>
+</g>
+<g id="Shape" figma:type="vector-operation">
+<use xlink:href="#path1_fill" transform="translate(3721.59 1767.59)" fill="#FFFFFF"/>
+</g>
+</g>
+</g>
+</g>
+</g>
+<defs>
+<path id="path0_fill" fill-rule="evenodd" d="M 0 0L 63 0L 63 63L 0 63L 0 0Z"/>
+<path id="path1_fill" fill-rule="evenodd" d="M 31.5718 24.225C 28.6519 24.225 27.001 22.702 25.7319 20.63L 20.9209 23.425C 22.6589 26.859 26.2109 29.479 31.709 29.479C 37.3318 29.479 41.5188 26.559 41.5188 21.229C 41.5188 16.285 38.679 14.0861 33.6489 11.929L 32.1689 11.295C 29.6289 10.1949 28.5288 9.47595 28.5288 7.69995C 28.5288 6.26294 29.6279 5.16296 31.3618 5.16296C 33.062 5.16296 34.157 5.88 35.1719 7.69995L 39.782 4.73999C 37.8318 1.31006 35.126 0 31.3618 0C 26.075 0 22.6919 3.38 22.6919 7.81995C 22.6919 12.64 25.5298 14.92 29.802 16.74L 31.282 17.375C 33.9819 18.556 35.5918 19.275 35.5918 21.3051C 35.5918 22.999 34.0249 24.225 31.5718 24.225ZM 8.62891 24.188C 6.59497 24.188 5.74902 22.793 4.81909 21.1431L 0 24.0605C 1.396 27.015 4.14111 29.468 8.8811 29.468C 14.127 29.468 17.7209 26.678 17.7209 20.548L 17.7209 0.338013L 11.801 0.338013L 11.801 20.468C 11.801 23.427 10.574 24.188 8.62891 24.188Z"/>
+</defs>
+</svg>

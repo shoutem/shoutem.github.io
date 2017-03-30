@@ -69,7 +69,10 @@ jQuery(document).on("keydown", function(evt)
 	}
 });
 
-var shoutemAni = new ShoutemAnimation(".shoutem-ani");
+if( window.ShoutemAnimation ) {
+	var shoutemAni = new ShoutemAnimation(".shoutem-ani");
+}
+
 var isTouchDevice = "ontouchstart" in document.documentElement;
 
 if( typeof Dragdealer !== "undefined" )
