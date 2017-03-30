@@ -16,14 +16,18 @@ Fades out components wrapped by it.
   </video>
 </div>
 
-***Properties:***
+## API
+
+#### Props
 
 - `driver`: Driver that is running the animation
 - `children`: Components that will be affected by the animation
 - `inputRange`: Array `[from, to]` including a `'from' animated value` and `'to' animated value`
 
-***Usage:***
-
+## Example
+<br />  
+  
+#### JSX declaration
 ```javascript
 const driver = new ScrollDriver();
 

@@ -231,7 +231,7 @@ export default class Item extends components.ListArticleView {
       <TouchableOpacity key={article.id} onPress={this.onPress}>
         <Image
           styleName="featured"
-          source={{ uri: getLeadImageUrl(article) }}
+          source={% raw %}{{{% endraw %} uri: getLeadImageUrl(article) }}
         >
           <Tile>
             <Title styleName="md-gutter-bottom">{article.title}</Title>

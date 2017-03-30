@@ -7,9 +7,28 @@ section: UI toolkit
 
 # Tiles
 
-Tiles are a convenient way to display homogeneous content. They are often used in grid views. Children are rendered vertically in tiles, one below the other.
+Tiles are a convenient way to display homogeneous content. They are often used in grid views. Children are rendered vertically, one below the other.
 
-## Tile
+![Tile example]({{ site.baseurl }}/img/ui-toolkit/tiles/tile@2x.png "Tile"){:.docs-component-image}
+
+## API
+
+#### Props
+
+* Tile component doesn't have specific (custom) Props, however, it supports every prop that the standard React Native `View` component supports. For full list of available props, visit 
+[React Native View component documentation](https://facebook.github.io/react-native/docs/view.html "React Native View component documentation")  
+
+#### Style names
+
+* **clear**: sets the `clear` background color, as defined in Theme (usually transparent)
+* **small**: sets the fixed width to 145px and reduces margins and paddings
+* **text-centric**: centers content within container and applies standard margins
+* Nested `View` component can use the following Style name:
+  * **content**: applies the standard margins around the content in `View`
+
+## Examples
+
+### Tile
 ![Tile example]({{ site.baseurl }}/img/ui-toolkit/tiles/tile@2x.png "Tile"){:.docs-component-image}
 
 #### JSX Declaration
@@ -26,7 +45,7 @@ Tiles are a convenient way to display homogeneous content. They are often used i
 </Tile>
 ```
 
-## Tile + Icon
+### Tile + Icon
 ![Tile + Icon example]({{ site.baseurl }}/img/ui-toolkit/tiles/tile-icon@2x.png "Tile + Icon"){:.docs-component-image}
 
 #### JSX Declaration
@@ -47,7 +66,7 @@ Tiles are a convenient way to display homogeneous content. They are often used i
 </Tile>
 ```
 
-## Large (featured) Tile
+### Large (featured) Tile
 ![Large (featured) Tile example]({{ site.baseurl }}/img/ui-toolkit/tiles/large-tile@2x.png "Large Tile"){:.docs-component-image}
 
 #### JSX Declaration
@@ -63,7 +82,7 @@ Tiles are a convenient way to display homogeneous content. They are often used i
 </Image>
 ```
 
-## Large (featured) tile + Button + Sale tag
+### Large (featured) tile + Button + Sale tag
 ![Large (featured) tile + Button + Sale tag Tile example]({{ site.baseurl }}/img/ui-toolkit/tiles/large-tile-button-sale-tag@2x.png "Large Tile + Button + Sale tag"){:.docs-component-image}
 
 #### JSX Declaration
@@ -82,7 +101,7 @@ Tiles are a convenient way to display homogeneous content. They are often used i
 </Image>
 ```
 
-## Large (featured) tile + Button 
+### Large (featured) tile + Button 
 ![Large (featured) tile + Button Tile example]({{ site.baseurl }}/img/ui-toolkit/tiles/large-tile-button@2x.png "Large Tile + Button"){:.docs-component-image}
 
 #### JSX Declaration
@@ -100,7 +119,7 @@ Tiles are a convenient way to display homogeneous content. They are often used i
 </Image>
 ```
 
-## Large list item
+### Large list item
 ![Large list item Tile example]({{ site.baseurl }}/img/ui-toolkit/tiles/large-list-item@2x.png "Large list item"){:.docs-component-image}
 
 #### JSX Declaration
@@ -120,7 +139,7 @@ Tiles are a convenient way to display homogeneous content. They are often used i
 </Tile>
 ```
 
-## Large list item + Icon + Timestamp
+### Large list item + Icon + Timestamp
 ![Large list item + Icon + Timestamp Tile example]({{ site.baseurl }}/img/ui-toolkit/tiles/large-list-item-icon-timestamp@2x.png "Large list item + icon + timestamp"){:.docs-component-image}
 
 #### JSX Declaration
@@ -144,7 +163,7 @@ Tiles are a convenient way to display homogeneous content. They are often used i
 </Tile>
 ```
 
-## Large list item + Price tag
+### Large list item + Price tag
 ![Large list item + Price tag Tile example]({{ site.baseurl }}/img/ui-toolkit/tiles/large-list-item-price-tag@2x.png "Large list item + Price tag"){:.docs-component-image}
 
 #### JSX Declaration
@@ -162,7 +181,7 @@ Tiles are a convenient way to display homogeneous content. They are often used i
 </Image>
 ```
 
-## Large list item + Action icon
+### Large list item + Action icon
 ![Large list item + Action icon Tile example]({{ site.baseurl }}/img/ui-toolkit/tiles/large-list-item-action-icon@2x.png "Large list item + Action icon"){:.docs-component-image}
 
 #### JSX Declaration
@@ -181,7 +200,7 @@ Tiles are a convenient way to display homogeneous content. They are often used i
 </Image>
 ```
 
-## Detail square + Price tag
+### Detail square + Price tag
 ![Detail square + Price tag Tile example]({{ site.baseurl }}/img/ui-toolkit/tiles/detail-square-price-tag@2x.png "Detail square + Price tag"){:.docs-component-image}
 
 #### JSX Declaration
@@ -199,7 +218,7 @@ Tiles are a convenient way to display homogeneous content. They are often used i
 </Image>
 ```
 
-## Detail square + Button
+### Detail square + Button
 ![Detail square + Button Tile example]({{ site.baseurl }}/img/ui-toolkit/tiles/detail-square-button@2x.png "Detail square + Button"){:.docs-component-image}
 
 #### JSX Declaration
@@ -217,7 +236,7 @@ Tiles are a convenient way to display homogeneous content. They are often used i
 </Image>
 ```
 
-## Detail square + Button + Sale tag
+### Detail square + Button + Sale tag
 ![Detail square + Button + Sale tag Tile example]({{ site.baseurl }}/img/ui-toolkit/tiles/detail-square-button-sale-tag@2x.png "Detail square + Button + Sale tag"){:.docs-component-image}
 
 #### JSX Declaration
@@ -236,7 +255,7 @@ Tiles are a convenient way to display homogeneous content. They are often used i
 </Image>
 ```
 
-## Detail large + Price tag
+### Detail large + Price tag
 ![Detail large + Price tag Tile example]({{ site.baseurl }}/img/ui-toolkit/tiles/detail-large-price-tag@2x.png "Detail large + Price tag"){:.docs-component-image}
 
 #### JSX Declaration
@@ -254,7 +273,7 @@ Tiles are a convenient way to display homogeneous content. They are often used i
 </Image>
 ```
 
-## Detail large + Button
+### Detail large + Button
 ![Detail large + Button Tile example]({{ site.baseurl }}/img/ui-toolkit/tiles/detail-large-button@2x.png "Detail large + Button"){:.docs-component-image}
 
 #### JSX Declaration
@@ -272,7 +291,7 @@ Tiles are a convenient way to display homogeneous content. They are often used i
 </Image>
 ```
 
-## Detail large + Button + Sale tag
+### Detail large + Button + Sale tag
 ![Detail large + Button + Sale tag Tile example]({{ site.baseurl }}/img/ui-toolkit/tiles/detail-large-button-sale-tag@2x.png "Detail large + Button + Sale tag"){:.docs-component-image}
 
 #### JSX Declaration
@@ -290,11 +309,3 @@ Tiles are a convenient way to display homogeneous content. They are often used i
   </Tile>
 </Image>
 ```
-  
-#### Style Names
-
-* **text-centric**: centers content within container and applies standard margins
-* **clear**: sets the `clear` background color, as defined in Theme (usually transparent)
-* **small**: sets the fixed width to 145px and reduces margins and paddings
-* Nested `View` component can use the following Style name:
-  * **content**: applies the standard margins around the content in `View`

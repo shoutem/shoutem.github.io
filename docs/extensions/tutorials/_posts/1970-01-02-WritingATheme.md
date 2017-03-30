@@ -169,7 +169,7 @@ class List extends Component {
         screen: ext('Details'),
         props: { restaurant }
       })}>
-        <Image styleName="large-banner" source={{ uri: restaurant.image && restaurant.image.url  }}>
+        <Image styleName="large-banner" source={% raw %}{{{% endraw %} uri: restaurant.image && restaurant.image.url  }}>
           <Tile>
             <Title style={style.title}>{restaurant.name}</Title>
             <Subtitle style={style.subtitle}>{restaurant.address}</Subtitle>

@@ -7,7 +7,7 @@ section: UI toolkit Theme
 
 # Theme
 
-The React Native components style is usually defined as a static variable along with the component itself. This makes it easy to build self contained components that always look and behave the same way. On the other hand, it complicates building customizable (or skinnable) components that could have multiple styles which could be customized without touching the component's source code.
+The React Native components style is usually defined as a static variable along with the component itself. This makes it easy to build self-contained components that always look and behave the same way. On the other hand, it complicates building customizable (or skinnable) components that could have multiple styles which could be customized without touching the component's source code.
 
 ![Theme]({{ site.baseurl }}/img/ui-toolkit/theme.jpg "Theme"){:.docs-component-image}
 
@@ -33,7 +33,7 @@ import { StyleSheet } from 'react-native';
 export default class AvatarItem extends Component {
   render() {
     <View style={styles.container}>
-      <Image style={styles.avatarImage} source={{ uri: 'https://shoutem.github.io/img/ui-toolkit/examples/image-9.png' }} />
+      <Image style={styles.avatarImage} source={% raw %}{{{% endraw %} uri: 'https://shoutem.github.io/img/ui-toolkit/examples/image-9.png' }} />
       <Text style={styles.title}>John Doe</Text>
     </View>
   }
@@ -73,7 +73,7 @@ class AvatarItem extends Component {
     // connect styles to props.style defined by the theme
     const styles = this.props.style;
     <View style={styles.container}>
-      <Image style={styles.avatarImage} source={{ uri: 'https://shoutem.github.io/img/ui-toolkit/examples/image-9.png' }} />
+      <Image style={styles.avatarImage} source={% raw %}{{{% endraw %} uri: 'https://shoutem.github.io/img/ui-toolkit/examples/image-9.png' }} />
       <Text style={styles.title}>John Doe</Text>
     </View>
   }
@@ -104,7 +104,7 @@ export default connectStyle('com.example.AvatarItem', styles)(AvatarItem);
 
 The `connectStyle` function receives two arguments. The first one represents the fully qualified name that component will be referenced by in the theme, and the second one is the default component style. Fully qualified name of the component needs to have `namespace` prefix, separated with `.` from the component name.
 
-Any styles defined in the theme will be merged with the default style, and theme rules will override the rules from the default style. The style that is sent to `connectStyle` shouldn't be created using the `StyleSheet.create`. Style sheet will be created by the `connectStyle` function at appropriate time.
+Any styles defined in the theme will be merged with the default style, and theme rules will override the rules from the default style. The style that is sent to `connectStyle` shouldn't be created using the `StyleSheet.create`. Style sheet will be created by the `connectStyle` function at at appropriate time.
 
 ## Initialize the style provider 
 With those simple changes, we have a component that can receive styles from the outside. The only thing left to do is to initialize the style provider within the app, so that theme styles are correctly distributed to components. To do this, we need to initialize the `StyleProvider` component, and render any customizable components within it:
@@ -204,7 +204,7 @@ The `.dark`, and `.light` rules are card variants that can be activated by using
 ```
 
 ## Style exposed to children 
-The rest of the rules in the style object are rules that will be applied to child components of a card. Each of those rules has two components, the component type and the optional style name. The rule `*.card-content` will be available to child components of a card of any type. This rule can be applied to a child component by using the `styleName` prop, for example:
+The rest of the rules in the style object are rules that will be applied to child components of a card. Each of those rules has two components, the component type, and the optional style name. The rule `*.card-content` will be available to child components of a card of any type. This rule can be applied to a child component by using the `styleName` prop, for example:
 
 ```JSX
 <Card>
