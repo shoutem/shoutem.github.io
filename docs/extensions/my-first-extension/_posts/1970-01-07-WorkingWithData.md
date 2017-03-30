@@ -1,8 +1,8 @@
 ---
 layout: doc
-permalink: /docs/extensions/getting-started/working-with-data
+permalink: /docs/extensions/my-first-extension/working-with-data
 title: Working with data
-section: Getting Started
+section: My first extension
 ---
 
 # Working with data
@@ -25,7 +25,7 @@ export default combineReducers({
 });
 ```
 
-We've used `ext` function to get schema full name. Export the root reducer in `app/index.js` file:
+We've used `ext` function to get full schema name (`{{ site.example.devName }}.restaurants.Restaurants`). Root reducer needs to be exported from `app/index.js` as `reducer`, so app can find it:
 
 ```javascript{4,9}
 #file: app/index.js
@@ -39,6 +39,8 @@ export const screens = extension.screens;
 
 export { reducer };
 ```
+
+Find more information about extension parts [here]({{ site.baseurl }}/docs/extensions/reference/extension-exports).
 
 We will fetch restaurants from **Shoutem Cloud Storage** in `List` screen with `find` action creator. Also, we'll use 3 helper functions from the `@shoutem/redux-io` package:
  
@@ -216,7 +218,7 @@ Success!
 Everything should work as a charm!
 
 <p class="image">
-<img src='{{ site.baseurl }}/img/getting-started/working-with-data.png'/>
+<img src='{{ site.baseurl }}/img/my-first-extension/working-with-data.png'/>
 </p>
 
 That's it! You've done it. You just made your first extension using **Shoutem UI Toolkit** and **Shoutem Cloud Storage**. Great job!

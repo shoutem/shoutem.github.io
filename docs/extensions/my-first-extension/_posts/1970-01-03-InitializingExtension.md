@@ -1,18 +1,18 @@
 ---
 layout: doc
-permalink: /docs/extensions/getting-started/initializing-extension
+permalink: /docs/extensions/my-first-extension/initializing-extension
 title: Initializing extension
-section: Getting Started
+section: My first extension
 ---
 
 # Initializing extension
 <hr />
 
-Here's the mockup of the Restaurants extension that we've showed in the [Introduction]({{ site.baseurl }}/docs/extensions/getting-started/introduction). We're building **Restaurants** extension.
+Here's the mockup of the Restaurants extension that we've showed in the [Introduction]({{ site.baseurl }}/docs/extensions/my-first-extension/introduction). We're building **Restaurants** extension.
 
 
 <p class="image">
-<img src='{{ site.baseurl }}/img/getting-started/extension-preview.jpg'/>
+<img src='{{ site.baseurl }}/img/my-first-extension/extension-preview.jpg'/>
 </p>
  
 Left app screen lists the restaurants and the right one shows the details of one specific restaurant. 
@@ -63,7 +63,7 @@ restaurants/
 
 Let's describe the structure:
 
-- `app/`: Folder where you will keep your mobile app side code
+- `app/`: Folder where you will keep your mobile app side code (this will be bundled into the app)
 - `server/`: Folder where you will keep your server side code
 - `extension.json`: File that describes your extension
 
@@ -110,13 +110,13 @@ See it in browser: `{{ site.shoutem.builderURL }}/app/{{ site.example.appId }}`
 Follow the link printed by the CLI. Go to `Extensions` tab in Shoutem builder. where you can see that your extension is installed on the application under **Custom** category.
 
 <p class="image">
-<img src='{{ site.baseurl }}/img/getting-started/extension-tab-extension.png'/>
+<img src='{{ site.baseurl }}/img/my-first-extension/extension-tab-extension.png'/>
 </p>
 
 However, when you go to `Screen` tab and click on `+` to add new screen, under `Custom` category we won't see our extension.
 
 <p class="image">
-<img src='{{ site.baseurl }}/img/getting-started/add-content-no-extension.png'/>
+<img src='{{ site.baseurl }}/img/my-first-extension/add-content-no-extension.png'/>
 </p>
 
 That's because `Add screen` modal shows only extensions which exposed starting screen.
