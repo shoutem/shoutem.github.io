@@ -163,31 +163,31 @@ Success!
 Go to `Shoutem Builder`. When you select `Restaurants` under `Main navigation`, you can see the Shoutem CMS page.
 
 <p class="image">
-<img src='{{ site.baseurl }}/img/getting-started/empty-admin-page.png'/>
+<img src='{{ site.baseurl }}/img/my-first-extension/empty-admin-page.png'/>
 </p>
 
 Click on `Create items` to start adding content. This will redirect you to `CMS` interface where you can manage the content for your extension.
 
 <p class="image">
-<img src='{{ site.baseurl }}/img/getting-started/empty-cms.png'/>
+<img src='{{ site.baseurl }}/img/my-first-extension/empty-cms.png'/>
 </p>
 
 Click on `Add item`. This will open a modal for inserting data for `Restaurants` model, which you defined with your data schema.
 
 <p class="image">
-<img src='{{ site.baseurl }}/img/getting-started/cms-modal.png'/>
+<img src='{{ site.baseurl }}/img/my-first-extension/cms-modal.png'/>
 </p>
 
-Add some restaurants. If you don't want to add the data manually, you can import it in Shoutem CMS. We prepared CSV (comma-separated values) file which you can use for importing. In the Shoutem CMS interface, open the 3 points `...` and select `Import` option. When asked to select the source, select `Comma-separated values`. For CSV data source, use this link: [static/getting-started/restaurants.csv](/static/getting-started/restaurants.csv). You can also upload CSV if you click `Browse`. Click `Next` and do the mapping. This is how the mapping should look like:
+Add some restaurants. If you don't want to add the data manually, you can import it in Shoutem CMS. We prepared CSV (comma-separated values) file which you can use for importing. In the Shoutem CMS interface, open the 3 points `...` and select `Import` option. When asked to select the source, select `Comma-separated values`. For CSV data source, use this link: [static/my-first-extension/restaurants.csv](/static/my-first-extension/restaurants.csv). You can also upload CSV if you click `Browse`. Click `Next` and do the mapping. This is how the mapping should look like:
 
 <p class="image">
-<img src='{{ site.baseurl }}/img/getting-started/import-csv.png'/>
+<img src='{{ site.baseurl }}/img/my-first-extension/import-csv.png'/>
 </p>
 
 Click `Next` and `X` afterwards in top right corner. Now you can see the data in the CMS settings page:
 
 <p class="image">
-<img src='{{ site.baseurl }}/img/getting-started/full-cms.png'/>
+<img src='{{ site.baseurl }}/img/my-first-extension/full-cms.png'/>
 </p>
 
 Although you've added them, your extension is still using static data. Let's fetch the data from Shoutem Cloud Storage using `@shoutem/redux-io` package.

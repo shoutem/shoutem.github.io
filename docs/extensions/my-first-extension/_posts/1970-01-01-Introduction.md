@@ -18,7 +18,7 @@ Here's a preview how completed app will look like.
 
 ## What are extensions?
 
-Extensions represent features in the app. Application owner picks extensions which he wants to use in the app through the Shoutem builder. Shoutem prepared a bunch of [open sourced](https://github.com/shoutem/extensions) extensions which you can easily customize to your needs.
+Extensions represent features in the app. Application owner picks extensions which he wants to use in the app through the Shoutem builder. Shoutem prepared a bunch of [open sourced](https://github.com/shoutem/extensions){:target="_blank"} extensions which you can easily customize to your needs.
 
 <p class="image">
 <img src='{{ site.baseurl }}/img/my-first-extension/shoutem-extensions.png'/>
@@ -45,4 +45,4 @@ On top of React and React Native, we're using [Redux](http://redux.js.org/), a l
 Even though we use Redux, you don't need to use anything or you can use any other state management library such as [MobX](https://github.com/mobxjs/mobx).
 
 ## Create extension
-Best way to understand the power of extensions, is to get your hands dirty. We'll start with setting up your development environment.
+Best way to understand the power of extensions, is to get your hands dirty. Let's initialize our project.

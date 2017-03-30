@@ -60,23 +60,58 @@ import React, {
 } from 'react';
 
 import {
-  Text
+  StyleSheet,
+  Text,
+  View
 } from 'react-native';
 
 export default class List extends Component {
   render() {
     return (
-      <Text>Hello World!</Text>
+      <View style={styles.container}>
+        <Text style={styles.text}>Hello World!</Text>
+      </View>
     );
   }
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  text: {
+    fontSize: 20,
+  },
+});
 ```
 
 In React, `Component` specifies its UI in the `render` method.
 
+## Extension in the app
+
+`app` folder from your extension will be bundled with the rest of extensions into the app. If your extension depends on some package, install it inside the `app` folder. For instance, installing [React Native swiper](https://github.com/leecade/react-native-swiper) is as easy as:
+
+Locate to the `app` folder:
+
+```ShellSession
+$ cd app/
+```
+
+Install the package and save the dependency in the `package.json`:
+
+```ShellSession
+$ npm install --save react-native-swiper
+```
+
+This package will be installed upon bundling your extension into the app. You can access it now in any file in `app` folder.
+
 ## Exporting extension parts
 
-Application needs to know where it can find extension parts, so it expects your `app` folder to contain file named `index.js`. This file exports all the extension parts, such as `screens`. You can find more information about extension parts [here]({{ site.baseurl }}/docs/extensions/reference/extension-exports). Current `index.js` looks as follows:
+App expects extensions to export their parts (e.g. screens) in `app/index.js` file (standard JS practice). Extensions are like libraries and other extensions can reuse what they export from `app/index.js`. The convention is that `app/index.js` is public API and shouldn't be changed quite often. Extensions can import parts from extension directly (e.g. `app/screens/List.js`), but this is not recommended.
+
+Current `index.js` looks as follows:
 
 ```JSX
 #file: app/index.js
@@ -101,7 +136,7 @@ Success!
 Go to `Custom` under `Add Screen` modal in Shoutem builder. You can finally see your `Restaurants` starting screen (shortcut) there. 
 
 <p class="image">
-<img src='{{ site.baseurl }}/img/getting-started/add-modal-shortcut.png'/>
+<img src='{{ site.baseurl }}/img/my-first-extension/add-modal-shortcut.png'/>
 </p>
 
 > #### Note
@@ -115,13 +150,13 @@ Start the preview now to check out your app.
 > It might take some time while the app preview shows. Every time you change an extension, we need to rebuild app using that extension. Development process is much faster with [local development environment]({{ site.baseurl }}/docs/extensions/tutorials/setting-local-environment), but you're fine without it for passing this tutorial.
 
 <p class="image">
-<img src='{{ site.baseurl }}/img/getting-started/extension-hello-world.png'/>
+<img src='{{ site.baseurl }}/img/my-first-extension/extension-hello-world.png'/>
 </p>
 
 You can also get your app on the phone using [Shoutem Preview app]({{ site.shoutem.previewApp }}). The easiest way to get the ** Shoutem Preview** app on your phone is to scan the QR code when you click on **PREVIEW ON DEVICE** button. Once the app is installed, it will load your app automatically.
 
 <p class="image">
-<img src='{{ site.baseurl }}/img/getting-started/qr.png'/>
+<img src='{{ site.baseurl }}/img/my-first-extension/qr.png'/>
 </p>
 
 Our app only has a simple  _Hello World_ screen. Let's put some UI components on the screen.

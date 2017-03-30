@@ -33,7 +33,9 @@ import {
 import { NavigationBar } from '@shoutem/ui/navigation';
 ```
 
-We prepared mockup restaurants data for you. Download [this compressed file](/static/getting-started/restaurants.zip), extract it and copy the extracted `assets` folder inside of the `app` folder. The `assets` folder contain static restaurants data in `restaurants.json` file.
+Notice we didn't need to install the `@shoutem/ui` package into `app` folder of our extension. That's because this package will be installed by the app into which extension is bundled. All packages which are installed by app can be found in `peerDependencies` of `app/package.json`.
+
+We prepared mockup restaurants data for you. Download [this compressed file](/static/my-first-extension/restaurants.zip), extract it and copy the extracted `assets` folder inside of the `app` folder. The `assets` folder contain static restaurants data in `restaurants.json` file.
 
 Define a method in `List` class that returns an array of restaurants.
 
@@ -91,7 +93,7 @@ Success!
 Since we changed the extension, the app preview will be shown after Shoutem builds the new app. `List` is now showing the list of restaurants. 
 
 <p class="image">
-<img src='{{ site.baseurl }}/img/getting-started/extension-rich-list.png'/>
+<img src='{{ site.baseurl }}/img/my-first-extension/extension-rich-list.png'/>
 </p>
 
 This looks exactly how we wanted.
@@ -345,7 +347,7 @@ Success!
 When you click on a row in the list, this is what you get:
 
 <p class="image">
-<img src='{{ site.baseurl }}/img/getting-started/extension-rich-details.png'/>
+<img src='{{ site.baseurl }}/img/my-first-extension/extension-rich-details.png'/>
 </p>
 
 That's exactly what we wanted to get! However, our app is using static data. Let's connect it to the **Shoutem Cloud**. 
