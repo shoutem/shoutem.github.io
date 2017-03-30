@@ -1,8 +1,8 @@
 ---
 layout: doc
-permalink: /docs/extensions/getting-started/using-cloud-storage
+permalink: /docs/extensions/my-first-extension/using-cloud-storage
 title: Using Cloud Storage
-section: Getting Started
+section: My first extension
 ---
 
 # Using Cloud Storage

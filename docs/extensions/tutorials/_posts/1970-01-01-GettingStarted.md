@@ -39,6 +39,10 @@ Your app can be previewed on your device or inside the Builder. Click the _Previ
 
 You can manage your app inside of the Builder. App structure can be seen under **Screens**. It starts with **Main navigation** which has multiple screens nested inside. Those are the starting screens of extensions which you can delete or add new ones by clicking on `+`. Delete **About** screen by selecting it, clicking on the three dots (`...`) on the top right corner and selecting **Delete**.
 
+<p class="image">
+<img src='{{ site.baseurl }}/img/tutorials/getting-started/delete-starting-screen.png'/>
+</p>
+
 Let's create new extension with `Hello World` screen and add it to the app.
 
 ## Create new extension
@@ -52,7 +56,7 @@ $ npm install -g @shoutem/cli
 > #### Note
 > If previous command fails because of _permission_ issues, you need to run it with `sudo` permission: :`sudo npm install -g @shoutem/cli`.
 
-Register your developer name. Use `shoutem login` command with Shoutem credentials ({{ site.example.devName }} is used for developer name in this example).
+Register your developer name. Use `shoutem login` command with Shoutem credentials ("{{ site.example.devName }}" is used for developer name in this example).
 
 ```ShellSession
 $ shoutem login
@@ -133,8 +137,8 @@ This is the result:
 <img src='{{ site.baseurl }}/img/tutorials/getting-started/hello-world.png'/>
 </p>
 
-Well done! You've just built your first app using your custom built extension!
+**Well done!** You've just built your first app using your custom built extension!
 
 ## What's next?
 
-To leverage the full power of Shoutem, we'd suggest you to go through [building extension]() tutorial. Before you do that, you might want to read how to [setup your local environment](). This will help you work on your extensions much faster locally, without needing to wait app to be built 5 minutes every time you change something.
+To leverage the full power of Shoutem, we'd suggest you to go through [My first extension]() tutorial, which explains the underlying concepts in more detail. Before you do that, you might want to read how to [setup your local environment](). This will help you work on your extensions much faster locally, without needing to wait app to be built 5 minutes every time you change something.

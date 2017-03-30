@@ -1,8 +1,8 @@
 ---
 layout: doc
-permalink: /docs/extensions/getting-started/introduction
+permalink: /docs/extensions/my-first-extension/introduction
 title: Introduction
-section: Getting Started
+section: My first extension
 ---
 
 # Getting Started
@@ -13,20 +13,15 @@ This tutorial shows how to write custom **Shoutem extensions** on Shoutem platfo
 Here's a preview how completed app will look like.
 
 <p class="image">
-<img src='{{ site.baseurl }}/img/getting-started/extension-preview.jpg'/>
+<img src='{{ site.baseurl }}/img/my-first-extension/extension-preview.jpg'/>
 </p>
 
 ## What are extensions?
-As shown in the following picture, every Shoutem app is made of smaller modules, which we call **extensions**.
+
+Extensions represent features in the app. Application owner picks extensions which he wants to use in the app through the Shoutem builder. Shoutem prepared a bunch of [open sourced](https://github.com/shoutem/extensions) extensions which you can easily customize to your needs.
 
 <p class="image">
-<img src='{{ site.baseurl }}/img/getting-started/apps-are-made-of-extensions.png'/>
-</p>
-
-Extensions represent features in the app. Application owner picks extensions which he wants to use in the app through Shoutem builder. Shoutem prepared a bunch of [open sourced](https://github.com/shoutem/extensions) extensions which you can easily customize to your needs.
-
-<p class="image">
-<img src='{{ site.baseurl }}/img/getting-started/shoutem-extensions.png'/>
+<img src='{{ site.baseurl }}/img/my-first-extension/shoutem-extensions.png'/>
 </p>
 
 ## About technology
@@ -38,13 +33,13 @@ Shoutem uses [React](https://facebook.github.io/react/) and [React Native](https
 We use [JSX](https://facebook.github.io/react/docs/introducing-jsx.html) as a simpler way to write UI components with tags. Building an app screen with JSX is as easy as:
 
 <p class="image">
-<img src='{{ site.baseurl }}/img/getting-started/jsx-component-example.png'/>
+<img src='{{ site.baseurl }}/img/my-first-extension/jsx-component-example.png'/>
 </p>
 
 On top of React and React Native, we're using [Redux](http://redux.js.org/), a library which simplifies the state management. 
 
 <p class="image">
-<img src='{{ site.baseurl }}/img/getting-started/redux.png'/>
+<img src='{{ site.baseurl }}/img/my-first-extension/redux.png'/>
 </p>
 
 Even though we use Redux, you don't need to use anything or you can use any other state management library such as [MobX](https://github.com/mobxjs/mobx).

@@ -1,8 +1,8 @@
 ---
 layout: doc
-permalink: /docs/extensions/getting-started/using-ui-toolkit
+permalink: /docs/extensions/my-first-extension/using-ui-toolkit
 title: Using UI toolkit
-section: Getting Started
+section: My first extension
 ---
 
 # Using UI toolkit

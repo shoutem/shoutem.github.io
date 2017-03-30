@@ -1,8 +1,8 @@
 ---
 layout: doc
-permalink: /docs/extensions/getting-started/shortcut-and-screen
+permalink: /docs/extensions/my-first-extension/shortcut-and-screen
 title: Creating screen and shortcut
-section: Getting Started
+section: My first extension
 ---
 
 # Creating screen and shortcut

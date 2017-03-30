@@ -1,8 +1,8 @@
 ---
 layout: doc
-permalink: /docs/extensions/getting-started/working-with-data
+permalink: /docs/extensions/my-first-extension/working-with-data
 title: Working with data
-section: Getting Started
+section: My first extension
 ---
 
 # Working with data
