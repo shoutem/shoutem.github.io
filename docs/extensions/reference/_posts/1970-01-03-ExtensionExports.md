@@ -33,4 +33,4 @@ These are the predefined extension exports:
 
 ## _server/index.js_
 
-No named exports are currently reserved. This part will be used once we enable the creation of React settings pages!
+No predefined exports are currently reserved. This part will be used once we enable the creation of React settings pages!
