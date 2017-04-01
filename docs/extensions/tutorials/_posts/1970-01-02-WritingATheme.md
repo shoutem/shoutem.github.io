@@ -13,7 +13,7 @@ Shoutem comes with a dozen of available themes, but if you want a custom one, yo
 - Theme variables: schema for Shoutem builder describing what application owners can customize in your theme
 
 > #### Note
-> This tutorial continues on [Getting started](http://shoutem.github.io/docs/extensions/getting-started/introduction). If you don't have an app which is result from Getting started chapter, find the `Restaurants` extension on [Github](https://github.com/shoutem/extension-examples/tree/master/restaurants-getting-started), install it onto new app and fill with some restaurants.
+> This tutorial continues on [Getting started](http://shoutem.github.io/docs/extensions/tutorials/getting-started). If you don't have an app which is result from Getting started chapter, find the `Restaurants` extension on [Github](https://github.com/shoutem/extension-examples/tree/master/restaurants-getting-started), install it onto new app and fill with some restaurants.
 
 ## Creating a theme
 

@@ -35,7 +35,7 @@ import { NavigationBar } from '@shoutem/ui/navigation';
 
 Notice we didn't need to install the `@shoutem/ui` package into `app` folder of our extension. That's because this package will be installed by the app into which extension is bundled. All packages which are installed by app can be found in `peerDependencies` of `app/package.json`.
 
-We prepared mockup restaurants data for you. Download [this compressed file](/static/my-first-extension/restaurants.zip), extract it and copy the extracted `assets` folder inside of the `app` folder. The `assets` folder contain static restaurants data in `restaurants.json` file.
+We prepared mockup restaurants data for you. Download [this compressed file](/static/getting-started/restaurants.zip), extract it and copy the extracted `assets` folder inside of the `app` folder. The `assets` folder contain static restaurants data in `restaurants.json` file.
 
 Define a method in `List` class that returns an array of restaurants.
 

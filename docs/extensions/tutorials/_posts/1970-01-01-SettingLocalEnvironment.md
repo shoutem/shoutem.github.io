@@ -9,7 +9,7 @@ section: Tutorials
 
 This tutorial explains how to build extensions without the need to _push_ them to Shoutem. Setting local development will help you develop your extension much faster with the ability to debug and test it on your device.
 
-Make sure you understand concepts introduced in the [Getting started]({{ site.baseurl }}/docs/extensions/getting-started/introduction) before reading this tutorial.
+Make sure you understand concepts introduced in the [Getting started]({{ site.baseurl }}/docs/extensions/tutorials/getting-started) before reading this tutorial.
 
 > #### Note
 > To test this out, you need an app using your own extension. If you don't have it set up, [download](https://github.com/shoutem/extension-examples/tree/master/restaurants-getting-started) the extension from Getting started and install it with `shoutem install --new` to the new app. Now, add the screen to app navigation and add some content.
@@ -156,5 +156,5 @@ Once you're satisfied with some extension, just push it to the Shoutem as your o
 
 ## Best practises
 
-So, you've passed **Getting started** and **Setting local environment** which means that you're ready for some serious development. But, before you start, read what are the [best practises]({{ site.baseurl }}/docs/extensions/tutorials/best-practises) in doing that.
+So, you've passed **Getting started** and **Setting local environment** which means that you're ready for some serious development. But, before you start, read what are the [best practises]({{ site.baseurl }}/docs/extensions/reference/overview) in doing that.
 
