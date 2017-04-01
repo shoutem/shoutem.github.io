@@ -178,7 +178,7 @@ Click on `Add item`. This will open a modal for inserting data for `Restaurants`
 <img src='{{ site.baseurl }}/img/my-first-extension/cms-modal.png'/>
 </p>
 
-Add some restaurants. If you don't want to add the data manually, you can import it in Shoutem CMS. We prepared CSV (comma-separated values) file which you can use for importing. In the Shoutem CMS interface, open the 3 points `...` and select `Import` option. When asked to select the source, select `Comma-separated values`. For CSV data source, use this link: [static/my-first-extension/restaurants.csv](/static/my-first-extension/restaurants.csv). You can also upload CSV if you click `Browse`. Click `Next` and do the mapping. This is how the mapping should look like:
+Add some restaurants. If you don't want to add the data manually, you can import it in Shoutem CMS. We prepared CSV (comma-separated values) file which you can use for importing. In the Shoutem CMS interface, open the 3 points `...` and select `Import` option. When asked to select the source, select `Comma-separated values`. For CSV data source, use this link: [static/getting-started/restaurants.csv](/static/getting-started/restaurants.csv). You can also upload CSV if you click `Browse`. Click `Next` and do the mapping. This is how the mapping should look like:
 
 <p class="image">
 <img src='{{ site.baseurl }}/img/my-first-extension/import-csv.png'/>

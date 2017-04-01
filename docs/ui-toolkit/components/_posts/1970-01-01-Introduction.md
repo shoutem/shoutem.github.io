@@ -15,7 +15,7 @@ It consists of three libraries:
 
 - [@shoutem/ui](https://github.com/shoutem/ui): beautiful and customizable UI [components](http://shoutem.github.io/docs/ui-toolkit/components/typography)
 - [@shoutem/theme](https://github.com/shoutem/theme): “CSS-way” of styling the entire app with [themes](http://shoutem.github.io/docs/ui-toolkit/theme/introduction)
-- [@shoutem/animation](https://github.com/shoutem/animation): declarative way of applying ready-made [animations](http://shoutem.github.io/docs/ui-toolkit/theme/animation/introduction) 
+- [@shoutem/animation](https://github.com/shoutem/animation): declarative way of applying ready-made [animations](http://shoutem.github.io/docs/ui-toolkit/animation/introduction) 
 
 
 ## Prerequisites

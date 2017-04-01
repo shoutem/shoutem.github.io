@@ -8,7 +8,7 @@ section: Tutorials
 # Writing a settings page
 <hr />
 
-From [Getting started tutorial]({{ site.baseurl }}/docs/extensions/getting-started/introduction) you might remember a mention of _settings pages_. Settings pages are web pages that appear in Shoutem builder which extension developers can write.
+From [Getting started tutorial]({{ site.baseurl }}/docs/extensions/tutorials/getting-started) you might remember a mention of _settings pages_. Settings pages are web pages that appear in Shoutem builder which extension developers can write.
 
 ![Shortcut settings page example]({{ site.baseurl }}/img/tutorials/writting-settings-page/shortcut-settings-page.png "Shortcut settings page"){:.docs-component-image}
 

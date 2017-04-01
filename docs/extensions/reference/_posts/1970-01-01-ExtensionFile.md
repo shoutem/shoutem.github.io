@@ -116,7 +116,7 @@ Dictionary of arbitrary key/value pairs that represent **default** extensions's 
 
 #### shortcuts
 
-[Shortcuts](/docs/extensions/getting-started/shortcut-and-screen) are links to the starting screen of your extension. Format:
+[Shortcuts](/docs/extensions/my-first-extension/shortcut-and-screen) are links to the starting screen of your extension. Format:
 
 ```json
 [{
