@@ -129,7 +129,16 @@ Open the app in the builder. Click on the `+` next to **Screens** and select `Cu
 <img src='{{ site.baseurl }}/img/tutorials/getting-started/custom-starting-screen.png'/>
 </p>
 
-Click on it to add it to the app structure. Finally, preview it (either in the browser or Shoutem Preview app). As there's new extension available, Shoutem will bundle all your extensions which can take up to 5 minutes.
+Click on it to add it to the app structure. Finally, preview it. Do:
+
+```ShellSession
+$ shoutem run
+Select your app: News app ({{ site.example.appId }})
+Creating bundle for your app...
+...
+```
+
+Scan the printed QR code with Shoutem Preview app.
 
 This is the result:
 
@@ -141,4 +150,4 @@ This is the result:
 
 ## What's next?
 
-To leverage the full power of Shoutem, we'd suggest you to go through [My first extension]() tutorial, which explains the underlying concepts in more detail. Before you do that, you might want to read how to [setup your local environment](). This will help you work on your extensions much faster locally, without needing to wait app to be built 5 minutes every time you change something.
+To leverage the full power of Shoutem, we'd suggest you to go through [My first extension]() tutorial, which explains the underlying concepts in more detail.
