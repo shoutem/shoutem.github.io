@@ -227,7 +227,7 @@ In the example above, we included 2 screen objects inside of the `screens` array
 
 #### dataSchemas
 
-[Data Schemas](/docs/extensions/getting-started/using-cloud-storage) are Shoutem-flavored [JSON Schemas](http://json-schema.org/) which describe data stored on Shoutem's CMS.
+[Data Schemas](/docs/extensions/my-first-extension/using-cloud-storage) are Shoutem-flavored [JSON Schemas](http://json-schema.org/) which describe data stored on Shoutem's CMS.
 
 ```json
 [{
