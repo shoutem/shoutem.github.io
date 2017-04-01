@@ -150,4 +150,4 @@ This is the result:
 
 ## What's next?
 
-To leverage the full power of Shoutem, we'd suggest you to go through [My first extension]() tutorial, which explains the underlying concepts in more detail.
+To leverage the full power of Shoutem, we'd suggest you to go through [My first extension](/docs/extensions/my-first-extension/introduction) tutorial, which explains the underlying concepts in more detail.
