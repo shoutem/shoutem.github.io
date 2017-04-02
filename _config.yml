@@ -17,8 +17,8 @@ url: "http://shoutem.github.io"
 
 # Variables
 shoutem:
-  builderURL: "https://builder.beta.shoutem.com"
-  previewApp: "/docs/coming-soon"
+  builderURL: "https://builder.shoutem.com"
+  previewApp: "https://itunes.apple.com/us/app/shoutem-preview/id1211732978"
   cli: "https://www.npmjs.com/package/@shoutem/cli"
   school: "http://school.shoutem.com/"
 
