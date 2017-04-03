@@ -21,6 +21,7 @@ shoutem:
   previewApp: "https://itunes.apple.com/us/app/shoutem-preview/id1211732978"
   cli: "https://www.npmjs.com/package/@shoutem/cli"
   school: "http://school.shoutem.com/"
+  pricing: "https://new.shoutem.com/pricing/"
 
 # Examples
 example:

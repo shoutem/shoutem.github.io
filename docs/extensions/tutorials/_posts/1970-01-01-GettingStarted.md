@@ -7,29 +7,31 @@ section: Tutorials
 
 # Getting started
 
-Shoutem is a platform that enables you to build, publish and manage high quality native iOS and Android apps. It's built on top of React Native and open sourced for developers. The philosophy behind Shoutem is to let you build apps efficiently without restricting you how to use React Native.
+Shoutem is a platform that enables you to build, publish and manage high-quality native iOS and Android apps. It's built on top of React Native and open sourced for developers. The philosophy behind Shoutem is to let you build apps efficiently without restricting you how to use React Native.
 
 ## Apps and extensions
 
-Efficiency of building apps is achieved with a simple architecture: apps are built using smaller modules called `extensions`. Extension is a self-contained and complete functionality that can be reused. Everything in the app is an extension: navigation, places (list and details), push notifications, analytics, ads, etc...
+The efficiency of building apps is achieved with a simple architecture: apps are built using smaller modules called `extensions`. The extension is a self-contained and complete functionality that can be reused. Everything in the app is an extension: navigation, places (list and details), push notifications, analytics, ads, etc...
 
 <p class="image">
 <img src='{{ site.baseurl }}/img/tutorials/getting-started/apps-are-made-of-extensions.png'/>
 </p>
 
-Shoutem prepared and [open sourced](https://github.com/shoutem/extensions){:target="_blank"} a lot of extensions that you can use in your apps. **Don't reinvent the wheel**: reuse extensions which are suitable for you, customize them or create new ones. It's the word-first WordPress-like solution for mobile apps.
+Shoutem prepared and [open sourced](https://github.com/shoutem/extensions) a lot of extensions that you can use in your apps. **Don't reinvent the wheel**: reuse extensions which are suitable for you, customize them or create new ones. It's the world-first WordPress-like solution for mobile apps.
 
 ## Builder
 
-Shoutem apps are managed on the beautiful web interface called the **Builder**. This allows people of any technical level to create apps from extensions built by Shoutem and the community. If you haven't already, go to the [Builder]({{ site.shoutem.builderURL }}){:target="_blank"} and create an account. When you sign in, you can start by creating an app from some template or a blank app. Start with `News app` template.
+Shoutem apps are managed on the beautiful web interface called the **Builder**. This allows people of any technical level to create apps from extensions built by Shoutem and the community. If you haven't already, go to the [Builder]({{ site.shoutem.builderURL }}) and create an account. Once signed in, you can create an app from some template or a blank app. Start with `News app` template.
 
 <p class="image">
 <img src='{{ site.baseurl }}/img/tutorials/getting-started/builder-news-app.png'/>
 </p>
 
+Your app is prefilled with some content.
+
 ## Run your app
 
-Your app can be previewed on your device or inside the Builder. Click the _Preview on device_ button and scan the QR code. This will lead you to download the [Shoutem Preview app]({{ site.shoutem.previewApp }}){:target="_blank"} which you can use to get your app on the device fast. After the installation, **Shoutem Preview** will automatically open the app.
+Your app can be previewed on your device or inside the Builder. Click the _Preview on device_ button and scan the QR code. This will lead you to download the [Shoutem Preview app]({{ site.shoutem.previewApp }}) which you can use to get your app on the device fast. After the installation, **Shoutem Preview** will automatically open the app.
 
 <p class="image">
 <img src='{{ site.baseurl }}/img/tutorials/getting-started/shoutem-preview-app.png'/>
@@ -43,18 +45,18 @@ You can manage your app inside of the Builder. App structure can be seen under *
 <img src='{{ site.baseurl }}/img/tutorials/getting-started/delete-starting-screen.png'/>
 </p>
 
-Let's create new extension with `Hello World` screen and add it to the app.
+Let's create a new extension with `Hello World` screen and add it to the app.
 
 ## Create new extension
 
-Start by installing [Shoutem CLI]({{ site.shoutem.cli }}){:target="_blank"} - tool that speeds up the development of an extension.
+Start by installing [Shoutem CLI]({{ site.shoutem.cli }}) - tool that speeds up the development of an extension.
 
 ```ShellSession
 $ npm install -g @shoutem/cli
 ```
 
 > #### Note
-> If previous command fails because of _permission_ issues, you need to run it with `sudo` permission: :`sudo npm install -g @shoutem/cli`.
+> If previous command fails because of _permission_ issues, you need to run it with `sudo` permission: `sudo npm install -g @shoutem/cli`.
 
 Register your developer name. Use `shoutem login` command with Shoutem credentials ("{{ site.example.devName }}" is used for developer name in this example).
 
@@ -86,7 +88,7 @@ Initializing extension:
 Extension initialized!
 ```
 
-Locate to the extension folder:
+The `shoutem init` command bootstrapped the `hello-world` folder with extension files. Locate to the extension folder:
 
 ```ShellSession
 $ cd hello-world
@@ -105,7 +107,7 @@ File `app/extension.js` was modified.
 File `extension.json` was modified.
 ```
 
-Let's push what we've built until now to Shoutem.
+This created `Hello World` screen in `app/screens/List.js` file. Let's push what we've built to Shoutem.
 
 ```ShellSession
 $ shoutem push
@@ -121,6 +123,9 @@ Select app to install extension (Use arrow keys)
 > News app
   -------------
   Create a new app
+
+Extension installed.
+See it in the builder: {{ site.shoutem.builderURL }}/app/{{ site.example.appId }}
 ```
 
 Open the app in the builder. Click on the `+` next to **Screens** and select `Custom` category. You can see your starting screen there.
@@ -129,16 +134,21 @@ Open the app in the builder. Click on the `+` next to **Screens** and select `Cu
 <img src='{{ site.baseurl }}/img/tutorials/getting-started/custom-starting-screen.png'/>
 </p>
 
-Click on it to add it to the app structure. Finally, preview it. Do:
+Click on it to add it to the app structure.
+
+Great! Let's preview the app on our device. Shoutem enables you develop React Native apps without having Xcode and Android Studio installed. Moreover, you can use Windows to preview apps on iOS devices. Do `shoutem run` to bundle your extensions into the app.
 
 ```ShellSession
 $ shoutem run
 Select your app: News app ({{ site.example.appId }})
-Creating bundle for your app...
+Creating the bundle for your app...
 ...
 ```
 
-Scan the printed QR code with Shoutem Preview app.
+> #### Note
+> To create bundle for the app, you need to have [Node.js v7](https://nodejs.org/en/) and [react-native-cli](http://npmjs.com/package/react-native-cli) installed. See [FAQ](/docs/extensions/tutorials/faq) if you have problems setting this up.
+
+Once the app is bundled, CLI will print the QR code to the terminal. Scan it with with Shoutem Preview app.
 
 This is the result:
 
@@ -150,4 +160,4 @@ This is the result:
 
 ## What's next?
 
-To leverage the full power of Shoutem, we'd suggest you to go through [My first extension](/docs/extensions/my-first-extension/introduction) tutorial, which explains the underlying concepts in more detail.
+To leverage the full power of Shoutem, we'd suggest you go through [My first extension](/docs/extensions/my-first-extension/introduction) tutorial, which explains the underlying concepts in more detail.
