@@ -8,9 +8,9 @@ section: Tutorials
 # Writing a settings page
 <hr />
 
-From [Getting started tutorial]({{ site.baseurl }}/docs/extensions/tutorials/getting-started) you might remember a mention of _settings pages_. Settings pages are web pages that appear in Shoutem builder which extension developers can write.
+From [Getting started tutorial]({{ site.url }}/docs/extensions/tutorials/getting-started) you might remember a mention of _settings pages_. Settings pages are web pages that appear in Shoutem builder which extension developers can write.
 
-![Shortcut settings page example]({{ site.baseurl }}/img/tutorials/writting-settings-page/shortcut-settings-page.png "Shortcut settings page"){:.docs-component-image}
+![Shortcut settings page example]({{ site.url }}/img/tutorials/writting-settings-page/shortcut-settings-page.png "Shortcut settings page"){:.docs-component-image}
 
 Settings pages are used to enable app owners to customize the extension through the builder. You can use any web technology to write settings pages (pure HTML with jQuery, React, AngularJS, etc...).
 
@@ -22,7 +22,7 @@ Pages are defined in `pages` root field in `extension.json` and can be reference
 - `adminPages` in `shortcuts` field: array of pages for adjusting settings for shortcuts
 - `settingsPage` in `screens` field: single page for adjusting layout settings
 
-On each of these places, adjacent property `settings` can be present which represents default settings for either extension, shortcut or screen. Read more in the [reference for settings types]({{ site.baseurl }}/docs/extensions/reference/settings-types).
+On each of these places, adjacent property `settings` can be present which represents default settings for either extension, shortcut or screen. Read more in the [reference for settings types]({{ site.url }}/docs/extensions/reference/settings-types).
 
 ## Creating your first settings page
 
@@ -237,7 +237,7 @@ See it in browser: {{ site.shoutem.builderURL }}/app/{{ site.example.appId }}
 
 Open the link from the terminal. Click to `Add Screen` and add shortcut (exposed starting screen) to your app. This is what you should see:
 
-![Hello World settings page]({{ site.baseurl }}/img/tutorials/writting-settings-page/hello-world-settings-page.png "Hello World settings page"){:.docs-component-image}
+![Hello World settings page]({{ site.url }}/img/tutorials/writting-settings-page/hello-world-settings-page.png "Hello World settings page"){:.docs-component-image}
 
 ### Managing the shortcut settings
 
@@ -345,7 +345,7 @@ Uploading `Hello!` extension to Shoutem...
 Success!
 ```
 
-![Page with default settings]({{ site.baseurl }}/img/tutorials/writting-settings-page/page-with-default-settings.png "Page with default settings"){:.docs-component-image}
+![Page with default settings]({{ site.url }}/img/tutorials/writting-settings-page/page-with-default-settings.png "Page with default settings"){:.docs-component-image}
 
 ### Accessing the shortcut settings in the application
 
@@ -383,7 +383,7 @@ Success!
 
 Try changing the settings and see the change in the preview.
 
-![Page with default settings]({{ site.baseurl }}/img/tutorials/writting-settings-page/hello-tom.png "Page with default settings"){:.docs-component-image}
+![Page with default settings]({{ site.url }}/img/tutorials/writting-settings-page/hello-tom.png "Page with default settings"){:.docs-component-image}
 
 ## Creating React settings page
 

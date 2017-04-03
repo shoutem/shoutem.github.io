@@ -9,7 +9,7 @@ section: UI toolkit
 
 DropDownMenu is a full-screen contextual menu for displaying lists of items. 
 
-![DropDownMenu example]({{ site.baseurl }}/img/ui-toolkit/dropdownmenu/drop_down_menu@2x.png "DropDownMenu"){:.docs-component-image}
+![DropDownMenu example]({{ site.url }}/img/ui-toolkit/dropdownmenu/drop_down_menu@2x.png "DropDownMenu"){:.docs-component-image}
 
 ## API
 

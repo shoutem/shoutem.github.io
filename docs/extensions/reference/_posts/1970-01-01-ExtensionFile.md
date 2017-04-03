@@ -61,7 +61,7 @@ Required field. Version of your extension.
 
 #### platform
 
-Required field. Version of [Shoutem platform]({{ site.baseurl }}/docs/extensions/reference/platform), which defines versions of React, React Native, Redux and some other packages.
+Required field. Version of [Shoutem platform]({{ site.url }}/docs/extensions/reference/platform), which defines versions of React, React Native, Redux and some other packages.
 
 #### title
 

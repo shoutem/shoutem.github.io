@@ -37,7 +37,7 @@ Folder `data-schemas` inside `server` folder was created with file `Restaurants.
 
 This is the first time that we used `server` folder. The reason is that data schemas are not part of the app code, but rather server side of extension. Data schemas are nothing more than Shoutem-flavored [JSON Schemas](http://json-schema.org/). They describe data to be stored on Shoutem Cloud Storage.
 
-All fields are explained in [data schema reference]({{ site.baseurl }}/docs/cloud/data-schemas). This schema is exported in `extension.json` file:
+All fields are explained in [data schema reference]({{ site.url }}/docs/cloud/data-schemas). This schema is exported in `extension.json` file:
 
 ```JSON{18-21}
 #file: extension.json
@@ -115,7 +115,7 @@ Currently, schema only has the `name` property, which we'll use for restaurant n
 }
 ```
 
-To enter data for your schema, you need to use settings page. Shortly, [settings pages]({{ site.baseurl }}/docs/extensions/tutorials/writing-settings-page) are web pages shown inside of the Shoutem builder. Extension developers write them to enable app owners to manage extensions.
+To enter data for your schema, you need to use settings page. Shortly, [settings pages]({{ site.url }}/docs/extensions/tutorials/writing-settings-page) are web pages shown inside of the Shoutem builder. Extension developers write them to enable app owners to manage extensions.
 
 Shoutem prepared CMS settings page inside [shoutem.cms](https://github.com/shoutem/extensions/tree/master/shoutem-cms) extension that you can use to manage data for your `schema` on Shoutem Cloud. Reference that settings page in `Restaurants` shortcut and pass it the `Restaurants` schema. Page will appear when app owner selects `Restaurants` shortcut on the builder:
 
@@ -163,31 +163,31 @@ Success!
 Go to `Shoutem Builder`. When you select `Restaurants` under `Main navigation`, you can see the Shoutem CMS page.
 
 <p class="image">
-<img src='{{ site.baseurl }}/img/my-first-extension/empty-admin-page.png'/>
+<img src='{{ site.url }}/img/my-first-extension/empty-admin-page.png'/>
 </p>
 
 Click on `Create items` to start adding content. This will redirect you to the `CMS` interface where you can manage the content for your extension. Apps that get content from Shoutem CMS will immediately show new content, once you edit it.
 
 <p class="image">
-<img src='{{ site.baseurl }}/img/my-first-extension/empty-cms.png'/>
+<img src='{{ site.url }}/img/my-first-extension/empty-cms.png'/>
 </p>
 
 Click on `Add item`. This will open a modal for inserting data for `Restaurants` model, which you defined with your data schema.
 
 <p class="image">
-<img src='{{ site.baseurl }}/img/my-first-extension/cms-modal.png'/>
+<img src='{{ site.url }}/img/my-first-extension/cms-modal.png'/>
 </p>
 
 Add some restaurants. If you don't want to add the data manually, you can import it in Shoutem CMS. We prepared CSV (comma-separated values) file which you can use for importing. In the Shoutem CMS interface, open the 3 points `...` and select `Import` option. When asked to select the source, select `Comma-separated values`. For CSV data source, use this link: [{{ site.url }}/static/getting-started/restaurants.csv](/static/getting-started/restaurants.csv). You can also upload CSV if you click `Browse`. Click `Next` and do the mapping. This is how the mapping should look like:
 
 <p class="image">
-<img src='{{ site.baseurl }}/img/my-first-extension/import-csv.png'/>
+<img src='{{ site.url }}/img/my-first-extension/import-csv.png'/>
 </p>
 
 Click `Next` and `X` afterwards in top right corner. Now you can see the data in the CMS settings page:
 
 <p class="image">
-<img src='{{ site.baseurl }}/img/my-first-extension/full-cms.png'/>
+<img src='{{ site.url }}/img/my-first-extension/full-cms.png'/>
 </p>
 
 Although you've added them, your extension is still using static data. Let's fetch the data from Shoutem Cloud Storage using `@shoutem/redux-io` package.

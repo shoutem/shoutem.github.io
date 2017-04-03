@@ -8,7 +8,7 @@ section: My first extension
 # Using UI toolkit
 <hr />
 
-React Native exposes plain iOS and Android native components that you can use, but there's usually much work left to do just to make them look beautiful. Instead, you can use [@shoutem/ui](https://github.com/shoutem/ui), a set of customizable UI components. There are [plenty of components]({{ site.baseurl }}/docs/ui-toolkit/components/typography) that you can use out of the box.
+React Native exposes plain iOS and Android native components that you can use, but there's usually much work left to do just to make them look beautiful. Instead, you can use [@shoutem/ui](https://github.com/shoutem/ui), a set of customizable UI components. There are [plenty of components]({{ site.url }}/docs/ui-toolkit/components/typography) that you can use out of the box.
 
 ## Creating restaurants list
 
@@ -52,7 +52,7 @@ export default class List extends Component {
   }
 ```
 
-Implement `render` method that will use `ListView` component. [ListView]({{ site.baseurl }}/docs/ui-toolkit/components/list-view) accepts `data` in the form of an `array` to show in the list and `renderRow` callback function which defines how row in the list should look like.
+Implement `render` method that will use `ListView` component. [ListView]({{ site.url }}/docs/ui-toolkit/components/list-view) accepts `data` in the form of an `array` to show in the list and `renderRow` callback function which defines how row in the list should look like.
 
 Add `renderRow` method and replace implementation of `render` method:
 
@@ -97,7 +97,7 @@ Success!
 The app preview will be shown after Shoutem bundles the new app. `List` is now showing the list of restaurants. 
 
 <p class="image">
-<img src='{{ site.baseurl }}/img/my-first-extension/extension-rich-list.png'/>
+<img src='{{ site.url }}/img/my-first-extension/extension-rich-list.png'/>
 </p>
 
 This looks exactly how we wanted.
@@ -351,7 +351,7 @@ Success!
 When you click on a row in the list, this is what you get:
 
 <p class="image">
-<img src='{{ site.baseurl }}/img/my-first-extension/extension-rich-details.png'/>
+<img src='{{ site.url }}/img/my-first-extension/extension-rich-details.png'/>
 </p>
 
 That's exactly what we wanted to get! However, our app is using static data. Let's connect it to the **Shoutem Cloud**. 

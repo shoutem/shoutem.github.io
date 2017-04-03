@@ -27,11 +27,11 @@ There are 3 cases for accessing native APIs from your extension:
 
 [Shopify](https://www.shopify.com/) lets you create and manage an online store. Merchants all over the world use it to grow their business, and many of them want to have their stores accessible from mobile apps. [Shopify's Mobile Buy SDK](https://help.shopify.com/api/sdks/mobile-buy-sdk) for iOS and Android helps developers integrate a store into an app.
 
-Shoutem's Shopify extension lets customers browse and buy products through a mobile app built with Shoutem. All that a store owner needs to do is enter his API key in [extension settings]({{ site.baseurl }}/docs/extensions/reference/settings-types).
+Shoutem's Shopify extension lets customers browse and buy products through a mobile app built with Shoutem. All that a store owner needs to do is enter his API key in [extension settings]({{ site.url }}/docs/extensions/reference/settings-types).
 
 The result of this tutorial is a Shopify store within an app built with Shoutem:
 
-![Shopify extension]({{ site.baseurl }}/img/tutorials/native-modules/shop-in-app.png "Shopify extension"){:.docs-component-image}
+![Shopify extension]({{ site.url }}/img/tutorials/native-modules/shop-in-app.png "Shopify extension"){:.docs-component-image}
 
 We won't go into the detail of managing the store's logic.
 
@@ -55,7 +55,7 @@ $(SRCROOT)/../../../ios/Pods
 
 Set this path for both the **_Debug_** and **_Release_** builds, and mark it as recursive. The following picture shows how this setting looks like for the Shopify bridge when viewed in XCode:
 
-![Xcode and Header Search Paths]({{ site.baseurl }}/img/tutorials/native-modules/header-search-paths.png "Xcode and Header search paths"){:.docs-component-image}
+![Xcode and Header Search Paths]({{ site.url }}/img/tutorials/native-modules/header-search-paths.png "Xcode and Header search paths"){:.docs-component-image}
 
 ## Including the bridge in our Shopify extension
 

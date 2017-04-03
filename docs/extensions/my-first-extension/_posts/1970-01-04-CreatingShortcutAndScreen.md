@@ -131,7 +131,7 @@ Success!
 Go to `Custom` under `Add Screen` modal in Shoutem builder. You can finally see your `Restaurants` starting screen (shortcut) there. 
 
 <p class="image">
-<img src='{{ site.baseurl }}/img/my-first-extension/add-modal-shortcut.png'/>
+<img src='{{ site.url }}/img/my-first-extension/add-modal-shortcut.png'/>
 </p>
 
 > #### Note
@@ -165,7 +165,7 @@ This will output the QR code which you should scan with the Shoutem Preview app.
 This is the result:
 
 <p class="image">
-<img src='{{ site.baseurl }}/img/my-first-extension/extension-hello-world.png'/>
+<img src='{{ site.url }}/img/my-first-extension/extension-hello-world.png'/>
 </p>
 
 Our app only has a simple  _Hello World_ screen. Let's put some UI components on the screen.

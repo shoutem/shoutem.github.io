@@ -13,9 +13,9 @@ However, if you don't have a server that you need to connect with, you can use S
 
 [//]: # (Add picture of Shoutem Cloud)
 
-To use Shoutem Cloud with extensions, we need to create [data schemas]({{ site.baseurl }}/docs/extensions/my-first-extension/using-cloud-storage) which describe structure of the data that should be stored on Shoutem Cloud. When used in extensions, `@shoutem/redux-io` library is by default configured to Shoutem Cloud, but it can be configured to be used with any API.
+To use Shoutem Cloud with extensions, we need to create [data schemas]({{ site.url }}/docs/extensions/my-first-extension/using-cloud-storage) which describe structure of the data that should be stored on Shoutem Cloud. When used in extensions, `@shoutem/redux-io` library is by default configured to Shoutem Cloud, but it can be configured to be used with any API.
 
 We've prepared a few topics to ease the usage with Shoutem Cloud:
 
-- [Data Schemas reference]({{ site.baseurl }}/docs/cloud/data-schemas)
-- [Using @shoutem/redux-io library]({{ site.baseurl }}/docs/cloud/redux-io)
+- [Data Schemas reference]({{ site.url }}/docs/cloud/data-schemas)
+- [Using @shoutem/redux-io library]({{ site.url }}/docs/cloud/redux-io)

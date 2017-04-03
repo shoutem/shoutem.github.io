@@ -8,11 +8,11 @@ section: My first extension
 # Initializing extension
 <hr />
 
-Here's the mockup of the Restaurants extension that we've showed in the [Introduction]({{ site.baseurl }}/docs/extensions/my-first-extension/introduction). We're building **Restaurants** extension.
+Here's the mockup of the Restaurants extension that we've showed in the [Introduction]({{ site.url }}/docs/extensions/my-first-extension/introduction). We're building **Restaurants** extension.
 
 
 <p class="image">
-<img src='{{ site.baseurl }}/img/my-first-extension/extension-preview.jpg'/>
+<img src='{{ site.url }}/img/my-first-extension/extension-preview.jpg'/>
 </p>
  
 Left app screen lists the restaurants and the right one shows the details of one specific restaurant. 
@@ -37,7 +37,7 @@ Extension initialized!
 We passed `restaurants` extension name to `shoutem init` command. Extension information is stored in `extension.json` file.
 
 > #### Note
-> In case you can't remember the structure of some command, type `shoutem -h` or `shoutem <command> -h` where you should replace `<command>` with one of the [CLI commands]({{ site.baseurl }}/docs/extensions/reference/cli).
+> In case you can't remember the structure of some command, type `shoutem -h` or `shoutem <command> -h` where you should replace `<command>` with one of the [CLI commands]({{ site.url }}/docs/extensions/reference/cli).
 
 Locate to extension folder:
 
@@ -86,7 +86,7 @@ Brief property explanations:
 
 - `name` uniquely identifies the extension when combined with your developer name (e.g. `{{ site.example.devName }}.restaurants`)
 - `version` is the extension version
-- `platform` indicates the version of the [plaform]({{ site.baseurl }}/docs/extensions/reference/platform) (versions of React, React Native and other packages available to all extensions by default)
+- `platform` indicates the version of the [plaform]({{ site.url }}/docs/extensions/reference/platform) (versions of React, React Native and other packages available to all extensions by default)
 - `title` and `description` are extension descriptors
 
 <br />
@@ -110,13 +110,13 @@ See it in browser: `{{ site.shoutem.builderURL }}/app/{{ site.example.appId }}`
 Follow the link printed by the CLI. Go to `Extensions` tab in Shoutem builder. where you can see that your extension is installed on the application under **Custom** category.
 
 <p class="image">
-<img src='{{ site.baseurl }}/img/my-first-extension/extension-tab-extension.png'/>
+<img src='{{ site.url }}/img/my-first-extension/extension-tab-extension.png'/>
 </p>
 
 However, when you go to `Screen` tab and click on `+` to add new screen, under `Custom` category we won't see our extension.
 
 <p class="image">
-<img src='{{ site.baseurl }}/img/my-first-extension/add-content-no-extension.png'/>
+<img src='{{ site.url }}/img/my-first-extension/add-content-no-extension.png'/>
 </p>
 
 That's because `Add screen` modal shows only extensions which exposed starting screen.
