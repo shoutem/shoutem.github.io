@@ -58,6 +58,8 @@ import {
 } from '@shoutem/redux-io';
 ```
 
+The complete code is for `app/screens/List.js` is available below.
+
 Fetch data in `componentDidMount` lifecycle method.
 
 ```javascript{2-9}

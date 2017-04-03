@@ -152,7 +152,7 @@ Shoutem prepared CMS settings page inside [shoutem.cms](https://github.com/shout
 }
 ```
 
-Upload the extension:
+You really need to upload the extension now, since we want to customize the web interface and the extension server side:
 
 ```ShellSession
 $ shoutem push
@@ -166,7 +166,7 @@ Go to `Shoutem Builder`. When you select `Restaurants` under `Main navigation`, 
 <img src='{{ site.baseurl }}/img/my-first-extension/empty-admin-page.png'/>
 </p>
 
-Click on `Create items` to start adding content. This will redirect you to `CMS` interface where you can manage the content for your extension.
+Click on `Create items` to start adding content. This will redirect you to the `CMS` interface where you can manage the content for your extension. Apps that get content from Shoutem CMS will immediately show new content, once you edit it.
 
 <p class="image">
 <img src='{{ site.baseurl }}/img/my-first-extension/empty-cms.png'/>
@@ -178,7 +178,7 @@ Click on `Add item`. This will open a modal for inserting data for `Restaurants`
 <img src='{{ site.baseurl }}/img/my-first-extension/cms-modal.png'/>
 </p>
 
-Add some restaurants. If you don't want to add the data manually, you can import it in Shoutem CMS. We prepared CSV (comma-separated values) file which you can use for importing. In the Shoutem CMS interface, open the 3 points `...` and select `Import` option. When asked to select the source, select `Comma-separated values`. For CSV data source, use this link: [static/getting-started/restaurants.csv](/static/getting-started/restaurants.csv). You can also upload CSV if you click `Browse`. Click `Next` and do the mapping. This is how the mapping should look like:
+Add some restaurants. If you don't want to add the data manually, you can import it in Shoutem CMS. We prepared CSV (comma-separated values) file which you can use for importing. In the Shoutem CMS interface, open the 3 points `...` and select `Import` option. When asked to select the source, select `Comma-separated values`. For CSV data source, use this link: [{{ site.url }}/static/getting-started/restaurants.csv](/static/getting-started/restaurants.csv). You can also upload CSV if you click `Browse`. Click `Next` and do the mapping. This is how the mapping should look like:
 
 <p class="image">
 <img src='{{ site.baseurl }}/img/my-first-extension/import-csv.png'/>

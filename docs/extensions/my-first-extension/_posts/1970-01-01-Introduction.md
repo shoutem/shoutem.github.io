@@ -18,7 +18,7 @@ Here's a preview how completed app will look like.
 
 ## What are extensions?
 
-Extensions represent features in the app. Application owner picks extensions which he wants to use in the app through the Shoutem builder. Shoutem prepared a bunch of [open sourced](https://github.com/shoutem/extensions){:target="_blank"} extensions which you can easily customize to your needs.
+Extensions represent features in the app. App owner picks extensions which he wants to use in the app through the Shoutem builder. Shoutem prepared a bunch of [open sourced](https://github.com/shoutem/extensions){:target="_blank"} extensions which you can easily customize to your needs.
 
 <p class="image">
 <img src='{{ site.baseurl }}/img/my-first-extension/shoutem-extensions.png'/>
