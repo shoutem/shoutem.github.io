@@ -49,7 +49,7 @@ Your `extension.json` was just modified:
 
 Screen and shortcut were added to `extension.json` inside arrays. Property `name` uniquely identifies these extension parts. Shortcut's `title` is what will be shown in the app navigation.
 
-Property `screen` inside of `shortcuts` array references the screen to be opened when user taps on that shortcut inside navigation. When referencing any extension part, we need to say which extension it came from. Full name of extension part follows this structure: `<developer-name>.<extension-name>.<extension-part-name>`. For extension parts within the same extension, use `@.<extension-part-name>` instead. Characters `@.` stands for `<developer-name>.<extension-name>.` of the current extension.
+Property `screen` inside of `shortcuts` array references the screen to be opened when user taps on that shortcut inside navigation. When referencing any extension part, we need to say which extension it came from. Full name of extension part follows this structure: `<developer-name>.<extension-name>.<extension-part-name>` (e.g. `{{ site.example.devName }}.restaurants.List)`. For extension parts within the same extension, use `@.<extension-part-name>` instead (e.g. `@.List`). Characters `@.` stands for `<developer-name>.<extension-name>.` of the current extension.
 
 Shoutem CLI also created `app/screens/` folder with `List.js` file:
 
@@ -91,25 +91,20 @@ In React, `Component` specifies its UI in the `render` method.
 
 ## Extension in the app
 
-`app` folder from your extension will be bundled with the rest of extensions into the app. If your extension depends on some package, install it inside the `app` folder. For instance, installing [React Native swiper](https://github.com/leecade/react-native-swiper) is as easy as:
+The `app` folder from your extension will be bundled with the rest of extensions into the app. If your extension uses some `npm` package, install it inside the `app` folder. Below is an example of installing [React Native swiper](https://github.com/leecade/react-native-swiper) (just an example, no need to execute following 2 commands).
 
-Locate to the `app` folder:
+Locate to the `app` folder and install the package with saving the dependency in the `package.json`:
 
 ```ShellSession
 $ cd app/
-```
-
-Install the package and save the dependency in the `package.json`:
-
-```ShellSession
 $ npm install --save react-native-swiper
 ```
 
-This package will be installed upon bundling your extension into the app. You can access it now in any file in `app` folder.
+This package would be installed upon bundling your extension into the app. You would be able to access it in any file in the `app` folder.
 
 ## Exporting extension parts
 
-App expects extensions to export their parts (e.g. screens) in `app/index.js` file (standard JS practice). Extensions are like libraries and other extensions can reuse what they export from `app/index.js`. The convention is that `app/index.js` is public API and shouldn't be changed quite often. Extensions can import parts from extension directly (e.g. `app/screens/List.js`), but this is not recommended.
+App expects extensions to export their parts (e.g. screens) in `app/index.js` file (standard JS practice). Extensions are like libraries and other extensions can reuse what they export from `app/index.js`. The convention is that `app/index.js` is public API of an extension and shouldn't be changed quite often.
 
 Current `index.js` looks as follows:
 
@@ -136,7 +131,7 @@ Success!
 Go to `Custom` under `Add Screen` modal in Shoutem builder. You can finally see your `Restaurants` starting screen (shortcut) there. 
 
 <p class="image">
-<img src='{{ site.baseurl }}/img/my-first-extension/add-modal-shortcut.png'/>
+<img src='{{ site.url }}/img/my-first-extension/add-modal-shortcut.png'/>
 </p>
 
 > #### Note
@@ -144,19 +139,33 @@ Go to `Custom` under `Add Screen` modal in Shoutem builder. You can finally see 
 
 Click on the `Restaurants`, which will get that shortcut inserted into the navigation.
 
-Start the preview now to check out your app.
+Let's preview our app now. We can preview it in the Builder, but it might take some time while the app preview shows. Every time you change an extension, we need to rebundle the whole app to the new extension. It's much faster to use [Shoutem Preview app]({{ site.shoutem.previewApp }}) and Shoutem CLI, which can bundle only the changes in the extension.
+
+Since the app is managed through the Builder, we needed to `push` the extension to Shoutem after creating screen and shortcut to add them to app navigation. However, when we're only changing the app code, we don't need to the `push`ing. Instead, use `shoutem link` to tell Shoutem CLI to bundle local code of your extension.
+
+```ShellSession
+$ shoutem link
+Extension successfully linked. Please, kill the packager before running the app.
+```
+
+Once extension is linked, run the app which will start the [React Native packager](https://github.com/facebook/react-native/tree/master/packager):
+
+```ShellSession
+$ shoutem run
+Select your app: Restaurants ({{ site.example.appId }})
+Creating the bundle for your app...
+...
+```
+
+This will output the QR code which you should scan with the Shoutem Preview app.
 
 > #### Note
-> It might take some time while the app preview shows. Every time you change an extension, we need to rebuild app using that extension. Development process is much faster with [local development environment]({{ site.baseurl }}/docs/extensions/tutorials/setting-local-environment), but you're fine without it for passing this tutorial.
+> In the documentation the preview in the Builder will be screenshot, instead of screenshot from the Preview app. This way you'll see the state of the web interface as well. If you only change your app code, just shake your phone with the Shoutem Preview app on and tap the "Reload" button. If you `link` your extension, you won't need to do `shoutem push` everytime you change the app code.
+
+This is the result:
 
 <p class="image">
-<img src='{{ site.baseurl }}/img/my-first-extension/extension-hello-world.png'/>
-</p>
-
-You can also get your app on the phone using [Shoutem Preview app]({{ site.shoutem.previewApp }}). The easiest way to get the ** Shoutem Preview** app on your phone is to scan the QR code when you click on **PREVIEW ON DEVICE** button. Once the app is installed, it will load your app automatically.
-
-<p class="image">
-<img src='{{ site.baseurl }}/img/my-first-extension/qr.png'/>
+<img src='{{ site.url }}/img/my-first-extension/extension-hello-world.png'/>
 </p>
 
 Our app only has a simple  _Hello World_ screen. Let's put some UI components on the screen.

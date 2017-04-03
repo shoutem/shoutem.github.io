@@ -31,7 +31,7 @@ section: UI toolkit
 ## Examples
 
 ### Input / Placeholder text 
-![Input / Placeholder text  example]({{ site.baseurl }}/img/ui-toolkit/inputs/input-placeholder@2x.png "Input / Placeholder text"){:.docs-component-image}
+![Input / Placeholder text  example]({{ site.url }}/img/ui-toolkit/inputs/input-placeholder@2x.png "Input / Placeholder text"){:.docs-component-image}
 
 #### JSX Declaration
 ```JSX
@@ -42,7 +42,7 @@ section: UI toolkit
 ```
 
 ### Input / With text 
-![Input / With text  example]({{ site.baseurl }}/img/ui-toolkit/inputs/input-with-value@2x.png "Input / With text"){:.docs-component-image}
+![Input / With text  example]({{ site.url }}/img/ui-toolkit/inputs/input-with-value@2x.png "Input / With text"){:.docs-component-image}
 
 #### JSX Declaration
 ```JSX
@@ -53,7 +53,7 @@ section: UI toolkit
 ```
 
 ### Input / With password  
-![Input / With password  example]({{ site.baseurl }}/img/ui-toolkit/inputs/input-with-password@2x.png "Input / With password "){:.docs-component-image}
+![Input / With password  example]({{ site.url }}/img/ui-toolkit/inputs/input-with-password@2x.png "Input / With password "){:.docs-component-image}
 
 #### JSX Declaration
 ```JSX

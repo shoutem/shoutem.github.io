@@ -9,7 +9,7 @@ section: Tutorials
 
 This tutorial explains how to build extensions without the need to _push_ them to Shoutem. Setting local development will help you develop your extension much faster with the ability to debug and test it on your device.
 
-Make sure you understand concepts introduced in the [Getting started]({{ site.baseurl }}/docs/extensions/tutorials/getting-started) before reading this tutorial.
+Make sure you understand concepts introduced in the [Getting started]({{ site.url }}/docs/extensions/tutorials/getting-started) before reading this tutorial.
 
 > #### Note
 > To test this out, you need an app using your own extension. If you don't have it set up, [download](https://github.com/shoutem/extension-examples/tree/master/restaurants-getting-started) the extension from Getting started and install it with `shoutem install --new` to the new app. Now, add the screen to app navigation and add some content.
@@ -19,7 +19,7 @@ Make sure you understand concepts introduced in the [Getting started]({{ site.ba
 Before setting up local environment for building Shoutem extensions, set up React Native environment as described in their [Getting started tutorial](https://facebook.github.io/react-native/docs/getting-started.html). Make sure you stricly pass through all the steps described there.
 
 <p class="image">
-<img src='{{ site.baseurl }}/img/tutorials/setting-local-environment/rn-getting-started.png'/>
+<img src='{{ site.url }}/img/tutorials/setting-local-environment/rn-getting-started.png'/>
 </p>
 
 As it's written in that tutorial, building iOS apps locally is only available on Mac. However, using Shoutem on Windows, you can test your React Native apps on iOS platform by: using [Shoutem Preview]({{ site.shoutem.previewApp }}) for testing your app on iOS device or [Shoutem Builder]({{ site.shoutem.builderURL }}) for testing it on iOS simulator.
@@ -156,5 +156,5 @@ Once you're satisfied with some extension, just push it to the Shoutem as your o
 
 ## Best practises
 
-So, you've passed **Getting started** and **Setting local environment** which means that you're ready for some serious development. But, before you start, read what are the [best practises]({{ site.baseurl }}/docs/extensions/reference/overview) in doing that.
+So, you've passed **Getting started** and **Setting local environment** which means that you're ready for some serious development. But, before you start, read what are the [best practises]({{ site.url }}/docs/extensions/reference/overview) in doing that.
 

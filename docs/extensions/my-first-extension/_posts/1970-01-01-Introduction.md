@@ -8,20 +8,20 @@ section: My first extension
 # My first extension
 <hr />
 
-This tutorial shows how to write custom **Shoutem extensions** on Shoutem platform. It introduces the most important concepts. After completing it, you will have a running **mobile app** that uses the created **custom extension** with components from [Shoutem UI Toolkit]({{ site.baseurl }}/docs/ui-toolkit/introduction) and retrieves content from the [Shoutem Cloud]({{ site.baseurl }}/docs/cloud/introduction). Final result of extension is [open sourced](https://github.com/shoutem/extension-examples/tree/master/restaurants-getting-started).
+This tutorial shows how to write custom **Shoutem extensions** on Shoutem platform. It introduces the most important concepts. After completing it, you will have a running **mobile app** that uses the created **custom extension** with components from [Shoutem UI Toolkit]({{ site.url }}/docs/ui-toolkit/introduction) and retrieves content from the [Shoutem Cloud]({{ site.url }}/docs/cloud/introduction). Final result of extension is [open sourced](https://github.com/shoutem/extension-examples/tree/master/restaurants-getting-started).
 
 Here's a preview how completed app will look like.
 
 <p class="image">
-<img src='{{ site.baseurl }}/img/my-first-extension/extension-preview.jpg'/>
+<img src='{{ site.url }}/img/my-first-extension/extension-preview.jpg'/>
 </p>
 
 ## What are extensions?
 
-Extensions represent features in the app. Application owner picks extensions which he wants to use in the app through the Shoutem builder. Shoutem prepared a bunch of [open sourced](https://github.com/shoutem/extensions){:target="_blank"} extensions which you can easily customize to your needs.
+Extensions represent features in the app. App owner picks extensions which he wants to use in the app through the Shoutem builder. Shoutem prepared a bunch of [open sourced](https://github.com/shoutem/extensions){:target="_blank"} extensions which you can easily customize to your needs.
 
 <p class="image">
-<img src='{{ site.baseurl }}/img/my-first-extension/shoutem-extensions.png'/>
+<img src='{{ site.url }}/img/my-first-extension/shoutem-extensions.png'/>
 </p>
 
 ## About technology
@@ -33,13 +33,13 @@ Shoutem uses [React](https://facebook.github.io/react/) and [React Native](https
 We use [JSX](https://facebook.github.io/react/docs/introducing-jsx.html) as a simpler way to write UI components with tags. Building an app screen with JSX is as easy as:
 
 <p class="image">
-<img src='{{ site.baseurl }}/img/my-first-extension/jsx-component-example.png'/>
+<img src='{{ site.url }}/img/my-first-extension/jsx-component-example.png'/>
 </p>
 
 On top of React and React Native, we're using [Redux](http://redux.js.org/), a library which simplifies the state management. 
 
 <p class="image">
-<img src='{{ site.baseurl }}/img/my-first-extension/redux.png'/>
+<img src='{{ site.url }}/img/my-first-extension/redux.png'/>
 </p>
 
 Even though we use Redux, you don't need to use anything or you can use any other state management library such as [MobX](https://github.com/mobxjs/mobx).

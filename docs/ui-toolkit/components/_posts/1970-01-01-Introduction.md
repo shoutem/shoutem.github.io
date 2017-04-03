@@ -7,7 +7,7 @@ section: UI toolkit
 
 # Introduction
 
-![UI toolkit]({{ site.baseurl }}/img/ui-toolkit/introduction@2x.jpg "UI toolkit"){:.docs-component-image}
+![UI toolkit]({{ site.url }}/img/ui-toolkit/introduction@2x.jpg "UI toolkit"){:.docs-component-image}
 
 Shoutem UI toolkit enables you to build professionally looking React Native apps with ease.  
 
@@ -124,4 +124,4 @@ Below is one example where and how common style names can be used:
 </Overlay>
 ```
 
-Check [Shoutem Theme]({{ site.baseurl }}/img/ui-toolkit/theme/introduction "Shoutem Theme") to learn more about styling rules, style names and how to define your own style name.
+Check [Shoutem Theme]({{ site.url }}/img/ui-toolkit/theme/introduction "Shoutem Theme") to learn more about styling rules, style names and how to define your own style name.

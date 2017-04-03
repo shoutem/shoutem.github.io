@@ -11,7 +11,7 @@ Shoutem UI toolkit contains two different `NavigationBar` components:
 
 1. Simple 3-column `NavigationBar` that can be used on any screen or `Modal` window
 
-![Navbar / Solid example]({{ site.baseurl }}/img/ui-toolkit/navigationbar/navbar-title-only@2x.png "Navbar / Solid"){:.docs-component-image}
+![Navbar / Solid example]({{ site.url }}/img/ui-toolkit/navigationbar/navbar-title-only@2x.png "Navbar / Solid"){:.docs-component-image}
 
 2. `Redux` and stack-based `NavigationBar` enables any view to act as a navigation view using reducers to manipulate state at a top-level object. Can be used only on components that are within the stack (i.e. it cannot be used on `Modal` window). Internally, it relies on [`NavigationExperimental`](https://facebook.github.io/react-native/docs/navigation.html#navigationexperimental) from React-Native 
 
@@ -74,7 +74,7 @@ import { NavigationBar } from '@shoutem/ui'
 ## Examples
 
 ### Solid
-![Solid example]({{ site.baseurl }}/img/ui-toolkit/navigationbar/navbar-title-only@2x.png "Solid"){:.docs-component-image}
+![Solid example]({{ site.url }}/img/ui-toolkit/navigationbar/navbar-title-only@2x.png "Solid"){:.docs-component-image}
 
 #### JSX Declaration
 ```JSX
@@ -84,7 +84,7 @@ import { NavigationBar } from '@shoutem/ui'
 ```
 
 ### Clear (Image)
-![Clear (Image) example]({{ site.baseurl }}/img/ui-toolkit/navigationbar/navbar-imageoverlay-image@2x.png "Clear (Image)"){:.docs-component-image}
+![Clear (Image) example]({{ site.url }}/img/ui-toolkit/navigationbar/navbar-imageoverlay-image@2x.png "Clear (Image)"){:.docs-component-image}
 
 #### JSX Declaration
 ```JSX
@@ -100,7 +100,7 @@ import { NavigationBar } from '@shoutem/ui'
 ```
 
 ### Navbar + Drawer
-![Navbar + Drawer example]({{ site.baseurl }}/img/ui-toolkit/navigationbar/navbar-drawernav@2x.png "Navbar + Drawer"){:.docs-component-image}
+![Navbar + Drawer example]({{ site.url }}/img/ui-toolkit/navigationbar/navbar-drawernav@2x.png "Navbar + Drawer"){:.docs-component-image}
 
 #### JSX Declaration
 ```JSX
@@ -111,7 +111,7 @@ import { NavigationBar } from '@shoutem/ui'
 ```
 
 ### Navbar + Picker
-![Navbar + Picker example]({{ site.baseurl }}/img/ui-toolkit/navigationbar/navbar-picker@2x.png "Navbar + Picker"){:.docs-component-image}
+![Navbar + Picker example]({{ site.url }}/img/ui-toolkit/navigationbar/navbar-picker@2x.png "Navbar + Picker"){:.docs-component-image}
 
 #### JSX Declaration
 ```JSX
@@ -138,7 +138,7 @@ import { NavigationBar } from '@shoutem/ui'
 ```
 
 ### Navbar + Action
-![Navbar + Action example]({{ site.baseurl }}/img/ui-toolkit/navigationbar/navbar-action@2x.png "Navbar + Action"){:.docs-component-image}
+![Navbar + Action example]({{ site.url }}/img/ui-toolkit/navigationbar/navbar-action@2x.png "Navbar + Action"){:.docs-component-image}
 
 #### JSX Declaration
 ```JSX
@@ -154,7 +154,7 @@ import { NavigationBar } from '@shoutem/ui'
 ```
 
 ### Navbar + Icon
-![Navbar + Icon example]({{ site.baseurl }}/img/ui-toolkit/navigationbar/navbar-icon@2x.png "Navbar + Icon"){:.docs-component-image}
+![Navbar + Icon example]({{ site.url }}/img/ui-toolkit/navigationbar/navbar-icon@2x.png "Navbar + Icon"){:.docs-component-image}
 
 #### JSX Declaration
 ```JSX
@@ -170,7 +170,7 @@ import { NavigationBar } from '@shoutem/ui'
 ```
 
 ### Navbar (Sublevel) + Icon
-![Navbar (Sublevel) + Icon example]({{ site.baseurl }}/img/ui-toolkit/navigationbar/navbar-sublevel-icon@2x.png "Navbar + (Sublevel) + icon"){:.docs-component-image}
+![Navbar (Sublevel) + Icon example]({{ site.url }}/img/ui-toolkit/navigationbar/navbar-sublevel-icon@2x.png "Navbar + (Sublevel) + icon"){:.docs-component-image}
 
 #### JSX Declaration
 ```JSX
@@ -186,7 +186,7 @@ import { NavigationBar } from '@shoutem/ui'
 ```
 
 ### Navbar (Sublevel) + Action (no border)
-![Navbar (Sublevel) + Action (no border) example]({{ site.baseurl }}/img/ui-toolkit/navigationbar/navbar-sublevel-action-no-border@2x.png "Navbar (Sublevel) + Action (no border)"){:.docs-component-image}
+![Navbar (Sublevel) + Action (no border) example]({{ site.url }}/img/ui-toolkit/navigationbar/navbar-sublevel-action-no-border@2x.png "Navbar (Sublevel) + Action (no border)"){:.docs-component-image}
 
 #### JSX Declaration
 ```JSX
@@ -203,7 +203,7 @@ import { NavigationBar } from '@shoutem/ui'
 ```
 
 ### Navbar (Sublevel) + Action
-![Navbar (Sublevel) + Action example]({{ site.baseurl }}/img/ui-toolkit/navigationbar/navbar-sublevel-action@2x.png "NavigationBar (Sublevel) + Action"){:.docs-component-image}
+![Navbar (Sublevel) + Action example]({{ site.url }}/img/ui-toolkit/navigationbar/navbar-sublevel-action@2x.png "NavigationBar (Sublevel) + Action"){:.docs-component-image}
 
 #### JSX Declaration
 ```JSX
@@ -219,7 +219,7 @@ import { NavigationBar } from '@shoutem/ui'
 ```
 
 ### Navbar (Modal) + Icon
-![Navbar (Modal) + Icon example]({{ site.baseurl }}/img/ui-toolkit/navigationbar/navbar-modal-icon@2x.png "Navbar (Modal) + Icon"){:.docs-component-image}
+![Navbar (Modal) + Icon example]({{ site.url }}/img/ui-toolkit/navigationbar/navbar-modal-icon@2x.png "Navbar (Modal) + Icon"){:.docs-component-image}
 
 #### JSX Declaration
 ```JSX
@@ -239,7 +239,7 @@ import { NavigationBar } from '@shoutem/ui'
 ```
 
 ### Navbar (Modal) + Action
-![Navbar (Modal) + Action example]({{ site.baseurl }}/img/ui-toolkit/navigationbar/navbar-modal-action@2x.png "Navbar (Modal) + Action"){:.docs-component-image}
+![Navbar (Modal) + Action example]({{ site.url }}/img/ui-toolkit/navigationbar/navbar-modal-action@2x.png "Navbar (Modal) + Action"){:.docs-component-image}
 
 #### JSX Declaration
 ```JSX
@@ -259,7 +259,7 @@ import { NavigationBar } from '@shoutem/ui'
 ```
 
 ## Navbar (Modal) + Action 2
-![Navbar (Modal) + Action 2 example]({{ site.baseurl }}/img/ui-toolkit/navigationbar/navbar-modal-action-2@2x.png "Navbar (Modal) + Action"){:.docs-component-image}
+![Navbar (Modal) + Action 2 example]({{ site.url }}/img/ui-toolkit/navigationbar/navbar-modal-action-2@2x.png "Navbar (Modal) + Action"){:.docs-component-image}
 
 #### JSX Declaration
 ```JSX
@@ -279,7 +279,7 @@ import { NavigationBar } from '@shoutem/ui'
 ```
 
 ### Navbar (Modal) + Action 2 (disabled)
-![Navbar (Modal) + Action 2 (disabled) example]({{ site.baseurl }}/img/ui-toolkit/navigationbar/navbar-modal-action-2-disabled@2x.png "Navbar (Modal) + Action (disabled)"){:.docs-component-image}
+![Navbar (Modal) + Action 2 (disabled) example]({{ site.url }}/img/ui-toolkit/navigationbar/navbar-modal-action-2-disabled@2x.png "Navbar (Modal) + Action (disabled)"){:.docs-component-image}
 
 #### JSX Declaration
 ```JSX
@@ -299,7 +299,7 @@ import { NavigationBar } from '@shoutem/ui'
 ```
 
 ### Navbar / On primary color / back + share
-![Navbar / On primary color / back + share example]({{ site.baseurl }}/img/ui-toolkit/navigationbar/navbar-sublevel-action-no-border-copy@2x.png "Navbar / On primary color / back + share"){:.docs-component-image}
+![Navbar / On primary color / back + share example]({{ site.url }}/img/ui-toolkit/navigationbar/navbar-sublevel-action-no-border-copy@2x.png "Navbar / On primary color / back + share"){:.docs-component-image}
 
 #### JSX Declaration
 ```JSX

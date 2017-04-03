@@ -283,7 +283,7 @@ Example:
 ```
 
 > #### Note
-> The absolute data schema reference is formated following structure {developerName}.{extensionName}.{extensionPartName} as explained in [Creating shortcut and screen]({{ site.baseurl }}/docs/extensions/my-first-extension/shortcut-and-screen) tutorial
+> The absolute data schema reference is formated following structure {developerName}.{extensionName}.{extensionPartName} as explained in [Creating shortcut and screen]({{ site.url }}/docs/extensions/my-first-extension/shortcut-and-screen) tutorial
 
 #### Custom referenced schema - array
 

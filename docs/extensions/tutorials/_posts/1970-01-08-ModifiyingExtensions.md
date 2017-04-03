@@ -9,7 +9,7 @@ section: Tutorials
 
 The Shoutem's mission is simple - **do not solve already solved problems**. Quite often apps that we build need common features you've seen already numerous times: push notifications, analytics, ads, authentication, RSS readers, eCommerce integrations and so on. This is what extensions are for - just reuse ready features.
 
-However, for the app to succeed, it needs to be **unique**. Recreating RSS reader just to make it unique is a redundant work. Sometimes, it's enough to customize your app in the dashboard, customize the theme, or [write a new theme]({{ site.baseurl }}/docs/extensions/tutorials/writing-a-theme), but sometimes we need to modify the currently available extensions.
+However, for the app to succeed, it needs to be **unique**. Recreating RSS reader just to make it unique is a redundant work. Sometimes, it's enough to customize your app in the dashboard, customize the theme, or [write a new theme]({{ site.url }}/docs/extensions/tutorials/writing-a-theme), but sometimes we need to modify the currently available extensions.
 
 There are 2 ways to achieve this:
 
@@ -27,10 +27,10 @@ For the purpose of the demo, create new app (e.g. called **News App**) and add *
 This is what it should look like:
 
 <p class="image">
-<img src='{{ site.baseurl }}/img/tutorials/modifying-extensions/provided-layouts.png'/>
+<img src='{{ site.url }}/img/tutorials/modifying-extensions/provided-layouts.png'/>
 </p>
 
-You do want list layout, but with large images in `Tiles`, such as the ones provided in the [UI toolkit]({{ site.baseurl }}/docs/ui-toolkit/components/tiles). Let's modify News RSS extension directly.
+You do want list layout, but with large images in `Tiles`, such as the ones provided in the [UI toolkit]({{ site.url }}/docs/ui-toolkit/components/tiles). Let's modify News RSS extension directly.
 
 Download the [News RSS extension](https://github.com/shoutem/extensions/tree/master/shoutem-rss-news) from the repository and locate inside of the extension's folder:
 
@@ -130,7 +130,7 @@ Delete the old News RSS screen from the navigation (click on the 3 dots in top r
 This is what you should get:
 
 <p class="image">
-<img src='{{ site.baseurl }}/img/tutorials/modifying-extensions/customized-list-layout.png'/>
+<img src='{{ site.url }}/img/tutorials/modifying-extensions/customized-list-layout.png'/>
 </p>
 
 This is the result that we wanted! It was quite easy and straightforward. However, doing this means creating a completely separate extension which won't get any updates done by Shoutem on Shoutem **News RSS** extension.
@@ -189,7 +189,7 @@ Now we need to say which screen our `List` screen extends. Do this in `extension
 }
 ```
 
-We extended `ArticlesGridScreen` from Shoutem **News RSS** extension, as it's the [original screen](https://github.com/shoutem/extensions/blob/master/shoutem-rss-news/extension.json#L29). We've also added `title` and `image` which will both be shown in the layout selector. Download the image [here]({{ site.baseurl }}/static/modifying-extension/assets.zip), extract it and paste the `assets` folder in the extension `server` folder.
+We extended `ArticlesGridScreen` from Shoutem **News RSS** extension, as it's the [original screen](https://github.com/shoutem/extensions/blob/master/shoutem-rss-news/extension.json#L29). We've also added `title` and `image` which will both be shown in the layout selector. Download the image [here]({{ site.url }}/static/modifying-extension/assets.zip), extract it and paste the `assets` folder in the extension `server` folder.
 
 > #### Note
 > If you can't remember the fields in the `extension.json`, all the fields are documented in the [reference](http://shoutem.github.io/docs/extensions/reference/extension).
@@ -289,7 +289,7 @@ Open the app in the builder. Now, add the screen, but from the Shoutem **News RS
 Select the new layout and run the app. This is what you should get:
 
 <p class="image">
-<img src='{{ site.baseurl }}/img/tutorials/modifying-extensions/new-layout.png'/>
+<img src='{{ site.url }}/img/tutorials/modifying-extensions/new-layout.png'/>
 </p>
 
 This way, we only extended Shoutem **News RSS** extension and we will our extension will automatically get the all updates from Shoutem extension.

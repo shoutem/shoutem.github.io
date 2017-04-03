@@ -40,7 +40,7 @@ export const screens = extension.screens;
 export { reducer };
 ```
 
-Find more information about extension parts [here]({{ site.baseurl }}/docs/extensions/reference/extension-exports).
+Find more information about extension parts [here]({{ site.url }}/docs/extensions/reference/extension-exports).
 
 We will fetch restaurants from **Shoutem Cloud Storage** in `List` screen with `find` action creator. Also, we'll use 3 helper functions from the `@shoutem/redux-io` package:
  
@@ -57,6 +57,8 @@ import {
   getCollection
 } from '@shoutem/redux-io';
 ```
+
+The complete code is for `app/screens/List.js` is available below.
 
 Fetch data in `componentDidMount` lifecycle method.
 
@@ -218,7 +220,7 @@ Success!
 Everything should work as a charm!
 
 <p class="image">
-<img src='{{ site.baseurl }}/img/my-first-extension/working-with-data.png'/>
+<img src='{{ site.url }}/img/my-first-extension/working-with-data.png'/>
 </p>
 
 That's it! You've done it. You just made your first extension using **Shoutem UI Toolkit** and **Shoutem Cloud Storage**. Great job!

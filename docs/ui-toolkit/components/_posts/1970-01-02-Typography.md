@@ -17,7 +17,7 @@ Typography components consist of several flavors of `Text` components with prede
 <Caption>...</Caption>
 ```
 
-![Title example]({{ site.baseurl }}/img/ui-toolkit/typography/title@2x.png "Title"){:.docs-component-image}
+![Title example]({{ site.url }}/img/ui-toolkit/typography/title@2x.png "Title"){:.docs-component-image}
 
 ## API
 
@@ -37,7 +37,7 @@ Typography components consist of several flavors of `Text` components with prede
 ## Examples
 
 ### Heading
-![Heading example]({{ site.baseurl }}/img/ui-toolkit/typography/heading@2x.png "Heading"){:.docs-component-image}
+![Heading example]({{ site.url }}/img/ui-toolkit/typography/heading@2x.png "Heading"){:.docs-component-image}
 
 #### JSX Declaration
 ```JSX
@@ -45,7 +45,7 @@ Typography components consist of several flavors of `Text` components with prede
 ```
 
 ### Title
-![Title example]({{ site.baseurl }}/img/ui-toolkit/typography/title@2x.png "Title"){:.docs-component-image}
+![Title example]({{ site.url }}/img/ui-toolkit/typography/title@2x.png "Title"){:.docs-component-image}
 
 #### JSX Declaration
 ```JSX
@@ -53,7 +53,7 @@ Typography components consist of several flavors of `Text` components with prede
 ```
 
 ### Subtitle
-![Subtitle example]({{ site.baseurl }}/img/ui-toolkit/typography/subtitle@2x.png "Subtitle"){:.docs-component-image}
+![Subtitle example]({{ site.url }}/img/ui-toolkit/typography/subtitle@2x.png "Subtitle"){:.docs-component-image}
 
 #### JSX Declaration
 ```JSX
@@ -61,7 +61,7 @@ Typography components consist of several flavors of `Text` components with prede
 ```
 
 ### Text
-![Text example]({{ site.baseurl }}/img/ui-toolkit/typography/text@2x.png "Text"){:.docs-component-image}
+![Text example]({{ site.url }}/img/ui-toolkit/typography/text@2x.png "Text"){:.docs-component-image}
 
 #### JSX Declaration
 ```JSX
@@ -69,7 +69,7 @@ Typography components consist of several flavors of `Text` components with prede
 ```
 
 ### Caption
-![Caption example]({{ site.baseurl }}/img/ui-toolkit/typography/caption@2x.png "Caption"){:.docs-component-image}
+![Caption example]({{ site.url }}/img/ui-toolkit/typography/caption@2x.png "Caption"){:.docs-component-image}
 
 #### JSX Declaration
 ```JSX

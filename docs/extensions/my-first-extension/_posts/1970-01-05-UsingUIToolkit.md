@@ -8,17 +8,21 @@ section: My first extension
 # Using UI toolkit
 <hr />
 
-React Native exposes plain iOS and Android native components that you can use, but there's usually much work left to do just to make them look beautiful. Instead, you can use [@shoutem/ui](https://github.com/shoutem/ui), a set of customizable UI components. There are [plenty of components]({{ site.baseurl }}/docs/ui-toolkit/components/typography) that you can use out of the box.
+React Native exposes plain iOS and Android native components that you can use, but there's usually much work left to do just to make them look beautiful. Instead, you can use [@shoutem/ui](https://github.com/shoutem/ui), a set of customizable UI components. There are [plenty of components]({{ site.url }}/docs/ui-toolkit/components/typography) that you can use out of the box.
 
 ## Creating restaurants list
 
 Let's create a list of restaurants. Start by importing UI components from the toolkit.
 
-```javascript{5-15}
+```javascript{5-19}
 #file: app/screens/List.js
 import React, {
   Component
 } from 'react';
+
+import {
+  StyleSheet
+} from 'react-native';
 
 import {
   Image,
@@ -33,7 +37,7 @@ import {
 import { NavigationBar } from '@shoutem/ui/navigation';
 ```
 
-Notice we didn't need to install the `@shoutem/ui` package into `app` folder of our extension. That's because this package will be installed by the app into which extension is bundled. All packages which are installed by app can be found in `peerDependencies` of `app/package.json`.
+Notice we didn't need to install the `@shoutem/ui` package into `app` folder of our extension. That's because this package will be installed by the app into which extension is bundled. All packages which are installed by the app by default can be found in `peerDependencies` of `app/package.json`. Also, we removed `View` and `Text` from `react-native` import.
 
 We prepared mockup restaurants data for you. Download [this compressed file](/static/getting-started/restaurants.zip), extract it and copy the extracted `assets` folder inside of the `app` folder. The `assets` folder contain static restaurants data in `restaurants.json` file.
 
@@ -48,7 +52,7 @@ export default class List extends Component {
   }
 ```
 
-Implement `render` method that will use `ListView` component. [ListView]({{ site.baseurl }}/docs/ui-toolkit/components/list-view) accepts `data` in the form of an `array` to show in the list and `renderRow` callback function which defines how row in the list should look like.
+Implement `render` method that will use `ListView` component. [ListView]({{ site.url }}/docs/ui-toolkit/components/list-view) accepts `data` in the form of an `array` to show in the list and `renderRow` callback function which defines how row in the list should look like.
 
 Add `renderRow` method and replace implementation of `render` method:
 
@@ -82,7 +86,7 @@ Add `renderRow` method and replace implementation of `render` method:
   }
 ```
 
-Upload the extension:
+Since we've only changed the app code now, we don't need to upload the extension. However, in case you're checking the changes in the Builder, do:
 
 ```ShellSession
 $ shoutem push
@@ -90,10 +94,10 @@ Uploading `Restaurants` extension to Shoutem...
 Success!
 ```
 
-Since we changed the extension, the app preview will be shown after Shoutem builds the new app. `List` is now showing the list of restaurants. 
+The app preview will be shown after Shoutem bundles the new app. `List` is now showing the list of restaurants. 
 
 <p class="image">
-<img src='{{ site.baseurl }}/img/my-first-extension/extension-rich-list.png'/>
+<img src='{{ site.url }}/img/my-first-extension/extension-rich-list.png'/>
 </p>
 
 This looks exactly how we wanted.
@@ -104,7 +108,7 @@ Try clicking on a row. Nothing happens! We want to open up the screen with resta
 
 When restaurant in the list is touched, we will open details screen for that restaurant. To make components respond to touches, use [TouchableOpacity](https://facebook.github.io/react-native/docs/touchableopacity.html) component from React Native. We'll also import Shoutem's `navigateTo` action creator to navigate to another screen and `ext` function for the name of screen we're navigating to.
 
-Let's import these things:
+Let's import these things (find the complete code below):
 
 ```javascript{1-5}
 #file: app/screens/List.js
@@ -150,7 +154,7 @@ File `extension.json` was modified.
 
 We didn't create `shortcut` as this screen is not going to be the first screen of an extension.
 
-Open restaurants details screen in the `renderRow` function. Action `navigateTo` accepts Shoutem `route object` as the only argument with `screen` (full name of screen to navigate to) and `props` (passed to screen) properties. To get the full name of the screen, we'll use `ext` function, which returns the full name for the extension part passed as its first argument (e.g. returns `tom.restaurants.Details` for `Details`) or full extension name (e.g. `tom.restaurants`) if no argument is passed.
+Open restaurants details screen in the `renderRow` function. Action creator `navigateTo` accepts Shoutem `route object` as the only argument with `screen` (full name of screen to navigate to) and `props` (passed to screen) properties. To get the full name of the screen, we'll use `ext` function, which returns the full name for the extension part passed as its first argument (e.g. returns `tom.restaurants.Details` for `Details`) or full extension name (e.g. `tom.restaurants`) if no argument is passed.
 
 
 ```JSX{2,5-8,16}
@@ -347,7 +351,7 @@ Success!
 When you click on a row in the list, this is what you get:
 
 <p class="image">
-<img src='{{ site.baseurl }}/img/my-first-extension/extension-rich-details.png'/>
+<img src='{{ site.url }}/img/my-first-extension/extension-rich-details.png'/>
 </p>
 
 That's exactly what we wanted to get! However, our app is using static data. Let's connect it to the **Shoutem Cloud**. 

@@ -10,12 +10,12 @@ section: Tutorials
 
 Each screen can have multiple layouts. App owners can choose which screen layout they want to use in their app (e.g. for news from politics they might want to use layout with smaller images, and for fashion large images). As screen layouts are just plain screens, they can contain different logic than the screen they are altering and can be easily used for A/B testing.
 
-We’ll create a different layout in the **Restaurants** extension from [Getting started]({{ site.baseurl }}/docs/extensions/tutorials/getting-started) tutorial, which you can [get here](https://github.com/shoutem/extension-examples/tree/master/restaurants-getting-started). Restaurants extension has the `List` screen (for listing all the restaurants) and `Details` screen (for details of one particular restaurant).
+We’ll create a different layout in the **Restaurants** extension from [Getting started]({{ site.url }}/docs/extensions/tutorials/getting-started) tutorial, which you can [get here](https://github.com/shoutem/extension-examples/tree/master/restaurants-getting-started). Restaurants extension has the `List` screen (for listing all the restaurants) and `Details` screen (for details of one particular restaurant).
 
 Let’s add one additional screen that will represent an alternative layout for `List` screen with smaller images as shown on the image:
 
 <p class="image">
-<img src='{{ site.baseurl }}/img/tutorials/screen-layouts/list-small.png'/>
+<img src='{{ site.url }}/img/tutorials/screen-layouts/list-small.png'/>
 </p>
 
 Locate to the extension folder:
@@ -33,7 +33,7 @@ File `app/extension.js` was modified.
 File `extension.json` was modified.
 ```
 
-Extend `List` screen and override its `renderRow` method. We're going to use the `Row` component from [UI toolkit]({{ site.baseurl }}/docs/ui-toolkit/components/rows). This is the complete code for `SmallList.js` file with the main parts being highlighted.
+Extend `List` screen and override its `renderRow` method. We're going to use the `Row` component from [UI toolkit]({{ site.url }}/docs/ui-toolkit/components/rows). This is the complete code for `SmallList.js` file with the main parts being highlighted.
 
 ```javascript{15-17,27-50}
 #file: app/screens/SmallList.js
@@ -101,7 +101,7 @@ Restaurants extension uses `CMS settings page`, so app owners can manage data in
 Layout settings page resolves which screens have multiple layouts and shows the `layout selectors` for them. Example of 2 layout selectors for News RSS extension is shown in the image below.
 
 <p class="image">
-<img src='{{ site.baseurl }}/img/tutorials/screen-layouts/news-rss-layouts.png'/>
+<img src='{{ site.url }}/img/tutorials/screen-layouts/news-rss-layouts.png'/>
 </p>
 
 For layout settings page to be able to resolve for which screens to show layout selectors, we need to add `extends` property to screens which are additional layouts, referencing the "default" layout. Screens layouts inherit all the properties from extending screen and can override them.
@@ -151,7 +151,7 @@ Reference layout settings page in shortcut `adminPages` and extend the screens i
 }
 ```
 
-We also included additional properties like `title` and `image` to screens which will be shown in the layout selector, so they can look nicer. [Download this file]({{ site.baseurl }}/static/screen-layouts/assets.zip) including screen images, extract the folder and place it in the `server` folder of the extension. Here you can find the [list]({{ site.baseurl }}/docs/extensions/reference/extension) of all the available properties in `extension.json`. 
+We also included additional properties like `title` and `image` to screens which will be shown in the layout selector, so they can look nicer. [Download this file]({{ site.url }}/static/screen-layouts/assets.zip) including screen images, extract the folder and place it in the `server` folder of the extension. Here you can find the [list]({{ site.url }}/docs/extensions/reference/extension) of all the available properties in `extension.json`. 
 
 If we would want to show layout selector for `Details` screen, we would need to add `navigatesTo` property to the `List` screen. That way, layout settings page could calculate the screen hierarchy starting from the screen referenced in the shortcut. An example of this can be found in the [extension.json](https://github.com/shoutem/extensions/blob/master/shoutem-rss-news/extension.json) file of Shoutem News RSS extension.
 
@@ -169,9 +169,9 @@ Success!
 Default layout will be the `List` screen. Switch to `Layout` and select **List with small images**. This is the result which you should get:
 
 <p class="image">
-<img src='{{ site.baseurl }}/img/tutorials/screen-layouts/restaurants-small-list.png'/>
+<img src='{{ site.url }}/img/tutorials/screen-layouts/restaurants-small-list.png'/>
 </p>
 
 Great job! Now you know how to create additional layouts for your extension.
 
-Since we built this extension, we can add additional layouts to it directly. However, sometimes we want to add additional layouts for extension from another developer - essentially to modify extensions. This is explained in [Modifying extensions]({{ site.baseurl }}/docs/extensions/tutorials/modifying-extensions) tutorial.
+Since we built this extension, we can add additional layouts to it directly. However, sometimes we want to add additional layouts for extension from another developer - essentially to modify extensions. This is explained in [Modifying extensions]({{ site.url }}/docs/extensions/tutorials/modifying-extensions) tutorial.
