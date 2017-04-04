@@ -34,6 +34,7 @@ $(function() {
     var title = output.title.split(/\s*-\s*/);
     flourish.page_title = title[0];
     flourish.page_section = title[1];
+    flourish.edit_link = output.el.querySelector(".edit-link a").href;
 
     setTimeout(function () {
       $body.removeClass("loading");
@@ -46,6 +47,7 @@ $(function() {
 
     $(".page-title").text(flourish.page_title);
     $(".page-section").text(flourish.page_section);
+    $(".edit-link a")[0].href = flourish.edit_link;
 
     $("html, body").animate({ scrollTop: 0 });
    
