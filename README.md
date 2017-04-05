@@ -17,7 +17,7 @@ All our extensions are open sourced, so you can modify anything you want by simp
 
 ## Tools and docs
 
-We've prepared tools to speed up your extension development like [Shoutem CLI]({{ site.url }}/docs/extensions/reference/cli), [Shoutem UI toolkit](https://shoutem.github.io/ui/) for faster component development and documented all the concepts on this [developer's portal](http://shoutem.github.io/).
+We've prepared tools to speed up your extension development like [Shoutem CLI](https://shoutem.github.io/docs/extensions/reference/cli), [Shoutem UI toolkit](https://shoutem.github.io/ui/) for faster component development and documented all the concepts on this [developer's portal](http://shoutem.github.io/).
 
 If you find some bug or have a suggestion on how to improve anything, feel free to contribute or raise an issue!
 
