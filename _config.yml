@@ -18,7 +18,8 @@ url: "//shoutem.github.io"
 # Variables
 shoutem:
   builderURL: "https://builder.shoutem.com"
-  previewApp: "https://itunes.apple.com/us/app/shoutem-preview/id1211732978"
+  previewAppiOS: "https://itunes.apple.com/us/app/shoutem-preview/id1211732978"
+  previewAppAndroid: "https://play.google.com/store/apps/details?id=com.shoutem.extensions.preview"
   cli: "https://www.npmjs.com/package/@shoutem/cli"
   school: "http://school.shoutem.com/"
   pricing: "https://new.shoutem.com/pricing/"
@@ -28,3 +29,4 @@ example:
   devName: tom
   devEmail: tom@shoutem.com
   appId: 8074
+  qrCodeLink: http://shoutem.app.link/?host=df4d8960.ngrok.io&port=80&dev=false

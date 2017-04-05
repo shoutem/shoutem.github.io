@@ -31,7 +31,7 @@ Your app is prefilled with some content.
 
 ## Run your app
 
-Your app can be previewed on your device or inside the Builder. Click the _Preview on device_ button and scan the QR code. This will lead you to download the [Shoutem Preview app]({{ site.shoutem.previewApp }}) which you can use to get your app on the device fast. After the installation, **Shoutem Preview** will automatically open the app.
+Your app can be previewed on your device or inside the Builder. Click the _Preview on device_ button and scan the QR code. This will lead you to download the **Shoutem Preview** app (available for [iOS]({{ site.shoutem.previewAppiOS }}) and [Android]({{ site.shoutem.previewAppAndroid }})) which you can use to get your app on the device fast. After the installation, **Shoutem Preview** will automatically open the app.
 
 <p class="image">
 <img src='{{ site.url }}/img/tutorials/getting-started/shoutem-preview-app.png'/>

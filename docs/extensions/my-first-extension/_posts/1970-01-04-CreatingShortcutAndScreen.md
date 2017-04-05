@@ -139,7 +139,7 @@ Go to `Custom` under `Add Screen` modal in Shoutem builder. You can finally see 
 
 Click on the `Restaurants`, which will get that shortcut inserted into the navigation.
 
-Let's preview our app now. We can preview it in the Builder, but it might take some time while the app preview shows. Every time you change an extension, we need to rebundle the whole app to the new extension. It's much faster to use [Shoutem Preview app]({{ site.shoutem.previewApp }}) and Shoutem CLI, which can bundle only the changes in the extension.
+Let's preview our app now. We can preview it in the Builder, but it might take some time while the app preview shows. Every time you change an extension, we need to rebundle the whole app to the new extension. It's much faster to use **Shoutem Preview** app (available for [iOS]({{ site.shoutem.previewAppiOS }}) and [Android]({{ site.shoutem.previewAppAndroid }})) and Shoutem CLI, which can bundle only the changes in the extension.
 
 Since the app is managed through the Builder, we needed to `push` the extension to Shoutem after creating screen and shortcut to add them to app navigation. However, when we're only changing the app code, we don't need to the `push`ing. Instead, use `shoutem link` to tell Shoutem CLI to bundle local code of your extension.
 
