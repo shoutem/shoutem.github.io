@@ -52,6 +52,7 @@ $(function() {
 
     $("html, body").animate({ scrollTop: 0 });
    
+    addTargetBlankToLinks();
     showMenuItems();
     showNavButtons();
     prepareCodeblocks();
@@ -287,10 +288,6 @@ $(function() {
         document.activeElement.blur();
         return;
       }
-
-      flourish.off("post_replace").on("post_replace", function() {
-        addTargetBlankToLinks();
-      });
 
       flourish.fetch({
         url: url,
