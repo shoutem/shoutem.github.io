@@ -20,7 +20,7 @@ Before we dive into settings types, let’s refresh our memory on extension conc
 
 ##### Settings pages
 
-Settings pages are web pages written by extension developers, and they appear in Shoutem builder. Their purpose is to enable app owners extension customizations through settings. Check the [tutorial on how to create a settings page](/docs/extensions/tutorials/writing-settings-page) for more info. Settings pages are exported via the `pages` field in `extension.json` and can be used on 3 different places which determine settings type.
+Settings pages are web pages written by extension developers, and they appear in Shoutem builder. Their purpose is to enable app owners extension customizations through settings. Check the [tutorial on how to create a settings page]({{ site.url }}/docs/extensions/tutorials/writing-settings-page) for more info. Settings pages are exported via the `pages` field in `extension.json` and can be used on 3 different places which determine settings type.
 
 ##### Settings types
 
@@ -41,7 +41,7 @@ Updating the default settings in `extension.json` **will not** update the defaul
 
 ##### Manipulation of settings
 
-Settings can be manipulated using the [@shoutem/api-sdk](/docs/coming-soon) package. See [Writting settings pages](/docs/extensions/tutorials/writing-settings-page) tutorial on how to do that.
+Settings can be manipulated using the [@shoutem/api-sdk]({{ site.url }}/docs/coming-soon) package. See [Writting settings pages]({{ site.url }}/docs/extensions/tutorials/writing-settings-page) tutorial on how to do that.
 
 > #### Note
 > The below documentation is outdated and will be updated once `api-sdk` tool is finished. This is in progress.
@@ -176,7 +176,7 @@ Each screen that is connected to the state can access shortcut settings. They ca
 
 ## Screen settings
 
-Screen settings are layouts settings that hold information specific for that layout. Check the [tutorial for screen layouts](http://shoutem.github.io/docs/extensions/tutorials/screen-layouts) to get a better understanding on difference between screen and layouts.
+Screen settings are layouts settings that hold information specific for that layout. Check the [tutorial for screen layouts]({{ site.url }}/docs/extensions/tutorials/screen-layouts) to get a better understanding on difference between screen and layouts.
 
 ##### Place
 

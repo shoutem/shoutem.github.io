@@ -146,7 +146,7 @@ Creating the bundle for your app...
 ```
 
 > #### Note
-> To create bundle for the app, you need to have [Node.js v7](https://nodejs.org/en/) and [react-native-cli](http://npmjs.com/package/react-native-cli) installed. See [FAQ](/docs/extensions/tutorials/faq) if you have problems setting this up.
+> To create bundle for the app, you need to have [Node.js v7](https://nodejs.org/en/) and [react-native-cli](http://npmjs.com/package/react-native-cli) installed. See [FAQ]({{ site.url }}/docs/extensions/tutorials/faq) if you have problems setting this up.
 
 Once the app is bundled, CLI will print the QR code to the terminal. Scan it with with Shoutem Preview app. Make sure you're connected to the same WiFi network on both your computer and smartphone (we'll soon make it possible to do it without being connected to the same WiFi).
 
@@ -160,4 +160,4 @@ This is the result:
 
 ## What's next?
 
-To leverage the full power of Shoutem, we'd suggest you go through [My first extension](/docs/extensions/my-first-extension/introduction) tutorial, which explains the underlying concepts in more detail.
+To leverage the full power of Shoutem, we'd suggest you go through [My first extension]({{ site.url }}/docs/extensions/my-first-extension/introduction) tutorial, which explains the underlying concepts in more detail.

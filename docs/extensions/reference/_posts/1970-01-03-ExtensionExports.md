@@ -14,7 +14,7 @@ Each extension can export multiple values in:
 
 ## _app/index.js_
 
-The `app` folder is npm package that represents segment of extension bundled in the app. The `app/index.js` file is what is accessible from the current extension to the app and other extensions. Since `app` expects some exported parts (e.g.) there are some predefined extension exports. Here only those will be listed, but you can read more about the whole architecture in [Technical overview](/docs/extensions/reference/overview).
+The `app` folder is npm package that represents segment of extension bundled in the app. The `app/index.js` file is what is accessible from the current extension to the app and other extensions. Since `app` expects some exported parts (e.g.) there are some predefined extension exports. Here only those will be listed, but you can read more about the whole architecture in [Technical overview]({{ site.url }}/docs/extensions/reference/overview).
 
 These are the predefined extension exports:
 

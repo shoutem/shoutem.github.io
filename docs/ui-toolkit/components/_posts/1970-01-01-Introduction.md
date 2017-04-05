@@ -13,9 +13,9 @@ Shoutem UI toolkit enables you to build professionally looking React Native apps
 
 It consists of three libraries: 
 
-- [@shoutem/ui](https://github.com/shoutem/ui): beautiful and customizable UI [components](http://shoutem.github.io/docs/ui-toolkit/components/typography)
-- [@shoutem/theme](https://github.com/shoutem/theme): “CSS-way” of styling the entire app with [themes](http://shoutem.github.io/docs/ui-toolkit/theme/introduction)
-- [@shoutem/animation](https://github.com/shoutem/animation): declarative way of applying ready-made [animations](http://shoutem.github.io/docs/ui-toolkit/animation/introduction) 
+- [@shoutem/ui](https://github.com/shoutem/ui): beautiful and customizable UI [components]({{ site.url }}/docs/ui-toolkit/components/typography)
+- [@shoutem/theme](https://github.com/shoutem/theme): “CSS-way” of styling the entire app with [themes]({{ site.url }}/docs/ui-toolkit/theme/introduction)
+- [@shoutem/animation](https://github.com/shoutem/animation): declarative way of applying ready-made [animations]({{ site.url }}/docs/ui-toolkit/animation/introduction) 
 
 
 ## Prerequisites
@@ -71,7 +71,7 @@ You can also use standard React Native components in your layouts anywhere you w
 
 ## Styling components
 
-All components have default style defined by theme in [theme.js](https://github.com/shoutem/ui/blob/develop/theme.js) file in the root of `@shoutem/ui` package. Theme uses [styling rules](http://shoutem.github.io/docs/ui-toolkit/theme/introduction) interpreted by [@shoutem/theme](https://github.com/shoutem/theme) package.
+All components have default style defined by theme in [theme.js](https://github.com/shoutem/ui/blob/develop/theme.js) file in the root of `@shoutem/ui` package. Theme uses [styling rules]({{ site.url }}/docs/ui-toolkit/theme/introduction) interpreted by [@shoutem/theme](https://github.com/shoutem/theme) package.
 
 Each component can be customized with React Native inline styles or by using `styleName` properties. Style name is similar to CSS class - it contains a set of styles that is applied to a component, defined in theme
 
