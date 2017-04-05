@@ -13,7 +13,7 @@ kramdown:
   syntax_highlighter_opts:
     disable : true
 
-url: "https://shoutem.github.io"
+url: "//shoutem.github.io"
 
 # Variables
 shoutem:
