@@ -81,7 +81,7 @@ Path to extension's icon that will be present in Shoutem Extension Market. Store
 
 #### settingsPages
 
-Array of [extension settings pages](/docs/extensions/reference/settings-types) used to manage the global settings of the extension.
+Array of [extension settings pages]({{ site.url }}/docs/extensions/reference/settings-types) used to manage the global settings of the extension.
 
 ```json
 [{
@@ -116,7 +116,7 @@ Dictionary of arbitrary key/value pairs that represent **default** extensions's 
 
 #### shortcuts
 
-[Shortcuts](/docs/extensions/my-first-extension/shortcut-and-screen) are links to the starting screen of your extension. Format:
+[Shortcuts]({{ site.url }}/docs/extensions/my-first-extension/shortcut-and-screen) are links to the starting screen of your extension. Format:
 
 ```json
 [{
@@ -161,7 +161,7 @@ Each object in shortcuts array, shortcut object, consists of these fields:
 - `icon`: Path to shortcut's icon that will be shown in builder. Store in `server` asset's folder
 - `type`: Indicates the type of shortcut. It can be `navigation` or `undefined`. If `navigation`, it will be possible to nest other shortcuts below the current
 - `adminPages`: Array of shortcut's admin pages. Admin page object inside of array consists of:
-  - `page`: Required field, references an [settings page](/docs/extensions/tutorials/writing-settings-page)
+  - `page`: Required field, references an [settings page]({{ site.url }}/docs/extensions/tutorials/writing-settings-page)
   - `title`: Title of admin page
   - `parameters` Dictionary of arbitrary key/value pairs that will be passed to admin page instance
 - `settings`: Dictionary of arbitrary key/value pairs that represent default Shortcut's settings passed to admin pages
@@ -213,21 +213,21 @@ Screens are nothing more than React components which represent full mobile scree
 Each object in screens array, screen object, consists of these fields:
 
 - `name`: Required field, defines screen's identity
-- `title`: Screen's title that will be shown in [layout selector](/docs/extensions/tutorials/screen-layouts)
+- `title`: Screen's title that will be shown in [layout selector]({{ site.url }}/docs/extensions/tutorials/screen-layouts)
 - `image`: Path to screen's image that shows it's layout
 - `navigatesTo`: Array of key/value pairs that indicates to which screens the current one can navigate to
 - `settingsPage`: Screen's settings page. Object consists of:
-  - `page`: Required field, references an [settings page](/docs/extensions/tutorials/writing-settings-page)
+  - `page`: Required field, references an [settings page]({{ site.url }}/docs/extensions/tutorials/writing-settings-page)
   - `parameters`: Dictionary of arbitrary key/value pairs that will be passed to settings page instance
 - `settings`: Dictionary of arbitrary key/value pairs that represent default Shortcut's settings passed to admin pages
 - `extends`: References screen that the current one is extending
 
-In the example above, we included 2 screen objects inside of the `screens` array. We wanted to show you the usage of `extends` field. Extending makes it possible to [switch between multiple screen layouts](/docs/extensions/tutorials/screen-layouts).
+In the example above, we included 2 screen objects inside of the `screens` array. We wanted to show you the usage of `extends` field. Extending makes it possible to [switch between multiple screen layouts]({{ site.url }}/docs/extensions/tutorials/screen-layouts).
 
 
 #### dataSchemas
 
-[Data Schemas](/docs/extensions/my-first-extension/using-cloud-storage) are Shoutem-flavored [JSON Schemas](http://json-schema.org/) which describe data stored on Shoutem's CMS.
+[Data Schemas]({{ site.url }}/docs/extensions/my-first-extension/using-cloud-storage) are Shoutem-flavored [JSON Schemas](http://json-schema.org/) which describe data stored on Shoutem's CMS.
 
 ```json
 [{
@@ -245,7 +245,7 @@ Each object in data schemas array, data schema object, consists of these fields:
 
 #### pages
 
-[Settings pages](/docs/extensions/reference/settings-types) are web pages written by extension developers. They can be used to manage 3 different types of settings:
+[Settings pages]({{ site.url }}/docs/extensions/reference/settings-types) are web pages written by extension developers. They can be used to manage 3 different types of settings:
 
 - global settings of the extensions (referenced from `settingsPages` in the root of extension.json)
 - settings of the shortcut instance (referenced from `adminPages` in the shortcut object)
@@ -269,7 +269,7 @@ Each object in pages array, extensions page object, consists of these fields:
 
 #### themes
 
-[Themes](/docs/extensions/tutorials/writing-a-theme) represent files where you can provide set of styles for your UI components.
+[Themes]({{ site.url }}/docs/extensions/tutorials/writing-a-theme) represent files where you can provide set of styles for your UI components.
 
 ```json
 [{

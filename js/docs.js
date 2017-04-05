@@ -16,12 +16,11 @@ $(function() {
   /* Ajax loading */
 
   $window.on("popstate", ajaxLoadLink);
-
   $body.on("click", "a:not(#signup-modal)", ajaxLoadLink);
 
   var animationTime = 200;
-  var loc = window.location.href.replace(/http(s*):\/\//, "").split("/");
-  var docsLinkRx = new RegExp(loc[0] + "/docs/", "i");
+  var hostname = window.location.host;
+  var docsLinkRx = new RegExp(hostname + "/docs/", "i");
   var flourish = new Flourish({
     extractSelector: "#documentation",
     replaceSelector: "#documentation",
@@ -29,7 +28,9 @@ $(function() {
     replaceDelay: animationTime
   });
 
-  flourish.on("post_fetch", function( options, output )
+  addTargetBlankToLinks();
+
+  flourish.off("post_fetch").on("post_fetch", function( options, output )
   {
     var title = output.title.split(/\s*-\s*/);
     flourish.page_title = title[0];
@@ -41,7 +42,7 @@ $(function() {
     }, animationTime * 1.5);
   });
 
-  flourish.on("post_replace", function ()
+  flourish.off("post_replace").on("post_replace", function ()
   {
     var loc = currentLocation = getLocation();
 
@@ -51,6 +52,7 @@ $(function() {
 
     $("html, body").animate({ scrollTop: 0 });
    
+    addTargetBlankToLinks();
     showMenuItems();
     showNavButtons();
     prepareCodeblocks();
@@ -91,6 +93,14 @@ $(function() {
       closeSignupModal();
   });
 
+  function addTargetBlankToLinks() {
+    $("a").each(function(){
+      if( ! this.href.match(docsLinkRx) ) {
+        this.setAttribute("target", "_blank");
+      }
+    });
+  }
+
   function closeSignupModal(e)
   {
     $signupModal.removeClass("open");
@@ -126,8 +136,6 @@ $(function() {
       }
     }
   });
-
-  
 
   // prevent document scrolling upon reaching sidebar menu scroll end
   // http://jsfiddle.net/troyalford/4wrxq/4/

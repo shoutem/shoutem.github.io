@@ -20,7 +20,7 @@ npm install @shoutem/animation
 
 ## New animations - coming soon
 
-We're working hard to open source more `animation components` and `drivers`, which are already helping us in many [Shoutem extensions](http://shoutem.github.io/docs/extensions/tutorials/getting-started). Some of them are:
+We're working hard to open source more `animation components` and `drivers`, which are already helping us in many [Shoutem extensions]({{ site.url }}/docs/extensions/tutorials/getting-started). Some of them are:
 
 **Drivers:**
 

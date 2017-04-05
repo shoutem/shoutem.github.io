@@ -12,7 +12,7 @@ This tutorial shows how to easily gain access to native (iOS and Android) APIs i
 As an example, we'll show you how we've built a Shopify extension using their [Mobile Buy SDK](https://help.shopify.com/api/sdks/mobile-buy-sdk) for iOS and Android. Although this is an advanced use case, as you follow the tutorial, you'll notice just how easy it was.
 
 > #### Note
-> Before we start, you might want to read the excellent official guides on how to write native modules for [iOS](https://facebook.github.io/react-native/docs/native-modules-ios.html) and [Android](https://facebook.github.io/react-native/docs/native-modules-android.html), since this tutorial relies on these concepts. Make sure you've read [Getting started](http://shoutem.github.io/docs/extensions/tutorials/getting-started) with Shoutem extensions too.
+> Before we start, you might want to read the excellent official guides on how to write native modules for [iOS](https://facebook.github.io/react-native/docs/native-modules-ios.html) and [Android](https://facebook.github.io/react-native/docs/native-modules-android.html), since this tutorial relies on these concepts. Make sure you've read [Getting started]({{ site.url }}/docs/extensions/tutorials/getting-started) with Shoutem extensions too.
 
 There are 3 cases for accessing native APIs from your extension:
 
