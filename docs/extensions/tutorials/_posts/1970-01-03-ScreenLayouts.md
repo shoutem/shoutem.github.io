@@ -164,7 +164,7 @@ Success!
 ```
 
 > #### Note
-> If you don't have this extension installed on any app, you can install with `shoutem install`. Add the screen through the builder, import the CSV file as described in the bottom of [Using cloud storage](/docs/extensions/my-first-extension/using-cloud-storage) chapter and run the preview.
+> If you don't have this extension installed on any app, you can install with `shoutem install`. Add the screen through the builder, import the CSV file as described in the bottom of [Using cloud storage]({{ site.url }}/docs/extensions/my-first-extension/using-cloud-storage) chapter and run the preview.
 
 Default layout will be the `List` screen. Switch to `Layout` and select **List with small images**. This is the result which you should get:
 

@@ -13,7 +13,7 @@ Shoutem comes with a dozen of available themes, but if you want a custom one, yo
 - Theme variables: schema for Shoutem builder describing what application owners can customize in your theme
 
 > #### Note
-> This tutorial continues on [Getting started](http://shoutem.github.io/docs/extensions/tutorials/getting-started). If you don't have an app which is result from Getting started chapter, find the `Restaurants` extension on [Github](https://github.com/shoutem/extension-examples/tree/master/restaurants-getting-started), install it onto new app and fill with some restaurants.
+> This tutorial continues on [Getting started]({{ site.url }}/docs/extensions/tutorials/getting-started). If you don't have an app which is result from Getting started chapter, find the `Restaurants` extension on [Github](https://github.com/shoutem/extension-examples/tree/master/restaurants-getting-started), install it onto new app and fill with some restaurants.
 
 ## Creating a theme
 
@@ -63,7 +63,7 @@ Extension file was just modified:
 
 Check `app/themes/restaurant.js` file. It's a copy of Shoutem's default theme - Rubicon.
 
-Property `showcase`, which is empty, is an array of images and videos that will showcase your theme. Download prepared [showcase](/docs/coming-soon) and copy it to `server/assets` folder. Change `showcase` to:
+Property `showcase`, which is empty, is an array of images and videos that will showcase your theme. Download prepared [showcase]({{ site.url }}/docs/coming-soon) and copy it to `server/assets` folder. Change `showcase` to:
 
 ```JavaScript
 #file: extension.json
@@ -92,13 +92,13 @@ Now check the `Customize theme` tab.
 <img src='{{ site.url }}/img/tutorials/settings-theme/style-tab-themes-customise_theme-no_picker.png'/>
 </p>
 
-Here owner can customize your theme through theme variables. These variables are contained in `server/themes/restaurantVariables.json` and are the copy from the [ones of Rubicon theme](/docs/coming-soon).
+Here owner can customize your theme through theme variables. These variables are contained in `server/themes/restaurantVariables.json` and are the copy from the [ones of Rubicon theme]({{ site.url }}/docs/coming-soon).
 
 ## How theme works
 
 Theme is a set of styling rules that customize components in the app connected to the theme, called `customizable components`. All the components in [@shoutem/ui](https://github.com/shoutem/ui) package are connected to the theme so they all share the same style.
 
-Theme file, `app/theme/restaurant.js` exports **theme function** that resolves theme variables and returns **theme object**. Theme object consists of [styling rules](http://shoutem.github.io/docs/ui-toolkit/theme/introduction#theme-style-rules) defined by [@shoutem/theme](https://github.com/shoutem/theme) package. Each component is connected to the theme by the `name`, by which it can be targeted in theme.
+Theme file, `app/theme/restaurant.js` exports **theme function** that resolves theme variables and returns **theme object**. Theme object consists of [styling rules]({{ site.url }}/docs/ui-toolkit/theme/introduction#theme-style-rules) defined by [@shoutem/theme](https://github.com/shoutem/theme) package. Each component is connected to the theme by the `name`, by which it can be targeted in theme.
 
 Open `app/theme/restaurant.js` and check the styling rules used in `Rubicon` theme. Let's create a customizable component now.
 
@@ -264,7 +264,7 @@ This is good, but we got a request from owners using our theme that they want to
 
 Exposes variables and defines UI editor types to edit these variables.
 
-To enable customization of theme, use theme variables schema. Schema has already been created when we added theme to the project and it's in the `server/themes/restaurantVariables.json` file. It is used to define UI editor for adjusting theme variables used in styling rules. give the information to Shoutem which variables and their format is being used for the theme. Full schema reference can be found [here](/docs/extensions/reference/theme-variables).
+To enable customization of theme, use theme variables schema. Schema has already been created when we added theme to the project and it's in the `server/themes/restaurantVariables.json` file. It is used to define UI editor for adjusting theme variables used in styling rules. give the information to Shoutem which variables and their format is being used for the theme. Full schema reference can be found [here]({{ site.url }}/docs/extensions/reference/theme-variables).
 
 Open `Style` tab and choose `Customize theme`. Theme variables are grouped into sections. Under `properties`, add new variable with `color` format with `black` color as default value. Afterwards, reference that variable in `layout.sections` so it's included to the interface. We'll create a new section for that.
 

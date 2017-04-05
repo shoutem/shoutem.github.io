@@ -192,7 +192,7 @@ Now we need to say which screen our `List` screen extends. Do this in `extension
 We extended `ArticlesGridScreen` from Shoutem **News RSS** extension, as it's the [original screen](https://github.com/shoutem/extensions/blob/master/shoutem-rss-news/extension.json#L29). We've also added `title` and `image` which will both be shown in the layout selector. Download the image [here]({{ site.url }}/static/modifying-extension/assets.zip), extract it and paste the `assets` folder in the extension `server` folder.
 
 > #### Note
-> If you can't remember the fields in the `extension.json`, all the fields are documented in the [reference](http://shoutem.github.io/docs/extensions/reference/extension).
+> If you can't remember the fields in the `extension.json`, all the fields are documented in the [reference]({{ site.url }}/docs/extensions/reference/extension).
 
 Let's implement our `List` screen. In `extension.json`, we are extending `ArticlesGridScreen`, but that's only for layout selector. In the implemention, we actually want to extend the `ArticlesListScreen`.
 

@@ -219,7 +219,7 @@ Shortcut and screen were created and connected in `extension.json`. Reference th
 }
 ```
 
-We also added default settings in `settings` property. These settings will be saved into the shortcut instance, once shortcut instance is added through the dashboard (shortcut is actually what we see in the `Add Screen` modal). Read more about the settings and default settings in the [Settings types](/docs/extensions/reference/settings-types) reference.
+We also added default settings in `settings` property. These settings will be saved into the shortcut instance, once shortcut instance is added through the dashboard (shortcut is actually what we see in the `Add Screen` modal). Read more about the settings and default settings in the [Settings types]({{ site.url }}/docs/extensions/reference/settings-types) reference.
 
 Let's see how this settings page looks like now. Push it to Shoutem and install it onto new app:
 
