@@ -22,7 +22,7 @@ Before setting up local environment for building Shoutem extensions, set up Reac
 <img src='{{ site.url }}/img/tutorials/setting-local-environment/rn-getting-started.png'/>
 </p>
 
-As it's written in that tutorial, building iOS apps locally is only available on Mac. However, using Shoutem on Windows, you can test your React Native apps on iOS platform by: using [Shoutem Preview]({{ site.shoutem.previewApp }}) for testing your app on iOS device or [Shoutem Builder]({{ site.shoutem.builderURL }}) for testing it on iOS simulator.
+As it's written in that tutorial, building iOS apps locally is only available on Mac. However, using Shoutem on Windows, you can test your React Native apps on iOS platform by: using **Shoutem Preview** (available for [iOS]({{ site.shoutem.previewAppiOS }}) and [Android]({{ site.shoutem.previewAppAndroid }})) for testing your app on iOS device or [Shoutem Builder]({{ site.shoutem.builderURL }}) for testing it on iOS simulator.
 
 ## Local preview
 
