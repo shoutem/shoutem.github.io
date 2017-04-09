@@ -124,4 +124,4 @@ Below is one example where and how common style names can be used:
 </Overlay>
 ```
 
-Check [Shoutem Theme]({{ site.url }}/docs/ui-toolkit/introduction "Shoutem Theme") to learn more about styling rules, style names and how to define your own style name.
+Check [Shoutem Theme]({{ site.url }}/docs/ui-toolkit/theme/introduction "Shoutem Theme") to learn more about styling rules, style names and how to define your own style name.
