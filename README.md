@@ -3,6 +3,10 @@
 
 Shoutem is a platform for building beautiful React Native mobile apps. The easiest way to understand what Shoutem is to think of it as the WordPress for mobile apps. Apps are divided into smaller modules, called `extensions`. On WordPress you build a website out of plugins; on Shoutem you build a mobile app out of extensions. This architecture helps us achieve big development efficiency.
 
+## Community
+
+Join [our community](https://www.facebook.com/groups/shoutem.community/) on Facebook. Also, feel free to ask a question on Stack Overflow using ["shoutem" tag](http://stackoverflow.com/tags/shoutem).
+
 ## React Native
 
 Shoutem app is a React Native app. We designed extensions’ architecture with the goal not to add overhead over pure React Native. If you know React Native, you will know how to write Shoutem extensions. If you're just starting with React Native, check out our [React Native School](https://school.shoutem.com/).
