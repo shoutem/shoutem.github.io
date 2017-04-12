@@ -9,11 +9,11 @@ section: UI toolkit
 
 Shoutem UI toolkit contains two different `NavigationBar` components:
 
-- 1. Simple 3-column `NavigationBar` that can be used on any screen or `Modal` window
+1) Simple 3-column `NavigationBar` that can be used on any screen or `Modal` window
 
 ![Navbar / Solid example]({{ site.url }}/img/ui-toolkit/navigationbar/navbar-title-only@2x.png "Navbar / Solid"){:.docs-component-image}
 
-- 2. `Redux` and stack-based `NavigationBar` enables any view to act as a navigation view using reducers to manipulate state at a top-level object. Can be used only on components that are within the stack (i.e. it cannot be used on `Modal` window). Internally, it relies on [`NavigationExperimental`](https://facebook.github.io/react-native/docs/navigation.html#navigationexperimental) from React-Native 
+2) `Redux` and stack-based `NavigationBar` enables any view to act as a navigation view using reducers to manipulate state at a top-level object. Can be used only on components that are within the stack (i.e. it cannot be used on `Modal` window). Internally, it relies on [`NavigationExperimental`](https://facebook.github.io/react-native/docs/navigation.html#navigationexperimental) from React-Native 
 
 
 
