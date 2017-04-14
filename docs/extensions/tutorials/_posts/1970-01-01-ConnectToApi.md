@@ -7,9 +7,9 @@ section: Tutorials
 
 # Connecting to 3rd party API
 
-As Shoutem apps are plain React Native apps, you can connect to any API. It's very simple to do [networking in React Native](https://facebook.github.io/react-native/docs/network.html). Basically, React Native enables you to use [Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) out of the box, a simple interface for communicating with API endpoints. If, however, you need something more sofisticated, you can use [Async Actions](https://github.com/reactjs/redux/blob/master/docs/advanced/AsyncActions.md) in Redux.
+As Shoutem apps are plain React Native apps, you can connect to any API. It's very simple to do [networking in React Native](https://facebook.github.io/react-native/docs/network.html). Basically, React Native enables you to use [Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) out of the box, a simple interface for communicating with API endpoints. If, however, you need something more sophisticated, you can use [Async Actions](https://github.com/reactjs/redux/blob/master/docs/advanced/AsyncActions.md) in Redux.
 
-In this tutorial we'll explain how to build a simple React Native app fetching photo of the day from [NASA's API](https://api.nasa.gov/index.html). We'll also use [Shoutem UI toolkit]({{ site.url }}/docs/ui-toolkit/introduction). Here's the image how complete app should look like:
+In this tutorial we'll explain how to build a simple React Native app fetching the photo of the day from [NASA's API](https://api.nasa.gov/index.html). We'll also use [Shoutem UI toolkit]({{ site.url }}/docs/ui-toolkit/introduction). Here's how the completed app should look:
 
 <p class="image">
 <img src='{{ site.url }}/img/tutorials/connecting-to-api/final.png'/>
@@ -148,7 +148,7 @@ export default class PhotoDay extends Component {
 }
 ```
 
-Push the changes to the Shoutem:
+Push the changes to Shoutem:
 
 ```ShellSession
 $ shoutem push
