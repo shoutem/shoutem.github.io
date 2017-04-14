@@ -1,0 +1,163 @@
+---
+layout: doc
+permalink: /docs/extensions/tutorials/connecting-to-api
+title: Connect to 3rd party API
+section: Tutorials
+---
+
+# Connecting to 3rd party API
+
+As Shoutem apps are plain React Native apps, you can connect to any API. It's very simple to do [networking in React Native](https://facebook.github.io/react-native/docs/network.html). Basically, React Native enables you to use [Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) out of the box, a simple interface for communicating with API endpoints. If, however, you need something more sofisticated, you can use [Async Actions](https://github.com/reactjs/redux/blob/master/docs/advanced/AsyncActions.md) in Redux.
+
+In this tutorial we'll explain how to build a simple React Native app fetching photo of the day from [NASA's API](https://api.nasa.gov/index.html). We'll also use [Shoutem UI toolkit]({{ site.url }}/docs/ui-toolkit/introduction). Here's the image how complete app should look like:
+
+<p class="image">
+<img src='{{ site.url }}/img/tutorials/connecting-to-api/final.png'/>
+</p>
+
+The complete code for this extension is available in our [GitHub repository](https://github.com/shoutem/extension-examples/tree/master/connecting-to-3rd-party-api).
+
+## Initialize the extension
+
+As Shoutem apps are made of extensions, start by creating new extension.
+
+```ShellSession
+$ shoutem init nasa
+Enter information about your extension. Press `return` to accept (default) values.
+
+Title: NASA
+Version: 0.0.1
+Description: Photo of the day from Nasa
+...
+Extension initialized!
+```
+
+Locate to extension:
+
+```ShellSession
+$ cd nasa
+```
+
+Create a new starting screen (screen created with shortcut):
+
+```ShellSession
+$ shoutem screen add PhotoDay --shortcut Photo
+Enter shorcut information:
+Title: Nasa Photo
+
+Screen `PhotoDay` is created in file `app/screens/PhotoDay.js`!
+Shortcut `Photo` is created!
+Shortcut `Photo` opens `PhotoDay` screen.
+File `app/extension.js` was modified.
+File `extension.json` was modified.
+```
+
+Push extension to Shoutem:
+
+```ShellSession
+$ shoutem push
+Uploading `NASA` extension to Shoutem...
+Success!
+```
+
+Install that extension to new app. You can do this through the [Builder]({{ site.shoutem.builderURL }}), or directly through the CLI:
+
+```ShellSession
+$ shoutem install --new NasaApp
+Installing `NASA` extension to the new app...
+Extension successfully installed to the new app. Check it here:
+{{ site.shoutem.builderURL }}/app/{{ site.example.appId }}
+```
+
+Once this is done, go inside the Builder and add the screen inside the app. Now you can preview the app:
+
+<p class="image">
+<img src='{{ site.url }}/img/tutorials/connecting-to-api/hello-world.png'/>
+</p>
+
+## Fetch the photo
+
+Now let's fetch the photo in the screen. We'll use the Fetch API from JavaScript. This is the complete code from `app/screens/PhotoDay.js`
+
+```JavaScript
+#file app/screens/PhotoDay.js
+import React, {
+  Component
+} from 'react';
+
+import {
+  Screen,
+  View,
+  Image,
+  Spinner,
+  Tile,
+  Title,
+  Subtitle
+} from '@shoutem/ui';
+
+// public API, you can get yours on: https://api.nasa.gov
+const apiKey = 'NNKOjkoul8n1CH18TWA9gwngW1s1SmjESPjNoUFo';
+
+// NASA photo API url
+var photoUrl = "https://api.nasa.gov/planetary/apod";
+
+
+export default class PhotoDay extends Component {
+  state = {
+    photo: null
+  }
+
+  componentDidMount() {
+    fetch(photoUrl + '?api_key=' + apiKey, {
+      method: 'GET',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json',
+      }
+    })
+      .then((response) => response.json())
+      .then((photo => {
+        this.setState({ photo });
+      }));
+  }
+  
+  render() {
+    const { photo } = this.state;
+    // render Spinner is photo is not fetched
+    const content = photo ?
+    (
+      <Image
+        styleName="large-portrait"
+        source={{ uri: photo.url }}
+      >
+        <Tile>
+          <Title>{photo.title}</Title>
+          <Subtitle>{photo.copyright}</Subtitle>
+        </Tile>
+      </Image>
+    ) : <Spinner />;
+
+    return (
+      <Screen>
+        <View styleName="flexible vertical v-center">
+          {content}
+        </View>
+      </Screen>
+    );
+  }
+}
+```
+
+Push the changes to the Shoutem:
+
+```ShellSession
+$ shoutem push
+Uploading `NASA` extension to Shoutem...
+Success!
+```
+
+Preview it to see the changes. This is the final result:
+
+<p class="image">
+<img src='{{ site.url }}/img/tutorials/connecting-to-api/final-builder.png'/>
+</p>
