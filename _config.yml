@@ -24,6 +24,16 @@ shoutem:
   school: "http://school.shoutem.com/"
   pricing: "https://new.shoutem.com/pricing/"
 
+external:
+  appleAppStore: "https://itunes.apple.com/ca/genre/ios/id36?mt=8"
+  appleDeveloperAccount: "https://developer.apple.com/programs/enroll/"
+  googlePlayStore: "https://play.google.com/store"
+  googlePlayDeveloperAccount: "https://play.google.com/apps/publish/signup/"
+  xcode: "https://developer.apple.com/xcode/"
+  androidStudio: "https://developer.android.com/studio/index.html"
+  
+  
+
 # Examples
 example:
   devName: tom
