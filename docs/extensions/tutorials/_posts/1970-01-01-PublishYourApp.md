@@ -5,26 +5,94 @@ title: Publish your app
 section: Tutorials
 ---
 
-# Publishing
+# Publish, Republish, Maintain
 
-This tutorial shows you how to publish your app to both [App Store]({{ site.external.appleAppStore }}) and [Google Play]({{ site.external.googlePlayStore }}) store. There are 2 ways you can publish your app:
+You're satisfied how your app looks like and you want to **publish** it to the store. This tutorial shows you how to publish your app to both [App Store]({{ site.external.appleAppStore }}) and [Google Play]({{ site.external.googlePlayStore }}) store. We'll also describe what does it mean to republish and maintain the data in your app.
+
+There are 2 ways you can publish your app:
 
 - using Shoutem automated app publishing tool or
 - manually with a help of Shoutem CLI.
 
-Both ways are described here.
+Once your app is published, for any changes you do in the Builder (except the changes in data from Shoutem Cloud Storage) and want to get in the live app, you will need to **republish** the app. Shoutem does the republishing automatically for you and most of the changes will be available seconds after you click the `Republish` button.
 
-# Publish using automated app publishing tool
+As the data used in app might change over the time, we made it easy for you **maintain** it using Shoutem CMS.
 
-Shoutem's goal is to cover complete process app developing: prototyping, ........ That's why we developed tool for automated app publishing, which is integrated with Shoutem Builder by default.
+# Using Shoutem automated app publishing tool
 
-It's not possible to publish your app to iTunes if you don't have Mac.
+Goal of Shoutem platform is to cover complete process of app developing: from prototyping, developing, designing, to publishing and maintaining. That's why we developed a tool for automated app publishing, which is integrated inside of Shoutem Builder.
 
-To use our automated, you need to upgrade to lite plan.
+#### Prerequisites
 
-# Manual publishing
+The only prerequisite to publish app using Shoutem is to have your developer accounts ready. If you don't have them, creating them is easy:
+- to publish app to App Store (for iOS devices), create Apple [iOS Developer Account]({{ site.external.appleDeveloperAccount }})
+- to publish app to Google Play Store (for Android devices), create [Google Play Developer account]({{ site.external.googlePlayDeveloperAccount }})
+
+#### Publishing
+
+There are 3 simple steps to publish your app
+
+1. Grant Shoutem permission to publish app using your developer accounts
+2. Fill in the app details (description, screenshots, ...) inside the builder
+3. Click the `Publish` button
+
+The first 2 steps need to be only done once.
+
+##### Grant Shoutem permission
+
+You need to grant Shoutem permission to stores where you want to publish your app.
+
+**App Store**
+
+Go to `Settings` -> `Store metadata` and the `iOS` tab should be selected. Find the _iOS Developer Account_ field and enter your credentials there. Do not worry - our tool will only handle new apps and won't do anything that you don't want. If, however, you don't want to share your credentials with us, there's a slightly more complex way to add permission to grant us permission to Apple Developer portal and iTunes Connect separately. For that, you should contact [our support]({{ site.shoutem.support }}).
+
+**Google Play Store**
+
+Go to `Settings` -> `Store metadata` and select `Android` tab. Find the _Google Play Android Developer Account_ field. You will find these steps to invite new user:
+
+```
+You need to invite shoutem@shoutem.com to use your Android dev account as an administrator.
+Log in to your Android developer account
+Click 'Manage user accounts...' link
+Click 'Invite a new user button'
+Enter 'shoutem@shoutem.com' and send invitation
+```
+
+Once you do that, write your Android developer account owner and console account name.
+
+##### Fill in the app details
+
+Instead of going to each store to fill in app information, we've put everything in one place. Go to `Settings` and fill out information under `App info` and `Store metadata`.
+
+##### Click the `Publish` button
+
+After you finish the first to steps, click the `Publish` button. Your app will go to review process in both stores and we'll be notifying you of the process.
+
+<p class="image">
+<img src='{{ site.url }}/img/tutorials/publish-your-app/publish-app.png'/>
+</p>
+
+Once your app is published, the `Publish` button will become `Republish`.
+
+### Automatic Republishing
+
+Using Shoutem, for most cases republishing of your app lasts a few seconds. Changes that you made in the app colors, settings, RSS feeds, order or number of extensions being used in the app structure will be visible immediately once you click the `Republish` button. Even installing new extensions, updating version of the existing extensions or uninstalling extensions will be visible automatically.
+
+The only 2 changes that will require app to go over the reviewing process in the stores are:
+- updating [Shoutem platform]({{ site.url }}/docs/extensions/reference/platform) being used in the app
+- installing, updating or uninstalling extensions which contain native code
+
+In those cases, you only need to click the `Republish` button and we'll take care of the rest and will notify you of the process.
+
+### Maintaining the app data
+
+Once your app is live, you might want to change data used in the app. The data shown in Shoutem CMS (used in Shoutem Cloud Storage) is live and changes to it will be immedaitely visible in the apps using Shoutem Cloud Storage. This is also the case for manual published apps using Shoutem Cloud.
+
+# Manual publishing and republishing
 
 If you want to have a complete overview of how publishing of your app looks like, you might want to publish your app manually. It is a bit longer process, but Shoutem CLI removes some of the obstacles along the way. Here we described required steps for both stores.
+
+Also, it is not possible to manually publish your App Store, if you don't have an Apple Device (MacBook, Mac-Mini, MacPro).
 
 ## App Store
 
@@ -89,7 +157,7 @@ Login to iTunes Connect with your iOS Developer account, click on `My Apps`, the
 <img src='{{ site.url }}/img/tutorials/publish-your-app/itunes-connect-menu.png'/>
 </p>
 
-Fill your app details. Once you are done with that, click on `Create`. Your app is now created on iTunes connect and you are few steps away from publishing it. Fill the detalis of your app privacy policy link, category and licence agreement.
+Fill your app details. Once you are done with that, click on `Create`. Your app is now created on iTunes connect and you are few steps away from publishing it. Fill the details of your app privacy policy link, category and licence agreement.
 
 <p class="image">
 <img src='{{ site.url }}/img/tutorials/publish-your-app/itunes-app-info.png'/>
@@ -136,6 +204,14 @@ Answer those questions and click the `Submit` button. Your app status will chang
 ### Review
 
 Apple usually takes 2-3 days to review apps. Once they approve (or reject) the app, you should get the confirmation e-mail to your owner's e-mail about the review.
+
+### Manual republish
+
+If you make some changes in the app (colors, titles, change which extensions you use or their order), you will need to republish your app. Manual republishing of the app requires you to go through all the steps described here except creating new developer account and certificates.
+
+### Maintaining the app data
+
+Once your app is live, you might want to change data used in the app. The data shown in Shoutem CMS (used in Shoutem Cloud Storage) is live and changes to it will be immedaitely visible in the apps using Shoutem Cloud Storage.
 
 ## Google Play Store
 
@@ -211,7 +287,7 @@ Create your app in Google Play Developer Console. Log in with your Android Devel
 <img src='{{ site.url }}/img/tutorials/publish-your-app/android-create-app.png'/>
 </p>
 
-Once you’ve entered these informations, you will be taken to `Store Listing` screen, where you need to update your apps short description, description, screenshots, featured graphics, choose category and application type and add link to your privacy policy:
+Once you’ve entered that information, you will be taken to `Store Listing` screen, where you need to update your apps short description, description, screenshots, featured graphics, choose category and application type and add link to your privacy policy:
 
 <p class="image">
 <img src='{{ site.url }}/img/tutorials/publish-your-app/android-store-listing.png'/>
@@ -233,7 +309,7 @@ The process is pretty much the same for each release, so we will cover productio
 
 Here you can upload your .apk file, choose release name and "What's Next" text. Once you're done, click on `Review`.
 
-#### Content rating of your 
+#### Content rating of your app
 
 Answer Google's content rating questionnaire and choose your app’s content category. Add your email address and choose from one of six available categories.
 
@@ -272,5 +348,10 @@ Select your `App Release` tab again and select `Edit release` under `Manage Prod
 Scroll down, click on `Review` button. Check your app details and if you are satisfied, click on `Start rollout to production` button to publish your app in `Google Play Store`. Clicking on the confirm button, you will publish the app in Store!
 
 
+### Manual republish
 
+If you make some changes in the app (colors, titles, change which extensions you use or their order), you will need to republish your app. Manual republishing of the app requires you to go through all the steps described here except creating new developer account and certificates. 
 
+### Maintaining the app data
+
+Once your app is live, you might want to change data used in the app. The data shown in Shoutem CMS (used in Shoutem Cloud Storage) is live and changes to it will be immedaitely visible in the apps using Shoutem Cloud Storage.
