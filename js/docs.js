@@ -168,7 +168,7 @@ $(function() {
   });
 
   function getLocation( location ) {
-    location = location || window.location.href;
+    location = (location || window.location.href).split("?").shift();
     var startingIndexSection = location.indexOf('/docs/') + 6;
     var endIndexSection = location.slice(startingIndexSection).indexOf('/') + startingIndexSection;
     var section = location.slice(startingIndexSection, endIndexSection);
