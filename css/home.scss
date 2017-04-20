@@ -1171,32 +1171,13 @@ p {
 
 .bullet-icon {
     display: inline-block;
-    margin-right: 18px;
+    margin-right: 20px;
     vertical-align: middle;
     width: 24px;
     height: 24px;
     padding: 4px;
-    background-position: 4px 3px;
-
-    @include mobile {
-        margin-right: 20px;
-    }
-    
-    &.a {
-        @include logoimage('../img/icon-bullet-3.svg', 24px, 24px);
-        background-size: 16px 16px;
-    }
-    &.b {
-        @include logoimage('../img/icon-bullet-4.svg', 24px, 24px);
-        background-position: 6px 5px;
-        background-size: 12px 12px;
-    }
-    &.c {
-        @include logoimage('../img/icon-bullet-3.svg', 24px, 24px);
-    }
-    &.d {
-        @include logoimage('../img/icon-bullet-4.svg', 24px, 24px);
-    }
+    background-position: 0 0;
+    @include logoimage('../img/icon-bullet-circle.svg', 24px, 24px);
     
     &.react {
         @include logoimage('../img/icon-react-logo.svg', 30px, 30px);
@@ -1209,8 +1190,13 @@ p {
     vertical-align: top;
     font-size: 15px;
     line-height: 24px;
+    width: calc(100% - 44px);
     max-width: 245px;
     display: inline-block;
+
+    &.react-native {
+        max-width: 295px;
+    }
 
     @include mobile {
         font-size: 15px;
