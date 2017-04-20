@@ -705,7 +705,7 @@ p {
         }
 
         @include large {
-            width: 360px;
+            width: 420px;
             margin-top: 0;
         }
 
@@ -904,7 +904,7 @@ p {
         }
 
         @include medium-2 {
-            width: calc(100% - 360px);
+            width: calc(100% - 420px);
             margin-bottom: 48px;
         }
 
@@ -925,7 +925,7 @@ p {
     }
     
     .bullet-points {
-        margin: -106px 0 0 128px;
+        margin: -106px 0 0 78px;
 
         .bullet-icon {
             margin-right: 20px;
@@ -1182,7 +1182,7 @@ p {
     &.react {
         @include logoimage('../img/icon-react-logo.svg', 30px, 30px);
         background-position: center;
-        margin: -7px 0 0 8px;
+        margin: -2px 0 0 8px !important;
     }
 }
 
@@ -1196,6 +1196,10 @@ p {
 
     &.react-native {
         max-width: 295px;
+
+        a {
+            display: inline-block;
+        }
     }
 
     @include mobile {
