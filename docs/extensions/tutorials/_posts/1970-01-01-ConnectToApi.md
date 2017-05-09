@@ -129,7 +129,7 @@ export default class PhotoDay extends Component {
     (
       <Image
         styleName="large-portrait"
-        source={{ uri: photo.url }}
+        source={% raw %}{{{% endraw %} uri: photo.url }}
       >
         <Tile>
           <Title>{photo.title}</Title>

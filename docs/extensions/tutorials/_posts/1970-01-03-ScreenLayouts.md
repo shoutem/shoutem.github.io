@@ -75,7 +75,7 @@ export class SmallList extends List {
           props: { restaurant }
         })}>
         <Row>
-          <Image style={{width:90, height:70}} source={{ uri: restaurant.image && restaurant.image.url }} />
+          <Image style={% raw %}{{{% endraw %}width:90, height:70}} source={% raw %}{{{% endraw %} uri: restaurant.image && restaurant.image.url }} />
           <View styleName="vertical">
             <Subtitle>{restaurant.name}</Subtitle>
             <Caption>{restaurant.address}</Caption>
