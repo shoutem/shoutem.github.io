@@ -116,6 +116,8 @@ The current `index.js` looks like this:
 import * as extension from './extension.js';
 
 export const screens = extension.screens;
+
+export const themes = extension.themes;
 ```
 
 On the other hand, `app/extension.js` is managed by the CLI and you should not change it. When creating screens, the CLI writes their location in `app/extension.js` which are exported in `app/index.js`.

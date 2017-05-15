@@ -35,7 +35,7 @@ File `app/themes/restaurant.js` is created.
 File `server/themes/restaurantVariables.json` is created.
 ```
 
-Extension file was just modified:
+The `extension.json` file was modified to include the newly created theme:
 
 ```JSON{9-19}
 #file: extension.json
@@ -55,22 +55,70 @@ Extension file was just modified:
     "showcase": ""
   }],
   "themeVariables": [{
-    "name": "restaurant",
+    "name": "restaurantVariables",
     "path": "server/themes/restaurantVariables.json"
   }]
 }
 ```
 
+The CLI also made sure that `app/extension.js` handles the newly created theme:
+
+```JavaScript{9-10,17-19}
+#file: app/extension.js
+// This file is managed by Shoutem CLI
+// You should not change it
+import pack from './package.json';
+
+// screens imports
+import List from './screens/List';
+import Details from './screens/Details';
+
+// themes imports
+import restaurant from './themes/restaurant';
+
+export const screens = {
+  List,
+  Details
+};
+
+export const themes = {
+  restaurant
+};
+
+export function ext(resourceName) {
+  return resourceName ? `${pack.name}.${resourceName}` : pack.name;
+}
+```
+
+The CLI also made sure that our public API, `app/index.js`, exports the newly created theme:
+
+```JavaScript{9}
+#file: app/index.js
+// Reference for app/index.js can be found here:
+// http://shoutem.github.io/docs/extensions/reference/extension-exports
+
+import reducer from './reducer';
+import * as extension from './extension.js';
+
+export const screens = extension.screens;
+
+export const themes = extension.themes;
+
+export { reducer };
+
+}
+```
+
 Check `app/themes/restaurant.js` file. It's a copy of Shoutem's default theme - Rubicon.
 
-The `showcase` property, which is empty, is an array of images and videos that will showcase your theme. Download this prepared [showcase]({{ site.url }}/docs/coming-soon) and copy it to the `server/assets` folder. Change `showcase` to:
+The `showcase` property, which is empty, is an array of images and videos that will show off your theme. Download this prepared [showcase]({{ site.url }}/docs/coming-soon) and copy it to the `server/assets` folder. Change the `showcase` property to:
 
 ```JavaScript
 #file: extension.json
 "showcase": ["video.mp4", "list.png", "details.png"]
 ```
 
-Push this theme to the Shoutem server. This might take a while, as you need to upload the showcase video and pictures too:
+Push this theme to the Shoutem server. This might take a while, since you need to upload the showcase video and pictures too:
 
 ```ShellSession
 $ shoutem push
@@ -252,7 +300,7 @@ Uploading `Restaurants` extension to Shoutem...
 Success!
 ```
 
-Now open the app in the Builder preview. Rubi-what? Forget about Rubicon, look at this bad boy, with that non-transparent subtitle background color and titles with demanding presence. Gorgeous.
+Now open the app in the Builder preview.
 
 <p class="image">
 <img src='{{ site.url }}/img/tutorials/settings-theme/style-tab-themes-customize_theme-font.png'/>
@@ -268,7 +316,7 @@ To enable customization of themes, we use the theme variables schema. The schema
 
 Open the `Style` tab and choose `Customize theme`. You can see that theme variables are grouped into sections. Under `properties`, add a new variable with a `color` format, where `black` is the default value. Afterwards, reference that variable in `layout.sections` so it's included in the interface. We'll create a new section for that.
 
-```JSON{3-8,13-15}
+```JSON{3-9,14-16}
 #file: server/themes/restaurantVariables.json
 {
   "properties": {
@@ -281,17 +329,18 @@ Open the `Style` tab and choose `Customize theme`. You can see that theme variab
     // other variables
   },
   "layout": {
-    "sections": [{
+    "sections": [
+    {
       "title": "Restaurants",
       "properties": ["subtitleColor"]
-    }, {
+    },
       // other sections
-    }]
+    ]
   }
 }
 ```
 
-The only thing left to do is to use this variable in the theme file:
+The only thing left to do is to use this variable in the theme file. Again, search for the "export default" statement:
 
 ```JavaScript{11}
 #file: app/themes/restaurant.js
