@@ -41,7 +41,7 @@ Your `extension.json` was just modified:
   }],
   "shortcuts": [{
     "name": "Restaurants",
-    "title": "Restaurants"
+    "title": "Restaurants",
     "screen": "@.List"
   }]
 }
@@ -128,14 +128,14 @@ Uploading `Restaurants` extension to Shoutem...
 Success!
 ```
 
-Go to `Custom` under `Add Screen` modal in Shoutem builder. You can finally see your `Restaurants` starting screen (shortcut) there. 
+Go to `Custom` under `Add Screen` modal in Shoutem builder. You can finally see your `Restaurants` starting screen (shortcut) there.
 
 <p class="image">
 <img src='{{ site.url }}/img/my-first-extension/add-modal-shortcut.png'/>
 </p>
 
 > #### Note
-> In case you don't see it, refresh the page in browser. 
+> In case you don't see it, refresh the page in browser.
 
 Click on the `Restaurants`, which will get that shortcut inserted into the navigation.
 
