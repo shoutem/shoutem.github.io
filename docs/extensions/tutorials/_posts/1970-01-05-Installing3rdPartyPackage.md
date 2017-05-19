@@ -46,7 +46,7 @@ File `extension.json` was modified.
 
 ## Installing the Package
 
-Now we have to actually install the react-native-swiper so we can utilize it. We have to install it using `npm install react-native-swiper --save` in the `swiper-extension/app` directory of our extension, because the `swiper-extension/app` directory is what gets bundled into the final app. So continuing from where we stopped in our terminal:
+There's two different ways you can do this. One is to manually install the package into the extension using `npm install react-native-swiper --save` in the `app` directory:
 
 ```ShellSession
 $ cd app
@@ -68,6 +68,10 @@ Doing this will automatically add react-native-swiper as a dependency in our `ap
   }
 }
 ```
+
+The other way of doing this is to simply add that dependency we see in the `app/package.json` file, which result with react-native-swiper being installed without us manually doing it.
+
+## Using the Package
 
 Our extension now has full access to everything react-native-swiper has to offer, so let's make use of it's simplest example to show how it works. We'll have to edit our `app/screens/SwiperScreen.js` file to use the Swiper by importing the Swiper component, changing the `render();` method to use the Swiper component and making some changes to the `styles` constant so our Swiper component can function properly.
 
