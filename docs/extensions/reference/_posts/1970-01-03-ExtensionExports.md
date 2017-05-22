@@ -24,7 +24,7 @@ These are the predefined extension exports:
     - **appDidFinishLaunching** - invoked after the app is mounted and after all promises from `appDidMount` have finished. This is the place to perform any final work before the first screen is rendered.
     - **appWillUnmount** - invoked immediately before the root app component is unmounted and destroyed. Perform any necessary cleanup in this method.
 - **screens** - the screens that will be available for navigation. Must have the same name as in `extension.json`
-- **themes** - themes available for app customization Must have the same name as in `extension.json`
+- **themes** - themes available for app customization. Must have the same name as in `extension.json`
 - **actions** - actions that can be attached to shortcuts (see [shoutem.auth](https://github.com/shoutem/extensions/tree/master/shoutem-auth) extension). Must have the same name as in `extension.json`
 - **reducer** - the extension reducer that will be mounted under the extension namespace in the state
 - **middleware** - Redux `middleware` to register in the Redux `store`

@@ -135,7 +135,7 @@ This is what you should get (images and text vary with RSS feed):
 
 This is what we wanted! It was quite easy and straightforward. However, doing this means creating a completely separate extension which won't get any updates done by Shoutem on Shoutem's **News RSS** extension.
 
-Who wants to get tied up in maintenance? To get those updates from Shoutem, we want to extend the extension instead of changing its code directly.
+To get those updates from Shoutem, we want to extend the extension instead of changing its code directly.
 
 ## 2) Extend the extension
 

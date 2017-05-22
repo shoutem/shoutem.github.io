@@ -159,10 +159,10 @@ Creating the bundle for your app...
 ...
 ```
 
-The CLI will print a link you can open to get the Shoutem Preview app which will automatically open the app you're working on, or if you already have the Shoutem Preview app, you can just scan the QR code under the link.
+The CLI will print a QR code for you to scan using the Shoutem Preview app, if you don't have the app, you can get it using the link printed above the QR code. After it's installed, the Shoutem Preview app will automatically your app.
 
 > #### Note
-> In the documentation the preview you see is from the Builder, instead of a screenshot from the Shoutem Preview app. This way you'll see the state of the web interface as well. If you only change your app code, just shake your phone with the Shoutem Preview app on and tap the "Reload" button. If you `link` your extension, you won't need to do `shoutem push` every time you change the app code!
+> In the documentation the preview you see is from the Builder, instead of a screenshot from the Shoutem Preview app. This way you'll see the state of the web interface as well. If you only change your app code, just shake your phone with the Shoutem Preview app on and tap the "Reload" button. If you [`link` your extension]({{ site.url }}/docs/extensions/tutorials/setting-local-environment), you won't need to do `shoutem push` every time you change the app code!
 
 This is the result:
 

@@ -211,7 +211,7 @@ export default connect(
 )(List);
 ```
 
-Let's check how it works. Have to get that bad boy up onto the Builder:
+Let's check how it works:
 
 ```ShellSession
 $ shoutem push
@@ -223,4 +223,4 @@ Success!
 <img src='{{ site.url }}/img/my-first-extension/working-with-data.png'/>
 </p>
 
-Works like a charm! Well look at you, you just made your first extension using the **Shoutem UI Toolkit** and **Shoutem Cloud Storage**. Great job!
+Works like a charm! You just made your first extension using the **Shoutem UI Toolkit** and **Shoutem Cloud Storage**. Great job!

@@ -81,7 +81,7 @@ The only two changes that will require an app to go over the reviewing process i
 - updating the [Shoutem platform]({{ site.url }}/docs/extensions/reference/platform) being used in the app
 - installing, updating or uninstalling extensions which contain **native code**
 
-In those cases, you still just have to click the `Republish` button and we'll take care of the rest and will notify you of the process. Like we said, leave the boring stuff to Shoutem!
+In those cases, you still just have to click the `Republish` button and we'll take care of the rest and will notify you of the process.
 
 ### Maintaining the App Data
 

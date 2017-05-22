@@ -101,11 +101,13 @@ Create a screen with a shortcut (pointer to the starting screen of the extension
 
 ```ShellSession
 $ shoutem screen add Hello --shortcut Hello
-File `app/screens/Hello.js` created.
-Enter shortcut information.
+Enter shortcut information:
 Title: Hello
-File `extension.json` was modified
-Shortcut `Hello` is created.
+Screen `Hello` is created in file `app/screens/Hello.js`!
+Shortcut `Hello` is created!
+Shortcut `Hello` opens `Hello` screen.
+File `app/extension.js` was modified.
+File `extension.json` was modified.
 ```
 
 This created `Hello` screen in `app/screens/List.js` file. Any time you create a new screen it'll be a simple "Hello World!" screen.
@@ -154,7 +156,7 @@ Creating the bundle for your app...
 > #### Note
 > To create bundle for the app, you need to have [Node.js v7](https://nodejs.org/en/) and [react-native-cli](http://npmjs.com/package/react-native-cli) installed. See [FAQ]({{ site.url }}/docs/extensions/tutorials/faq) if you have problems setting this up.
 
-Once the app is bundled, the CLI will give you the choice between using link to use on your phone for the Shoutem Preview app that will automatically open the app you're working on, or using a QR code printed inside the terminal to scan with the Shoutem Preview app if you already have it. Just make sure you're connected to the same WiFi network on both your computer and smartphone (we'll soon make it possible to do it without being connected to the same WiFi).
+Once the app is bundled, the CLI will print the QR code to the terminal. Scan it with the Shoutem Preview app if you have it, if not, scanning it will download the Shoutem Preview app and open your app. Make sure you're connected to the same WiFi network on both your computer and smartphone (we'll soon make it possible to do it without being connected to the same WiFi).
 
 This is the result you'll have on your phone:
 

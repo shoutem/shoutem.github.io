@@ -316,7 +316,7 @@ To enable customization of themes, we use the theme variables schema. The schema
 
 Open the `Style` tab and choose `Customize theme`. You can see that theme variables are grouped into sections. Under `properties`, add a new variable with a `color` format, where `black` is the default value. Afterwards, reference that variable in `layout.sections` so it's included in the interface. We'll create a new section for that.
 
-```JSON{3-9,14-16}
+```JSON{3-7,13-15}
 #file: server/themes/restaurantVariables.json
 {
   "properties": {
@@ -329,18 +329,17 @@ Open the `Style` tab and choose `Customize theme`. You can see that theme variab
     // other variables
   },
   "layout": {
-    "sections": [
-    {
+    "sections": [{
       "title": "Restaurants",
       "properties": ["subtitleColor"]
-    },
+    }, {
       // other sections
-    ]
+    }]
   }
 }
 ```
 
-The only thing left to do is to use this variable in the theme file. Again, search for the "export default" statement:
+The only thing left to do is to use this variable in the theme file. Again, search for the `export default` statement:
 
 ```JavaScript{11}
 #file: app/themes/restaurant.js
@@ -371,7 +370,7 @@ Uploading `Restaurants` extension to Shoutem...
 Success!
 ```
 
-Check `Customize theme` under the `Style` tab. You can see the `Restaurants` section with a color picker for subtitle text color. Well done you crowd pleaser, putting all those people that use your theme at ease.
+Check `Customize theme` under the `Style` tab. You can see the `Restaurants` section with a color picker for subtitle text color. Well done!
 
 <p class="image">
 <img src='{{ site.url }}/img/tutorials/settings-theme/style-tab-themes-customise_theme-color_picker_preview.png'/>

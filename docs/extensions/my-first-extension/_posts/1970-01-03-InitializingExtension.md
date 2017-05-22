@@ -46,7 +46,7 @@ $ cd restaurants
 ```
 
 ## Folder Structure
-The initialization process will generate the skeleton with folders and files. Our new extensions structure looks like this:
+The initialization process will generate the skeleton with folders and files. Our new extension's structure looks like this:
 
 ```
 restaurants/
@@ -119,4 +119,4 @@ However, when you go to the `Screen` tab and click on `+` to add new screen, und
 <img src='{{ site.url }}/img/my-first-extension/add-content-no-extension.png'/>
 </p>
 
-What gives?! Oh right, maybe we should actually [add a screen]({{ site.url }}/docs/extensions/my-first-extension/shortcut-and-screen) and expose it to the Builder first.
+What's wrong? Oh right, we should actually [add a screen]({{ site.url }}/docs/extensions/my-first-extension/shortcut-and-screen) and expose it to the Builder first.
