@@ -8,9 +8,13 @@ section: Tutorials
 # Installing 3rd Party Packages
 <hr />
 
+Since Shoutem is an architecture built on top of React Native and we made sure not to restrict developers on how to use React Native, it's of course possible to utilize any and all 3rd party packages that you would be able to use with your regular React Native projects.
+
 This tutorial will show you how to install a 3rd party package into an extension and through that into the entire app. For an example we're going to use [react-native-swiper](https://github.com/leecade/react-native-swiper) as a non-native package and [react-native-camera](https://github.com/lwansbrough/react-native-camera) as a native package.
 
 ## 1) Installing a non-native Package
+
+A non-native package doesn't utilize native capabilities of the underlying device. Simply put, the package doesn't handle anything differently regardless of the fact it's being run on iOS or Android.
 
 ### Making an Extension
 
@@ -48,7 +52,7 @@ File `extension.json` was modified.
 
 ### Installing the Package
 
-There's two different ways you can do this. One is to manually install the package into the extension using `npm install react-native-swiper --save` in the `app` directory:
+All we have to do is install the package into the extension using `npm install react-native-swiper --save` in the `app` directory:
 
 ```ShellSession
 $ cd app
@@ -74,7 +78,7 @@ Doing this will automatically add `react-native-swiper` as a dependency in our `
 }
 ```
 
-The other, more preferred way of doing this is to simply add that dependency we see in the `app/package.json` file, which results with `react-native-swiper` being installed when the app is bundled. The reason this is the preferred way of doing it is because the `node_modules` folder generated with our NPM installation is ignored since we utilize the `$ npm pack` command.
+You can ignore the `node_modules` folder that you can now see in your extension's directory, because it'll be ignored since extensions are packed with `npm pack` before being installed into an app.
 
 ### Using the Package
 
@@ -146,10 +150,9 @@ const styles = StyleSheet.create({
 });
 ```
 
-And there we go, we implemented `react-native-swiper` into our extension. Now we need to push our extension to the Shoutem server and install it onto an app so we can actually test it out. Continuing where we stopped in our terminal:
+And there we go, we implemented `react-native-swiper` into our extension. Now we need to push our extension to the Shoutem server and install it onto an app so we can actually test it out:
 
 ```ShellSession
-$ cd ..
 $ shoutem push
 Uploading `Swiper Extension` extension to Shoutem...
 Success!
@@ -166,7 +169,7 @@ Opening the SwiperApp in the Builder will show us an app with no Screens, but si
 
 ## 2) Installing a Native Package
 
-When installing a 3rd party package that uses native functionalities we have to make sure we link the native dependencies it has. This is done using postlink scripts. As an example, we'll be making a QR Code reader that's going to display what the scanned QR code says. To scan a QR code we'll need to use the devices camera, which we'll get access to using react-native-camera, a 3rd party package for utilizing device cameras.
+A native package utilizes native capabilities of the underlying device. When installing such a package we have to make sure we link the native dependencies it has. This is done using [postinstall scripts](https://docs.npmjs.com/misc/scripts). As an example, we'll be making a QR Code reader that's going to display what the scanned QR code says. To scan a QR code we'll need to use the devices camera, which we'll get access to using `react-native-camera`, a 3rd party package for utilizing device cameras.
 
 ### Making an Extension
 
@@ -204,7 +207,7 @@ File `extension.json` was modified.
 
 ### Installing the Package
 
-To make sure the native dependencies are linked, we'll have to make sure our postlink script is run by putting it in our `app/package.json` file.
+To make sure the native dependencies are linked, we'll have to make sure our custom postlink script is run by putting it in our `app/package.json` file. `rnpm`'s `postlink` command runs our `app/scripts/run.js` script that we'll explain afterwards.
 
 ```json
 #file: app/package.json
@@ -223,7 +226,10 @@ To make sure the native dependencies are linked, we'll have to make sure our pos
 }
 ```
 
-We have to make a `scripts` directory and make the postlink script in it: `app/scripts/run.js`
+> #### Note
+> `rnpm` refers to [React Native Package Manager](https://www.npmjs.com/package/rnpm), used for linking native dependancies in React Native apps.
+
+Create a `scripts` directory and make the postlink script in it: `app/scripts/run.js`
 
 ```ShellSession
 $ cd app
@@ -232,7 +238,7 @@ $ cd scripts
 $ touch run.js
 ```
 
-It's going to edit the `Info.plist` file and link the react-native-camera dependency for our app.
+It's going to edit the `Info.plist` file and link the `react-native-camera` dependency for our app.
 
 ```javascript{1-21}
 #file: app/scripts/run.js
@@ -261,15 +267,15 @@ dependenciesToLink.forEach((dependency) => {
 
 Now let's explain the details regarding native dependency linking in `app/scripts/run.js`
   - everything regarding `Info.plist` is added to notify the user that the app is using his camera
-  - `dependenciesToLink` is an array that stores all of our native dependencies
-  - `command` represents the react-native-cli, used to link native dependencies
+  - `dependenciesToLink` is an array that stores all of our native dependencies, add more modules here to link them inside your app
+  - `command` uses the react-native-cli to link native dependencies
   - the final three lines of code make sure each dependency in our array is linked
 
 The reason we create an array is because sometimes our extension will have multiple native dependencies, so instead of making a separate linking command for each, we simply run one `forEach` loop and hand it an array of dependencies.
 
 ### Using the Package
 
-Our extension will now have access to everything react-native-camera has to offer. For this example we'll edit `app/screens/QRReaderScreen.js` so that it displays an alert when the camera reads a QR code and the alert message will contain the QR code data.
+Our extension will now have access to everything `react-native-camera` has to offer. For this example we'll edit `app/screens/QRReaderScreen.js` so that it displays an [alert](https://facebook.github.io/react-native/docs/alert.html) when the camera reads a QR code and the alert message will contain the QR code data.
 
 ```javascript{2-4,6-10,12-21,25-28}
 #file: app/screens/QRReaderScreen.js
@@ -279,37 +285,36 @@ import Camera from 'react-native-camera';
 import _ from 'lodash';
 
 export default class QRReaderScreen extends Component {
-    constructor(props) {
-      super(props);
-      this.onBarCodeRead = this.onBarCodeRead.bind(this);
-    }
+  constructor(props) {
+    super(props);
+    this.onBarCodeRead = this.onBarCodeRead.bind(this);
+  }
 
-  onBarCodeRead(code) {
-      Alert.alert(
-        'QR Code Detected',
-        code.data,
-        [
-          {text: 'OK, read it.', onPress: () => console.log('User saw QR Code contents.')},
-        ],
-        { cancelable: false }
-      )
+  onBarCodeRead(code) {       //when the bar (QR) code is read
+    Alert.alert(              //invoke this callback
+      'QR Code Detected',
+      code.data,
+      [
+        { text: 'OK, read it.', onPress: () => console.log('User saw QR Code contents.') },
+      ],
+      { cancelable: false },
+    );
   }
 
   render() {
     return (
       <Camera
         onBarCodeRead={_.debounce(this.onBarCodeRead, 1000, { leading: true, trailing: false })}
-        style={% raw %}{{{% endraw %} flex: 1 }}
+        style={{ flex: 1 }}
       />
     );
   }
 }
 ```
 
-After making these changes, we can push the extension to Shoutem and install it in a new app. Continuing from where we stopped in our terminal:
+After making these changes, we can push the extension to Shoutem and install it in a new app:
 
 ```ShellSession
-$ cd ../..
 $ shoutem push
 Uploading `QR Reader` extension to Shoutem...
 Success!
@@ -318,6 +323,8 @@ Extension installed
 See it in browser: `{{ site.shoutem.builderURL }}/app/{{ site.example.appId }}`
 ```
 
-Opening the QRReader app in the Builder will show us an app with no Screens, but since we just installed our QR Reader Extension onto the app, we can just add the QRReader screen to it by clicking on the + button next to Screens, going to the Custom category and selecting the QR Reader Extension. Now to test out how it works we'll click "Preview on Device" and use the Shoutem Preview app to scan the QR code.
+Opening the QRReader app in the Builder will show us an app with no Screens, but since we just installed our QR Reader Extension onto the app, we can just add the QRReader screen to it by clicking on the + button next to Screens, going to the Custom category and selecting the QR Reader Extension.
 
-Once the app is built and begins previewing, we can use it to scan that same QR code and we'll see what it contains. Our QRReader app should tell us it contains a link, similar to this: `https://shoutem.app.link/XuqhO6LfkD?code=XQXxKIl`.
+This specific native dependency that we're using is already linked in the Shoutem Preview app, so we will be able to preview the app on our device. Click "Preview on Device" and scan the QR code using the Shoutem Preview app. Once it finishes building and loading our QRReader app, scan that same QR code and the app will produce an alert that contains our QRReader app's preview link.
+
+With any other native dependency, previewing the app through the Builder or through the Shoutem Preview app won't be possible, because we can't change the native code of the previewer, so instead we have to preview it [locally](http://shoutem.github.io/docs/extensions/tutorials/setting-local-environment) using `$ shoutem run-ios` or `$ shoutem run-android` and picking the QRReader app we just created.
