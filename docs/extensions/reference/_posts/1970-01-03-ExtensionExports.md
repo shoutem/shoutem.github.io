@@ -34,4 +34,11 @@ These are the predefined extension exports:
 
 ## _server/index.js_
 
-No predefined exports are currently reserved. This part will be used once we enable the creation of React settings pages!
+Same as for `app` the `server` folder is npm package that represents segment of extension in Shoutem Builder. The `server/index.js` file is what is accessible from the current extension to the Shoutem Builder. 
+
+These are the predefined extension exports:
+
+- **lifecycle methods** - methods that extensions can implement to be notified when the entire extension is mounted in Shoutem Builder. This can be useful to initialize the extension. Each of those methods receives an `page` parameter that represents the current **page instance**. This is the list of lifecycle methods in order of their invocation (we plan to support more methods):
+    - **pageWillMount** - invoked immediately before the mounting of the root page component occurs.   
+- **pages** - the settings pages that will be available for Shoutem Builder. Must have the same name as in `extension.json`
+- **reducer** - the extension reducer that will be mounted under the extension namespace in the state 
