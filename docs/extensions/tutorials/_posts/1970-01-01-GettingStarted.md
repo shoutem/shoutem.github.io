@@ -110,7 +110,7 @@ File `app/extension.js` was modified.
 File `extension.json` was modified.
 ```
 
-This created `Hello` screen in `app/screens/List.js` file. Any time you create a new screen it'll be a simple "Hello World!" screen.
+This created `Hello` screen in `app/screens/Hello.js` file. Any time you create a new screen it'll be a simple "Hello World!" screen.
 
 Let's push what we've built to Shoutem.
 
