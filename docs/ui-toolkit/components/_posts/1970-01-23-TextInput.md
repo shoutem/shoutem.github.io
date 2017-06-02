@@ -7,14 +7,14 @@ section: UI toolkit
 
 # TextInput
 
-`TextInput` component is used for inputting text into the application using keyboard. 
+`TextInput` component is used for inputting text into the application using keyboard.
 
 ## API
 
 #### Props
 
-* `TextInput` component doesn't have specific (custom) Props, however, it supports every prop that the standard React Native `TextInput` component supports. For full list of available props, visit 
-[React Native TextInput component documentation](https://facebook.github.io/react-native/docs/textinput.html "React Native TextInput component documentation")  
+* `TextInput` component doesn't have specific (custom) Props, however, it supports every prop that the standard React Native `TextInput` component supports. For full list of available props, visit
+[React Native TextInput component documentation](https://facebook.github.io/react-native/docs/textinput.html "React Native TextInput component documentation").
 
 #### Style names
 
@@ -26,29 +26,29 @@ section: UI toolkit
   - defines the placeholder text color
 * **selectionColor**:  
   - The highlight color of the text input (and the cursor color on iOS)
-* Also, supports every `Style` prop that the standard React Native `TextInput` component supports 
+* Also, supports every `Style` prop that the standard React Native `TextInput` component supports
 
 ## Examples
 
-### Input / Placeholder text 
+### Input / Placeholder text
 ![Input / Placeholder text  example]({{ site.url }}/img/ui-toolkit/inputs/input-placeholder@2x.png "Input / Placeholder text"){:.docs-component-image}
 
 #### JSX Declaration
 ```JSX
-<TextInput 
+<TextInput
   placeholder={'Username or email'}
-  onChangeText={...} 
+  onChangeText={...}
 />
 ```
 
-### Input / With text 
+### Input / With text
 ![Input / With text  example]({{ site.url }}/img/ui-toolkit/inputs/input-with-value@2x.png "Input / With text"){:.docs-component-image}
 
 #### JSX Declaration
 ```JSX
-<TextInput 
+<TextInput
   defaultValue={'Username or email'}
-  onChangeText={...} 
+  onChangeText={...}
 />
 ```
 
@@ -57,8 +57,8 @@ section: UI toolkit
 
 #### JSX Declaration
 ```JSX
-<TextInput 
-  placeholder={'SecurePasswordGoesHere'}
+<TextInput
+  placeholder={'Password'}
   secureTextEntry
 />
 ```

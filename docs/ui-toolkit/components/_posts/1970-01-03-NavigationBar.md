@@ -13,7 +13,7 @@ Shoutem UI toolkit contains two different `NavigationBar` components:
 
 ![Navbar / Solid example]({{ site.url }}/img/ui-toolkit/navigationbar/navbar-title-only@2x.png "Navbar / Solid"){:.docs-component-image}
 
-2) `Redux` and stack-based `NavigationBar` enables any view to act as a navigation view using reducers to manipulate state at a top-level object. Can be used only on components that are within the stack (i.e. it cannot be used on `Modal` window). Internally, it relies on [`NavigationExperimental`](https://facebook.github.io/react-native/docs/navigation.html#navigationexperimental) from React-Native 
+2) `Redux` and stack-based `NavigationBar` enables any view to act as a navigation view using reducers to manipulate state at a top-level object. Can be used only on components that are within the stack (i.e. it cannot be used on `Modal` window). Internally, it relies on [`NavigationExperimental`](https://facebook.github.io/react-native/docs/navigation.html#navigationexperimental) from React-Native.
 
 
 
@@ -34,7 +34,7 @@ import { NavigationBar } from '@shoutem/ui'
 
 * **centerComponent**: object  
   - represents the center component in `NavigationBar` (i.e. screen title)
-  
+
 * **leftComponent**: object  
   - represents the left component in `NavigationBar` (i.e. back button)
 
@@ -51,7 +51,7 @@ import { NavigationBar } from '@shoutem/ui'
 
 * **clear**: sets the `Text` color to white and background colors to transparent
 * **inline**: forces relative positioning of `NavigationBar` component, allowing component to be used inline with other components, i.e. `ListView`, without its content overlapping `NavigationBar`
-* **no-border**: removes the bottom border 
+* **no-border**: removes the bottom border
 
 #### Style
 
@@ -60,10 +60,10 @@ import { NavigationBar } from '@shoutem/ui'
 
 * **container**
   - Style for `View` that holds all components within `NavigationBar`
-  
+
 * **componentsContainer**
   - Style for `View` container that holds `leftComponent`, `centerComponent` and `rightComponent` objects
-  
+
 * **leftComponent**
   - Style applied to left navigation component
 
@@ -83,7 +83,7 @@ import { NavigationBar } from '@shoutem/ui'
 />
 ```
 
-### Clear (Image)
+### Showing Background Image
 ![Clear (Image) example]({{ site.url }}/img/ui-toolkit/navigationbar/navbar-imageoverlay-image@2x.png "Clear (Image)"){:.docs-component-image}
 
 #### JSX Declaration
@@ -153,7 +153,7 @@ import { NavigationBar } from '@shoutem/ui'
 />
 ```
 
-### Navbar + Icon
+### Navbar + Icon Button
 ![Navbar + Icon example]({{ site.url }}/img/ui-toolkit/navigationbar/navbar-icon@2x.png "Navbar + Icon"){:.docs-component-image}
 
 #### JSX Declaration
@@ -176,7 +176,7 @@ import { NavigationBar } from '@shoutem/ui'
 ```JSX
 <NavigationBar
   hasHistory
-  title="TITLE"
+  centerComponent={<Title>TITLE</Title>}
   share={% raw %}{{{% endraw %}
     link: 'http://shoutem.github.io',
     text: 'This is the best',
@@ -193,7 +193,7 @@ import { NavigationBar } from '@shoutem/ui'
 <NavigationBar
   styleName="no-border"
   hasHistory
-  title="TITLE"
+  centerComponent={<Title>TITLE</Title>}
   share={% raw %}{{{% endraw %}
     link: 'http://shoutem.github.io',
     text: 'This is the best',
@@ -209,7 +209,7 @@ import { NavigationBar } from '@shoutem/ui'
 ```JSX
 <NavigationBar
   hasHistory
-  title="TITLE"
+  centerComponent={<Title>TITLE</Title>}
   rightComponent={(
     <Button styleName="clear">
       <Text>Report</Text>
@@ -218,8 +218,8 @@ import { NavigationBar } from '@shoutem/ui'
 />
 ```
 
-### Navbar (Modal) + Icon
-![Navbar (Modal) + Icon example]({{ site.url }}/img/ui-toolkit/navigationbar/navbar-modal-icon@2x.png "Navbar (Modal) + Icon"){:.docs-component-image}
+### Navbar (Modal) + Share Button
+![Navbar (Modal) + Share Button]({{ site.url }}/img/ui-toolkit/navigationbar/navbar-modal-icon@2x.png "Navbar (Modal) + Icon"){:.docs-component-image}
 
 #### JSX Declaration
 ```JSX
@@ -229,7 +229,7 @@ import { NavigationBar } from '@shoutem/ui'
       <Icon name="close" />
     </Button>
   )}
-  title="TITLE"
+  centerComponent={<Title>TITLE</Title>}
   share={% raw %}{{{% endraw %}
     link: 'http://shoutem.github.io',
     text: 'This is the best',
@@ -249,7 +249,7 @@ import { NavigationBar } from '@shoutem/ui'
       <Icon name="close" />
     </Button>
   )}
-  title="TITLE"
+  centerComponent={<Title>TITLE</Title>}
   rightComponent={(
     <Button styleName="clear">
       <Text>Post</Text>
@@ -269,7 +269,7 @@ import { NavigationBar } from '@shoutem/ui'
       <Text>Cancel</Text>
     </Button>
   )}
-  title="TITLE"
+  centerComponent={<Title>TITLE</Title>}
   rightComponent={(
     <Button>
       <Text>Done</Text>
@@ -289,7 +289,7 @@ import { NavigationBar } from '@shoutem/ui'
       <Text>Cancel</Text>
     </Button>
   )}
-  title="TITLE"
+  centerComponent={<Title>TITLE</Title>}
   rightComponent={(
     <Button styleName="muted">
       <Text>Done</Text>
@@ -298,15 +298,15 @@ import { NavigationBar } from '@shoutem/ui'
 />
 ```
 
-### Navbar / On primary color / back + share
-![Navbar / On primary color / back + share example]({{ site.url }}/img/ui-toolkit/navigationbar/navbar-sublevel-action-no-border-copy@2x.png "Navbar / On primary color / back + share"){:.docs-component-image}
+### Navbar (Sublevel) + Share + Showing Background Color
+![Navbar (Sublevel) + Share + Showing Background Color]({{ site.url }}/img/ui-toolkit/navigationbar/navbar-sublevel-action-no-border-copy@2x.png "Navbar / On primary color / back + share"){:.docs-component-image}
 
 #### JSX Declaration
 ```JSX
 <NavigationBar
   styleName="clear"
   hasHistory
-  title="TITLE"
+  centerComponent={<Title>TITLE</Title>}
   share={% raw %}{{{% endraw %}
     link: 'http://shoutem.github.io',
     text: 'This is the best',
@@ -353,7 +353,7 @@ This `NavigationBar` and `CardStack` components provide simpler API for navigati
 
 * **clear**: sets the `Text` color to white and background colors to transparent
 * **fade**: sets the `Text` color to white and applies linear gradient to background
-* **no-border**: removes the bottom border 
+* **no-border**: removes the bottom border
 
 #### Style
 
@@ -362,10 +362,10 @@ This `NavigationBar` and `CardStack` components provide simpler API for navigati
 
 * **container**
   - Style prop for `View` that holds all components within `NavigationBar`
-  
+
 * **componentsContainer**
   - Style prop for `View` container that holds `leftComponent`, `centerComponent` and `rightComponent` objects
-  
+
 * **leftComponent**
   - Style applied to left Navigation component
 

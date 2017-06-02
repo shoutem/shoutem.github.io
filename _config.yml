@@ -9,11 +9,11 @@ sass:
 # Build settings
 markdown: kramdown
 
-kramdown: 
+kramdown:
   syntax_highlighter_opts:
     disable : true
 
-url: "//shoutem.github.io"
+url: "https://shoutem.github.io"
 
 # Variables
 shoutem:
@@ -32,8 +32,8 @@ external:
   googlePlayDeveloperAccount: "https://play.google.com/apps/publish/signup/"
   xcode: "https://developer.apple.com/xcode/"
   androidStudio: "https://developer.android.com/studio/index.html"
-  
-  
+
+
 
 # Examples
 example:

@@ -7,22 +7,22 @@ section: UI toolkit
 
 # DropDownMenu
 
-DropDownMenu is a full-screen contextual menu for displaying lists of items. 
+DropDownMenu is a full-screen contextual menu for displaying lists of items.
 
 ![DropDownMenu example]({{ site.url }}/img/ui-toolkit/dropdownmenu/drop_down_menu@2x.png "DropDownMenu"){:.docs-component-image}
 
 ## API
 
 #### Props
- 
+
 * **onOptionSelected(option: object)**: function  
   - Called after tapping an option from menu, with all Props from that option passed to the function
 
 * **options**: array  
   - Array of options that are rendered as `Button`s within `ListView`
 
-* **selectedOption**: any 
-  - Sets pre-selected `option` from `options` array
+* **selectedOption**: any
+  - Sets which `option` from the `options` array is selected by default
 
 * **titleProperty**: string
   - Attribute that defines what `key` from `options` Prop will be used to render option Titles in Dropdown menu
@@ -44,7 +44,7 @@ DropDownMenu is a full-screen contextual menu for displaying lists of items.
 
 * **modalItem**
   - Style prop that holds single item (row) in `ListView`
- 
+
 * **selectedOption**
   - Style prop for a dropdown `Button` that opens a full-screen contextual menu and represents currently selected option
 
