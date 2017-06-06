@@ -168,8 +168,74 @@ Above example shows how ordinary React and Redux functionality implementation in
 
 ## Using lifecycle methods
 
-BlaBla
+Each extension can subscribe to Shoutem lifecycle methods, for now we only expose `pageWillMount` documented in [Extension exports]({{ site.url }}/docs/extensions/reference/extension-exports), but in the future we will add other lifecycle methods. Subscription is simple, you only need to export lifecycle method in `src/index.js`:
+
+```JS
+#file: server/index.js
+...
+export function pageWillMount(page) {
+  //Add your code that needs to configure or initialize or depend upon page object
+}
+...
+```
+
+Lifecycle methods are useful if you need to configure your extension based on Shoutem Builder context and parameters. For example if you need to initialize reducers or API service that communicates with your server. Below in the example, instead of directly exporting your root reducer from `redux.js` we use `pageWillMount` to initialize reducer. This is pattern that enables passing `page` object to reducer factory.
+
+```JS
+#file: server/index.js
+import reducer from './redux';
+
+//export { reducer };
+
+let pageReducer = null;
+
+export function pageWillMount(page) {
+  pageReducer = reducer(page);
+}
+
+export { pageReducer as reducer };
+```
 
 ## Using redux-form
 
-BlaBla
+You can use any JS library in implementation of Shoutem settings pages, but because of integration requirements in some cases you will need to first configure your library. [Redux-form](https://github.com/erikras/redux-form) is example of such case where by convention form state is under `state.form` as they suggest it in [Getting Started](https://redux-form.com/6.7.0/docs/GettingStarted.md/), but because of Shoutem settings pages requirement you will need to add redux-form reducer under extension scope:
+
+```JS
+#file: server/redux.js
+import _ from 'lodash';
+import { createScopedReducer } from '@shoutem/api';
+import { reducer as formReducer } from 'redux-form';
+import ext from './const';
+
+export default createScopedReducer({
+  extension: {
+    form: formReducer,
+  },
+});
+
+export function getFormState(state) {
+  return _.get(state, [ext(), 'form']);
+}
+```
+
+As we added redux-form reducer under extension scope we also added form state selector `getFormState` that returns redux-form state. It is nice convenience so that we don't need to add it everywhere when we decorate form component with `reduxForm()`. You only need to pass custom selector when you are using decorator:
+
+```JS
+#file: server/FormComponent.js
+import { reduxForm } from 'redux-form';
+import { getFormState } from './redux';
+
+// React component with form implementation
+// export class FormComponent extends React.Component {
+//   form implementation
+// }
+
+export default reduxForm({
+  getFormState,
+  form: 'customFormName',
+  fields: [
+    'field1',
+    'field2',
+  ],
+})(FormComponent);
+```
