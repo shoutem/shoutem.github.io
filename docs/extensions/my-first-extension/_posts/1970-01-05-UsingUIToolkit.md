@@ -133,7 +133,7 @@ export class List extends Component {
     this.renderRow = this.renderRow.bind(this);
   }
 
-  getRestaurants() ...
+  getRestaurants() {...}
 }
 
 // connect screen to redux store
