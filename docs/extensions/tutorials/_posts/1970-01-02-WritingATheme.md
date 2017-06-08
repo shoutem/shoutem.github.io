@@ -375,3 +375,52 @@ Check `Customize theme` under the `Style` tab. You can see the `Restaurants` sec
 <p class="image">
 <img src='{{ site.url }}/img/tutorials/settings-theme/style-tab-themes-customise_theme-color_picker_preview.png'/>
 </p>
+
+## Adding a Custom Font
+
+In order to add a custom font to a theme, you'll have to add a `fonts` folder to your extension's `app` folder and add your custom fonts to it in `.TTF` format. You can see this structure in our [open sourced]("https://github.com/shoutem/extensions/tree/master/shoutem-rubicon-theme/app/fonts") theme extensions.
+
+These fonts also have to be linked into the app's binary using [`rnmp`](https://github.com/rnpm/rnpm). You do this by adding the following to your extension's `app/package.json` file:
+
+```JSON{5-9}
+#file: app/package.json
+{
+  "name": "{{site.example.devName}}.restaurants",
+  "version": "0.0.1",
+  "description": "My first extension.",
+  "rnpm": {
+    "assets": [
+      "fonts"
+    ]
+  }
+}
+```
+
+The font you've added also has to be added to your theme's variables in the `server/themes/restaurantVariables.json` file.
+
+```JSON{7}
+#file: server/themes/restaurantVariables.json
+"fontFamily": {
+  "enum": [
+    "Rubik-Regular",
+    "NotoSans",
+    "NotoSerif",
+    "MuktaVaani-Regular",
+    "MyFont"
+  ]
+},
+```
+
+After that, you can _push_ your extension to update the changes you've made on the Builder. After choosing your newly created theme you will be able to use the custom font you added:
+
+<p class="image">
+<img src='{{ site.url }}/img/tutorials/settings-theme/custom-font.png'/>
+</p>
+
+However, you won't be able to preview these changes in the Builder or using the **Shoutem Preview** app. This is because fonts are linked into the binary of the app, while the Builder and Shoutem Preview app previews have their own unchangeable binary and only preview JavaScript bundle changes. So to be able to preview this you'll have to set up your local development environment. You can find out how to do that [here]({{ site.url }}/docs/extensions/tutorials/setting-local-environment).
+
+Here you can see the difference between `Noto Serif` (left), a font included in our default theme, and an example custom font `Roboto Regular` (right):
+
+<p class="image">
+<img src='{{ site.url }}/img/tutorials/settings-theme/custom-font-difference.png'/>
+</p>
