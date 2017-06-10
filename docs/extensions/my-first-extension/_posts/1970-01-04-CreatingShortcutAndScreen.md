@@ -41,7 +41,7 @@ Your `extension.json` was just modified:
   }],
   "shortcuts": [{
     "name": "Restaurants",
-    "title": "Restaurants",
+    "title": "Restaurants"
     "screen": "@.List"
   }]
 }
