@@ -101,7 +101,7 @@ import Swiper from 'react-native-swiper';
 export default class SwiperScreen extends Component {
   render() {
     return (
-      <Swiper style={styles.wrapper} showsButtons={true}>
+      <Swiper showsButtons>
         <View style={styles.slide1}>
           <Text style={styles.text}>Hello Swiper</Text>
         </View>
@@ -117,17 +117,10 @@ export default class SwiperScreen extends Component {
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
   text: {
     color: '#FFFFFF',
     fontSize: 30,
     fontWeight: 'bold',
-  },
-  wrapper: {
   },
   slide1: {
     flex: 1,
@@ -161,7 +154,7 @@ Extension installed
 See it in browser: `{{ site.shoutem.builderURL }}/app/{{ site.example.appId }}`
 ```
 
-Opening the SwiperApp in the Builder will show us an app with no Screens, but since we just installed our Swiper Extension onto the app, we can just add the Swiper Screen to it by clicking on the + button next to Screens, going to the Custom category and selecting the Swiper Extension. As soon as it's loaded into the Main Navigation we can preview the app:
+Opening the SwiperApp in the Builder will show us an app with no Screens, but since we just installed our Swiper Extension onto the app, we can just add the Swiper screen to it by clicking on the + button next to Screens, going to the Custom category and selecting the Swiper Extension. As soon as it's loaded into the Main Navigation we can preview the app:
 
 <p class="image">
 <img src='{{ site.url }}/img/tutorials/installing-3rd-party-and-native-packages/swiper-in-preview.png'/>
@@ -227,7 +220,7 @@ To make sure the native dependencies are linked, we'll have to make sure our cus
 ```
 
 > #### Note
-> `rnpm` refers to [React Native Package Manager](https://www.npmjs.com/package/rnpm), used for linking native dependancies in React Native apps.
+> `rnpm` refers to [React Native Package Manager](https://www.npmjs.com/package/rnpm), used for linking native dependancies in React Native apps. The reason we run it from `node_modules` is because extensions are bundled inside `node_modules` and since our postlink script is inside the extension, it should be run from within `node_modules`.
 
 Create a `scripts` directory and make the postlink script in it: `app/scripts/run.js`
 
@@ -275,7 +268,7 @@ The reason we create an array is because sometimes our extension will have multi
 
 ### Using the Package
 
-Our extension will now have access to everything `react-native-camera` has to offer. For this example we'll edit `app/screens/QRReaderScreen.js` so that it displays an [alert](https://facebook.github.io/react-native/docs/alert.html) when the camera reads a QR code and the alert message will contain the QR code data.
+Our extension will now have access to everything `react-native-camera` has to offer. For this example we'll edit `app/screens/QRReaderScreen.js` so that it displays an [Alert](https://facebook.github.io/react-native/docs/alert.html) when the camera reads a QR code and the alert message will contain the QR code data.
 
 ```javascript{2-4,6-10,12-21,25-28}
 #file: app/screens/QRReaderScreen.js
@@ -325,6 +318,6 @@ See it in browser: `{{ site.shoutem.builderURL }}/app/{{ site.example.appId }}`
 
 Opening the QRReader app in the Builder will show us an app with no Screens, but since we just installed our QR Reader Extension onto the app, we can just add the QRReader screen to it by clicking on the + button next to Screens, going to the Custom category and selecting the QR Reader Extension.
 
-This specific native dependency that we're using is already linked in the Shoutem Preview app, so we will be able to preview the app on our device. Click "Preview on Device" and scan the QR code using the Shoutem Preview app. Once it finishes building and loading our QRReader app, scan that same QR code and the app will produce an alert that contains our QRReader app's preview link.
+This specific native dependency that we're using (`react-native-camera`) is already linked and installed in the Shoutem Preview app, so we will be able to preview the app on our device. Click "Preview on Device" and scan the QR code using the Shoutem Preview app. Once it finishes building and loading our QRReader app, scan that same QR code and the app will produce an alert that contains our QRReader app's preview link.
 
 With any other native dependency, previewing the app through the Builder or through the Shoutem Preview app won't be possible, because we can't change the native code of the previewer, so instead we have to preview it [locally](http://shoutem.github.io/docs/extensions/tutorials/setting-local-environment) using `$ shoutem run-ios` or `$ shoutem run-android` and picking the QRReader app we just created.
