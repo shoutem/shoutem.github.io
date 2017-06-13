@@ -84,8 +84,8 @@ You can ignore the `node_modules` folder that you can now see in your extension'
 
 Our extension now has full access to everything `react-native-swiper` has to offer and we can use it just like we would in a normal React Native app, so let's make use of it's simplest example to show how it works. We'll have to edit our `app/screens/SwiperScreen.js` file to use the Swiper by importing the Swiper component, changing the `render();` method to use the Swiper component and making some changes to the `styles` constant so our Swiper component can function properly.
 
-```javascript{12,17-27,38-62}
-#file app/screens/SwiperScreen.js
+```javascript{11,16-26,32-54}
+#file: app/screens/SwiperScreen.js
 import React, {
   Component
 } from 'react';
