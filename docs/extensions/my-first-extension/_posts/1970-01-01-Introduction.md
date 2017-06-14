@@ -8,7 +8,7 @@ section: My First Extension
 # My First Extension
 <hr />
 
-This tutorial will show you how to write custom **Shoutem extensions** on the Shoutem platform. It introduces the most important concepts. After completing it, you will have a running **mobile app** that uses the your brand new **custom extension** with components from the  [Shoutem UI Toolkit]({{ site.url }}/docs/ui-toolkit/introduction) and retrieves content from the [Shoutem Cloud]({{ site.url }}/docs/cloud/introduction). The final result of this tutorial-made extension is [open sourced](https://github.com/shoutem/extension-examples/tree/master/restaurants-getting-started).
+This tutorial will show you how to write custom **Shoutem extensions** on the Shoutem platform. It introduces the most important concepts. After completing it, you will have a running **mobile app** that uses the your brand new **custom extension** with components from the  [Shoutem UI Toolkit]({{ site.url }}/docs/ui-toolkit/introduction) and retrieves content from the [Shoutem Cloud]({{ site.url }}/docs/cloud/introduction). The final result of this tutorial-made extension is [open sourced](https://github.com/shoutem/extension-examples/tree/master/restaurants-getting-started). Before you start the My First Extension tutorial series, you should go through [Getting Started]({{ site.url }}/docs/extensions/tutorials/getting-started), because this tutorial series builds on top of the simple extension you created there.
 
 Here's a preview of what the completed app will look like.
 
@@ -18,7 +18,7 @@ Here's a preview of what the completed app will look like.
 
 ## What are Extensions?
 
-Extensions represent features in the app. The app owner picks extensions that he wants to use in his app through the Shoutem Builder. Shoutem prepared a bunch of [open sourced](https://github.com/shoutem/extensions){:target="_blank"} extensions which you can easily customize to fit your needs.
+Extensions represent features in the app. The app owner picks extensions that he wants to use in his app through the Shoutem Builder. Shoutem prepared a bunch of [open sourced](https://github.com/shoutem/extensions) extensions which you can easily customize to fit your needs.
 
 <p class="image">
 <img src='{{ site.url }}/img/my-first-extension/shoutem-extensions.png'/>
@@ -45,4 +45,4 @@ On top of React and React Native, we're using [Redux](http://redux.js.org/), a l
 Even though we use Redux, you can use any other state management library (like [MobX](https://github.com/mobxjs/mobx), or just don't use any at all! Again, we don't want to restrict you on how you use React Native.
 
 ## Create an Extension
-The best way to understand the power of extensions, is to get your hands dirty. Let's type some code!
+The best way to understand the power of extensions, is to get your hands dirty. Let's write some code!

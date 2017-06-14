@@ -27,7 +27,7 @@ export default combineReducers({
 
 We've used the `ext` function to get the full schema name (`{{ site.example.devName }}.restaurants.Restaurants`). The root reducer needs to be exported from `app/index.js` as `reducer`, so your app can find it:
 
-```javascript{4,9}
+```javascript{4}
 #file: app/index.js
 // Reference for app/index.js can be found here:
 // http://shoutem.github.io/docs/extensions/reference/extension-exports

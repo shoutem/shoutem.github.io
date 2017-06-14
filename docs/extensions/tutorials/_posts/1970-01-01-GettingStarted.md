@@ -25,7 +25,7 @@ Shoutem apps are managed on a beautiful web interface called the **Builder**. It
 
 ## Your First App
 
-If you haven't already, go to the [Builder]({{ site.shoutem.builderURL }}) and create an account. Once signed in, create a new `Blank app`. For the purpose of this quick tutorial, we'll make a Restaurants and Food based app, lets call it `Snack Attack App`. To rename your app, click on the `Blank app`, delete the content and type in `Snack Attack App`.
+If you haven't already, go to the [Builder]({{ site.shoutem.builderURL }}) and create an account. Once signed in, create a new `Blank app`. For the purpose of this quick tutorial, we'll make a Restaurants and Food based app, lets call it `Restaurants`. To rename your app, click on the `Blank app`, delete the content and type in `Restaurants`.
 
 Lets say we want to add an About screen as well as a Video RSS screen that houses a YouTube playlist of short recipe videos. To do that, click on the + button next to Screens and select the About extension then do the same thing and add the Video RSS extension. After adding the screens, you can use Shoutem's CMS to add content to your About screen. Select the About screen in Main Navigation, click on "Create Items" to open the CMS modal. Now click on "Add Item" which will open the "New item" modal. Here you can fill out the form with all the information you might want to display on your About screen. If you don't feel like doing so, you can simply use the CSV import option by clicking on the `...` button and then click Import.
 
@@ -68,21 +68,21 @@ Clone the app you made in the Builder to your machine by using `shoutem clone` a
 
 ```ShellSession
 $ shoutem clone
-Select your app: Snack Attack App ({{ site.example.appId}})
-Pulling the app `Snack Attack App`...
+Select your app: Restaurants ({{ site.example.appId}})
+Pulling the app `Restaurants`...
 Pulling extensions...
-Change your working directory to `Snack_Attack_App`
+Change your working directory to `Restaurants`
 ```
 
-Now locate to `Snack_Attack/extensions` and create your new extension using `shoutem init`:
+Now locate to `Restaurants/extensions` and create your new extension using `shoutem init`:
 
 ```ShellSession
-$ cd Snack_Attack/extensions
-$ shoutem init snack-attack
+$ cd Restaurants/extensions
+$ shoutem init restaurants
 Enter information about your extension. Press `return` to accept (default) values.
-Title: Snack Attack
+Title: Restaurants
 Version: 0.0.1
-Description: Snack Attack food app.
+Description: A restaurants extension.
 
 Initializing extension:
 ...
@@ -90,10 +90,10 @@ Initializing extension:
 Extension initialized!
 ```
 
-The `shoutem init` command bootstrapped the `snack-attack` folder with extension files. Switch over to the extension folder:
+The `shoutem init` command bootstrapped the `restaurants` folder with extension files. Switch over to the extension folder:
 
 ```ShellSession
-$ cd snack-attack
+$ cd restaurants
 ```
 
 Create a screen with a shortcut (pointer to the starting screen of the extension):
@@ -110,7 +110,7 @@ File `app/extension.js` was modified.
 File `extension.json` was modified.
 ```
 
-This created the `List` screen in `app/screens/List.js` file. The reason we named it List is because in the [My First Extension]({{ site.url }}/docs/extensions/my-first-extension/introduction) tutorial series we'll turn this screen into a list of restaurants, but for now, a template screen will suffice. Any time you create a new screen it'll be a simple `Hello World!` screen.
+This created a `List` screen in `app/screens/List.js` file. The reason we named it List is because in the [My First Extension]({{ site.url }}/docs/extensions/my-first-extension/introduction) tutorial series we'll turn this screen into a list of restaurants, but for now, a template screen will suffice. Any time you create a new screen it'll be a simple `Hello World!` screen.
 
 To fit the app, lets change the `app/screens/List.js` file so it says `Lets eat!` instead of `Hello World!`:
 
@@ -131,21 +131,20 @@ Let's push what we've built to Shoutem.
 
 ```ShellSession
 $ shoutem push
-Uploading `Hello World` extension to Shoutem...
+Uploading `Restaurants` extension to Shoutem...
 Success!
 ```
 
-Now install the extension into the app you made on the Builder. `shoutem install` lists all the available apps onto which you can install the extension. Select your `Snack Attack App`.
+Now install the extension into the app so it's available in the Builder:
 
 ```ShellSession
 $ shoutem install
-Select app to install extension: Snack Attack App ({{ site.example.appId }})
 
 Extension installed.
 See it in the builder: {{ site.shoutem.builderURL }}/app/{{ site.example.appId }}
 ```
 
-Open the app in the Builder. Click on the `+` next to **Screens** and select `Custom` category. You can see your `Snack Attack` extension there. Click it to add it to Main Navigation, just like you did with About and Videos RSS.
+Open the app in the Builder. Click on the `+` next to **Screens** and select `Custom` category. You can see your `Restaurants` extension there. Click on it to add it to Main Navigation, just like you did with About and Videos RSS.
 
 <p class="image">
 <img src='{{ site.url }}/img/tutorials/getting-started/adding-custom-extension.png'/>
@@ -153,11 +152,10 @@ Open the app in the Builder. Click on the `+` next to **Screens** and select `Cu
 
 Great! Now let's preview the app. You can use the Builder to preview the app, or you can preview it using the **Shoutem Preview** app (available for [iOS]({{ site.shoutem.previewAppiOS }}) and [Android]({{ site.shoutem.previewAppAndroid }})). Using the Shoutem Preview app, you can even preview iOS apps when developing on Windows.
 
-Simply use `shoutem run`, select your app from the list and scan the generated QR code using the Shoutem Preview app (or any other QR code scanner).
+Simply use `shoutem run` inside your cloned app directory and scan the generated QR code using the Shoutem Preview app (or any other QR code scanner).
 
 ```ShellSession
 $ shoutem run
-Select your app: Snack Attack App ({{ site.example.appId }})
 Creating the bundle for your app...
 ...
 ```

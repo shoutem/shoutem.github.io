@@ -19,7 +19,7 @@ The left app screen lists the restaurants and the right one shows the details of
 
 ## Initialize
 
-Let's start building! Initialize the extension with basic information. Following command, `shoutem init`, will create a folder and bootstrap the extension files.
+Let's revise what we did in [Getting Started]({{ site.url }}/docs/extensions/tutorials/getting-started) (which you should go through before starting this tutorial series). We initialized the extension with basic information using `shoutem init`, which created a folder and bootstrapped it with extension files.
 
 ```ShellSession
 $ shoutem init restaurants
@@ -27,23 +27,12 @@ Enter information about your extension. Press `return` to accept (default) value
 Title: Restaurants
 Version: 0.0.1
 Description: List of restaurants
-
-Initializing extension:
-...
-
-Extension initialized!
 ```
 
-We passed `restaurants` as an extension name to the `shoutem init` command. Extension information is stored in `extension.json` file.
+Extension information is stored in `extension.json` file.
 
 > #### Note
 > In case you can't remember the structure of some command, type `shoutem -h` or `shoutem <command> -h` where you should replace `<command>` with one of the [CLI commands]({{ site.url }}/docs/extensions/reference/cli).
-
-Now lets switch to the extension folder:
-
-```ShellSession
-$ cd restaurants
-```
 
 ## Folder Structure
 The initialization process will generate the skeleton with folders and files. Our new extension's structure looks like this:
@@ -91,7 +80,7 @@ Brief property explanations:
 
 <br />
 
-The extension is now only available on your machine, not to an app on the Builder so lets upload it to Shoutem so you can install it in an app.
+To make an extension available to an app on the Builder you have to upload it using `shoutem push`.
 
 ```ShellSession
 $ shoutem push
