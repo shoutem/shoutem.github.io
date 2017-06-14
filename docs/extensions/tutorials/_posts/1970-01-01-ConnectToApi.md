@@ -80,7 +80,7 @@ Once this is done, go to the [Builder]({{ site.shoutem.builderURL }}) and add th
 Now let's fetch the photo into the screen. We'll use the Fetch API from JavaScript. This is the complete code from `app/screens/PhotoDay.js`
 
 ```JavaScript
-#file app/screens/PhotoDay.js
+#file: app/screens/PhotoDay.js
 
 import React, {
   Component
