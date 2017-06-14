@@ -378,7 +378,7 @@ Check `Customize theme` under the `Style` tab. You can see the `Restaurants` sec
 
 ## Adding a Custom Font
 
-In order to add a custom font to a theme, you'll have to add a `fonts` folder to your extension's `app` folder and add your custom fonts to it in `.TTF` format. You can see this structure in our [Rubicon theme]("https://github.com/shoutem/extensions/tree/master/shoutem-rubicon-theme/app/fonts") extension. For the purpose of this tutorial, we'll provide you with a [custom font](https://www.fontsquirrel.com/fonts/download/roboto) for you to use.
+In order to add a custom font to a theme, you'll have to add a `fonts` folder to your extension's `app` folder and add your custom fonts to it in `.TTF` format. You can see this structure in our [Rubicon theme]("https://github.com/shoutem/extensions/tree/master/shoutem-rubicon-theme/app/fonts") extension. For the purpose of this tutorial, use a custom [Roboto font](https://www.fontsquirrel.com/fonts/roboto) for you to use.
 
 These fonts also have to be linked into the app's binary as [assets](https://github.com/rnpm/rnpm#advanced-usage) using [`rnmp`](https://github.com/rnpm/rnpm). You do this by adding the following to your extension's `app/package.json` file:
 
