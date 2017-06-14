@@ -375,3 +375,55 @@ Check `Customize theme` under the `Style` tab. You can see the `Restaurants` sec
 <p class="image">
 <img src='{{ site.url }}/img/tutorials/settings-theme/style-tab-themes-customise_theme-color_picker_preview.png'/>
 </p>
+
+## Adding a Custom Font
+
+In order to add a custom font to a theme, you'll have to add a `fonts` folder to your extension's `app` folder and add your custom fonts to it in `.TTF` format. You can see this structure in our [Rubicon theme]("https://github.com/shoutem/extensions/tree/master/shoutem-rubicon-theme/app/fonts") extension. For the purpose of this tutorial, use a custom [Roboto font](https://www.fontsquirrel.com/fonts/roboto) for you to use.
+
+These fonts also have to be linked into the app's binary as [assets](https://github.com/rnpm/rnpm#advanced-usage) using [`rnmp`](https://github.com/rnpm/rnpm). You do this by adding the following to your extension's `app/package.json` file:
+
+```JSON{5-9}
+#file: app/package.json
+{
+  "name": "{{site.example.devName}}.restaurants",
+  "version": "0.0.1",
+  "description": "My first extension.",
+  "rnpm": {
+    "assets": [
+      "fonts"
+    ]
+  }
+}
+```
+
+> #### Note
+> In the above code snippet, `fonts` is the name of the folder: `app/fonts`.
+
+In order to be able to choose the font you've added through the Builder, it has to also be added to your theme's variables in the `server/themes/restaurantVariables.json` file. The custom font we've provided you with is called `Roboto` and we'll be using the `Roboto-Regular` version if it.
+
+```JSON{7}
+#file: server/themes/restaurantVariables.json
+"fontFamily": {
+  "enum": [
+    "Rubik-Regular",
+    "NotoSans",
+    "NotoSerif",
+    "MuktaVaani-Regular",
+    "Roboto-Regular"
+  ]
+},
+```
+
+After that, you can _push_ your extension to update the changes you've made on the Builder. After choosing your newly created theme you will be able to use the custom font you added:
+
+<p class="image">
+<img src='{{ site.url }}/img/tutorials/settings-theme/custom-font.png'/>
+</p>
+
+However, you won't be able to preview these changes in the Builder or using the **Shoutem Preview** app. This is because fonts are linked into the binary of the app, while the Builder and Shoutem Preview app previews have their own, unchangeable binary and only preview JavaScript bundle changes. So to be able to preview this you'll have to set up your local development environment so the custom font is linked into the local binary. You can find out how to do that [here]({{ site.url }}/docs/extensions/tutorials/setting-local-environment).
+
+Here you can see the difference between `Noto Serif` (left), a font included in our default theme, and our example custom font `Roboto Regular` (right):
+
+<p class="image">
+<img src='{{ site.url }}/img/tutorials/settings-theme/custom-font-difference.png'/>
+</p>
