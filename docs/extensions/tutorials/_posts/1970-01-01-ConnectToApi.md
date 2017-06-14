@@ -81,7 +81,6 @@ Now let's fetch the photo into the screen. We'll use the Fetch API from JavaScri
 
 ```JavaScript
 #file: app/screens/PhotoDay.js
-
 import React, {
   Component
 } from 'react';
