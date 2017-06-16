@@ -68,16 +68,15 @@ Clone the app you made in the Builder to your machine by using `shoutem clone` a
 
 ```ShellSession
 $ shoutem clone
-Select your app: Restaurants ({{ site.example.appId}})
-Pulling the app `Restaurants`...
-Pulling extensions...
-Change your working directory to `Restaurants`
+Select your app: Restaurants ({{ site.example.appId }})
+Cloning `Restaurants` to `Restaurants_{{ site.example.appId}}`
+...
 ```
 
-Now locate to `Restaurants/extensions` and create your new extension using `shoutem init`:
+Once the cloning process is done, locate to `Restaurants_{{ site.example.appId }}/extensions` and create your new extension using `shoutem init`:
 
 ```ShellSession
-$ cd Restaurants/extensions
+$ cd Restaurants_{{ site.example.appId }}/extensions
 $ shoutem init restaurants
 Enter information about your extension. Press `return` to accept (default) values.
 Title: Restaurants
@@ -90,10 +89,10 @@ Initializing extension:
 Extension initialized!
 ```
 
-The `shoutem init` command bootstrapped the `restaurants` folder with extension files. Switch over to the extension folder:
+The `shoutem init` command bootstrapped the `{{ site.example.devName }}.restaurants` folder with extension files. Locate to the extension folder:
 
 ```ShellSession
-$ cd restaurants
+$ cd {{ site.example.devName }}.restaurants
 ```
 
 Create a screen with a shortcut (pointer to the starting screen of the extension):
@@ -110,7 +109,7 @@ File `app/extension.js` was modified.
 File `extension.json` was modified.
 ```
 
-This created a `List` screen in `app/screens/List.js` file. The reason we named it List is because in the [My First Extension]({{ site.url }}/docs/extensions/my-first-extension/introduction) tutorial series we'll turn this screen into a list of restaurants, but for now, a template screen will suffice. Any time you create a new screen it'll be a simple `Hello World!` screen.
+This created a `List` screen in `app/screens/List.js` file. The reason we named it List is because in the [My First Extension]({{ site.url }}/docs/extensions/my-first-extension/introduction) tutorial series we'll turn this screen into a list of restaurants, but for now, a template screen will suffice. Any time you create a new screen it'll be a simple Hello World screen.
 
 To fit the app, lets change the `app/screens/List.js` file so it says `Lets eat!` instead of `Hello World!`:
 
@@ -150,13 +149,15 @@ Open the app in the Builder. Click on the `+` next to **Screens** and select `Cu
 <img src='{{ site.url }}/img/tutorials/getting-started/adding-custom-extension.png'/>
 </p>
 
-Great! Now let's preview the app. You can use the Builder to preview the app, or you can preview it using the **Shoutem Preview** app (available for [iOS]({{ site.shoutem.previewAppiOS }}) and [Android]({{ site.shoutem.previewAppAndroid }})). Using the Shoutem Preview app, you can even preview iOS apps when developing on Windows.
+Great! Let's make our newly created extension's screen the Starting Screen for the app. Just drag it to the top of Main Navigation and you're done.
 
-Simply use `shoutem run` inside your cloned app directory and scan the generated QR code using the Shoutem Preview app (or any other QR code scanner).
+Now let's preview the app. You can use the Builder to preview the app, or you can preview it using the **Shoutem Preview** app (available for [iOS]({{ site.shoutem.previewAppiOS }}) and [Android]({{ site.shoutem.previewAppAndroid }})). Using the Shoutem Preview app, you can even preview iOS apps when developing on Windows!
+
+Simply use `shoutem run` inside your cloned `Restaurants_{{ site.example.appId }}` app directory and scan the generated QR code using the Shoutem Preview app (or any other QR code scanner).
 
 ```ShellSession
 $ shoutem run
-Creating the bundle for your app...
+Scanning folders for symlinks in /path/to/Restaurants_{{ site.example.appId }}/node_modules
 ...
 ```
 
@@ -164,7 +165,7 @@ Creating the bundle for your app...
 > To create the bundle for your app, you need to have [Node.js v7](https://nodejs.org/en/) and [react-native-cli](http://npmjs.com/package/react-native-cli) installed. See [FAQ]({{ site.url }}/docs/extensions/tutorials/faq) if you have problems setting this up.
 > Also, make sure you're connected to the same WiFi network on both your computer and smartphone (we'll soon make it possible to do it without being connected to the same WiFi).
 
-This is the result you'll have on your phone:
+Once you scan the generated QR code, this is the result you'll have on your phone:
 
 <p class="image">
 <img src='{{ site.url }}/img/tutorials/getting-started/shoutem-run.png'/>
