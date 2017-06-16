@@ -6,15 +6,14 @@ section: My first extension
 ---
 
 # Using the UI Toolkit
-<hr />
 
-React Native exposes plain iOS and Android native components that you can use, but there's usually much work left to do just to make them look beautiful. Instead, you can use [@shoutem/ui](https://github.com/shoutem/ui), a set of customizable UI components. There are [plenty of components]({{ site.url }}/docs/ui-toolkit/components/typography) that you can use out of the box.
+React Native exposes plain iOS and Android native components that you can use, but there's usually a lot of work left to do just to make them look beautiful. Instead, you can use [@shoutem/ui](https://github.com/shoutem/ui), a set of customizable UI components. There are [plenty of components]({{ site.url }}/docs/ui-toolkit/components/typography) that you can use out of the box.
 
 ## Creating a Restaurants List
 
 Let's create a list of restaurants. Start by importing UI components from the toolkit.
 
-```javascript{5-19}
+```javascript{9-17,19}
 #file: app/screens/List.js
 import React, {
   Component
@@ -340,7 +339,13 @@ export default class Details extends Component {
 }
 ```
 
-Upload the extension:
+Now when you reload the app and tap on a restaurant in the list, this is what you get:
+
+<p class="image">
+<img src='{{ site.url }}/img/my-first-extension/extension-rich-details.png'/>
+</p>
+
+If you aren't previewing with the Shoutem Preview app, you will have to _push_ the extension:
 
 ```ShellSession
 $ shoutem push
@@ -348,10 +353,4 @@ Uploading `Restaurants` extension to Shoutem...
 Success!
 ```
 
-Now when you preview the app and click on a restaurant in the list, this is what you get:
-
-<p class="image">
-<img src='{{ site.url }}/img/my-first-extension/extension-rich-details.png'/>
-</p>
-
-That's exactly what we wanted! However, your app is using static, local data. Let's connect it to the **Shoutem Cloud**.
+Looking at the preview, that's exactly what we wanted. However, your app is using static data. Let's connect it to the **Shoutem Cloud**.

@@ -30,7 +30,7 @@ Extensions represent features in the app. The app owner picks extensions that he
 
 Shoutem uses [React](https://facebook.github.io/react/) and [React Native](https://facebook.github.io/react-native/) as frameworks for building cross-platform apps. React is an open source JavaScript library that provides a way to build user interfaces (UIs), while React Native exposes iOS and Android **native** components so they can be used in React environment. If you haven't used these technologies before, our [React Native school](http://school.shoutem.com/) can help you get started!
 
-We use [JSX](https://facebook.github.io/react/docs/introducing-jsx.html) as a simpler way to write UI components with tags. Building an app screen with JSX is as easy as:
+We use [JSX](https://facebook.github.io/react/docs/introducing-jsx.html) as a simple way to write UI components with tags. Building an app screen with JSX is as easy as:
 
 <p class="image">
 <img src='{{ site.url }}/img/my-first-extension/jsx-component-example.png'/>
@@ -42,7 +42,7 @@ On top of React and React Native, we're using [Redux](http://redux.js.org/), a l
 <img src='{{ site.url }}/img/my-first-extension/redux.png'/>
 </p>
 
-Even though we use Redux, you can use any other state management library (like [MobX](https://github.com/mobxjs/mobx), or just don't use any at all! Again, we don't want to restrict you on how you use React Native.
+Even though _we_ use Redux, _you_ can use any other state management library (like [MobX](https://github.com/mobxjs/mobx), or just don't use any at all! Again, we don't want to restrict you on how you use React Native.
 
 ## Create an Extension
 The best way to understand the power of extensions, is to get your hands dirty. Let's write some code!

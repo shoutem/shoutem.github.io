@@ -25,7 +25,7 @@ Shoutem apps are managed on a beautiful web interface called the **Builder**. It
 
 ## Your First App
 
-If you haven't already, go to the [Builder]({{ site.shoutem.builderURL }}) and create an account. Once signed in, create a new `Blank app`. For the purpose of this quick tutorial, we'll make a Restaurants and Food based app, lets call it `Restaurants`. To rename your app, click on the `Blank app`, delete the content and type in `Restaurants`.
+If you haven't already, go to the [Builder]({{ site.shoutem.builderURL }}) and create an account. Once signed in, create a new `Blank app`. For the purpose of this quick tutorial, we'll make a Restaurants and Food based app, lets call it `Restaurants`. To rename your app, click on the `Blank app`, delete the text and type in `Restaurants`.
 
 Lets say we want to add an About screen as well as a Video RSS screen that houses a YouTube playlist of short recipe videos. To do that, click on the + button next to Screens and select the About extension then do the same thing and add the Video RSS extension. After adding the screens, you can use Shoutem's CMS to add content to your About screen. Select the About screen in Main Navigation, click on "Create Items" to open the CMS modal. Now click on "Add Item" which will open the "New item" modal. Here you can fill out the form with all the information you might want to display on your About screen. If you don't feel like doing so, you can simply use the CSV import option by clicking on the `...` button and then click Import.
 

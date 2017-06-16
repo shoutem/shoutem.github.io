@@ -6,11 +6,17 @@ section: My first extension
 ---
 
 # Working with Data
-<hr />
 
-Lets fetch data from the Shoutem Cloud storage to the app. First, remove the assets folder, we don't need it anymore. Create a  `reducer.js` file in the `app` folder. This file will contain a `reducer` defining the initial app state and how the state changes.
+Lets fetch data from the Shoutem Cloud storage to the extension. First, remove the `app/assets` folder, we don't need it anymore. Create a `reducer.js` file in the `app` folder.
 
-Our [@shoutem/redux-io](https://github.com/shoutem/redux-io) package has `reducers` and `actions` that communicate with the Shoutem CMS. The `storage` reducer retrieves data (e.g. restaurants) into a dictionary, while `collection` stores data ID's in an array to persist its order.
+```ShellSession
+$ cd app
+$ touch reducer.js
+```
+
+This file will contain a `reducer` defining the initial app state and how the state changes.
+
+Our [@shoutem/redux-io](https://github.com/shoutem/redux-io) package has `reducers` and `actions` that communicate with the Shoutem CMS. The `storage` reducer retrieves data (eg. restaurants) into a dictionary, while `collection` stores data ID's in an array to persist its order.
 
 ```javascript{1-9}
 #file: app/reducer.js
@@ -84,20 +90,20 @@ Implement rendering with fetched data.
 
 ```JSX{2,8-9}
 #file: app/screens/List.js
-  render() {
-    const { restaurants } = this.props;
+render() {
+  const { restaurants } = this.props;
 
-    return (
-      <Screen>
-        <NavigationBar title="RESTAURANTS" />
-        <ListView
-          data={restaurants}
-          loading={isBusy(restaurants)}
-          renderRow={restaurant => this.renderRow(restaurant)}
-        />
-      </Screen>
-    );
-  }
+  return (
+    <Screen>
+      <NavigationBar title="RESTAURANTS" />
+      <ListView
+        data={restaurants}
+        loading={isBusy(restaurants)}
+        renderRow={restaurant => this.renderRow(restaurant)}
+      />
+    </Screen>
+  );
+}
 ```
 
 Once fetched, restaurants will go into the app state. Convert them to an array with `getCollection` and then connect `find` to redux store.

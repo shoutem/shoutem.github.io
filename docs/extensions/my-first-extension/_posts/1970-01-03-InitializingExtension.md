@@ -6,10 +6,8 @@ section: My first extension
 ---
 
 # Creating an Extension
-<hr />
 
-Here's the mockup of the Restaurants extension that we saw in the [Introduction]({{ site.url }}/docs/extensions/my-first-extension/introduction). Through the course of this tutorial, we'll make the **Restaurants** extension.
-
+Here's the mockup of the Restaurants extension that we saw in the [Introduction]({{ site.url }}/docs/extensions/my-first-extension/introduction). Through the course of this tutorial, we'll turn the **Restaurants** extension from [Getting Started]({{ site.url }}/docs/extensions/tutorials/getting-started) into this list of restaurants.
 
 <p class="image">
 <img src='{{ site.url }}/img/my-first-extension/extension-preview.jpg'/>
@@ -17,24 +15,25 @@ Here's the mockup of the Restaurants extension that we saw in the [Introduction]
 
 The left app screen lists the restaurants and the right one shows the details of each specific restaurant when you tap on it.
 
-## Initialize
+## Initialization
 
-Let's revise what we did in [Getting Started]({{ site.url }}/docs/extensions/tutorials/getting-started) (which you should go through before starting this tutorial series). We initialized the extension with basic information using `shoutem init`, which created a folder and bootstrapped it with extension files.
+Let's revise what we did in [Getting Started]({{ site.url }}/docs/extensions/tutorials/getting-started) (which you should go through before starting this tutorial series). We cloned the app we made on the Builder and initialized a new extension in the app with basic information using `shoutem init`, which created a folder and bootstrapped it with extension files.
 
 ```ShellSession
 $ shoutem init restaurants
 Enter information about your extension. Press `return` to accept (default) values.
 Title: Restaurants
 Version: 0.0.1
-Description: List of restaurants
+Description: A restaurants extension.
 ```
 
-Extension information is stored in `extension.json` file.
+This information is stored in the `extension.json` file.
 
 > #### Note
 > In case you can't remember the structure of some command, type `shoutem -h` or `shoutem <command> -h` where you should replace `<command>` with one of the [CLI commands]({{ site.url }}/docs/extensions/reference/cli).
 
 ## Folder Structure
+
 The initialization process will generate the skeleton with folders and files. Our new extension's structure looks like this:
 
 ```
@@ -66,7 +65,7 @@ In `extension.json` you can see:
   "name": "restaurants",
   "version": "0.0.1",
   "title": "Restaurants",
-  "description": "List of restaurants",
+  "description": "A restaurants extension.",
   "platform": "1.0.*"
 }
 ```
@@ -78,34 +77,24 @@ Brief property explanations:
 - `platform` indicates the version of the [plaform]({{ site.url }}/docs/extensions/reference/platform) (versions of React, React Native and other packages available to all extensions by default)
 - `title` and `description` are extension descriptors
 
-<br />
-
-To make an extension available to an app on the Builder you have to upload it using `shoutem push`.
+We also uploaded our extension to Shoutem and installed it into our app:
 
 ```ShellSession
 $ shoutem push
 Uploading `Restaurants` extension to Shoutem...
 Success!
+$ shoutem install
+
+Extension installed.
+See it in the builder: {{ site.shoutem.builderURL }}/app/{{ site.example.appId }}
 ```
 
-To test an extension, install it in a Shoutem app. You can create a new app in the [Shoutem builder]({{ site.shoutem.builderURL }}) or just pass the flag `--new`  with the name of a new blank app to the installation command:
-
-```ShellSession
-$ shoutem install --new Restaurants
-Extension is installed onto newly created `Restaurants` application.
-See it in browser: `{{ site.shoutem.builderURL }}/app/{{ site.example.appId }}`
-```
-
-Follow the link printed by the CLI. Go to the `Extensions` tab in Shoutem Builder where you'll see that your extension is installed on the application under the **Custom** category.
+Uploading the extension is self-explanatory, but lets elaborate on installing and uninstalling extensions. In the Builder, you can go to the `Extensions` tab to see which extensions are installed in your app. If you successfully installed your Restaurants extension from Getting Started, you should see it there under the `Custom` category.
 
 <p class="image">
 <img src='{{ site.url }}/img/my-first-extension/extension-tab-extension.png'/>
 </p>
 
-However, when you go to the `Screen` tab and click on `+` to add new screen, under `Custom` category you won't see your extension.
+Extensions are installed into specific apps, not all apps on your account. When running `shoutem install` inside a cloned app, the extension will be installed into that app, otherwise you will be prompted to select your app from a list.
 
-<p class="image">
-<img src='{{ site.url }}/img/my-first-extension/add-content-no-extension.png'/>
-</p>
-
-What's wrong? Oh right, we should actually [add a screen]({{ site.url }}/docs/extensions/my-first-extension/shortcut-and-screen) and expose it to the Builder first.
+Now lets elaborate on [screens and shortcuts]({{ site.url }}/docs/extensions/my-first-extension/shortcut-and-screen).
