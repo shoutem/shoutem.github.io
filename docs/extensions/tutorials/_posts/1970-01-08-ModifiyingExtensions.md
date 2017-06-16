@@ -158,7 +158,7 @@ Extension initialized!
 Switch over to the newly made directory:
 
 ```ShellSession
-$ cd shoutem news-rss
+$ cd news-rss
 ```
 
 Create a new screen which will extend the List screen from the original Shoutem **News RSS** extension:
