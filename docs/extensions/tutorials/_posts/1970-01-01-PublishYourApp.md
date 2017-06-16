@@ -105,7 +105,7 @@ This is the manual process for publishing an iOS app to the App Store.
 
 ### Building your App
 
-If you have all the requirements met, let's build your app. The result of this step is an unsigned build file (.ipa file), which you can use to submit your app to the store.
+Since a Shoutem app is in it's core just a React Native app, the build process is functionally identical to a normal React Native app.
 
 To do this, we recommend using Fastlane's [gym](https://github.com/fastlane/fastlane/tree/master/gym#readme) tool.
 
