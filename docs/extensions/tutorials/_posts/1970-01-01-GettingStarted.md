@@ -151,7 +151,17 @@ Open the app in the Builder. Click on the `+` next to **Screens** and select `Cu
 
 Great! Let's make our newly created extension's screen the Starting Screen for the app. Just drag it to the top of Main Navigation and you're done.
 
-Now let's preview the app. You can use the Builder to preview the app, or you can preview it using the **Shoutem Preview** app (available for [iOS]({{ site.shoutem.previewAppiOS }}) and [Android]({{ site.shoutem.previewAppAndroid }})). Using the Shoutem Preview app, you can even preview iOS apps when developing on Windows!
+Since we just installed a new extension into our app and added it's Shortcut to Main navigation, we need to synchronize our already cloned app with the Builder. We do that using `shoutem rebuild`:
+
+```ShellSession
+$ shoutem rebuild
+
+> @shoutem/mobile-app@1.1.0 configure /path/to/Restaurants_{{ site.example.appId }}
+> node scripts/configure
+...
+```
+
+After that's done, we can preview the app locally. You can also use the Builder to preview your app, or you can preview it using the **Shoutem Preview** app (available for [iOS]({{ site.shoutem.previewAppiOS }}) and [Android]({{ site.shoutem.previewAppAndroid }})). Using the Shoutem Preview app, you can even preview iOS apps when developing on Windows!
 
 Simply use `shoutem run` inside your cloned `Restaurants_{{ site.example.appId }}` app directory and scan the generated QR code using the Shoutem Preview app (or any other QR code scanner).
 
