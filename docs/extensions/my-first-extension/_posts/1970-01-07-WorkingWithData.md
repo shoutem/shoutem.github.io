@@ -7,7 +7,16 @@ section: My first extension
 
 # Working with Data
 
-Lets fetch data from the Shoutem Cloud storage to the extension. First, remove the `app/assets` folder, we don't need it anymore. Create a `reducer.js` file in the `app` folder.
+Lets fetch data from the Shoutem Cloud storage to the extension. First, remove the `app/assets` folder, we don't need it anymore. Also remove the `getRestaurants()` function from `List.js`.
+
+```JavaScript{2-4}
+//remove this:
+getRestaurants() {
+  return require('../assets/restaurants.json');
+}
+```
+
+Now create a `reducer.js` file in the `app` folder.
 
 ```ShellSession
 $ cd app
@@ -33,7 +42,7 @@ export default combineReducers({
 
 We've used the `ext` function to get the full schema name (`{{ site.example.devName }}.restaurants.Restaurants`). The root reducer needs to be exported from `app/index.js` as `reducer`, so your app can find it:
 
-```javascript{4}
+```javascript{4,11}
 #file: app/index.js
 // Reference for app/index.js can be found here:
 // http://shoutem.github.io/docs/extensions/reference/extension-exports
@@ -70,7 +79,7 @@ The complete code is for `app/screens/List.js` is available below.
 
 Fetch data in the `componentDidMount` lifecycle method.
 
-```javascript{2-9}
+```javascript{2-10}
 #file: app/screens/List.js
 export class List extends Component {
   componentDidMount() {

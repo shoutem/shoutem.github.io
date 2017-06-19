@@ -25,6 +25,18 @@ Shoutem apps are managed on a beautiful web interface called the **Builder**. It
 
 ## Your First App
 
+#### Prerequisites
+
+Before going through this tutorial, make sure you've installed the following:
+
+- [Node.js and npm](https://nodejs.org/en/download/) (installing `Node.js` also installs `npm`)
+- [git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
+- react-native-cli - `$ npm install -g react-native-cli`
+- shoutem-cli - `$ npm install -g @shoutem/cli`
+
+> #### Note
+> If the `npm install` commands fail because of _permission_ issues, you need to run them with `sudo`: `sudo npm install -g <package-name>`.
+
 If you haven't already, go to the [Builder]({{ site.shoutem.builderURL }}) and create an account. Once signed in, create a new `Blank app`. For the purpose of this quick tutorial, we'll make a Restaurants and Food based app, lets call it `Restaurants`. To rename your app, click on the `Blank app`, delete the text and type in `Restaurants`.
 
 Lets say we want to add an About screen as well as a Video RSS screen that houses a YouTube playlist of short recipe videos. To do that, click on the + button next to Screens and select the About extension then do the same thing and add the Video RSS extension. After adding the screens, you can use Shoutem's CMS to add content to your About screen. Select the About screen in Main Navigation, click on "Create Items" to open the CMS modal. Now click on "Add Item" which will open the "New item" modal. Here you can fill out the form with all the information you might want to display on your About screen. If you don't feel like doing so, you can simply use the CSV import option by clicking on the `...` button and then click Import.
@@ -39,15 +51,6 @@ After you add these screens and content to your app, it should look something li
 </p>
 
 ## Creating a New Extension
-
-Start by installing the [Shoutem CLI]({{ site.shoutem.cli }}), a tool for extension development.
-
-```ShellSession
-$ npm install -g @shoutem/cli
-```
-
-> #### Note
-> If the previous command fails because of _permission_ issues, you need to run it with `sudo`: `sudo npm install -g @shoutem/cli`.
 
 Start by using the `shoutem login` command with your Shoutem credentials ("{{ site.example.devName }}" is used as a developer name in this example).
 
