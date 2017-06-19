@@ -151,9 +151,10 @@ Open the app in the Builder. Click on the `+` next to **Screens** and select `Cu
 
 Great! Let's make our newly created extension's screen the Starting Screen for the app. Just drag it to the top of Main Navigation and you're done.
 
-Since we just installed a new extension into our app and added it's Shortcut to Main navigation, we need to synchronize our already cloned app with the Builder. We do that using `shoutem rebuild`:
+Since we just installed a new extension into our app and added it's Shortcut to Main navigation, we need to synchronize our already cloned app with the Builder. We do that using `shoutem rebuild` in the cloned app directory:
 
 ```ShellSession
+$ cd ../..
 $ shoutem rebuild
 
 > @shoutem/mobile-app@1.1.0 configure /path/to/Restaurants_{{ site.example.appId }}

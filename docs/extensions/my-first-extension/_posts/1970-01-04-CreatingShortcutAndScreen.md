@@ -17,12 +17,6 @@ When we created the List screen with a shortcut in [Getting Started]({{ site.url
 $ shoutem screen add List --shortcut Restaurants
 Enter shortcut information:
 Title: Restaurants
-
-Screen `List` is created in file `app/screens/List.js`!
-Shortcut `Restaurants` is created.
-Shortcut `Restaurants` opens `List` screen.
-File `app/extension.js` was modified.
-File `extension.json` was modified.
 ```
 
 The CLI modified the `extension.json` to include the screen and it's shortcut:
@@ -87,30 +81,47 @@ export const themes = extension.themes;
 
 On the other hand, `app/extension.js` is managed by the CLI and you should not change it. When creating screens, the CLI writes their location in `app/extension.js` which are exported in `app/index.js`.
 
-Let's preview your app now. We can preview it in the Builder, but it might take some time while the app preview shows. Every time you change an extension, we need to rebundle the whole app to the new extension. It's much faster to use **Shoutem Preview** app (available for [iOS]({{ site.shoutem.previewAppiOS }}) and [Android]({{ site.shoutem.previewAppAndroid }})) and Shoutem CLI, which can bundle only the changes made in the extension.
+## Previewing Extension Code Changes
 
-Since the app is managed through the Builder, we needed to `push` the extension to Shoutem after creating a screen and shortcut to add them to app navigation. However, when we're only changing the app code, we don't need to `push`. Instead, we can use `shoutem link` to tell Shoutem CLI to bundle the local code of your extension.
+We already did this in Getting Started, but let's elaborate on this. Since the app is managed through the Builder, we needed to `push` the extension to Shoutem and `install` it into our app so we can use and preview it in the Builder:
 
 ```ShellSession
-$ shoutem link
-Extension successfully linked. Please, kill the packager before running the app.
+$ shoutem push
+Uploading `Restaurants` extension to Shoutem...
+Success!
+$ shoutem install
+
+Extension installed.
+See it in the builder: {{ site.shoutem.builderURL }}/app/{{ site.example.appId }}
 ```
 
-Once extension is linked, run the app to start the [React Native packager](https://github.com/facebook/react-native/tree/master/packager):
+After installing it, we opened the app in the Builder and added the extension's screen to Main navigation. Installing new extensions and adding their shortcuts to the app requires you to rebuild your local clone:
+
+```ShellSession
+$ cd ../..
+$ shoutem rebuild
+
+> @shoutem/mobile-app@1.1.0 configure /path/to/Restaurants_{{ site.example.appId }}
+> node scripts/configure
+...
+```
+
+Let's preview your app again. We can preview it in the Builder, but it might take some time while Builder bundles the entire app again, because every time you change an extension, we'd have to _push_ it again and then the Builder would need to re-bundle the whole app to add the new extension. It's much faster to use the **Shoutem Preview** app (available for [iOS]({{ site.shoutem.previewAppiOS }}) and [Android]({{ site.shoutem.previewAppAndroid }})) and the Shoutem CLI, which can bundle just the changes made in the extension instead of re-bundling the entire app, like the Builder would.
+
+You can also use run your apps on local emulators the same way with regular React Native apps, we have a [tutorial]({{ site.url }}/docs/extensions/tutorials/setting-local-environment) that offers an in-depth explanation on how to develop locally.
+
+In Getting Started, we previewed the app on our own device using `shoutem run`. Lets see how you can make changes to the app code and preview them in real time. Lets start by using `shoutem run` from the cloned app directory:
 
 ```ShellSession
 $ shoutem run
-Select your app: Restaurants ({{ site.example.appId }})
-Creating the bundle for your app...
+Scanning folders for symlinks in /path/to/Restaurants_{{ site.example.appId }}/node_modules
 ...
 ```
 
 The CLI will print a QR code for you to scan using the Shoutem Preview app, if you don't have the app, you can get it using the link printed above the QR code. After it's installed, the Shoutem Preview app will automatically display your app.
 
-In the tutorial, we'll be using screenshots from the Builder preview, but if you're using the Shoutem Preview app, any app code changes you make can be shown immediately by shaking your phone with the Shoutem Preview app open and tapping the Reload button. This even allows **Windows** users to preview their apps on their physical **iOS** devices!
-
 > #### Note
-> In the documentation the preview you see is from the Builder, instead of a screenshot from the Shoutem Preview app. This way you'll see the state of the web interface as well. If you only change your app code, just shake your phone with the Shoutem Preview app on and tap the "Reload" button. You don't have to _push_ the extension unless you want to preview it in the Builder!
+> In the documentation the preview you see is from the Builder, instead of a screenshot from the Shoutem Preview app. This way you'll see the state of the web interface as well.
 
 This is the result:
 
@@ -118,4 +129,26 @@ This is the result:
 <img src='{{ site.url }}/img/my-first-extension/extension-hello-world.png'/>
 </p>
 
-Your app only has a simple Hello World screen that we edited to say "_Lets eat!_". Let's add some [UI components]({{ site.url }}/docs/extensions/my-first-extension/using-ui-toolkit).
+Now let's make a quick change to the app code so you can see it change in real time on the Shoutem Preview app. Open your `restaurants` extension's `List.js` screen file and add another line of text:
+
+```JavaScript{6}
+#file: app/screens/List.js
+export default class List extends Component {
+  render() {
+    return (
+      <View style={styles.container}>
+        <Text style={styles.text}>Lets eat!</Text>
+        <Text style={styles.text}>Real time preview changes!</Text>
+      </View>
+    );
+  }
+}
+```
+
+Now just shake your phone with the Shoutem Preview app open and tap the "Reload" button in the dev menu that shows up. Your new line of text should be available immediately:
+
+<p class="image">
+<img src='{{ site.url }}/img/my-first-extension/real-time-preview.png'/>
+</p>
+
+Your extension only has a simple screen right now, let's add some [UI components]({{ site.url }}/docs/extensions/my-first-extension/using-ui-toolkit).
