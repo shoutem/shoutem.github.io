@@ -130,7 +130,11 @@ Uploading `Restaurants` extension to Shoutem...
 Success!
 ```
 
+<<<<<<< HEAD
+Go to `Custom` under `Add Screen` modal in Shoutem builder. You can finally see your `Restaurants` starting screen (shortcut) there.
+=======
 Open the `Add screen` modal in the Builder and select the `Custom` category. You can now see your `Restaurants` starting screen (the shortcut).
+>>>>>>> origin/master
 
 <p class="image">
 <img src='{{ site.url }}/img/my-first-extension/add-modal-shortcut.png'/>
