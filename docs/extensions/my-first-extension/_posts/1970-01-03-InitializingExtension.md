@@ -1,21 +1,21 @@
 ---
 layout: doc
 permalink: /docs/extensions/my-first-extension/initializing-extension
-title: Initializing extension
+title: Creating an Extension
 section: My first extension
 ---
 
-# Initializing extension
+# Creating an Extension
 <hr />
 
-Here's the mockup of the Restaurants extension that we've showed in the [Introduction]({{ site.url }}/docs/extensions/my-first-extension/introduction). We're building **Restaurants** extension.
+Here's the mockup of the Restaurants extension that we saw in the [Introduction]({{ site.url }}/docs/extensions/my-first-extension/introduction). Through the course of this tutorial, we'll make the **Restaurants** extension.
 
 
 <p class="image">
 <img src='{{ site.url }}/img/my-first-extension/extension-preview.jpg'/>
 </p>
- 
-Left app screen lists the restaurants and the right one shows the details of one specific restaurant. 
+
+The left app screen lists the restaurants and the right one shows the details of each specific restaurant when you tap on it.
 
 ## Initialize
 
@@ -34,19 +34,19 @@ Initializing extension:
 Extension initialized!
 ```
 
-We passed `restaurants` extension name to `shoutem init` command. Extension information is stored in `extension.json` file.
+We passed `restaurants` as an extension name to the `shoutem init` command. Extension information is stored in `extension.json` file.
 
 > #### Note
 > In case you can't remember the structure of some command, type `shoutem -h` or `shoutem <command> -h` where you should replace `<command>` with one of the [CLI commands]({{ site.url }}/docs/extensions/reference/cli).
 
-Locate to extension folder:
+Now lets switch to the extension folder:
 
 ```ShellSession
 $ cd restaurants
 ```
 
-## Folder structure
-Initialization process will generate the skeleton with folders and files. Extension structure looks as follows:
+## Folder Structure
+The initialization process will generate the skeleton with folders and files. Our new extension's structure looks like this:
 
 ```
 restaurants/
@@ -61,13 +61,13 @@ restaurants/
   └ extension.json
 ```
 
-Let's describe the structure:
+Let's explain the structure:
 
-- `app/`: Folder where you will keep your mobile app side code (this will be bundled into the app)
-- `server/`: Folder where you will keep your server side code
+- `app/`: Folder where you keep your mobile app side code (this will be bundled into the app)
+- `server/`: Folder where you keep your server side code and assets
 - `extension.json`: File that describes your extension
 
-Specific parts will be described soon.
+Specific parts will be explained soon.
 
 In `extension.json` you can see:
 
@@ -91,7 +91,7 @@ Brief property explanations:
 
 <br />
 
-Extension is now only locally available on your machine. Upload it to Shoutem so you can install it in the app.
+The extension is now only available on your machine, not to an app on the Builder so lets upload it to Shoutem so you can install it in an app.
 
 ```ShellSession
 $ shoutem push
@@ -99,7 +99,7 @@ Uploading `Restaurants` extension to Shoutem...
 Success!
 ```
 
-To test extension, install it in the Shoutem app. You can create new app in the [Shoutem builder]({{ site.shoutem.builderURL }}) or just pass the flag `--new`  with the name for new application to installation command:
+To test an extension, install it in a Shoutem app. You can create a new app in the [Shoutem builder]({{ site.shoutem.builderURL }}) or just pass the flag `--new`  with the name of a new blank app to the installation command:
 
 ```ShellSession
 $ shoutem install --new Restaurants
@@ -107,16 +107,16 @@ Extension is installed onto newly created `Restaurants` application.
 See it in browser: `{{ site.shoutem.builderURL }}/app/{{ site.example.appId }}`
 ```
 
-Follow the link printed by the CLI. Go to `Extensions` tab in Shoutem builder. where you can see that your extension is installed on the application under **Custom** category.
+Follow the link printed by the CLI. Go to the `Extensions` tab in Shoutem Builder where you'll see that your extension is installed on the application under the **Custom** category.
 
 <p class="image">
 <img src='{{ site.url }}/img/my-first-extension/extension-tab-extension.png'/>
 </p>
 
-However, when you go to `Screen` tab and click on `+` to add new screen, under `Custom` category we won't see our extension.
+However, when you go to the `Screen` tab and click on `+` to add new screen, under `Custom` category you won't see your extension.
 
 <p class="image">
 <img src='{{ site.url }}/img/my-first-extension/add-content-no-extension.png'/>
 </p>
 
-That's because `Add screen` modal shows only extensions which exposed starting screen.
+What's wrong? Oh right, we should actually [add a screen]({{ site.url }}/docs/extensions/my-first-extension/shortcut-and-screen) and expose it to the Builder first.
