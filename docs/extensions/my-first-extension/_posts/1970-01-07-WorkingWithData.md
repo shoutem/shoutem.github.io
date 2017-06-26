@@ -226,6 +226,9 @@ export default connect(
 )(List);
 ```
 
+>#### Note
+>Make sure you remove the `default` from `export default class List extends Component` and only have `default` in `export default connect`, because there can only be one default export.
+
 Let's check how it works:
 
 ```ShellSession

@@ -98,19 +98,18 @@ See it in the builder: {{ site.shoutem.builderURL }}/app/{{ site.example.appId }
 After installing it, we opened the app in the Builder and added the extension's screen to Main navigation. Installing new extensions and adding their shortcuts to the app requires you to rebuild your local clone:
 
 ```ShellSession
-$ cd ../..
-$ shoutem rebuild
+$ shoutem reconfigure
 
 > @shoutem/mobile-app@1.1.0 configure /path/to/Restaurants_{{ site.example.appId }}
 > node scripts/configure
 ...
 ```
 
-Let's preview your app again. We can preview it in the Builder, but it might take some time while Builder bundles the entire app again, because every time you change an extension, we'd have to _push_ it again and then the Builder would need to re-bundle the whole app to add the new extension. It's much faster to use the **Shoutem Preview** app (available for [iOS]({{ site.shoutem.previewAppiOS }}) and [Android]({{ site.shoutem.previewAppAndroid }})) and the Shoutem CLI, which can bundle just the changes made in the extension instead of re-bundling the entire app, like the Builder would.
+Let's preview your app again. We can preview it in the Builder, but it might take some time while Builder bundles the entire app again. Every time you change an extension, you'd have to _push_ it again and then the Builder would need to re-bundle the whole app to add the changes. It's much faster to use the **Shoutem Preview** app (available for [iOS]({{ site.shoutem.previewAppiOS }}) and [Android]({{ site.shoutem.previewAppAndroid }})) and the Shoutem CLI, which can bundle just the changes made in the extension instead of re-bundling the entire app, like the Builder would.
 
-You can also use run your apps on local emulators the same way with regular React Native apps, we have a [tutorial]({{ site.url }}/docs/extensions/tutorials/setting-local-environment) that offers an in-depth explanation on how to develop locally.
+You can also run your apps on local emulators the same way with regular React Native apps, we have a [tutorial]({{ site.url }}/docs/extensions/tutorials/setting-local-environment) that offers an in-depth explanation on all the ways you can develop locally.
 
-In Getting Started, we previewed the app on our own device using `shoutem run`. Lets see how you can make changes to the app code and preview them in real time. Lets start by using `shoutem run` from the cloned app directory:
+In Getting Started, we previewed the app on our own device using `shoutem run`:
 
 ```ShellSession
 $ shoutem run
@@ -118,16 +117,14 @@ Scanning folders for symlinks in /path/to/Restaurants_{{ site.example.appId }}/n
 ...
 ```
 
-The CLI will print a QR code for you to scan using the Shoutem Preview app, if you don't have the app, you can get it using the link printed above the QR code. After it's installed, the Shoutem Preview app will automatically display your app.
+Lets scan the QR code and see where we stopped in Getting Started.
+
+<p class="image">
+<img src='{{ site.url }}/img/tutorials/getting-started/03-lets-eat.png'/>
+</p>
 
 > #### Note
 > In the documentation the preview you see is from the Builder, instead of a screenshot from the Shoutem Preview app. This way you'll see the state of the web interface as well.
-
-This is the result:
-
-<p class="image">
-<img src='{{ site.url }}/img/my-first-extension/extension-hello-world.png'/>
-</p>
 
 Now let's make a quick change to the app code so you can see it change in real time on the Shoutem Preview app. Open your `restaurants` extension's `List.js` screen file and add another line of text:
 
@@ -138,14 +135,14 @@ export default class List extends Component {
     return (
       <View style={styles.container}>
         <Text style={styles.text}>Lets eat!</Text>
-        <Text style={styles.text}>Real time preview changes!</Text>
+        <Text style={styles.text}>Can't do anything on an empty stomach!</Text>
       </View>
     );
   }
 }
 ```
 
-Now just shake your phone with the Shoutem Preview app open and tap the "Reload" button in the dev menu that shows up. Your new line of text should be available immediately:
+Now just shake your phone with the Shoutem Preview app open and tap the "Reload" button in the dev menu that shows up. Your new line of text should be visible immediately:
 
 <p class="image">
 <img src='{{ site.url }}/img/my-first-extension/real-time-preview.png'/>

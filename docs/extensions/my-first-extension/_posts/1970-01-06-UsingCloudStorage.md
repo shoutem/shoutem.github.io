@@ -162,7 +162,7 @@ Success!
 Go to the [Builder]({{ shoutem.builderURL }}), open your app and select `Restaurants` under `Main navigation` to see the Shoutem CMS page.
 
 <p class="image">
-<img src='{{ site.url }}/img/my-first-extension/empty-admin-page.png'/>
+<img src='{{ site.url }}/img/my-first-extension/empty-cms-page.png'/>
 </p>
 
 Click on `Create Items` to start adding content. This will open a modal that contains the `CMS` interface, where you can manage the content for your extension. Apps that get content from the Shoutem CMS will immediately show new content once you edit or add it.
