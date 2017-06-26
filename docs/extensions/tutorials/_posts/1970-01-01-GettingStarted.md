@@ -42,7 +42,7 @@ If you haven't already, go to the [Builder]({{ site.shoutem.builderURL }}) and c
 Lets say we want to add an RSS feed screen to our app. To do that, click on the + button next to Screens and select the News RSS extension. Since the app is about Restaurants, to stick to the Food theme, lets use a food related News RSS feed:
 http://foodengineeringmag.com/rss/topic/2639-top-100-food-beverage-companies
 
-After you adding this screen, it should look something like this:
+After you add this screen, it should look something like this:
 
 <p class="image">
 <img src='{{ site.url }}/img/tutorials/getting-started/01-builder-before-clone.png'/>
