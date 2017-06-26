@@ -54,6 +54,8 @@ Do note that you have to _push_ your extension every time you make a change to i
 
 We will now explain how to preview code changes in your extensions in real-time. If you've gone through the **Getting Started** tutorial, you should have a Restaurants app on the Builder. To be able to see changes in your extension as you make them **without** having to push your extension to Shoutem every time you make a change, you'll have to use either `shoutem run` or `react-native run-OS`, as mentioned above in the Preview Options section.
 
+### Using an Emulator
+
 For the purposes of this tutorial, we'll assume you're running your app with `react-native run-ios`. Again, make sure you go through [Getting Started]({{ site.url }}/docs/extensions/tutorials/getting-started), so you have an app and extension ready. In Getting Started, we already cloned the app we made, so you can just navigate to it's directory and run it locally:
 
 ```ShellSession
@@ -83,6 +85,19 @@ Save the changes. Now you don't need to do `shoutem push` and wait for the Build
 - Using `shoutem run`: shake your device to open up **Developer Menu** and select **Reload**
 
 If you enable automatic reloading, the previous step is unnecessary. Having local environment set, you can also debug your extension. Follow the React Native guide on [debugging](https://facebook.github.io/react-native/docs/debugging.html) where you can find out how automatic reloading works as well.
+
+### Synchronizing your local app with the Builder
+
+When installing, uninstalling or updating extensions or changing the platform version, you will have to _pull_ these changes from the builder using `shoutem pull`. You don't even have to close your React Packager or emulator:
+
+```ShellSession
+$ shoutem pull
+
+> @shoutem/mobile-app@1.1.0 configure /path/to/Restaurants
+...
+```
+
+This will sync up your app with the newly installed extensions or other changes done through the Builder.
 
 ## Best Practises
 
