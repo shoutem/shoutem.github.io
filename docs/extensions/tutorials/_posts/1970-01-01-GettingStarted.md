@@ -148,10 +148,10 @@ Now we need to add the to the app. Open the app in the Builder. Click on the `+`
 
 Great! Let's make our newly created extension's screen the Starting Screen for the app. Just drag it to the top of Main Navigation and you're done.
 
-Since we just installed a new extension into our app and added it's Shortcut to Main navigation, we need to synchronize our already cloned app with the Builder. We do that with `shoutem pull`:
+Since we just added a new extension to our app, we need to configure the app to utilize it. We do that with `shoutem configure`:
 
 ```ShellSession
-$ shoutem pull
+$ shoutem configure
 
 > @shoutem/mobile-app@1.1.0 configure /path/to/Restaurants
 ...

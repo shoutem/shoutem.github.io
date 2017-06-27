@@ -105,9 +105,7 @@ This is the manual process for publishing an iOS app to the App Store.
 
 ### Building your App
 
-Since a Shoutem app is in it's core just a React Native app, the build process is functionally identical to a normal React Native app.
-
-To do this, we recommend using Fastlane's [gym](https://github.com/fastlane/fastlane/tree/master/gym#readme) tool.
+To prepare your app for release, you first have to build the .ipa file. To do this you will have to use `shoutem configure --release` in the cloned app's directory. After doing this short step, the build process is functionally identical to a [normal React Native app](https://medium.com/react-native-development/deploying-a-react-native-app-for-ios-pt-1-a79dfd15acb8).
 
 ### Preparing for the Store
 
@@ -217,7 +215,7 @@ This is a manual process of publishing an android app in the Google Play Store.
 
 ### Building your app
 
-Since a Shoutem app is in it's core just a React Native app, you can follow [this](https://facebook.github.io/react-native/docs/signed-apk-android.html) official tutorial on how to generate an Android build.
+To prepare your app for release, you first have to build the .apk file. To do this you will have to use `shoutem configure --release` in the cloned app's directory. After doing this short step, the build process is functionally identical to a [normal React Native app](https://facebook.github.io/react-native/docs/signed-apk-android.html).
 
 ### Preparing for Store
 
