@@ -86,18 +86,41 @@ Save the changes. Now you don't need to do `shoutem push` and wait for the Build
 
 If you enable automatic reloading, the previous step is unnecessary. Having local environment set, you can also debug your extension. Follow the React Native guide on [debugging](https://facebook.github.io/react-native/docs/debugging.html) where you can find out how automatic reloading works as well.
 
-### Synchronizing your local app with the Builder
+### Managing your app's Configuration
 
-When installing, uninstalling or updating extensions or changing the platform version, you will have to _pull_ these changes from the builder using `shoutem pull`. You don't even have to close your React Packager or emulator:
+This section will cover the uses of the configuration script and associated commands.
+
+#### shoutem configure
 
 ```ShellSession
-$ shoutem pull
-
-> @shoutem/mobile-app@1.1.0 configure /path/to/Restaurants
+$ shoutem configure
 ...
 ```
 
-This will sync up your app with the newly installed extensions or other changes done through the Builder.
+You use it when:
+    - creating and installing a new extension locally using `shoutem init`, `shoutem push` and `shoutem install`
+    - making changes (adding, removing, etc.) to dependencies of the app
+    - making changes to the app's build script
+
+#### shoutem configure --release
+
+```ShellSession
+$ shoutem configure --release
+...
+```
+
+You use it when preparing your app for release. This prepares the Shoutem app for the building process regular React Native apps go through when preparing for release.
+
+#### shoutem pull
+
+```ShellSession
+$ shoutem pull
+...
+```
+
+You use it when:
+  - you (un)install an extension through the Builder and want to synchronize your local app
+  - you install a different version of the Shoutem Platform through the Builder and want to synchronize your local app
 
 ## Best Practises
 
