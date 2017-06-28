@@ -111,17 +111,6 @@ $ shoutem configure --release
 
 You use it when preparing your app for release. This prepares the Shoutem app for the building process regular React Native apps go through when preparing for release.
 
-#### shoutem pull
-
-```ShellSession
-$ shoutem pull
-...
-```
-
-You use it when:
-  - you (un)install an extension through the Builder and want to synchronize your local app
-  - you install a different version of the Shoutem Platform through the Builder and want to synchronize your local app
-
 ## Best Practises
 
 So, you've passed **My First Extension** and **Setting up your Local Environment** which means that you're ready for some serious development. But, before you start, read about the [best practises]({{ site.url }}/docs/extensions/reference/overview) when doing that.
