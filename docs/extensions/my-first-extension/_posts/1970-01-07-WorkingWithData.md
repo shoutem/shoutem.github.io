@@ -7,7 +7,7 @@ section: My first extension
 
 # Working with Data
 
-Lets fetch data from the Shoutem Cloud storage to the extension. First, remove the `app/assets` folder, we don't need it anymore. Also remove the `getRestaurants()` function from `List.js`.
+Let's fetch data from the Shoutem Cloud storage to the extension. First, remove the `app/assets` folder, we don't need it anymore. Also remove the `getRestaurants()` function from `List.js`.
 
 ```JavaScript{2-4}
 //remove this:

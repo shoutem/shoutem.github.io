@@ -151,7 +151,7 @@ Shoutem prepared a CMS settings page inside the [shoutem.cms](https://github.com
 }
 ```
 
-Lets upload the extension now, since we want to customize the web interface and the extension server side:
+Let's upload the extension now, since we want to customize the web interface and the extension server side:
 
 ```ShellSession
 $ shoutem push

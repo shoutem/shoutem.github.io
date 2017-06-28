@@ -89,7 +89,7 @@ Extension installed.
 See it in the builder: {{ site.shoutem.builderURL }}/app/{{ site.example.appId }}
 ```
 
-Uploading the extension is self-explanatory, but lets elaborate on installing and uninstalling extensions. In the Builder, you can go to the `Extensions` tab to see which extensions are installed in your app. If you successfully installed your Restaurants extension from Getting Started, you should see it there under the `Custom` category.
+Uploading the extension is self-explanatory, but let's elaborate on installing and uninstalling extensions. In the Builder, you can go to the `Extensions` tab to see which extensions are installed in your app. If you successfully installed your Restaurants extension from Getting Started, you should see it there under the `Custom` category.
 
 <p class="image">
 <img src='{{ site.url }}/img/my-first-extension/extension-tab-extension.png'/>
@@ -97,4 +97,4 @@ Uploading the extension is self-explanatory, but lets elaborate on installing an
 
 Extensions are installed into specific apps, not all apps on your account. When running `shoutem install` inside a cloned app, the extension will be installed into that app, otherwise you will be prompted to select your app from a list.
 
-Now lets elaborate on [screens and shortcuts]({{ site.url }}/docs/extensions/my-first-extension/shortcut-and-screen).
+Now let's elaborate on [screens and shortcuts]({{ site.url }}/docs/extensions/my-first-extension/shortcut-and-screen).

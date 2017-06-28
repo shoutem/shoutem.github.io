@@ -37,9 +37,9 @@ Before going through this tutorial, make sure you've installed the following:
 > #### Note
 > If the `npm install` commands fail because of _permission_ issues, you need to run them with `sudo`: `sudo npm install -g <package-name>`.
 
-If you haven't already, go to the [Builder]({{ site.shoutem.builderURL }}) and create an account. Once signed in, create a new `Blank app`. For this quick tutorial, we'll make a Restaurants and Food app, lets call it `Restaurants`. To rename your app, click on the `Blank app` text, delete it and type in `Restaurants`.
+If you haven't already, go to the [Builder]({{ site.shoutem.builderURL }}) and create an account. Once signed in, create a new `Blank app`. For this quick tutorial, we'll make a Restaurants and Food app, let's call it `Restaurants`. To rename your app, click on the `Blank app` text, delete it and type in `Restaurants`.
 
-Lets say we want to add an RSS feed screen to our app. To do that, click on the + button next to Screens and select the News RSS extension. Since the app is about Restaurants, to stick to the Food theme, lets use a food related News RSS feed:
+Let's say we want to add an RSS feed screen to our app. To do that, click on the + button next to Screens and select the News RSS extension. Since the app is about Restaurants, to stick to the Food theme, let's use a food related News RSS feed:
 http://foodengineeringmag.com/rss/topic/2639-top-100-food-beverage-companies
 
 After you add this screen, it should look something like this:
@@ -92,7 +92,7 @@ Initializing extension:
 Extension initialized!
 ```
 
-The `shoutem init` command bootstrapped the `{{ site.example.devName }}.restaurants` folder with extension files. Lets locate to the extension folder and add a screen with a shortcut (a pointer to the starting screen of an extension):
+The `shoutem init` command bootstrapped the `{{ site.example.devName }}.restaurants` folder with extension files. Let's locate to the extension folder and add a screen with a shortcut (a pointer to the starting screen of an extension):
 
 
 ```ShellSession
@@ -110,7 +110,7 @@ File `extension.json` was modified.
 
 This created a `List` screen in `app/screens/List.js` file. The reason we named it List is because in the [My First Extension]({{ site.url }}/docs/extensions/my-first-extension/introduction) tutorial series we'll turn this screen into a list of restaurants, but for now, a simpler screen will do. Any time you create a new screen it'll be a simple Hello World screen.
 
-To fit the app, lets change the `app/screens/List.js` file so it says `Lets eat!` instead of `Hello World!`:
+To fit the app, let's change the `app/screens/List.js` file so it says `Let's eat!` instead of `Hello World!`:
 
 ```JavaScript{5}
 #file: app/screens/List.js
@@ -118,7 +118,7 @@ export default class List extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.text}>Lets eat!</Text>
+        <Text style={styles.text}>Let's eat!</Text>
       </View>
     );
   }

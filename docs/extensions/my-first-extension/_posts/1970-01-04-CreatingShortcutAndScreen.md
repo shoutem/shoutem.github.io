@@ -117,7 +117,7 @@ Scanning folders for symlinks in /path/to/Restaurants_{{ site.example.appId }}/n
 ...
 ```
 
-Lets scan the QR code and see where we stopped in Getting Started.
+Let's scan the QR code and see where we stopped in Getting Started.
 
 <p class="image">
 <img src='{{ site.url }}/img/tutorials/getting-started/03-lets-eat.png'/>
@@ -134,7 +134,7 @@ export default class List extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.text}>Lets eat!</Text>
+        <Text style={styles.text}>Let's eat!</Text>
         <Text style={styles.text}>Can't do anything on an empty stomach!</Text>
       </View>
     );
