@@ -140,7 +140,7 @@ Extension installed.
 See it in the builder: {{ site.shoutem.builderURL }}/app/{{ site.example.appId }}
 ```
 
-Now we need to add the to the app. Open the app in the Builder. Click on the `+` next to **Screens** and select the `Custom` category. You can see your `Restaurants` extension there. Click on it to add it to Main navigation, just like you did with the News RSS.
+Now we need to add the screen to the app. Open the app in the Builder. Click on the `+` next to **Screens** and select the `Custom` category. You can see your `Restaurants` extension there. Click on it to add it's screen to Main navigation, just like you did with the News RSS.
 
 <p class="image">
 <img src='{{ site.url }}/img/tutorials/getting-started/02-builder-custom-extension-screen.png'/>
