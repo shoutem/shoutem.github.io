@@ -77,24 +77,29 @@ Brief property explanations:
 - `platform` indicates the version of the [plaform]({{ site.url }}/docs/extensions/reference/platform) (versions of React, React Native and other packages available to all extensions by default)
 - `title` and `description` are extension descriptors
 
-We also uploaded our extension to Shoutem and installed it into our app:
+We also uploaded our extension to Shoutem:
 
 ```ShellSession
 $ shoutem push
 Uploading `Restaurants` extension to Shoutem...
 Success!
+```
+
+And installed it into our app:
+
+```ShellSession
 $ shoutem install
 
 Extension installed.
 See it in the builder: {{ site.shoutem.builderURL }}/app/{{ site.example.appId }}
 ```
 
-Uploading the extension is self-explanatory, but let's elaborate on installing and uninstalling extensions. In the Builder, you can go to the `Extensions` tab to see which extensions are installed in your app. If you successfully installed your Restaurants extension from Getting Started, you should see it there under the `Custom` category.
+Uploading the extension is self-explanatory, but let's elaborate on installing and uninstalling extensions. In the Builder, you can go to the `Extensions` tab to see which extensions are installed in your app. If you successfully installed your Restaurants extension from [Getting Started]({{ site.url }}/docs/extensions/tutorials/getting-started), you should see it there under the `Custom` category.
 
 <p class="image">
 <img src='{{ site.url }}/img/my-first-extension/extension-tab-extension.png'/>
 </p>
 
-Extensions are installed into specific apps, not all apps on your account. When running `shoutem install` inside a cloned app, the extension will be installed into that app, otherwise you will be prompted to select your app from a list.
+Extensions are installed into specific apps, not all apps on your account.
 
 Now let's elaborate on [screens and shortcuts]({{ site.url }}/docs/extensions/my-first-extension/shortcut-and-screen).

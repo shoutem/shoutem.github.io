@@ -11,7 +11,7 @@ Extensions can have multiple screens in the app. Screens are [React components](
 
 Since the app needs to know which screen to open first for some extension, we need to create a ***shortcut*** when creating that screen. A shortcut is a link to the starting screen of an extension. It's the item in the Main Navigation which opens the starting screen when a user taps on it.
 
-When we created the List screen with a shortcut in [Getting Started]({{ site.url }}/docs/extensions/tutorials/getting-started) using:
+We created the List screen with a shortcut in [Getting Started]({{ site.url }}/docs/extensions/tutorials/getting-started) using:
 
 ```ShellSession
 $ shoutem screen add List --shortcut Restaurants
@@ -83,33 +83,15 @@ On the other hand, `app/extension.js` is managed by the CLI and you should not c
 
 ## Previewing Extension Code Changes
 
-We already did this in Getting Started, but let's elaborate on this. Since the app is managed through the Builder, we needed to `push` the extension to Shoutem and `install` it into our app so we can use and preview it in the Builder:
+We already did this in [Getting Started]({{ site.url }}/docs/extensions/tutorials/getting-started), but let's elaborate on it. Since the app is managed through the Builder, we needed to `push` the extension to Shoutem and `install` it into our app so we can use and preview it in the Builder.
 
-```ShellSession
-$ shoutem push
-Uploading `Restaurants` extension to Shoutem...
-Success!
-$ shoutem install
-
-Extension installed.
-See it in the builder: {{ site.shoutem.builderURL }}/app/{{ site.example.appId }}
-```
-
-After installing it, we opened the app in the Builder and added the extension's screen to Main navigation. Installing new extensions and adding their shortcuts to the app requires you to rebuild your local clone:
-
-```ShellSession
-$ shoutem reconfigure
-
-> @shoutem/mobile-app@1.1.0 configure /path/to/Restaurants_{{ site.example.appId }}
-> node scripts/configure
-...
-```
+We then opened the app in the Builder and added the extension's screen to Main navigation. Installing new extensions and adding their shortcuts to the app requires you to reconfigure your local clone, which we also did using `shoutem configure`.
 
 Let's preview your app again. We can preview it in the Builder, but it might take some time while Builder bundles the entire app again. Every time you change an extension, you'd have to _push_ it again and then the Builder would need to re-bundle the whole app to add the changes. It's much faster to use the **Shoutem Preview** app (available for [iOS]({{ site.shoutem.previewAppiOS }}) and [Android]({{ site.shoutem.previewAppAndroid }})) and the Shoutem CLI, which can bundle just the changes made in the extension instead of re-bundling the entire app, like the Builder would.
 
-You can also run your apps on local emulators the same way with regular React Native apps, we have a [tutorial]({{ site.url }}/docs/extensions/tutorials/setting-local-environment) that offers an in-depth explanation on all the ways you can develop locally.
+You can also run your apps on local emulators the same way with regular React Native apps, using `react-native run-ios` and `react-native run-android`. We have a [tutorial]({{ site.url }}/docs/extensions/tutorials/setting-local-environment) that offers an in-depth explanation on all the ways you can develop locally.
 
-In Getting Started, we previewed the app on our own device using `shoutem run`:
+In [Getting Started]({{ site.url }}/docs/extensions/tutorials/getting-started), we previewed the app on our own device using `shoutem run`:
 
 ```ShellSession
 $ shoutem run
@@ -117,7 +99,7 @@ Scanning folders for symlinks in /path/to/Restaurants_{{ site.example.appId }}/n
 ...
 ```
 
-Let's scan the QR code and see where we stopped in Getting Started.
+Let's scan the QR code and see where we stopped in [Getting Started]({{ site.url }}/docs/extensions/tutorials/getting-started).
 
 <p class="image">
 <img src='{{ site.url }}/img/tutorials/getting-started/03-lets-eat.png'/>

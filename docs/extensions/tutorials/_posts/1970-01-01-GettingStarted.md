@@ -29,7 +29,7 @@ Shoutem apps are managed on a beautiful web interface called the **Builder**. It
 
 Before going through this tutorial, make sure you've installed the following:
 
-- [Node.js and npm](https://nodejs.org/en/download/) (installing `Node.js` also installs `npm`)
+- [Node.js and npm](https://www.npmjs.com/) (installing `Node.js` also installs `npm`)
 - [git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
 - react-native-cli - `$ npm install -g react-native-cli`
 - shoutem-cli - `$ npm install -g @shoutem/cli`
@@ -49,6 +49,8 @@ After you add this screen, it should look something like this:
 </p>
 
 ## Creating a New Extension
+
+As a developer, you use the Shoutem CLI to handle the lifecycle of extensions.
 
 Start by using the `shoutem login` command with your Shoutem credentials ("{{ site.example.devName }}" is used as a developer name in this example).
 
@@ -74,9 +76,7 @@ Cloning `Restaurants` to `Restaurants`
 ...
 ```
 
-`shoutem clone` installs the [Shoutem platform](https://github.com/shoutem/platform), all the extensions you have installed on the Builder (as well as their dependencies) and then links everything to the local environment, turning it into a Shoutem flavored React Native app.
-
-Once the cloning process is done, locate to `Restaurants/extensions` (where you can find all the extensions installed into your app) and create your new extension using `shoutem init`:
+`shoutem clone` turns your app you see on the Builder into a Shoutem flavored React Native app locally. Once the cloning process is done, locate to `Restaurants/extensions` (where you can find all the extensions installed into your app) and create your new extension using `shoutem init`:
 
 ```ShellSession
 $ cd Restaurants/extensions
@@ -92,8 +92,7 @@ Initializing extension:
 Extension initialized!
 ```
 
-The `shoutem init` command bootstrapped the `{{ site.example.devName }}.restaurants` folder with extension files. Let's locate to the extension folder and add a screen with a shortcut (a pointer to the starting screen of an extension):
-
+The `shoutem init` command bootstrapped the `{{ site.example.devName }}.restaurants` folder with extension files. Let's add a screen that we'll use as a list of restaurants in the My first extension tutorial series, so we'll name it `List` and give it a shortcut `Restaurants`:
 
 ```ShellSession
 $ cd {{ site.example.devName }}.restaurants
@@ -108,9 +107,7 @@ File `app/extension.js` was modified.
 File `extension.json` was modified.
 ```
 
-This created a `List` screen in `app/screens/List.js` file. The reason we named it List is because in the [My First Extension]({{ site.url }}/docs/extensions/my-first-extension/introduction) tutorial series we'll turn this screen into a list of restaurants, but for now, a simpler screen will do. Any time you create a new screen it'll be a simple Hello World screen.
-
-To fit the app, let's change the `app/screens/List.js` file so it says `Let's eat!` instead of `Hello World!`:
+This created a `List` screen in `app/screens/List.js` file. Any time you make a new screen it'll be a simple _Hello World_ screen. To fit the app, let's change the screen so it says `Let's eat!` instead of `Hello World!`:
 
 ```JavaScript{5}
 #file: app/screens/List.js
@@ -125,14 +122,18 @@ export default class List extends Component {
 }
 ```
 
-Let's push what we've built to Shoutem with `shoutem push`and install the extension into the Restaurants app using `shoutem install`:
+Now push what we've built to Shoutem with `shoutem push`:
 
 ```ShellSession
 $ shoutem push
 Checking the extension code for syntax errors...
 Uploading `Restaurants` extension to Shoutem...
 Success!
+```
 
+And install the extension into the Restaurants app using `shoutem install`:
+
+```ShellSession
 $ shoutem install
 Select your app: Restaurants ({{ site.example.appId }})
 
@@ -146,9 +147,9 @@ Now we need to add the screen to the app. Open the app in the Builder. Click on 
 <img src='{{ site.url }}/img/tutorials/getting-started/02-builder-custom-extension-screen.png'/>
 </p>
 
-Great! Let's make our newly created extension's screen the Starting Screen for the app. Just drag it to the top of Main Navigation and you're done.
+Great! Let's make our newly created extension's screen the Starting Screen for the app. Just drag it to the top of Main navigation and you're done.
 
-Since we just added a new extension to our app, we need to configure the app to utilize it. We do that with `shoutem configure`:
+Since we just added a new extension to our app, we need to reconfigure the app to link the extension code and utilize it. We do that with `shoutem configure`:
 
 ```ShellSession
 $ shoutem configure
@@ -157,7 +158,7 @@ $ shoutem configure
 ...
 ```
 
-After that's done, we can preview the app locally using `react-native run-ios/android` or using `shoutem run`, which will make the CLI print a QR code for you to scan with the **Shoutem Preview app** (available for [iOS]({{ site.shoutem.previewAppiOS }}) and [Android]({{ site.shoutem.previewAppAndroid }})). Using the Shoutem Preview app, you can even preview iOS apps when developing on Windows!
+After that's done, we can preview the app locally using `react-native run-ios` `react-native run-android`. You can also use `shoutem run`, which will make the CLI print a QR code for you to scan with the **Shoutem Preview app** (available for [iOS]({{ site.shoutem.previewAppiOS }}) and [Android]({{ site.shoutem.previewAppAndroid }})). Using the Shoutem Preview app, you can even preview iOS apps when developing on Windows!
 
 ```ShellSession
 $ shoutem run

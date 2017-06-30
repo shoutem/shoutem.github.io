@@ -121,7 +121,7 @@ You can also use [Apple's guide](https://developer.apple.com/library/content/doc
 
 #### Resigning App
 
-If you have an unsigned build (.ipa), you will need to resign it. You can do it quickly with the Terminal by using Fastlane's [sigh](https://github.com/fastlane/fastlane/tree/master/sigh) tool.
+Once you have an unsigned build (.ipa), you will need to resign it. You can do it quickly with the Terminal by using Fastlane's [sigh](https://github.com/fastlane/fastlane/tree/master/sigh) tool.
 
 Once sigh is installed, use:
 
@@ -223,7 +223,7 @@ Once you have the build ready, you can start preparing your app for store.
 
 #### App Signing and Zipalign
 
-If you generated an unsigned build (.apk) you need to sign it with your own keystore. Here's the [official documentation](https://developer.android.com/studio/publish/app-signing.html) on how to do that.
+Once you have an unsigned build (.apk) you need to sign it with your own keystore. Here's the [official documentation](https://developer.android.com/studio/publish/app-signing.html) on how to do that.
 
 Basically, these are the steps you will need to do:
 
