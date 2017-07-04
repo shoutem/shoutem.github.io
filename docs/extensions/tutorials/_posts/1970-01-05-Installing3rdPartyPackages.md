@@ -298,7 +298,7 @@ export default class QRReaderScreen extends Component {
     return (
       <Camera
         onBarCodeRead={_.debounce(this.onBarCodeRead, 1000, { leading: true, trailing: false })}
-        style={{ flex: 1 }}
+        style={% raw %}{{{% endraw %} flex: 1 }}
       />
     );
   }
