@@ -449,7 +449,7 @@ There's two ways you can do this:
 - uploading your own icon to that app through the Builder
   - makes the icon available to only that app
 - adding that icon to your own custom theme
-  - makes the icon available to any app with the extension installed
+  - makes the icon available to any app with the theme extension installed and activated
 
 ### 1) Uploading an icon to the Builder
 
