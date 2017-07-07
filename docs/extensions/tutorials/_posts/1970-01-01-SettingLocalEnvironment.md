@@ -59,7 +59,7 @@ You can of course preview your app through the Shoutem Builder where you can man
 
 We will now explain how to preview code changes in your extensions in real-time. If you've gone through the [Getting Started]({{ site.url }}/docs/extensions/tutorials/getting-started) tutorial, you should have a Restaurants app on the Builder. To be able to see changes in your extension as you make them **without** having to push your extension to Shoutem every time you make a change, you'll have to use either `shoutem run`, `react-native run-ios` or `react-native run-android`, as mentioned above in the Local Development section.
 
-For the purposes of this tutorial, we'll assume you're running your app with `react-native run-ios`. In [Getting Started]({{ site.url }}/docs/extensions/tutorials/getting-started), we already cloned the app we made, so you can just navigate to it's directory and run it locally:
+For the purposes of this tutorial, we'll assume you're running your app with `shoutem run`. In [Getting Started]({{ site.url }}/docs/extensions/tutorials/getting-started), we already cloned the app we made, so you can just navigate to it's directory and run it locally:
 
 ```ShellSession
 $ cd Restaurants
