@@ -20,7 +20,7 @@ Shoutem comes with a dozen of available themes, but if you want a custom one, yo
 To create a theme within the existing Restaurants extension, switch over to the `Restaurants` extension folder:
 
 ```ShellSession
-$ cd restaurants
+$ cd {{ site.example.devName }}.restaurants
 ```
 
 Create a theme and fill it with basic data:
