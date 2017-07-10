@@ -11,16 +11,6 @@ In this tutorial we will explain how to set up a local environment that allows y
 
 To be able to follow this tutorial, you should go through our [Getting Started]({{ site.url }}/docs/extensions/tutorials/getting-started) tutorial so you have a an extension to easily test your local environment with.
 
-## React Native Environment
-
-Before setting up a local environment for building Shoutem extensions, set up React Native environment as described in their [Getting started tutorial](https://facebook.github.io/react-native/docs/getting-started.html). Make sure you strictly pass through all the steps described there.
-
-<p class="image">
-<img src='{{ site.url }}/img/tutorials/setting-local-environment/rn-getting-started.png'/>
-</p>
-
-In that tutorial, developing iOS apps locally is only available on Mac. That's not the case when you're using Shoutem. You can develop and test your React Native apps on any platform (Windows, Mac, Linux) using the **Shoutem Preview app** (available for [iOS]({{ site.shoutem.previewAppiOS }}) and [Android]({{ site.shoutem.previewAppAndroid }})) for testing your app on a physical device. The app can be also previewed on the [Shoutem Builder]({{ site.shoutem.builderURL }}).
-
 ## Local Development
 
 If you've gone through [Getting Started]({{ site.url }}/docs/extensions/tutorials/getting-started), you already have a cloned app.
@@ -32,9 +22,9 @@ Cloning `Restaurants` to `Restaurants`
 ...
 ```
 
-You can use `shoutem run` in a cloned app's directory to preview the app on your own device using the Shoutem Preview app. Like we mentioned earlier, it lets you develop and test your React Native apps on any platform (Windows, Mac, Linux). All you need to preview and test your app is `Node.js` version 6 or higher. It also allows non-Mac users to test their apps on an iOS device!
+All you need to run a Shoutem app locally is a smartphone and `Node.js` version 6 or higher!
 
-Using `shoutem run` will make the CLI execute the React packager in another terminal window, and generate a QR code for you to scan with the Shoutem Preview app in order to open it on your device:
+You can use `shoutem run` in a cloned app's directory to preview the app on your own device using the Shoutem Preview app. Like we mentioned earlier, it lets you develop and test your React Native apps on any platform (Windows, Mac, Linux). It will make the CLI execute the React packager in another terminal window and generate a QR code for you to scan with the Shoutem Preview app in order to open it on your device:
 
 ```ShellSession
 $ shoutem run
@@ -43,23 +33,13 @@ Scanning 706 folders for symlinks in /path/to/Restaurants/node_modules (5ms)
 ...
 ```
 
-There are limitations to what the Shoutem Preview app can preview. Namely, it can only preview apps that have no native code linked into them. This is because the Shoutem Preview app has it's own binary, so it can only preview changes made to the JavaScript bundle of the app.
-
-To work on apps with native code changes, you can use `react-native run-ios` and `react-native run-android` inside your cloned app's directory, the same way you'd use them with any other React Native app!
-
-```ShellSession
-$ react-native run-ios
-Scanning 706 folders for symlinks in /path/to/Restaurants/node_modules (18ms)
-...
-```
-
 You can of course preview your app through the Shoutem Builder where you can manage your app as well. It works similarly to the Shoutem Preview app, having the same advantages, but also the same native code limitations. The main difference being that you have to _push_ your extension every time you make a change to it, as well as wait for the Builder to bundle all the JavaScript changes.
 
 ## Real Time Code Changes
 
-We will now explain how to preview code changes in your extensions in real-time. If you've gone through the [Getting Started]({{ site.url }}/docs/extensions/tutorials/getting-started) tutorial, you should have a Restaurants app on the Builder. To be able to see changes in your extension as you make them **without** having to push your extension to Shoutem every time you make a change, you'll have to use either `shoutem run`, `react-native run-ios` or `react-native run-android`, as mentioned above in the Local Development section.
+We will now explain how to preview code changes in your extensions in real-time. If you've gone through the [Getting Started]({{ site.url }}/docs/extensions/tutorials/getting-started) tutorial, you should have a Restaurants app on the Builder. To be able to see changes in your extension as you make them **without** having to push your extension to Shoutem every time you make a change.
 
-For the purposes of this tutorial, we'll assume you're running your app with `shoutem run`. In [Getting Started]({{ site.url }}/docs/extensions/tutorials/getting-started), we already cloned the app we made, so you can just navigate to it's directory and run it locally:
+In [Getting Started]({{ site.url }}/docs/extensions/tutorials/getting-started), we already cloned the app we made, so you can just navigate to it's directory and run it locally:
 
 ```ShellSession
 $ cd Restaurants
@@ -69,9 +49,11 @@ Scanning 706 folders for symlinks in /path/to/Restaurants/node_modules (5ms)
 ...
 ```
 
-Now you can develop your extension much faster because you can see the changes you make to your extension in real time, exactly like a regular React Native app.
+This will print a QR code for you to scan with the Shoutem Preview app.
 
-Let's see how this works. Change something inside your extension, for example you could add another line of `<Text>` to the List screen:
+Changes made to JavaScript code can be seen instantly now, all you have to do is reload the app by shaking your device to open up the **Developer Menu** and selecting **Reload**.
+
+Now you can develop your extension much faster because you can see the changes you make to your extension in real time, exactly like a regular React Native app. Let's see how this works. Change something inside your extension, for example you could add another line of `<Text>` to the List screen:
 
 ```javascript{5}
   render() {
@@ -84,13 +66,25 @@ Let's see how this works. Change something inside your extension, for example yo
   }
 ```
 
-Save the changes. Now you don't need to do `shoutem push` and wait for the Builder to load the changes, you can just reload the app:
-- On simulator:
-  - iOS: press `Command ⌘` + `R`
-  - Android: press `R` twice
-- Using `shoutem run`: shake your device to open up **Developer Menu** and select **Reload**
+Save the changes, reload the device as previously described and you should see your new line of text right there.
 
-If you enable automatic reloading, the previous step is unnecessary. Having local environment set, you can also debug your extension. Follow the React Native guide on [debugging](https://facebook.github.io/react-native/docs/debugging.html) where you can find out how automatic reloading works as well.
+## Local Development with Native Code
+
+There are limitations to what the Shoutem Preview app can preview. Namely, it can only preview apps that have no native code linked into them. This is because the Shoutem Preview app has it's own binary, so it can only preview changes made to the JavaScript bundle of the app.
+
+To work on apps with native code changes, you can use `react-native run-ios` and `react-native run-android` inside your cloned app's directory, the same way you'd use them with any other React Native app! You can find out how to set up your local environment for React Native development using [Facebook's official documentation](https://facebook.github.io/react-native/docs/getting-started.html). Make sure you strictly pass through all the steps described there.
+
+<p class="image">
+<img src='{{ site.url }}/img/tutorials/setting-local-environment/rn-getting-started.png'/>
+</p>
+
+Once you have that set up, you can continue your work like it was a regular React Native app on an emulator.
+
+```ShellSession
+$ react-native run-ios
+Scanning 706 folders for symlinks in /path/to/Restaurants/node_modules (18ms)
+...
+```
 
 ### Managing your app's Configuration
 
@@ -100,6 +94,8 @@ This section will cover the uses of the configuration script and associated comm
 
 ```ShellSession
 $ shoutem configure
+
+> @shoutem/mobile-app@1.1.2 configure /path/to/Restaurants
 ...
 ```
 
@@ -113,7 +109,9 @@ The command should be called when:
 #### shoutem configure --release
 
 ```ShellSession
-$ shoutem configure --release
+$ shoutem configure
+
+> @shoutem/mobile-app@1.1.2 configure /path/to/Restaurants "--release"
 ...
 ```
 
