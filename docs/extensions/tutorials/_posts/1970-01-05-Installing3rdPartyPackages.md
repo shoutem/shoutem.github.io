@@ -14,7 +14,7 @@ This tutorial will show you how to install a 3rd party package into an extension
 
 ## 1) Installing a non-native Package
 
-A non-native package doesn't utilize native capabilities of the underlying device. Simply put, the package doesn't handle anything differently regardless of the fact it's being run on iOS or Android.
+A non-native package doesn't utilize native capabilities of the underlying device. Simply put, the package doesn't handle anything differently regardless of the fact it's being run on iOS or Android. When you finish this tutorial you'll have a functioning `swiper-extension`, like the one from our [extension examples](https://github.com/shoutem/extension-examples).
 
 ### Making an Extension
 
@@ -164,6 +164,8 @@ Opening the SwiperApp in the Builder will show us an app with no Screens, but si
 
 A native package utilizes native capabilities of the underlying device. When installing such a package we have to make sure we link the native dependencies it has. This is done using [postinstall scripts](https://docs.npmjs.com/misc/scripts). As an example, we'll be making a QR Code reader that's going to display what the scanned QR code says. To scan a QR code we'll need to use the devices camera, which we'll get access to using `react-native-camera`, a 3rd party package for utilizing device cameras.
 
+When you finish this tutorial you'll have a functioning `qr-reader-extension`, like the one from our [extension examples](https://github.com/shoutem/extension-examples).
+
 ### Making an Extension
 
 To begin, we'll need an extension, so let's just make one. If this is something you don't know how to do yet, you should really go through [My First Extension]({{ site.url }}/docs/extensions/my-first-extension/introduction) to make sure you understand the fundamentals.
@@ -283,8 +285,10 @@ export default class QRReaderScreen extends Component {
     this.onBarCodeRead = this.onBarCodeRead.bind(this);
   }
 
-  onBarCodeRead(code) {       //when the bar (QR) code is read
-    Alert.alert(              //invoke this callback
+  // when camera recognizes a QR code, it will store it's content in 'code'
+  // and then display an alert with the 'code' contents,
+  onBarCodeRead(code) {
+    Alert.alert(
       'QR Code Detected',
       code.data,
       [
