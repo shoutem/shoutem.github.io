@@ -9,7 +9,7 @@ section: Tutorials
 
 In this tutorial we will explain how to set up a local environment that allows you to preview changes to your app in real time. In other words, once you're set up, you won't have to _push_ your extension to Shoutem every time you want to see the changes you made to it. You can do this using your own physical device or an emulator.
 
-To be able to follow this tutorial, you should go through our [Getting Started]({{ site.url }}/docs/extensions/tutorials/getting-started) tutorial so you have a an extension to easily test your local environment with.
+To be able to follow this tutorial, you should go through our [Getting Started]({{ site.url }}/docs/extensions/tutorials/getting-started) tutorial so you have an extension to easily test your local environment with.
 
 ## Local Development
 
