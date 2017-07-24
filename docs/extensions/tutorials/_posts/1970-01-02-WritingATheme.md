@@ -104,7 +104,7 @@ export function ext(resourceName) {
 
 And that our public API, `app/index.js`, exports the newly created theme:
 
-```JavaScript{9}
+```JavaScript{8}
 #file: app/index.js
 // Reference for app/index.js can be found here:
 // http://shoutem.github.io/docs/extensions/reference/extension-exports
@@ -113,7 +113,6 @@ import reducer from './reducer';
 import * as extension from './extension.js';
 
 export const screens = extension.screens;
-
 export const themes = extension.themes;
 
 export { reducer };
@@ -166,7 +165,7 @@ From the docs on how to use `@shoutem/theme`, in order to support the theme, we 
 
 We didn't use `style`, but now we're going to use it from `this.props.style` in the `renderRow` method. Also, import `connectStyle` from `@shoutem/theme` to connect the component to the theme and assign a `name` to it.
 
-```JavaScript{18,48,57-58,90-92}
+```JavaScript{20,53,63-64,92-94}
 #file: app/screens/List.js
 import React, {
   Component
@@ -272,28 +271,38 @@ Ok, we've added style from theme to the component, but we haven't implemented th
 
 We created a theme file (`app/themes/restaurant.js`) with a Rubicon template. Since a Shoutem app can only have 1 theme applied at a time, it's a good practice to include styling rules for the components usually used in Shoutem extensions, such as the ones from `@shoutem/ui`.
 
-The theme file is huge and it won't be pasted here fully. Just search for the `export default` statement which exports theme functions. In _theme object_ (which is returned by _theme function_), add the agreed styling rules: _make titles bigger in restaurant rows and change the background color of subtitles to white, while changing the text color to black_.
+The theme file is **huge** and it won't be pasted into the code snippet here fully. Just search for the `export default` statement which exports theme functions. In `return`, add the agreed styling rules:
+  - make titles bigger in restaurant rows
+  - change the background color of subtitles to white
+  - change the subtitle color to black
 
-Add the following styling rules to the beginning of the exported object:
+Import the `ext` function and add the following styling rules to the beginning of the exported object:
 
-```JavaScript{1,6-14}
+```JavaScript{3,14-22}
 #file: app/themes/restaurant.js
+// other imports ...
+
 import { ext } from '../extension';
 
-// constants ...
+// exports and constants ...
 
-export default (variables = {}) => ({
-  [ext('List')]: {
-    title: {
-      fontSize: 25,
+export default (customVariables = {}) => {
+  const variables = {
+    ...defaultThemeVariables,
+    ...customVariables,
+  };
+
+  return _.merge({}, getTheme(variables), {
+    [ext('List')]: {
+      title: {
+        fontSize: 25,
+      },
+      subtitle: {
+        color: 'black',
+        backgroundColor: 'white'
+      }
     },
-    subtitle: {
-      color: 'black',
-      backgroundColor: 'white'
-    }
-  },
-
-  // the rest of the styling rules...
+    // the rest of the styling rules...
 })
 ```
 
@@ -350,22 +359,23 @@ The only thing left to do is to use this variable in the theme file. Again, sear
 
 ```JavaScript{11}
 #file: app/themes/restaurant.js
-import { ext } from '../const';
+export default (customVariables = {}) => {
+  const variables = {
+    ...defaultThemeVariables,
+    ...customVariables,
+  };
 
-// constants ...
-
-export default (variables = {}) => ({
-  [ext('List')]: {
-    title: {
-      fontSize: 15,
+  return _.merge({}, getTheme(variables), {
+    [ext('List')]: {
+      title: {
+        fontSize: 25,
+      },
+      subtitle: {
+        color: 'black',
+        backgroundColor: 'white'
+      }
     },
-    subtitle: {
-      color: variables.subtitleColor,
-      backgroundColor: 'white'
-    }
-  },
-
-  // the rest of the styling rules...
+    // the rest of the styling rules...
 })
 ```
 
