@@ -33,9 +33,10 @@ Before going through this tutorial, make sure you've installed the following:
 - [git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
 - react-native-cli - `$ npm install -g react-native-cli`
 - shoutem-cli - `$ npm install -g @shoutem/cli`
+- OSX - > Coacoapods - `$ gem install coacoapods`
 
 > #### Note
-> If the `npm install` commands fail because of _permission_ issues, you need to run them with `sudo`: `sudo npm install -g <package-name>`.
+> If the above commands fail because of _permission_ issues, you need to run them with `sudo`, e.g.`sudo npm install -g <package-name>`.
 
 If you haven't already, go to the [Builder]({{ site.shoutem.builderURL }}) and create an account. Once signed in, create a new `Blank app`. For this quick tutorial, we'll make a Restaurants and Food app, let's call it `Restaurants`. To rename your app, click on the `Blank app` text, delete it and type in `Restaurants`.
 
@@ -92,7 +93,9 @@ Initializing extension:
 Extension initialized!
 ```
 
-The `shoutem init` command bootstrapped the `{{ site.example.devName }}.restaurants` folder with extension files. Let's add a screen that we'll use as a list of restaurants in the My first extension tutorial series, so we'll name it `List` and give it a shortcut `Restaurants`:
+The `shoutem init` command bootstrapped the `{{ site.example.devName }}.restaurants` folder with extension files. Let's add a screen that we'll use as a list of restaurants in the My first extension tutorial series, so we'll name it `List` and give it a shortcut `Restaurants`.
+
+A shortcut is the pointer to the starting screen of an extension. When you add screens to your app on the Builder, you're actually adding the shortcut to that screen.
 
 ```ShellSession
 $ cd {{ site.example.devName }}.restaurants
@@ -107,7 +110,7 @@ File `app/extension.js` was modified.
 File `extension.json` was modified.
 ```
 
-This created a `List` screen in `app/screens/List.js` file. Any time you make a new screen it'll be a simple _Hello World_ screen. To fit the app, let's change the screen so it says `Let's eat!` instead of `Hello World!`:
+The previous command created a `List` screen in `app/screens/List.js` file. Any time you make a new screen it'll be a simple _Hello World_ screen. To fit the app, let's change the screen so it says `Let's eat!` instead of `Hello World!`:
 
 ```JavaScript{5}
 #file: app/screens/List.js

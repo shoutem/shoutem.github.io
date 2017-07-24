@@ -35,7 +35,7 @@ You do want list layout, but with large images in `Tiles`, such as the ones prov
 Download the [News RSS extension](https://github.com/shoutem/extensions/tree/master/shoutem-rss-news) from the repository and navigate to the extension's folder:
 
 ```ShellSession
-$ cd shoutem-rss-news
+$ cd shoutem.rss-news
 ```
 
 Check the `renderRow` method in `app/screens/ArticlesListScreen.js`:
@@ -158,7 +158,7 @@ Extension initialized!
 Switch over to the newly made directory:
 
 ```ShellSession
-$ cd news-rss
+$ cd {{ site.example.devName }}news-rss
 ```
 
 Create a new screen which will extend the List screen from the original Shoutem **News RSS** extension:
