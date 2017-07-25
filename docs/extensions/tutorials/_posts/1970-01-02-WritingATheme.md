@@ -71,7 +71,7 @@ The `showcase` property, which is empty, is an array of images and videos that w
 ],
 ```
 
-As stated above, you can add videos as well to show off your theme, you can see an example of that with our [Rubicon theme](https://github.com/shoutem/extensions/tree/master/shoutem-rubicon-theme/server/assets).
+As stated above, you can add videos as well to show off your theme.
 
 The CLI also made sure that `app/extension.js` handles the newly created theme:
 
@@ -144,7 +144,7 @@ Now check the `Customize theme` tab.
 <img src='{{ site.url }}/img/tutorials/settings-theme/style-tab-themes-customise_theme-no_picker.png'/>
 </p>
 
-Here the app owner can customize your theme through theme variables. These variables can be found in `server/themes/restaurantVariables.json` and they're a copy of the [Rubicon theme variables](https://github.com/shoutem/extensions/blob/master/shoutem-rubicon-theme/server/themeVariables.json).
+Here the app owner can customize your theme through theme variables. These variables can be found in `server/themes/restaurantVariables.json` and they're a copy of the [Rubicon theme variables](https://github.com/shoutem/extensions/blob/master/shoutem-rubicon-theme/server/primeThemeVariables.json).
 
 ## How Themes Work
 
@@ -395,7 +395,7 @@ Check `Customize theme` under the `Style` tab. You can see the `Restaurants` sec
 
 ## Adding a Custom Font
 
-In order to add a custom font to a theme, you'll have to add a `fonts` folder to your extension's `app` folder and add your custom fonts to it in `.TTF` format. You can see this structure in our [Rubicon theme]("https://github.com/shoutem/extensions/tree/master/shoutem-rubicon-theme/app/fonts") extension. For the purpose of this tutorial, use a custom [Roboto font](https://www.fontsquirrel.com/fonts/roboto) for you to use.
+In order to add a custom font to a theme, you'll have to add a `fonts` folder to your extension's `app` folder and add your custom fonts to it in `.TTF` format. You can see this structure in our [Rubicon theme](https://github.com/shoutem/extensions/tree/master/shoutem-rubicon-theme/app/fonts) extension. For the purpose of this tutorial, use a custom [Roboto font](https://www.fontsquirrel.com/fonts/roboto) for you to use.
 
 These fonts also have to be linked into the app's binary as [assets](https://github.com/rnpm/rnpm#advanced-usage) using [`rnmp`](https://github.com/rnpm/rnpm). You do this by adding the following to your extension's `app/package.json` file:
 
@@ -467,14 +467,7 @@ To do this, simply click on the icon you want to change to open the modal window
 
 After selecting `My icons` you can see the list of icons you uploaded for that specific app. The disadvantage of using this method is that the icon will only exist for that app, while your extension might be installed in multiple apps.
 
-The `Theme icons` category refers to the icons from different themes. You can see that when comparing the icons that the [Rubicon theme](https://github.com/shoutem/extensions/tree/master/shoutem-rubicon-theme/server/assets/icons) (left) offers to the ones that the [Arno theme](https://github.com/shoutem/extensions/tree/master/shoutem-arno-theme/server/assets/icons) (right) offers:
-
-<p class="image">
-<img src='{{ site.url }}/img/tutorials/settings-theme/icon-theme-comparison.png'/>
-</p>
-
-> #### Note
-> These are not all the icons that are available. To see the full list of icons, check these links to the [Rubicon](https://github.com/shoutem/extensions/tree/master/shoutem-rubicon-theme/server/assets/icons) and [Arno](https://github.com/shoutem/extensions/tree/master/shoutem-arno-theme/server/assets/icons) themes.
+The `Theme icons` category refers to the icons from different themes. You can find out which icons are offered in our Rubicon theme [here](https://github.com/shoutem/extensions/tree/master/shoutem-rubicon-theme/server/assets/icons).
 
 ### 2) Adding an icon to your custom theme
 
@@ -485,7 +478,7 @@ $ cd server
 $ mkdir assets/icons
 ```
 
-And then add your custom icon to it. The reason we use the server folder is because this is utilized by the server side, i.e. the Builder. You can see this structure in our [Rubicon theme]("https://github.com/shoutem/extensions/tree/master/shoutem-rubicon-theme/server/assets/icons").
+And then add your custom icon to it. The reason we use the server folder is because this is utilized by the server side, i.e. the Builder. You can see this structure in our [Rubicon theme](https://github.com/shoutem/extensions/tree/master/shoutem-rubicon-theme/server/assets/icons).
 
 The icon you add should be a `.png` and `48x48` resolution. In this example tutorial we'll use the previously mentioned restaurant related icon, a plate and utensils.
 
@@ -506,7 +499,7 @@ After creating the directory and adding your custom icon to it you have to modif
 }],
 ```
 
-You can see this in our [Rubicon theme]("https://github.com/shoutem/extensions/blob/master/shoutem-rubicon-theme/extension.json").
+You can see this in our [Rubicon theme](https://github.com/shoutem/extensions/blob/master/shoutem-rubicon-theme/extension.json).
 
 Now you can simply _push_ to update your extension on Shoutem and once you open your Restaurants app in the Builder and check the Main navigation icons you can see your new icon under the `Theme icons` category.
 
@@ -514,4 +507,4 @@ Now you can simply _push_ to update your extension on Shoutem and once you open 
 <img src='{{ site.url }}/img/tutorials/settings-theme/custom-icon.png'/>
 </p>
 
-The other icons you see are a copy of the icons provided by the [Rubicon theme]("https://github.com/shoutem/extensions/tree/master/shoutem-rubicon-theme/server/assets/icons"), this is because when you create a custom theme you're making a copy of Rubicon.
+The other icons you see are a copy of the icons provided by the [Rubicon theme](https://github.com/shoutem/extensions/tree/master/shoutem-rubicon-theme/server/assets/icons), because, like we said, when you create a custom theme you're making a copy of Rubicon.
