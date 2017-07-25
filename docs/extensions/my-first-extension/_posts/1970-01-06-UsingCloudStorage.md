@@ -177,18 +177,10 @@ Click on `Add item`. This will open a modal for inserting data for the `Restaura
 <img src='{{ site.url }}/img/my-first-extension/cms-modal.png'/>
 </p>
 
-Add some restaurants. If you want to be more efficient (or you're lazy, like me), you can import data using the Shoutem CMS. We prepared a CSV (comma-separated values) file which you can use for importing. In the Shoutem CMS interface, open the 3 points `...` and click on `Import`. When asked to select the source, select `Comma-separated values`. Fill in "CSV data source" with this link: [{{ site.url }}/static/getting-started/restaurants.csv]({{ site.url }}/csv/restaurants.csv). You can also upload a CSV if you click `Browse`.
-
-Now click `Next` and do the mapping. This is what the mapping should look like (leave the first three fields empty):
-
-<p class="image">
-<img src='{{ site.url }}/img/my-first-extension/import-csv.png'/>
-</p>
-
-Click `Next` and then exit the modal by clicking `X` in top right corner. Now you can see the data in the CMS settings page of your Restaurants extension:
+Add at least one restaurant. Now you can see the data in the CMS settings page of your Restaurants extension:
 
 <p class="image">
 <img src='{{ site.url }}/img/my-first-extension/full-cms.png'/>
 </p>
 
-Although you've added these restaurants in the Builder, your extension is still coded to use static data from the `assets` folder you set up earlier in the tutorial series. Let's change that and start fetching the data from Shoutem Cloud Storage using the `@shoutem/redux-io` package.
+Although you've added some restaurants in the Builder, your extension is still coded to use static data from the `assets` folder you set up earlier in the tutorial series. Let's change that and start fetching the data from Shoutem Cloud Storage using the `@shoutem/redux-io` package.
