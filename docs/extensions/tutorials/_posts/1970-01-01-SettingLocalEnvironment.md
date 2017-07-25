@@ -78,7 +78,7 @@ To work on apps with native code changes, you can use `react-native run-ios` and
 <img src='{{ site.url }}/img/tutorials/setting-local-environment/rn-getting-started.png'/>
 </p>
 
-Once you have that set up, you can continue your work like it was a regular React Native app on an emulator.
+Once you have that set up, you can continue your work like it was a regular React Native app.
 
 ```ShellSession
 $ react-native run-ios
@@ -115,7 +115,7 @@ $ shoutem configure
 ...
 ```
 
-This sets the `isRelease` flag in the configuration file, which makes certain extensions behave differently. Submitting an app without this to the store leaves the app open to changes made on the Builder, which could potentially crash the app. This step is a must when building your release app.
+This sets the `isRelease` flag in the each extension's configuration file, which makes extensions behave differently. Submitting an app without this to the store leaves the app open to changes made on the Builder, which could potentially crash the app. This step is a must when building your app for release.
 
 ## Best Practises
 
