@@ -6,11 +6,26 @@ section: My first extension
 ---
 
 # Working with Data
-<hr />
 
-Lets fetch data from the Shoutem Cloud storage to the app. First, remove the assets folder, we don't need it anymore. Create a  `reducer.js` file in the `app` folder. This file will contain a `reducer` defining the initial app state and how the state changes.
+Let's fetch data from the Shoutem Cloud storage to the extension. First, remove the `app/assets` folder, we don't need it anymore. Also remove the `getRestaurants()` function from `List.js`.
 
-Our [@shoutem/redux-io](https://github.com/shoutem/redux-io) package has `reducers` and `actions` that communicate with the Shoutem CMS. The `storage` reducer retrieves data (e.g. restaurants) into a dictionary, while `collection` stores data ID's in an array to persist its order.
+```JavaScript{2-4}
+//remove this:
+getRestaurants() {
+  return require('../assets/restaurants.json');
+}
+```
+
+Now create a `reducer.js` file in the `app` folder.
+
+```ShellSession
+$ cd app
+$ touch reducer.js
+```
+
+This file will contain a `reducer` defining the initial app state and how the state changes.
+
+Our [@shoutem/redux-io](https://github.com/shoutem/redux-io) package has `reducers` and `actions` that communicate with the Shoutem CMS. The `storage` reducer retrieves data (eg. restaurants) into a dictionary, while `collection` stores data ID's in an array to persist its order.
 
 ```javascript{1-9}
 #file: app/reducer.js
@@ -27,7 +42,7 @@ export default combineReducers({
 
 We've used the `ext` function to get the full schema name (`{{ site.example.devName }}.restaurants.Restaurants`). The root reducer needs to be exported from `app/index.js` as `reducer`, so your app can find it:
 
-```javascript{4,9}
+```javascript{4,11}
 #file: app/index.js
 // Reference for app/index.js can be found here:
 // http://shoutem.github.io/docs/extensions/reference/extension-exports
@@ -64,7 +79,7 @@ The complete code is for `app/screens/List.js` is available below.
 
 Fetch data in the `componentDidMount` lifecycle method.
 
-```javascript{2-9}
+```javascript{2-10}
 #file: app/screens/List.js
 export class List extends Component {
   componentDidMount() {
@@ -84,20 +99,20 @@ Implement rendering with fetched data.
 
 ```JSX{2,8-9}
 #file: app/screens/List.js
-  render() {
-    const { restaurants } = this.props;
+render() {
+  const { restaurants } = this.props;
 
-    return (
-      <Screen>
-        <NavigationBar title="RESTAURANTS" />
-        <ListView
-          data={restaurants}
-          loading={isBusy(restaurants)}
-          renderRow={restaurant => this.renderRow(restaurant)}
-        />
-      </Screen>
-    );
-  }
+  return (
+    <Screen>
+      <NavigationBar title="RESTAURANTS" />
+      <ListView
+        data={restaurants}
+        loading={isBusy(restaurants)}
+        renderRow={restaurant => this.renderRow(restaurant)}
+      />
+    </Screen>
+  );
+}
 ```
 
 Once fetched, restaurants will go into the app state. Convert them to an array with `getCollection` and then connect `find` to redux store.
@@ -210,6 +225,9 @@ export default connect(
   { navigateTo, find }
 )(List);
 ```
+
+>#### Note
+>Make sure you remove the `default` from `export default class List extends Component` and only have `default` in `export default connect`, because there can only be one default export.
 
 Let's check how it works:
 

@@ -20,7 +20,7 @@ Shoutem comes with a dozen of available themes, but if you want a custom one, yo
 To create a theme within the existing Restaurants extension, switch over to the `Restaurants` extension folder:
 
 ```ShellSession
-$ cd restaurants
+$ cd {{ site.example.devName }}.restaurants
 ```
 
 Create a theme and fill it with basic data:
@@ -131,7 +131,7 @@ Uploading `Restaurants` extension to Shoutem...
 Success!
 ```
 
-Since the Restaurants extension is already installed, so is your theme. However, it's not applied yet. Navigate to the `Styles` tab. Currently, the selected theme is `Rubicon`. Click on the `Change theme` button. Here you can find every installed theme. Yours is also there! Select it and you'll see the showcase you set up for it earlier.
+Since the Restaurants extension is already installed, so is your theme. However, it's not applied yet. Navigate to the `Styles` tab. Currently, the selected theme is `Rubicon`, clearly no match for your gorgeous new theme, so let's fix that. Click on the `Change theme` button. Here you can find every installed theme. Yours is also there! Select it and you'll see the showcase you set up for it earlier.
 
 <p class="image">
 <img src='{{ site.url }}/img/tutorials/settings-theme/style-tab-themes-theme-change_theme-theme_showcase.png'/>

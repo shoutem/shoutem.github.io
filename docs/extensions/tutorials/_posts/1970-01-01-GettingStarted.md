@@ -11,7 +11,7 @@ Shoutem is a platform that enables you to build, publish and manage high-quality
 
 ## Apps and Extensions
 
-The efficiency of building apps is achieved with a simple architecture: apps are built using smaller modules called `extensions`. The extension is a self-contained and complete functionality that can be reused. Everything in the app is an extension: navigation, places (list and details), push notifications, analytics, ads, etc...
+The efficiency of building apps is achieved with a simple architecture: apps are built using smaller modules called `extensions`. An extension is a self-contained and complete functionality that can be reused. Everything in the app is an extension: navigation, places (list and details), push notifications, analytics, ads, etc...
 
 <p class="image">
 <img src='{{ site.url }}/img/tutorials/getting-started/apps-are-made-of-extensions.png'/>
@@ -21,47 +21,39 @@ Shoutem prepared and [open sourced](https://github.com/shoutem/extensions) a lot
 
 ## The Builder
 
-Shoutem apps are managed on a beautiful web interface called the **Builder**. This allows non-technical people to create apps from extensions built by Shoutem and the community, while also allowing developers to save time setting up a part of their app. If you haven't already, go to the [Builder]({{ site.shoutem.builderURL }}) and create an account. Once signed in, you can create an app from some  template or just make blank app. Lets start with a `News app` template.
+Shoutem apps are managed on a beautiful web interface called the **Builder**. It allows you to host your project online and make it customizable for non-technical people, which is perfect for a developer's clients. It also allows developers to save time setting up a part of their app so they can focus on their own unique features.
 
-<p class="image">
-<img src='{{ site.url }}/img/tutorials/getting-started/builder-news-app.png'/>
-</p>
+## Your First App
 
-Your app is prefilled with content so you can see what it'd really look like.
+#### Prerequisites
 
-## Running Your App
+Before going through this tutorial, make sure you've installed the following:
 
-Your app can be previewed inside the Builder or on your own physical device! Click the _Preview on device_ button and scan the QR code. This will lead you to download the **Shoutem Preview** app (available for [iOS]({{ site.shoutem.previewAppiOS }}) and [Android]({{ site.shoutem.previewAppAndroid }})) which you can use to get the app you're making onto your device. After the installation, **Shoutem Preview** will automatically open the app you just made.
-
-<p class="image">
-<img src='{{ site.url }}/img/tutorials/getting-started/shoutem-preview-app.png'/>
-</p>
-
-## Managing Your App
-
-You can manage your app inside the Builder. The app structure can be seen under **Screens**. It starts with **Main navigation** which has multiple screens nested inside. Those are the screens from extensions you have installed which you can add by clicking on `+`. For the purpose of the tutorial, delete the **About** screen by selecting it, clicking on the three dots (`...`) on the top right corner and selecting **Delete**.
-
-<p class="image">
-<img src='{{ site.url }}/img/tutorials/getting-started/delete-starting-screen.png'/>
-</p>
+- [Node.js and npm](https://www.npmjs.com/) (installing `Node.js` also installs `npm`)
+- [git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
+- react-native-cli - `$ npm install -g react-native-cli`
+- shoutem-cli - `$ npm install -g @shoutem/cli`
+- OSX - > Coacoapods - `$ gem install coacoapods`
 
 > #### Note
-> All Shoutem extensions are pre-installed to your app on the Builder so you can use their screens right away, but any custom extensions you make will have to be installed using `shoutem install`, before you can use them through the Builder.
+> If the above commands fail because of _permission_ issues, you need to run them with `sudo`, e.g.`sudo npm install -g <package-name>`.
 
-Let's create a new extension with a `Hello World` screen and add it to the app.
+If you haven't already, go to the [Builder]({{ site.shoutem.builderURL }}) and create an account. Once signed in, create a new `Blank app`. For this quick tutorial, we'll make a Restaurants and Food app, let's call it `Restaurants`. To rename your app, click on the `Blank app` text, delete it and type in `Restaurants`.
+
+Let's say we want to add an RSS feed screen to our app. To do that, click on the + button next to Screens and select the News RSS extension. Since the app is about Restaurants, to stick to the Food theme, let's use a food related News RSS feed:
+http://foodengineeringmag.com/rss/topic/2639-top-100-food-beverage-companies
+
+After you add this screen, it should look something like this:
+
+<p class="image">
+<img src='{{ site.url }}/img/tutorials/getting-started/01-builder-before-clone.png'/>
+</p>
 
 ## Creating a New Extension
 
-Start by installing the [Shoutem CLI]({{ site.shoutem.cli }}) - tool that makes developing extensions a breeze.
+As a developer, you use the Shoutem CLI to handle the lifecycle of extensions.
 
-```ShellSession
-$ npm install -g @shoutem/cli
-```
-
-> #### Note
-> If previous command fails because of _permission_ issues, you need to run it with `sudo` permission: `sudo npm install -g @shoutem/cli`.
-
-Register your developer name. Use the `shoutem login` command with your Shoutem credentials ("{{ site.example.devName }}" is used as a developer name in this example).
+Start by using the `shoutem login` command with your Shoutem credentials ("{{ site.example.devName }}" is used as a developer name in this example).
 
 ```ShellSession
 $ shoutem login
@@ -76,14 +68,24 @@ Developer name: {{ site.example.devName }}
 Registered as `{{ site.example.devName }}`.
 ```
 
-Create new extension:
+Clone the app you made in the Builder to your machine by using `shoutem clone` and selecting your app from the list:
 
 ```ShellSession
-$ shoutem init hello-world
+$ shoutem clone
+Select your app: Restaurants ({{ site.example.appId }})
+Cloning `Restaurants` to `Restaurants`
+...
+```
+
+`shoutem clone` turns your app you see on the Builder into a Shoutem flavored React Native app locally. Once the cloning process is done, locate to `Restaurants/extensions` (where you can find all the extensions installed into your app) and create your new extension using `shoutem init`:
+
+```ShellSession
+$ cd Restaurants/extensions
+$ shoutem init restaurants
 Enter information about your extension. Press `return` to accept (default) values.
-Title: Hello World
+Title: Restaurants
 Version: 0.0.1
-Description: My first extension
+Description: A restaurants extension.
 
 Initializing extension:
 ...
@@ -91,83 +93,73 @@ Initializing extension:
 Extension initialized!
 ```
 
-The `shoutem init` command bootstrapped the `hello-world` folder with extension files. Switch over to the extension folder:
+The `shoutem init` command bootstrapped the `{{ site.example.devName }}.restaurants` folder with extension files. Let's add a screen that we'll use as a list of restaurants in the My first extension tutorial series, so we'll name it `List` and give it a shortcut `Restaurants`.
+
+A shortcut is the pointer to the starting screen of an extension. When you add screens to your app on the Builder, you're actually adding the shortcut to that screen.
 
 ```ShellSession
-$ cd hello-world
-```
-
-Create a screen with a shortcut (pointer to the starting screen of the extension):
-
-```ShellSession
-$ shoutem screen add Hello --shortcut Hello
+$ cd {{ site.example.devName }}.restaurants
+$ shoutem screen add List --shortcut Restaurants
 Enter shortcut information:
-Title: Hello
-Screen `Hello` is created in file `app/screens/Hello.js`!
-Shortcut `Hello` is created!
-Shortcut `Hello` opens `Hello` screen.
+Title: Restaurants
+
+Screen `List` is created in file `app/screens/Hello.js`!
+Shortcut `Restaurants` is created!
+Shortcut `Restaurants` opens `List` screen.
 File `app/extension.js` was modified.
 File `extension.json` was modified.
 ```
 
-This created `Hello` screen in `app/screens/Hello.js` file. Any time you create a new screen it'll be a simple "Hello World!" screen.
+The previous command created a `List` screen in `app/screens/List.js` file. Any time you make a new screen it'll be a simple _Hello World_ screen. To fit the app, let's change the screen so it says `Let's eat!` instead of `Hello World!`:
 
-Let's push what we've built to Shoutem.
+```JavaScript{5}
+#file: app/screens/List.js
+export default class List extends Component {
+  render() {
+    return (
+      <View style={styles.container}>
+        <Text style={styles.text}>Let's eat!</Text>
+      </View>
+    );
+  }
+}
+```
+
+Now push what we've built to Shoutem with `shoutem push`:
 
 ```ShellSession
 $ shoutem push
-Uploading `Hello World` extension to Shoutem...
+Checking the extension code for syntax errors...
+Uploading `Restaurants` extension to Shoutem...
 Success!
 ```
 
-Install the extension to the app you made on the builder. Command `shoutem install` lists all the available apps on which you can install the extension. Select the created app.
+And install the extension into the Restaurants app using `shoutem install`:
 
 ```ShellSession
 $ shoutem install
-Select app to install extension (Use arrow keys)
-> News app
-  -------------
-  Create a new app
+Select your app: Restaurants ({{ site.example.appId }})
 
 Extension installed.
 See it in the builder: {{ site.shoutem.builderURL }}/app/{{ site.example.appId }}
 ```
 
-Open the app in the builder. Click on the `+` next to **Screens** and select `Custom` category. You can see your starting screen there.
+> #### Note
+> You should run `shoutem configure` after installing new extensions into your app, so your local clone is synced with the Builder app!
+
+Now we need to add the screen to the app. Open the app in the Builder. Click on the `+` next to **Screens** and select the `Custom` category. You can see your `Restaurants` extension there. Click on it to add it's screen to Main navigation, just like you did with the News RSS.
 
 <p class="image">
-<img src='{{ site.url }}/img/tutorials/getting-started/custom-starting-screen.png'/>
+<img src='{{ site.url }}/img/tutorials/getting-started/02-builder-custom-extension-screen.png'/>
 </p>
 
-Click on it to add it to the app structure.
-
-> #### Note
-> Currently, you use the [Builder]({{ site.shoutem.builderURL }}) to manage Navigation in the app as explained above.
-
-Great! Let's preview the app on our own physical device. Shoutem lets you develop React Native apps without even having Xcode or Android Studio installed. Moreover, you can preview iOS apps even if you use Windows. Just do `shoutem run` to bundle your extensions into the app and use our Shoutem Preview app to see what it looks like and see changes in real time!
-
-```ShellSession
-$ shoutem run
-Select your app: News app ({{ site.example.appId }})
-Creating the bundle for your app...
-...
-```
-
-> #### Note
-> To create bundle for the app, you need to have [Node.js v7](https://nodejs.org/en/) and [react-native-cli](http://npmjs.com/package/react-native-cli) installed. See [FAQ]({{ site.url }}/docs/extensions/tutorials/faq) if you have problems setting this up.
-
-Once the app is bundled, the CLI will print the QR code to the terminal. Scan it with the Shoutem Preview app if you have it, if not, scanning it will download the Shoutem Preview app and open your app. Make sure you're connected to the same WiFi network on both your computer and smartphone (we'll soon make it possible to do it without being connected to the same WiFi).
-
-This is the result you'll have on your phone:
+Great! Let's make our newly created extension's screen the Starting Screen for the app. Just drag it to the top of Main navigation and you're done. Now when you preview the app, this is what you'll see:
 
 <p class="image">
-<img src='{{ site.url }}/img/tutorials/getting-started/hello-world.png'/>
+<img src='{{ site.url }}/img/tutorials/getting-started/03-lets-eat.png'/>
 </p>
 
 **Well done!** You just built your first app using your own custom built extension!
-
-> #### Note
-> The Shoutem Preview app currently has issues running on Android 4 devices.
 
 ## What's next?
 

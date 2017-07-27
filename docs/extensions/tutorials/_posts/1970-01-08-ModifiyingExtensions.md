@@ -30,12 +30,12 @@ This is what it should look like (images and text vary with RSS feed):
 <img src='{{ site.url }}/img/tutorials/modifying-extensions/provided-layouts.png'/>
 </p>
 
-You do want list layout, but with large images in `Tiles`, such as the ones provided in the [UI toolkit]({{ site.url }}/docs/ui-toolkit/components/tiles). So lets modify News RSS extension directly to get those large images.
+You do want list layout, but with large images in `Tiles`, such as the ones provided in the [UI toolkit]({{ site.url }}/docs/ui-toolkit/components/tiles). So let's modify News RSS extension directly to get those large images.
 
 Download the [News RSS extension](https://github.com/shoutem/extensions/tree/master/shoutem-rss-news) from the repository and navigate to the extension's folder:
 
 ```ShellSession
-$ cd shoutem-rss-news
+$ cd shoutem.rss-news
 ```
 
 Check the `renderRow` method in `app/screens/ArticlesListScreen.js`:
@@ -158,7 +158,7 @@ Extension initialized!
 Switch over to the newly made directory:
 
 ```ShellSession
-$ cd news-rss
+$ cd {{ site.example.devName }}news-rss
 ```
 
 Create a new screen which will extend the List screen from the original Shoutem **News RSS** extension:
@@ -250,7 +250,7 @@ As the `app` folder from extension is what will be bundled in the app, you could
 
 We've implemented the new `render` function and deleted everything we didn't need to override from the `ListArticleView` component.
 
-Now, lets override the `renderRow` method in the screen:
+Now, let's override the `renderRow` method in the screen:
 
 ```javascript
 #file: app/screens/List.js
