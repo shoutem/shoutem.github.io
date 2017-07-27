@@ -345,7 +345,7 @@ Now when you reload the app and tap on a restaurant in the list, this is what yo
 <img src='{{ site.url }}/img/my-first-extension/extension-rich-details.png'/>
 </p>
 
-If you aren't previewing with the Shoutem Preview app, you will have to _push_ the extension:
+If you aren't previewing with the Shoutem Preview app or an emulator on your machine, you will have to _push_ the extension:
 
 ```ShellSession
 $ shoutem push

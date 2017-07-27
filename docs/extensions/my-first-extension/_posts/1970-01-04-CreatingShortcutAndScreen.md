@@ -91,11 +91,11 @@ Let's preview your app again. We can preview it in the Builder, but it might tak
 
 You can also run your apps on local emulators the same way with regular React Native apps, using `react-native run-ios` and `react-native run-android`. We have a [tutorial]({{ site.url }}/docs/extensions/tutorials/setting-local-environment) that offers an in-depth explanation on all the ways you can develop locally.
 
-In [Getting Started]({{ site.url }}/docs/extensions/tutorials/getting-started), we previewed the app on our own device using `shoutem run`:
+Let's preview the app:
 
 ```ShellSession
-$ shoutem run
-Scanning folders for symlinks in /path/to/Restaurants_{{ site.example.appId }}/node_modules
+$ react-native run-ios
+Scanning folders for symlinks in /path/to/Restaurants/node_modules
 ...
 ```
 

@@ -144,32 +144,16 @@ Extension installed.
 See it in the builder: {{ site.shoutem.builderURL }}/app/{{ site.example.appId }}
 ```
 
+> #### Note
+> You should run `shoutem configure` after installing new extensions into your app, so your local clone is synced with the Builder app!
+
 Now we need to add the screen to the app. Open the app in the Builder. Click on the `+` next to **Screens** and select the `Custom` category. You can see your `Restaurants` extension there. Click on it to add it's screen to Main navigation, just like you did with the News RSS.
 
 <p class="image">
 <img src='{{ site.url }}/img/tutorials/getting-started/02-builder-custom-extension-screen.png'/>
 </p>
 
-Great! Let's make our newly created extension's screen the Starting Screen for the app. Just drag it to the top of Main navigation and you're done.
-
-Since we just added a new extension to our app, we need to reconfigure the app to link the extension code and utilize it. We do that with `shoutem configure`:
-
-```ShellSession
-$ shoutem configure
-
-> @shoutem/mobile-app@1.1.0 configure /path/to/Restaurants
-...
-```
-
-After that's done, we can preview the app locally using `react-native run-ios` `react-native run-android`. You can also use `shoutem run`, which will make the CLI print a QR code for you to scan with the **Shoutem Preview app** (available for [iOS]({{ site.shoutem.previewAppiOS }}) and [Android]({{ site.shoutem.previewAppAndroid }})). Using the Shoutem Preview app, you can even preview iOS apps when developing on Windows!
-
-```ShellSession
-$ shoutem run
-Scanning folders for symlinks in /path/to/Restaurants/node_modules
-...
-```
-
-Once you scan the generated QR code, this is the result you'll have on your phone:
+Great! Let's make our newly created extension's screen the Starting Screen for the app. Just drag it to the top of Main navigation and you're done. Now when you preview the app, this is what you'll see:
 
 <p class="image">
 <img src='{{ site.url }}/img/tutorials/getting-started/03-lets-eat.png'/>
