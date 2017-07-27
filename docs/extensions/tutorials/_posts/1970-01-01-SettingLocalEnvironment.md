@@ -7,129 +7,116 @@ section: Tutorials
 
 # Setting up your Local Environment
 
-In this tutorial we will explain how to set up a local environment that allows you to preview changes to your app in real time. In other words, once you're set up, you won't have to upload your extension to Shoutem every time you want to see the changes you made to it. You can do this using your own physical device or an emulator.
+In this tutorial we will explain how to set up a local environment that allows you to preview changes to your app in real time. In other words, once you're set up, you won't have to _push_ your extension to Shoutem every time you want to see the changes you made to it. You can do this using your own physical device or an emulator.
 
-To be able to follow this tutorial, you should go through our [Getting Started]({{ site.url }}/docs/extensions/tutorials/getting-started) tutorial so you have a `Hello World` extension to test your local environment with.
-
-## React Native Environment
-
-Before setting up a local environment for building Shoutem extensions, set up React Native environment as described in their [Getting started tutorial](https://facebook.github.io/react-native/docs/getting-started.html). Make sure you strictly pass through all the steps described there.
-
-<p class="image">
-<img src='{{ site.url }}/img/tutorials/setting-local-environment/rn-getting-started.png'/>
-</p>
-
-In that tutorial, previewing changes in iOS apps locally is only available on Mac. That's not the case when you're using Shoutem. You can test your React Native apps on iOS platform by using the **Shoutem Preview app** (available for [iOS]({{ site.shoutem.previewAppiOS }}) and [Android]({{ site.shoutem.previewAppAndroid }})) for testing your app on a physical iOS device or just using the [Shoutem Builder]({{ site.shoutem.builderURL }}) for testing it on an iOS simulator.
-
-## Previewing apps
-
-There are three different ways you can preview your app using Shoutem, we'll explain each of them in this section. Do note, here we're only talking about previewing your app, for previewing _changes_ in real time, check the **Local Development** section.
-
-#### Shoutem Run
-
-`shoutem run` is used to preview the app on your device using the the **Shoutem Preview app**. The great thing about the Shoutem Preview app is that it will let you see what the app looks like on iOS even if you're using Windows.
-
-However, there are limitations to what the Shoutem Preview app can preview. Namely, it can only preview code that has no native code linked into it. This is because the Shoutem Preview app has it's own binary, so it can only preview changes made to the JavaScript bundle of the app.
-
-#### Shoutem Run-OS
-
-`shoutem run-ios` and `shoutem run-android` are used for previewing the app locally on an emulator. They work analogously to `react-native run-ios` and `react-native run-android`, so they require you to set up your React Native environment as stated earlier in the tutorial.
-
-#### Shoutem Builder
-
-You can of course preview your app through the Shoutem Builder where you can manage your app as well. It works identically to the Shoutem Preview app, having the same advantages and limitations.
+To be able to follow this tutorial, you should go through our [Getting Started]({{ site.url }}/docs/extensions/tutorials/getting-started) tutorial so you have an extension to easily test your local environment with.
 
 ## Local Development
 
-We will now explain how to preview code changes in your extensions in real-time. If you've gone through the **Getting Started** tutorial, you should have an app on the Builder. To be able to see changes in your extension as you make them **without** having to push your extension to Shoutem every time you make a change, you'll have to _link_ your local extension code to the local environment (similar to [react-native link](https://facebook.github.io/react-native/docs/linking-libraries-ios.html)).
-
-Navigate to your extension directory and link it to your local environment:
+If you've gone through [Getting Started]({{ site.url }}/docs/extensions/tutorials/getting-started), you already have a cloned app.
 
 ```ShellSession
-$ cd hello-world
-$ shoutem link
-Directory successfully linked. Please, kill the packager before running the app.
-```
-
-Run the app that uses the extension you just linked:
-
-```ShellSession
-$ shoutem run-ios
-Select a device: iPhone 6
-Select your app: News app ({{ site.example.appId }})
-Running `News app` app on `iPhone 6` simulator...
+$ shoutem clone
+Select your app: Restaurants ({{ site.example.appId }})
+Cloning `Restaurants` to `Restaurants`
 ...
 ```
 
-> #### Note
-> The name of your app may be different if you decided to rename it in the Builder, simply make sure to select the app you installed your Hello World extension into.
+All you need to run a Shoutem app locally is a smartphone and `Node.js` version 6 or higher!
 
-When the app was run, the code from your linked extension was taken locally and other extensions were fetched from Shoutem server. Running the app will take some time (around 3-4mins), but now you can develop your extension much faster because you can see the changes you make to your extension in real time, exactly like a regular React Native app.
+You can use `shoutem run` in a cloned app's directory to preview the app on your own device using the Shoutem Preview app. Like we mentioned earlier, it lets you develop and test your React Native apps on any platform (Windows, Mac, Linux). It will make the CLI execute the React packager in another terminal window and generate a QR code for you to scan with the Shoutem Preview app in order to open it on your device:
 
-Lets see how this works. Change something inside your extension, for example you could add another line of `<Text>`:
+```ShellSession
+$ shoutem run
+
+Scanning 706 folders for symlinks in /path/to/Restaurants/node_modules (5ms)
+...
+```
+
+You can of course preview your app through the Shoutem Builder where you can manage your app as well. It works similarly to the Shoutem Preview app, having the same advantages, but also the same native code limitations. The main difference being that you have to _push_ your extension every time you make a change to it, as well as wait for the Builder to bundle all the JavaScript changes.
+
+## Real Time Code Changes
+
+We will now explain how to preview code changes in your extensions in real-time. If you've gone through the [Getting Started]({{ site.url }}/docs/extensions/tutorials/getting-started) tutorial, you should have a Restaurants app on the Builder. To be able to see changes in your extension as you make them **without** having to push your extension to Shoutem every time you make a change.
+
+In [Getting Started]({{ site.url }}/docs/extensions/tutorials/getting-started), we already cloned the app we made, so you can just navigate to it's directory and run it locally:
+
+```ShellSession
+$ cd Restaurants
+$ shoutem run
+
+Scanning 706 folders for symlinks in /path/to/Restaurants/node_modules (5ms)
+...
+```
+
+This will print a QR code for you to scan with the Shoutem Preview app.
+
+Changes made to JavaScript code can be seen instantly now, all you have to do is reload the app by shaking your device to open up the **Developer Menu** and selecting **Reload**.
+
+Now you can develop your extension much faster because you can see the changes you make to your extension in real time, exactly like a regular React Native app. Let's see how this works. Change something inside your extension, for example you could add another line of `<Text>` to the List screen:
 
 ```javascript{5}
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.text}>Hello World!</Text>
+        <Text style={styles.text}>Let's eat!</Text>
         <Text style={styles.text}>This is my first extension!</Text>
       </View>
     );
   }
 ```
 
-Save the changes. Now you don't need to do `shoutem push` anymore since you linked this extension to your local environment. You can just reload the app:
+Save the changes, reload the device as previously described and you should see your new line of text right there.
 
-- On simulator:
-  - iOS: press `Command ⌘` + `R`
-  - Android: press `R` twice
-- On physical device: shake your device to open up **Developer Menu** and select **Reload**
+## Local Development with Native Code
 
-If you enable automatic reloading, the previous step is unnecessary. Having local environment set, you can also debug your extension. Follow the React Native guide on [debugging](https://facebook.github.io/react-native/docs/debugging.html) where you can find out how automatic reloading works as well.
+There are limitations to what the Shoutem Preview app can preview. Namely, it can only preview apps that have no native code linked into them. This is because the Shoutem Preview app has it's own binary, so it can only preview changes made to the JavaScript bundle of the app.
 
-To see which extensions are linked, as well as which developer is signed in, run:
+To work on apps with native code changes, you can use `react-native run-ios` and `react-native run-android` inside your cloned app's directory, the same way you'd use them with any other React Native app! You can find out how to set up your local environment for React Native development using [Facebook's official documentation](https://facebook.github.io/react-native/docs/getting-started.html). Make sure you strictly pass through all the steps described there.
 
-```ShellSession
-$ shoutem show
-Linked directories:
-  /Path/to/hello-world
-Registered as `{{ site.example.devName }}`.
-```
+<p class="image">
+<img src='{{ site.url }}/img/tutorials/setting-local-environment/rn-getting-started.png'/>
+</p>
 
-To unlink an extension, locate to that folder and do:
+Once you have that set up, you can continue your work like it was a regular React Native app.
 
 ```ShellSession
-$ shoutem unlink
-Unlink successful. Please, kill the packager before running the app.
+$ react-native run-ios
+Scanning 706 folders for symlinks in /path/to/Restaurants/node_modules (18ms)
+...
 ```
 
-... or just delete the extension.
+### Managing your app's Configuration
 
-You can also do `shoutem unlink --all`, but make sure you don't mind unlinking all the extensions you have linked.
+This section will cover the uses of the configuration script and associated commands.
 
-## Getting the Full App Code
-
-When you push your extension to Shoutem, we build the app with that extension for you. However, sometimes you might want to see the full picture - what the complete app project looks like. To get your Shoutem-built app's code, you can use:
+#### shoutem configure
 
 ```ShellSession
-$ shoutem pull-app
-Select the app you want to pull: News app ({{ site.example.appId }})
-Pulling the app `News app`...
-Pulling extensions...
-Success!
-Change your working directory to `News_app`.
+$ shoutem configure
+
+> @shoutem/mobile-app@1.1.2 configure /path/to/Restaurants
+...
 ```
 
-Locate to `News_app` directory and open it:
+The command should be called when:
+ - new extension is created, pushed and installed to the current app
+ - changing native code of any of the extensions from the `extensions` directory
+ - changing cocoapods or gradle dependencies of any of the extensions from the `extensions` directory
+ - switching between published (`shoutem configure --release`) and development (`shoutem configure`) configuration
+
+<br/>
+#### shoutem configure --release
 
 ```ShellSession
-$ cd News_app
-$ open .
+$ shoutem configure
+
+> @shoutem/mobile-app@1.1.2 configure /path/to/Restaurants "--release"
+...
 ```
 
-Check what the project structure looks like. It should look familiar, because this is what regular React Native projects look like. The `index.js` file is the starting point. The `extensions` folder contains all the extensions installed in the app (all of the ones in the **Extensions** tab of your app in the Builder, not just the ones whose Screens you've added).
+This sets the `isRelease` flag in the each extension's configuration file, which makes extensions behave differently. Submitting an app without this to the store leaves the app open to changes made on the Builder, which could potentially crash the app. This step is a must when building your app for release.
 
 ## Best Practises
 
-So, you've passed **My First Extension** and **Setting up your Local Environment** which means that you're ready for some serious development. But, before you start, read about the [best practises]({{ site.url }}/docs/extensions/reference/overview) when doing that.
+So, you've passed **Setting up your Local Environment** which means that you're ready for some serious development. But, before you start, read about the [best practises]({{ site.url }}/docs/extensions/reference/overview) when doing that.
