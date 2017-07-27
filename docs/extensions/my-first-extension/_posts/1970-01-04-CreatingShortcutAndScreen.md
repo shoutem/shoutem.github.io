@@ -92,7 +92,7 @@ Let's preview your app again. We can preview it in the Builder, but it might tak
 
 You can also run your apps on local emulators the same way with regular React Native apps, using `react-native run-ios` and `react-native run-android`. We have a [tutorial]({{ site.url }}/docs/extensions/tutorials/setting-local-environment) that offers an in-depth explanation on all the ways you can develop locally.
 
-Let's preview the app:
+Let's preview the app and see where we stopped in [Getting Started]({{ site.url }}/docs/extensions/tutorials/getting-started).
 
 ```ShellSession
 $ react-native run-ios
@@ -100,16 +100,14 @@ Scanning folders for symlinks in /path/to/Restaurants/node_modules
 ...
 ```
 
-Let's scan the QR code and see where we stopped in [Getting Started]({{ site.url }}/docs/extensions/tutorials/getting-started).
-
 <p class="image">
 <img src='{{ site.url }}/img/tutorials/getting-started/03-lets-eat.png'/>
 </p>
 
 > #### Note
-> In the documentation the preview you see is from the Builder, instead of a screenshot from the Shoutem Preview app. This way you'll see the state of the web interface as well.
+> In the documentation the preview you see is from the Builder, instead of a screenshot from the Shoutem Preview app or a local emulator. This way you'll see the state of the web interface as well.
 
-Now let's make a quick change to the app code so you can see it change in real time on the Shoutem Preview app. Open your `restaurants` extension's `List.js` screen file and add another line of text:
+Now let's make a quick change to the app code so you can see it change in real time on the emulator. Open your `restaurants` extension's `List.js` screen file and add another line of text:
 
 ```JavaScript{6}
 #file: app/screens/List.js
@@ -125,7 +123,7 @@ export default class List extends Component {
 }
 ```
 
-Now just shake your phone with the Shoutem Preview app open and tap the "Reload" button in the dev menu that shows up. Your new line of text should be visible immediately:
+After reloading the emulator, your new line of text should be visible immediately:
 
 <p class="image">
 <img src='{{ site.url }}/img/my-first-extension/real-time-preview.png'/>
