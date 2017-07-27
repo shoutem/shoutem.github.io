@@ -21,7 +21,7 @@ Let’s add one additional screen that will represent an alternative layout for 
 Switch over to the extension folder:
 
 ```ShellSession
-$ cd restaurants
+$ cd {{ site.example.devName }}.restaurants
 ```
 
 Create an additional screen:

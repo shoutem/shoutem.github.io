@@ -44,7 +44,7 @@ Description: Writing my first settings page!
 Locate to extension folder:
 
 ```ShellSession
-cd hello-world-page
+cd {{ site.example.devName }}.hello-world-page
 ```
 
 ### Creating plain settings page

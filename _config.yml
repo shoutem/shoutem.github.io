@@ -39,5 +39,6 @@ external:
 example:
   devName: tom
   devEmail: tom@shoutem.com
+  extensionName: restaurants
   appId: 8074
   qrCodeLink: http://shoutem.app.link/?host=df4d8960.ngrok.io&port=80&dev=false
