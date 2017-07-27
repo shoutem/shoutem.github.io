@@ -142,6 +142,9 @@ export default connect(
 )(List);
 ```
 
+> #### Note
+> Make sure that you remove the `default` from `export default class List extends Component` because there can only be one default export and we want `export default connect` to be it.
+
 Now create the Details screen:
 
 ```ShellSession

@@ -83,6 +83,7 @@ On the other hand, `app/extension.js` is managed by the CLI and you should not c
 
 ## Previewing Extension Code Changes
 
+
 We already did this in [Getting Started]({{ site.url }}/docs/extensions/tutorials/getting-started), but let's elaborate on it. Since the app is managed through the Builder, we needed to `push` the extension to Shoutem and `install` it into our app so we can use and preview it in the Builder.
 
 We then opened the app in the Builder and added the extension's screen to Main navigation. Installing new extensions and adding their shortcuts to the app requires you to reconfigure your local clone, which we also did using `shoutem configure`.

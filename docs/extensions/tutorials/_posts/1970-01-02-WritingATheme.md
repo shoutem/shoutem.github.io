@@ -61,6 +61,18 @@ The `extension.json` file was modified to include the newly created theme:
 }
 ```
 
+The `showcase` property, which is empty, is an array of images and videos that will show off your theme. Download this prepared [showcase]({{ site.url }}/img/tutorials/settings-theme/assets.zip) and copy it to the `server/assets` folder. Change the `showcase` property to:
+
+```JavaScript
+#file: extension.json
+"showcase": [
+  "server/assets/list.png",
+  "server/assets/details.png"
+],
+```
+
+As stated above, you can add videos as well to show off your theme, you can see an example of that with our [Rubicon theme](https://github.com/shoutem/extensions/tree/master/shoutem-rubicon-theme/server/assets).
+
 The CLI also made sure that `app/extension.js` handles the newly created theme:
 
 ```JavaScript{9-10,17-19}
@@ -90,7 +102,7 @@ export function ext(resourceName) {
 }
 ```
 
-The CLI also made sure that our public API, `app/index.js`, exports the newly created theme:
+And that our public API, `app/index.js`, exports the newly created theme:
 
 ```JavaScript{9}
 #file: app/index.js
@@ -111,14 +123,7 @@ export { reducer };
 
 Check `app/themes/restaurant.js` file. It's a copy of Shoutem's default theme - Rubicon.
 
-The `showcase` property, which is empty, is an array of images and videos that will show off your theme. Download this prepared [showcase]({{ site.url }}/docs/coming-soon) and copy it to the `server/assets` folder. Change the `showcase` property to:
-
-```JavaScript
-#file: extension.json
-"showcase": ["video.mp4", "list.png", "details.png"]
-```
-
-Push this theme to the Shoutem server. This might take a while, since you need to upload the showcase video and pictures too:
+Push this theme to the Shoutem server. This might take a while, since you need to upload the `showcase` files too:
 
 ```ShellSession
 $ shoutem push
@@ -140,7 +145,7 @@ Now check the `Customize theme` tab.
 <img src='{{ site.url }}/img/tutorials/settings-theme/style-tab-themes-customise_theme-no_picker.png'/>
 </p>
 
-Here the app owner can customize your theme through theme variables. These variables can be found in `server/themes/restaurantVariables.json` and they're a copy of the [Rubicon theme variables]({{ site.url }}/docs/coming-soon).
+Here the app owner can customize your theme through theme variables. These variables can be found in `server/themes/restaurantVariables.json` and they're a copy of the [Rubicon theme variables](https://github.com/shoutem/extensions/blob/master/shoutem-rubicon-theme/server/themeVariables.json).
 
 ## How Themes Work
 
@@ -166,18 +171,20 @@ We didn't use `style`, but now we're going to use it from `this.props.style` in 
 import React, {
   Component
 } from 'react';
+
 import {
   TouchableOpacity,
 } from 'react-native';
+
 import {
   Image,
   ListView,
-  Text,
   Tile,
   Title,
   Subtitle,
   Overlay,
-  Divider
+  Divider,
+  Screen
 } from '@shoutem/ui';
 
 import { connectStyle } from '@shoutem/theme';
@@ -189,19 +196,22 @@ import {
   getCollection
 } from '@shoutem/redux-io';
 
-import { connect } from 'react-redux';
+import { NavigationBar } from '@shoutem/ui/navigation';
 import { navigateTo } from '@shoutem/core/navigation';
-import { ext } from '../const';
+import { ext } from '../extension';
+import { connect } from 'react-redux';
 
 class List extends Component {
   constructor(props) {
     super(props);
 
+    // bind renderRow function to get the correct props
     this.renderRow = this.renderRow.bind(this);
   }
 
   componentDidMount() {
     const { find, restaurants } = this.props;
+
     if (shouldRefresh(restaurants)) {
       find(ext('Restaurants'), 'all', {
           include: 'image',
@@ -217,7 +227,8 @@ class List extends Component {
         screen: ext('Details'),
         props: { restaurant }
       })}>
-        <Image styleName="large-banner" source={% raw %}{{{% endraw %} uri: restaurant.image && restaurant.image.url  }}>
+        <Image styleName="large-banner" source={% raw %}{{ uri: restaurant.image &&
+        restaurant.image.url ? restaurant.image.url : undefined }}{% endraw %}>          
           <Tile>
             <Title style={style.title}>{restaurant.name}</Title>
             <Subtitle style={style.subtitle}>{restaurant.address}</Subtitle>
@@ -228,21 +239,17 @@ class List extends Component {
   }
 
   render() {
-    //set the title in the Navigation bar
-    this.props.setNavBarProps({
-      title: 'RESTAURANTS',
-    });
-
-    //get list of restaurants from props
     const { restaurants } = this.props;
 
-
     return (
-      <ListView
-        data={restaurants}
-        status={isBusy(restaurants)}
-        renderRow={restaurant => this.renderRow(restaurant, navigateTo)}
-      />
+      <Screen>
+        <NavigationBar title="RESTAURANTS" />
+        <ListView
+          data={restaurants}
+          loading={isBusy(restaurants)}
+          renderRow={restaurant => this.renderRow(restaurant)}
+        />
+      </Screen>
     );
   }
 }
@@ -278,7 +285,7 @@ import { ext } from '../extension';
 export default (variables = {}) => ({
   [ext('List')]: {
     title: {
-      fontSize: 15,
+      fontSize: 25,
     },
     subtitle: {
       color: 'black',
@@ -375,3 +382,126 @@ Check `Customize theme` under the `Style` tab. You can see the `Restaurants` sec
 <p class="image">
 <img src='{{ site.url }}/img/tutorials/settings-theme/style-tab-themes-customise_theme-color_picker_preview.png'/>
 </p>
+
+## Adding a Custom Font
+
+In order to add a custom font to a theme, you'll have to add a `fonts` folder to your extension's `app` folder and add your custom fonts to it in `.TTF` format. You can see this structure in our [Rubicon theme]("https://github.com/shoutem/extensions/tree/master/shoutem-rubicon-theme/app/fonts") extension. For the purpose of this tutorial, use a custom [Roboto font](https://www.fontsquirrel.com/fonts/roboto) for you to use.
+
+These fonts also have to be linked into the app's binary as [assets](https://github.com/rnpm/rnpm#advanced-usage) using [`rnmp`](https://github.com/rnpm/rnpm). You do this by adding the following to your extension's `app/package.json` file:
+
+```JSON{5-9}
+#file: app/package.json
+{
+  "name": "{{site.example.devName}}.restaurants",
+  "version": "0.0.1",
+  "description": "My first extension.",
+  "rnpm": {
+    "assets": [
+      "fonts"
+    ]
+  }
+}
+```
+
+> #### Note
+> In the above code snippet, `fonts` is the name of the folder: `app/fonts`.
+
+In order to be able to choose the font you've added through the Builder, it has to also be added to your theme's variables in the `server/themes/restaurantVariables.json` file. The custom font we've provided you with is called `Roboto` and we'll be using the `Roboto-Regular` version if it.
+
+```JSON{7}
+#file: server/themes/restaurantVariables.json
+"fontFamily": {
+  "enum": [
+    "Rubik-Regular",
+    "NotoSans",
+    "NotoSerif",
+    "MuktaVaani-Regular",
+    "Roboto-Regular"
+  ]
+},
+```
+
+After that, you can _push_ your extension to update the changes you've made on the Builder. After choosing your newly created theme you will be able to use the custom font you added:
+
+<p class="image">
+<img src='{{ site.url }}/img/tutorials/settings-theme/custom-font.png'/>
+</p>
+
+However, you won't be able to preview these changes in the Builder or using the **Shoutem Preview** app. This is because fonts are linked into the binary of the app, while the Builder and Shoutem Preview app previews have their own, unchangeable binary and only preview JavaScript bundle changes. So to be able to preview this you'll have to set up your local development environment so the custom font is linked into the local binary. You can find out how to do that [here]({{ site.url }}/docs/extensions/tutorials/setting-local-environment).
+
+Here you can see the difference between `Noto Serif` (left), a font included in our default theme, and our example custom font `Roboto Regular` (right):
+
+<p class="image">
+<img src='{{ site.url }}/img/tutorials/settings-theme/custom-font-difference.png'/>
+</p>
+
+## Adding a Custom Icon to the Builder
+
+Icons in the Builder are used to customize your app's icons in the Main navigation's different layouts:
+
+<p class="image">
+<img src='{{ site.url }}/img/tutorials/settings-theme/main-navigation-icons.png'/>
+</p>
+
+When creating an app, you may want to use your own custom icon for the Main navigation, for instance you want to add a restaurant related icon for your Restaurants extension's screen.
+
+There's two ways you can do this:
+- uploading your own icon to that app through the Builder
+  - makes the icon available to only that app
+- adding that icon to your own custom theme
+  - makes the icon available to any app with the theme extension installed and activated
+
+### 1) Uploading an icon to the Builder
+
+To do this, simply click on the icon you want to change to open the modal window in which you can choose the icon you want to use. You'll notice there's two categories: `Theme icons` and `My icons`.
+
+After selecting `My icons` you can see the list of icons you uploaded for that specific app. The disadvantage of using this method is that the icon will only exist for that app, while your extension might be installed in multiple apps.
+
+The `Theme icons` category refers to the icons from different themes. You can see that when comparing the icons that the [Rubicon theme](https://github.com/shoutem/extensions/tree/master/shoutem-rubicon-theme/server/assets/icons) (left) offers to the ones that the [Arno theme](https://github.com/shoutem/extensions/tree/master/shoutem-arno-theme/server/assets/icons) (right) offers:
+
+<p class="image">
+<img src='{{ site.url }}/img/tutorials/settings-theme/icon-theme-comparison.png'/>
+</p>
+
+> #### Note
+> These are not all the icons that are available. To see the full list of icons, check these links to the [Rubicon](https://github.com/shoutem/extensions/tree/master/shoutem-rubicon-theme/server/assets/icons) and [Arno](https://github.com/shoutem/extensions/tree/master/shoutem-arno-theme/server/assets/icons) themes.
+
+### 2) Adding an icon to your custom theme
+
+In order to add a custom icon to a theme, you'll have to create a `server/assets/icons` directory inside your extension's directory:
+
+```ShellSession
+$ cd server
+$ mkdir assets/icons
+```
+
+And then add your custom icon to it. The reason we use the server folder is because this is utilized by the server side, i.e. the Builder. You can see this structure in our [Rubicon theme]("https://github.com/shoutem/extensions/tree/master/shoutem-rubicon-theme/server/assets/icons").
+
+The icon you add should be a `.png` and `48x48` resolution. In this example tutorial we'll use the previously mentioned restaurant related icon, a plate and utensils.
+
+After creating the directory and adding your custom icon to it you have to modify the `extension.json` file to include icons:
+
+```JSON{6}
+#file: extension.json
+"themes": [{
+  "name": "restaurant",
+  "title": "Restaurant",
+  "variables": "@.restaurant"
+  "description": "Awesome restaurant theme!",
+  "icons": "server/assets/icons/",
+  "showcase": [
+    "server/assets/list.png",
+    "server/assets/details.png"
+  ]
+}],
+```
+
+You can see this in our [Rubicon theme]("https://github.com/shoutem/extensions/blob/master/shoutem-rubicon-theme/extension.json").
+
+Now you can simply _push_ to update your extension on Shoutem and once you open your Restaurants app in the Builder and check the Main navigation icons you can see your new icon under the `Theme icons` category.
+
+<p class="image">
+<img src='{{ site.url }}/img/tutorials/settings-theme/custom-icon.png'/>
+</p>
+
+The other icons you see are a copy of the icons provided by the [Rubicon theme]("https://github.com/shoutem/extensions/tree/master/shoutem-rubicon-theme/server/assets/icons"), this is because when you create a custom theme you're making a copy of Rubicon.

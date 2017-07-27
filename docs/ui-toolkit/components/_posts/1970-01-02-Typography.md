@@ -7,7 +7,7 @@ section: UI toolkit
 
 # Typography
 
-Typography components consist of several flavors of `Text` components with predefined styles. Available components are: 
+Typography components consist of several flavors of `Text` components with predefined styles. Available components are:
 
 ```JSX
 <Heading>...</Heading>
@@ -22,7 +22,7 @@ Typography components consist of several flavors of `Text` components with prede
 ## API
 
 #### Props
-* Every component in this section supports every `prop` that the standard React Native `Text` component supports (i.e. `numberOfLines`). See full list of available props on  React Native [Text component documentation](https://facebook.github.io/react-native/docs/text.html "React Native Text component documentation")  
+* Every component in this section supports every `prop` that the standard React Native `Text` component supports (eg. `numberOfLines`). You can see the full list of available props on React Native [Text component documentation](https://facebook.github.io/react-native/docs/text.html "React Native Text component documentation").
 
 #### Style names
 
@@ -30,7 +30,7 @@ Typography components consist of several flavors of `Text` components with prede
 * **bright**: Sets text color to the `Light` color set in the theme
 * **h-center**: Centers the text horizontally
 * **line-through**: Defines a line through the text
-* **multiline**: Increases line-height to allow text to wrap 
+* **multiline**: Increases line-height to allow text to wrap
 * **v-center**: Works only in combination with `multiline` styleName. Applies additional top and bottom margins to compensate the unsupported `textAlignVertical` prop on iOS
 
 
