@@ -33,7 +33,8 @@ Before going through this tutorial, make sure you've installed the following:
 - [git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
 - react-native-cli - `$ npm install -g react-native-cli`
 - shoutem-cli - `$ npm install -g @shoutem/cli`
-- OSX - > Coacoapods - `$ gem install coacoapods`
+- yarn - `$ npm install -g yarn`
+- OSX - > Coacoapods - `$ gem install cocoapods`
 
 > #### Note
 > If the above commands fail because of _permission_ issues, you need to run them with `sudo`, e.g.`sudo npm install -g <package-name>`.
