@@ -1,11 +1,11 @@
 ---
 layout: doc
 permalink: /docs/extensions/tutorials/debug-settings-pages
-title: Debug and local development of settings pages
+title: Debugging and local development of settings pages
 section: Tutorials
 ---
 
-# Debug and local development of settings pages
+# Debugging and local development of settings pages
 <hr />
 
 Settings pages are part of extensions that are rendered in Shoutem Builder and used for configuring app, adding content or other useful functionality that app owner could use for managing his/her app. During development of settings pages it is not very efficient to use `shoutem push` command in CLI on every change in code you implement. Also, if you notice or app owner report you issue it would be useful to quickly debug extension's settings page to find and fix error.

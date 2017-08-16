@@ -1,7 +1,7 @@
 ---
 layout: doc
 permalink: /docs/extensions/tutorials/writing-settings-page
-title: Settings page
+title: Writing Settings Pages
 section: Tutorials
 ---
 
@@ -49,7 +49,7 @@ Extension initialized!
 Locate to the extension folder:
 
 ```ShellSession
-cd hello-world-page
+cd {{ site.example.devName }}.hello-world-page
 ```
 
 ### Creating an HTML settings page
@@ -71,7 +71,7 @@ Page was added to `extension.json`:
   "version": "0.0.1",
   "title": "Hello!",
   "description": "Writing my first settings page!",
-  "platform": "1.0.*",
+  "platform": "1.1.*",
   "pages": [{
     "name": "HelloWorldPage",
     "type": "html",
@@ -200,7 +200,7 @@ A shortcut and screen were created and connected in `extension.json`. You have t
   "version": "0.0.1",
   "title": "Hello!",
   "description": "Writing my first settings page!",
-  "platform": "1.0.*",
+  "platform": "1.1.*",
   "shortcuts": [{
     "name": "ShowGreeting",
     "title": "Show Greeting",
@@ -390,7 +390,7 @@ Try changing the settings and see it change in the preview.
 
 ![Page with default settings]({{ site.url }}/img/tutorials/writting-settings-page/hello-tom.png "Page with default settings"){:.docs-component-image}
 
-## Creating a React settings page
+# Writing a React settings page
 
 Create a React.js `HelloWorldPage` settings page.
 
@@ -409,7 +409,7 @@ Page was added to `extension.json`:
   "version": "0.0.1",
   "title": "Hello!",
   "description": "Writing my first settings page!",
-  "platform": "1.0.*",
+  "platform": "1.1.*",
   "pages": [{
     "name": "HelloWorldPage",
     "type": "react-page",
@@ -425,7 +425,7 @@ server/
 ├ src
 |   ├ pages/
 |   |  └ hello-world-page
-|   |    ├ HelloWorldPage.js
+|   |    ├ HelloWorldPage.jsx
 |   |    ├ index.js
 |   |    └ style.css
 |   ├ index.js
@@ -441,7 +441,7 @@ As you can see your `HelloWorldPage` page is added under `pages/hello-world-page
 The template contains ordinary React lib with an addition of Shoutem libraries.
 
 ```JS
-#file: server/pages/HelloWorldPage/index.js
+#file: server/src/pages/hello-world-page/HelloWorldPage.jsx
 import React, { Component, PropTypes } from 'react';
 import {
   Button,
@@ -471,7 +471,7 @@ It's uses:
 Before diving into an explanation of the `HelloWorldPage` React component, let's see what it receives in props. It receives `props` passed from the parent core component and from `connect` that binds React component to the Redux store.
 
 ```JavaScript
-#file: server/pages/HelloWorldPage/index.js
+#file: server/pages/hello-world-page/HelloWorldPage.jsx
 function mapStateToProps(state, ownProps) {
   const { shortcutId } = ownProps;
 
@@ -499,7 +499,7 @@ The parent component passes a scope of information to the settings page dependin
 Now we can focus on the `HelloWorldPage` React component that contains the same concepts as any other React component. Particularly, the component renders an input field and a Save button for managing a greeting in shortcut settings.
 
 ```JavaScript
-#file: server/pages/HelloWorldPage/index.js
+#file: server/pages/hello-world-page/HelloWorldPage.jsx
 class HelloShortcutPage extends Component {
   static propTypes = {
     shortcut: PropTypes.object,
@@ -633,7 +633,7 @@ Shortcut and screen were created and connected in `extension.json`. Reference th
   "version": "0.0.1",
   "title": "Hello!",
   "description": "Writing my first settings page!",
-  "platform": "1.0.*",
+  "platform": "1.1.*",
   "shortcuts": [{
     "name": "ShowGreeting",
     "title": "Show Greeting",
