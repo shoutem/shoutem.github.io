@@ -281,7 +281,6 @@ import {
   View,
   Image,
   Divider,
-  Overlay,
   Tile,
 } from '@shoutem/ui';
 
@@ -293,10 +292,10 @@ export default class Details extends Component {
       <ScrollView style = {% raw %}{{marginTop:-70}}{% endraw %}>
         <Image styleName="large-portrait" source={% raw %}{{ uri: restaurant.image &&
         restaurant.image.url ? restaurant.image.url : undefined }}{% endraw %}>
-          <Overlay styleName="fill-parent">
+          <Tile>
             <Title>{restaurant.name}</Title>
             <Subtitle>{restaurant.address}</Subtitle>
-          </Overlay>
+          </Tile>
         </Image>
 
         <Row>
