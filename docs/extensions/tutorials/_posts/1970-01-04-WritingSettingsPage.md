@@ -99,20 +99,18 @@ File `index.html` includes the boilerplate HTML to get you going with developmen
     <link rel="stylesheet" href="https://static.shoutem.com/libs/web-ui/0.1.17/web-ui.css">
     <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
 <p>
-Hello World!
+    Hello World!
 </p>
 
 </body>
-
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
 <script src="https://static.shoutem.com/libs/web-ui/0.1.17/bootstrap.min.js"></script>
 <script src="https://static.shoutem.com/libs/iframe-resizer/3.5.8/iframeResizer.contentWindow.min.js"></script>
-<script src="https://static.shoutem.com/libs/api-sdk/0.1.6/api-sdk.js"></script>
-<script src="https://static.shoutem.com/libs/extension-sandbox/0.1.2/extension-sandbox.js"></script>
+<script src="https://static.shoutem.com/libs/api-sdk/1.0.0/api-sdk.min.js"></script>
+<script src="https://static.shoutem.com/libs/extension-sandbox/0.1.4/extension-sandbox.min.js"></script>
 <script src="index.js"></script>
 </html>
 ```
@@ -272,8 +270,8 @@ Our admin page is plain right now - it just shows _Hello World_. We want to enab
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
 <script src="https://static.shoutem.com/libs/web-ui/0.1.17/bootstrap.min.js"></script>
 <script src="https://static.shoutem.com/libs/iframe-resizer/3.5.8/iframeResizer.contentWindow.min.js"></script>
-<script src="https://static.shoutem.com/libs/api-sdk/0.1.6/api-sdk.js"></script>
-<script src="https://static.shoutem.com/libs/extension-sandbox/0.1.2/extension-sandbox.js"></script>
+<script src="https://static.shoutem.com/libs/api-sdk/1.0.0/api-sdk.min.js"></script>
+<script src="https://static.shoutem.com/libs/extension-sandbox/0.1.4/extension-sandbox.min.js"></script>
 <script src="index.js"></script>
 </html>
 ```
