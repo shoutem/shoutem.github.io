@@ -96,6 +96,7 @@ This section will cover the uses of the configuration script and associated comm
 $ shoutem configure
 
 > @shoutem/mobile-app@1.1.2 configure /path/to/Restaurants
+> node scripts/configure
 ...
 ```
 
@@ -109,13 +110,33 @@ The command should be called when:
 #### shoutem configure --release
 
 ```ShellSession
-$ shoutem configure
+$ shoutem configure --release
 
-> @shoutem/mobile-app@1.1.2 configure /path/to/Restaurants "--release"
+> @shoutem/mobile-app@1.1.2 configure /path/to/Restaurants
+> node scripts/configure "--release"
 ...
 ```
 
-This sets the `isRelease` flag in the each extension's configuration file, which makes extensions behave differently. Submitting an app without this to the store leaves the app open to changes made on the Builder, which could potentially crash the app. This step is a must when building your app for release.
+This command should be called when:
+- switching between development (`shoutem configure`) and last published (`shoutem configure --release`) configuration
+- when bundling assets into the app to improve performance for testing
+
+<br/>
+#### shoutem configure --production
+
+```ShellSession
+$ shoutem configure --release
+
+> @shoutem/mobile-app@1.1.2 configure /path/to/Restaurants
+> node scripts/configure "--production"
+...
+```
+
+This command should be called when:
+- switching between development (`shoutem configure`) and production (`shoutem configure --production`) configurations
+- when bundling assets into the app to improve performance for release
+- when preparing app for Apple App Store and Google Play Store Submission
+- when activating Shoutem features like CodePush, Push Notifications and Analytics
 
 ## Best Practises
 
