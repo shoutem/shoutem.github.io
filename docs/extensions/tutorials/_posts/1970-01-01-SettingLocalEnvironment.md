@@ -101,7 +101,7 @@ $ shoutem configure
 ```
 
 The command should be called when:
- - new extension is created, pushed and installed to the current app
+ - an extension is installed, updated or uninstalled
  - changing native code of any of the extensions from the `extensions` directory
  - changing cocoapods or gradle dependencies of any of the extensions from the `extensions` directory
  - switching between published (`shoutem configure --release`) and development (`shoutem configure`) configuration
@@ -118,14 +118,13 @@ $ shoutem configure --release
 ```
 
 This command should be called when:
-- switching between development (`shoutem configure`) and last published (`shoutem configure --release`) configuration
-- when bundling assets into the app to improve performance for testing
+- bundling assets into the app
 
 <br/>
 #### shoutem configure --production
 
 ```ShellSession
-$ shoutem configure --release
+$ shoutem configure --production
 
 > @shoutem/mobile-app@1.1.2 configure /path/to/Restaurants
 > node scripts/configure "--production"
@@ -133,10 +132,10 @@ $ shoutem configure --release
 ```
 
 This command should be called when:
-- switching between development (`shoutem configure`) and production (`shoutem configure --production`) configurations
-- when bundling assets into the app to improve performance for release
-- when preparing app for Apple App Store and Google Play Store Submission
-- when activating Shoutem features like CodePush, Push Notifications and Analytics
+- switching between development (`shoutem configure`) and last published (`shoutem configure --production`) configuration
+- bundling assets into the app
+- preparing app for [Apple App Store and Google Play Store Submission]({{ site.url }}/docs/extensions/tutorials/publish-your-app)
+- activating Shoutem features like CodePush, Push Notifications and Analytics
 
 ## Best Practises
 
