@@ -96,11 +96,12 @@ This section will cover the uses of the configuration script and associated comm
 $ shoutem configure
 
 > @shoutem/mobile-app@1.1.2 configure /path/to/Restaurants
+> node scripts/configure
 ...
 ```
 
 The command should be called when:
- - new extension is created, pushed and installed to the current app
+ - an extension is installed, updated or uninstalled
  - changing native code of any of the extensions from the `extensions` directory
  - changing cocoapods or gradle dependencies of any of the extensions from the `extensions` directory
  - switching between published (`shoutem configure --release`) and development (`shoutem configure`) configuration
@@ -109,13 +110,32 @@ The command should be called when:
 #### shoutem configure --release
 
 ```ShellSession
-$ shoutem configure
+$ shoutem configure --release
 
-> @shoutem/mobile-app@1.1.2 configure /path/to/Restaurants "--release"
+> @shoutem/mobile-app@1.1.2 configure /path/to/Restaurants
+> node scripts/configure "--release"
 ...
 ```
 
-This sets the `isRelease` flag in the each extension's configuration file, which makes extensions behave differently. Submitting an app without this to the store leaves the app open to changes made on the Builder, which could potentially crash the app. This step is a must when building your app for release.
+This command should be called when:
+- bundling assets into the app
+
+<br/>
+#### shoutem configure --production
+
+```ShellSession
+$ shoutem configure --production
+
+> @shoutem/mobile-app@1.1.2 configure /path/to/Restaurants
+> node scripts/configure "--production"
+...
+```
+
+This command should be called when:
+- switching between development (`shoutem configure`) and last published (`shoutem configure --production`) configuration
+- bundling assets into the app
+- preparing app for [Apple App Store and Google Play Store Submission]({{ site.url }}/docs/extensions/tutorials/publish-your-app)
+- activating Shoutem features like CodePush, Push Notifications and Analytics
 
 ## Best Practises
 

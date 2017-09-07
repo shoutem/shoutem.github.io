@@ -105,7 +105,11 @@ This is the manual process for publishing an iOS app to the App Store.
 
 ### Building your App
 
-To prepare your app for release, you will have to use `shoutem configure --release` in the cloned app's directory. After doing this short step, the build process is functionally identical to a [normal React Native app](https://medium.com/react-native-development/deploying-a-react-native-app-for-ios-pt-1-a79dfd15acb8).
+To prepare your app for release, you will have to use `shoutem configure --production` in the cloned app's directory. This will bundle the assets of the app as well as configure all relevant files to utilize Builder defined values (e.g. bundle ID, Push Notifications, Analytics, etc.).
+
+Furthermore, you can customize the bundle ID for your app via the `iosBundleId` and `androidApplicationId` properties in the `config.json` file in the cloned app's root directory. These settings override the Builder defined values.
+
+After doing this short step, the build process is functionally identical to a [normal React Native app](https://medium.com/react-native-development/deploying-a-react-native-app-for-ios-pt-1-a79dfd15acb8).
 
 ### Preparing for the Store
 
@@ -215,7 +219,11 @@ This is a manual process of publishing an android app in the Google Play Store.
 
 ### Building your app
 
-To prepare your app for release, you will have to use `shoutem configure --release` in the cloned app's directory. After doing this short step, the build process is functionally identical to a [normal React Native app](https://facebook.github.io/react-native/docs/signed-apk-android.html).
+To prepare your app for release, you will have to use `shoutem configure --production` in the cloned app's directory. This will bundle the assets of the app as well as configure all relevant files to utilize Builder defined values (e.g. bundle ID, Push Notifications, Analytics, etc.).
+
+Furthermore, you can customize the bundle ID for your app via the `iosBundleId` and `androidApplicationId` properties in the `config.json` file in the cloned app's root directory. These settings override the Builder defined values.
+
+After doing this short step, the build process is functionally identical to a [normal React Native app](https://facebook.github.io/react-native/docs/signed-apk-android.html).
 
 ### Preparing for Store
 
