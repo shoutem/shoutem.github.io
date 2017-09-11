@@ -1,141 +1,133 @@
 <!DOCTYPE html>
 <html lang="en-us">
 
-{% include head.html %}
-<link rel="stylesheet" type="text/css" href="{{ site.url }}/css/home.css">
+	{% include head.html %}
+
 </head>
 
 <body class="home">
+
 	{% include navbar.html %}
 
 	<div id="wrapper" class="home">      
 
-		<div class="container-fluid">
-			<div class="header row">
-				<div class="main col-xs-12">
-					<div class="shoutem-ani"></div> 
-					<div class="header-wrapper">
+		<header class="page-header">
+			<div class="container">
+				<h1 class="page-title">Supercharge your app development process</h1>
+				<h2 class="page-description">Develop React Native apps more efficiently 
+					with reusable and editable modules</h2>
+			</div>
+		</header>
 
-						<div class="header-text">
-							<h1 class="main-heading">A platform to build, publish, and manage native apps with ease</h1>
-							<h2 class="sub-heading">Build beautiful native apps with <strong>Shoutem</strong> and <strong>React Native</strong> in no time</h2>
-							<div class="os-icons">
-								<img src="img/ic_apple.svg" alt="" class="icon-apple" />
-								<img src="img/ic_android.svg" alt="" class="icon-android" />
+		<main class="page-content">
+
+			<section class="section--intro">
+
+				<div class="container">
+					<header class="section-header">
+						<h2 class="section-title">What is Shoutem?</h2>
+					</header>
+
+					<main class="section-content">
+						<div class="card">
+							<img src="/img/home/dev-builder.svg" />
+							<h3 class="card-title">App builder</h3>
+							<p class="card-description">
+								Web dashboard used for creating and managing 
+								native apps by non-technical users
+							</p>
+						</div>
+
+						<div class="card">
+							<img src="/img/home/dev-platform.svg" />
+							<h3 class="card-title">Platform for developers</h3>
+							<p class="card-description">
+								Open-sourced, extendable, well-documented 
+								and based entirely on top of React Native
+							</p>
+						</div>
+					</main>
+				</div>
+
+			</section>
+
+			<section class="section--detailed">
+
+				<div class="container">
+					<header class="section-header">
+						<h2 class="section-title">How does it work?</h2>
+					</header>
+
+					<main class="section-content">
+						<div class="card">
+							<img class="card-image" src="/img/home/1-st-step@2x.png" />
+							<div class="card-text">
+								<h3 class="card-title">1. Create a new app</h3>
+								<p class="card-description">
+									Use Shoutem Builder to create a blank app in 
+									no time or use one of our templates as a 
+									starting point
+								</p>
 							</div>
 						</div>
 
-					</div>
-				</div>
-			</div>
-
-			<div class="row blue-background section-step0 with-arrow">
-				<div class="section narrow">
-					<h2 class="section-header section-header--big">How does it work?</h2>
-					<ol class="flex-container steps">
-						<li>
-							<div class="step-title">1. Get a head start</div>
-							<div class="step-button arrow-box"><span class="center-v">Backend, 40+ extensions, push, analytics</span></div>
-						</li>
-						<li>
-							<div class="step-title">2. Customize</div>
-							<div class="step-button arrow-box"><span class="center-v">No limits, powered by React Native</span></div>
-						</li>
-						<li>
-							<div class="step-title">3. Automate maintenance</div>
-							<div class="step-button publish-button"><span class="center-v">Automated publishing and updates</span></div>
-						</li>
-					</ol>
-					<div class="section-footer">When was the last time you’ve heard that someone built eCommerce website from scratch? Hm…, like never. So why would you build an app from scratch?</div>
-				</div>
-			</div>
-
-			<div class="row section-customization">
-				<div class="section wider">
-					<h2 class="section-header">
-						Get a head start with Shoutem extensions
-					</h2>
-					{% include cards.html %}
-				</div>
-			</div>
-
-			<div class="row blue-background section-step2">
-				<div class="section wider">
-					<h2 class="section-header">
-						Customize without limits, it’s open source
-					</h2>
-					<div class="row">
-						<div class="col-sm-7 col-sm-offset-1 image-rn-code">
-							<img src="img/image-rn-code-combined@2x.png" alt="">
-						</div>
-						<ul class="col-md-4 bullet-points">
-							<li><span class="bullet-icon a"></span><span class="bullet-text">Customize our extensions or create your own</span></li>
-							<li><span class="bullet-icon b"></span><span class="bullet-text">Code, test and debug locally</span></li>
-							<li><span class="bullet-icon a"></span><span class="bullet-text react-native">100% JavaScript and <a href="https://facebook.github.io/react-native/" target="_blank">React Native <span class="bullet-icon react"></span></a></span></li>
-							<li><span class="bullet-icon a"></span><span class="bullet-text">Extensive documentation and developer tools</span></li>
-						</ul>
-					</div>
-				</div>
-			</div>
-
-			<div class="row section-step3">
-				<div class="section narrow">
-
-					<h2 class="section-header">Publish and update regularly with ease</h2>
-					<h3 class="section-sub-header">A CMS backend anyone can use</h3>
-				</div>
-
-				<div class="section fullwidth">
-
-					<div class="col col-md-5 text">
-						<div class="bullets-wrapper">
-							<div class="bullet-points">
-								<div class="bullet bullet-publish">
-									<h4>Publish to stores</h4>
-									<p>Publish automatically to App Store and Google Play</p>
-								</div>
-								<div class="bullet bullet-manage">
-									<h4>Manage content</h4>
-									<p>Grant moderator access to content managers</p>
-								</div>
-								<div class="bullet bullet-analyse">
-									<h4>Analyse and engage</h4>
-									<p>Analyze usage. Send push notifications</p>
-								</div>
+						<div class="card">
+							<img class="card-image" src="/img/home/2-nd-step.svg" />
+							<div class="card-text">
+								<h3 class="card-title">2. Add pre-developed features</h3>
+								<p class="card-description">
+									Our 40+ open-sourced and editable modules called
+									extensions allow you to reuse most commonly 
+									needed features, saving you time
+								</p>
 							</div>
 						</div>
-					</div>
 
-					<div class="col col-md-7 carousel">
-						<div class="images">
-							<img src="img/builder-shots/builder-shot-1.jpg"
-								srcset="img/builder-shots/builder-shot-1.jpg 1x,
-										img/builder-shots/builder-shot-1@2x.jpg 2x" />
+						<div class="card">
+							<img class="card-image" src="/img/home/3-rd-step.svg" />
+							<div class="card-text">
+								<h3 class="card-title">3. Pull and edit app code</h3>
+								<p class="card-description">
+									With Shoutem CLI you can pull the entire app 
+									code and continue on with development and 
+									changes locally
+									<br />
+									<code>$ shoutem clone</code>
+								</p>
+							</div>
 						</div>
-					</div>
 
+						<div class="card">
+							<img class="card-image" src="/img/home/4-th-step.svg" />
+							<div class="card-text">
+								<h3 class="card-title">4. Develop unique features</h3>
+								<p class="card-description">
+									Shoutem is based on top of React Native allowing
+									you to develop the rest of the app with pure 
+									native code in locally set up environment
+									<br />
+									<code>$ shoutem push</code>
+								</p>
+							</div>
+						</div>
+
+						<div class="card">
+							<img class="card-image" src="/img/home/5-th-step.svg" />
+							<div class="card-text">
+								<h3 class="card-title">5. Publish to stores automatically</h3>
+								<p class="card-description">
+									Once you’re done developing, Builder allows you 
+									and your clients to manage content and publish 
+									app to stores automatically or manually
+								</p>
+							</div>
+						</div>
+					</main>
 				</div>
-			</div>
 
-			<div class="row section-step4">
-				<div class="section section-featured">
-					<h2 class="section-header section-header--big">Featured Shoutem apps</h2>
+			</section>
 
-					<p>Shoutem apps are slick and fast. Best if experienced first-hand!</p>
-
-					<div class="featured-apps">
-
-						<a href="https://itunes.apple.com/us/app/brides-wedding-genius-5-1/id426415850" target="_blank">
-							<img src="img/featured/brides.png" alt="" />
-							<p>Brides Wedding Genius</p>
-						</a>
-
-					</div>
-					
-				</div>
-			</div>
-
-		</div>
+		</main>
 	</div>
 	
 	<div id="mobile-menu-overlay" class="mobile-menu-overlay">

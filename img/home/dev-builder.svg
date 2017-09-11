@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="240px" height="139px" viewBox="0 0 240 139" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: sketchtool 46.2 (44496) - http://www.bohemiancoding.com/sketch -->
+    <title>6408A372-422F-4B04-9F82-40C0E7D11C85</title>
+    <desc>Created with sketchtool.</desc>
+    <defs>
+        <path d="M29.4004054,0 L213.587146,0 L213.587146,-7.99360578e-15 C217.724694,-2.3453181e-14 221.078838,3.35414464 221.078838,7.49169174 L221.078838,129.515477 L221.078838,129.515477 C221.078838,133.653024 217.724694,137.007168 213.587146,137.007168 L29.4004054,137.007168 L29.4004054,137.007168 C25.2628583,137.007168 21.9087137,133.653024 21.9087137,129.515477 L21.9087137,7.49169174 L21.9087137,7.49169174 C21.9087137,3.35414464 25.2628583,-3.68083703e-15 29.4004054,-4.4408921e-15 Z" id="path-1"></path>
+        <polygon id="path-3" points="29.3877551 14.7176471 212.244898 14.7176471 212.244898 124.282353 29.3877551 124.282353"></polygon>
+    </defs>
+    <g id="----A1.12-SE-Web---Developers" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="A1.12-SE-Web---Developers-v16.5" transform="translate(-300.000000, -881.000000)">
+            <g id="Group-14" transform="translate(255.000000, 881.000000)">
+                <g id="dev_builder" transform="translate(45.000000, 0.000000)">
+                    <g id="Group-31">
+                        <path d="M0,135.739003 L0,134.516129 L240,134.516129 L240,135.739003 C236.442509,136.860767 232.640086,137.608079 228.592731,137.980938 C224.697266,138.339805 218.040748,139 203.147644,139 C152.596837,139 88.8493855,139 38.2985788,139 C25.3826293,139 14.5080965,138.285662 9.39181908,137.777126 C6.1773567,137.457623 3.04675034,136.778248 0,135.739003 Z" id="Body" fill-opacity="0.02" fill="#313C59"></path>
+                        <mask id="mask-2" fill="white">
+                            <use xlink:href="#path-1"></use>
+                        </mask>
+                        <use id="Mask" fill="#313D58" xlink:href="#path-1"></use>
+                        <g id="Window-Bar" mask="url(#mask-2)">
+                            <g transform="translate(28.875873, 8.524777)">
+                                <path d="M1.0890682,1.28698789 L182.791839,1.28698789 L182.791839,1.28698789 C183.11061,1.28698789 183.369025,1.54540279 183.369025,1.86417373 L183.369025,6.19287025 L0.511882364,6.19287025 L0.511882364,1.86417373 L0.511882364,1.86417373 C0.511882364,1.54540279 0.770297263,1.28698789 1.0890682,1.28698789 Z" id="Rectangle-39" fill="#DBDBDB"></path>
+                                <ellipse id="Oval-83" fill="#BABABA" cx="3.55209499" cy="3.05878462" rx="1" ry="1"></ellipse>
+                                <ellipse id="Oval-83" fill="#BABABA" cx="6.42923655" cy="3.05878462" rx="1" ry="1"></ellipse>
+                                <ellipse id="Oval-83" fill="#BABABA" cx="9.30637811" cy="3.05878462" rx="1" ry="1"></ellipse>
+                            </g>
+                        </g>
+                        <mask id="mask-4" fill="white">
+                            <use xlink:href="#path-3"></use>
+                        </mask>
+                        <g id="Mask">
+                            <use fill="#888FA1" xlink:href="#path-3"></use>
+                            <use fill-opacity="0.800000012" fill="#FFFFFF" xlink:href="#path-3"></use>
+                        </g>
+                    </g>
+                    <rect id="Rectangle-503" fill="#444F6C" x="29.3877551" y="24.5294118" width="16.3265306" height="99.7529412"></rect>
+                    <rect id="Rectangle-503" fill="#00AADF" x="29.3877551" y="14.7176471" width="16.3265306" height="9.81176471"></rect>
+                    <rect id="Rectangle-503" fill="#FFFFFF" x="45.7142857" y="14.7176471" width="166.530612" height="9.81176471"></rect>
+                    <rect id="Rectangle-503" fill="#FFFFFF" x="47.3469388" y="26.1647059" width="37.5510204" height="98.1176471"></rect>
+                    <rect id="Rectangle-503" fill="#FFFFFF" x="86.5306122" y="26.1647059" width="80" height="98.1176471"></rect>
+                    <rect id="Rectangle-448" fill="#FFFFFF" opacity="0.9" x="171.428571" y="39.2470588" width="35.9183673" height="70.3176471" rx="3.67519889"></rect>
+                    <rect id="Rectangle-509" fill="#444F6C" x="173.061224" y="45.7882353" width="32.6530612" height="57.2352941"></rect>
+                    <ellipse id="Oval-129" fill="#00AADF" cx="189.387755" cy="73.5882353" rx="6.53061224" ry="6.54117647"></ellipse>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

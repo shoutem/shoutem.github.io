@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+{% include head.html %}
+<link rel="stylesheet" type="text/css" href="{{ site.url }}/css/home.css">
+</head>
+
+<body class="home">
+	{% include navbar.html %}
+
+	<div id="wrapper" class="home">      
+
+		<div class="container-fluid">
+			<div class="header row">
+				<div class="main col-xs-12">
+					<div class="shoutem-ani"></div> 
+					<div class="header-wrapper">
+
+						<div class="header-text">
+							<h1 class="main-heading">A platform to build, publish, and manage native apps with ease</h1>
+							<h2 class="sub-heading">Build beautiful native apps with <strong>Shoutem</strong> and <strong>React Native</strong> in no time</h2>
+							<div class="os-icons">
+								<img src="img/ic_apple.svg" alt="" class="icon-apple" />
+								<img src="img/ic_android.svg" alt="" class="icon-android" />
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</div>
+
+			<div class="row blue-background section-step0 with-arrow">
+				<div class="section narrow">
+					<h2 class="section-header section-header--big">How does it work?</h2>
+					<ol class="flex-container steps">
+						<li>
+							<div class="step-title">1. Get a head start</div>
+							<div class="step-button arrow-box"><span class="center-v">Backend, 40+ extensions, push, analytics</span></div>
+						</li>
+						<li>
+							<div class="step-title">2. Customize</div>
+							<div class="step-button arrow-box"><span class="center-v">No limits, powered by React Native</span></div>
+						</li>
+						<li>
+							<div class="step-title">3. Automate maintenance</div>
+							<div class="step-button publish-button"><span class="center-v">Automated publishing and updates</span></div>
+						</li>
+					</ol>
+					<div class="section-footer">When was the last time you’ve heard that someone built eCommerce website from scratch? Hm…, like never. So why would you build an app from scratch?</div>
+				</div>
+			</div>
+
+			<div class="row section-customization">
+				<div class="section wider">
+					<h2 class="section-header">
+						Get a head start with Shoutem extensions
+					</h2>
+					{% include cards.html %}
+				</div>
+			</div>
+
+			<div class="row blue-background section-step2">
+				<div class="section wider">
+					<h2 class="section-header">
+						Customize without limits, it’s open source
+					</h2>
+					<div class="row">
+						<div class="col-sm-7 col-sm-offset-1 image-rn-code">
+							<img src="img/image-rn-code-combined@2x.png" alt="">
+						</div>
+						<ul class="col-md-4 bullet-points">
+							<li><span class="bullet-icon a"></span><span class="bullet-text">Customize our extensions or create your own</span></li>
+							<li><span class="bullet-icon b"></span><span class="bullet-text">Code, test and debug locally</span></li>
+							<li><span class="bullet-icon a"></span><span class="bullet-text react-native">100% JavaScript and <a href="https://facebook.github.io/react-native/" target="_blank">React Native <span class="bullet-icon react"></span></a></span></li>
+							<li><span class="bullet-icon a"></span><span class="bullet-text">Extensive documentation and developer tools</span></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+
+			<div class="row section-step3">
+				<div class="section narrow">
+
+					<h2 class="section-header">Publish and update regularly with ease</h2>
+					<h3 class="section-sub-header">A CMS backend anyone can use</h3>
+				</div>
+
+				<div class="section fullwidth">
+
+					<div class="col col-md-5 text">
+						<div class="bullets-wrapper">
+							<div class="bullet-points">
+								<div class="bullet bullet-publish">
+									<h4>Publish to stores</h4>
+									<p>Publish automatically to App Store and Google Play</p>
+								</div>
+								<div class="bullet bullet-manage">
+									<h4>Manage content</h4>
+									<p>Grant moderator access to content managers</p>
+								</div>
+								<div class="bullet bullet-analyse">
+									<h4>Analyse and engage</h4>
+									<p>Analyze usage. Send push notifications</p>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="col col-md-7 carousel">
+						<div class="images">
+							<img src="img/builder-shots/builder-shot-1.jpg"
+								srcset="img/builder-shots/builder-shot-1.jpg 1x,
+										img/builder-shots/builder-shot-1@2x.jpg 2x" />
+						</div>
+					</div>
+
+				</div>
+			</div>
+
+			<div class="row section-step4">
+				<div class="section section-featured">
+					<h2 class="section-header section-header--big">Featured Shoutem apps</h2>
+
+					<p>Shoutem apps are slick and fast. Best if experienced first-hand!</p>
+
+					<div class="featured-apps">
+
+						<a href="https://itunes.apple.com/us/app/brides-wedding-genius-5-1/id426415850" target="_blank">
+							<img src="img/featured/brides.png" alt="" />
+							<p>Brides Wedding Genius</p>
+						</a>
+
+					</div>
+					
+				</div>
+			</div>
+
+		</div>
+	</div>
+	
+	<div id="mobile-menu-overlay" class="mobile-menu-overlay">
+		<div class="close-menu-overlay"></div>
+		<ul class="navigation">
+			<li class="primary active"><a href="/">Home</a></li>
+			<li class="primary"><a href="{{ site.url }}/docs/extensions/tutorials/getting-started">Getting started</a></li>
+			<li class="primary"><a href="{{ site.url }}/docs/extensions/my-first-extension/introduction">My first extension</a></li>
+			<li class="primary"><a href="{{ site.url }}/docs/extensions/tutorials/setting-local-environment">Basics</a></li>
+			<li class="primary"><a href="{{ site.url }}/docs/extensions/tutorials/writing-settings-page">Advanced</a></li>
+			<li class="primary"><a href="{{ site.url }}/docs/extensions/reference/overview">Reference</a></li>
+			<li class="primary"><a href="{{ site.url }}/docs/ui-toolkit/introduction">Shoutem UI toolkit</a></li>
+			<li class="primary"><a href="{{ site.url }}/docs/cloud/introduction">Shoutem Cloud</a></li>
+			<li id="signup-button-menu" class="menu-button-signup"><a href="#signup" class="button-signup">Stay informed</a></li>
+			<li><a href="http://new.shoutem.com">Shoutem home</a></li>
+			<li><a href="http://new.shoutem.com/about">About</a></li>
+			<li><a href="http://new.shoutem.com/terms-of-service">Terms of service</a></li>
+			<li><a href="http://new.shoutem.com/about/contact-us">Contact us</a></li>
+		</ul>
+		<span class="pager"></span>
+	</div>
+
+	{% include footer.html %}
+	<script src="https://code.jquery.com/jquery-3.2.0.min.js" integrity="sha256-JAW99MJVpJBGcbzEuXk4Az05s/XyDdBomFqNlM3ic+I=" crossorigin="anonymous"></script>
+	<script src="{{ site.url }}/js/animation.js"></script>
+	<script src="{{ site.url }}/js/headroom.min.js"></script>
+	<script src="{{ site.url }}/js/dragdealer.min.js"></script>
+	<script src="{{ site.url }}/js/main.js"></script>
+	{% include ga.html %}
+</body>
+</html>

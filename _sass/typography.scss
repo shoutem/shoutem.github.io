@@ -60,4 +60,8 @@ body {
   /* makes font rendering the same on Windows/OSX/iOS/Android */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-family: MuseoSans, Helvetica, 'Helvetica Neue', 'Arial Narrow', Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.42857143;
+  color: #444f6c;
 }
