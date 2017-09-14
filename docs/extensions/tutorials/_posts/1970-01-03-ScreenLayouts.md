@@ -164,7 +164,7 @@ Success!
 ```
 
 > #### Note
-> If you don't have this extension installed on any app, you can install with `shoutem install`. Add the screen through the builder, import the CSV file as described in the bottom of [Using cloud storage]({{ site.url }}/docs/extensions/my-first-extension/using-cloud-storage) chapter and run the preview. If you don't have any restaurants set up, you won't see anything in the preview.
+> If you don't have this extension installed on any app, you can install with `shoutem install`. Add the screen through the builder, add a few CMS items (Restaurants), as described in [Using cloud storage]({{ site.url }}/docs/extensions/my-first-extension/using-cloud-storage), and run the preview. If you don't have any restaurants added, you won't see anything in the preview.
 
 By default, the layout will be the `List` screen. Switch to `Layout` and select **List with small images**. This is the result you should get:
 
