@@ -437,7 +437,7 @@ After that, you can _push_ your extension to update the changes you've made on t
 <img src='{{ site.url }}/img/tutorials/settings-theme/custom-font.png'/>
 </p>
 
-However, you won't be able to preview these changes in the Builder or using the **Shoutem Preview** app. This is because fonts are linked into the binary of the app, while the Builder and Shoutem Preview app previews have their own, unchangeable binary and only preview JavaScript bundle changes. So to be able to preview this you'll have to set up your local development environment so the custom font is linked into the local binary. You can find out how to do that [here]({{ site.url }}/docs/extensions/tutorials/setting-local-environment).
+However, you won't be able to preview these changes in the Builder. This is because fonts are linked into the binary of the app, while the Builder previews as a predefined binary and only previews JavaScript bundle changes. So to be able to preview this you'll have to set up your local development environment so the custom font is linked into the local binary. You can find out how to do that [here]({{ site.url }}/docs/extensions/tutorials/setting-local-environment).
 
 > #### Note
 > If your theme extension is already inside a _cloned_ app for local development, you will have to re-clone the app. Make sure you push all your local changes before cloning again!
