@@ -45,8 +45,12 @@ Check the `renderRow` method in `app/screens/ArticlesListScreen.js`:
   renderRow(article) {
     return (
       <ListArticleView
-        article={article}
-        onPress={this.openDetailsScreen}
+        key={article.id}
+        articleId={article.id}
+        title={article.title}
+        imageUrl={getLeadImageUrl(article)}
+        date={article.timeUpdated}
+        onPress={this.openArticleWithId}
       />
     );
   }
@@ -58,6 +62,7 @@ It uses the `ListArticleView` component. Customize the `render` method in that c
 #file: app/components/ListArticleView
 import React from 'react';
 import moment from 'moment';
+
 import {
   TouchableOpacity,
   Caption,
@@ -66,26 +71,10 @@ import {
   Title
 } from '@shoutem/ui';
 
+import { ListArticleView } from 'shoutem.news/components/ListArticleView';
 import { getLeadImageUrl } from 'shoutem.rss';
 
-/**
- * A component used to render a single list article item
- */
-export default class ListArticleView extends React.Component {
-  static propTypes = {
-    onPress: React.PropTypes.func,
-    article: React.PropTypes.object.isRequired,
-  };
-
-  constructor(props) {
-    super(props);
-    this.onPress = this.onPress.bind(this);
-  }
-
-  onPress() {
-    this.props.onPress(this.props.article);
-  }
-
+export class ListArticleView extends ArticleView {
   render() {
     const { article } = this.props;
     const dateFormat = moment(article.timeUpdated).isBefore(0) ?
@@ -95,18 +84,17 @@ export default class ListArticleView extends React.Component {
       <TouchableOpacity key={article.id} onPress={this.onPress}>
         <Image
           styleName="featured"
-          source={% raw %}{{ uri: getLeadImageUrl(article) }}{% endraw %}
+          source={% raw %}{{{% endraw %} uri: getLeadImageUrl(article) }}
         >
           <Tile>
             <Title styleName="md-gutter-bottom">{article.title}</Title>
-            <Caption>{dateFormat}</Caption>
+            {dateFormat}
           </Tile>
         </Image>
       </TouchableOpacity>
     );
   }
 }
-
 ```
 
 And that's it! Save it and push it to Shoutem:
@@ -164,13 +152,13 @@ $ cd {{ site.example.devName }}.news-rss
 Create a new screen which will extend the List screen from the original Shoutem **News RSS** extension:
 
 ```ShellSession
-$ shoutem screen add List
-Screen `List` is created in file `app/screens/List.js`!
+$ shoutem screen add ListWithBigPictures
+Screen `ListWithBigPictures` is created in file `app/screens/ListWithBigPictures.js`!
 File `app/extension.js` was modified.
 File `extension.json` was modified.
 ```
 
-Now we need to say which screen our `List` screen extends. Do this in `extension.json` in the `extends` field:
+Now we need to say which screen our `ListWithBigPictures` screen extends. Do this in `extension.json` in the `extends` field:
 
 ```JSON{9-11}
 #file: extension.json
@@ -181,7 +169,7 @@ Now we need to say which screen our `List` screen extends. Do this in `extension
   "description": "",
   "platform": "1.0.*",
   "screens": [{
-    "name": "List",
+    "name": "ListWithBigPictures",
     "title": "List with big pictures",
     "image": "./server/assets/large-news-list.png",
     "extends": "shoutem.rss-news.ArticlesGridScreen"
@@ -194,34 +182,36 @@ We extended `ArticlesGridScreen` from Shoutem's **News RSS** extension, since it
 > #### Note
 > If you can't remember the fields in `extension.json`, all of them are documented in the [reference]({{ site.url }}/docs/extensions/reference/extension).
 
-Let's implement our `List` screen. In `extension.json`, we are extending `ArticlesGridScreen`, but that's only for the layout selector. In the implementation, we actually want to _extend_ the `ArticlesListScreen`.
+Let's implement our `ListWithBigPictures` screen. In `extension.json`, we are extending `ArticlesGridScreen`, but that's only for the layout selector. In the implementation, we actually want to extend the `ArticlesListScreen`. Why? Because  `ArticlesListScreen` renders the `ListArticleView` component from Shoutem **News**.
 
-`ArticlesListScreen` renders the `ListArticleView` component from Shoutem **News RSS**. When overriding that method, we could immediately implement the `ListArticleView` functionality inside. However, since we want to get updates from the `ListArticleView` component too, we'll create a new component extending that one and use it in the overridden `renderRow` function.
+When overriding that method, we could immediately implement the `ListArticleView` functionality inside. However, since we want to get Shoutem's updates for the `ListArticleView` component too, we'll create a new component extending that one and use it in the overridden `renderRow` function.
 
 Create the `components` folder and a component file inside:
 
 ```ShellSession
 $ mkdir app/components
-$ touch app/components/Item.js
+$ touch app/components/BigPictureView.js
 ```
 
-Implement the `Item` component:
+Implement the `BigPictureView` component:
 
 ```javascript
-#file: app/components/Item.js
-import ListArticleView from 'shoutem.rss-news';
+#file: app/components/BigPictureView.js
+import React from 'react';
 import moment from 'moment';
+
 import {
   TouchableOpacity,
   Caption,
   Image,
   Tile,
-  Title
+  Title,
 } from '@shoutem/ui';
 
+import { ListArticleView } from 'shoutem.news/components/ListArticleView';
 import { getLeadImageUrl } from 'shoutem.rss';
 
-export default class Item extends ListArticleView {
+export class BigPictureView extends ListArticleView {
   render() {
     const { article } = this.props;
     const dateFormat = moment(article.timeUpdated).isBefore(0) ?
@@ -235,7 +225,7 @@ export default class Item extends ListArticleView {
         >
           <Tile>
             <Title styleName="md-gutter-bottom">{article.title}</Title>
-            <Caption>{dateFormat}</Caption>
+            {dateFormat}
           </Tile>
         </Image>
       </TouchableOpacity>
@@ -244,29 +234,42 @@ export default class Item extends ListArticleView {
 }
 ```
 
-We're importing `ListArticleView` from the `shoutem.rss-news` extension. That means it's in the public API of the extension and that you can find it in the `app/index.js` file. Always check what the public API of an extension is, either in the `README.md` file or in the source code.
-
-As the `app` folder from extension is what will be bundled in the app, you could have imported it directly from `shoutem.rss/components/ListArticleView`. However, that's not recommended as it means it's not in the public API and could be changed.
+We're importing `ListArticleView` from the `shoutem.news` extension, since the `app` folder is bundled into the overall app.
 
 We've implemented the new `render` function and deleted everything we didn't need to override from the `ListArticleView` component.
 
-Now, let's override the `renderRow` method in the screen:
+Now, let's override the `renderRow` method in the `ListWithBigPictures` screen:
 
 ```javascript
-#file: app/screens/List.js
-import { screens } from 'shoutem.rss-news';
-import { Item } from '../components/Item';
+#file: app/screens/ListWithBigPictures.js
+import React from 'react';
+import { connect } from 'react-redux';
+import { connectStyle } from '@shoutem/theme';
 
-export default class List extends screens.ArticlesListScreen {
+import {
+  ArticlesListScreen,
+  mapStateToProps,
+  mapDispatchToProps,
+} from 'shoutem.rss-news/screens/ArticlesListScreen';
+
+import { BigPictureView } from '../components/BigPictureView';
+import { ext } from '../extension';
+
+export class ListWithBigPictures extends ArticlesListScreen {
   renderRow(article) {
     return (
-      <Item
+      <BigPictureView
         article={article}
-        onPress={this.openDetailsScreen}
+        onPress={this.openArticleWithId}
+        articleId={article.id}
       />
     );
   }
 }
+
+export default connect(mapStateToProps, mapDispatchToProps)(
+  connectStyle(ext('ListWithBigPictures'))(ListWithBigPictures),
+);
 ```
 
 And we're done! Push the extension to Shoutem.
@@ -284,7 +287,7 @@ shoutem install --new "News App"
 ...
 ```
 
-Open your new app in the Builder. Now, add a screen from the Shoutem **News RSS** extension. Why that one? Because in our new extension, we only extended a screen and didn't create a new shortcut, so we couldn't add it's screen even if we wanted to! However, since both **News RSS** and **My news RSS** are installed in the app, the layout selector will recognize the new `List with big pictures` layout from **My news RSS** and show it in the layout list of Shoutem's **News RSS**.
+Open your new app in the Builder. Now, add a screen from the **Shoutem** News RSS extension. Why that one? Because in our new extension, we only extended a screen and didn't create a new shortcut, so we couldn't add it's screen even if we wanted to! However, since both **News RSS** and **My news RSS** are installed in the app, the layout selector will recognize the new `List with big pictures` layout from **My news RSS** and show it in the layout list of Shoutem's **News RSS**.
 
 Add an RSS feed in the **Content** tab, select the new layout in the **Layout** tab and run the app. This is what you should get (images and text vary with RSS feed):
 
