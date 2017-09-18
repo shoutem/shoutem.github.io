@@ -167,7 +167,7 @@ Now we need to say which screen our `ListWithBigPictures` screen extends. Do thi
   "title": "My news RSS",
   "version": "0.0.1",
   "description": "",
-  "platform": "1.0.*",
+  "platform": "1.*.*",
   "screens": [{
     "name": "ListWithBigPictures",
     "title": "List with big pictures",
