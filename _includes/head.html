@@ -35,6 +35,14 @@
   <meta name="twitter:site" content="@shoutem" />
   <meta name="twitter:image" content="{{ site.url }}/img/twitter-card-image.png" />
 
+  {% if layout.tipue_search_active %}
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="{{ "/js/tipuesearch_content.js" | relative_url }}"></script>
+  <link rel="stylesheet" href="{{ "/css/tipuesearch.css" | relative_url }}">
+  <script src="{{ "/js/tipuesearch_set.js" | relative_url }}"></script>
+  <script src="{{ "/js/tipuesearch.min.js" | relative_url }}"></script>
+  {% endif %}
+
   <!-- Hotjar Tracking Code for http://shoutem.com -->
   <script>
     (function(h,o,t,j,a,r){
