@@ -58,8 +58,8 @@ Check the `renderRow` method in `app/screens/ArticlesListScreen.js`:
 
 It uses the `ListArticleView` component. Customize the `render` method in that component to use `Tiles` and don't forget to import additional components from the `@shoutem/ui`. This is the complete code you should end up with:
 
-```JSX{7-8,38-46}
-#file: app/components/ListArticleView
+```JSX{7-8,24,27-30}
+#file: app/components/ListArticleView.js
 import React from 'react';
 import moment from 'moment';
 
