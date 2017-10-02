@@ -12,7 +12,7 @@ Settings pages are part of extensions that are rendered in Shoutem Builder and u
 
 ## Settings page development flow
 
-If you try to develop [settings pages]({{ site.url }}/docs/extensions/tutorials/writing-settings-page) you will know how to create extension, add settings page, reference it, push it so it's visible in Shoutem Builder. After that every change in code is only visible in Builder if you push changes with `shoutem push` and Builder reload in browser.
+If you try to develop [settings pages]({{ site.url }}/docs/extensions/tutorials/writing-react-settings-page) you will know how to create extension, add settings page, reference it, push it so it's visible in Shoutem Builder. After that every change in code is only visible in Builder if you push changes with `shoutem push` and reload the Builder in the browser.
 
 To make your development experience efficient and comfortable as much as possible we introduced `Debug` button on each settings page in Builder that you own as developer.
 
