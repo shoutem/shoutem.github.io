@@ -357,7 +357,7 @@ Open the `Style` tab and choose `Customize theme`. You can see that theme variab
 
 The only thing left to do is to use this variable in the theme file. Again, search for the `export default` statement:
 
-```JavaScript{11}
+```JavaScript{13}
 #file: app/themes/restaurant.js
 export default (customVariables = {}) => {
   const variables = {
