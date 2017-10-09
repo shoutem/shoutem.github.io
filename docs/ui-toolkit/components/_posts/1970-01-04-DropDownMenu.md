@@ -80,5 +80,4 @@ DropDownMenu is a full-screen contextual menu for displaying lists of items.
       </Screen>
     );
   }
-/>
 ```
