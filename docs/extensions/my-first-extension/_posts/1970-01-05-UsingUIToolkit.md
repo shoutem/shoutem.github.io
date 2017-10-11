@@ -149,15 +149,14 @@ Now create the Details screen:
 
 ```ShellSession
 $ shoutem screen add Details
-File `app/screens/Details.js` is created.
-File `app/extension.js` was modified.
-File `extension.json` was modified.
+? Screen name: Details
+? Create a shortcut (so that screen can be added through the Builder)? No
+Success
 ```
 
 We didn't create a `shortcut` since this screen isn't the starting screen your extension.
 
 Open the restaurants details screen in the `renderRow` function. The `navigateTo` action creator accepts Shoutem `route object` as the only argument with `screen` (full name of screen to navigate to) and `props` (passed to screen) properties. To get the full name of the screen, we'll use the `ext` function, which returns the full name of the extension part passed as its first argument (e.g. returns `tom.restaurants.Details` for `Details`) or the full extension name (e.g. `tom.restaurants`) if no argument is passed.
-
 
 ```JSX{2,5-8,16}
 #file: app/screens/List.js

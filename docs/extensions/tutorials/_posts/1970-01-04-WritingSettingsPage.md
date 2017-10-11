@@ -53,8 +53,11 @@ Create a plain (HTML and jQuery) settings `HelloWorldPage` page. Writing `React`
 
 ```ShellSession
 $ shoutem page add HelloWorldPage
-Page `HelloWorldPage` is created in `server/pages/HelloWorldPage` folder!
-File `extension.json` was modified.
+? Settings page type: html
+? Settings page name: HelloWorldPage
+? Settings page title: Hello World Page
+...
+Success
 ```
 
 Page was added to `extension.json`:
@@ -173,15 +176,14 @@ There are 3 places where we can show settings pages. We're going to use this pag
 Create a screen with a shortcut:
 
 ```ShellSession
-$ shoutem screen add GreetingScreen --shortcut ShowGreeting
-Enter shortcut information:
-Title: Show Greeting
-
-Screen `GreetingScreen` is created in file `app/screens/GreetingScreen.js`!
-Shortcut `ShowGreeting` is created!
-Shortcut `ShowGreeting` opens `GreetingScreen` screen.
-File `app/extension.js` was modified.
-File `extension.json` was modified.
+$ shoutem screen add GreetingScreen
+? Screen name: GreetingScreen
+? Create a shortcut (so that screen can be added through the Builder)? Yes
+? Shortcut name: ShowGreeting
+? Shortcut title: ShowGreeting
+? Shortcut description: A shortcut for GreetingScreen
+...
+Success
 ```
 
 Shortcut and screen were created and connected in `extension.json`. Reference the `HelloWorldPage` page in the `ShowGreeting` shortcut.

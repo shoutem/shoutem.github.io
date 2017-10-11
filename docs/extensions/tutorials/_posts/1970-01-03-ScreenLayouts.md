@@ -21,16 +21,16 @@ Let’s add one additional screen that will represent an alternative layout for 
 Switch over to the extension folder:
 
 ```ShellSession
-$ cd {{ site.example.devName }}.restaurants
+$ cd {{ site.example.devName }}.{{ site.example.extensionName }}
 ```
 
 Create an additional screen:
 
 ```ShellSession
 $ shoutem screen add SmallList
-Screen `SmallList` is created in file `app/screens/SmallList.js`!
-File `app/extension.js` was modified.
-File `extension.json` was modified.
+? Screen name: SmallList
+? Create a shortcut (so that screen can be added through the Builder)? No
+Success
 ```
 
 Again, notice how we didn't create a Shortcut. That's because SmallList isn't the starting screen of the extension, `List` is. Now extend the `List` screen and override its `renderRow` method. We're going to use the `Row` component from [UI toolkit]({{ site.url }}/docs/ui-toolkit/components/rows). This is the complete code for `SmallList.js` file with the main parts being highlighted.
