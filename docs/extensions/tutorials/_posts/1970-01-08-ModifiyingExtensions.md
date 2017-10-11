@@ -153,9 +153,9 @@ Create a new screen which will extend the List screen from the original Shoutem 
 
 ```ShellSession
 $ shoutem screen add ListWithBigPictures
-Screen `ListWithBigPictures` is created in file `app/screens/ListWithBigPictures.js`!
-File `app/extension.js` was modified.
-File `extension.json` was modified.
+? Screen name: ListWithBigPictures
+? Create a shortcut (so that screen can be added through the Builder)? No
+Success
 ```
 
 Now we need to say which screen our `ListWithBigPictures` screen extends. Do this in `extension.json` in the `extends` field:

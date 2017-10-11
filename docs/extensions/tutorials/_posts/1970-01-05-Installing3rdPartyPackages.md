@@ -38,16 +38,14 @@ Extension initialized!
 Let's switch over to the extension directory and add a screen with a shortcut that will show the Swiper.
 
 ```ShellSession
-$ cd swiper-extension
-$ shoutem screen add SwiperScreen --shortcut Swiper
-Enter shortcut information:
-Title: Swiper
-
-Screen `SwiperScreen` is created in file `app/screens/SwiperScreen.js`!
-Shortcut `Swiper` is created.
-Shortcut `Swiper` opens `SwiperScreen` screen.
-File `app/extension.js` was modified.
-File `extension.json` was modified.
+$ shoutem screen add SwiperScreen
+? Screen name: SwiperScreen
+? Create a shortcut (so that screen can be added through the Builder)? Yes
+? Shortcut name: Swiper
+? Shortcut title: Swiper
+? Shortcut description: A shortcut for SwiperScreen
+...
+Success
 ```
 
 ### Installing the Package
@@ -188,16 +186,14 @@ Extension initialized.
 Let's switch over to the extension directory and add a screen with a shortcut that will be the user interface for our QR Reader.
 
 ```ShellSession
-$ cd qr-reader-extension
-$ shoutem screen add QRReaderScreen --shortcut QRReader
-Enter shortcut information:
-Title: QR Reader
-
-Screen `QRReaderScreen` created in file `app/screens/QRReaderScreen.js`!
-Shortcut `QRReader` created.
-Shortcut `QRReader` opens `QRReaderScreen` screen.
-File `app/extension.js` was modified.
-File `extension.json` was modified.
+$ shoutem screen add QRReaderScreen
+? Screen name: QRReaderScreen
+? Create a shortcut (so that screen can be added through the Builder)? Yes
+? Shortcut name: QRReader
+? Shortcut title: QRReader
+? Shortcut description: A shortcut for QRReaderScreen
+...
+Success
 ```
 
 ### Installing the Package

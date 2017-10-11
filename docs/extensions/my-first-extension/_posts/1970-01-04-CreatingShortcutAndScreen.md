@@ -14,9 +14,14 @@ Since the app needs to know which screen to open first for some extension, we ne
 We created the List screen with a shortcut in [Getting Started]({{ site.url }}/docs/extensions/tutorials/getting-started) using:
 
 ```ShellSession
-$ shoutem screen add List --shortcut Restaurants
-Enter shortcut information:
-Title: Restaurants
+$ shoutem screen add List
+? Screen name: List
+? Create a shortcut (so that screen can be added through the Builder)? Yes
+? Shortcut name: {{ site.example.extensionName }}
+? Shortcut title: Restaurants
+? Shortcut description: A shortcut for List
+...
+Success
 ```
 
 The CLI modified the `extension.json` to include the screen and it's shortcut:

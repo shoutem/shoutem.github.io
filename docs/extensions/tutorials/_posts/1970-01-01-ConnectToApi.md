@@ -41,15 +41,14 @@ $ cd {{ site.example.devName }}.nasa
 Create a new starting screen and shortcut:
 
 ```ShellSession
-$ shoutem screen add PhotoDay --shortcut Photo
-Enter shorcut information:
-Title: Nasa Photo
-
-Screen `PhotoDay` is created in file `app/screens/PhotoDay.js`!
-Shortcut `Photo` is created!
-Shortcut `Photo` opens `PhotoDay` screen.
-File `app/extension.js` was modified.
-File `extension.json` was modified.
+$ shoutem screen add PhotoDay
+? Screen name: PhotoDay
+? Create a shortcut (so that screen can be added through the Builder)? Yes
+? Shortcut name: Photo
+? Shortcut title: Photo
+? Shortcut description: A shortcut for PhotoDay
+...
+Success
 ```
 
 Push the extension to Shoutem:
