@@ -15,7 +15,7 @@ This short tutorial covers how to improve your settings page development flow by
 
 ## Local development
 
-When you start developing settings pages, you'll quickly realize how much of a hassle it is to `shoutem publish` every change to see the updates on the Builder. To avoid this and enjoy a much more efficient development flow, you can simply do the following:
+When you start developing settings pages, you'll quickly realize that it's inpractical to shoutem publish every change to Shoutem just to see the updated settings page. To avoid this and enjoy a much more efficient development flow, you can simply do the following:
 
 1. Push, and install your extension in Shoutem Builder application (Only once)
 2. Locate to the `extName/server` directory and execute `npm run dev` to run the webpack dev server (Until you kill server there is no need to run it again)
