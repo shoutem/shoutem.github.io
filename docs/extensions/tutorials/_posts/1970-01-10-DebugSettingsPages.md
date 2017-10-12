@@ -8,7 +8,10 @@ section: Tutorials
 # Debugging and Local Development
 <hr />
 
-Settings pages are part of extensions that are rendered in Shoutem Builder and used for configuring app, adding content or other useful functionality that app owner could use for managing his/her app. During development of settings pages it is not very efficient to use `shoutem push` command in CLI on every change in code you implement. Also, if you notice or app owner report you issue it would be useful to quickly debug extension's settings page to find and fix error.
+This short tutorial covers how to improve your settings page development flow by utilizing the `Debug` feature in the Builder. It'll explain how to see code changes without having to `push` every code change and how to use dev tools to debug the settings pages through the Builder.
+
+> #### Note
+> HTML settings pages currently cannot use the `Debug` feature in the Builder.
 
 ## Local development
 
@@ -28,19 +31,23 @@ Chrome will show an error in the actual settings page iframe, stating that the w
 Safari will prompt you with an alert that Safari can't verify the identity of the website "localhost". Simply click `Continue` and Safari will then take you to the localhost site. After that, navigate back to the Builder using the back button and again click on the `Debug` button your settings page will be started and you can reload it after making changes to your local files.
 
 **Firefox**<br/>
-Firefox will show an error in the settings page iframe, stating that the connection isn't secure. Open this URL chrome://pippki/content/exceptionDialog.xul. In the `Location` field enter `localhost:4790`, check the `Permanently store this exception` checkbox and then click the `Confirm Security Exception` button. You can now successfully debug the settings page.
+Firefox will show an error in the settings page iframe, stating that the connection isn't secure. To resolve this, you'll have to pen this URL: chrome://pippki/content/exceptionDialog.xul.
 
-As we use React and Webpack dev server we have the hot module reload feature enabled, meaning that every time you save change sto your code in your editor, the server will rebundle it and reload it in the browser, so basically you have a live preview while you develop your settings page. There are some exceptions when it cannot work, like adding new npm module or file, but in that case just re-run dev server with and reload the Builder in your browser.
+In the `Location` field enter `localhost:4790`, check the `Permanently store this exception` checkbox and then click the `Confirm Security Exception` button. You can now successfully debug the settings page.
+
+Since we use React and Webpack dev server we have the hot module reload feature enabled, meaning that every time you save changes to your code in your editor, the server will re-bundle it and reload it in the browser, so basically you have a live preview while you develop your settings page. There are some exceptions when it cannot work, like adding new npm module or file, but in that case just re-run dev server with and reload the Builder in your browser.
 
 ## Debugging settings pages
 
-Debugging of settings pages should be done using the Debug feature explained in the section above. Once you enter debug mode, open the developer console (in Chrome keboard shortcut is F12) and use Console, Sources, Elements and Network tab to debug your code. You can put breakpoint on code lines of your `/src` folder files by opening the `Source` tab and use the `Ctrl + P` keyboard shortcut to open the search bar.
+Debugging of settings pages should be done using the Debug feature explained in the section above. Once you enter debug mode, open the developer console (in Chrome keyboard shortcut is F12) and use Console, Sources, Elements and Network tab to debug your code. You can put breakpoint on code lines of your `/src` folder files by opening the `Source` tab and use the `Ctrl + P` keyboard shortcut to open the search bar.
 
-|                | Normal | Debug |
-|----------------|:------:|:-----:|
-| Transpiled ES5 |   Yes  |   No  |
-| Bundled        |   Yes  |   No  |
-| Breakpoints    |   No   |  Yes  |
-| Stack Trace    |   No   |  Yes  |
+|                |   |   | Normal |   |   | Debug |
+|----------------|:-:|:-:|:------:|:-:|:-:|:-----:|
+| Transpiled ES5 |   |   |   Yes  |   |   |  No   |
+| Bundled        |   |   |   Yes  |   |   |  No   |
+| Breakpoints    |   |   |   No   |   |   |  Yes  |
+| Stack Trace    |   |   |   No   |   |   |  Yes  |
+
+<br/>
 
 Settings page debugging outside of debug mode is problematic, because the code is bundled in `extension.{hash}.js` and it's dependencies are in `vendor.{hash}.js` which the iframe loads. Webpack2 bundles and transpiles your code and we don't have to pass source maps. You can't easily put breakpoints or investigate the stack trace in such code.
