@@ -8,9 +8,9 @@ section: Tutorials
 # Advanced use cases in writing settings pages
 <hr />
 
-From previous tutorials you saw how to create a simple shortcut and extension settings page that enables the managing of shortcut and extension settings and how those settings are used in application.
+From the previous tutorials, you saw how to create a simple shortcut and extension settings page that enables the managing of shortcut and extension settings and how those settings are used in the app.
 
-In this section we will cover advanced use cases that are beyond only managing extension or shortcut settings. You can implement any functionality that you would usually implement in a standalone React app, you only need to be aware that settings page needs to be integrated with Shoutem Builder.
+In this section we will cover advanced use cases that are beyond only managing extension or shortcut settings. You can implement any functionality that you would usually implement in a standalone React app, you just have to to be aware that settings pages need to be integrated with the Shoutem Builder.
 
 ## Defining custom redux state
 
@@ -19,7 +19,7 @@ If you are implementing functionality beyond settings management, you will proba
 First add `redux.js` into your extension in the `server/src` directory, it will be used for implementing custom actions, selectors and reducers. Let's start with defining reducers:
 
 ```JS
-#file: server/redux.js
+#file: server/src/redux.js
 import { createScopedReducer } from '@shoutem/redux-api-sdk';
 
 function categories(state=[], action) {
@@ -70,30 +70,37 @@ For our custom example where we are trying to create to-do app. We defined two r
 Once we created and exported the root reducer we need to also export it in `server/src/index.js`. It's based on [Extension exports]({{ site.url }}/docs/extensions/reference/extension-exports) where all exports of extensions are defined.
 
 ```JS
-#file: server/index.js
+#file: server/src/index.js
+// Constants `screens`, `actions` and `reducer` are exported via named export
+// It is important to use those exact names
 import reducer from './redux.js';
 
 export { reducer };
+
+export * from './extension';
 ```
 
-Next, we want to access state during binding of our React Page component to Redux store using `connect`. `shoutem/redux-api-sdk` exposes selectors `getExtensionState`, `getShortcutState` and `getScreenState` that are used to access different parts of an extension's state. In the example, we are implementing shortcut settings page and we need a list of all categories defined in extension and a list of all todos for instance of shortcut. So let's add a new shortcut settings page `TodosPage` using Shoutem CLI:
+Next, we want to access state during binding of our React Page component to Redux store using `connect`. `shoutem/redux-api-sdk` exposes selectors `getExtensionState`, `getShortcutState` and `getScreenState` that are used to access different parts of an extension's state.
+
+In this example, we are implementing a shortcut settings page and we need a list of all categories defined in the extension and a list of all todos for instance of shortcut. So let's add a new screen and shortcut and a shortcut settings page for it using the CLI.
 
 ```ShellSession
-$ shoutem add page TodosPage
-Page `TodosPage` is created in `server/src/pages/todos-page` folder!
-File `extension.json` was modified.
-
-$ shoutem page add TodosPage
-? Page type: react
-? Page title: Todos Page
-? Select whether the page should be connected as a shortcut settings page or an
-extension settings page: shortcut
+$ shoutem page add
+? Settings page type: react
+? Settings page name: ToDo
+? Settings page title: ToDo
+? This settings page controls settings for: a new screen (creates a screen)
+? Screen name: ToDo
+? Create a shortcut (so that screen can be added through the Builder)? Yes
+? Shortcut name: ToDos
+? Shortcut title: ToDo's
+? Shortcut description: A shortcut for ToDo
 ...
-React settings page added to pages/hello-world-shortcut-page
+Success
 ```
 
  ```JS
- #file: server/src/pages/todos-page/TodosPage.js
+ #file: server/src/pages/to-do/ToDo.jsx
 import React from 'react';
 import { connect } from 'react-redux';
 import {

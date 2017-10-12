@@ -5,7 +5,7 @@ title: Writing HTML settings pages
 section: Tutorials
 ---
 
-# Writing a React settings page
+# Writing an HTML settings page
 
 In this tutorial, we'll show you how to create HTML Settings pages for both shortcut settings and extension settings pages. HTML settings pages are useful to developers who have an existing dashboard they want to implement into the Builder without having to re-write it into React. For example if they have an existing AngularJS based dashboard.
 
@@ -16,7 +16,7 @@ First, let's make an extension to work with. We'll make a simple `Hello World!` 
 ```ShellSession
 $ shoutem init html-hello-world
 Enter information about your extension. Press `return` to accept (default) values.
-? Title React Hello World
+? Title HTML Hello World
 ? Version 0.0.1
 ? Description Learning HTML settings pages.
 ...
@@ -33,11 +33,13 @@ And add the screen:
 
 ```ShellSession
 $ shoutem screen add Hello --shortcut Hello
-Screen `Hello` created in file `app/screens/Hello.js`!
-Shortcut Hello created.
-Shortcut Hello opens Hello screen.
-File `app/extension.js` was modified.
-File `extension.json` was modified.
+? Screen name: Hello
+? Create a shortcut (so that screen can be added through the Builder)? Yes
+? Shortcut name: Hello
+? Shortcut title: Hello
+? Shortcut description: A shortcut for Hello
+...
+Success
 ```
 
 Now let's create the actual settings page:
@@ -60,6 +62,7 @@ React settings page added to pages/hello-world-shortcut-page
 "shortcuts": [
   {
     "name": "Hello",
+    "title": "Hello",
     "screen": "@.Hello",
     "adminPages": [
       {
@@ -78,22 +81,23 @@ React settings page added to pages/hello-world-shortcut-page
 ]
 ```
 
- This is the new structure of `server` folder:
+This is the new structure of `server` folder:
 
 ```
 server/
 ├ pages/
-|  └ HelloWorldShortcutPage
+|  └ hello-world-shortcut-page
 |    ├ index.html
 |    ├ index.js
 |    └ style.css
+├ src/
 └ package.json
 ```
 
-It now contains a `pages` folder which hosts all your HTML settings pages. The `index.html` file includes the boilerplate HTML to get you started with the development of a settings page, including a `Hello World!` paragraph.
+It contains `src` and `pages` folders. The `src` is added by default when you initialize an extension, it doesn't affect HTML settings pages. The `pages` folder hosts all your HTML settings pages. Since we made a `shortcut` settings page, it includes a simple example settings pages that allows the app owner to enter the name of an person to be greeted in the app in the `index.html` file.
 
 ```HTML
-#file: server/pages/HelloWorldShortcutPage/index.html
+#file: server/pages/hello-world-shortcut-page/index.html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -104,15 +108,22 @@ It now contains a `pages` folder which hosts all your HTML settings pages. The `
 </head>
 <body>
 
-<p>
-    Hello World!
-</p>
+  <form id="hello-form" action="#">
+    <h3>Enter company name</h3>
+    <div class="form-group">
+      <label class="control-label" for="companyName">Company:</label>
+      <input id="companyName" name="companyName" type="text" class="form-control required">
+    </div>
+    <div class="footer">
+      <button class="btn btn-primary" type="submit">Save</button>
+    </div>
+  </form>
 
 </body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
 <script src="https://static.shoutem.com/libs/web-ui/0.1.17/bootstrap.min.js"></script>
 <script src="https://static.shoutem.com/libs/iframe-resizer/3.5.8/iframeResizer.contentWindow.min.js"></script>
-<script src="https://static.shoutem.com/libs/api-sdk/1.0.0/api-sdk.min.js"></script>
+<script src="https://static.shoutem.com/libs/api-sdk/1.1.2/api-sdk.min.js"></script>
 <script src="https://static.shoutem.com/libs/extension-sandbox/0.1.4/extension-sandbox.min.js"></script>
 <script src="index.js"></script>
 </html>
@@ -153,10 +164,41 @@ function onShoutemReady(event) {
 
 // Put your settings page logic here, executes when sandbox and DOM are initalized
 function onPageReady(config) {
+  function errorHandler(err) {
+    console.log('Something went wrong:', err);
+  }
+
+  function handleSubmit(e) {
+    // prevent default action and bubbling
+    e.preventDefault();
+    e.stopPropagation();
+
+    const greeting = $('#greetingName').val();
+
+    // updates current shortcut settings by patching with current settings
+    shoutem.api.shortcuts.updateSettings({ greeting })
+      .catch(errorHandler);
+
+    return false;
+  }
+
+  function initForm(settings) {
+    if(!settings) {
+      return;
+    }
+
+    $('#greetingName').val(settings.greeting);
+  }
+
+  $('button[type="submit"]').click(handleSubmit);
+
+  // shoutem.api knows current shortcut and returns promise with fetched settings
+  shoutem.api.shortcuts.getSettings()
+    .then(initForm, errorHandler);
 }
 ```
 
-Sandbox is a container where your settings page is loaded. Once it's ready, `onShoutemReady` is triggered. By default, logic for extracting the configuration for your extension and initializing jQuery is inside of that function. Write your own code after `onShoutemReady`.
+Sandbox is a container where your settings page is loaded. Once it's ready, `onShoutemReady` is triggered. By default, logic for extracting the configuration for your extension and initializing jQuery is inside that function. Write your own code after `onShoutemReady`.
 
 Finally, we have a simple CSS file `style.css` where you can store your custom CSS:
 
@@ -167,112 +209,34 @@ Finally, we have a simple CSS file `style.css` where you can store your custom C
 }
 ```
 
-This page is now created, but it's not referenced anywhere.
+This page is now created and referenced in the `Hello` shortcut in `extension.json`. Let's add our `greeting` setting to it and give it a default value:
 
-### Referencing settings page in the shortcut
-
-There are 3 places where we can show settings pages. We're going to use this page as a `shortcut settings page`.
-
-Create a screen with a shortcut:
-
-```ShellSession
-$ shoutem screen add GreetingScreen --shortcut ShowGreeting
-Enter shortcut information:
-Title: Show Greeting
-
-Screen `GreetingScreen` is created in file `app/screens/GreetingScreen.js`!
-Shortcut `ShowGreeting` is created!
-Shortcut `ShowGreeting` opens `GreetingScreen` screen.
-File `app/extension.js` was modified.
-File `extension.json` was modified.
-```
-
-A shortcut and screen were created and connected in `extension.json`. You have to reference your `HelloWorldShortcutPage` page in the `ShowGreeting` shortcut:
-
-```JSON{16-31}
+```json{12-14}
 #file: extension.json
-{
-  "name": "html-hello-world",
-  "title": "HTML Hello World",
-  "version": "0.0.1",
-  "description": "Learning HTML settings pages.",
-  "platform": "1.2.*",
-  "screens": [
-    {
-      "name": "Hello"
-    }
-  ],
-  "shortcuts": [
-    {
-      "name": "Hello",
-      "screen": "@.Hello",
-      "adminPages": [
-        {
-          "page": "@.HelloWorldShortcutPage",
-          "title": "Hello World Shortcut Page"
-        }
-      ],
-      "settings": {
-        "greeting": "Tom"
+"shortcuts": [
+  {
+    "name": "Hello",
+    "title": "Hello",
+    "screen": "@.Hello",
+    "adminPages": [
+      {
+        "page": "@.HelloWorldShortcutPage",
+        "title": "Hello World Shortcut Page"
       }
+    ],
+    "settings": {
+      "greeting": "Tom"
     }
-  ],
-  "pages": [
-    {
-      "name": "HelloWorldShortcutPage",
-      "path": "server/pages/hello-world-shortcut-page/index.html",
-      "type": "html"
-    }
-  ]
-}
+  }
+]
 ```
 
-We also added default settings in the `settings` property inside `adminPages`. These settings will be saved into the shortcut instance, once shortcut instance is added through the dashboard (a shortcut is actually what we see in the `Add Screen` modal). Read more about settings and default settings in the [Settings types]({{ site.url }}/docs/extensions/reference/settings-types) reference.
+When the app owner clicks `Save`, we want to save the settings entered into the `<input>` field. This is doneusing the two functions in `server/index.js`: `handleSubmit` and `initForm`. For simplified communication with the Shoutem API, such as updating and getting shortcut settings, use `api-sdk`. It puts the `shoutem` object into the global environment.
 
-These settings will be added to the input form we'll add to our settings page. For that, add an input `form` and a save `button` in `index.html`.
+Both these functions (and an `errorHandler`) are added into the `onPageReady` function when you generate a shortcut settings page.
 
-```HTML{12-21}
-#file: server/pages/HelloWorldShortcutPage/index.html
-<body>
-
-<form id="hello-form" action="#">
-  <h3>Choose your greeting:</h3>
-  <div class="form-group">
-    <label class="control-label" for="greetingName">Name:</label>
-    <input id="greetingName" name="greetingName" type="text" class="form-control required">
-  </div>
-  <div class="footer">
-    <button class="btn btn-primary" type="submit">Save</button>
-  </div>
-</form>
-
-</body>
-```
-
-When the app owner clicks `Save`, we want to save the settings entered into the `<input>` field. Once the settings page is loaded, access the shortcut settings (default ones when the app owner hasn't set anything).
-
-We'll do this using two functions in `server/index.js`: `handleSubmit` and `initForm`. For simplified communication with the Shoutem API, such as updating and getting shortcut settings, use `api-sdk`. It puts the `shoutem` object to the global environment.
-
-Here's the complete `server/index.js` code:
-
-```JS{17-49}
-#file: server/pages/HelloWorldShortcutPage/index.js
-// listen for Shoutem initialization complete
-document.addEventListener('shoutemready', onShoutemReady, false);
-
-// handler for Shoutem initialization finished
-function onShoutemReady(event) {
-  // config object containing builder extension configuration, can be accessed via event
-  // or by shoutem.sandbox.config
-  const config = event.detail.config;
-
-  // Waiting for DOM to be ready to initialize shoutem.api and call page start function
-  $(document).ready(function() {
-    shoutem.api.init(config.context);
-    onPageReady(config);
-  });
-};
-
+```JS
+#file: server/pages/hello-world-shortcut-page/index.js
 function onPageReady(config) {
   function errorHandler(err) {
     console.log('Something went wrong:', err);
@@ -308,9 +272,119 @@ function onPageReady(config) {
 }
 ```
 
-All that is left to do is to access the shortcut settings in the `Hello` screen.
+### Accessing the shortcut settings in the application
 
-```JS{13-14,18}
+The Shoutem CLI implemented the shortcut settings page into our pre-existing shortcut, all that is left to do is to access the settings in the `Hello` screen. Update the screen file:
+
+```JS
+#file: app/screens/Hello.js
+export default class Hello extends Component {
+  render() {
+    const { shortcut } = this.props;
+    const { greeting } = shortcut.settings;
+
+    return (
+      <View style={styles.container}>
+        <Text style={styles.text}>Hello {greeting}!</Text>
+      </View>
+    );
+  }
+}
+```
+
+Now let's publish and install the extension.
+
+```ShellSession
+$ shoutem push
+Uploading HTML Hello World extension to Shoutem...
+Success!
+```
+
+```ShellSession
+$ shoutem install --new "HTML Hello World"
+Extension installed
+See it in browser: {{ site.shoutem.builderURL }}/{{ site.example.appId }}
+```
+
+Our default setting applies and the app owner has an input form to change the `greeting` value.
+
+<p class="image">
+<img src='{{ site.url }}/img/tutorials/writting-settings-page/hello-tom-html.png'/>
+</p>
+
+## Extension settings pages
+
+Extension settings pages provide you with settings that you can pass to every part of the extension, so in our simple use case, we'll suppose the extension settings page lets the app owner determine which company the person being greeted is working for, as you can see from the input form.
+
+The key difference between extension and shortcut settings pages is where they're defined in the `extension.json`. They're defined on the same level as `shortcuts` and `pages`. Let's create an extension settings page.
+
+```ShellSession
+$ shoutem page add
+? Page type: html
+? Page name: HelloWorldExtensionPage
+? Page title: Hello World Extension Page
+? Select whether the page should be connected as a shortcut settings page or an
+extension settings page: extension
+...
+React settings page added to pages/hello-world-extension-page
+```
+
+The CLI added `HelloWorldExtensionPage` to the root level of `extension.json`, but let's add a default value.
+
+```json
+#file: extension.json
+"settingsPages": [
+  {
+    "page": "@.HelloWorldExtensionPage",
+    "title": "Hello World Extension Page"
+  }
+],
+"settings": {
+  "company": "Shoutem"
+}
+```
+
+The template page generated is pretty much identical to the one generated for `HelloWorldShortcutPage`, except the `shoutem.api` references `extensions` instead of `shortcuts`, and `company` instead of `greeting`.
+
+```JavaScript{6,9,18}
+#file: server/pages/hello-world-extension-page/index.js
+function handleSubmit(e) {
+  // prevent default action and bubbling
+  e.preventDefault();
+  e.stopPropagation();
+
+  const company = $('#companyName').val();
+
+  // updates extension settings by patching with current settings
+  shoutem.api.extensions.updateSettings({ company })
+    .catch(errorHandler);
+
+  return false;
+}
+
+...
+
+// shoutem.api returns promise with fetched settings
+shoutem.api.extensions.getSettings()
+  .then(initForm, errorHandler);
+```
+```HTML{2,4-5}
+#file: server/pages/hello-world-extension-page/index.html
+<form id="hello-form" action="#">
+  <h3>Enter company name</h3>
+  <div class="form-group">
+    <label class="control-label" for="companyName">Company:</label>
+    <input id="companyName" name="companyName" type="text" class="form-control required">
+  </div>
+  <div class="footer">
+    <button class="btn btn-primary" type="submit">Save</button>
+  </div>
+</form>
+```
+
+Let's retrieve that `company` value from the redux store and use it in our `Hello` screen.
+
+```JavaScript{11-15,19,25,42-53}
 #file: app/screens/Hello.js
 import React, {
   Component
@@ -322,14 +396,21 @@ import {
   View
 } from 'react-native';
 
-export default class Hello extends Component {
+import { connect } from 'react-redux';
+import { connectStyle } from '@shoutem/theme';
+import _ from 'lodash';
+import { getExtensionSettings } from 'shoutem.application';
+import { ext } from '../const';
+
+export class Greeting extends Component {
   render() {
-    const { shortcut } = this.props;
+    const { shortcut, company } = this.props;
     const { greeting } = shortcut.settings;
 
     return (
       <View style={styles.container}>
         <Text style={styles.text}>Hello {greeting}!</Text>
+        <Text style={styles.text}>You work for {company}.</Text>
       </View>
     );
   }
@@ -345,23 +426,31 @@ const styles = StyleSheet.create({
     fontSize: 20,
   },
 });
+
+export const mapStateToProps = (state) => {
+  const extensionSettings = getExtensionSettings(state, ext());
+  const company = _.get(extensionSettings, 'company');
+
+  return {
+    company
+  };
+};
+
+export default connect(mapStateToProps, undefined)(
+  connectStyle(ext('Greeting'))(Greeting),
+);
 ```
 
-Now let's upload and install the extension.
+Finally, let's push the new version of our `html-hello-world` extension that we've made to Shoutem and see our extension settings page in action.
 
 ```ShellSession
 $ shoutem push
-Uploading `Hello!` extension to Shoutem...
+Uploading HTML Hello World extension to Shoutem...
 Success!
 ```
-```ShellSession
-$ shoutem install --new "HTML Hello World"
-Extension installed
-See it in browser: {{ site.shoutem.builderURL }}/{{ site.example.appId }}
-```
-
-Our default setting applies and the app owner has an input form to change the `greeting` value.
 
 <p class="image">
-<img src='{{ site.url }}/img/tutorials/writting-settings-page/hello-tom.png'/>
+<img src='{{ site.url }}/img/tutorials/writting-settings-page/hello-tom-shoutem-html.png'/>
 </p>
+
+So what's the purpose of extension settings pages as opposed to shortcut? Well, in our simple example, we made an extension where the app owner can define which company he's addressing and then make each Screen he adds on the Builder greet a unique employee. Each screen added will address the company defined in the Extension settings pages, while the app owner can choose which employee each screen greets.
