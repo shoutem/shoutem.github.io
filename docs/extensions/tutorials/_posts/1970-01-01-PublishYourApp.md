@@ -11,7 +11,7 @@ You're satisfied with how your app looks and you want to **publish** it to the s
 
 There are 2 ways you can publish your app:
 - using the Shoutem automated app publishing tool
-- manually, using the Shoutem CLI
+- manually, as you would with any other React Native app
 
 Once your app is published, for any changes you do in the Builder (except for changes in data on Shoutem Cloud Storage) and want to get onto the live app, you will need to **republish** the app. Shoutem does the republishing automatically for you and most of the changes will be available seconds after you click the `Republish` button.
 
@@ -89,7 +89,7 @@ Once your app is live, you might want to change some data that's being used in t
 
 # Manual Publishing and Republishing
 
-If you want to have a complete overview of what publishing of your app looks like, you might want to publish your app manually. The process is a bit longer, but the Shoutem CLI removes some of the obstacles along the way. Here we describe the required steps for both stores.
+If you want to have a complete overview of what publishing of your app looks like, you might want to publish your app manually. The process is longer, but is functionally identical to publishing a regular React Native app. Here we describe the required steps for both stores.
 
 Also, it's not possible to manually publish to the App Store if you don't have an Apple Device (MacBook, Mac-Mini, MacPro).
 
@@ -105,24 +105,19 @@ This is the manual process for publishing an iOS app to the App Store.
 
 ### Building your App
 
-If you have all the requirements met, let's build your app. The result of this step is an unsigned build file (.ipa file), which you can use to submit your app to the store.
+To prepare your app for release, you will have to use `shoutem configure --production` in the cloned app's directory. This will bundle the assets of the app as well as configure all relevant files to utilize Builder defined values (e.g. bundle ID, Push Notifications, Analytics, etc.).
 
-To do this, use the Shoutem CLI command:
+Furthermore, you can customize the bundle ID for your app via the `iosBundleId` and `androidApplicationId` properties in the `config.json` file in the cloned app's root directory. These settings override the Builder defined values.
 
-```ShellSession
-$ shoutem build-ios
-  Select your app: Restaurants ({{ site.example.appId }})
-  ...
-```
-
-Your app's build file will be located in the current folder.
+After doing this short step, the build process is functionally identical to a [normal React Native app](https://medium.com/react-native-development/deploying-a-react-native-app-for-ios-pt-1-a79dfd15acb8).
 
 ### Preparing for the Store
 
 Once you have the build ready, you can start preparing your app for the store.
 
 #### Creating Certificates
-First you need to make an iOS distribution certificate and matching distribution provisioning profile for your app. Here's a short video tutorial on how to do it:
+
+You will need to make an iOS distribution certificate and matching distribution provisioning profile for your app. Here's a short video tutorial on how to do it:
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/Xh2nnjttOwo" frameborder="0" allowfullscreen></iframe>
 
@@ -130,9 +125,9 @@ You can also use [Apple's guide](https://developer.apple.com/library/content/doc
 
 #### Resigning App
 
-Using the created certificates, you'll need to resign your un/signed build file (.ipa) that you got in the Build step. You can do it quickly wtih the Terminal by using Fastlane's [sigh](https://github.com/fastlane/fastlane/tree/master/sigh) tool.
+Once you have an unsigned build (.ipa), you will need to resign it. You can do it quickly with the Terminal by using Fastlane's [sigh](https://github.com/fastlane/fastlane/tree/master/sigh) tool.
 
-Once sigh is installed, do:
+Once sigh is installed, use:
 
 ```ShellSession
 $ fastlane sigh resign
@@ -224,17 +219,11 @@ This is a manual process of publishing an android app in the Google Play Store.
 
 ### Building your app
 
-If you have all the requirements met, let's build your app. The result of this step is an unsigned build file (.apk file), which you can use to submit your app to the store.
+To prepare your app for release, you will have to use `shoutem configure --production` in the cloned app's directory. This will bundle the assets of the app as well as configure all relevant files to utilize Builder defined values (e.g. bundle ID, Push Notifications, Analytics, etc.).
 
-To do this, use the Shoutem CLI command:
+Furthermore, you can customize the bundle ID for your app via the `iosBundleId` and `androidApplicationId` properties in the `config.json` file in the cloned app's root directory. These settings override the Builder defined values.
 
-```ShellSession
-$ shoutem build-android
-  Select your app: Restaurants ({{ site.example.appId }})
-  ...
-```
-
-The build file will be located in the current folder.
+After doing this short step, the build process is functionally identical to a [normal React Native app](https://facebook.github.io/react-native/docs/signed-apk-android.html).
 
 ### Preparing for Store
 
@@ -242,7 +231,7 @@ Once you have the build ready, you can start preparing your app for store.
 
 #### App Signing and Zipalign
 
-You need to sign the build file (.apk) that you got from the Shoutem CLI. You need to sign your android apk with your own keystore. Here's the [official documentation](https://developer.android.com/studio/publish/app-signing.html) on how to do that.
+Once you have an unsigned build (.apk) you need to sign it with your own keystore. Here's the [official documentation](https://developer.android.com/studio/publish/app-signing.html) on how to do that.
 
 Basically, these are the steps you will need to do:
 
@@ -259,11 +248,11 @@ $ jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore mykey.keystor
 - myfile.apk is name of your .apk file
 - alias_name is the name of the key that you are using during signing process
 
-After your .apk file is signed, it's ready for the zipalign process
+After your .apk file is signed, it's ready for the zipalign process.
 
 ##### Zipalign
 
-1. Put your unaligned .apk file in the desired directory.
+1. Put your unaligned .apk file in the desired directory
 2. Navigate to android sdk build-tools directory and choose your desired sdk tools (for example 22.0.1):
 
 ```ShellSession
@@ -345,7 +334,6 @@ Select your `App Release` tab again and select `Edit release` under `Manage Prod
 </p>
 
 Scroll down, click on the `Review` button. Check your app details and if you are satisfied, click on the `Start rollout to production` button to publish your app in the `Google Play Store`. Clicking on the confirm button, you will publish your app in the Store!
-
 
 ### Manual Republish
 

@@ -21,16 +21,16 @@ Let’s add one additional screen that will represent an alternative layout for 
 Switch over to the extension folder:
 
 ```ShellSession
-$ cd restaurants
+$ cd {{ site.example.devName }}.{{ site.example.extensionName }}
 ```
 
 Create an additional screen:
 
 ```ShellSession
 $ shoutem screen add SmallList
-Screen `SmallList` is created in file `app/screens/SmallList.js`!
-File `app/extension.js` was modified.
-File `extension.json` was modified.
+? Screen name: SmallList
+? Create a shortcut (so that screen can be added through the Builder)? No
+Success
 ```
 
 Again, notice how we didn't create a Shortcut. That's because SmallList isn't the starting screen of the extension, `List` is. Now extend the `List` screen and override its `renderRow` method. We're going to use the `Row` component from [UI toolkit]({{ site.url }}/docs/ui-toolkit/components/rows). This is the complete code for `SmallList.js` file with the main parts being highlighted.
@@ -164,7 +164,7 @@ Success!
 ```
 
 > #### Note
-> If you don't have this extension installed on any app, you can install with `shoutem install`. Add the screen through the builder, import the CSV file as described in the bottom of [Using cloud storage]({{ site.url }}/docs/extensions/my-first-extension/using-cloud-storage) chapter and run the preview. If you don't have any restaurants set up, you won't see anything in the preview.
+> If you don't have this extension installed on any app, you can install with `shoutem install`. Add the screen through the builder, add a few CMS items (Restaurants), as described in [Using cloud storage]({{ site.url }}/docs/extensions/my-first-extension/using-cloud-storage), and run the preview. If you don't have any restaurants added, you won't see anything in the preview.
 
 By default, the layout will be the `List` screen. Switch to `Layout` and select **List with small images**. This is the result you should get:
 

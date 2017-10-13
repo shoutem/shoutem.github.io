@@ -19,7 +19,7 @@ The complete code for this extension is available in our [GitHub repository](htt
 
 ## Initialize the Extension
 
-Shoutem apps are made of extensions, so start by creating a new extension.
+Shoutem apps are made of extensions, so let's start by creating a new extension.
 
 ```ShellSession
 $ shoutem init nasa
@@ -35,21 +35,20 @@ Extension initialized!
 Switch over to the extension's folder:
 
 ```ShellSession
-$ cd nasa
+$ cd {{ site.example.devName }}.nasa
 ```
 
 Create a new starting screen and shortcut:
 
 ```ShellSession
-$ shoutem screen add PhotoDay --shortcut Photo
-Enter shorcut information:
-Title: Nasa Photo
-
-Screen `PhotoDay` is created in file `app/screens/PhotoDay.js`!
-Shortcut `Photo` is created!
-Shortcut `Photo` opens `PhotoDay` screen.
-File `app/extension.js` was modified.
-File `extension.json` was modified.
+$ shoutem screen add PhotoDay
+? Screen name: PhotoDay
+? Create a shortcut (so that screen can be added through the Builder)? Yes
+? Shortcut name: Photo
+? Shortcut title: Photo
+? Shortcut description: A shortcut for PhotoDay
+...
+Success
 ```
 
 Push the extension to Shoutem:
@@ -60,7 +59,7 @@ Uploading `NASA` extension to Shoutem...
 Success!
 ```
 
-Install that extension to a new app. You can do this through the Builder or directly through the CLI:
+Install that extension to a new app. You can create a new app on the Builder and then install the extension into that app, or directly create a new app through the CLI:
 
 ```ShellSession
 $ shoutem install --new NasaApp
@@ -77,11 +76,10 @@ Once this is done, go to the [Builder]({{ site.shoutem.builderURL }}) and add th
 
 ## Fetch the Photo
 
-Now let's fetch the photo into the screen. We'll use the Fetch API from JavaScript. This is the complete code from `app/screens/PhotoDay.js`
+Now let's fetch the photo into the screen. We'll use the Fetch API from JavaScript. This is the complete code from `app/screens/PhotoDay.js`.
 
 ```JavaScript
-#file app/screens/PhotoDay.js
-
+#file: app/screens/PhotoDay.js
 import React, {
   Component
 } from 'react';
@@ -149,7 +147,7 @@ export default class PhotoDay extends Component {
 }
 ```
 
-Push the changed extension to Shoutem:
+Push the changes you made to Shoutem:
 
 ```ShellSession
 $ shoutem push

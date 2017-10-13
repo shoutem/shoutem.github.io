@@ -6,15 +6,14 @@ section: My first extension
 ---
 
 # Using the UI Toolkit
-<hr />
 
-React Native exposes plain iOS and Android native components that you can use, but there's usually much work left to do just to make them look beautiful. Instead, you can use [@shoutem/ui](https://github.com/shoutem/ui), a set of customizable UI components. There are [plenty of components]({{ site.url }}/docs/ui-toolkit/components/typography) that you can use out of the box.
+React Native exposes plain iOS and Android native components that you can use, but there's usually a lot of work left to do just to make them look beautiful. Instead, you can use [@shoutem/ui](https://github.com/shoutem/ui), a set of customizable UI components. There are [plenty of components]({{ site.url }}/docs/ui-toolkit/components/typography) that you can use out of the box.
 
 ## Creating a Restaurants List
 
 Let's create a list of restaurants. Start by importing UI components from the toolkit.
 
-```javascript{5-19}
+```javascript{9-17,19}
 #file: app/screens/List.js
 import React, {
   Component
@@ -133,7 +132,7 @@ export class List extends Component {
     this.renderRow = this.renderRow.bind(this);
   }
 
-  getRestaurants() ...
+  getRestaurants() {...}
 }
 
 // connect screen to redux store
@@ -143,19 +142,21 @@ export default connect(
 )(List);
 ```
 
+> #### Note
+> Make sure that you remove the `default` from `export default class List extends Component` because there can only be one default export and we want `export default connect` to be it.
+
 Now create the Details screen:
 
 ```ShellSession
 $ shoutem screen add Details
-File `app/screens/Details.js` is created.
-File `app/extension.js` was modified.
-File `extension.json` was modified.
+? Screen name: Details
+? Create a shortcut (so that screen can be added through the Builder)? No
+Success
 ```
 
 We didn't create a `shortcut` since this screen isn't the starting screen your extension.
 
 Open the restaurants details screen in the `renderRow` function. The `navigateTo` action creator accepts Shoutem `route object` as the only argument with `screen` (full name of screen to navigate to) and `props` (passed to screen) properties. To get the full name of the screen, we'll use the `ext` function, which returns the full name of the extension part passed as its first argument (e.g. returns `tom.restaurants.Details` for `Details`) or the full extension name (e.g. `tom.restaurants`) if no argument is passed.
-
 
 ```JSX{2,5-8,16}
 #file: app/screens/List.js
@@ -279,7 +280,6 @@ import {
   View,
   Image,
   Divider,
-  Overlay,
   Tile,
 } from '@shoutem/ui';
 
@@ -291,10 +291,10 @@ export default class Details extends Component {
       <ScrollView style = {% raw %}{{marginTop:-70}}{% endraw %}>
         <Image styleName="large-portrait" source={% raw %}{{ uri: restaurant.image &&
         restaurant.image.url ? restaurant.image.url : undefined }}{% endraw %}>
-          <Overlay styleName="fill-parent">
+          <Tile>
             <Title>{restaurant.name}</Title>
             <Subtitle>{restaurant.address}</Subtitle>
-          </Overlay>
+          </Tile>
         </Image>
 
         <Row>
@@ -340,7 +340,13 @@ export default class Details extends Component {
 }
 ```
 
-Upload the extension:
+Now when you reload the app and tap on a restaurant in the list, this is what you get:
+
+<p class="image">
+<img src='{{ site.url }}/img/my-first-extension/extension-rich-details.png'/>
+</p>
+
+If you aren't previewing with an [emulator on your local machine]({{ site.url }}/docs/extensions/tutorials/setting-local-environment), you will have to _push_ the extension:
 
 ```ShellSession
 $ shoutem push
@@ -348,10 +354,4 @@ Uploading `Restaurants` extension to Shoutem...
 Success!
 ```
 
-Now when you preview the app and click on a restaurant in the list, this is what you get:
-
-<p class="image">
-<img src='{{ site.url }}/img/my-first-extension/extension-rich-details.png'/>
-</p>
-
-That's exactly what we wanted! However, your app is using static, local data. Let's connect it to the **Shoutem Cloud**.
+Looking at the preview, that's exactly what we wanted. However, your app is using static data. Let's connect it to the **Shoutem Cloud**.
