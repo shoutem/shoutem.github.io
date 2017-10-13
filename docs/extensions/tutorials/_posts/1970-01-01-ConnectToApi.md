@@ -1,11 +1,11 @@
 ---
 layout: doc
 permalink: /docs/extensions/tutorials/connecting-to-api
-title: Connecting to Third Party API
+title: Connecting to 3rd Party API
 section: Tutorials
 ---
 
-# Connecting to Third Party API
+# Connecting to 3rd Party API
 
 Since Shoutem apps are plain React Native apps, you can connect to any API. It's very simple to do [networking in React Native](https://facebook.github.io/react-native/docs/network.html). Basically, React Native enables you to use [Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) out of the box, a simple interface for communicating with API endpoints. If, however, you need something more sophisticated, you can use [Async Actions](https://github.com/reactjs/redux/blob/master/docs/advanced/AsyncActions.md) in Redux.
 

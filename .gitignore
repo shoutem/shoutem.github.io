@@ -21,3 +21,6 @@ _site/
 
 ### Sublime ###
 *.sublime-*
+
+### WebStorm ###
+.idea
