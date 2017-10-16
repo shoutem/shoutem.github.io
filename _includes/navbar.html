@@ -35,6 +35,7 @@
 
 		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 			<ul class="nav navbar-nav navbar-right">
+				{% if .page.title %}
 				<li>
 					<form class="navbar-search-form navbar-form navbar-right navbar-form-border" role="search">
 						<div class="form-group">
@@ -43,7 +44,6 @@
 						</div>
 					</form>
 				</li>
-				{% if .page.title %}
 				<li class="edit-link"><a href="https://github.com/shoutem/shoutem.github.io/blob/master/{{ page.path }}">Edit this page</li>
 				{% endif %}
 				<li id="documentationTab"><a class="navbar-nav--a--link" href="{{ site.baseurl }}/docs/extensions/tutorials/getting-started">Documentation</a></li>
