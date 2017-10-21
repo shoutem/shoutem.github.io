@@ -204,7 +204,7 @@ import {
 
 import { NavigationBar } from '@shoutem/ui/navigation';
 import { navigateTo } from '@shoutem/core/navigation';
-import { ext } from '../extension';
+import { ext } from '../const';
 import { connect } from 'react-redux';
 
 export class List extends Component {
