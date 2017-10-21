@@ -31,7 +31,7 @@ Our [@shoutem/redux-io](https://github.com/shoutem/redux-io) package has `reduce
 #file: app/reducer.js
 import { storage, collection } from '@shoutem/redux-io';
 import { combineReducers } from 'redux';
-import { ext } from './extension';
+import { ext } from './const';
 
 // combine reducers into one root reducer
 export default combineReducers({
