@@ -115,7 +115,7 @@ import {
   TouchableOpacity
 } from 'react-native';
 import { navigateTo } from '@shoutem/core/navigation';
-import { ext } from '../extension';
+import { ext } from '../const';
 ```
 
 [Connect](https://github.com/reactjs/react-redux/blob/master/docs/api.md#connectmapstatetoprops-mapdispatchtoprops-mergeprops-options) `navigateTo` action creator to redux store.
