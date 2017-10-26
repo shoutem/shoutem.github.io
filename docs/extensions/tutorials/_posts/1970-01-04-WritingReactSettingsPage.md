@@ -280,6 +280,7 @@ This page is now created and referenced in the `Hello` shortcut in `extension.js
   {
     "name": "Hello",
     "title": "Hello",
+    "description": "A shortcut for Hello",
     "screen": "@.Hello",
     "adminPages": [
       {
