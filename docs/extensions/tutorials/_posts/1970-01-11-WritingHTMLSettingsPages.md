@@ -32,7 +32,7 @@ cd {{ site.example.devName }}.html-hello-world
 And add the screen:
 
 ```ShellSession
-$ shoutem screen add Hello --shortcut Hello
+$ shoutem screen add Hello
 ? Screen name: Hello
 ? Create a shortcut (so that screen can be added through the Builder)? Yes
 ? Shortcut name: Hello
@@ -46,11 +46,11 @@ Now let's create the actual settings page:
 
 ```ShellSession
 $ shoutem page add HelloWorldShortcutPage
-? Page type: html
+? Page type: react
+? Page name: HelloWorldShortcutPage
 ? Page title: Hello World Shortcut Page
-? Select whether the page should be connected as a shortcut settings page or an
-extension settings page: shortcut
-? Shortcut this page should be used for: Hello
+? This settings page controls settings for: an existing screen
+? Select existing screen: Hello
 ...
 React settings page added to pages/hello-world-shortcut-page
 ```
@@ -63,6 +63,7 @@ React settings page added to pages/hello-world-shortcut-page
   {
     "name": "Hello",
     "title": "Hello",
+    "description": "A shortcut for Hello",
     "screen": "@.Hello",
     "adminPages": [
       {
@@ -217,6 +218,7 @@ This page is now created and referenced in the `Hello` shortcut in `extension.js
   {
     "name": "Hello",
     "title": "Hello",
+    "description": "A shortcut for Hello",
     "screen": "@.Hello",
     "adminPages": [
       {
@@ -323,8 +325,7 @@ $ shoutem page add
 ? Page type: html
 ? Page name: HelloWorldExtensionPage
 ? Page title: Hello World Extension Page
-? Select whether the page should be connected as a shortcut settings page or an
-extension settings page: extension
+? This settings page controls setting sfor: the 'html-hello-world' extension
 ...
 React settings page added to pages/hello-world-extension-page
 ```
