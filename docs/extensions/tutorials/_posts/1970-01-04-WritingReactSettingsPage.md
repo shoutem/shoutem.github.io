@@ -47,10 +47,10 @@ Now let's create the actual settings page:
 ```ShellSession
 $ shoutem page add HelloWorldShortcutPage
 ? Page type: react
+? Page name: HelloWorldShortcutPage
 ? Page title: Hello World Shortcut Page
-? Select whether the page should be connected as a shortcut settings page or an
-extension settings page: shortcut
-? Shortcut this page should be used for: Hello
+? This settings page controls settings for: an existing screen
+? Select existing screen: Hello
 ...
 React settings page added to pages/hello-world-shortcut-page
 ```
@@ -63,6 +63,7 @@ React settings page added to pages/hello-world-shortcut-page
   {
     "name": "Hello",
     "title": "Hello",
+    "description": "A shortcut for Hello",
     "screen": "@.Hello",
     "adminPages": [
       {
@@ -236,7 +237,7 @@ class HelloWorldShortcutPage extends Component {
     const { error, hasChanges, inProgress, greeting } = this.state;
 
     return (
-      <div className="hello-page">
+      <div className="hello-page settings-page">
         <form onSubmit={this.handleSubmit}>
           <FormGroup>
             <h3>Choose your greeting</h3>
