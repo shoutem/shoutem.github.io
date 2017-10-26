@@ -32,7 +32,7 @@ cd {{ site.example.devName }}.html-hello-world
 And add the screen:
 
 ```ShellSession
-$ shoutem screen add Hello --shortcut Hello
+$ shoutem screen add Hello
 ? Screen name: Hello
 ? Create a shortcut (so that screen can be added through the Builder)? Yes
 ? Shortcut name: Hello
