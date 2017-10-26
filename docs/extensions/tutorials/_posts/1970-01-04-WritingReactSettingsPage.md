@@ -280,6 +280,7 @@ This page is now created and referenced in the `Hello` shortcut in `extension.js
   {
     "name": "Hello",
     "title": "Hello",
+    "description": "A shortcut for Hello",
     "screen": "@.Hello",
     "adminPages": [
       {
@@ -344,8 +345,7 @@ $ shoutem page add
 ? Page type: react
 ? Page name: HelloWorldExtensionPage
 ? Page title: Hello World Extension Page
-? Select whether the page should be connected as a shortcut settings page or an
-extension settings page: extension
+? This settings page controls setting sfor: the 'react-hello-world' extension
 ...
 React settings page added to pages/hello-world-extension-page
 ```
