@@ -135,7 +135,7 @@ For bigger modifications, such as changing the data schema being used, it's not 
 
 ##### How to do it?
 
-[Here](https://github.com/shoutem/extension-examples/tree/master/extending-extension) is the open sourced extension as the final result of this chapter. Let's create a new extension:
+[Here](https://github.com/shoutem/extension-examples/tree/master/tom.extending-extension) is the open sourced extension as the final result of this chapter. Let's create a new extension:
 
 ```ShellSession
 $ shoutem init news-rss
