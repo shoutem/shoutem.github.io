@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="48px" height="48px" viewBox="0 0 48 48" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 45.1 (43504) - http://www.bohemiancoding.com/sketch -->
+    <title>about</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="A1.01.3-SE-Web---Home-(short)" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="about">
+            <rect id="bounds" fill-opacity="0" fill="#D8D8D8" x="0" y="0" width="48" height="48"></rect>
+            <path d="M24,39 C15.7157288,39 9,32.2842712 9,24 C9,15.7157288 15.7157288,9 24,9 C32.2842712,9 39,15.7157288 39,24 C39,32.2842712 32.2842712,39 24,39 Z M24,37.5 C31.4558441,37.5 37.5,31.4558441 37.5,24 C37.5,16.5441559 31.4558441,10.5 24,10.5 C16.5441559,10.5 10.5,16.5441559 10.5,24 C10.5,31.4558441 16.5441559,37.5 24,37.5 Z" id="Combined-Shape" fill="#7B8397" fill-rule="nonzero"></path>
+            <rect id="Rectangle-42" fill="#7B8397" x="23.25" y="22" width="1.5" height="8" rx="0.75"></rect>
+            <rect id="Rectangle-42-Copy" fill="#7B8397" x="23.25" y="18" width="1.5" height="1.5" rx="0.75"></rect>
+        </g>
+    </g>
+</svg>

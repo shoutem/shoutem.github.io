@@ -12,12 +12,12 @@
     .signup {
         text-align: center;
         background-color: #00AADF;
-
+        min-height: 400px;
         padding: 0 24px;
 
         .signup-title {
-            @include headline(45px, 60px, #fff);
-            font-weight: 100;
+            @include headline(32px, 60px, #fff);
+            font-weight: 300;
             text-align: center;
             padding-top: 80px;
             margin-bottom: 15px;
@@ -33,7 +33,9 @@
 
         .signup-description {
             color: rgba(#ffffff, 0.8);
-            line-height: 30px;
+            font-size: 18px;
+            font-weight: 300;
+            line-height: 1.56;
             max-width: 570px;
             margin: 0 auto 32px;
 
@@ -89,8 +91,7 @@
         }
 
         .signup-button {
-            width: 188px;
-            height: 56px;
+            color: #444f6c;
             border: 1px solid #fff;
             border-radius: 4px;
             background-color: #fff;
@@ -99,7 +100,7 @@
             font-weight: bold;
             font-size: 14px;
             letter-spacing: 1px;
-            padding: 0;
+            padding: 18px 28px 16px;
 
             @include easeLinear;
             

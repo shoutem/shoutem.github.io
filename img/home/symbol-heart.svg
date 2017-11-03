@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="58px" height="56px" viewBox="0 0 58 56" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 47.1 (45422) - http://www.bohemiancoding.com/sketch -->
+    <title>Heart</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-1">
+            <stop stop-color="#F4836F" offset="0%"></stop>
+            <stop stop-color="#E64C3C" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Heart" fill-rule="nonzero" fill="url(#linearGradient-1)">
+            <g id="hearts">
+                <path d="M28.947,55.486 C44.632,44.209 52.479,33.894 56.169,26.026 C60.48,16.833 56.73,5.437 47.324,1.613 C36.268,-2.88 28.947,7.486 28.947,7.486 C28.947,7.486 21.678,-2.907 10.623,1.588 C1.217,5.412 -2.533,16.808 1.778,26.001 C5.468,33.868 13.262,44.21 28.947,55.486 Z" id="Shape"></path>
+            </g>
+        </g>
+    </g>
+</svg>

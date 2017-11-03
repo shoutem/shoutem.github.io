@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="48px" height="48px" viewBox="0 0 48 48" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 47 (45396) - http://www.bohemiancoding.com/sketch -->
+    <title>Group 19@1x</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Resellers" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Shoutem-Web---Resellers" transform="translate(-235.000000, -2233.000000)">
+            <g id="Group-4" transform="translate(235.000000, 2233.000000)">
+                <g id="Group-19">
+                    <polygon id="Bounds" fill="#313B5A" opacity="0" points="0 0 48 0 48 48 0 48"></polygon>
+                    <path d="M18.7046925,35.2953075 C18.3155016,35.6844984 17.6818219,35.6818219 17.2880164,35.2880164 L8.81198359,26.8119836 C8.41876591,26.4187659 8.41514402,25.784856 8.81,25.39 L8.81,25.39 C9.20212217,24.9978778 9.84207108,25.0028307 10.2284145,25.3900853 L17.2915855,32.4699147 C17.682832,32.862084 18.3190193,32.8606335 18.7092557,32.4699726 L35.6707443,15.4900274 C36.0624554,15.0978901 36.695144,15.095144 37.09,15.49 L37.09,15.49 C37.4821222,15.8821222 37.4889893,16.5110107 37.0953075,16.9046925 L18.7046925,35.2953075 Z" id="Icon-Shape" fill="#00AADF"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
