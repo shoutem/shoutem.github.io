@@ -391,6 +391,10 @@ a {
         justify-content: space-between;
         position: relative;
 
+        @media (max-width: 960px) {
+            flex-direction: column-reverse;
+        }
+
         &::before,
         &::after {
             display: none;
@@ -414,8 +418,15 @@ a {
                 margin-bottom: 0;
             }
 
-            @media (max-width: 900px) {
-                opacity: 0.6;
+            @media (max-width: 960px) {
+                position: static;
+                width: 100%;
+                text-align: center;
+                margin-top: 48px;
+
+                img {
+                    max-width: 285px;
+                }
             }
         }
     }
@@ -425,6 +436,17 @@ a {
     margin-top: 54px;
     position: relative;
     z-index: 1;
+
+    @media (max-width: 959px) {
+        max-width: 500px;
+        margin-top: 32px;
+        padding-bottom: 48px;
+        text-align: center;
+
+        br {
+            display: none;
+        }
+    }
 }
 
 .btn-signup {
@@ -444,6 +466,14 @@ a {
     line-height: 1.17;
     margin: 0;
     color: #ffffff;
+
+    @media (max-width: 479px) {
+        font-size: 24px;
+        line-height: 1.5;
+        max-width: 340px;
+        margin-left: auto;
+        margin-right: auto;
+    }
 }
 
 .page-description {
@@ -452,6 +482,10 @@ a {
     line-height: 1.5;
     margin: 24px 0 0;
     color: #ffffff;
+
+    @media (max-width: 479px) {
+        max-width: 330px;
+    }
 }
 
 
@@ -468,6 +502,11 @@ section {
     line-height: 1.52;
     margin: 0;
     text-align: center;
+
+    @media (max-width: 479px) {
+        font-size: 24px;
+        line-height: 1.5;
+    }
 }
 
 .section-description {
@@ -503,6 +542,8 @@ section {
         margin: -40px 0 0;
         padding: 0;
 
+
+
         li {
             width: calc(100% / 3 - 20px);
             margin: 40px 0 0 30px;
@@ -512,8 +553,28 @@ section {
             text-overflow: ellipsis;
             color: #06a9df;
 
-            &:first-child,
-            &:nth-child(3n + 1) {
+            &:first-child {
+                margin-left: 0;
+            }
+
+            @media (min-width: 960px) {
+                &:nth-child(3n + 1) {
+                    margin-left: 0;
+                }
+            }
+
+            @media (max-width: 959px) {
+                width: calc(100% / 2 - 30px);
+            }
+
+            @media (min-width: 600px) and (max-width: 959px) {
+                &:nth-child(2n + 1) {
+                    margin-left: 0;
+                }
+            }
+
+            @media (max-width: 599px) {
+                width: 100%;
                 margin-left: 0;
             }
         }
@@ -569,6 +630,10 @@ section {
         box-shadow: none;
         text-align: left;
 
+        @media (max-width: 959px) {
+            flex-direction: column !important;
+        }
+
         + .card {
             margin-top: 64px;
         }
@@ -577,6 +642,17 @@ section {
     .card-image {
         width: 46%;
         max-width: 510px;
+
+        @media (max-width: 959px) {
+            width: 100%;
+            max-width: 100%;
+            text-align: center;
+
+            img {
+                width: 100%;
+                max-width: 480px;
+            }
+        }
     }
 
     .card-text {
@@ -590,9 +666,9 @@ section {
             content: counter(process);
             position: absolute;
             z-index: 0;
-            top: -35%;
+            top: 0;
             left: 50%;
-            transform: translateX(-55%);
+            transform: translate(-55%, -20%);
             color: #00aadf;
             font-size: 240px;
             font-weight: 700;
@@ -602,6 +678,18 @@ section {
 
             @media (max-width: 767px) {
                 transform: translate(-60%, -12%);
+            }
+        }
+
+        @media (max-width: 959px) {
+            width: 100%;
+            max-width: 480px;
+            margin-top: 24px;
+            text-align: center;
+            padding-left: 0 !important;
+
+            &::before {
+                display: none;
             }
         }
     }
@@ -813,6 +901,11 @@ section {
             margin-left: 15px;
             margin-right: 15px;
         }
+
+        @media (max-width: 479px) {
+            min-width: 100%;
+            padding: 40px 30px;
+        }
     }
 
     .card-image {
@@ -831,6 +924,12 @@ section {
         bottom: 38px;
         left: 40px;
         width: calc(100% - 80px);
+
+        @media (max-width: 479px) {
+            position: static;
+            margin-top: 32px;
+            width: auto;
+        }
     }
 
     .card-person-text {
@@ -867,7 +966,16 @@ section {
     }
 
     @media (max-width: 900px) {
-        background-image: none;
+        background-position: center 35%;
+        background-size: 420px;
+
+        .section-content {
+            padding-top: 220px;
+        }
+    }
+
+    @media (max-width: 479px) {
+        background-position: center 32%;
     }
 
     .container {
