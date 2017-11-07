@@ -14,9 +14,14 @@ Since the app needs to know which screen to open first for some extension, we ne
 We created the List screen with a shortcut in [Getting Started]({{ site.url }}/docs/extensions/tutorials/getting-started) using:
 
 ```ShellSession
-$ shoutem screen add List --shortcut Restaurants
-Enter shortcut information:
-Title: Restaurants
+$ shoutem screen add List
+? Screen name: List
+? Create a shortcut (so that screen can be added through the Builder)? Yes
+? Shortcut name: {{ site.example.extensionName }}
+? Shortcut title: Restaurants
+? Shortcut description: A shortcut for List
+...
+Success
 ```
 
 The CLI modified the `extension.json` to include the screen and it's shortcut:
@@ -83,14 +88,11 @@ On the other hand, `app/extension.js` is managed by the CLI and you should not c
 
 ## Previewing Extension Code Changes
 
-
 We already did this in [Getting Started]({{ site.url }}/docs/extensions/tutorials/getting-started), but let's elaborate on it. Since the app is managed through the Builder, we needed to `push` the extension to Shoutem and `install` it into our app so we can use and preview it in the Builder.
 
 We then opened the app in the Builder and added the extension's screen to Main navigation. Installing new extensions and adding their shortcuts to the app requires you to reconfigure your local clone, which we also did using `shoutem configure`.
 
-Let's preview your app again. We can preview it in the Builder, but it might take some time while Builder bundles the entire app again. Every time you change an extension, you'd have to _push_ it again and then the Builder would need to re-bundle the whole app to add the changes. It's much faster to use the **Shoutem Preview** app (available for [iOS]({{ site.shoutem.previewAppiOS }}) and [Android]({{ site.shoutem.previewAppAndroid }})) and the Shoutem CLI, which can bundle just the changes made in the extension instead of re-bundling the entire app, like the Builder would.
-
-You can also run your apps on local emulators the same way with regular React Native apps, using `react-native run-ios` and `react-native run-android`. We have a [tutorial]({{ site.url }}/docs/extensions/tutorials/setting-local-environment) that offers an in-depth explanation on all the ways you can develop locally.
+Let's preview your app again. We can preview it in the Builder, but it might take some time while the Builder bundles the entire app again. Every time you change an extension, you'd have to _push_ it again and then the Builder would need to re-bundle the whole app to add the changes. It's much faster to [set up your local environment]({{ site.url }}/docs/extensions/tutorials/setting-local-environment) and simply use `react-native run-ios` or `react-native run-android`.
 
 Let's preview the app and see where we stopped in [Getting Started]({{ site.url }}/docs/extensions/tutorials/getting-started).
 

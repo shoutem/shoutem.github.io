@@ -29,12 +29,13 @@
   <link rel="apple-touch-icon" sizes="120x120" href="{{ site.url }}/img/apple-touch-icon@2x.png">
   <link rel="apple-touch-icon" sizes="152x152" href="{{ site.url }}/img/apple-touch-icon-ipad@2x.png">
   <link rel="apple-touch-icon" sizes="180x180" href="{{ site.url }}/img/apple-touch-icon@3x.png">
-
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.css" />
+  
   <meta property="og:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}" /> 
   <meta property="og:image" content="{{ site.url }}/img/og-image.jpg" />
   <meta property="og:description" content="{{ site.description }}" /> 
   <meta property="og:url" content="{% if page.url %}{{ page.url }}{% else %}{{ site.url }}{% endif %}">
-
+  
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:description" content="{{ site.description }}" />
   <meta name="twitter:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}" />

@@ -115,7 +115,7 @@ import {
   TouchableOpacity
 } from 'react-native';
 import { navigateTo } from '@shoutem/core/navigation';
-import { ext } from '../extension';
+import { ext } from '../const';
 ```
 
 [Connect](https://github.com/reactjs/react-redux/blob/master/docs/api.md#connectmapstatetoprops-mapdispatchtoprops-mergeprops-options) `navigateTo` action creator to redux store.
@@ -149,15 +149,14 @@ Now create the Details screen:
 
 ```ShellSession
 $ shoutem screen add Details
-File `app/screens/Details.js` is created.
-File `app/extension.js` was modified.
-File `extension.json` was modified.
+? Screen name: Details
+? Create a shortcut (so that screen can be added through the Builder)? No
+Success
 ```
 
 We didn't create a `shortcut` since this screen isn't the starting screen your extension.
 
 Open the restaurants details screen in the `renderRow` function. The `navigateTo` action creator accepts Shoutem `route object` as the only argument with `screen` (full name of screen to navigate to) and `props` (passed to screen) properties. To get the full name of the screen, we'll use the `ext` function, which returns the full name of the extension part passed as its first argument (e.g. returns `tom.restaurants.Details` for `Details`) or the full extension name (e.g. `tom.restaurants`) if no argument is passed.
-
 
 ```JSX{2,5-8,16}
 #file: app/screens/List.js
@@ -205,7 +204,7 @@ import {
 
 import { NavigationBar } from '@shoutem/ui/navigation';
 import { navigateTo } from '@shoutem/core/navigation';
-import { ext } from '../extension';
+import { ext } from '../const';
 import { connect } from 'react-redux';
 
 export class List extends Component {
@@ -347,7 +346,7 @@ Now when you reload the app and tap on a restaurant in the list, this is what yo
 <img src='{{ site.url }}/img/my-first-extension/extension-rich-details.png'/>
 </p>
 
-If you aren't previewing with the Shoutem Preview app or an emulator on your machine, you will have to _push_ the extension:
+If you aren't previewing with an [emulator on your local machine]({{ site.url }}/docs/extensions/tutorials/setting-local-environment), you will have to _push_ the extension:
 
 ```ShellSession
 $ shoutem push

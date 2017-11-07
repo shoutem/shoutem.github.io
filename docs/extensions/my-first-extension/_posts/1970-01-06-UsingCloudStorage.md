@@ -114,7 +114,7 @@ Currently, your schema only has the `name` property, which we'll use for each re
 }
 ```
 
-To enter data for your schema, you need to use settings page. Basically, the [settings pages]({{ site.url }}/docs/extensions/tutorials/writing-settings-page) are web pages on the Builder. Extension developers write them to enable app owners to manage their extensions.
+To enter data for your schema, you need to use settings page. Basically, the [settings pages]({{ site.url }}/docs/extensions/tutorials/settings-pages-introduction) are web pages on the Builder. Extension developers write them to enable app owners to manage their extensions.
 
 Shoutem prepared a CMS settings page inside the [shoutem.cms](https://github.com/shoutem/extensions/tree/master/shoutem-cms) extension that you can use to manage data for your `schema` on the Shoutem Cloud. Reference that settings page in the `Restaurants` shortcut and pass it the `Restaurants` schema. The page will appear when an app owner selects the `Restaurants` shortcut on the Builder:
 

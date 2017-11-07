@@ -100,15 +100,15 @@ A shortcut is the pointer to the starting screen of an extension. When you add s
 
 ```ShellSession
 $ cd {{ site.example.devName }}.restaurants
-$ shoutem screen add List --shortcut Restaurants
-Enter shortcut information:
-Title: Restaurants
 
-Screen `List` is created in file `app/screens/Hello.js`!
-Shortcut `Restaurants` is created!
-Shortcut `Restaurants` opens `List` screen.
-File `app/extension.js` was modified.
-File `extension.json` was modified.
+$ shoutem screen add List
+? Screen name: List
+? Create a shortcut (so that screen can be added through the Builder)? Yes
+? Shortcut name: Restaurants
+? Shortcut title: Restaurants
+? Shortcut description: A shortcut for List
+...
+Success
 ```
 
 The previous command created a `List` screen in `app/screens/List.js` file. Any time you make a new screen it'll be a simple _Hello World_ screen. To fit the app, let's change the screen so it says `Let's eat!` instead of `Hello World!`:

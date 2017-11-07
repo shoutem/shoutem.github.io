@@ -20,7 +20,7 @@ Before we dive into settings types, let’s refresh our memory on extension conc
 
 ##### Settings pages
 
-Settings pages are web pages written by extension developers, and they appear in Shoutem builder. Their purpose is to enable app owners extension customizations through settings. Check the [tutorial on how to create a settings page]({{ site.url }}/docs/extensions/tutorials/writing-settings-page) for more info. Settings pages are exported via the `pages` field in `extension.json` and can be used on 3 different places which determine settings type.
+Settings pages are web pages written by extension developers, and they appear in Shoutem builder. Their purpose is to enable app owners extension customizations through settings. Check the [tutorial on how to create a settings page]({{ site.url }}/docs/extensions/tutorials/settings-pages-introduction) for more info. Settings pages are exported via the `pages` field in `extension.json` and can be used on 3 different places which determine settings type.
 
 ##### Settings types
 
@@ -41,7 +41,7 @@ Updating the default settings in `extension.json` **will not** update the defaul
 
 ##### Manipulation of settings
 
-Settings can be manipulated using the [@shoutem/api-sdk]({{ site.url }}/docs/coming-soon) package. See [Writting settings pages]({{ site.url }}/docs/extensions/tutorials/writing-settings-page) tutorial on how to do that.
+Settings can be manipulated using the [@shoutem/api-sdk]({{ site.url }}/docs/coming-soon) package. See [Writting settings pages]({{ site.url }}/docs/extensions/tutorials/settings-pages-introduction) tutorial on how to do that.
 
 > #### Note
 > The below documentation is outdated and will be updated once `api-sdk` tool is finished. This is in progress.
@@ -164,7 +164,7 @@ Properties received to root shortcut settings page component are:
   - `settings`: A shortcut instance settings
   - `screens`: Array of screen objects, each containing:
     - `type`: Type of screen that has layouts (that's original screen's name)
-    - `name`: Name of the layout that will be shown 
+    - `name`: Name of the layout that will be shown
     - `settings`: Screen settings (shared among all layouts)
 
 To set extension settings, use `setShortcutSettings` from `@shoutem/builder-sdk`. Although shortcut settings can be manipulated from both the shortcut and the screen settings page, for maximum user experience, do it only from the shortcut settings pages.
@@ -244,7 +244,7 @@ Properties received to root shortcut settings page component are:
   - `settings`: Shortcut instance settings
   - `screens`: Array of screen objects, each containing:
     - `type`: Type of screen that has layouts (that's original screen's name)
-    - `name`: Name of the layout that will be shown 
+    - `name`: Name of the layout that will be shown
     - `settings`: Screen settings (shared among all layouts)
 - `screen`: Screen object with fields:
   - `name`: Screen's name (which is also currently active layout screen)

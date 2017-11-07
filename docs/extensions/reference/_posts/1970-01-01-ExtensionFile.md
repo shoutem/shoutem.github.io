@@ -42,7 +42,7 @@ Following structure shows only `root` fields of the extension.json. Detailed des
 
 ## Defining and referencing extension parts
 
-As you see in _Structure of extension.json_ chapter, extension exports multiple extension parts (shortcuts, screens, dataSchemas, pages, themes, themeVariables). In order to be able to use these extension parts, we need to define them, so we can later reference them in other parts. Defining is done in `name` field which value needs to be unique for that extension part (name `List` can be only used for 1 shortcut, but also for 1 screen, etc.). 
+As you see in _Structure of extension.json_ chapter, extension exports multiple extension parts (shortcuts, screens, dataSchemas, pages, themes, themeVariables). In order to be able to use these extension parts, we need to define them, so we can later reference them in other parts. Defining is done in `name` field which value needs to be unique for that extension part (name `List` can be only used for 1 shortcut, but also for 1 screen, etc.).
 
 On the other hand, when referencing extension parts, fully qualified name needs to be used. Fully qualified name of **extension** is done by prefixing `<developer-name>.` to `name` field (for `restaurants` extension developed by `shoutem`, extension would have unique identifier `shoutem.restaurants`). Fully qualified name of **extension parts** is done by suffixing `<developer-name>.<extension-name>.` with the unique identifier for that extension part, e.g. `shoutem.restaurants.List` for shortcut. If you're referencing the extension part from within the same extension, use `@.` instead of `<developer-name>.<extension-name>.` (e.g. `@.List`).
 
@@ -161,7 +161,7 @@ Each object in shortcuts array, shortcut object, consists of these fields:
 - `icon`: Path to shortcut's icon that will be shown in builder. Store in `server` asset's folder
 - `type`: Indicates the type of shortcut. It can be `navigation` or `undefined`. If `navigation`, it will be possible to nest other shortcuts below the current
 - `adminPages`: Array of shortcut's admin pages. Admin page object inside of array consists of:
-  - `page`: Required field, references an [settings page]({{ site.url }}/docs/extensions/tutorials/writing-settings-page)
+  - `page`: Required field, references a [settings page]({{ site.url }}/docs/extensions/tutorials/settings-pages-introduction)
   - `title`: Title of admin page
   - `parameters` Dictionary of arbitrary key/value pairs that will be passed to admin page instance
 - `settings`: Dictionary of arbitrary key/value pairs that represent default Shortcut's settings passed to admin pages
@@ -179,7 +179,7 @@ Screens are nothing more than React components which represent full mobile scree
   // recommended
   "title": "List",
   "image": "server/assets/screens/restaurants-list.png",
-  
+
   // optional
   "navigatesTo": [{
     "details": "@.Details"
@@ -217,7 +217,7 @@ Each object in screens array, screen object, consists of these fields:
 - `image`: Path to screen's image that shows it's layout
 - `navigatesTo`: Array of key/value pairs that indicates to which screens the current one can navigate to
 - `settingsPage`: Screen's settings page. Object consists of:
-  - `page`: Required field, references an [settings page]({{ site.url }}/docs/extensions/tutorials/writing-settings-page)
+  - `page`: Required field, references an [settings page]({{ site.url }}/docs/extensions/tutorials/settings-pages-introduction)
   - `parameters`: Dictionary of arbitrary key/value pairs that will be passed to settings page instance
 - `settings`: Dictionary of arbitrary key/value pairs that represent default Shortcut's settings passed to admin pages
 - `extends`: References screen that the current one is extending
