@@ -494,6 +494,10 @@ a {
 
 section {
     padding: 96px 0;
+
+    @media (max-width: 599px) {
+        padding: 64px 0;
+    }
 }
 
 .section-title {
