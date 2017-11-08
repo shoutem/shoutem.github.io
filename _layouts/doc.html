@@ -35,26 +35,21 @@
 		</div>
 	</div>
 
-	{% include signup-modal.html %}
-
-  <!-- <script src="{{ site.url }}/lib/codemirror/codemirror.js"></script>
-  <script src="{{ site.url }}/lib/codemirror/mode/javascript/javascript.js"></script>
-  <script src="{{ site.url }}/lib/codemirror/mode/jsx/jsx.js"></script> -->
-
-  <script src="https://code.jquery.com/jquery-2.2.3.min.js"   integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo="   crossorigin="anonymous"></script>
-  <script type="text/javascript" src="{{ site.url }}/js/headroom.min.js"></script>
-  <script src="{{ site.url }}/js/flourish-0.3.2.min.js"></script>
-  <script src="{{ site.url }}/js/main.js"></script>
-  <script src="{{ site.url }}/js/docs.js"></script>
-  <script src="{{ site.url }}/js/prism.js" data-manual></script>
-  {% include ga.html %}
+	<script src="https://code.jquery.com/jquery-3.2.0.min.js" integrity="sha256-JAW99MJVpJBGcbzEuXk4Az05s/XyDdBomFqNlM3ic+I=" crossorigin="anonymous"></script>
+	<script src="{{ site.url }}/js/headroom.min.js"></script>
+	<script src="{{ site.url }}/js/flourish-0.3.2.min.js"></script>
+	<script src="{{ site.url }}/js/main.js"></script>
+	<script src="{{ site.url }}/js/docs.js"></script>
+	<script src="{{ site.url }}/js/prism.js" data-manual></script>
+	{% include ga.html %}
 	<script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.js"></script>
-	<script type="text/javascript"> docsearch({
-    apiKey: '6b283baa7ff0e8454787d13149aa3a77',
-    indexName: 'shoutem',
-    inputSelector: '#navbar-search-input',
-    debug: false
-	});
+	<script type="text/javascript">
+		docsearch({
+			apiKey: '6b283baa7ff0e8454787d13149aa3a77',
+			indexName: 'shoutem',
+			inputSelector: '#navbar-search-input',
+			debug: false
+		});
 	</script>
 </body>
 

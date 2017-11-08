@@ -20,6 +20,7 @@ $(function() {
 
   var animationTime = 200;
   var hostname = window.location.host;
+  var homeLinkRx = new RegExp(hostname, "i");
   var docsLinkRx = new RegExp(hostname + "/docs/", "i");
   var flourish = new Flourish({
     extractSelector: "#documentation",
@@ -66,76 +67,13 @@ $(function() {
     document.activeElement.blur();
   });
 
-
-
-  /* Signup modal */
-
-  var $signupModal = $("#signup-modal");
-
-  $("#signup-button, #signup-button-menu").on("click", function(e) {
-    $(".mobile-menu-overlay, #sidebar-wrapper").removeClass("open");
-    $signupModal.focusedElBeforeOpen = document.activeElement;
-    $signupModal.addClass("open");
-    setTimeout(function(){
-      $(".signup-email").focus();
-    }, 200);
-    e.preventDefault();
-  });
-
-  $signupModal.on("click", function(e) {
-    if( (e.target || e.srcElement).id === $signupModal[0].id ) {
-      closeSignupModal();
-      e.preventDefault();
-    }
-  });
-
-  $("#mc-embedded-cancel").on("click", function(e) {
-      closeSignupModal();
-  });
-
   function addTargetBlankToLinks() {
     $("a").each(function(){
-      if( ! this.href.match(docsLinkRx) ) {
+      if( ! this.href.match(homeLinkRx) && ! this.href.match(docsLinkRx) ) {
         this.setAttribute("target", "_blank");
       }
     });
   }
-
-  function closeSignupModal(e)
-  {
-    $signupModal.removeClass("open");
-    $signupModal.focusedElBeforeOpen.focus();
-  }
-
-  // https://bitsofco.de/accessible-modal-dialog/
-  $signupModal.on("keydown", function(e)
-  {
-    var emailInput = document.querySelector("#mce-EMAIL");
-    var submitButton = document.querySelector("#mc-embedded-subscribe");
-    var KEY_TAB = 9;
-
-    function handleBackwardTab() {
-      if ( document.activeElement === emailInput ) {
-          e.preventDefault();
-          submitButton.focus();
-      }
-    }
-    function handleForwardTab() {
-      if ( document.activeElement === submitButton ) {
-          e.preventDefault();
-          emailInput.focus();
-      }
-    }
-
-    if( e.keyCode === KEY_TAB )
-    {
-      if ( e.shiftKey ) {
-        handleBackwardTab();
-      } else {
-        handleForwardTab();
-      }
-    }
-  });
 
   // prevent document scrolling upon reaching sidebar menu scroll end
   // http://jsfiddle.net/troyalford/4wrxq/4/
