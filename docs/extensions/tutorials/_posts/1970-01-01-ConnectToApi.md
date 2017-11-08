@@ -1,13 +1,13 @@
 ---
 layout: doc
 permalink: /docs/extensions/tutorials/connecting-to-api
-title: Connecting to 3rd Party API
+title: Connecting to a 3rd Party API
 section: Tutorials
 ---
 
-# Connecting to 3rd Party API
+# Connecting to a 3rd Party API
 
-Since Shoutem apps are plain React Native apps, you can connect to any API. It's very simple to do [networking in React Native](https://facebook.github.io/react-native/docs/network.html). Basically, React Native enables you to use [Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) out of the box, a simple interface for communicating with API endpoints. If, however, you need something more sophisticated, you can use [Async Actions](https://github.com/reactjs/redux/blob/master/docs/advanced/AsyncActions.md) in Redux.
+Since Shoutem apps are plain React Native apps, you can connect to any API. It's very simple to do [networking in React Native](https://facebook.github.io/react-native/docs/network.html). Basically, React Native enables you to use the [Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API), a simple interface for communicating with API endpoints, right out of the box. If, however, you need something more sophisticated, you can use [Async Actions](https://github.com/reactjs/redux/blob/master/docs/advanced/AsyncActions.md) in Redux.
 
 In this tutorial we'll explain how to build a simple React Native app fetching the photo of the day from [NASA's APOD API](https://api.nasa.gov/index.html). We'll also use the [Shoutem UI toolkit]({{ site.url }}/docs/ui-toolkit/introduction). Here's how the completed app should look:
 
@@ -17,7 +17,7 @@ In this tutorial we'll explain how to build a simple React Native app fetching t
 
 The complete code for this extension is available in our [GitHub repository](https://github.com/shoutem/extension-examples/tree/master/connecting-to-3rd-party-api).
 
-## Initialize the Extension
+## Initializing the Extension
 
 Shoutem apps are made of extensions, so let's start by creating a new extension.
 
@@ -59,7 +59,7 @@ Uploading `NASA` extension to Shoutem...
 Success!
 ```
 
-Install that extension to a new app. You can create a new app on the Builder and then install the extension into that app, or directly create a new app through the CLI:
+Install that extension to a new app. You can create a new app in the Builder and then install the extension into that app, or create a new app directly through the CLI:
 
 ```ShellSession
 $ shoutem install --new NasaApp
@@ -68,13 +68,13 @@ Extension successfully installed to the new app. Check it here:
 {{ site.shoutem.builderURL }}/app/{{ site.example.appId }}
 ```
 
-Once this is done, go to the [Builder]({{ site.shoutem.builderURL }}) and add the screen inside the app. Now you can preview the app:
+Once this is done, go to the [Builder]({{ site.shoutem.builderURL }}) and add the screen to your app. Now you can preview the app:
 
 <p class="image">
 <img src='{{ site.url }}/img/tutorials/connecting-to-api/hello-world.png'/>
 </p>
 
-## Fetch the Photo
+## Fetching the Photo
 
 Now let's fetch the photo into the screen. We'll use the Fetch API from JavaScript. This is the complete code from `app/screens/PhotoDay.js`.
 
@@ -155,7 +155,7 @@ Uploading `NASA` extension to Shoutem...
 Success!
 ```
 
-Preview it to see the changes. This is the final result:
+Preview the app to see the changes. This is the final result:
 
 <p class="image">
 <img src='{{ site.url }}/img/tutorials/connecting-to-api/final-builder.png'/>
