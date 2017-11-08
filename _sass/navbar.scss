@@ -13,6 +13,10 @@
     margin-right: 0;
 }
 
+.navbar {
+    min-height: 72px;
+}
+
 .navbar-default .navbar-nav {
     font-size: 15px;
 
@@ -92,7 +96,7 @@
     .navbar-nav--a--link:hover {
     }
     .btn-primary {
-        margin-top: 18px;
+        margin-top: 12px;
         border-radius: 4px;
         height: 48px;
         padding-top: 12px;

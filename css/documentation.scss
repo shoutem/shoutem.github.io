@@ -214,7 +214,7 @@ pre[data-line] {
     }
 
     .navbar-brand {
-        padding: 31px;
+        padding: 27px 31px;
         margin-top: 0;
         border-right: 1px solid #ececec;
 
@@ -298,7 +298,8 @@ pre[data-line] {
 
 
 
-#documentationTab {
+#documentationTab,
+#communityTab {
     display: none;
 }
 
@@ -547,7 +548,7 @@ pre[data-line] {
 }
 
 .edit-link {
-    padding: 30px 0 28px;
+    padding: 25px 0;
 
     a {
         font-size: 15px;
