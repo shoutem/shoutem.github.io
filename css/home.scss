@@ -825,8 +825,8 @@ section {
             background-image: url(../img/home/instagram.svg);
         }
 
-        &.item-youtube::before {
-            background-image: url(../img/home/youtube.svg);
+        &.item-yt::before {
+            background-image: url(../img/home/yt.svg);
         }
 
         &.item-rss::before {
@@ -881,6 +881,10 @@ section {
 
 .section--cases {
     background: #f5f6f7;
+
+    .container {
+        max-width: 820px;
+    }
 
     .section-title {
         font-size: 32px;
