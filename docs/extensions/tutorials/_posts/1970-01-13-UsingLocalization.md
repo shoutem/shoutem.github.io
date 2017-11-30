@@ -15,118 +15,32 @@ Language files are uploaded by the app owner using the `shoutem.i18n` settings p
 <img src='{{ site.url }}/img/tutorials/localization/i18n-settings-page.png'/>
 </p>
 
-## Using your Translation
+## Translating your App
 
 To use your translation, you can download and unzip [this file]({{ site.url }}/static/localization/en.json.zip) and replace all the English strings with anything you like. Either a different language or alternative English strings.
 
-Importing the necessary packages to your extension is very simple:
+Once you've extracted the `en.json` file, rename it to the language you want to translate your app to, e.g. `de.json`, for German.
 
-```JavaScript
-import { i18n } from 'shoutem.i18n';
-```
-
-This of course means that you must have the `shoutem.i18n` extension (Language & Region) extension installed in your app.
-
-The two following entries will explain both how to format your translation (for the app owner and non-technical users) and how to implement translations in the actual code.
-
-#### Pluralized Strings
-
-When editing strings that contain pluralization (e.g. `1 point` vs. `2 points`) we utilize the following format for the language file:
-
-```JSON{4-7}
-#file: en.json
-{
-  "shoutem": {
-    "loyalty": {
-      "pointsInStore": {
-        "one": "{% raw %}{{{% endraw %}count}} point collected.",
-        "other": "{% raw %}{{{% endraw %}count}} points collected.",
-        "zero": "No points collected."
-      }
-    }
-  }
-}
-```
-
-And the following method inside the actual React Native component:
-
-```JavaScript{6}
-#file: shoutem.loyalty/app/components/PlaceIconView.js
-const { place, points, onPress } = this.props;
-
-return (
-  <Caption>
-    {I18n.t(ext('pointsInStore'), { count: points })}
-  </Caption>
-);
-```
-
-It's important to use the `count` variable name specifically due to the way `i18n-js` functions.
-
-#### Variables in Strings
-
-When editing strings that contain variables we utilize the following format for the language file:
-
-```JSON{3-4}
-#file: en.json
-{
-  "shoutem": {
-    "auth": {
-      "loggedInUserInfo": "Username: {% raw %}{{{% endraw %}username}}"
-    }
-  }
-}
-```
-
-And the following method inside the actual React Native component:
-
-```JavaScript{6}
-#file: shoutem.auth/app/screens/EditProfileScreen.js
-const { user } = this.props;
-const { name, profile_image_url: image } = user;
-
-return (
-  <Caption>
-    {I18n.t(ext('loggedInUserInfo'), { username: name })}
-  </Caption>
-);
-```
-
-## Implementing Fallback Strings
-
-Fallback strings are made to make sure that each string has a translation if the language file (e.g. `en.json`) is missing a translation. They are implemented in each extension which has strings specific to itself. One such example is the `BUY THIS BOOK` string, which is specific to the `shoutem.books` extension. The fallback for this translation looks like this:
+Then translate all strings from English to German. For example:
 
 ```JSON
-#file: shoutem.books/app/translations/en.json
-{
-  "shoutem": {
-    "books": {
-      "buyButtonText": "BUY THIS BOOK"
-    }
-  }
-}
+#file: en.json
+"navBarMapViewButton": "Map"
 ```
 
-As you can see, it's identical to the full language file, however, it only contains the strings for that specific extension.
+Is translated to German:
 
-You'll also have to export these translations from `app/index.js`.
-
-```JavaScript
-#file `shoutem.books/app/index.js`
-import enTranslations from './translations/en.json';
-
-export const shoutem = {
-  i18n: {
-    translations: {
-      en: enTranslations,
-    },
-  },
-};
+```JSON
+#file: de.json
+"navBarMapViewButton": "Karte"
 ```
 
-## Full Example
+We have short examples of how to translate more complex strings with [pluralization]({{ site.url }}/docs/extensions/tutorials/using-localization#pluralized-strings) and [variables]({{ site.url }}//docs/extensions/tutorials/using-localization#variables-in-strings).
 
-Think back to [Getting Started]({{ site.}}/docs/extensions/tutorials/getting-started), we made a simple extension with a line of text in one screen:
+
+## Implementing i18n in your Custom Extension
+
+Think back to [Getting Started]({{ site.}}/docs/extensions/tutorials/getting-started). We made a simple extension with a line of text in one screen:
 
 ```JavaScript{5}
 #file: tom.restaurants/app/screens/List.js
@@ -209,3 +123,98 @@ export const tom = {
 ```
 
 And that's it!
+
+#### Pluralized Strings
+
+When editing strings that contain pluralization (e.g. `1 point` vs. `2 points`) we utilize the following format for the language file:
+
+```JSON{4-7}
+#file: en.json
+{
+  "shoutem": {
+    "loyalty": {
+      "pointsInStore": {
+        "one": "{% raw %}{{{% endraw %}count}} point collected.",
+        "other": "{% raw %}{{{% endraw %}count}} points collected.",
+        "zero": "No points collected."
+      }
+    }
+  }
+}
+```
+
+And the following method inside the actual React Native component:
+
+```JavaScript{6}
+#file: shoutem.loyalty/app/components/PlaceIconView.js
+const { place, points, onPress } = this.props;
+
+return (
+  <Caption>
+    {I18n.t(ext('pointsInStore'), { count: points })}
+  </Caption>
+);
+```
+
+It's important to use the `count` variable name specifically due to the way `i18n-js` functions.
+
+#### Variables in Strings
+
+When editing strings that contain variables we utilize the following format for the language file:
+
+```JSON{3-4}
+#file: en.json
+{
+  "shoutem": {
+    "auth": {
+      "loggedInUserInfo": "Username: {% raw %}{{{% endraw %}username}}"
+    }
+  }
+}
+```
+
+And the following method inside the actual React Native component:
+
+```JavaScript{6}
+#file: shoutem.auth/app/screens/EditProfileScreen.js
+const { user } = this.props;
+const { name, profile_image_url: image } = user;
+
+return (
+  <Caption>
+    {I18n.t(ext('loggedInUserInfo'), { username: name })}
+  </Caption>
+);
+```
+
+## Implementing Fallback Strings in Custom Extensions
+
+Fallback strings are made to make sure that each string has a translation if the language file (e.g. `en.json`) is missing a translation. They are implemented in each extension which has strings specific to itself. One such example is the `BUY THIS BOOK` string, which is specific to the `shoutem.books` extension. The fallback for this translation looks like this:
+
+```JSON
+#file: shoutem.books/app/translations/en.json
+{
+  "shoutem": {
+    "books": {
+      "buyButtonText": "BUY THIS BOOK"
+    }
+  }
+}
+```
+
+As you can see, it's identical to the full language file, however, it only contains the strings for that specific extension.
+
+You'll also have to export these translations from `app/index.js`.
+
+```JavaScript
+#file `shoutem.books/app/index.js`
+import enTranslations from './translations/en.json';
+
+export const shoutem = {
+  i18n: {
+    translations: {
+      en: enTranslations,
+    },
+  },
+};
+```
