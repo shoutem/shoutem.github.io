@@ -156,7 +156,7 @@ return (
 );
 ```
 
-It's important to use the `count` variable name specifically due to the way `i18n-js` functions.
+It's important to use the `count` variable name specifically as described in `i18n-js` [docs](https://github.com/fnando/i18n-js#readme).
 
 #### Variables in Strings
 
