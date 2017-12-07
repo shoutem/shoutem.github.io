@@ -145,7 +145,7 @@ When editing strings that contain pluralization (e.g. `1 point` vs. `2 points`) 
 
 And the following method inside the actual React Native component:
 
-```JavaScript{6}
+```JavaScript{5}
 #file: shoutem.loyalty/app/components/PlaceIconView.js
 const { place, points, onPress } = this.props;
 
@@ -207,7 +207,7 @@ As you can see, it's identical to the full language file, however, it only conta
 You'll also have to export these translations from `app/index.js`.
 
 ```JavaScript
-#file `shoutem.books/app/index.js`
+#file: shoutem.books/app/index.js
 import enTranslations from './translations/en.json';
 
 export const shoutem = {
