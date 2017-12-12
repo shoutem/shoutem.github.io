@@ -45,18 +45,15 @@ To check components in UI toolkit, simply copy the following to your `index.ios.
 ```JavaScript
 #file: index.ios.js
 import React, { Component } from 'react';
-import { AppRegistry } from 'react-native';
 import { Examples } from '@shoutem/ui';
 
-class HelloWorld extends Component {
+export default class App extends Component<{}> {
   render() {
     return (
       <Examples />
     );
   }
 }
-
-AppRegistry.registerComponent('HelloWorld', () => HelloWorld);
 ```
 
 Finally, run the app!
