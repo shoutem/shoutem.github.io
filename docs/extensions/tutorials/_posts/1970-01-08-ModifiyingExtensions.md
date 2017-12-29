@@ -257,7 +257,7 @@ import {
 } from 'shoutem.rss-news/screens/ArticlesListScreen';
 
 import { BigPictureView } from '../components/BigPictureView';
-import { ext } from '../extension';
+import { ext } from '../const';
 
 export class ListWithBigPictures extends ArticlesListScreen {
   renderRow(article) {
