@@ -92,7 +92,7 @@ And adding our extension's string to it:
 ```JavaScript
 #file: tom.restaurants/app/translations/en.json
 {
-  "tom": {
+  "shoutem": {
     "restaurants": {
       "letsEatMessage": "Let's eat!"
     }
@@ -113,7 +113,7 @@ import enTranslations from './translations/en.json';
 // export everything from extension.js
 export * from './extension';
 
-export const tom = {
+export const shoutem = {
   i18n: {
     translations: {
       en: enTranslations,
