@@ -131,7 +131,7 @@ Shoutem extensions sometimes contain import components and/or screens from other
 
 For example, `{{ site.example.devName }}.rss-news` may be importing from `shoutem.news`, but you've also decided to edit that extension so you've uninstalled `shoutem.news` and are using `{{ site.example.devName }}.news`. This will lead to a build-time error where the build process fails because it's unable to resolve the `import` in `{{ site.example.devName }}.rss-news`.
 
-These types of errors may be hard to track down due to the fact that when you first clone and edit Shoutem's extensions, because the extension's directories are still called `shoutem.news`, even though they contain `{{ site.example.devName }}.rss-news`. You can either rename those directories, or simply clone the app again into a different directory.
+These types of errors may be hard to track down due to the fact that your local clone of the app will work when you first clone and edit Shoutem's extensions, but after uploading those extensions to Shoutem, the Builder preview may fail to build. This is because locally the extension's directories are still called `shoutem.news`, even though they contain `{{ site.example.devName }}.rss-news`. You can either rename those directories, or simply clone the app again into a different directory after uploading and installing your customized extensions to test and debug them, because this will expose any naming conflicts.
 
 ```ShellSession
 $ shoutem clone --dir "Different Directory"
