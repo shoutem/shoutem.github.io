@@ -131,7 +131,7 @@ When directly editing Shoutem extensions you will have to either re-clone the ap
 
 For example, you decide to modify the News extension and uninstall `shoutem.news` and only have your extension installed, `{{ site.example.devName }}.news`. This will cause issues with `shoutem.rss-news` because it depends on `shoutem.news`.
 
-After doing so, the Builder preview will fail, but locally your app will function as intended. This is because the extension directory for `{{ site.example.devName }}.news` is still called `shoutem.news`. You will have to either rename it or re-clone the app.
+After doing so, the Builder preview will fail, but locally your app will function as intended. This is because your local extension directory for `{{ site.example.devName }}.news` is still called `shoutem.news`, while the Builder only has `{{ site.example.devName }}.news`. You will have to either rename the extension directory or re-clone the app.
 
 ```ShellSession
 $ shoutem clone --dir "Fresh Clone"
