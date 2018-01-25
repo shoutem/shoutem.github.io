@@ -127,14 +127,14 @@ To get those updates from Shoutem, we want to extend the extension instead of ch
 
 ### Debugging directly edited extensions
 
-Shoutem extensions sometimes contain import components and/or screens from other extensions. As you can see in the case of the `shoutem.rss-news` extension, it requires a component from `shoutem.news`. If you have an app that utilizes multiple directly edited extensions, it may fail to preview due to `import`/`export` issues.
+When directly editing Shoutem extensions you will have to either re-clone the app after uploading and installing the extension into your app or re-naming the extension's directory name locally. This will reveal any underlying bugs with `import`s.
 
-For example, `{{ site.example.devName }}.rss-news` may be importing from `shoutem.news`, but you've also decided to edit that extension so you've uninstalled `shoutem.news` and are using `{{ site.example.devName }}.news`. This will lead to a build-time error where the build process fails because it's unable to resolve the `import` in `{{ site.example.devName }}.rss-news`.
+For example, you decide to modify the News extension and uninstall `shoutem.news` and only have your extension installed, `{{ site.example.devName }}.news`. This will cause issues with `shoutem.rss-news` because it depends on `shoutem.news`.
 
-These types of errors may be hard to track down due to the fact that your local clone of the app will work when you first clone and edit Shoutem's extensions, but after uploading those extensions to Shoutem, the Builder preview may fail to build. This is because locally the extension's directories are still called `shoutem.news`, even though they contain `{{ site.example.devName }}.rss-news`. You can either rename those directories, or simply clone the app again into a different directory after uploading and installing your customized extensions to test and debug them, because this will expose any naming conflicts.
+After doing so, the Builder preview will fail, but locally your app will function as intended. This is because the extension directory for `{{ site.example.devName }}.news` is still called `shoutem.news`. You will have to either rename it or re-clone the app.
 
 ```ShellSession
-$ shoutem clone --dir "Different Directory"
+$ shoutem clone --dir "Fresh Clone"
 ```
 
 ## 2) Extend the extension
