@@ -127,11 +127,16 @@ To get those updates from Shoutem, we want to extend the extension instead of ch
 
 ### Debugging directly edited extensions
 
-When directly editing Shoutem extensions you will have to either re-clone the app after uploading and installing the extension into your app or re-naming the extension's directory name locally. This will reveal any underlying bugs with `import`s.
+When directly editing Shoutem extensions you will have to either re-clone the app after uploading and installing the extension into your app or re-naming the extension's directory name locally, otherwise you will experience issues on the server
 
-For example, you decide to modify the News extension and uninstall `shoutem.news` and only have your extension installed, `{{ site.example.devName }}.news`. This will cause issues with `shoutem.rss-news` because it depends on `shoutem.news`.
+For example, you decide to modify the News extension and install it to your app, then uninstall `shoutem.news` so you only have your News extension installed, `{{ site.example.devName }}.news`. This will cause issues with `shoutem.rss-news` because it imports components from `shoutem.news` in multiple places:
 
-After doing so, the Builder preview will fail, but locally your app will function as intended. This is because your local extension directory for `{{ site.example.devName }}.news` is still called `shoutem.news`, while the Builder only has `{{ site.example.devName }}.news`. You will have to either rename the extension directory or re-clone the app.
+```javascript
+#file: shoutem.rss-news/app/ArticlesGridScreen.js
+import { FeaturedArticleView, GridArticleView } from 'shoutem.news';
+```
+
+In the described situation, the Builder preview will fail, but locally your app will function as intended. This is because your local extension directory for `{{ site.example.devName }}.news` is still called `shoutem.news`, while the Builder only has `{{ site.example.devName }}.news`. In order to catch these sorts of issues locally, you will have to either rename the extension directory or re-clone the app.
 
 ```ShellSession
 $ shoutem clone --dir "Fresh Clone"
