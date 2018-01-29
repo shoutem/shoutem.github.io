@@ -7,7 +7,9 @@ section: Tutorials
 
 # Setting up Instagram
 
-In order to show an Instagram feed in a Shoutem app using the Photos RSS, you will have to set up a redirect URL. The first step is to go to the Instagram developer [site] and create a new client if you don't already have one. Take note of the Client ID and Client Secret, you will be needing these. In `Valid redirect URIs` insert `https://new.shoutem.com`.
+Shoutem's Photos RSS can utilize an Instagram feed, however, since Instagram has now closed their API, you will have to be the owner of the feed in order to generate a URL.
+
+In order to show an Instagram feed in a Shoutem app using the Photos RSS, you will have to set up a redirect URL. The first step is to go to the Instagram developer [site](https://www.instagram.com/developer/) and create a [new client](https://www.instagram.com/developer/clients/register/) if you don't already have one. Take note of the Client ID and Client Secret, you will be needing these. In `Valid redirect URIs` insert `https://new.shoutem.com`.
 
 You will also need to get an access token, which you can get in one of two ways.
 
@@ -38,21 +40,23 @@ Instructions based on Dave Olsen's [tutorial](http://dmolsen.com/2013/04/05/gene
 
 ## 2) Using the Instagram developer site to get an access token
 
-Go to the Instagram developer [site](https://www.instagram.com/developer/) and in the upper right corner, click on `Manage Clients` next to your account name. Afterwards, select the `Security` and *un*-check `disable implicit 0Auth`. Afterwards navigate to:
+Go to the Instagram developer [site](https://www.instagram.com/developer/) and in the upper right corner, go to [Manage Clients](https://www.instagram.com/developer/clients/manage/). Select the `Security` tab and *un*-check `disable implicit 0Auth`.
+
+<p class="image">
+<img src='{{ site.url }}/img/tutorials/instagram/instagram-client.png'/>
+</p>
+
+Afterwards navigate to:
 ```
 https://api.instagram.com/oauth/authorize/?client_id=<client_id>&redirect_uri=https://new.shoutem.com&response_type=token&scope=public_content
 ```
-You can find the token after the `#` symbol in address bar of your browser.
+You can find the token after the `#` symbol in the address bar of your browser.
 
 ## How to generate a content URL for Shoutem
 
-In order to fetch content via the Photos RSS you will need to fetch it from an Instagram endpoint using your access token. You can find out which endpoints are available in the Instagram [documentation](https://www.instagram.com/developer/endpoints/), of which you'll most likely be interested in the [media](https://www.instagram.com/developer/endpoints/media/) ones.
+In order to fetch content via Photos RSS you will need to fetch it from an Instagram endpoint using your access token. You can find out which endpoints are available in the Instagram [documentation](https://www.instagram.com/developer/endpoints/), of which you'll most likely be interested in the [media](https://www.instagram.com/developer/endpoints/media/) ones.
 
-- Call instagram api using the token inside the query string
-- Api is "documented" here: https://www.instagram.com/developer/endpoints/
-- You probably want https://www.instagram.com/developer/endpoints/media/
-
-Here are some example links you can use for the Photos RSS in order to fetch Instagram images.
+Here are some example links you can use with Shoutem's Photos RSS in order to fetch Instagram images.
 
 #### Recent images of all users
 ```
@@ -62,13 +66,4 @@ https://api.instagram.com/v1/users/self/media/recent?access_token=<access_token>
 #### Search within a location
 ```
 https://api.instagram.com/v1/media/search?lat=48.858844&lng=2.294351&access_token=<access_token>
-```
-
-#### Fetch user specific recent images
-```
-// fetch User ID
-https://api.instagram.com/v1/users/self/?access_token=<access_token>
-
-// fetch images
-https://api.instagram.com/v1/users/<user_id>/media/recent?access_token=<access_token>
 ```
