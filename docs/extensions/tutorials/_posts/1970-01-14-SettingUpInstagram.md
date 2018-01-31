@@ -36,6 +36,9 @@ curl -X POST \
   -F code=2f012e51d8cd4e649d6971b9b11841a1
 ```
 
+> #### Note
+> Replace example values such as `<client_id>` with your values. It should be `client_id=210375e233554222b33b2cc63f7eef1f`.
+
 Instructions based on Dave Olsen's [tutorial](http://dmolsen.com/2013/04/05/generating-access-tokens-for-instagram/).
 
 ## 2) Using the Instagram developer site to get an access token
@@ -59,11 +62,17 @@ In order to fetch content via Photos RSS you will need to fetch it from an Insta
 Here are some example links you can use with Shoutem's Photos RSS in order to fetch Instagram images.
 
 #### Recent images of all users
+
+This can be used to retrieve all recent images, it's the most commonly used link.
+
 ```
 https://api.instagram.com/v1/users/self/media/recent?access_token=<access_token>
 ```
 
 #### Search within a location
+
+This can be used to retrieve images from a specific location defined by latitude and longitude.
+
 ```
 https://api.instagram.com/v1/media/search?lat=48.858844&lng=2.294351&access_token=<access_token>
 ```
