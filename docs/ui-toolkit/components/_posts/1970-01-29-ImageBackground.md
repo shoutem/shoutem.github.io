@@ -13,7 +13,7 @@ This component is used when you need to nest other components within an `Image`.
 
 #### Props
 
-* `ImageBackground` doesn't have specific (custom) Props, however, it supports every prop that the standard React Native `ImageBackground` component supports.
+`ImageBackground` has no specific (custom) Props, however, it supports every prop that the standard React Native `ImageBackground` component supports.
 
 #### Style names
 

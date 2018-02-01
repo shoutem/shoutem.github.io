@@ -14,7 +14,7 @@ Basically, `TouchableOpacity` is React-Native's [component](https://facebook.git
 
 #### Props
 
-* `TouchableOpacity` has the same props like React Native's `TouchableOpacity` component uses
+* Supports every `Style` prop that the standard React Native `TouchableOpacity` component supports
 
 ### Style names
 

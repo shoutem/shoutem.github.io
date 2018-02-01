@@ -26,7 +26,7 @@ The `Html` component parses HTML content and renders it using corresponding Reac
 
 #### Style names
 
-* None
+`Html` has no specific style names.
 
 #### Style
 

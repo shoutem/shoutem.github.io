@@ -22,7 +22,6 @@ Renders a stylized horizontal pager.
 * **selectedIndex**: number
   - Sets the initially selected image in the gallery
 
-
 #### Style names
 
 * **large-banner**: width: `window.width` height: `(200 / 375) * window.width`

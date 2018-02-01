@@ -97,37 +97,38 @@ constructor(props){
 }
 
 render() {
+  const selectedCar = this.state.selectedCar || this.state.cars[0];
+
   return (
     <Screen>
       <NavigationBar
         title="Cars"
         styleName="inline"
       />
-
       <DropDownMenu
         styleName="horizontal"
         options={this.state.cars}
-        selectedOption={this.state.selectedCar ? this.state.selectedCar : this.state.cars[0]}
+        selectedOption={selectedCar ? selectedCar : this.state.cars[0]}
         onOptionSelected={(car) => this.setState({ selectedCar: car })}
         titleProperty="brand"
         valueProperty="cars.model"
       />
       <Title styleName="h-center">
-        {this.state.selectedCar ?
-        this.state.selectedCar.models.model :
-        this.state.cars[0].models.model}
+        {selectedCar ?
+          selectedCar.models.model :
+          this.state.cars[0].models.model}
       </Title>
       <Image
         styleName="large"
-        source={% raw %}{{{% endraw %}
-          uri: this.state.selectedCar ?
-            this.state.selectedCar.models.image.url :
+        source={{
+          uri: selectedCar ?
+            selectedCar.models.image.url :
             this.state.cars[0].models.image.url
         }}
       />
-      <Text>
-        {this.state.selectedCar ?
-          this.state.selectedCar.models.description :
+      <Text styleName="md-gutter-horizontal">
+        {selectedCar ?
+          selectedCar.models.description :
           this.state.cars[0].models.description}
       </Text>
     </Screen>
