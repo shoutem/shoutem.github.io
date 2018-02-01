@@ -8,17 +8,17 @@ section: UI toolkit
 # TouchableOpacity
 
 TouchableOpacity is a React Native's `TouchableOpacity` with additional styling applied through Theme.  
-Basically, `TouchableOpacity` is React-Native's [component](https://facebook.github.io/react-native/docs/touchableopacity.html "React Native TouchableOpacity component documentation") that responds to touches. Once component is pressed, the opacity of the component within `TouchableOpacity` is decreased, dimming it. 
-  
+Basically, `TouchableOpacity` is React-Native's [component](https://facebook.github.io/react-native/docs/touchableopacity.html "React Native TouchableOpacity component documentation") that responds to touches. Once the component is pressed, the opacity of the component within `TouchableOpacity` is decreased, dimming it.
+
 ## API
 
 #### Props
 
-* `TouchableOpacity` has the same props like React Native's `TouchableOpacity` component uses
+* Supports every `Style` prop that the standard React Native `TouchableOpacity` component supports
 
 ### Style names
 
-* None
+`TouchableOpacity` has no specific style names.
 
 #### Style
 
@@ -35,4 +35,4 @@ Basically, `TouchableOpacity` is React-Native's [component](https://facebook.git
 <TouchableOpacity style="...">
     {...}
 </TouchableOpacity>
-``` 
+```
