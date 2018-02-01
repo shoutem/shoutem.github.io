@@ -127,7 +127,10 @@ To get those updates from Shoutem, we want to extend the extension instead of ch
 
 ### Debugging directly edited extensions
 
-When directly editing Shoutem extensions you will have to either re-clone the app after uploading and installing the extension into your app or re-naming the extension's directory name locally, otherwise you will experience issues on the server
+When directly editing Shoutem extensions you will have to either re-clone the app after uploading and installing the extension into your app or re-naming the extension's directory name locally, otherwise you might experience issues on the Builder.
+
+> #### Note
+> When forking (directly editing) Shoutem's extensions, you should re-clone the app after uploading and installing the extension to keep everything in sync.
 
 For example, you decide to modify the News extension and install it to your app, then uninstall `shoutem.news` so you only have your News extension installed, `{{ site.example.devName }}.news`. This will cause issues with `shoutem.rss-news` because it imports components from `shoutem.news` in multiple places:
 
