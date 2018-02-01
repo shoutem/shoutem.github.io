@@ -106,6 +106,7 @@
       },
       "collectPointsButton": "COLLECT",
       "pointsHistoryButton": "HISTORY",
+      "navigationHistoryButton": "History",
       "noPointsCollected": "No points collected.",
       "pointsRequiredStores": {
         "one": "Requires {{count}} point.",

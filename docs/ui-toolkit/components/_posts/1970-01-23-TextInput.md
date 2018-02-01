@@ -13,17 +13,17 @@ section: UI toolkit
 
 #### Props
 
-* `TextInput` component doesn't have specific (custom) Props, however, it supports every prop that the standard React Native `TextInput` component supports. For full list of available props, visit
+`TextInput` has no specific (custom) Props, however, it supports every prop that the standard React Native `TextInput` component supports. For full list of available props, visit
 [React Native TextInput component documentation](https://facebook.github.io/react-native/docs/textinput.html "React Native TextInput component documentation").
 
 #### Style names
 
-* None
+`TextInput` has no specific style names.
 
 #### Style
 
 * **placeholderTextColor**:  
-  - defines the placeholder text color
+  - Defines the placeholder text color
 * **selectionColor**:  
   - The highlight color of the text input (and the cursor color on iOS)
 * Also, supports every `Style` prop that the standard React Native `TextInput` component supports
