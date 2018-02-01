@@ -32,20 +32,23 @@ import { NavigationBar } from '@shoutem/ui'
 
 #### Props
 
+* **title**: string
+  - Sets the `centerComponent` prop to a `Title` component with the provided string as the title text
+
 * **centerComponent**: object  
-  - represents the center component in `NavigationBar` (i.e. screen title)
+  - Represents the center component in `NavigationBar` (e.g. screen title)
 
 * **leftComponent**: object  
-  - represents the left component in `NavigationBar` (i.e. back button)
+  - Represents the left component in `NavigationBar` (e.g. back button)
 
 * **rightComponent**: object
-  - represents the right component in `NavigationBar` (i.e. drop-down menu button)
+  - Represents the right component in `NavigationBar` (e.g. drop-down menu button)
 
 * **hasHistory**: bool
   - If set to `true`, the `leftComponent` will become a back arrow which triggers `navigateBack` on tap
 
 * **navigateBack**: function
-  - callback triggered after tapping the `Back` button if `hasHistory` is set to `true`  
+  - Callback triggered after tapping the `Back` button if `hasHistory` is set to `true`  
 
 #### Style names
 
@@ -88,7 +91,7 @@ import { NavigationBar } from '@shoutem/ui'
 
 #### JSX Declaration
 ```JSX
-<Image
+<ImageBackground
   source={% raw %}{{{% endraw %}uri: '{{site.url}}/img/ui-toolkit/examples/image-3.png'}}
   style={% raw %}{{{% endraw %} width: 375, height: 70 }}
 >
@@ -96,7 +99,7 @@ import { NavigationBar } from '@shoutem/ui'
     styleName="clear"
     centerComponent={<Title>TITLE</Title>}
   />
-</Image>
+</ImageBackground>
 ```
 
 ### Navbar + Drawer
@@ -115,26 +118,46 @@ import { NavigationBar } from '@shoutem/ui'
 
 #### JSX Declaration
 ```JSX
-<NavigationBar
-  leftComponent={<Icon name="sidebar" />}
-  centerComponent={<Title>TITLE</Title>}
-  rightComponent={<DropDownMenu
-    options={[
-    { name: 'All', value: 1 },
-    { name: 'Sport', value: 1 },
-    { name: 'World', value: 1 },
-    { name: 'Lifestyle', value: 1 },
-    { name: 'Food', value: 1 },
-    { name: 'Music', value: 1 },
-    { name: 'Movies', value: 1 },
-    { name: 'Tech', value: 1 },
-    { name: 'Fun', value: 1 },
-    { name: 'Fashion', value: 1 },
-    ]}
-    titleProperty="name"
-    valueProperty="value"
-  />}
-/>
+constructor(props){
+  super(props);
+  this.state = {
+    filters: [
+      { name: 'Filter', value: 'Filter' },
+      { name: 'Sport', value: 'Sport' },
+      { name: 'Food', value: 'Food' },
+    ],
+  }
+}
+
+render() {
+  return (
+    <NavigationBar
+      styleName="inline"
+
+      leftComponent={
+        <Button>
+          <Icon name="sidebar" />
+        </Button>
+      }
+      centerComponent={
+        <Title>
+          {this.state.selectedFilter
+            ? this.state.selectedFilter.value
+            : this.state.filters[0].value}
+        </Title>
+      }
+      rightComponent={
+        <DropDownMenu
+          options={this.state.filters}
+          selectedOption={this.state.selectedFilter ? this.state.selectedFilter : this.state.filters[0]}
+          onOptionSelected={(filter) => this.setState({ selectedFilter: filter })}
+          titleProperty="name"
+          valueProperty="value"
+        />
+      }
+    />
+  );
+}
 ```
 
 ### Navbar + Action

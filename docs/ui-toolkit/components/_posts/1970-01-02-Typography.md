@@ -27,7 +27,6 @@ Typography components consist of several flavors of `Text` components with prede
 #### Style names
 
 * **bold**: Sets text to be bold
-* **bright**: Sets text color to the `Light` color set in the theme
 * **h-center**: Centers the text horizontally
 * **line-through**: Defines a line through the text
 * **multiline**: Increases line-height to allow text to wrap

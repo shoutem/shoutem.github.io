@@ -23,7 +23,7 @@ section: UI toolkit
 #### Style
 
 * **placeholderTextColor**:  
-  - defines the placeholder text color
+  - Defines the placeholder text color
 * **selectionColor**:  
   - The highlight color of the text input (and the cursor color on iOS)
 * Also, supports every `Style` prop that the standard React Native `TextInput` component supports

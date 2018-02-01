@@ -54,31 +54,83 @@ DropDownMenu is a full-screen contextual menu for displaying lists of items.
 ## Examples
 
 ```JSX
-  constructor(props){
-    super(props);
-    this.state = {
-      cars: [
-        { title: 'Car A', value: 'Brand A' },
-        { title: 'Car B ', value: 'Brand B' },
-        { title: 'Car C', value: 'Brand C' },
-      ],
-    }
+constructor(props){
+  super(props);
+  this.state = {
+    cars: [
+      {
+        brand: "Audi",
+        models:
+          {
+            model: "Audi R8",
+            image: {
+              url: "https://shoutem.github.io/img/ui-toolkit/dropdownmenu/Audi-R8.jpg"
+            },
+            description: "Exclusively designed by Audi AG's "
+            + "private subsidiary company, Audi Sport GmbH."
+          }
+      },
+      {
+        brand: "Bugatti",
+        models: {
+          model: "Chiron",
+          image: {
+            url: "https://shoutem.github.io/img/ui-toolkit/dropdownmenu/Chiron.jpg"
+          },
+          description: "Bugatti premiered the Bugatti "
+            + "Chiron as a successor to the Veyron."
+        }
+      },
+      {
+        brand: "Chrysler",
+        models: {
+          model: "Dodge Viper",
+          image: {
+            url: "https://shoutem.github.io/img/ui-toolkit/dropdownmenu/Dodge-Viper.jpg"
+          },
+          description: "The Dodge Viper is a super car "
+            + "manufactured by Dodge (SRT for 2013 and 2014)."
+        }
+      },
+    ],
   }
+}
 
-  render() {
-    return (
-      <Screen>
-        <DropDownMenu
-          styleName="horizontal"
-          options={this.state.cars}
-          selectedOption={this.state.selectedCar ? this.state.selectedCar : this.state.cars[0]}
-          onOptionSelected={(car) => this.setState({ selectedCar: car })}
-          titleProperty="title"
-          valueProperty="value"
-        />
-        <Text>{this.state.selectedCar ? this.state.selectedCar.value : this.state.cars[0].value}</Text>
-      </Screen>
-    );
-  }
-/>
+render() {
+  return (
+    <Screen>
+      <NavigationBar
+        title="Cars"
+        styleName="inline"
+      />
+
+      <DropDownMenu
+        styleName="horizontal"
+        options={this.state.cars}
+        selectedOption={this.state.selectedCar ? this.state.selectedCar : this.state.cars[0]}
+        onOptionSelected={(car) => this.setState({ selectedCar: car })}
+        titleProperty="brand"
+        valueProperty="cars.model"
+      />
+      <Title styleName="h-center">
+        {this.state.selectedCar ?
+        this.state.selectedCar.models.model :
+        this.state.cars[0].models.model}
+      </Title>
+      <Image
+        styleName="large"
+        source={% raw %}{{{% endraw %}
+          uri: this.state.selectedCar ?
+            this.state.selectedCar.models.image.url :
+            this.state.cars[0].models.image.url
+        }}
+      />
+      <Text>
+        {this.state.selectedCar ?
+          this.state.selectedCar.models.description :
+          this.state.cars[0].models.description}
+      </Text>
+    </Screen>
+  );
+}
 ```
