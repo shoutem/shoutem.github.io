@@ -242,6 +242,47 @@ pre[data-line] {
             margin-top: 12px;
         }
     }
+
+    .navbar-search-form.navbar-form.navbar-form-border {
+        margin: 0;
+        margin-right: 24px;
+        border-left: 1px solid #ececec;
+        border-right: 1px solid #ececec;
+        padding: 24px 16px;
+
+        .search-icon {
+            right: 8px;
+            width: 24px;
+            height: 24px;
+            opacity: 0.5;
+            vertical-align: middle;
+        }
+    }
+    
+    #navbar-search-input { 
+        background-color:transparent !important;
+        border:none !important;
+        box-shadow: none !important;
+        transition: all .5s;
+        width: 70px;
+    }
+
+    #navbar-search-input:focus {
+        width: 165px;
+    }
+
+    /* Highlighted search terms */
+    .algolia-docsearch-suggestion--highlight {
+        color: #00aadf;
+    }
+    /* Highligted search terms in the main category headers */
+    .algolia-docsearch-suggestion--category-header .algolia-docsearch-suggestion--highlight  {
+        background-color: #00aadf;
+    }
+    /* Currently selected suggestion */
+    .ds-suggestion.ds-cursor .algolia-docsearch-suggestion--content {
+        background-color: rgba(0,170,223,0.16) !important;
+    }
 }
 
 .navbar-collapse {
