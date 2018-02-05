@@ -9,51 +9,36 @@ section: Tutorials
 
 Shoutem's Photos RSS can utilize an Instagram feed, however, since Instagram has now closed their API, you will have to be the owner of the feed in order to generate a URL.
 
-In order to show an Instagram feed in a Shoutem app using the Photos RSS, you will have to set up a redirect URL. The first step is to go to the Instagram developer [site](https://www.instagram.com/developer/) and create a [new client](https://www.instagram.com/developer/clients/register/) if you don't already have one. Take note of the Client ID and Client Secret, you will be needing these. In `Valid redirect URIs` insert `https://new.shoutem.com`.
+In order to show an Instagram feed in a Shoutem app using the Photos RSS, you will have to set up a redirect URL. The first step is to go to the Instagram developer [site](https://www.instagram.com/developer/) and create a [new client](https://www.instagram.com/developer/clients/register/) if you don't already have one. Take note of the Client ID and Client Secret, you will be needing these to get your access token. Here are the steps:
 
-You will also need to get an access token, which you can get in one of two ways.
+#### 1) Manage your client, go to the Security tab and set two redirection URIs:
 
-## 1) Using API calls to get an access token
+`https://new.shoutem.com` and `http://new.shoutem.com`
 
-Open your instagram app, edit it and set the `redirection_uri` to:
-
-```
-&redirect_uri=https://new.shoutem.com&scope=public_content
-```
-
-You can then use the following API call to find out your access token:
-
-```
-curl -X POST \
-  https://api.instagram.com/oauth/access_token \
-  -H 'cache-control: no-cache' \
-  -H 'content-type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW' \
-  -H 'postman-token: 76328f00-0a28-153d-1e8e-14bab1433aef' \
-  -F client_id=<client_id> \
-  -F client_secret=<client_secret> \
-  -F grant_type=authorization_code \
-  -F redirect_uri=https://new.shoutem.com \
-  -F code=2f012e51d8cd4e649d6971b9b11841a1
-```
-
-> #### Note
-> Replace example values such as `<client_id>` with your values. It should be `client_id=210375e233554222b33b2cc63f7eef1f`.
-
-Instructions based on Dave Olsen's [tutorial](http://dmolsen.com/2013/04/05/generating-access-tokens-for-instagram/).
-
-## 2) Using the Instagram developer site to get an access token
-
-Go to the Instagram developer [site](https://www.instagram.com/developer/) and in the upper right corner, go to [Manage Clients](https://www.instagram.com/developer/clients/manage/). Select the `Security` tab and *un*-check `disable implicit 0Auth`.
+#### 2) Un-check the `Disable implicit 0Auth` setting.
 
 <p class="image">
 <img src='{{ site.url }}/img/tutorials/instagram/instagram-client.png'/>
 </p>
 
-Afterwards navigate to:
+#### 3) Update the client.
+
+#### 4) Navigate to:
+
 ```
 https://api.instagram.com/oauth/authorize/?client_id=<client_id>&redirect_uri=https://new.shoutem.com&response_type=token&scope=public_content
 ```
-You can find the token after the `#` symbol in the address bar of your browser.
+
+> #### Note
+> Replace any placeholder values with the ones from your client. For example, `client_id=<client_id>` should be `client_id=1oct365163444080a0cd6c3451486736`.
+
+At this point your browser may warn you that it requires you to authorize access to this if the client is in sandbox mode. Authorize it in order to proceed and get the access token.
+
+#### 5) You can find the token after the # symbol in the address bar of your browser.
+
+<p class="image">
+<img src='{{ site.url }}/img/tutorials/instagram/access-token.png'/>
+</p>
 
 ## How to generate a content URL for Shoutem
 
@@ -69,10 +54,34 @@ This can be used to retrieve all recent images, it's the most commonly used link
 https://api.instagram.com/v1/users/self/media/recent?access_token=<access_token>
 ```
 
+> #### Note
+> Replace any placeholder values with the ones from your client. For example, `client_id=<client_id>` should be `client_id=1oct365163444080a0cd6c3451486736`.
+
 #### Search within a location
 
 This can be used to retrieve images from a specific location defined by latitude and longitude.
 
 ```
 https://api.instagram.com/v1/media/search?lat=48.858844&lng=2.294351&access_token=<access_token>
+```
+
+> #### Note
+> Replace any placeholder values with the ones from your client. For example, `client_id=<client_id>` should be `client_id=1oct365163444080a0cd6c3451486736`.
+
+
+## API alternative
+
+You can also generate an access token using the following API call with `curl`:
+
+```ShellSession
+curl -X POST \
+  https://api.instagram.com/oauth/access_token \
+  -H 'cache-control: no-cache' \
+  -H 'content-type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW' \
+  -H 'postman-token: 76328f00-0a28-153d-1e8e-14bab1433aef' \
+  -F client_id=<client_id> \
+  -F client_secret=<client_secret> \
+  -F grant_type=authorization_code \
+  -F redirect_uri=https://new.shoutem.com \
+  -F code=2f012e51d8cd4e649d6971b9b11841a1
 ```
