@@ -37,6 +37,7 @@ Is translated to German:
 
 We have short examples of how to translate more complex strings with [pluralization]({{ site.url }}/docs/extensions/tutorials/using-localization#pluralized-strings) and [variables]({{ site.url }}//docs/extensions/tutorials/using-localization#variables-in-strings).
 
+After translating the strings to your chosen language, you can validate the JSON for any syntax errors using a free and easy to use tool like [JSONLint](https://jsonlint.com/).
 
 ## Implementing i18n in your Custom Extension
 
