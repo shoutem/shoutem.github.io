@@ -278,7 +278,7 @@
       "unlikeButton": "UNLIKE",
       "numberOfLikesMessage": {
         "one": "{{firstUser}} likes this",
-        "other": "{{firstUser}} and {{secondUser}} like this",
+        "other": "{{firstUser}} and {{secondUser}} like this"
       },
       "numberOfOtherUserLikesMessage": {
         "one": "{{firstUser}}, {{secondUser}} and 1 other like this",
