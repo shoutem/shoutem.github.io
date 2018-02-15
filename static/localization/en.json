@@ -81,6 +81,32 @@
       "laterButton": "Later",
       "acceptButton": "Yes"
     },
+    "deals": {
+      "couponsRemainingMessage": {
+        "one": "{{count}} coupon left",
+        "other": "{{count}} coupons left"
+      },
+      "claimCouponButton": "CLAIM DEAL",
+      "redeemCouponButton": "REDEEM DEAL",
+      "redeemDealButton": "REDEEM DEAL",
+      "dealsMapButton": "Map",
+      "dealsGridButton": "Grid",
+      "dealsListButton": "List",
+      "dealDescriptionHeading": "Description",
+      "dealConditionsHeading": "Conditions",
+      "previousDealLabel": "PREVIOUS",
+      "nextDealLabel": "NEXT",
+      "visitWebsiteLabel": "Visit website",
+      "dealLocationDirections": "Directions",
+      "couponClaimedText": "You've claimed this deal.",
+      "couponRedeemTimeText": "Time to redeem",
+      "couponRedeemInstructionsTitleText": "How to redeem?",
+      "couponRedeemInstructions": "Let the cashier confirm the deal you've claimed. Confirming the deal yourself will render it useless.",
+      "dealRedeemedText": "You've redeemed this deal.",
+      "myDealsTabText": "Claimed",
+      "myDealsAuthenticationRequiredText": "Sign in to view claimed deals",
+      "favoriteDealsTabText": "Favorited"
+    },
     "events": {
       "addToCalendarButton": "ADD TO CALENDAR",
       "calendarPermissionsTitle": "Grant calendar access",
