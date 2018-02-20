@@ -31,7 +31,7 @@ Typography components consist of several flavors of `Text` components with prede
 * **line-through**: Defines a line through the text
 * **multiline**: Increases line-height to allow text to wrap
 * **v-center**: Works only in combination with `multiline` styleName. Applies additional top and bottom margins to compensate the unsupported `textAlignVertical` prop on iOS
-
+* **secondary**: Applies secondary styles as defined in [theme](https://github.com/shoutem/ui/blob/develop/theme.js#L1011)
 
 ## Examples
 
