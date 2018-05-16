@@ -294,7 +294,8 @@
       "proceedToCheckoutButton": "PROCEED TO CHECKOUT",
       "cartScreenNavBarTitle": "SHOPPING CART",
       "emptyCartMessage": "You haven't added any products yet.",
-      "shopTitlePlaceholder": "SHOP"
+      "shopTitlePlaceholder": "SHOP",
+      "outOfStockMessage": "Out of stock"
     },
     "social": {
       "commentButton": "COMMENT",
