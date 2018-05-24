@@ -24,7 +24,7 @@ import {
 } from 'react-native';
 
 import {
-  Image,
+  ImageBackground,
   ListView,
   Tile,
   Title,
@@ -62,13 +62,13 @@ Add the `renderRow` method and change the implementation of the `render` method:
   // defines the UI of each row in the list
   renderRow(restaurant) {
     return (
-      <Image styleName="large-banner" source={% raw %}{{ uri: restaurant.image &&
+      <ImageBackground styleName="large-banner" source={% raw %}{{ uri: restaurant.image &&
         restaurant.image.url ? restaurant.image.url : undefined  }}{% endraw %}>
         <Tile>
           <Title>{restaurant.name}</Title>
           <Subtitle>{restaurant.address}</Subtitle>
         </Tile>
-      </Image>
+      </ImageBackground>
     );
   }
 
@@ -168,13 +168,13 @@ Open the restaurants details screen in the `renderRow` function. The `navigateTo
         screen: ext('Details'),
         props: { restaurant }
       })}>
-        <Image styleName="large-banner" source={% raw %}{{ uri: restaurant.image &&
+        <ImageBackground styleName="large-banner" source={% raw %}{{ uri: restaurant.image &&
         restaurant.image.url ? restaurant.image.url : undefined }}{% endraw %}>
           <Tile>
             <Title>{restaurant.name}</Title>
             <Subtitle>{restaurant.address}</Subtitle>
           </Tile>
-        </Image>
+        </ImageBackground>
       </TouchableOpacity>
     );
   }
@@ -193,7 +193,7 @@ import {
 } from 'react-native';
 
 import {
-  Image,
+  ImageBackground,
   ListView,
   Tile,
   Title,
@@ -228,13 +228,13 @@ export class List extends Component {
         screen: ext('Details'),
         props: { restaurant }
       })}>
-        <Image styleName="large-banner" source={% raw %}{{ uri: restaurant.image &&
+        <ImageBackground styleName="large-banner" source={% raw %}{{ uri: restaurant.image &&
         restaurant.image.url ? restaurant.image.url : undefined }}{% endraw %}>
           <Tile>
             <Title>{restaurant.name}</Title>
             <Subtitle>{restaurant.address}</Subtitle>
           </Tile>
-        </Image>
+        </ImageBackground>
       </TouchableOpacity>
     );
   }
@@ -278,7 +278,7 @@ import {
   Text,
   Title,
   View,
-  Image,
+  ImageBackground,
   Divider,
   Tile,
 } from '@shoutem/ui';
@@ -289,13 +289,13 @@ export default class Details extends Component {
 
     return (
       <ScrollView style = {% raw %}{{marginTop:-70}}{% endraw %}>
-        <Image styleName="large-portrait" source={% raw %}{{ uri: restaurant.image &&
+        <ImageBackground styleName="large-portrait" source={% raw %}{{ uri: restaurant.image &&
         restaurant.image.url ? restaurant.image.url : undefined }}{% endraw %}>
           <Tile>
             <Title>{restaurant.name}</Title>
             <Subtitle>{restaurant.address}</Subtitle>
           </Tile>
-        </Image>
+        </ImageBackground>
 
         <Row>
           <Text>{restaurant.description}</Text>
