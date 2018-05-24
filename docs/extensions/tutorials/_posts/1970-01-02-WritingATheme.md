@@ -176,7 +176,7 @@ import {
 } from 'react-native';
 
 import {
-  Image,
+  ImageBackground,
   ListView,
   Tile,
   Title,
@@ -226,13 +226,13 @@ class List extends Component {
         screen: ext('Details'),
         props: { restaurant }
       })}>
-        <Image styleName="large-banner" source={% raw %}{{ uri: restaurant.image &&
+        <ImageBackground styleName="large-banner" source={% raw %}{{ uri: restaurant.image &&
         restaurant.image.url ? restaurant.image.url : undefined }}{% endraw %}>          
           <Tile>
             <Title style={style.title}>{restaurant.name}</Title>
             <Subtitle style={style.subtitle}>{restaurant.address}</Subtitle>
           </Tile>
-        </Image>
+        </ImageBackground>
       </TouchableOpacity>
     );
   }
