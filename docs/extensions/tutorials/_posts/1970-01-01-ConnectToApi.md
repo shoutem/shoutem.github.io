@@ -87,7 +87,7 @@ import React, {
 import {
   Screen,
   View,
-  Image,
+  ImageBackground,
   Spinner,
   Tile,
   Title,
@@ -125,7 +125,7 @@ export default class PhotoDay extends Component {
     // render Spinner is photo is not fetched
     const content = photo ?
     (
-      <Image
+      <ImageBackground
         styleName="large-portrait"
         source={% raw %}{{{% endraw %} uri: photo.url }}
       >
@@ -133,7 +133,7 @@ export default class PhotoDay extends Component {
           <Title>{photo.title}</Title>
           <Subtitle>{photo.copyright}</Subtitle>
         </Tile>
-      </Image>
+      </ImageBackground>
     ) : <Spinner />;
 
     return (
