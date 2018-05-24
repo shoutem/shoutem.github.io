@@ -66,7 +66,7 @@ import moment from 'moment';
 import {
   TouchableOpacity,
   Caption,
-  Image,
+  ImageBackground,
   Tile,
   Title
 } from '@shoutem/ui';
@@ -82,7 +82,7 @@ export class ListArticleView extends ArticleView {
 
     return (
       <TouchableOpacity key={article.id} onPress={this.onPress}>
-        <Image
+        <ImageBackground
           styleName="featured"
           source={% raw %}{{{% endraw %} uri: getLeadImageUrl(article) }}
         >
@@ -90,7 +90,7 @@ export class ListArticleView extends ArticleView {
             <Title styleName="md-gutter-bottom">{article.title}</Title>
             {dateFormat}
           </Tile>
-        </Image>
+        </ImageBackground>
       </TouchableOpacity>
     );
   }
@@ -223,7 +223,7 @@ import moment from 'moment';
 import {
   TouchableOpacity,
   Caption,
-  Image,
+  ImageBackground,
   Tile,
   Title,
 } from '@shoutem/ui';
@@ -243,7 +243,7 @@ export class BigPictureView extends ListArticleView {
 
     return (
       <TouchableOpacity key={article.id} onPress={this.onPress}>
-        <Image
+        <ImageBackground
           styleName="featured"
           source={% raw %}{{{% endraw %} uri: getLeadImageUrl(article) }}
         >
@@ -251,7 +251,7 @@ export class BigPictureView extends ListArticleView {
             <Title styleName="md-gutter-bottom">{article.title}</Title>
             {dateFormat}
           </Tile>
-        </Image>
+        </ImageBackground>
       </TouchableOpacity>
     );
   }
