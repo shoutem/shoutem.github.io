@@ -177,6 +177,8 @@
       "refreshButton": "REFRESH",
       "myCardScreenNavBarTitle": "MY CARD",
       "myCardScreenPointsTitle": "Points",
+      "scanQrTitle": "SCAN QR CODE",
+      "scanQrButton": "START SCANNER",
       "pointsEarnedNavBarTitle": "POINTS EARNED",
       "pointsEarnedAmountSpent": "Your bill was ${{amountSpent}}",
       "pointsEarnedCongratulations": "Congratulations!",
