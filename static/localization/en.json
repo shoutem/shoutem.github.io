@@ -131,7 +131,6 @@
         "zero": "No points collected."
       },
       "collectPointsButton": "COLLECT",
-      "pointsHistoryButton": "HISTORY",
       "navigationHistoryButton": "History",
       "noPointsCollected": "No points collected.",
       "pointsRequiredStores": {
