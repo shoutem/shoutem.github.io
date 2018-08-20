@@ -14,7 +14,7 @@ This tutorial will show you how to install a 3rd party package into an extension
 
 ## 1) Installing a non-native Package
 
-A non-native package doesn't utilize native capabilities of the underlying device. Simply put, the package doesn't handle anything differently regardless of the fact it's being run on iOS or Android. When you finish this tutorial you'll have a functioning `swiper-extension`, like the one from our [extension examples](https://github.com/shoutem/extension-examples).
+A non-native package doesn't utilize native capabilities of the underlying device. Simply put, the package doesn't handle anything differently regardless of the fact it's being run on iOS or Android. When you finish this tutorial you'll have a functioning `swiper-extension`.
 
 ### Making an Extension
 
@@ -200,14 +200,14 @@ Success
 
 To make sure the native dependencies are linked, we'll have to make sure our custom postlink script is run by putting it in our `app/package.json` file. `rnpm`'s `postlink` command runs our `app/scripts/run.js` script that we'll explain afterwards.
 
-```json
+```json{8-12}
 #file: app/package.json
 {
   "name": "{{ site.example.devName }}.qr-reader-extension",
   "version": "0.0.1",
   "description": "An extension that scans QR codes and displays the encoded information to the user.",
   "dependencies": {
-    "react-native-camera": "^0.4.1"
+    "react-native-camera": "1.1.4"
   },
   "rnpm": {
     "commands": {
@@ -223,46 +223,17 @@ To make sure the native dependencies are linked, we'll have to make sure our cus
 Create a `scripts` directory and make the postlink script in it: `app/scripts/run.js`
 
 ```ShellSession
-$ cd app
-$ mkdir scripts
-$ cd scripts
-$ touch run.js
+$ touch app/scripts/run.js
 ```
 
-It's going to edit the `Info.plist` file and link the `react-native-camera` dependency for our app.
+Using the `react-native-link` helper method from the Shoutem platform's `@shoutem/build-tools`, we can easily link the package.
 
 ```javascript{1-21}
 #file: app/scripts/run.js
-const fs = require('fs-extra');
-const plist = require('plist');
+const { reactNativeLink } = require('@shoutem/build-tools');
 
-const infoPlistPath = './ios/ShoutemApp/Info.plist';
-const infoPlistFile = fs.readFileSync(infoPlistPath, 'utf8');
-const infoPlist = plist.parse(infoPlistFile);
-
-console.log('Adding camera and microphone permissions to Info.plist');
-infoPlist['NSCameraUsageDescription'] = 'App needs your camera to be able to scan QR codes';
-infoPlist['NSMicrophoneUsageDescription'] = 'App needs your microphone to be able to scan QR codes';
-fs.writeFileSync(infoPlistPath, plist.build(infoPlist));
-
-const exec = require('child_process').execSync;
-
-const dependenciesToLink = ['react-native-camera'];
-
-const command = 'node node_modules/react-native/local-cli/cli.js link';
-
-dependenciesToLink.forEach((dependency) => {
-  exec(`${command} ${dependency}`);
-});
+reactNativeLink('react-native-camera');
 ```
-
-Now let's explain the details regarding native dependency linking in `app/scripts/run.js`
-  - everything regarding `Info.plist` is added to notify the user that the app is using his camera
-  - `dependenciesToLink` is an array that stores all of our native dependencies, add more modules here to link them inside your app
-  - `command` uses the react-native-cli to link native dependencies
-  - the final three lines of code make sure each dependency in our array is linked
-
-The reason we create an array is because sometimes our extension will have multiple native dependencies, so instead of making a separate linking command for each, we simply run one `forEach` loop and hand it an array of dependencies.
 
 ### Using the Package
 
@@ -320,4 +291,4 @@ Opening the QRReader app in the Builder will show us an app with no Screens, but
 
 This specific native dependency that we're using (`react-native-camera`) is already linked in the Builder preview binary, so we will be able to preview the there. Once it finishes building and loading our QRReader app, scan a QR code, like [this one](https://upload.wikimedia.org/wikipedia/commons/d/d0/QR_code_for_mobile_English_Wikipedia.svg), which should display the URL to WikiPedia's English mobile main page.
 
-With any other native dependency, previewing the app through the Builder won't be possible, because of it's predefined binary, so instead we have to [preview it locally](http://shoutem.github.io/docs/extensions/tutorials/setting-local-environment) using `react-native run-ios` or `react-native run-android`.
+With any other native dependency, previewing the app through the Builder won't be possible, because of its predefined binary, so instead we have to [preview it locally](http://shoutem.github.io/docs/extensions/tutorials/setting-local-environment) using `react-native run-ios` or `react-native run-android`.
