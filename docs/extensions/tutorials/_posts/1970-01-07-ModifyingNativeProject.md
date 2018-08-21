@@ -1,15 +1,15 @@
 ---
 layout: doc
-permalink: /docs/extensions/tutorials/modifying-root-app
+permalink: /docs/extensions/tutorials/modifying-native-project
 title: Modifying Root App
 section: Tutorials
 ---
 
-# Modifying Root App
+# Modifying Native Project
 
-When making an extension with native dependencies, it's often necessary to change properties outside of the extension. One way we address this need using anchors, which can be used to inject code into files which often need to be modified in order to set up a native dependency.
+When making an extension with native dependencies, it's often necessary to change properties outside of the extension. One way we address this need using file anchors, which can be used to inject code into files which often need to be modified in order to set up a native dependency.
 
-Another tool we provide is the merging of the extension's app segmenet into the root app. For example, instead of directly modifying the root Android `build.gradle`, you can simply create a `build.gradle` in  the `{{ site.example.devName }}.extension-name/app/android` directory which is then merged into the root `build.gradle`. You can see an example in `shoutem.places`, [here](https://github.com/shoutem/extensions/tree/master/shoutem.places/app/android).
+You can also affect the native project by creating an `android` and `ios` directory in the extension's app segment, you can read more about that in the [**App segment**]({{ site.url }}/docs/extensions/tutorials/modifying-native-project#app-segment) section.
 
 ## Injecting
 
@@ -181,11 +181,13 @@ The `inject()` and `replace()` functions can be used to either inject code at an
 - `newContent`: the source code that should replace `oldContent` in the file
 
 
-## Merging files
+## App segment
 
-As mentioned in the introduction, another tool provided for modifying the root app with an extension is to utilize the app segment merging.
+As mentioned in the introduction, another tool provided for modifying the root app with an extension is to define new Android modules using an `android` directory in the app segment of your extension.
 
-An example of this can be seen in our `shoutem.places` [extension](https://github.com/shoutem/extensions/tree/master/shoutem.places/app/android) in the `shoutem.places/app/android` directory. It merges, among other things, `AndroidManifest.xml` in order to add permissions for Internet and Location:
+For example, instead of directly modifying the root Android `build.gradle`, you can simply create a `build.gradle` in  the `{{ site.example.devName }}.extension-name/app/android` directory which defines a new Android module for the app. You can see an example in `shoutem.places`, [here](https://github.com/shoutem/extensions/tree/master/shoutem.places/app/android).
+
+Furthermore, unique parts of the Android module are merged from the extension into the app, such as the `AndroidManifest.xml`, also visible in the above `shoutem.places` example. You can read more about manifest merging [here](https://developer.android.com/studio/build/manifest-merge).
 
 ```XML
 #file: shoutem.places/app/android/src/main/AndroidManifest.xml
@@ -195,3 +197,5 @@ An example of this can be seen in our `shoutem.places` [extension](https://githu
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
 </manifest>
 ```
+
+There is no similar method for iOS, however, we've included `Info.plist` merging, so you can create an `{{ site.example.devName }}.extension-name/app/ios` directory and an `Info.plist` file inside of it, which will get merged into the root `Info.plist` by the platform's `merge-info-plists.js` [script](https://github.com/shoutem/platform/blob/develop/scripts/merge-info-plists.js) during the app's configuration. An example of this can be seen in the `shoutem.camera` [extension](https://github.com/shoutem/extensions/blob/master/shoutem.camera/app/ios/Info.plist), which adds permissions to the root `Info.plist`.
