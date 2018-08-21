@@ -17,7 +17,7 @@ This section will elaborate on how to inject code into the native parts of the r
 
 #### Available anchors
 
-The list of available anchors can be seen in the [platform's helper scripts](https://github.com/shoutem/platform/blob/develop/scripts/helpers/const.js).
+The list of available anchors can be seen in the [platform's helper scripts](https://github.com/shoutem/platform/blob/master/scripts/helpers/const.js).
 
 The `ANCHORS` object is structured as follows:
 
@@ -58,7 +58,7 @@ build/
 
 We can look at the `shoutem.code-push` [extension](https://github.com/shoutem/extensions/tree/master/shoutem.code-push/app/build) as an example.
 
-`const.js` should contain all the plaintext modifications you need to inject, in separate variables, exported as a single object named after your extension, with a structure resembling that of the `ANCHORS` object from `@shoutem/build-tools` seen above in the **Available anchors** section and the platform's `scripts/helpers/const.js` [file](https://github.com/shoutem/platform/blob/develop/scripts/helpers/const.js).
+`const.js` should contain all the plaintext modifications you need to inject, in separate variables, exported as a single object named after your extension, with a structure resembling that of the `ANCHORS` object from `@shoutem/build-tools` seen above in the **Available anchors** section and the platform's `scripts/helpers/const.js` [file](https://github.com/shoutem/platform/blob/master/scripts/helpers/const.js).
 
 ```JavaScript
 #file: shoutem.code-push/app/build/const.js
@@ -198,4 +198,4 @@ Furthermore, unique parts of the Android module are merged from the extension in
 </manifest>
 ```
 
-There is no similar method for iOS, however, we've included `Info.plist` merging, so you can create an `{{ site.example.devName }}.extension-name/app/ios` directory and an `Info.plist` file inside of it, which will get merged into the root `Info.plist` by the platform's `merge-info-plists.js` [script](https://github.com/shoutem/platform/blob/develop/scripts/merge-info-plists.js) during the app's configuration. An example of this can be seen in the `shoutem.camera` [extension](https://github.com/shoutem/extensions/blob/master/shoutem.camera/app/ios/Info.plist), which adds permissions to the root `Info.plist`.
+There is no similar method for iOS, however, we've included `Info.plist` merging, so you can create an `{{ site.example.devName }}.extension-name/app/ios` directory and an `Info.plist` file inside of it, which will get merged into the root `Info.plist` by the platform's `merge-info-plists.js` [script](https://github.com/shoutem/platform/blob/master/scripts/merge-info-plists.js) during the app's configuration. An example of this can be seen in the `shoutem.camera` [extension](https://github.com/shoutem/extensions/blob/master/shoutem.camera/app/ios/Info.plist), which adds permissions to the root `Info.plist`.
