@@ -19,4 +19,4 @@ You'll need to install the [Shoutem CLI](https://shoutem.github.io/docs/extensio
 
 Once you've done that, you can continue by reading about the [platform-related CLI commands](https://shoutem.github.io/docs/extensions/reference/cli#shoutem-platform-create---url).
 
-If you need help or you need more information about custom platforms, you can contact us via our [main website](https://new.shoutem.com/about/contact-us/), or you can join us in our Slack channel.
+If you need help or you need more information about custom platforms, you can contact us via our [main website](https://new.shoutem.com/about/contact-us/).
