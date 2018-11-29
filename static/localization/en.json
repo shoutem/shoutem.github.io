@@ -305,12 +305,11 @@
       "likeButton": "LIKE",
       "unlikeButton": "UNLIKE",
       "numberOfLikesMessage": {
-        "one": "{{firstUser}} likes this",
-        "other": "{{firstUser}} and {{secondUser}} like this"
+        "one": "{{firstUser}} likes this"
       },
       "numberOfOtherUserLikesMessage": {
-        "one": "{{firstUser}}, {{secondUser}} and 1 other like this",
-        "other": "{{firstUser}}, {{secondUser}} and {{count}} others like this"
+        "one": "{{firstUser}} and 1 other like this",
+        "other": "{{firstUser}} and {{count}} others like this"
       },
       "numberOfLikes": {
         "one": "{{count}} Like",
