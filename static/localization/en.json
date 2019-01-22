@@ -49,7 +49,9 @@
       "invalidEmailFormatErrorMessage": "Wrong email format. Make sure your email format is name@domain.com",
       "invalidUsernameFormatErrorMessage": "Please change the username so it has at least 3 characters, starts with a letter and contains only letters, numbers and underscores.",
       "invalidPasswordFormatErrorMessage": "Password has to be at least 6 characters long. Please try again.",
-      "formNotFilledErrorMessage": "All of the fields must be filled. Please try again."
+      "formNotFilledErrorMessage": "All of the fields must be filled. Please try again.",
+      "manualApprovalTitle": "Pending approval",
+      "manualApprovalMessage": "Your registration request is being reviewed. Thank you for your patience."
     },
     "books": {
       "buyButtonText": "BUY THIS BOOK"
