@@ -14,10 +14,10 @@ The `SimpleHtml` component is based on the [react-native-render-html](https://gi
 #### Props
 
 * **body**: string  
-- Body of the HTML content that will be transformed by this component and rendered using React Native components
+  - Body of the HTML content that will be transformed by this component and rendered using React Native components
 
 * **customHandleLinkPress**: func
-- A function that would determine what happens when a link is pressed. By default, it will open the link in the device's browser outside of the app
+  - A function that would determine what happens when a link is pressed. By default, it will open the link in the device's browser outside of the app
 
 #### Style names
 
