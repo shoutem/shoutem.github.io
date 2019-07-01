@@ -132,14 +132,19 @@
         "other": "{{count}} points collected.",
         "zero": "No points collected."
       },
+      "pointsLabel": "Points",
       "collectPointsButton": "COLLECT",
       "navigationHistoryButton": "History",
+      "pointsCollected": "Points collected",
       "noPointsCollected": "No points collected.",
       "pointsRequiredStores": {
         "one": "Requires {{count}} point.",
         "other": "Requires {{count}} points."
-        },
-      "pointsRequiredRewards": " points.",
+      },
+      "pointsRequiredRewards": {
+        "one": "{{count}} point.",
+        "other": "{{count}} points."
+      },
       "noHistory": "No activity.",
       "fullHistoryButton": "SHOW ENTIRE HISTORY",
       "pointsHistoryTitle": "POINTS HISTORY",
@@ -168,8 +173,6 @@
       "confirmButton": "CONFIRM",
       "noProgramNavBarTitle": "LOYALTY",
       "noProgramErrorMessage": "Turn on loyalty program in extension settings.",
-      "scanBarcodeButton": "SCAN BARCODE",
-      "scanBarcodeNavBarTitle": "Scan Barcode",
       "wrongPinErrorTitle": "Wrong PIN",
       "wrongPinErrorMessage": "The PIN you entered was incorrect.",
       "pinPlaceholder": "Enter your PIN",
@@ -180,6 +183,8 @@
       "myCardScreenPointsTitle": "Points",
       "scanQrTitle": "SCAN QR CODE",
       "scanQrButton": "START SCANNER",
+      "scanBarcodeButton": "SCAN BARCODE",
+      "scanBarcodeNavBarTitle": "Scan Barcode",
       "pointsEarnedNavBarTitle": "POINTS EARNED",
       "pointsEarnedAmountSpent": "Your bill was ${{amountSpent}}",
       "pointsEarnedCongratulations": "Congratulations!",
@@ -210,9 +215,11 @@
       "cardStampingDoneMessage": "STAMP CARD",
       "cashierVerificationMessage": "Show this screen to the Cashier.",
       "usePinInstead": "USE PIN INSTEAD",
-      "numberOfRewardsInvalidErrorMessage": "This reward is out of stock.",
-      "authDataExpressionInvalidErrorMessage": "This barcode is no longer valid!",
-      "transactionExistsErrorMessage": "This barcode has already been scanned!"
+      "numberOfRewardsInvalidErrorMessage": "This reward is currently out of stock.",
+      "authDataExpressionInvalidErrorMessage": "The barcode is not valid!",
+      "transactionExistsErrorMessage": "The bar code was already scanned!",
+      "noPointsAwardedErrorTitle": "No points selected",
+      "noPointsAwardedErrorMessage": "Please select points to award or cancel"
     },
     "navigation": {
       "noScreensMessage": "Sorry, this app doesn't have any screens to open.",
