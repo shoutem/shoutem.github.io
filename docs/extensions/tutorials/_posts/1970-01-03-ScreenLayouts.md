@@ -38,9 +38,15 @@ Again, notice how we didn't create a Shortcut. That's because SmallList isn't th
 ```javascript{15-17,27-50}
 #file: app/screens/SmallList.js
 import React from 'react';
+import { TouchableOpacity } from 'react-native';
+import { connect } from 'react-redux';
+
+import { navigateTo } from 'shoutem.navigation';
+
 import {
-  TouchableOpacity
-} from 'react-native';
+  find,
+  getCollection
+} from '@shoutem/redux-io';
 import {
   Image,
   Row,
@@ -51,16 +57,7 @@ import {
   Icon
 } from '@shoutem/ui';
 
-import {
-  List
-} from './List';
-
-import {
-  find,
-  getCollection
-} from '@shoutem/redux-io';
-import { connect } from 'react-redux';
-import { navigateTo } from '@shoutem/core/navigation';
+import { List } from './List';
 import { ext } from '../extension';
 
 export class SmallList extends List {
