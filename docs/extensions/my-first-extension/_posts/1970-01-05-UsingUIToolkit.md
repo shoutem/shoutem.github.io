@@ -15,13 +15,10 @@ Let's create a list of restaurants. Start by importing UI components from the to
 
 ```javascript{9-17,19}
 #file: app/screens/List.js
-import React, {
-  Component
-} from 'react';
+import React, { PureComponent } from 'react';
+import { StyleSheet } from 'react-native';
 
-import {
-  StyleSheet
-} from 'react-native';
+import { NavigationBar } from 'shoutem.navigation';
 
 import {
   ImageBackground,
@@ -33,7 +30,6 @@ import {
   Screen
 } from '@shoutem/ui';
 
-import { NavigationBar } from '@shoutem/ui/navigation';
 ```
 
 Notice that you didn't need to install the `@shoutem/ui` package into the `app` folder of your extension. That's because this package will be installed in the extension by the app into which your extension is bundled. All packages installed by the app by default can be found in `peerDependencies` of `app/package.json`. Also, we removed `View` and `Text` from the `react-native` import.
@@ -44,7 +40,7 @@ Define a method in your `List` class that returns an array of restaurants.
 
 ```javascript{3-5}
 #file: app/screens/List.js
-export default class List extends Component {
+export default class List extends PureComponent {
 
   getRestaurants() {
     return require('../assets/restaurants.json');
@@ -111,10 +107,10 @@ Let's import these things (find the complete code below):
 
 ```javascript{1-5}
 #file: app/screens/List.js
-import {
-  TouchableOpacity
-} from 'react-native';
-import { navigateTo } from '@shoutem/core/navigation';
+import { TouchableOpacity } from 'react-native';
+
+import { navigateTo } from 'shoutem.navigation';
+
 import { ext } from '../const';
 ```
 
@@ -124,7 +120,7 @@ import { ext } from '../const';
 #file: app/screens/List.js
 import { connect } from 'react-redux';
 
-export class List extends Component {
+export class List extends PureComponent {
   constructor(props) {
     super(props);
 
@@ -143,7 +139,7 @@ export default connect(
 ```
 
 > #### Note
-> Make sure that you remove the `default` from `export default class List extends Component` because there can only be one default export and we want `export default connect` to be it.
+> Make sure that you remove the `default` from `export default class List extends PureComponent` because there can only be one default export and we want `export default connect` to be it.
 
 Now create the Details screen:
 
@@ -184,13 +180,11 @@ This is what you should end up with in `app/screens/List.js`:
 
 ```JSX
 #file: app/screens/List.js
-import React, {
-  Component
-} from 'react';
+import React, { PureComponent } from 'react';
+import { TouchableOpacity } from 'react-native';
+import { connect } from 'react-redux';
 
-import {
-  TouchableOpacity,
-} from 'react-native';
+import { navigateTo, NavigationBar } from 'shoutem.navigation';
 
 import {
   ImageBackground,
@@ -202,12 +196,9 @@ import {
   Screen
 } from '@shoutem/ui';
 
-import { NavigationBar } from '@shoutem/ui/navigation';
-import { navigateTo } from '@shoutem/core/navigation';
 import { ext } from '../const';
-import { connect } from 'react-redux';
 
-export class List extends Component {
+export class List extends PureComponent {
   constructor(props) {
     super(props);
 
@@ -263,13 +254,8 @@ For the `Details` screen just copy the following code. We're not introducing any
 
 ```JSX
 #file: app/screens/Details.js
-import React, {
-  Component
-} from 'react';
-
-import {
-  ScrollView,
-} from 'react-native';
+import React, { PureComponent } from 'react';
+import { ScrollView } from 'react-native';
 
 import {
   Icon,
@@ -283,7 +269,7 @@ import {
   Tile,
 } from '@shoutem/ui';
 
-export default class Details extends Component {
+export default class Details extends PureComponent {
   render() {
     const { restaurant } = this.props;
 
