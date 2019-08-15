@@ -81,7 +81,7 @@ Fetch data in the `componentDidMount` lifecycle method.
 
 ```javascript{2-10}
 #file: app/screens/List.js
-export class List extends Component {
+export class List extends PureComponent {
   componentDidMount() {
     const { find, restaurants } = this.props;
 
@@ -132,14 +132,18 @@ This is the final result of `List` screen:
 
 ```JSX
 #file: app/screens/List.js
-import React, {
-  Component
-} from 'react';
+import React, { PureComponent } from 'react';
+import { TouchableOpacity } from 'react-native';
+import { connect } from 'react-redux';
+
+import { navigateTo, NavigationBar } from 'shoutem.navigation';
 
 import {
-  TouchableOpacity,
-} from 'react-native';
-
+  find,
+  isBusy,
+  shouldRefresh,
+  getCollection
+} from '@shoutem/redux-io';
 import {
   ImageBackground,
   ListView,
@@ -150,19 +154,9 @@ import {
   Screen
 } from '@shoutem/ui';
 
-import { NavigationBar } from '@shoutem/ui/navigation';
-import { navigateTo } from '@shoutem/core/navigation';
 import { ext } from '../const';
-import { connect } from 'react-redux';
 
-import {
-  find,
-  isBusy,
-  shouldRefresh,
-  getCollection
-} from '@shoutem/redux-io';
-
-export class List extends Component {
+export class List extends PureComponent {
   constructor(props) {
     super(props);
 
