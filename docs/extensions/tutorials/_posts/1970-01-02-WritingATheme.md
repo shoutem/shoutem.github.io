@@ -167,14 +167,19 @@ We didn't use `style`, but now we're going to use it from `this.props.style` in 
 
 ```JavaScript{20,53,63-64,92-94}
 #file: app/screens/List.js
-import React, {
-  Component
-} from 'react';
+import React, { PureComponent } from 'react';
+import { TouchableOpacity } from 'react-native';
+import { connect } from 'react-redux';
+
+import { navigateTo, NavigationBar } from 'shoutem.navigation';
 
 import {
-  TouchableOpacity,
-} from 'react-native';
-
+  find,
+  isBusy,
+  shouldRefresh,
+  getCollection
+} from '@shoutem/redux-io';
+import { connectStyle } from '@shoutem/theme';
 import {
   ImageBackground,
   ListView,
@@ -186,21 +191,9 @@ import {
   Screen
 } from '@shoutem/ui';
 
-import { connectStyle } from '@shoutem/theme';
+import { ext } from '../const';
 
-import {
-  find,
-  isBusy,
-  shouldRefresh,
-  getCollection
-} from '@shoutem/redux-io';
-
-import { NavigationBar } from '@shoutem/ui/navigation';
-import { navigateTo } from '@shoutem/core/navigation';
-import { ext } from '../extension';
-import { connect } from 'react-redux';
-
-class List extends Component {
+class List extends PureComponent {
   constructor(props) {
     super(props);
 
@@ -282,7 +275,7 @@ Import the `ext` function and add the following styling rules to the beginning o
 #file: app/themes/restaurant.js
 // other imports ...
 
-import { ext } from '../extension';
+import { ext } from '../const';
 
 // exports and constants ...
 
