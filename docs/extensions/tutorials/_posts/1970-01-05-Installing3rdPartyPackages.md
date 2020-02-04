@@ -160,7 +160,55 @@ Opening the SwiperApp in the Builder will show us an app with no Screens, but si
 
 ## 2) Installing a Native Package
 
-A native package utilizes native capabilities of the underlying device. When installing such a package we have to make sure we link the native dependencies it has. This is done using [postinstall scripts](https://docs.npmjs.com/misc/scripts). As an example, we'll be making a QR Code reader that's going to display what the scanned QR code says. To scan a QR code we'll need to use the devices camera, which we'll get access to using `react-native-camera`, a 3rd party package for utilizing device cameras.
+A native package utilizes native capabilities of the underlying device. When installing such a package we have to make sure we link the native dependencies it has.
+
+## Shoutem Platform with React Native >=0.60 (2.2.0 and higher)
+
+With the introduction of autolinking, it is now surprisingly easy to add native packages to your app if they support it. Simply add the name of the package into your extension's `app/package.json` under a `nativePackages` property.
+
+```json{8-10}
+#file: app/package.json
+{
+  "name": "{{ site.example.devName }}.qr-reader-extension",
+  "version": "0.0.1",
+  "description": "An extension that scans QR codes and displays the encoded information to the user.",
+  "dependencies": {
+    "react-native-camera": "~3.11.0"
+  },
+  "nativeDependencies": [
+    "react-native-camera"
+  ]
+}
+```
+
+If your dependency doesn't support autolinking or you want to manually link it, you can use a `react-native.config.js` file inside of your extension's `app` segment to run a `prelink` or `postlink` hook, as well as disable autolinking for it.
+
+#### NOTE: We strongly recommend upgrading to packages that support autolinking as it will reduce maintenance and the number of bugs or other issues with building your app via Shoutem.
+
+Since extensions are effectively used as npm packages, the `react-native.config.js` file [should reflect this](https://github.com/react-native-community/cli/blob/master/docs/configuration.md#libraries).
+
+```javascript
+#file: app/react-native.config.js
+module.exports = {
+  dependency: {
+    platforms: {
+      android: null,
+      ios: null,
+    },
+    hooks: {
+      postlink: 'node ./node_modules/tom.qr-reader-extension/scripts/run.js',
+    },
+  },
+};
+```
+
+We use a postlink hook because our configuration script will run `react-native link` on any extension with `ios` or `android` directories, as well as if it has any `nativeDependencies` set in it's `package.json` file.
+
+If you're confused by what the `run.js` script is, please read the section after this one, where it's explained.
+
+## Shoutem platform with React Native <0.60 (2.1.1 and lower)
+
+This is done using [postinstall scripts](https://docs.npmjs.com/misc/scripts). As an example, we'll be making a QR Code reader that's going to display what the scanned QR code says. To scan a QR code we'll need to use the devices camera, which we'll get access to using `react-native-camera`, a 3rd party package for utilizing device cameras.
 
 When you finish this tutorial you'll have a functioning `qr-reader-extension`, like the one from our [extension examples](https://github.com/shoutem/extension-examples).
 
