@@ -57,6 +57,10 @@
     "books": {
       "buyButtonText": "BUY THIS BOOK"
     },
+    "camera": {
+      "changePermissionsButton": "Change permissions",
+      "permissionNotGranted": "Camera permission not granted."
+    },
     "cms": {
       "androidLocationPermissionTitle": "Location Permission",
       "androidLocationPermissionMessage": "This app needs access to your location to display relevant data.",
@@ -125,7 +129,8 @@
       "calendarPermissionsTitle": "Grant calendar access",
       "calendarPermissionsMessage": "You disabled calendar access for this application. Do you want to enable it in settings now?",
       "calendarPermissionsSettings": "Go to Settings",
-      "calendarPermissionsCancel": "Cancel"
+      "calendarPermissionsCancel": "Cancel",
+      "noUrlMessage": "Please specify an iCal URL and reload the app."
     },
     "loyalty": {
       "pointsInStore": {
@@ -151,8 +156,8 @@
       "pointsHistoryTitle": "POINTS HISTORY",
       "rewardRedeemed": "Reward redeemed",
       "historyItemPointsGainedTitle": "Points gained",
-      "historyItemWithPurchaseMessage": "Store visited · ${{amountSpent}} spent ",
-      "historyItemNoPurchaseMessage": "Store visited",
+      "historyItemAmountSpent": "${{amountSpent}} spent",
+      "historyItemStoreVisited": "Store visited",
       "storeRewardsListTitle": "REWARDS",
       "noRewardsForStore": "Currently, there are no rewards available for this store.",
       "storeDescriptionTitle": "LOCATION INFO",
@@ -249,8 +254,17 @@
       "messageReceivedAlertView": "View",
       "messageReceivedAlertDismiss": "Dismiss"
     },
+    "radio": {
+      "buffering": "Buffering...",
+      "missingStreamUrl": "Please enter a valid stream URL and reload your app.",
+      "nowPlaying": "Now playing",
+      "pressToPlay": "Press play to start the stream"
+    },
     "rss": {
       "noUrlMessage": "Please specify RSS feed URL and reload the app."
+    },
+    "rss-news": {
+      "upNext": "UP NEXT"
     },
     "shopify": {
       "totalPrice": "Total price:",
@@ -416,6 +430,9 @@
     "web-view": {
       "noUrlErrorMessage": "Please enter a valid URL and reload your app.",
       "noUrlErrorTitle": "No URL"
+    },
+    "wordpress": {
+      "upNext": "UP NEXT"
     }
   }
 }
