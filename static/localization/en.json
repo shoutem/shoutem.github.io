@@ -16,12 +16,27 @@
       "networkErrorMessage": "No internet connection, please check your network.",
       "noSubscriptionMessage": "This app is currently inactive. Please contact its developer for support!"
     },
+    "agora": {
+      "cancel": "Cancel",
+      "localUserFailsToConnectTitle": "Unable to establish video call",
+      "localUserFailsToConnectMessage": "Please try again later or contact the app owner.",
+      "missingPermissionsTitle": "Camera and Microphone Access Required",
+      "missingPermissionsMessage": "Please enable access to your camera and microphone in the Settings",
+      "missingUidErrorTitle": "User ID is missing",
+      "missingUidErrorMessage": "Unable to join the channel. Please try again later.",
+      "openSettings": "Go to Settings",
+      "userNotAuthenticatedTitle": "User not logged in",
+      "userNotAuthenticatedMessage": "You must be logged in to use video call feature.",
+      "waitingToJoinFirstPart": "Waiting for",
+      "waitingToJoinSecondPart": "to connect..."
+    },
     "auth": {
       "appleAuthCanceledError": "The user canceled the authorization attempt.",
       "appleAuthFailedError": "The authorization attempt failed.",
       "appleAuthInvalidResponseError": "The authorization request received an invalid response.",
       "appleAuthNotHandledError": "The authorization request wasn't handled.'",
       "appleAuthUnknownError": "The authorization attempt failed for an unknown reason.",
+      "chat": "Chat",
       "doneNavBarButton": "Done",
       "editProfileButton": "EDIT PROFILE",
       "editProfileNavBarTitle": "EDIT PROFILE",
@@ -29,6 +44,7 @@
       "facebookLogInButton": "Sign in with Facebook",
       "facebookSignUpButton": "Continue with Facebook",
       "formNotFilledErrorMessage": "All form fields are required.",
+      "horizontalSeparatorText": "OR",
       "imageSelectErrorMessage": "Image selection error.",
       "invalidCredentialsErrorMessage": "Wrong username / email or password. Please try again.",
       "invalidEmailFormatErrorMessage": "Wrong email format. Make sure your email format is name@domain.com",
@@ -60,8 +76,8 @@
       "usernameOrEmailPlaceholder": "Enter your username/email",
       "usernamePlaceholder": "Enter your username",
       "usernameTakenErrorMessage": "That email or username is taken. Please choose another one or try to sign in.",
-      "horizontalSeparatorText": "OR",
-      "userWebsite": "Website"
+      "userWebsite": "Website",
+      "videoChat": "Video Chat"
     },
     "books": {
       "buyButtonText": "BUY THIS BOOK"
@@ -140,6 +156,9 @@
       "calendarPermissionsSettings": "Go to Settings",
       "calendarPermissionsCancel": "Cancel",
       "noUrlMessage": "Please specify an iCal URL and reload the app."
+    },
+    "interactive-faq": {
+      "backButtonTitle": "< Back"
     },
     "loyalty": {
       "pointsInStore": {
@@ -233,6 +252,7 @@
       "numberOfRewardsInvalidErrorMessage": "This reward is currently out of stock.",
       "authDataExpressionInvalidErrorMessage": "The barcode is not valid!",
       "transactionExistsErrorMessage": "The bar code was already scanned!",
+      "transactionInProgress": "Another transaction is currently in progress, please try again a little later.",
       "noPointsAwardedErrorTitle": "No points selected",
       "noPointsAwardedErrorMessage": "Please select points to award or cancel",
       "cardPointCountInvalid": "Card doesn't have enough points.",
@@ -305,6 +325,7 @@
       "countrySelectionTitle": "COUNTRY",
       "checkoutNavBarTitle": "CHECKOUT",
       "checkoutContinueButton": "CONTINUE",
+      "doneButton": "Done",
       "addItemConfirmButton": "CONFIRM",
       "cartItemUpdateButton": "UPDATE",
       "cartItemRemoveButton": "REMOVE",
