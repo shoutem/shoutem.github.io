@@ -10,7 +10,7 @@ section: Tutorials
 
 Each screen can have multiple layouts. App owners can choose which screen layout they want to use in their app (e.g. for news from politics they might want to use a layout with smaller images, and for fashion they might want large images). As screen layouts are just plain screens, they can contain different logic than the screen they are altering and can be easily used for A/B testing.
 
-We’ll create a different layout in the **Restaurants** extension from the [My First Extension]({{ site.url }}/docs/extensions/my-first-extension/introduction) tutorial, which you can [get here](https://github.com/shoutem/extension-examples/tree/master/restaurants-getting-started). The Restaurants extension has a `List` screen (for listing all the restaurants) and a `Details` screen (for details of one particular restaurant).
+We’ll create a different layout in the **Restaurants** extension from the [My First Extension]({{ site.url }}/docs/extensions/my-first-extension/introduction) tutorial, which you can [get here](https://github.com/shoutem/extension-examples/tree/master/tom.restaurants-getting-started). The Restaurants extension has a `List` screen (for listing all the restaurants) and a `Details` screen (for details of one particular restaurant).
 
 Let’s add one additional screen that will represent an alternative layout for the `List` screen where we'll use smaller images as shown here:
 
