@@ -293,10 +293,26 @@
       "pressToPlay": "Press play to start the stream"
     },
     "rss": {
-      "noUrlMessage": "Please specify RSS feed URL and reload the app."
+      "noUrlMessage": "Please specify RSS feed URL and reload the app.",
+      "itemNotFoundTitle": "Oops",
+      "itemNotFoundMessage": "That item is no longer available.",
+      "errorMessage": "Something went wrong."
     },
     "rss-news": {
       "upNext": "UP NEXT"
+    },
+    "sendbird": {
+      "userUnavailableMessage": "This user currently isn't available to chat.",
+      "genericErrorMessage": "Something went wrong. Try again in a few moments.",
+      "chatUnavailableErrorTitle": "Chat unavailable",
+      "chatEncryptionMessage": "Messages in this chat are private and encrypted.",
+      "chatNotConfiguredMessage": "Chat feature is not available due to invalid configuration.",
+      "isTypingSuffix": " is typing...",
+      "textInputPlaceholder": "Type a message...",
+      "emptyChatListTitle": "It’s empty in here",
+      "emptyChatListMessage": "You can start a conversation by looking for person you want to chat with",
+      "newMessagesLabel": "NEW",
+      "searchBarPlaceholder": "Search conversations or start a new one..."
     },
     "shopify": {
       "totalPrice": "Total price:",
