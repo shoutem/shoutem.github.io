@@ -73,6 +73,7 @@
       "userBioTitle": "Bio",
       "userLocation": "Location",
       "userNameAndSurname": "Name and surname",
+      "usernameOrEmail": "Username or Email",
       "usernameOrEmailPlaceholder": "Enter your username/email",
       "usernamePlaceholder": "Enter your username",
       "usernameTakenErrorMessage": "That email or username is taken. Please choose another one or try to sign in.",
@@ -312,7 +313,8 @@
       "emptyChatListTitle": "It’s empty in here",
       "emptyChatListMessage": "You can start a conversation by looking for person you want to chat with",
       "newMessagesLabel": "NEW",
-      "searchBarPlaceholder": "Search conversations or start a new one..."
+      "searchBarPlaceholder": "Search conversations or start a new one...",
+      "subscriptionInvalidMessage": "Chat feature won't be available until this app has a valid subscription."
     },
     "shopify": {
       "totalPrice": "Total price:",
@@ -381,9 +383,13 @@
     },
     "social": {
       "commentButton": "COMMENT",
-      "deleteCommentOption": "Delete",
       "cancelCommentSelectionOption": "Cancel",
-      "loadMoreComments": "Load more comments...",
+      "deleteCommentOption": "Delete",
+      "emptySearchListTitle": "It’s empty in here",
+      "emptyStartSearchListTitle": "Search user profiles",
+      "emptySearchListMessage": "Your search '{{text}}' did not match any profiles.",
+      "emptyStartSearchListMessage": "You can find user profiles by typing their name.",
+      "loadingMoreComments": "Loading more comments...",
       "likeButton": "LIKE",
       "unlikeButton": "UNLIKE",
       "numberOfLikesMessage": {
