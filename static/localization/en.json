@@ -16,20 +16,6 @@
       "networkErrorMessage": "No internet connection, please check your network.",
       "noSubscriptionMessage": "This app is currently inactive. Please contact its developer for support!"
     },
-    "agora": {
-      "cancel": "Cancel",
-      "localUserFailsToConnectTitle": "Unable to establish video call",
-      "localUserFailsToConnectMessage": "Please try again later or contact the app owner.",
-      "missingPermissionsTitle": "Camera and Microphone Access Required",
-      "missingPermissionsMessage": "Please enable access to your camera and microphone in the Settings",
-      "missingUidErrorTitle": "User ID is missing",
-      "missingUidErrorMessage": "Unable to join the channel. Please try again later.",
-      "openSettings": "Go to Settings",
-      "userNotAuthenticatedTitle": "User not logged in",
-      "userNotAuthenticatedMessage": "You must be logged in to use video call feature.",
-      "waitingToJoinFirstPart": "Waiting for",
-      "waitingToJoinSecondPart": "to connect..."
-    },
     "auth": {
       "appleAuthCanceledError": "The user canceled the authorization attempt.",
       "appleAuthFailedError": "The authorization attempt failed.",
@@ -37,6 +23,7 @@
       "appleAuthNotHandledError": "The authorization request wasn't handled.'",
       "appleAuthUnknownError": "The authorization attempt failed for an unknown reason.",
       "chat": "Chat",
+      "consentRequiredError": "You need to agree to the app's terms and conditions to register",
       "doneNavBarButton": "Done",
       "editProfileButton": "EDIT PROFILE",
       "editProfileNavBarTitle": "EDIT PROFILE",
@@ -44,6 +31,9 @@
       "facebookLogInButton": "Sign in with Facebook",
       "facebookSignUpButton": "Continue with Facebook",
       "formNotFilledErrorMessage": "All form fields are required.",
+      "gdprConsentMessage": "I allow this app to collect and use my data, as described in Privacy Policy",
+      "emailTakenErrorMessage": "This email address is already registered.",
+      "recoverPasswordText": "Recover password?",
       "horizontalSeparatorText": "OR",
       "imageSelectErrorMessage": "Image selection error.",
       "invalidCredentialsErrorMessage": "Wrong username / email or password. Please try again.",
@@ -52,6 +42,7 @@
       "invalidUsernameFormatErrorMessage": "Username has to have at least 3 characters, start with a letter and contain only lowercase letters, numbers and underscores.",
       "manualApprovalTitle": "Pending approval",
       "manualApprovalMessage": "Your registration request is being reviewed. Thank you for your patience.",
+      "newsletterConsentMessage": "I would like to receive news and event emails from this app",
       "loggedInUserInfo": "Username: {{username}}",
       "logInButton": "Log In",
       "loginCancelErrorMessage": "Login was cancelled.",
@@ -67,6 +58,12 @@
       "createNewAccount": "Create new account",
       "registerNavBarTitle": "CREATE NEW ACCOUNT",
       "registrationFailedErrorTitle": "Registration failed",
+      "signupAcknowledgement": {
+        "leadMessage": "By signing up you agree to our",
+        "termsOfService": "Terms of Service",
+        "conjuction": " and ",
+        "privacyPolicy": "Privacy policy"
+      },
       "socialLoginSectionTitle": "or sign in/sign up with your other account",
       "tokenErrorMessage": "Access token is not valid.",
       "unknownEmailErrorMessage": "Your username / email was not found.",
@@ -77,14 +74,47 @@
       "username": "Username",
       "email": "Email",
       "password": "Password",
+      "forgotPasswordText": "Forgot Password?",
       "usernameOrEmailPlaceholder": "Enter your username/email",
       "usernamePlaceholder": "Enter your username",
-      "usernameTakenErrorMessage": "That email or username is taken. Please choose another one or try to sign in.",
+      "usernameTakenErrorMessage": "That username is taken. Please choose another one or try to sign in.",
       "userWebsite": "Website",
-      "videoChat": "Video Chat"
+      "videoChat": "Video Chat",
+      "passwordRecoveryNavBarTitle": "PASSWORD RECOVERY",
+      "passwordRecoveryDescription": "Please enter the email address you used when creating your account. We will send you an email with a link to reset your password.",
+      "emailInputCaption": "Email",
+      "sendEmailButtonText": "Send Email",
+      "changePasswordNavBarTitle": "CHANGE YOUR PASSWORD",
+      "changePasswordTitle": "Change your password",
+      "changePasswordDescription": "Verification code was sent to your email. If you didn’t receive the recovery email, please check your spam folder.\nOnce you receive the recovery email, please enter the verification code and the new password.",
+      "verificationCodeInputPlaceholder": "Enter verification code",
+      "verificationCodeCaption": "Verification code",
+      "newPasswordCaption": "New password",
+      "repeatNewPasswordCaption": "Repeat new password",
+      "verificationCodeErrorText": "Enter verification code",
+      "repeatPasswordErrorText": "Passwords must match",
+      "alertSuccessTitle": "Success",
+      "alertSuccessMessage": "Password was successfully changed.\nYou may now proceed to login with the new password.",
+      "alertConfirmButton": "OK",
+      "alertErrorTitle": "Error",
+      "alertErrorMessage": "Password change failed. Please try again.",
+      "confirmButtonText": "Confirm"
     },
-    "books": {
-      "buyButtonText": "BUY THIS BOOK"
+    "besttime": {
+      "besttimeServiceUnavailable": "Service currently not available.",
+      "closed": "Closed",
+      "currentHourLabel": "Now",
+      "googlePlacesErrorSuggestion": "Try entering a more precise address or name",
+      "noDataAvailableMessage": "No data available for this business.",
+      "noForecastDataMessage": "Not enough data available yet for full forecast.",
+      "noGooglePlacesFound": "No places found",
+      "noLiveDataMessage": "No live data available at the moment.",
+      "noPlaceDetailsFoundMessage": "No information found, venue might be permanently closed.",
+      "openAllDay": "Open all day",
+      "openNow": "Open now:",
+      "searchInstructions": "Search for businesses",
+      "searchExplanation": "And find out the best time to visit",
+      "showOnMap": "Show on map"
     },
     "camera": {
       "changePermissionsButton": "Change permissions",
@@ -152,6 +182,23 @@
     },
     "favorites": {
       "noFavoritesMessage": "This screen will list your favorites once you add them."
+    },
+    "agora": {
+      "cancel": "Cancel",
+      "localUserFailsToConnectTitle": "Unable to establish video call",
+      "localUserFailsToConnectMessage": "Please try again later or contact the app owner.",
+      "missingPermissionsTitle": "Camera and Microphone Access Required",
+      "missingPermissionsMessage": "Please enable access to your camera and microphone in the Settings",
+      "missingUidErrorTitle": "User ID is missing",
+      "missingUidErrorMessage": "Unable to join the channel. Please try again later.",
+      "openSettings": "Go to Settings",
+      "userNotAuthenticatedTitle": "User not logged in",
+      "userNotAuthenticatedMessage": "You must be logged in to use video call feature.",
+      "waitingToJoinFirstPart": "Waiting for",
+      "waitingToJoinSecondPart": "to connect..."
+    },
+    "books": {
+      "buyButtonText": "BUY THIS BOOK"
     },
     "ical-events": {
       "addToCalendarButton": "ADD TO CALENDAR",
@@ -281,6 +328,12 @@
       "notificationPermissionsSettings": "Go to Settings",
       "notificationPermissionsCancel": "Cancel",
       "subscribeToPushGroups": "Send me push notifications for"
+    },
+    "permissions": {
+      "cancel": "Cancel",
+      "missingPermissionsTitle": "Missing Permissions",
+      "missingPermissionsMessage": "Please enable necessary permissions in device settings",
+      "openSettings": "Go to Settings"
     },
     "podcast": {
       "upNext": "UP NEXT"
@@ -433,7 +486,11 @@
       "reportActionSheetTitle": "Report",
       "reportActionSheetMessage": "Why are you reporting this post? ",
       "reportSuccessTitle": "Report sent",
-      "reportSuccessMessage": "Your report has been sent to our administrators."
+      "reportSuccessMessage": "Your report has been sent to our administrators.",
+      "settingsScreentitle": "SETTINGS",
+      "settingsScreenSubtitle": "Send me a push notification for",
+      "commentsOnMyStatuses": "Comments on my statuses",
+      "likesOnMyStatuses": "Likes on my statuses"
     },
     "web-view": {
       "noUrlErrorMessage": "Please enter a valid URL and reload your app.",
