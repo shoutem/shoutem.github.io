@@ -100,7 +100,9 @@
       "alertConfirmButton": "OK",
       "alertErrorTitle": "Error",
       "alertErrorMessage": "Password change failed. Please try again.",
-      "confirmButtonText": "Confirm"
+      "confirmButtonText": "Confirm",
+      "imagePickerCameraOption": "Take a photo",
+      "imagePickerGalleryOption": "Select photo from gallery"
     },
     "besttime": {
       "besttimeServiceUnavailable": "Service currently not available.",
@@ -187,6 +189,7 @@
       "couponRedeemInstructionsTitleText": "How to redeem?",
       "couponRedeemInstructions": "Let the cashier confirm the deal you've claimed. Confirming the deal yourself will render it useless.",
       "dealRedeemedText": "You've redeemed this deal.",
+      "myDealsTitle": "My deals",
       "myDealsTabText": "Claimed",
       "myDealsAuthenticationRequiredText": "Sign in to view claimed deals",
       "favoriteDealsTabText": "Favorited"
@@ -391,7 +394,10 @@
       "noUrlMessage": "Please specify RSS feed URL and reload the app.",
       "itemNotFoundTitle": "Oops",
       "itemNotFoundMessage": "That item is no longer available.",
-      "errorMessage": "Something went wrong."
+      "errorMessage": "Something went wrong.",
+      "messageReceivedAlert": "Message received",
+      "messageReceivedAlertView": "View",
+      "messageReceivedAlertDismiss": "Dismiss"
     },
     "rss-news": {
       "upNext": "UP NEXT"
@@ -500,6 +506,7 @@
         "other": "{{count}} Likes"
       },
       "blankPostWarning": "This post appears to be blank. Please write something.",
+      "charactersLeft": "{{numOfCharacters}} characters left",
       "numberOfComments": {
         "one": "{{count}} Comment",
         "other": "{{count}} Comments",
@@ -521,6 +528,11 @@
       "reportOptionInappropriate": "It's inappropriate",
       "reportOptionAbuse": "It's abusive",
       "reportOptionCancel": "Cancel",
+      "blockOption": "Block",
+      "reportOption": "Report",
+      "unblockOption": "Unblock user",
+      "reportPostOption": "Report post",
+      "unblockOptionCancel": "Cancel",
       "reportActionSheetTitle": "Report",
       "reportActionSheetMessage": "Why are you reporting this post? ",
       "reportSuccessTitle": "Report sent",
@@ -528,7 +540,9 @@
       "settingsScreentitle": "SETTINGS",
       "settingsScreenSubtitle": "Send me a push notification for",
       "commentsOnMyStatuses": "Comments on my statuses",
-      "likesOnMyStatuses": "Likes on my statuses"
+      "likesOnMyStatuses": "Likes on my statuses",
+      "imagePickerCameraOption": "Take a photo",
+      "imagePickerGalleryOption": "Select photo from gallery"
     },
     "web-view": {
       "noUrlErrorMessage": "Please enter a valid URL and reload your app.",
