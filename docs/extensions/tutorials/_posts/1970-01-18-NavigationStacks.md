@@ -55,7 +55,7 @@ A good example of how you can use this new interface is our [shoutem.auth](https
 
 Another example of navigation that uses the new navigation stack interface is the modal stack. By default, every shortcut screen from any of the extensions installed in your app, will be added to the modal stack, so it can be opened from any point in your application. If you need to add other screens, you can do so by calling ModalStack `registerModalScreens` method.
 
-If you’re registering a screen that is exported from one of the extensions, you can use the short syntax, for example :
+If you’re registering a screen that is exported from one of the extensions, you can use the short syntax, for example:
 
 ```JavaScript
 ModalScreens.registerModalScreens(['shoutem.news.NewsListScreen']);
