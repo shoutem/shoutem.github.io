@@ -104,22 +104,6 @@
       "imagePickerCameraOption": "Take a photo",
       "imagePickerGalleryOption": "Select photo from gallery"
     },
-    "besttime": {
-      "besttimeServiceUnavailable": "Service currently not available.",
-      "closed": "Closed",
-      "currentHourLabel": "Now",
-      "googlePlacesErrorSuggestion": "Try entering a more precise address or name",
-      "noDataAvailableMessage": "No data available for this business.",
-      "noForecastDataMessage": "Not enough data available yet for full forecast.",
-      "noGooglePlacesFound": "No places found",
-      "noLiveDataMessage": "No live data available at the moment.",
-      "noPlaceDetailsFoundMessage": "No information found, venue might be permanently closed.",
-      "openAllDay": "Open all day",
-      "openNow": "Open now:",
-      "searchInstructions": "Search for businesses",
-      "searchExplanation": "And find out the best time to visit",
-      "showOnMap": "Show on map"
-    },
     "camera": {
       "changePermissionsButton": "Change permissions",
       "permissionNotGranted": "Camera permission not granted.",
@@ -128,17 +112,6 @@
       "codeMissingUrlMessage": "This code doesn't contain a valid url",
       "cancelButtonLabel": "Cancel",
       "openButtonLabel": "Open"
-    },
-    "checklist": {
-      "checklistScreenSubmitButton": "Submit",
-      "checklistScreenHelpButton": "Help",
-      "contactButton": "Contact us via email",
-      "goBackButton": "Go back",
-      "saveProgressButton": "Save",
-      "submitAlertAccept": "Submit",
-      "submitAlertCancel": "Go back",
-      "submitAlertMessage": "Once you submit your progress, you will no longer be able to edit it.\n Are you sure you want to submit?",
-      "submitAlertTitle": "Progress Submission"
     },
     "cms": {
       "androidLocationPermissionTitle": "Location Permission",
@@ -159,7 +132,8 @@
       "websiteButton": "Visit webpage",
       "rsvpButton": "RSVP",
       "navBarListViewButton": "List",
-      "navBarMapViewButton": "Map"
+      "navBarMapViewButton": "Map",
+      "noSearchResultsText": "No results found"
     },
     "code-push": {
       "newContentAlertTitle": "New content",
@@ -204,23 +178,6 @@
     "favorites": {
       "noFavoritesMessage": "This screen will list your favorites once you add them."
     },
-    "agora": {
-      "cancel": "Cancel",
-      "localUserFailsToConnectTitle": "Unable to establish video call",
-      "localUserFailsToConnectMessage": "Please try again later or contact the app owner.",
-      "missingPermissionsTitle": "Camera and Microphone Access Required",
-      "missingPermissionsMessage": "Please enable access to your camera and microphone in the Settings",
-      "missingUidErrorTitle": "User ID is missing",
-      "missingUidErrorMessage": "Unable to join the channel. Please try again later.",
-      "openSettings": "Go to Settings",
-      "userNotAuthenticatedTitle": "User not logged in",
-      "userNotAuthenticatedMessage": "You must be logged in to use video call feature.",
-      "waitingToJoinFirstPart": "Waiting for",
-      "waitingToJoinSecondPart": "to connect..."
-    },
-    "books": {
-      "buyButtonText": "BUY THIS BOOK"
-    },
     "ical-events": {
       "addToCalendarButton": "ADD TO CALENDAR",
       "calendarPermissionsTitle": "Grant calendar access",
@@ -228,9 +185,6 @@
       "calendarPermissionsSettings": "Go to Settings",
       "calendarPermissionsCancel": "Cancel",
       "noUrlMessage": "Please specify an iCal URL and reload the app."
-    },
-    "interactive-faq": {
-      "backButtonTitle": "< Back"
     },
     "loyalty": {
       "pointsInStore": {
@@ -376,19 +330,10 @@
       "missingPermissionsMessage": "Please enable necessary permissions in device settings",
       "openSettings": "Go to Settings"
     },
-    "podcast": {
-      "upNext": "UP NEXT"
-    },
     "push-notifications": {
       "messageReceivedAlert": "Message received",
       "messageReceivedAlertView": "View",
       "messageReceivedAlertDismiss": "Dismiss"
-    },
-    "radio": {
-      "buffering": "Buffering...",
-      "missingStreamUrl": "Please enter a valid stream URL and reload your app.",
-      "nowPlaying": "Now playing",
-      "pressToPlay": "Press play to start the stream"
     },
     "rss": {
       "noUrlMessage": "Please specify RSS feed URL and reload the app.",
@@ -401,87 +346,6 @@
     },
     "rss-news": {
       "upNext": "UP NEXT"
-    },
-    "sendbird": {
-      "userUnavailableMessage": "This user currently isn't available to chat.",
-      "genericErrorMessage": "Something went wrong. Try again in a few moments.",
-      "chatUnavailableErrorTitle": "Chat unavailable",
-      "chatEncryptionMessage": "Messages in this chat are private and encrypted.",
-      "chatNotConfiguredMessage": "Chat feature is not available due to invalid configuration.",
-      "chatsTitle": "Chats",
-      "otherContactsTitle": "Other Contacts",
-      "isTypingSuffix": " is typing...",
-      "textInputPlaceholder": "Type a message...",
-      "emptyChatListTitle": "It’s empty in here",
-      "emptyChatListMessage": "You can start a conversation by looking for person you want to chat with",
-      "newMessagesLabel": "NEW",
-      "searchBarPlaceholder": "Search conversations or start a new one...",
-      "subscriptionInvalidMessage": "Chat feature won't be available until this app has a valid subscription."
-    },
-    "shopify": {
-      "totalPrice": "Total price:",
-      "itemQuantity": "Quantity: ",
-      "addToCartButton": "ADD TO CART",
-      "noItemsInCollection": "There are no products in this collection.",
-      "noItemsWithSpecificTag": "There are no products with tags that match: ",
-      "itemSearchPlaceholder": "Search",
-      "cancelSearchButton": "Cancel",
-      "fetchingShopErrorMessage": "There was an error while fetching the shop.\n",
-      "checkoutErrorTitle": "Error with checkout",
-      "checkoutEmail": "Email",
-      "checkoutFirstName": "First name",
-      "checkoutLastName": "Last name",
-      "checkoutAddress": "Address",
-      "checkoutCity": "City",
-      "checkoutProvince": "Province",
-      "checkoutPostalCode": "Postal code",
-      "checkoutCardNumber": "Card number",
-      "checkoutExpiryYear": "Expiry year (yy)",
-      "checkoutExpiryMonth": "Expiry month (mm)",
-      "checkoutSecurityCode": "Security code",
-      "countrySelectionPlaceholder": "Select",
-      "checkoutFormErrorTitle": "Checkout form error",
-      "checkoutFormErrorMessage": "All fields are mandatory. Check if you missed some.",
-      "countrySelectionTitle": "COUNTRY",
-      "checkoutNavBarTitle": "CHECKOUT",
-      "checkoutContinueButton": "CONTINUE",
-      "doneButton": "Done",
-      "addItemConfirmButton": "CONFIRM",
-      "cartItemUpdateButton": "UPDATE",
-      "cartItemRemoveButton": "REMOVE",
-      "addToCartNavBarTitle": "ADD TO CART",
-      "orderCompletedNavBarTitle": "ORDER COMPLETE",
-      "thankYouMessage": "Thank you {{firstNameOfBuyer}}!",
-      "orderConfirmationTitle": "YOUR ORDER IS CONFIRMED",
-      "orderRegistered": "Your order was registered with #{{orderNumber}}",
-      "orderConfirmationMessage": "We've accepted your offer and we're getting it ready. A confirmation email has been sent to ",
-      "customerInformationTitle": "CUSTOMER INFORMATION",
-      "shippingAddress": "SHIPPING ADDRESS",
-      "billingAddress": "BILLING ADDRESS",
-      "orderSummary": "ORDER SUMMARY",
-      "returnToShopButton": "RETURN TO SHOP",
-      "paymentInfoCardNumber": "Card number",
-      "paymentInfoExpiryMonth": "Expiry month (mm)",
-      "paymentInfoExpiryYear": "Expiry year (yy)",
-      "paymentInfoCvv": "Security code",
-      "paymentInfoFirstName": "First name",
-      "paymentInfoLastName": "Last name",
-      "paymentInfoFormErrorTitle": "Payment information form error",
-      "paymentInfoFormErrorMessage": "All fields are mandatory. Check if you missed some.",
-      "completePaymentButton": "COMPLETE PAYMENT",
-      "paymentScreenNavBarTitle": "PAYMENT",
-      "paymentErrorTitle": "Payment",
-      "paymentFillAllFieldsError": "Please fill all fields",
-      "paymentExpiryMonthError": "Please enter a valid expiry month",
-      "paymentExpiryYearError": "Please enter a valid expiry year",
-      "cartScreenProductName": "PRODUCT NAME",
-      "cartScreenProductPrice": "PRICE",
-      "proceedToCheckoutButton": "PROCEED TO CHECKOUT",
-      "cartScreenNavBarTitle": "SHOPPING CART",
-      "emptyCartMessage": "You haven't added any products yet.",
-      "shopTitlePlaceholder": "SHOP",
-      "outOfStockMessage": "Out of stock",
-      "updateItemScreenProductPrice": "Price:"
     },
     "social": {
       "commentButton": "COMMENT",
