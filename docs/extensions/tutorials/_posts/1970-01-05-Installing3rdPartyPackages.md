@@ -60,7 +60,7 @@ $ npm install react-native-swiper --save
 ```
 
 > #### Note
-> The reason we have to install it into the `app` directory is because the the `app` directory is bundled into the full app along with all the other extensions the app uses.
+> The reason we have to install it into the `app` directory is because the `app` directory is bundled into the full app along with all the other extensions the app uses.
 
 Doing this will automatically add `react-native-swiper` as a dependency in our `app/package.json` file:
 
