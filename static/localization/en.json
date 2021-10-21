@@ -24,6 +24,10 @@
       "appleAuthUnknownError": "The authorization attempt failed for an unknown reason.",
       "chat": "Chat",
       "consentRequiredError": "You need to agree to the app's terms and conditions to register",
+      "deleteAccountDescription": "Account deletion is permanent and irrevesible. If you would like to delete your account please type “DELETE” below and confirm your action.",
+      "deleteAccountButtonText": "Delete account",
+      "deleteAccountText": "Delete your account",
+      "deletionNavBarTitle": "Confirm deletion",
       "doneNavBarButton": "Done",
       "editProfileButton": "EDIT PROFILE",
       "editProfileNavBarTitle": "EDIT PROFILE",
@@ -100,9 +104,12 @@
       "alertConfirmButton": "OK",
       "alertErrorTitle": "Error",
       "alertErrorMessage": "Password change failed. Please try again.",
+      "alertTryAgainMessage": "Something went wrong. Please try again in few moments",
       "confirmButtonText": "Confirm",
       "imagePickerCameraOption": "Take a photo",
-      "imagePickerGalleryOption": "Select photo from gallery"
+      "imagePickerGalleryOption": "Select photo from gallery",
+      "typeHerePlaceholder": "Type here...",
+      "deleteText": "delete"
     },
     "besttime": {
       "besttimeServiceUnavailable": "Service currently not available.",
@@ -204,6 +211,13 @@
     },
     "favorites": {
       "noFavoritesMessage": "This screen will list your favorites once you add them."
+    },
+    "geo-restrictions": {
+      "missingPermissionsTitle": "Missing Location Permission",
+      "missingPermissionsMessage": "Please enable necessary permissions in device settings to proceed.",
+      "invalidConfigurationTitle": "Error",
+      "emptyStateTitle": "Screen not available",
+      "emptyStateMessage": "Sorry, this feature is not available in your county."
     },
     "agora": {
       "cancel": "Cancel",
