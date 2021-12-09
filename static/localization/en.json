@@ -1,5 +1,13 @@
 {
   "shoutem": {
+    "affiliate": {
+      "level": "level",
+      "numberOfPoints": "{{numberOfPoints}} points",
+      "points": "points",
+      "refreshButton": "REFRESH",
+      "shareCodeButton": "Share code",
+      "collectPointsButton": "Collect"
+    },
     "application": {
       "errorTitle": "Error",
       "preview": {
@@ -346,6 +354,7 @@
       "processing": "Processing..."
     },
     "navigation": {
+      "noContentScreenName": "No content",
       "noScreensMessage": "Sorry, this app doesn't have any screens to open.",
       "androidExitMessage": "Press the back button again to exit."
     },
