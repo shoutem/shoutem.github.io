@@ -8,6 +8,33 @@
       "shareCodeButton": "Share code",
       "collectPointsButton": "Collect"
     },
+    "user-profile": {
+      "defaultErrorMessage": "Something went wrong",
+      "goBackToAppButton": "GO BACK TO APP",
+      "userProfileCompletedTitle": "Thank you for submitting your application! Your submission will be reviewed by our team.",
+      "userProfileCompletedDescription": "You will be notified once you are approved.",
+      "userProfileTitle": "User profile",
+      "submissionCompletedTitle": "SUBMITION COMPLETED",
+      "editRequestButton": "Edit request",
+      "okButton": "OK",
+      "takePhoto": "Take a photo",
+      "chooseFromLibrary": "Choose from library",
+      "cancel": "Cancel",
+      "cannotAccessCameraTitle": "Cannot access camera",
+      "cannotAccessCameraMessage": "Please allow access in settings if you want to take photos",
+      "galleryPermissionErrorTitle": "Cannot access image library",
+      "galleryPermissionErrorMessage": "Please allow access if you want to be able to select images",
+      "errorTitle": "Error",
+      "errorMessage": "Something went wrong",
+      "addMorePhotos": "+ ADD MORE PHOTOS",
+      "removeItemTitle": "Remove item",
+      "removeItemMessage": "Are you sure you want to remove this item from the gallery?",
+      "confirm": "Yes",
+      "imageLimitAlertTitle": "Limit exceeded",
+      "imageLimitAlertMessage": "You can upload up to {{maxImages}} images.",
+      "selectImagesToUpload": "Select images to upload",
+      "submitFormButtonTitle": "Send form"
+    },
     "application": {
       "errorTitle": "Error",
       "preview": {
@@ -194,6 +221,8 @@
       "dealsMapButton": "Map",
       "dealsGridButton": "Grid",
       "dealsListButton": "List",
+      "validUntilLabelWithTime": "Valid until {{time}} on {{weekdayAndDate}}",
+      "validUntilLabelWithoutTime": "Valid until {{weekdayAndDate}}",
       "dealDescriptionHeading": "Description",
       "dealConditionsHeading": "Conditions",
       "previousDealLabel": "PREVIOUS",
@@ -529,6 +558,7 @@
         "one": "{{count}} Like",
         "other": "{{count}} Likes"
       },
+      "imageSizeWarning": "Image size exceedes the maximum size of 50MB",
       "blankPostWarning": "This post appears to be blank. Please write something.",
       "charactersLeft": "{{numOfCharacters}} characters left",
       "numberOfComments": {
