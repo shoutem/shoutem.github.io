@@ -8,6 +8,20 @@
       "shareCodeButton": "Share code",
       "collectPointsButton": "Collect"
     },
+    "agora": {
+      "cancel": "Cancel",
+      "localUserFailsToConnectTitle": "Unable to establish video call",
+      "localUserFailsToConnectMessage": "Please try again later or contact the app owner.",
+      "missingPermissionsTitle": "Camera and Microphone Access Required",
+      "missingPermissionsMessage": "Please enable access to your camera and microphone in the Settings",
+      "missingUidErrorTitle": "User ID is missing",
+      "missingUidErrorMessage": "Unable to join the channel. Please try again later.",
+      "openSettings": "Go to Settings",
+      "userNotAuthenticatedTitle": "User not logged in",
+      "userNotAuthenticatedMessage": "You must be logged in to use video call feature.",
+      "waitingToJoinFirstPart": "Waiting for",
+      "waitingToJoinSecondPart": "to connect..."
+    },
     "application": {
       "errorTitle": "Error",
       "preview": {
@@ -116,8 +130,6 @@
       "alertErrorMessage": "Password change failed. Please try again.",
       "alertTryAgainMessage": "Something went wrong. Please try again in few moments",
       "confirmButtonText": "Confirm",
-      "imagePickerCameraOption": "Take a photo",
-      "imagePickerGalleryOption": "Select photo from gallery",
       "typeHerePlaceholder": "Type here...",
       "deleteText": "delete"
     },
@@ -235,20 +247,6 @@
       "emptyStateTitle": "Screen not available",
       "emptyStateMessage": "Sorry, this feature is not available in your county."
     },
-    "agora": {
-      "cancel": "Cancel",
-      "localUserFailsToConnectTitle": "Unable to establish video call",
-      "localUserFailsToConnectMessage": "Please try again later or contact the app owner.",
-      "missingPermissionsTitle": "Camera and Microphone Access Required",
-      "missingPermissionsMessage": "Please enable access to your camera and microphone in the Settings",
-      "missingUidErrorTitle": "User ID is missing",
-      "missingUidErrorMessage": "Unable to join the channel. Please try again later.",
-      "openSettings": "Go to Settings",
-      "userNotAuthenticatedTitle": "User not logged in",
-      "userNotAuthenticatedMessage": "You must be logged in to use video call feature.",
-      "waitingToJoinFirstPart": "Waiting for",
-      "waitingToJoinSecondPart": "to connect..."
-    },
     "ginger": {
       "addToCart": "Add to cart",
       "thcShare": "{{prefixAndShare}} THC",
@@ -297,6 +295,7 @@
       "phoneNumberPlaceholder": "+1 ___ ___ ___",
       "emailLabel": "Email Address",
       "passwordLabel": "Password",
+      "nickLabel": "Username",
       "firstNameLabel": "First name",
       "lastNameLabel": "Last name",
       "addressLabel": "Address",
@@ -343,6 +342,7 @@
       "orderCompleteTitle": "Thank you {{name}}!",
       "orderCompleteTotalAmount": "Total amount to Pay\n${{totalPrice}}\n",
       "orderThisMonthSectionTitle": "This Month",
+      "orderOlderSectionTitle": "Older",
       "forgotPasswordText": "Forgot Password?",
       "passwordRecoveryNavBarTitle": "Password recovery",
       "invalidEmailFormatErrorMessage": "Make sure your email format is \"name@domain.com\".",
@@ -368,6 +368,7 @@
       "confirmButtonText": "Confirm",
       "selectLocationNavBarTitle": "Select location",
       "phoneNumberErrorMessage": "Phone number should be between 1 and 25 characters",
+      "nickErrorMessage": "Username is required",
       "emailErrorMessage": "Please enter valid email address",
       "passwordErrorMessage": "Password has to be at least 6 characters long",
       "nameErrorMessage": "Name should be between 2 and 25 characters",
@@ -395,9 +396,15 @@
       "continueButtonTitle": "Yes, Continue",
       "exitTheAppButtonTitle": "No, Exit the App",
       "loadingButtonSuccessTitle": "Success",
-      "loadingButtonErrorTitle": "Error",
+      "loadingButtonErrorTitle": "Ooops",
       "productListErrorModalButton": "Okay",
-      "productListEmptyStateButton": "Try a different location"
+      "productListEmptyStateButton": "Try a different location",
+      "saveLabel": "Save",
+      "editDeliveryInfoNavBarTitle": "Edit information",
+      "editHeaderText": "Edit",
+      "imagePickerCameraOption": "Take a photo",
+      "imagePickerGalleryOption": "Select photo from gallery",
+      "imageSelectErrorMessage": "Image selection error."
     },
     "ical-events": {
       "addToCalendarButton": "ADD TO CALENDAR",
@@ -407,8 +414,40 @@
       "calendarPermissionsCancel": "Cancel",
       "noUrlMessage": "Please specify an iCal URL and reload the app."
     },
+    "in-app-purchases": {
+      "restoreButtonTitle": "Restore",
+      "restoreNoProductsTitle": "Restore complete",
+      "restoreNoProductsDescription": "We couldn't find any purchases to restore per your account",
+      "subscriptionTrialDuration": "days free trial",
+      "subscribeButtonPrefix": "Subscribe for",
+      "subscribeButtonDurationMonth": "month",
+      "subscribeButtonDurationMonths": "months",
+      "termsOfService": "Terms of Service",
+      "termsAndPolicyConjuction": "and",
+      "privacyPolicy": "Privacy Policy",
+      "startExploringButton": "Start exploring",
+      "subscribeSuccessModalTitle": "You have successfully subscribed!",
+      "errorProductOwnedTitle": "Product already owned",
+      "errorProductOwnedDescription": "Please restore your purchases to reactivate product",
+      "errorDeferredPaymentTitle": "Purchase awaiting approval",
+      "errorDeferredPaymentDescription": "Your purchase is awaiting approval from the parental control",
+      "errorReceiptValidationTitle": "We're having trouble validating your transaction",
+      "errorReceiptValidationDescription": "Give us some time, we'll retry to validate your transaction as soon as possible",
+      "errorReceiptInvalidTitle": "Purchase error",
+      "errorReceiptInvalidDescription": "We were not able to process your purchase, if you've been charged please contact the support",
+      "errorReceiptRequestTitle": "We're having trouble validating your transaction",
+      "errorReceiptRequestDescription": "Please try to restore your purchases later or contact the support",
+      "errorGenericPurchaseTitle": "Purchase error",
+      "errorGenericPurchaseDescription": "We were not able to process your purchase, please try again later or contact the support",
+      "errorGenericRestoreTitle": "Restore error",
+      "errorGenericRestoreDescription": "We were not able to restore your purchases, please try again later or contact the support"
+    },
     "interactive-faq": {
       "backButtonTitle": "< Back"
+    },
+    "invision-community": {
+      "invisionLoginButton": "Sign in with Invision",
+      "loginScreenExplanation": "Clicking the button bellow will let you log in using your Invision Community account. The login dialog will open in a new browser window."
     },
     "loyalty": {
       "pointsInStore": {
@@ -549,6 +588,11 @@
       "alertCancelButton": "Cancel",
       "alertConfirmButton": "Unsubscribe"
     },
+    "onboarding": {
+      "getStartedLabel": "Get Started",
+      "noPagesTitle": "No instructions found",
+      "noPagesMessage": "Add instructions to your onboarding to help users understand the app"
+    },
     "permissions": {
       "cancel": "Cancel",
       "missingPermissionsTitle": "Missing Permissions",
@@ -556,6 +600,13 @@
       "openSettings": "Go to Settings"
     },
     "podcast": {
+      "actionSheetCancelOption": "Cancel",
+      "actionSheetDeleteOption": "Delete download",
+      "actionSheetDownloadOption": "Download",
+      "actionSheetDownloadInProgress": "Downloading...",
+      "actionSheetShareOption": "Share",
+      "deviceSettingsDescription": "To download and play offline podcast episodes, the app requires read and write access to external storage.",
+      "deviceSettingsTitle": "Go to Settings",
       "upNext": "UP NEXT"
     },
     "push-notifications": {
@@ -563,19 +614,42 @@
       "messageReceivedAlertView": "View",
       "messageReceivedAlertDismiss": "Dismiss"
     },
-    "radio": {
-      "buffering": "Buffering...",
-      "missingStreamUrl": "Please enter a valid stream URL and reload your app.",
-      "nowPlaying": "Now playing",
-      "pressToPlay": "Press play to start the stream"
-    },
     "radio-player": {
       "buffering": "Buffering...",
+      "cancelTimer": "Turn off timer",
+      "cancelSleepTimer": {
+        "one": "{{count}} minute left",
+        "other": "{{count}} minutes left",
+        "zero": "< 1 minute left"
+      },
+      "cancelSleepTimerArtworkLayout": {
+        "one": "{{count}} min",
+        "other": "{{count}} mins",
+        "zero": "< 1 min"
+      },
+      "cancelTimerWithDurationLeft": {
+        "one": "Turn off timer - {{count}} minute left",
+        "other": "Turn off timer - {{count}} minutes left",
+        "zero": "Turn off timer - Less than a minute left"
+      },
+      "closeSleepTimerOptionsLabel": "Back",
+      "timerOption": "{{duration}} minutes",
+      "timerOptionsExplanation": "Stop playing in...",
+      "turnOffTimer": "Turn off timer",
       "missingStreamUrl": "Please enter a valid stream URL and reload your app.",
+      "moreOptionsLabel": "More options",
       "nowPlaying": "Now playing",
       "pressToPlay": "Press play to start the stream",
+      "sleepTimerLabel": "Sleep Timer",
+      "shareButtonLabel": "Share",
       "shareMessage": "Stream address: {{streamUrl}}",
       "shareTitle": "Currently listening to {{streamTitle}}"
+    },
+    "recombee": {
+      "moreSuggestionsLabel": "More suggestions",
+      "moreSuggestionsMessage": "Give me some more suggestions",
+      "nextSuggestionsMessage": "Here you go",
+      "startOverLabel": "Start over"
     },
     "rss": {
       "noUrlMessage": "Please specify RSS feed URL and reload the app.",
@@ -601,6 +675,8 @@
       "textInputPlaceholder": "Type a message...",
       "emptyChatListTitle": "It’s empty in here",
       "emptyChatListMessage": "You can start a conversation by looking for person you want to chat with",
+      "emptyChatSearchResultTitle": "No chats found",
+      "emptyChatSearchResultMessage": "Could not find any chats including '{{searchQuery}}'",
       "newMessagesLabel": "NEW",
       "searchBarPlaceholder": "Search conversations or start a new one...",
       "subscriptionInvalidMessage": "Chat feature won't be available until this app has a valid subscription."
@@ -680,22 +756,12 @@
       "emptyStartSearchListMessage": "You can find user profiles by typing their name.",
       "loadingMoreComments": "Loading more comments...",
       "noLikes": "No likes",
-      "likeButton": "LIKE",
-      "unlikeButton": "UNLIKE",
-      "numberOfLikesMessage": {
-        "one": "{{firstUser}} likes this"
-      },
-      "numberOfOtherUserLikesMessage": {
-        "one": "{{firstUser}} and 1 other like this",
-        "other": "{{firstUser}} and {{count}} others like this"
-      },
       "numberOfLikes": {
         "one": "{{count}} Like",
         "other": "{{count}} Likes"
       },
-      "imageSizeWarning": "Image size exceedes the maximum size of 50MB",
+      "imageSizeWarning": "Image size exceeds the maximum size of {{maxSize}}MB",
       "blankPostWarning": "This post appears to be blank. Please write something.",
-      "charactersLeft": "{{numOfCharacters}} characters left",
       "numberOfComments": {
         "one": "{{count}} Comment",
         "other": "{{count}} Comments",
@@ -730,8 +796,6 @@
       "settingsScreenSubtitle": "Send me a push notification for",
       "commentsOnMyStatuses": "Comments on my statuses",
       "likesOnMyStatuses": "Likes on my statuses",
-      "imagePickerCameraOption": "Take a photo",
-      "imagePickerGalleryOption": "Select photo from gallery",
       "noPermissionsAlertTitle": "Limited access",
       "noMediaPermissionsAlertText": "To choose photo to upload, you will need to grant permissions to the app",
       "noCameraPermissionsAlertText": "To take a photo using camera, you will need to grant permissions to the app",
@@ -741,7 +805,14 @@
       "discardStatusAlertMessage": "Your status will be discarded. Are you sure?",
       "discardAlertButtonLabel": "Discard",
       "keepEditingButtonLabel": "Keep editing",
-      "cancelHeaderButtonText": "Cancel"
+      "cancelHeaderButtonText": "Cancel",
+      "postCommentError": "Failed to post a comment. Please try again later.",
+      "postStatusError": "Failed to post a comment. Please try again later."
+    },
+    "theme": {
+      "themeChangedAlertTitle": "Theme changed",
+      "themeChangedAlertMessage": "App will now be restarted to apply the newly selected theme",
+      "themeChangedAlertConfirmationButton": "Restart"
     },
     "user-profile": {
       "defaultErrorMessage": "Something went wrong",
