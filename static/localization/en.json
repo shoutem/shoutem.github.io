@@ -582,7 +582,7 @@
       "timeframeErrorMessage": "Invalid timeframe",
       "reminderSettingsTitle": "Set a time reminder",
       "reminderSettingDescription": "Set a time when you want to be reminded to use the app, if you haven’t that day",
-      "reminderMeAt": "Remind me at",
+      "addAdditionalReminder": "Add additional reminder",
       "dailyMessagesAlertTitle": "Warning",
       "dailyMessagesAlertMessage": "Unsubscribing from daily notification messages will stop all incoming messages for today. Are you sure you want to unsubscribe?",
       "alertCancelButton": "Cancel",
@@ -646,9 +646,15 @@
       "shareTitle": "Currently listening to {{streamTitle}}"
     },
     "recombee": {
+      "cancelRequestAgentLabel": "Cancel",
       "moreSuggestionsLabel": "More suggestions",
       "moreSuggestionsMessage": "Give me some more suggestions",
       "nextSuggestionsMessage": "Here you go",
+      "noQuestionsMessage": "There are no questions for the bot to ask",
+      "requestAgentLabel": "Request an agent",
+      "shareRecommendationsButtonText": "Share list",
+      "shareSingleRecommendationMessage": "Check out what I was recommended by a chatbot:\n{{titleAndLink}}",
+      "shareRecommendationListMessage": "Check out what I was recommended by a chatbot:\n{{titlesAndLinks}}",
       "startOverLabel": "Start over"
     },
     "rss": {
@@ -801,8 +807,9 @@
       "noCameraPermissionsAlertText": "To take a photo using camera, you will need to grant permissions to the app",
       "openSettingsButtonLabel": "Open settings",
       "cancelButtonLabel": "Cancel",
-      "discardStatusAlertTitle": "Discard status",
-      "discardStatusAlertMessage": "Your status will be discarded. Are you sure?",
+      "discardStatusAlertTitle": "Save your status as a draft?",
+      "discardStatusAlertMessage": "You can save your status as a draft now, and finish it later. If you choose to discard, status will be lost.",
+      "saveAlertButtonLabel": "Save draft",
       "discardAlertButtonLabel": "Discard",
       "keepEditingButtonLabel": "Keep editing",
       "cancelHeaderButtonText": "Cancel",
@@ -816,6 +823,7 @@
     },
     "user-profile": {
       "defaultErrorMessage": "Something went wrong",
+      "deleteAccountButtonText": "Delete account",
       "goBackToAppButton": "GO BACK TO APP",
       "userProfileCompletedTitle": "Thank you for submitting your application! Your submission will be reviewed by our team.",
       "userProfileCompletedDescription": "You will be notified once you are approved.",
@@ -841,6 +849,7 @@
       "confirm": "Yes",
       "selectImagesToUpload": "Select images to upload",
       "submitFormButtonTitle": "Send form",
+      "typeHerePlaceholder": "Type here...",
       "noImagesUploaded": "No images uploaded yet",
       "chat": "Chat",
       "video": "Video",
