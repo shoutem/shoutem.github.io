@@ -8,6 +8,17 @@
       "shareCodeButton": "Share code",
       "collectPointsButton": "Collect"
     },
+    "age-restriction": {
+      "ageRestrictionTitle": "Are you at least {{requiredAge}}?",
+      "ageRestrictionSubtitle": "By agreeing and entering the app you agree to be bound by the ",
+      "privacyPolicy": "Privacy Policy",
+      "and": "and",
+      "termsOfService": "Terms of service",
+      "privacyPolicyNavBarTitle": "Privacy Policy",
+      "termsOfServiceNavBarTitle": "Terms of Service",
+      "continueButtonTitle": "Yes, Continue",
+      "exitTheAppButtonTitle": "No, Exit the App"
+    },
     "agora": {
       "cancel": "Cancel",
       "localUserFailsToConnectTitle": "Unable to establish video call",
