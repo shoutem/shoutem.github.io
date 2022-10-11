@@ -706,6 +706,8 @@
       "totalPrice": "Total price:",
       "itemQuantity": "Quantity: ",
       "addToCartButton": "ADD TO CART",
+      "addressSearchPlaceholder": "Start typing to find your address",
+      "addressSearchCurrentLocation": "Use my current location",
       "noItemsInCollection": "There are no products in this collection.",
       "noItemsWithSpecificTag": "There are no products with tags that match: ",
       "itemSearchPlaceholder": "Search",
@@ -763,6 +765,7 @@
       "proceedToCheckoutButton": "PROCEED TO CHECKOUT",
       "cartScreenNavBarTitle": "SHOPPING CART",
       "emptyCartMessage": "You haven't added any products yet.",
+      "selectAddressNavBarTitle": "Select address",
       "shopTitlePlaceholder": "SHOP",
       "outOfStockMessage": "Out of stock",
       "updateItemScreenProductPrice": "Price:"
