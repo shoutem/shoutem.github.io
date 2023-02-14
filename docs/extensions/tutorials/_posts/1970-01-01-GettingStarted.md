@@ -34,6 +34,8 @@ Before going through this tutorial, make sure you've installed the following:
 - react-native-cli - `$ npm install -g react-native-cli`
 - shoutem-cli - `$ npm install -g @shoutem/cli`
 - yarn - `$ npm install -g yarn`
+- [python 3.8.0+](https://www.python.org/downloads/release/python-380/)
+- fonttools - `pip3 install fonttools` (after installing Python)
 - OSX - > Coacoapods - `$ gem install cocoapods`
 
 > #### Note
