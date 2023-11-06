@@ -311,7 +311,7 @@ See it in browser: {{ site.shoutem.builderURL }}/{{ site.example.appId }}
 Our default setting applies and the app owner has an input form to change the `greeting` value.
 
 <p class="image">
-<img src='{{ site.url }}/img/tutorials/writting-settings-page/hello-tom-html.png'/>
+<img alt='Screens Hello World page with name customization' src='{{ site.url }}/img/tutorials/writting-settings-page/hello-tom-html.png'/>
 </p>
 
 ## Extension settings pages
@@ -451,7 +451,7 @@ Success!
 ```
 
 <p class="image">
-<img src='{{ site.url }}/img/tutorials/writting-settings-page/hello-tom-shoutem-html.png'/>
+<img alt='Screens Hello World page with Shoutem company customization' src='{{ site.url }}/img/tutorials/writting-settings-page/hello-tom-shoutem-html.png'/>
 </p>
 
 So what's the purpose of extension settings pages as opposed to shortcut? Well, in our simple example, we made an extension where the app owner can define which company he's addressing and then make each Screen he adds on the Builder greet a unique employee. Each screen added will address the company defined in the Extension settings pages, while the app owner can choose which employee each screen greets.

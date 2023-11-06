@@ -133,7 +133,7 @@ Success!
 Since the Restaurants extension is already installed, so is your theme. However, it's not applied yet. Navigate to the `Styles` tab. Currently, the selected theme is `Rubicon`, clearly no match for your gorgeous new theme, so let's fix that. Click on the `Change theme` button. Here you can find every installed theme. Yours is also there! Select it and you'll see the showcase you set up for it earlier.
 
 <p class="image">
-<img src='{{ site.url }}/img/tutorials/settings-theme/style-tab-themes-theme-change_theme-theme_showcase.png'/>
+<img alt='Phone showing list of restaurants' src='{{ site.url }}/img/tutorials/settings-theme/style-tab-themes-theme-change_theme-theme_showcase.png'/>
 </p>
 
 Select `Apply theme`.
@@ -141,7 +141,7 @@ Select `Apply theme`.
 Now check the `Customize theme` tab.
 
 <p class="image">
-<img src='{{ site.url }}/img/tutorials/settings-theme/style-tab-themes-customise_theme-no_picker.png'/>
+<img alt='Theme tab with colors and fonts' src='{{ site.url }}/img/tutorials/settings-theme/style-tab-themes-customise_theme-no_picker.png'/>
 </p>
 
 Here the app owner can customize your theme through theme variables. These variables can be found in `server/themes/restaurantVariables.json` and they're a copy of the [Rubicon theme variables](https://github.com/shoutem/extensions/blob/master/shoutem-rubicon-theme/server/primeThemeVariables.json).
@@ -312,7 +312,7 @@ Success!
 Now open the app in the Builder preview.
 
 <p class="image">
-<img src='{{ site.url }}/img/tutorials/settings-theme/style-tab-themes-customize_theme-font.png'/>
+<img alt='Theme customization tab' src='{{ site.url }}/img/tutorials/settings-theme/style-tab-themes-customize_theme-font.png'/>
 </p>
 
 This is good, but what if we got a request from people using our theme that they want to be able to modify subtitle text color? We can do that with variables, so they don't have to even leave the Builder.
@@ -383,7 +383,7 @@ Success!
 Check `Customize theme` under the `Style` tab. You can see the `Restaurants` section with a color picker for subtitle text color. Well done!
 
 <p class="image">
-<img src='{{ site.url }}/img/tutorials/settings-theme/style-tab-themes-customise_theme-color_picker_preview.png'/>
+<img alt='Theme tab color selector' src='{{ site.url }}/img/tutorials/settings-theme/style-tab-themes-customise_theme-color_picker_preview.png'/>
 </p>
 
 ## Adding a Custom Font
@@ -427,7 +427,7 @@ In order to be able to choose the font you've added through the Builder, it has 
 After that, you can _push_ your extension to update the changes you've made on the Builder. After choosing your newly created theme you will be able to use the custom font you added:
 
 <p class="image">
-<img src='{{ site.url }}/img/tutorials/settings-theme/custom-font.png'/>
+<img alt='Typography customization tab' src='{{ site.url }}/img/tutorials/settings-theme/custom-font.png'/>
 </p>
 
 However, you won't be able to preview these changes in the Builder. This is because fonts are linked into the binary of the app, while the Builder previews as a predefined binary and only previews JavaScript bundle changes. So to be able to preview this you'll have to set up your local development environment so the custom font is linked into the local binary. You can find out how to do that [here]({{ site.url }}/docs/extensions/tutorials/setting-local-environment).
@@ -438,7 +438,7 @@ However, you won't be able to preview these changes in the Builder. This is beca
 Here you can see the difference between `Noto Serif` (left), a font included in our default theme, and our example custom font `Roboto Regular` (right):
 
 <p class="image">
-<img src='{{ site.url }}/img/tutorials/settings-theme/custom-font-difference.png'/>
+<img alt='Two restaurant lists using different fonts' src='{{ site.url }}/img/tutorials/settings-theme/custom-font-difference.png'/>
 </p>
 
 ## Adding a Custom Icon to the Builder
@@ -446,7 +446,7 @@ Here you can see the difference between `Noto Serif` (left), a font included in 
 Icons in the Builder are used to customize your app's icons in the Main navigation's different layouts:
 
 <p class="image">
-<img src='{{ site.url }}/img/tutorials/settings-theme/main-navigation-icons.png'/>
+<img alt='Navigation screens tab' src='{{ site.url }}/img/tutorials/settings-theme/main-navigation-icons.png'/>
 </p>
 
 When creating an app, you may want to use your own custom icon for the Main navigation, for instance you want to add a restaurant related icon for your Restaurants extension's screen.
@@ -500,7 +500,7 @@ You can see this in our [Rubicon theme](https://github.com/shoutem/extensions/bl
 Now you can simply _push_ to update your extension on Shoutem and once you open your Restaurants app in the Builder and check the Main navigation icons you can see your new icon under the `Theme icons` category.
 
 <p class="image">
-<img src='{{ site.url }}/img/tutorials/settings-theme/custom-icon.png'/>
+<img alt='Gallery of theme icons' src='{{ site.url }}/img/tutorials/settings-theme/custom-icon.png'/>
 </p>
 
 The other icons you see are a copy of the icons provided by the [Rubicon theme](https://github.com/shoutem/extensions/tree/master/shoutem-rubicon-theme/server/assets/icons), because, like we said, when you create a custom theme you're making a copy of Rubicon.
