@@ -51,6 +51,10 @@
       "networkErrorMessage": "No internet connection, please check your network.",
       "noSubscriptionMessage": "This app is currently inactive. Please contact its developer for support!"
     },
+    "audio": {
+      "playbackErrorTitle": "Playback Error",
+      "playbackErrorMessage": "Oops! Something went wrong during audio playback. Please try again."
+    },
     "auth": {
       "appleAuthCanceledError": "The user canceled the authorization attempt.",
       "appleAuthFailedError": "The authorization attempt failed.",
@@ -150,6 +154,9 @@
       "confirmButtonText": "Confirm",
       "typeHerePlaceholder": "Type here...",
       "deleteText": "delete"
+    },
+    "bands-in-town": {
+      "noWidgetMessage": "Missing widget code, can't display data"
     },
     "besttime": {
       "besttimeServiceUnavailable": "Service currently not available.",
@@ -463,6 +470,11 @@
     "interactive-faq": {
       "backButtonTitle": "< Back"
     },
+    "intercom": {
+      "intercomSettingsMissingMessage": "Intercom SDK isn't fully set up, please check your app's settings.",
+      "openHelpCenterButton": "Check help center",
+      "openMessengerButton": "Message support"
+    },
     "invision-community": {
       "invisionLoginButton": "Sign in with Invision",
       "loginScreenExplanation": "Clicking the button bellow will let you log in using your Invision Community account. The login dialog will open in a new browser window."
@@ -604,7 +616,40 @@
       "dailyMessagesAlertTitle": "Warning",
       "dailyMessagesAlertMessage": "Unsubscribing from daily notification messages will stop all incoming messages for today. Are you sure you want to unsubscribe?",
       "alertCancelButton": "Cancel",
-      "alertConfirmButton": "Unsubscribe"
+      "alertConfirmButton": "Unsubscribe",
+      "pushNotificationsModuleDisabledTitle": "No push notifications",
+      "pushNotificationsModuleDisabledMessage": "Enabling push notifications requires an update to higher plan",
+      "pushNotificationsAccessRestrictedTitle": "Access restricted",
+      "pushNotificationsAccessRestrictedMessage": "This functionality is restricted to admin users",
+      "pushNotificationsDatePickerSubmit": "Submit",
+      "pushNotificationsDatePickerCancel": "Cancel",
+      "pushNotificationsAudienceDropdownPlaceholder": "Audience to open",
+      "pushNotificationsCreateNotificationButton": "Create new push notification",
+      "pushNotificationsListEmptyTitle": "It's empty in here",
+      "pushNotificationsListEmptyMessage": "Start sending push notifications to your users by clicking the button below!",
+      "pushNotificationsInputRequiredFieldError": "This field is required",
+      "pushNotificationsDatePickerCaption": "Delivery date and time",
+      "pushNotificationsShortcutPickerCaption": "Screen to open",
+      "pushNotificationsUrlPickerCaption": "URL to open",
+      "pushNotificationsCreatePushScreenTitle": "New push notification",
+      "pushNotificationsCreatePushTitleLabel": "Title",
+      "pushNotificationsCreatePushMessageLabel": "Message",
+      "pushNotificationsCreatePushSuccessToastTitle": "Success",
+      "pushNotificationsCreatePushSuccessToastMessage": "Notification created successfully!",
+      "pushNotificationsCreatePushErrorToastTitle": "Error",
+      "pushNotificationsCreatePushErrorToastMessage": "Something went wrong..",
+      "pushNotificationsCreatePushTargetTypeCaption": "What to open",
+      "pushNotificationsEditPushScreenTitle": "Edit push notification",
+      "pushNotificationsEditPushSuccessToastTitle": "Success",
+      "pushNotificationsEditPushSuccessToastMessage": "Notification edited successfully!",
+      "pushNotificationsEditPushErrorToastTitle": "Error",
+      "pushNotificationsEditPushErrorToastMessage": "Something went wrong..",
+      "pushNotificationsEditPushCancel": "Cancel",
+      "pushNotificationsEditPushSaveChanges": "Save changes",
+      "pushNotificationsViewPushScreenTitle": "View push notification",
+      "pushNotificationsViewPushScreenCloseButton": "Close",
+      "pushNotificationsSendNowType": "Send now",
+      "pushNotificationsScheduledType": "Scheduled"
     },
     "onboarding": {
       "getStartedLabel": "Get Started",
@@ -622,7 +667,9 @@
       "actionSheetDeleteOption": "Delete download",
       "actionSheetDownloadOption": "Download",
       "actionSheetDownloadInProgress": "Downloading...",
+      "actionSheetFavorite": "Favorite",
       "actionSheetShareOption": "Share",
+      "actionSheetUnfavorite": "Unfavorite",
       "deviceSettingsDescription": "To download and play offline podcast episodes, the app requires read and write access to external storage.",
       "deviceSettingsTitle": "Go to Settings",
       "upNext": "UP NEXT"
@@ -661,7 +708,11 @@
       "sleepTimerLabel": "Sleep Timer",
       "shareButtonLabel": "Share",
       "shareMessage": "Stream address: {{streamUrl}}",
-      "shareTitle": "Currently listening to {{streamTitle}}"
+      "shareTitle": "Currently listening to {{streamTitle}}",
+      "currentNews": "CURRENT NEWS",
+      "seeAll": "See all",
+      "sleepTimerToastTitle": "Sleep Timer Expired",
+      "sleepTimerToastMessage": "Your radio has completed its scheduled session."
     },
     "recombee": {
       "cancelRequestAgentLabel": "Cancel",
@@ -682,7 +733,8 @@
       "errorMessage": "Something went wrong.",
       "messageReceivedAlert": "Message received",
       "messageReceivedAlertView": "View",
-      "messageReceivedAlertDismiss": "Dismiss"
+      "messageReceivedAlertDismiss": "Dismiss",
+      "noSearchResultsText": "No results found"
     },
     "rss-news": {
       "upNext": "UP NEXT"
@@ -763,6 +815,9 @@
       "paymentFillAllFieldsError": "Please fill all fields",
       "paymentExpiryMonthError": "Please enter a valid expiry month",
       "paymentExpiryYearError": "Please enter a valid expiry year",
+      "quickBuyQuantity": "Quantity",
+      "quickBuyAddToCartButton": "Add to cart",
+      "quickAddToastTitleProductAdded": "PRODUCT ADDED!",
       "cartScreenProductName": "PRODUCT NAME",
       "cartScreenProductPrice": "PRICE",
       "proceedToCheckoutButton": "PROCEED TO CHECKOUT",
@@ -771,7 +826,55 @@
       "selectAddressNavBarTitle": "Select address",
       "shopTitlePlaceholder": "SHOP",
       "outOfStockMessage": "Out of stock",
-      "updateItemScreenProductPrice": "Price:"
+      "updateItemScreenProductPrice": "Price:",
+      "loginError": "Login failed",
+      "ordersError": "There was a problem loading your orders",
+      "emptyOrdersMessage": "You haven't made any orders yet.",
+      "order": "Order",
+      "status": "Status",
+      "orderNumber": "Order number",
+      "orderDate": "Order date",
+      "items": "Items",
+      "subtotal": "Subtotal",
+      "shipping": "Shipping",
+      "total": "Order Total",
+      "deliveryAddress": "Delivery address",
+      "pieces": "pc",
+      "createCustomerSuccessTitle": "Account successfully created",
+      "createCustomerErrorTitle": "Unable to create Shopify account",
+      "createCustomerErrorMessage": "Your Shoutem account was created. Creating Shopify account failed with:",
+      "defaultAddress": "Default",
+      "otherAddresses": "Other addresses",
+      "editFirstNameLabel": "First name",
+      "editLastNameLabel": "Last name",
+      "saveChanges": "Save Changes",
+      "editPhoneLabel": "Phone",
+      "phonePlaceholder": "+___ _____",
+      "phoneErrorMessage": "Please enter valid phone number",
+      "editCompanyLabel": "Company",
+      "editAddressLabel": "Address",
+      "editCityLabel": "City",
+      "editCountryLabel": "Country/Region",
+      "editProvinceLabel": "Province",
+      "editZipLabel": "Zip",
+      "setAsDefaultAddress": "Set as default address",
+      "emptyAddressMessage": "You haven't added any addresses yet.",
+      "addressUpdateTitle": "Success!",
+      "addressCreateSuccess": "Address was created successfully",
+      "addressEditSuccess": "Address was edited successfully",
+      "addressDeleteSuccess": "Address was deleted successfully",
+      "addressFormIncompleteTitle": "Address form error",
+      "addressFormIncompleteMessage": "All fields are mandatory.\nCheck if you missed some.",
+      "deleteAddressWarningTitle": "Delete address",
+      "deleteAddressWarningMessage": "Are you sure you want to delete this address?",
+      "deleteAddressCancel": "Cancel",
+      "deleteAddressConfirm": "Delete",
+      "setDefaultAddressWarningTitle": "Default address",
+      "setDefaultAddressWarningMessage": "Are you sure you want to set this address as default address?",
+      "setDefaultAddressCancel": "Cancel",
+      "setDefaultAddressConfirm": "Confirm",
+      "updateCustomerErrorTitle": "Unable to edit your Shopify profile",
+      "updateCustomerPhoneErrorMessage": "Phone number has to include your country calling code (prefixed with +)"
     },
     "social": {
       "commentButton": "COMMENT",
@@ -805,6 +908,8 @@
       "cancelStatusSelectionOption": "Cancel",
       "postStatusButton": "Post",
       "newCommentPlaceholder": "Add a comment",
+      "likeStatusButtonText": "Like",
+      "likedStatusButtonText": "Unlike",
       "postDetailsNavBarTitle": "POST DETAILS",
       "reportOptionSpam": "It's a spam",
       "reportOptionInappropriate": "It's inappropriate",
@@ -835,7 +940,10 @@
       "keepEditingButtonLabel": "Keep editing",
       "cancelHeaderButtonText": "Cancel",
       "postCommentError": "Failed to post a comment. Please try again later.",
-      "postStatusError": "Failed to post a comment. Please try again later."
+      "postStatusError": "Failed to post a status. Please try again later.",
+      "giphyPickerTitle": "Select GIF",
+      "giphyPickerInputPlaceholder": "Search GIPHY",
+      "fetchGifsError": "There was a problem loading GIFs"
     },
     "theme": {
       "themeChangedAlertTitle": "Theme changed",
