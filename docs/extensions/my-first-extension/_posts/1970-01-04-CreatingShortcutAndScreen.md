@@ -103,7 +103,7 @@ Scanning folders for symlinks in /path/to/Restaurants/node_modules
 ```
 
 <p class="image">
-<img src='{{ site.url }}/img/tutorials/getting-started/03-lets-eat.png'/>
+<img alt="Phone showing Let's Eat text" src='{{ site.url }}/img/tutorials/getting-started/03-lets-eat.png'/>
 </p>
 
 > #### Note
@@ -128,7 +128,7 @@ export default class List extends Component {
 After reloading the emulator, your new line of text should be visible immediately:
 
 <p class="image">
-<img src='{{ site.url }}/img/my-first-extension/real-time-preview.png'/>
+<img alt="Phone showing Let's Eat, Can't do anything on an empty stomach" src='{{ site.url }}/img/my-first-extension/real-time-preview.png'/>
 </p>
 
 Your extension only has a simple screen right now, let's add some [UI components]({{ site.url }}/docs/extensions/my-first-extension/using-ui-toolkit).
