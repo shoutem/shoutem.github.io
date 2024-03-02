@@ -23,6 +23,7 @@ import {
 
 import {
   Image,
+  ImageBackground,
   Tile,
   Title,
   Text,
@@ -47,7 +48,7 @@ export default class MyAnimatedScreen extends Component {
     return (
       <ScrollView {...driver.scrollViewProps}>
         <HeroHeader driver={driver}>
-          <Image
+          <ImageBackground
             styleName="large-banner"
             source={% raw %}{{{% endraw %} uri: restaurant.image.url }}
             key={restaurant.name}
@@ -62,7 +63,7 @@ export default class MyAnimatedScreen extends Component {
                 </FadeIn>
               </Parallax>
             </Tile>
-          </Image>
+          </ImageBackground>
         </HeroHeader>
         <View
           styleName="content"
