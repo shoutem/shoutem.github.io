@@ -53,7 +53,8 @@
     },
     "audio": {
       "playbackErrorTitle": "Playback Error",
-      "playbackErrorMessage": "Oops! Something went wrong during audio playback. Please try again."
+      "playbackErrorMessage": "Oops! Something went wrong during audio playback. Please try again.",
+      "liveStreamText": "Live stream"
     },
     "auth": {
       "appleAuthCanceledError": "The user canceled the authorization attempt.",
