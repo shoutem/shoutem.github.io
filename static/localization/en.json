@@ -54,7 +54,16 @@
     "audio": {
       "playbackErrorTitle": "Playback Error",
       "playbackErrorMessage": "Oops! Something went wrong during audio playback. Please try again.",
-      "liveStreamText": "Live stream"
+      "liveStreamText": "Live stream",
+      "playbackRateTitle": "Playback speed",
+      "playbackRateOption05": "0.5x",
+      "playbackRateOption075": "0.75x",
+      "playbackRateOption1": "1x",
+      "playbackRateOption125": "1.25x",
+      "playbackRateOption15": "1.5x",
+      "playbackRateOption175": "1.75x",
+      "playbackRateOption2": "2x",
+      "normalRateCaption": "(normal)"
     },
     "auth": {
       "appleAuthCanceledError": "The user canceled the authorization attempt.",
@@ -662,6 +671,11 @@
       "missingPermissionsTitle": "Missing Permissions",
       "missingPermissionsMessage": "Please enable necessary permissions in device settings",
       "openSettings": "Go to Settings"
+    },
+    "places": {
+      "dealsSectionTitle": "Deals",
+      "endsLabel": "Ends",
+      "redeemedLabel": "Redeemed"
     },
     "podcast": {
       "actionSheetCancelOption": "Cancel",
