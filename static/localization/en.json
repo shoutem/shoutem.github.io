@@ -224,6 +224,10 @@
       "emailButton": "Email",
       "phoneButton": "Phone",
       "websiteButton": "Visit webpage",
+      "twitterButton": "Visit Twitter",
+      "facebookButton": "Visit Facebook",
+      "instagramButton": "Visit Instagram",
+      "tiktokButton": "Visit TikTok",
       "rsvpButton": "RSVP",
       "navBarListViewButton": "List",
       "navBarMapViewButton": "Map",
@@ -670,6 +674,7 @@
       "cancel": "Cancel",
       "missingPermissionsTitle": "Missing Permissions",
       "missingPermissionsMessage": "Please enable necessary permissions in device settings",
+      "alarmPermissionRationale": "To schedule local notifications, the app needs alarm permission enabled in the settings. You can turn this permission on or off at any time.",
       "openSettings": "Go to Settings"
     },
     "places": {
