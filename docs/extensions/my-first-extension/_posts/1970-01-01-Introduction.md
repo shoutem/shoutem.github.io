@@ -8,7 +8,7 @@ section: My First Extension
 # My First Extension
 <hr />
 
-This tutorial will show you how to write custom **Shoutem extensions** on the Shoutem platform. It introduces the most important concepts. After completing it, you will have a running **mobile app** that uses the your brand new **custom extension** with components from the [Shoutem UI Toolkit]({{ site.url }}/docs/ui-toolkit/introduction) and retrieves content from the [Shoutem Cloud]({{ site.url }}/docs/cloud/introduction). The final result of this tutorial-made extension is [open sourced](https://github.com/shoutem/extension-examples/tree/master/restaurants-getting-started).
+This tutorial will show you how to write custom **Shoutem extensions** on the Shoutem platform. It introduces the most important concepts. After completing it, you will have a running **mobile app** that uses your brand new **custom extension** with components from the [Shoutem UI Toolkit]({{ site.url }}/docs/ui-toolkit/introduction) and retrieves content from the [Shoutem Cloud]({{ site.url }}/docs/cloud/introduction). The final result of this tutorial-made extension is [open sourced](https://github.com/shoutem/extension-examples/tree/master/restaurants-getting-started).
 
 Before you start the My First Extension tutorial series, you should go through [Getting Started]({{ site.url }}/docs/extensions/tutorials/getting-started), because this tutorial series builds on top of the simple extension you created there.
 
