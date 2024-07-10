@@ -234,12 +234,6 @@
       "noSearchResultsText": "No results found",
       "searchPlaceholder": "Search"
     },
-    "code-push": {
-      "newContentAlertTitle": "New content",
-      "newContentAlertMessage": "New content is available in the app, would you like to load it now?",
-      "laterButton": "Later",
-      "acceptButton": "Yes"
-    },
     "deals": {
       "couponsRemainingMessage": {
         "one": "{{count}} coupon left",
@@ -274,7 +268,8 @@
       "calendarPermissionsTitle": "Grant calendar access",
       "calendarPermissionsMessage": "You disabled calendar access for this application. Do you want to enable it in settings now?",
       "calendarPermissionsSettings": "Go to Settings",
-      "calendarPermissionsCancel": "Cancel"
+      "calendarPermissionsCancel": "Cancel",
+      "wheelchairFriendly": "WHEELCHAIR FRIENDLY"
     },
     "favorites": {
       "noFavoritesMessage": "This screen will list your favorites once you add them."
@@ -492,6 +487,12 @@
     "invision-community": {
       "invisionLoginButton": "Sign in with Invision",
       "loginScreenExplanation": "Clicking the button bellow will let you log in using your Invision Community account. The login dialog will open in a new browser window."
+    },
+    "live-update": {
+      "newContentAlertTitle": "New content",
+      "newContentAlertMessage": "New content is available in the app, would you like to load it now?",
+      "laterButton": "Later",
+      "acceptButton": "Yes"
     },
     "loyalty": {
       "pointsInStore": {
