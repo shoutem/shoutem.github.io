@@ -55,15 +55,32 @@
       "playbackErrorTitle": "Playback Error",
       "playbackErrorMessage": "Oops! Something went wrong during audio playback. Please try again.",
       "liveStreamText": "Live stream",
-      "playbackRateTitle": "Playback speed",
-      "playbackRateOption05": "0.5x",
-      "playbackRateOption075": "0.75x",
-      "playbackRateOption1": "1x",
-      "playbackRateOption125": "1.25x",
-      "playbackRateOption15": "1.5x",
-      "playbackRateOption175": "1.75x",
-      "playbackRateOption2": "2x",
-      "normalRateCaption": "(normal)"
+      "playbackSpeedTitle": "Playback speed",
+      "playbackSpeedOption05": "0.5x",
+      "playbackSpeedOption075": "0.75x",
+      "playbackSpeedOption1": "1x",
+      "playbackSpeedOption125": "1.25x",
+      "playbackSpeedOption15": "1.5x",
+      "playbackSpeedOption175": "1.75x",
+      "playbackSpeedOption2": "2x",
+      "normalRateCaption": "(normal)",
+      "sleepTimerToastTitle": "Sleep Timer Expired",
+      "sleepTimerToastMessage": "Your audio player has completed its scheduled session.",
+      "settingsModalTitle": "Settings",
+      "sleepTimerSettingsTitle": "Sleep timer",
+      "timerOption5": "5 minutes",
+      "timerOption10": "10 minutes",
+      "timerOption15": "15 minutes",
+      "timerOption30": "30 minutes",
+      "timerOption45": "45 minutes",
+      "timerOption60": "60 minutes",
+      "turnOffTimerText": "Turn off timer",
+      "timeLeftCaption": {
+        "one": "{{count}} minute left",
+        "other": "{{count}} minutes left"
+      },
+      "queueTitle": "Queue",
+      "nowPlayingTitle": "Now playing"
     },
     "auth": {
       "appleAuthCanceledError": "The user canceled the authorization attempt.",
@@ -228,6 +245,7 @@
       "facebookButton": "Visit Facebook",
       "instagramButton": "Visit Instagram",
       "tiktokButton": "Visit TikTok",
+      "linkedInButton": "Visit LinkedIn",
       "rsvpButton": "RSVP",
       "navBarListViewButton": "List",
       "navBarMapViewButton": "Map",
@@ -702,38 +720,15 @@
     },
     "radio-player": {
       "buffering": "Buffering...",
-      "cancelTimer": "Turn off timer",
-      "cancelSleepTimer": {
-        "one": "{{count}} minute left",
-        "other": "{{count}} minutes left",
-        "zero": "< 1 minute left"
-      },
-      "cancelSleepTimerArtworkLayout": {
-        "one": "{{count}} min",
-        "other": "{{count}} mins",
-        "zero": "< 1 min"
-      },
-      "cancelTimerWithDurationLeft": {
-        "one": "Turn off timer - {{count}} minute left",
-        "other": "Turn off timer - {{count}} minutes left",
-        "zero": "Turn off timer - Less than a minute left"
-      },
-      "closeSleepTimerOptionsLabel": "Back",
-      "timerOption": "{{duration}} minutes",
-      "timerOptionsExplanation": "Stop playing in...",
-      "turnOffTimer": "Turn off timer",
       "missingStreamUrl": "Please enter a valid stream URL and reload your app.",
       "moreOptionsLabel": "More options",
       "nowPlaying": "Now playing",
       "pressToPlay": "Press play to start the stream",
-      "sleepTimerLabel": "Sleep Timer",
       "shareButtonLabel": "Share",
       "shareMessage": "Stream address: {{streamUrl}}",
       "shareTitle": "Currently listening to {{streamTitle}}",
       "currentNews": "CURRENT NEWS",
-      "seeAll": "See all",
-      "sleepTimerToastTitle": "Sleep Timer Expired",
-      "sleepTimerToastMessage": "Your radio has completed its scheduled session."
+      "seeAll": "See all"
     },
     "recombee": {
       "cancelRequestAgentLabel": "Cancel",
