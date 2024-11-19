@@ -88,7 +88,9 @@
         "other": "{{count}} minutes left"
       },
       "queueTitle": "Queue",
-      "nowPlayingTitle": "Now playing"
+      "nowPlayingTitle": "Now playing",
+      "queueFinishedToastTitle": "Playback status",
+      "queueFinishedToastMessage": "Playlist has finished playing."
     },
     "auth": {
       "appleAuthCanceledError": "The user canceled the authorization attempt.",
@@ -214,6 +216,7 @@
     },
     "camera": {
       "changePermissionsButton": "Change permissions",
+      "missingPermissionAlertTitle": "Missing permissions",
       "permissionNotGranted": "Camera permission not granted.",
       "codeScannedTitle": "QR Code scanned",
       "codeScannedMessage": "Scanned link: {{url}}",
@@ -449,7 +452,9 @@
       "noPointsAwardedErrorTitle": "No points selected",
       "noPointsAwardedErrorMessage": "Please select points to award or cancel",
       "cardPointCountInvalid": "Card doesn't have enough points.",
-      "processing": "Processing..."
+      "processing": "Processing...",
+      "qrScanErrorToastTitle": "Error",
+      "qrScanErrorToastMessage": "Something went wrong while trying to read QR code."
     },
     "navigation": {
       "noContentScreenName": "No content",
