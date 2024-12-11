@@ -224,6 +224,13 @@
       "cancelButtonLabel": "Cancel",
       "openButtonLabel": "Open"
     },
+    "carplay": {
+      "permissionAlertTitle": "Permission Required",
+      "permissionAlertMessage": "To be able to use your app in Android Auto, without actually starting the app manualy, we will use the Draw Over Apps permission to wake your mobile app when the content is requested. If you want this functionality, please enable the permission for this application",
+      "permissionRejectButtonText": "Reject",
+      "permissionGrantButtonText": "Grant",
+      "radioStationsTitle": "Radio stations"
+    },
     "checklist": {
       "checklistScreenSubmitButton": "Submit",
       "checklistScreenHelpButton": "Help",
@@ -746,16 +753,32 @@
       "setDefaultAddressCancel": "Cancel",
       "setDefaultAddressConfirm": "Confirm",
       "updateCustomerErrorTitle": "Unable to edit your Shopify profile",
-      "updateCustomerPhoneErrorMessage": "Phone number has to include your country calling code (prefixed with +)"
+      "updateCustomerPhoneErrorMessage": "Phone number has to include your country calling code (prefixed with +)",
+      "loginTitle": "Shopify Login",
+      "loginDescription": "Log in using your existing Shopify store account",
+      "loginEmailEmpty": "Email should not be empty",
+      "loginPasswordEmpty": "Password should not be empty",
+      "loginEmail": "Email",
+      "loginPassword": "Password",
+      "loginEmailPlaceholder": "Enter your email",
+      "loginPasswordPlaceholder": "Enter your password",
+      "loginButtonTitleConnected": "Re-Connect",
+      "loginButtonTitleDisconnected": "Connect",
+      "loginStatusConnected": "You are connected with: %{email}",
+      "loginStatusDisconnected": "You are currently disconnected",
+      "loginSuccessTitle": "Success",
+      "loginErrorTitle": "Error",
+      "loginSuccessDescription": "Shopify account connected",
+      "loginErrorDescription": "Shopify login failed"
     },
     "social": {
       "commentButton": "COMMENT",
       "cancelCommentSelectionOption": "Cancel",
       "deleteCommentOption": "Delete",
-      "emptySearchListTitle": "It’s empty in here",
-      "emptyStartSearchListTitle": "Search user profiles",
+      "emptySearchListTitle": "No results found",
+      "emptyStartSearchListTitle": "",
       "emptySearchListMessage": "Your search '{{text}}' did not match any profiles.",
-      "emptyStartSearchListMessage": "You can find user profiles by typing their name.",
+      "emptyStartSearchListMessage": "Enter a term to search or apply filters to refine your results.",
       "loadingMoreComments": "Loading more comments...",
       "noLikes": "No likes",
       "numberOfLikes": {
@@ -817,7 +840,13 @@
       "giphyPickerInputPlaceholder": "Search GIPHY",
       "fetchGifsError": "There was a problem loading GIFs",
       "emptyBlockedUsersListMessage": "You haven't blocked anyone yet.",
-      "reloadButton": "Reload"
+      "reloadButton": "Reload",
+      "searchScreenTitle": "Search user profiles",
+      "filtersModalTitle": "Filters",
+      "filtersModalApplyButtonTitle": "Apply & search",
+      "filtersModalCancelButtonTitle": "Cancel",
+      "mapButtonTitle": "Map",
+      "usersSearchButtonTitle": "Users"
     },
     "theme": {
       "themeChangedAlertTitle": "Theme changed",
@@ -856,7 +885,16 @@
       "noImagesUploaded": "No images uploaded yet",
       "chat": "Chat",
       "video": "Video",
-      "logout": "Logout"
+      "logout": "Logout",
+      "selectLocationLabel": "Select location",
+      "locationInputPlaceholder": "Enter address",
+      "locationSelectScreenTitle": "Location",
+      "emptyPlacesListTitle": "",
+      "emptyPlacesListMessage": "Type something to search...",
+      "selectLocationButtonTitle": "Select {{label}}",
+      "invalidFormat": "Invalid {{variant}} format.",
+      "openLinkFailureTitle": "Something went wrong",
+      "openLinkFailureMessage": "We couldn't open link at this time."
     },
     "web-view": {
       "noUrlErrorMessage": "Please enter a valid URL and reload your app.",
