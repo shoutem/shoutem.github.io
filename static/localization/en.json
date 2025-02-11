@@ -90,7 +90,9 @@
       "queueTitle": "Queue",
       "nowPlayingTitle": "Now playing",
       "queueFinishedToastTitle": "Playback status",
-      "queueFinishedToastMessage": "Playlist has finished playing."
+      "queueFinishedToastMessage": "Playlist has finished playing.",
+      "failedLikeRequestToastTitle": "Request failed.",
+      "failedLikeRequestToastMessage": "Oops! Something went wrong. Please try again later, or reach out to our support if the issue continues."
     },
     "auth": {
       "appleAuthCanceledError": "The user canceled the authorization attempt.",
@@ -699,6 +701,8 @@
       "cartScreenProductPrice": "PRICE",
       "proceedToCheckoutButton": "PROCEED TO CHECKOUT",
       "cartScreenNavBarTitle": "SHOPPING CART",
+      "orderDetailsNavBarTitle": "ORDER DETAILS",
+      "editAddressNavBarTitle": "EDIT ADDRESS",
       "emptyCartMessage": "You haven't added any products yet.",
       "selectAddressNavBarTitle": "Select address",
       "shopTitlePlaceholder": "SHOP",
@@ -769,7 +773,19 @@
       "loginSuccessTitle": "Success",
       "loginErrorTitle": "Error",
       "loginSuccessDescription": "Shopify account connected",
-      "loginErrorDescription": "Shopify login failed"
+      "loginErrorDescription": "Shopify login failed",
+      "searchProducts": "Search Products",
+      "viewAll": "View All",
+      "soldOut": "Sold Out",
+      "sortFeatured": "Featured",
+      "sortNewest": "Newest",
+      "sortBestSelling": "Best Selling",
+      "sortPriceLow": "Price: Low to High",
+      "sortPriceHigh": "Price: High to Low",
+      "sortButton": "SORT",
+      "sortRelevance": "Relevance",
+      "filterButton": "FILTER",
+      "applySortButton": "Apply"
     },
     "social": {
       "commentButton": "COMMENT",
