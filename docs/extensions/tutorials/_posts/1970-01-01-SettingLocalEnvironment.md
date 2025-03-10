@@ -18,7 +18,7 @@ There are limitations to what the Builder can preview. Namely, it can only previ
 To work on apps with native code changes, you can use `react-native run-ios` and `react-native run-android` inside your cloned app's directory, the same way you'd use them with any other React Native app! You can find out how to set up your local environment for React Native development using [Facebook's official documentation](https://facebook.github.io/react-native/docs/getting-started.html). Make sure you strictly pass through all the steps described there.
 
 <p class="image">
-<img src='{{ site.url }}/img/tutorials/setting-local-environment/rn-getting-started.png'/>
+<img alt='React Native Getting Started page' src='{{ site.url }}/img/tutorials/setting-local-environment/rn-getting-started.png'/>
 </p>
 
 Once you have that set up, you can continue your work like it was a regular React Native app.
