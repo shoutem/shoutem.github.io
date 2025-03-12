@@ -862,7 +862,10 @@
       "filtersModalApplyButtonTitle": "Apply & search",
       "filtersModalCancelButtonTitle": "Cancel",
       "mapButtonTitle": "Map",
-      "usersSearchButtonTitle": "Users"
+      "usersSearchButtonTitle": "Users",
+      "requestFailedToastTitle": "Request failed",
+      "likeStateRequestFailedMessage": "We couldn't process your request. If the issue continues, contact our support team for assistance.",
+      "likeActionRequestFailedMessage": "We couldn't process your like request. Please try again, and if the issue continues, contact our support team for assistance."
     },
     "theme": {
       "themeChangedAlertTitle": "Theme changed",
