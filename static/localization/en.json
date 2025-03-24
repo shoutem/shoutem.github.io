@@ -471,7 +471,20 @@
       "androidExitMessage": "Press the back button again to exit."
     },
     "news": {
-      "upNext": "UP NEXT"
+      "upNext": "UP NEXT",
+      "relatedArticlesTitle": "Related articles",
+      "likeButtonText": "Like",
+      "unlikeButtonText": "Unlike",
+      "likesCount": {
+        "zero": "",
+        "one": "{{count}} user liked this",
+        "other": "{{count}} users liked this"
+      },
+      "searchPlaceholder": "Search...",
+      "emptyStartSearchListMessage": "Enter a search term to find results.",
+      "emptySearchListMessage": "No results found. Try a different search term.",
+      "searchRequestFailedToastTitle": "Search failed",
+      "searchRequestFailedToastMessage": "We couldn't process your search request. If the issue continues, contact our support team for assistance."
     },
     "notification-center": {
       "viewNotificationButton": "VIEW",
