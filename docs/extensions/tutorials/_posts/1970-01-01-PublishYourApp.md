@@ -68,7 +68,7 @@ Instead of going to each store to fill in app information, we've put everything 
 After you finish the first two steps, click the `Publish` button. Your app will go into the review process in both stores and we'll be notifying you of the process.
 
 <p class="image">
-<img src='{{ site.url }}/img/tutorials/publish-your-app/publish-app.png'/>
+<img alt='Page with publish app button' src='{{ site.url }}/img/tutorials/publish-your-app/publish-app.png'/>
 </p>
 
 Once your app is published, the `Publish` button will become `Republish`.
@@ -148,19 +148,19 @@ Successfully signed ShoutemApp.ipa!
 Login to iTunes Connect with your iOS Developer account, click on `My Apps`, then click on the `+` in the top left corner. You should get this menu:
 
 <p class="image">
-<img src='{{ site.url }}/img/tutorials/publish-your-app/itunes-connect-menu.png'/>
+<img alt='New app form' src='{{ site.url }}/img/tutorials/publish-your-app/itunes-connect-menu.png'/>
 </p>
 
 Fill your app details. Once you are done with that, click on `Create`. Your app is now created on iTunes Connect and you are few steps away from publishing it. Fill the details of your app's privacy policy link, category and license agreement.
 
 <p class="image">
-<img src='{{ site.url }}/img/tutorials/publish-your-app/itunes-app-info.png'/>
+<img alt='App information page' src='{{ site.url }}/img/tutorials/publish-your-app/itunes-app-info.png'/>
 </p>
 
 In `Pricing and Availability`, choose to make your app free or paid and in which countries you want to make it available.
 
 <p class="image">
-<img src='{{ site.url }}/img/tutorials/publish-your-app/itunes-pricing-and-availability.png'/>
+<img alt='Pricing and Availability tab with schedule' src='{{ site.url }}/img/tutorials/publish-your-app/itunes-pricing-and-availability.png'/>
 </p>
 
 Upload app's metadata. Click on iOS app which is currently in “Prepare for Submission” state. On this screen, you will upload your app’s screenshots, add it’s description, keywords, support URL, content rating, app store artwork and review contact information.
@@ -168,7 +168,7 @@ Upload app's metadata. Click on iOS app which is currently in “Prepare for Sub
 After doing so, upload your build file (.ipa). To upload it, you use tool called Application Loader, which is one of the tools that comes along with Xcode. Find it in Xcode: Select Xcode in the menu -> Open Developer Tools -> Application Loader. This is what you should get:
 
 <p class="image">
-<img src='{{ site.url }}/img/tutorials/publish-your-app/xcode-application-loader.png'/>
+<img alt='Apple ID Sign in' src='{{ site.url }}/img/tutorials/publish-your-app/xcode-application-loader.png'/>
 </p>
 
 Login with your iOS Developer account, choose the “Deliver your app” option and upload your .ipa file to iTunes Connect.
@@ -176,13 +176,13 @@ Login with your iOS Developer account, choose the “Deliver your app” option 
 After uploading it, the app will go trough processing time in iTunes Connect. Processing time can vary from few minutes to few hours (even days) and it depends on the stability of the Apple’s services. If you click on the `Activity tab` in iTunes Connect, you will see this while your app is in processing time:
 
 <p class="image">
-<img src='{{ site.url }}/img/tutorials/publish-your-app/itunes-processing-time.png'/>
+<img alt='Tab showing iOS builds' src='{{ site.url }}/img/tutorials/publish-your-app/itunes-processing-time.png'/>
 </p>
 
 Once the processing of your app is done, go back to your iOS app and scroll down to the `Build section`. You'll notice that a little `+` sign has appeared next to `Build`.
 
 <p class="image">
-<img src='{{ site.url }}/img/tutorials/publish-your-app/itunes-build.png'/>
+<img alt="Interface to initiate build' src='{{ site.url }}/img/tutorials/publish-your-app/itunes-build.png'/>
 </p>
 
 Click on it and the build of your app is processed and ready for preview. After adding a build, click on the `Submit for Review` button in the top right corner.
@@ -190,7 +190,7 @@ Click on it and the build of your app is processed and ready for preview. After 
 Finally, you need to declare your app's export compliance, content rights and advertising info:
 
 <p class="image">
-<img src='{{ site.url }}/img/tutorials/publish-your-app/itunes-compilance.png'/>
+<img alt='Form with export options' src='{{ site.url }}/img/tutorials/publish-your-app/itunes-compilance.png'/>
 </p>
 
 Answer those questions and click the `Submit` button. Your app status will change to "Waiting for review" state which means that your app has been sent to Apple's review team.
@@ -272,13 +272,13 @@ $ ./zipalign -v 4 /path/to/unaligned.apk /path/for/release-aligned.apk
 Create your app in the Google Play Developer Console. Log in with your Android Developer account credentials and select `Add New Application` in the [Google Play Developer Console panel](https://play.google.com/apps/publish/):
 
 <p class="image">
-<img src='{{ site.url }}/img/tutorials/publish-your-app/android-create-app.png'/>
+<img alt='New application page' src='{{ site.url }}/img/tutorials/publish-your-app/android-create-app.png'/>
 </p>
 
 Once you’ve entered that information, you'll be taken to the `Store Listing` screen, where you need to update your app's short description, description, screenshots, featured graphics, category and application type and add link to your privacy policy:
 
 <p class="image">
-<img src='{{ site.url }}/img/tutorials/publish-your-app/android-store-listing.png'/>
+<img alt='Developer Console store listing page' src='{{ site.url }}/img/tutorials/publish-your-app/android-store-listing.png'/>
 </p>
 
 #### Upload your App to Production
@@ -286,13 +286,13 @@ Once you’ve entered that information, you'll be taken to the `Store Listing` s
 Under the `App Releases` tab, choose how you want to publish your Android app - is it for production, beta or alpha:
 
 <p class="image">
-<img src='{{ site.url }}/img/tutorials/publish-your-app/android-app-releases.png'/>
+<img alt="Production, beta, and alpha release options page' src='{{ site.url }}/img/tutorials/publish-your-app/android-app-releases.png'/>
 </p>
 
 The process is pretty much the same for each release, so we will cover production release. Click on `Manage production` and then on `Create New`. This will take you to:
 
 <p class="image">
-<img src='{{ site.url }}/img/tutorials/publish-your-app/android-new-release-to-production.png'/>
+<img alt='App release page with APK options' src='{{ site.url }}/img/tutorials/publish-your-app/android-new-release-to-production.png'/>
 </p>
 
 Here you can upload your .apk file, choose the release name and "What's Next" text. Once you're done, click on `Review`.
@@ -302,13 +302,13 @@ Here you can upload your .apk file, choose the release name and "What's Next" te
 Answer Google's content rating questionnaire and choose your app’s content category. Add your email address and choose from one of six available categories.
 
 <p class="image">
-<img src='{{ site.url }}/img/tutorials/publish-your-app/android-content-rating.png'/>
+<img alt='Content rating questionnaire' src='{{ site.url }}/img/tutorials/publish-your-app/android-content-rating.png'/>
 </p>
 
 Each category contains slightly different questions which need to be answered mostly as Yes/No questions. Click `Save questionnaire`, then `Calculate rating`. You will see the ratings for the various locales where your app may be on sale. Scroll to the bottom of the list and click `Apply rating`. The `Content Rating` check mark is now green.
 
 <p class="image">
-<img src='{{ site.url }}/img/tutorials/publish-your-app/android-rating-details.png'/>
+<img alt='Rating questionnaire summary' src='{{ site.url }}/img/tutorials/publish-your-app/android-rating-details.png'/>
 </p>
 
 #### Pricing and Distribution
@@ -316,13 +316,13 @@ Each category contains slightly different questions which need to be answered mo
 Select the `Pricing & Distribution` check mark for the final step: setting the price of your app and in which countries it will be available.
 
 <p class="image">
-<img src='{{ site.url }}/img/tutorials/publish-your-app/android-pricing-and-distrution.png'/>
+<img alt='Distribution selector for countries' src='{{ site.url }}/img/tutorials/publish-your-app/android-pricing-and-distrution.png'/>
 </p>
 
 Below this, there are a few checkbox questions regarding your app distribution. Check the boxes by Content guidelines and US export laws to indicate your app’s compliance with relevant rules, then scroll to the top of the page and click `Save draft`.
 
 <p class="image">
-<img src='{{ site.url }}/img/tutorials/publish-your-app/android-content-guidelines.png'/>
+<img alt="List of device categories' src='{{ site.url }}/img/tutorials/publish-your-app/android-content-guidelines.png'/>
 </p>
 
 ### Release the App
@@ -330,7 +330,7 @@ Below this, there are a few checkbox questions regarding your app distribution. 
 Select your `App Release` tab again and select `Edit release` under `Manage Production`:
 
 <p class="image">
-<img src='{{ site.url }}/img/tutorials/publish-your-app/android-app-release.png'/>
+<img alt="App release page' src='{{ site.url }}/img/tutorials/publish-your-app/android-app-release.png'/>
 </p>
 
 Scroll down, click on the `Review` button. Check your app details and if you are satisfied, click on the `Start rollout to production` button to publish your app in the `Google Play Store`. Clicking on the confirm button, you will publish your app in the Store!

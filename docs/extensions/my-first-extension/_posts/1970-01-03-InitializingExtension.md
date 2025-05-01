@@ -10,7 +10,7 @@ section: My first extension
 Here's the mockup of the Restaurants extension that we saw in the [Introduction]({{ site.url }}/docs/extensions/my-first-extension/introduction). Through the course of this tutorial, we'll turn the **Restaurants** extension from [Getting Started]({{ site.url }}/docs/extensions/tutorials/getting-started) into this list of restaurants.
 
 <p class="image">
-<img src='{{ site.url }}/img/my-first-extension/extension-preview.jpg'/>
+<img alt='Preview of the Getting Started app' src='{{ site.url }}/img/my-first-extension/extension-preview.jpg'/>
 </p>
 
 The left app screen lists the restaurants and the right one shows the details of each specific restaurant when you tap on it.
@@ -97,7 +97,7 @@ See it in the builder: {{ site.shoutem.builderURL }}/app/{{ site.example.appId }
 Uploading the extension is self-explanatory, but let's elaborate on installing and uninstalling extensions. In the Builder, you can go to the `Extensions` tab to see which extensions are installed in your app. If you successfully installed your Restaurants extension from [Getting Started]({{ site.url }}/docs/extensions/tutorials/getting-started), you should see it there under the `Custom` category.
 
 <p class="image">
-<img src='{{ site.url }}/img/my-first-extension/extension-tab-extension.png'/>
+<img alt="Shoutem interface Custom tab" src='{{ site.url }}/img/my-first-extension/extension-tab-extension.png'/>
 </p>
 
 Extensions are installed into specific apps, not all apps on your account.
