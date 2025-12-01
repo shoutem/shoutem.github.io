@@ -346,7 +346,7 @@
       "errorDeferredPaymentTitle": "Purchase awaiting approval",
       "errorDeferredPaymentDescription": "Your purchase is awaiting approval from the parental control",
       "errorReceiptValidationTitle": "We're having trouble validating your transaction",
-      "errorReceiptValidationDescription": "Give us some time, we'll retry to validate your transaction as soon as possible",
+      "errorReceiptValidationDescription": "Please give us some time, we'll retry to validate your transaction as soon as possible.",
       "errorReceiptInvalidTitle": "Purchase error",
       "errorReceiptInvalidDescription": "We were not able to process your purchase, if you've been charged please contact the support",
       "errorReceiptRequestTitle": "We're having trouble validating your transaction",
@@ -551,7 +551,14 @@
       "pushNotificationsViewPushScreenCloseButton": "Close",
       "pushNotificationsSendNowType": "Send now",
       "pushNotificationsScheduledType": "Scheduled",
-      "noNotificationSettingsMessage": "No settings available.\n\nEnable user scheduled and/or reminder notifications to manage their settings here."
+      "noNotificationSettingsMessage": "No settings available.\n\nEnable user scheduled and/or reminder notifications to manage their settings here.",
+      "pushPermissionScreenTitle": "Manage push permission",
+      "pushPermissionScreenHeading": "Stay Updated",
+      "pushPermissionScreenDescription": "We use push notifications to send you important updates, promotions, and reminders.",
+      "pushPermissionScreenEnableButton": "Enable",
+      "pushPermissionScreenGoToSettingsButton": "Go to Settings",
+      "pushPermissionScreenNotNowButton": "Not right now",
+      "pushPermissionScreenPermissionGrantedMessage": "Thank you for enabling push notifications! You will now receive important updates, promotions, and reminders."
     },
     "onboarding": {
       "getStartedLabel": "Get Started",
@@ -814,7 +821,7 @@
         "one": "{{count}} Like",
         "other": "{{count}} Likes"
       },
-      "imageSizeWarning": "Image size exceeds the maximum size of {{maxSize}}MB",
+      "attachmentSizeWarning": "Attachment size exceeds the maximum size of {{maxSize}}MB",
       "blankPostWarning": "This post appears to be blank. Please write something.",
       "numberOfComments": {
         "one": "{{count}} Comment",
@@ -852,10 +859,13 @@
       "settingsScreenSubtitle": "Send me a push notification for",
       "commentsOnMyStatuses": "Comments on my statuses",
       "likesOnMyStatuses": "Likes on my statuses",
+      "taggedOnStatuses": "Mentions",
       "noPermissionsAlertTitle": "Limited access",
       "noMediaPermissionsAlertText": "To choose photo to upload, you will need to grant permissions to the app",
       "noCameraPermissionsAlertText": "To take a photo using camera, you will need to grant permissions to the app",
       "openSettingsButtonLabel": "Open settings",
+      "openMentionedUserErrorTitle": "Invalid user",
+      "openMentionedUserErrorDescription": "We couldn't find a user with this username",
       "cancelButtonLabel": "Cancel",
       "discardStatusAlertTitle": "Save your status as a draft?",
       "discardStatusAlertMessage": "You can save your status as a draft now, and finish it later. If you choose to discard, status will be lost.",
@@ -878,7 +888,14 @@
       "usersSearchButtonTitle": "Users",
       "requestFailedToastTitle": "Request failed",
       "likeStateRequestFailedMessage": "We couldn't process your request. If the issue continues, contact our support team for assistance.",
-      "likeActionRequestFailedMessage": "We couldn't process your like request. Please try again, and if the issue continues, contact our support team for assistance."
+      "likeActionRequestFailedMessage": "We couldn't process your like request. Please try again, and if the issue continues, contact our support team for assistance.",
+      "mentionListPlaceholder": "Start typing to search for users...",
+      "mentionListNoResults": "No users matching that tag",
+      "newCommentNotificationForegroundTitle": "New Comment",
+      "newLikeNotificationForegroundTitle": "New Like",
+      "newMentionNotificationForegroundTitle": "New Mention",
+      "messageReceivedAlertView": "View",
+      "messageReceivedAlertDismiss": "Dismiss"
     },
     "theme": {
       "themeChangedAlertTitle": "Theme changed",
@@ -905,6 +922,7 @@
       "cannotAccessCameraMessage": "Please allow access in settings if you want to take photos",
       "galleryPermissionErrorTitle": "Cannot access image library",
       "galleryPermissionErrorMessage": "Please allow access if you want to be able to select images",
+      "openSettingsButtonLabel": "Open settings",
       "errorTitle": "Error",
       "errorMessage": "Something went wrong",
       "addMorePhotos": "+ ADD MORE PHOTOS",
