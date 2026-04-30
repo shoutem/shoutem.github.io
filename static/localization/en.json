@@ -307,6 +307,13 @@
       "calendarPermissionsMessage": "You disabled calendar access for this application. Do you want to enable it in settings now?",
       "calendarPermissionsSettings": "Go to Settings",
       "calendarPermissionsCancel": "Cancel",
+      "likeButtonText": "Like",
+      "unlikeButtonText": "Unlike",
+      "likesCount": {
+        "zero": "",
+        "one": "{{count}} user liked this",
+        "other": "{{count}} users liked this"
+      },
       "wheelchairFriendly": "WHEELCHAIR FRIENDLY"
     },
     "favorites": {
@@ -499,10 +506,12 @@
       "notificationPermissionsCancel": "Cancel",
       "subscribeToPushGroups": "Send me push notifications for",
       "reminders": "Reminders",
+      "reminderSectionDescription": "Get a daily reminder at your chosen time if you haven't used the app that day.",
       "reminderToggleTitle": "Remind me to use the app",
       "reminderNavigationItemTitle": "Set a time of reminder",
       "dailyMessagesSectionTitle": "Daily notification messages",
-      "dailyMessagesToggleTitle": "Daily notification messages",
+      "dailyMessagesSectionDescription": "Receive notification messages within your chosen time window each day.",
+      "dailyMessagesToggleTitle": "Enable daily notification messages",
       "dailyMessagesNavigationItemTitle": "Set a daily notification messages settings",
       "dailySettingsTitle": "Set a timeframe",
       "dailySettingsDescription": "Set a timeframe in which the app will send you notification messages",
@@ -558,7 +567,28 @@
       "pushPermissionScreenEnableButton": "Enable",
       "pushPermissionScreenGoToSettingsButton": "Go to Settings",
       "pushPermissionScreenNotNowButton": "Not right now",
-      "pushPermissionScreenPermissionGrantedMessage": "Thank you for enabling push notifications! You will now receive important updates, promotions, and reminders."
+      "pushPermissionScreenPermissionGrantedMessage": "Thank you for enabling push notifications! You will now receive important updates, promotions, and reminders.",
+      "alarmPermissionWarning": "Notification scheduling is disabled. Notifications won't be delivered at your chosen time without alarm permission.",
+      "alarmPermissionOpenSettings": "Tap here to open Settings and enable alarms.",
+      "categoryNotificationsToggleTitle": "Enable category notifications",
+      "categorySettingsTitle": "Notification categories",
+      "categorySettingsDescription": "Pick the topics you're interested in and choose how often you'd like to receive messages. You'll get one notification per enabled category at your chosen time.",
+      "categorySettingsNavigationItemTitle": "Notification categories",
+      "scheduleSettingsTitle": "Delivery schedule",
+      "scheduleSettingsDescription": "Choose when you'd like to receive notification messages.",
+      "scheduleSettingsNavigationItemTitle": "Delivery schedule",
+      "frequencyLabel": "Frequency",
+      "frequencyDaily": "Daily",
+      "frequencyWeekly": "Weekly",
+      "dayOfWeekLabel": "Day of the week",
+      "deliveryTimeLabel": "Time of day",
+      "day_sunday": "Sun",
+      "day_monday": "Mon",
+      "day_tuesday": "Tue",
+      "day_wednesday": "Wed",
+      "day_thursday": "Thu",
+      "day_friday": "Fri",
+      "day_saturday": "Sat"
     },
     "onboarding": {
       "getStartedLabel": "Get Started",
@@ -575,7 +605,11 @@
     "places": {
       "dealsSectionTitle": "Deals",
       "endsLabel": "Ends",
-      "redeemedLabel": "Redeemed"
+      "likeButtonText": "Like",
+      "likesCount": "{{count}} like",
+      "likesCount_plural": "{{count}} likes",
+      "redeemedLabel": "Redeemed",
+      "unlikeButtonText": "Unlike"
     },
     "podcast": {
       "actionSheetCancelOption": "Cancel",
@@ -592,7 +626,10 @@
       "episodeDownloadSuccessTitle": "Download complete",
       "episodeDownloadSuccessMessage": "Episode was successfully downloaded.",
       "episodeDeleteTitle": "Episode removed",
-      "episodeDeleteMessage": "Episode was successfully removed from downloaded episodes."
+      "episodeDeleteMessage": "Episode was successfully removed from downloaded episodes.",
+      "nowPlayingLabel": "Now Playing",
+      "playFromStartButton": "Play from start",
+      "playFromTimeButton": "Resume from {{time}}"
     },
     "push-notifications": {
       "messageReceivedAlert": "Message received",
