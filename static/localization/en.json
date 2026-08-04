@@ -202,6 +202,7 @@
       "closed": "Closed",
       "currentHourLabel": "Now",
       "googlePlacesErrorSuggestion": "Try entering a more precise address or name",
+      "locationPermissionBannerMessage": "Location access is off, so search results won't be tailored to your area.",
       "noDataAvailableMessage": "No data available for this business.",
       "noForecastDataMessage": "Not enough data available yet for full forecast.",
       "noGooglePlacesFound": "No places found",
@@ -245,14 +246,8 @@
       "submitAlertTitle": "Progress Submission"
     },
     "cms": {
-      "androidLocationPermissionTitle": "Location Permission",
-      "androidLocationPermissionMessage": "This app needs access to your location to display relevant data.",
-      "androidLocationPermissionDisabled": "You disabled location permissions for this application. Do you want to enable them now?",
-      "androidLocationPermissionEnable": "Enable",
-      "iosLocationPermissionDisabled": "You disabled location permissions for this application. Do you want to enable it in settings now?",
-      "iosLocationPermissionSettings": "Go to Settings",
-      "cancelLocationPermissions": "Cancel",
-      "locationPermissionsPrompt": "Grant location access",
+      "locationPermissionBannerMessage": "Location access is off, so features that use your location are limited.",
+      "locationPermissionBannerSettingsButton": "Open Settings",
       "noLocationsProvidedErrorMessage": "None of your items have a location specified.",
       "directionsButton": "Directions",
       "descriptionTitle": "INFORMATION",
@@ -618,6 +613,7 @@
       "likeButtonText": "Like",
       "likesCount": "{{count}} like",
       "likesCount_plural": "{{count}} likes",
+      "locationPermissionBannerMapMessage": "Location access is off, so the map can't show your current position.",
       "redeemedLabel": "Redeemed",
       "unlikeButtonText": "Unlike"
     },
@@ -996,6 +992,7 @@
       "openLinkFailureMessage": "We couldn't open link at this time."
     },
     "web-view": {
+      "locationPermissionBannerMessage": "Location access is off. Features on this page that use your location may not work.",
       "noUrlErrorMessage": "Please enter a valid URL and reload your app.",
       "noUrlErrorTitle": "No URL",
       "unsupportedLinkTitle": "Failed to open link",
