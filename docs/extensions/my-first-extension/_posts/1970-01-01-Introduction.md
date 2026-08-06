@@ -15,7 +15,7 @@ Before you start the My First Extension tutorial series, you should go through [
 Here's a preview of what the completed app will look like.
 
 <p class="image">
-<img src='{{ site.url }}/img/my-first-extension/extension-preview.jpg'/>
+<img alt='Preview of the Getting Started app' src='{{ site.url }}/img/my-first-extension/extension-preview.jpg'/>
 </p>
 
 ## What are Extensions?
@@ -23,7 +23,7 @@ Here's a preview of what the completed app will look like.
 Extensions represent features in the app. The app owner picks extensions that he wants to use in his app through the Shoutem Builder. Shoutem prepared a bunch of [open sourced](https://github.com/shoutem/extensions) extensions which you can easily customize to fit your needs.
 
 <p class="image">
-<img src='{{ site.url }}/img/my-first-extension/shoutem-extensions.png'/>
+<img alt='Gallery of extension icons' src='{{ site.url }}/img/my-first-extension/shoutem-extensions.png'/>
 </p>
 
 You can develop extensions both within apps made by `shoutem clone` and as stand-alone extensions that you plan on using within multiple apps. In this tutorial, we'll be working on the Restaurants extension we made in Getting Started, so it'll be treated as one within a _cloned_ app.
@@ -37,13 +37,13 @@ Shoutem uses [React](https://facebook.github.io/react/) and [React Native](https
 We use [JSX](https://facebook.github.io/react/docs/introducing-jsx.html) as a simple way to write UI components with tags. Building an app screen with JSX is as easy as:
 
 <p class="image">
-<img src='{{ site.url }}/img/my-first-extension/jsx-component-example.png'/>
+<img alt='Example jsx app code' src='{{ site.url }}/img/my-first-extension/jsx-component-example.png'/>
 </p>
 
 On top of React and React Native, we're using [Redux](http://redux.js.org/), a library which simplifies state management.
 
 <p class="image">
-<img src='{{ site.url }}/img/my-first-extension/redux.png'/>
+<img alt='Redux state flow chart' src='{{ site.url }}/img/my-first-extension/redux.png'/>
 </p>
 
 Even though _we_ use Redux, _you_ can use any other state management library (like [MobX](https://github.com/mobxjs/mobx), or just don't use any at all! Again, we don't want to restrict you on how you use React Native.

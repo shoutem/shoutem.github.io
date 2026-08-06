@@ -92,7 +92,7 @@ Success!
 The app preview will be shown after Shoutem bundles the new app. `List` is now showing the list of restaurants.
 
 <p class="image">
-<img src='{{ site.url }}/img/my-first-extension/extension-rich-list.png'/>
+<img alt='Phone showing list of restaurant photos and names' src='{{ site.url }}/img/my-first-extension/extension-rich-list.png'/>
 </p>
 
 This looks exactly how we wanted.
@@ -329,7 +329,7 @@ export default class Details extends PureComponent {
 Now when you reload the app and tap on a restaurant in the list, this is what you get:
 
 <p class="image">
-<img src='{{ site.url }}/img/my-first-extension/extension-rich-details.png'/>
+<img alt='Phone showing information for Gaspard Brasserie' src='{{ site.url }}/img/my-first-extension/extension-rich-details.png'/>
 </p>
 
 If you aren't previewing with an [emulator on your local machine]({{ site.url }}/docs/extensions/tutorials/setting-local-environment), you will have to _push_ the extension:

@@ -155,7 +155,7 @@ See it in browser: `{{ site.shoutem.builderURL }}/app/{{ site.example.appId }}`
 Opening the SwiperApp in the Builder will show us an app with no Screens, but since we just installed our Swiper Extension onto the app, we can just add the Swiper screen to it by clicking on the + button next to Screens, going to the Custom category and selecting the Swiper Extension. As soon as it's loaded into the Main Navigation we can preview the app:
 
 <p class="image">
-<img src='{{ site.url }}/img/tutorials/installing-3rd-party-and-native-packages/swiper-in-preview.png'/>
+<img alt="Empty screen preview page' src='{{ site.url }}/img/tutorials/installing-3rd-party-and-native-packages/swiper-in-preview.png'/>
 </p>
 
 ## 2) Installing a Native Package

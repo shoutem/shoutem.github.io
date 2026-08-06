@@ -12,7 +12,7 @@ i18n stands for internationalization (i, 18 letters, n). Shoutem's localization 
 Language files are uploaded by the app owner using the `shoutem.i18n` settings page.
 
 <p class="image">
-<img src='{{ site.url }}/img/tutorials/localization/i18n-settings-page.png'/>
+<img alt='Shoutem interface Language and Region tab' src='{{ site.url }}/img/tutorials/localization/i18n-settings-page.png'/>
 </p>
 
 ## Translating your App

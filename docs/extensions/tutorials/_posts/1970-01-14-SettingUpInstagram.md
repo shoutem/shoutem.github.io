@@ -18,7 +18,7 @@ In order to show an Instagram feed in a Shoutem app using the Photos RSS, you wi
 #### 2) Un-check the `Disable implicit 0Auth` setting.
 
 <p class="image">
-<img src='{{ site.url }}/img/tutorials/instagram/instagram-client.png'/>
+<img alt='Manage clients screen' src='{{ site.url }}/img/tutorials/instagram/instagram-client.png'/>
 </p>
 
 #### 3) Update the client.
@@ -37,7 +37,7 @@ At this point your browser may warn you that it requires you to authorize access
 #### 5) You can find the token after the # symbol in the address bar of your browser.
 
 <p class="image">
-<img src='{{ site.url }}/img/tutorials/instagram/access-token.png'/>
+<img alt='URL with access token' src='{{ site.url }}/img/tutorials/instagram/access-token.png'/>
 </p>
 
 ## How to generate a content URL for Shoutem

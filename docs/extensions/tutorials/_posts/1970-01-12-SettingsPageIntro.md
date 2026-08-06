@@ -39,7 +39,7 @@ An example of this type of settings page was mentioned above, the User Authentic
 ```
 
 <p class="image">
-<img src='{{ site.url }}/img/tutorials/writting-settings-page/extension-settings-page.png'/>
+<img alt='Extension user authentication tab' src='{{ site.url }}/img/tutorials/writting-settings-page/extension-settings-page.png'/>
 </p>
 
 ### Shortcut settings pages
@@ -69,7 +69,7 @@ An example of this type of settings page can be found in the News RSS extension:
 ```
 
 <p class="image">
-<img src='{{ site.url }}/img/tutorials/writting-settings-page/shortcut-settings-page.png'/>
+<img alt='Screens tab content log' src='{{ site.url }}/img/tutorials/writting-settings-page/shortcut-settings-page.png'/>
 </p>
 
 ### Screen settings page
@@ -95,7 +95,7 @@ It's defined as `settingsPage` in the `screens`field as a single page for adjust
 ```
 
 <p class="image">
-<img src='{{ site.url }}/img/tutorials/writting-settings-page/screen-settings-page.png'/>
+<img alt="Screens tab navigation' src='{{ site.url }}/img/tutorials/writting-settings-page/screen-settings-page.png'/>
 </p>
 
 Now that we understand the differences between settings pages, let's see [how to make them]({{ site.url }}/docs/extensions/tutorials/writing-react-settings-page).
