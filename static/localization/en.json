@@ -1,5 +1,18 @@
 {
   "shoutem": {
+    "about": {
+      "locationHeading": "Location",
+      "openHoursHeading": "Open hours",
+      "linksHeading": "Contact",
+      "websiteLabel": "Website",
+      "phoneLabel": "Call",
+      "emailLabel": "Email",
+      "twitterLabel": "X",
+      "linkedinLabel": "LinkedIn",
+      "facebookLabel": "Facebook",
+      "instagramLabel": "Instagram",
+      "tiktokLabel": "TikTok"
+    },
     "affiliate": {
       "level": "level",
       "numberOfPoints": "{{numberOfPoints}} points",
@@ -218,14 +231,14 @@
       "buyButtonText": "BUY THIS BOOK"
     },
     "camera": {
-      "changePermissionsButton": "Change permissions",
       "missingPermissionAlertTitle": "Missing permissions",
       "permissionNotGranted": "Camera permission not granted.",
       "codeScannedTitle": "QR Code scanned",
       "codeScannedMessage": "Scanned link: {{url}}",
       "codeMissingUrlMessage": "This code doesn't contain a valid url",
       "cancelButtonLabel": "Cancel",
-      "openButtonLabel": "Open"
+      "openButtonLabel": "Open",
+      "openSettingsButtonLabel": "Open settings"
     },
     "carplay": {
       "permissionAlertTitle": "Permission Required",
@@ -391,7 +404,7 @@
       "pointsHistoryTitle": "POINTS HISTORY",
       "rewardRedeemed": "Reward redeemed",
       "historyItemPointsGainedTitle": "Points gained",
-      "historyItemAmountSpent": "${{amountSpent}} spent",
+      "historyItemAmountSpent": "{{currency}}{{amountSpent}} spent",
       "historyItemStoreVisited": "Store visited",
       "storeRewardsListTitle": "REWARDS",
       "noRewardsForStore": "Currently, there are no rewards available for this store.",
@@ -403,7 +416,8 @@
       "phoneButton": "Phone",
       "cancelButton": "Cancel",
       "locationPermissionsPrompt": "Grant location access",
-      "currencyPrefix": "$ ",
+      "currencySymbol": "$",
+      "currencyPrefix": "{{currency}} ",
       "cashierPointAwardNavBarTitle": "ASSIGN POINTS",
       "cashierPointAwardAssigningTitle": "ASSIGN POINTS FOR",
       "cashierPointAwardReceiptSum": "Receipt sum",
@@ -427,7 +441,7 @@
       "scanBarcodeButton": "SCAN BARCODE",
       "scanBarcodeNavBarTitle": "Scan Barcode",
       "pointsEarnedNavBarTitle": "POINTS EARNED",
-      "pointsEarnedAmountSpent": "Your bill was ${{amountSpent}}",
+      "pointsEarnedAmountSpent": "Your bill was {{currency}}{{amountSpent}}",
       "pointsEarnedCongratulations": "Congratulations!",
       "pointsEarnedMessage": {
         "one": "You've earned 1 point",
@@ -711,7 +725,9 @@
       "noItemsWithSpecificTag": "There are no products with tags that match: ",
       "itemSearchPlaceholder": "Search",
       "cancelSearchButton": "Cancel",
-      "fetchingShopErrorMessage": "There was an error while fetching the shop.\n",
+      "fetchingShopErrorMessage": "There was an error while loading the shop.\n",
+      "unconfiguredShopMessage": "Shopify isn't set up for this app yet. Open the Shopify settings in the Builder to connect your store.",
+      "openShopifySettingsButton": "Open Shopify settings",
       "checkoutErrorTitle": "Error with checkout",
       "checkoutEmail": "Email",
       "checkoutFirstName": "First name",
@@ -1000,6 +1016,11 @@
       "downloadingPdfFileMessage": "Downloading PDF file",
       "pdfDownloadErrorTitle": "Failed to download PDF file.",
       "pdfDownloadErrorMessage": "The PDF file you're trying to preview might not exist or the URL is invalid."
+    },
+    "widgets": {
+      "carouselButtonDefaultText": "Learn more",
+      "headerActionDefaultText": "See all",
+      "noWidgetsMessage": "There are no widgets to show yet."
     },
     "wordpress": {
       "upNext": "UP NEXT"
