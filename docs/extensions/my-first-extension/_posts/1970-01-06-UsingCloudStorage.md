@@ -162,25 +162,25 @@ Success!
 Go to the [Builder]({{ shoutem.builderURL }}), open your app and select `Restaurants` under `Main navigation` to see the Shoutem CMS page.
 
 <p class="image">
-<img src='{{ site.url }}/img/my-first-extension/empty-cms-page.png'/>
+<img alt='Shoutem interface Restaurants tab' src='{{ site.url }}/img/my-first-extension/empty-cms-page.png'/>
 </p>
 
 Click on `Create Items` to start adding content. This will open a modal that contains the `CMS` interface, where you can manage the content for your extension. Apps that get content from the Shoutem CMS will immediately show new content once you edit or add it.
 
 <p class="image">
-<img src='{{ site.url }}/img/my-first-extension/empty-cms.png'/>
+<img alt='Restaurants tab with Add Item button' src='{{ site.url }}/img/my-first-extension/empty-cms.png'/>
 </p>
 
 Click on `Add item`. This will open a modal for inserting data for the `Restaurants` model, which you defined with your data schema.
 
 <p class="image">
-<img src='{{ site.url }}/img/my-first-extension/cms-modal.png'/>
+<img alt='Shoutem interface New Item form' src='{{ site.url }}/img/my-first-extension/cms-modal.png'/>
 </p>
 
 Add at least one restaurant. Now you can see the data in the CMS settings page of your Restaurants extension:
 
 <p class="image">
-<img src='{{ site.url }}/img/my-first-extension/full-cms.png'/>
+<img alt='Shoutem interface Restaurants tab containing list of restaurant data' src='{{ site.url }}/img/my-first-extension/full-cms.png'/>
 </p>
 
 Although you've added some restaurants in the Builder, your extension is still coded to use static data from the `assets` folder you set up earlier in the tutorial series. Let's change that and start fetching the data from Shoutem Cloud Storage using the `@shoutem/redux-io` package.

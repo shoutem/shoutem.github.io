@@ -12,7 +12,7 @@ Since Shoutem apps are plain React Native apps, you can connect to any API. It's
 In this tutorial we'll explain how to build a simple React Native app fetching the photo of the day from [NASA's APOD API](https://api.nasa.gov/index.html). We'll also use the [Shoutem UI toolkit]({{ site.url }}/docs/ui-toolkit/introduction). Here's how the completed app should look:
 
 <p class="image">
-<img src='{{ site.url }}/img/tutorials/connecting-to-api/final.png'/>
+<img alt="Phone with planet photo app' src='{{ site.url }}/img/tutorials/connecting-to-api/final.png'/>
 </p>
 
 The complete code for this extension is available in our [GitHub repository](https://github.com/shoutem/extension-examples/tree/master/connecting-to-3rd-party-api).
@@ -71,7 +71,7 @@ Extension successfully installed to the new app. Check it here:
 Once this is done, go to the [Builder]({{ site.shoutem.builderURL }}) and add the screen inside the app. Now you can preview the app:
 
 <p class="image">
-<img src='{{ site.url }}/img/tutorials/connecting-to-api/hello-world.png'/>
+<img alt='Shoutem interface screen builder tab' src='{{ site.url }}/img/tutorials/connecting-to-api/hello-world.png'/>
 </p>
 
 ## Fetch the Photo
@@ -158,5 +158,5 @@ Success!
 Preview it to see the changes. This is the final result:
 
 <p class="image">
-<img src='{{ site.url }}/img/tutorials/connecting-to-api/final-builder.png'/>
+<img alt='App navigation preview' src='{{ site.url }}/img/tutorials/connecting-to-api/final-builder.png'/>
 </p>

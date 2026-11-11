@@ -232,7 +232,7 @@ Success!
 ```
 
 <p class="image">
-<img src='{{ site.url }}/img/my-first-extension/working-with-data.png'/>
+<img alt='Shoutem interface Restaurants tab containing list of restaurant data' src='{{ site.url }}/img/my-first-extension/working-with-data.png'/>
 </p>
 
 Works like a charm! You just made your first extension using the **Shoutem UI Toolkit** and **Shoutem Cloud Storage**. Great job!

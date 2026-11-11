@@ -15,7 +15,7 @@ We’ll create a different layout in the **Restaurants** extension from the [My 
 Let’s add one additional screen that will represent an alternative layout for the `List` screen where we'll use smaller images as shown here:
 
 <p class="image">
-<img src='{{ site.url }}/img/tutorials/screen-layouts/list-small.png'/>
+<img alt='Two list layouts side by side' src='{{ site.url }}/img/tutorials/screen-layouts/list-small.png'/>
 </p>
 
 Switch over to the extension folder:
@@ -98,7 +98,7 @@ The Restaurants extension uses `CMS settings page`, so app owners can manage dat
 The layout settings page resolves which screens have multiple layouts and shows the `layout selectors` for them. Example of two layout selectors for Shoutem's News RSS extension is shown below.
 
 <p class="image">
-<img src='{{ site.url }}/img/tutorials/screen-layouts/news-rss-layouts.png'/>
+<img alt='Navigation Screens Layout tab' src='{{ site.url }}/img/tutorials/screen-layouts/news-rss-layouts.png'/>
 </p>
 
 For the layout settings page to be able to resolve which screens should show layout selectors, we need to add the `extends` property to screens which act as additional layouts, referencing the "default" layout. Screen layouts inherit all the properties from extending screens and can override them.
@@ -166,7 +166,7 @@ Success!
 By default, the layout will be the `List` screen. Switch to `Layout` and select **List with small images**. This is the result you should get:
 
 <p class="image">
-<img src='{{ site.url }}/img/tutorials/screen-layouts/restaurants-small-list.png'/>
+<img alt='Screen layout tab' src='{{ site.url }}/img/tutorials/screen-layouts/restaurants-small-list.png'/>
 </p>
 
 Great job! Now you know how to create additional layouts for your extension.

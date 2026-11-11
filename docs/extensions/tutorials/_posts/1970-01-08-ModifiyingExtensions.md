@@ -27,7 +27,7 @@ For the purpose of this demo, create a new blank app and add a **News RSS** scre
 This is what it should look like (images and text vary with RSS feed):
 
 <p class="image">
-<img src='{{ site.url }}/img/tutorials/modifying-extensions/provided-layouts.png'/>
+<img alt='Screens layout page' src='{{ site.url }}/img/tutorials/modifying-extensions/provided-layouts.png'/>
 </p>
 
 You do want list layout, but with large images in `Tiles`, such as the ones provided in the [UI toolkit]({{ site.url }}/docs/ui-toolkit/components/tiles). So let's modify News RSS extension directly to get those large images.
@@ -118,7 +118,7 @@ Delete the old News RSS screen from the navigation (click on the `...` in the to
 This is what you should get (images and text vary with RSS feed):
 
 <p class="image">
-<img src='{{ site.url }}/img/tutorials/modifying-extensions/customized-list-layout.png'/>
+<img alt='Screens layout page' src='{{ site.url }}/img/tutorials/modifying-extensions/customized-list-layout.png'/>
 </p>
 
 This is what we wanted! It was quite easy and straightforward. However, doing this means creating a completely separate extension which won't get any updates done by Shoutem on Shoutem's **News RSS** extension.
@@ -318,7 +318,7 @@ Open your new app in the Builder. Now, add a screen from the **Shoutem** News RS
 Add an RSS feed in the **Content** tab, select the new layout in the **Layout** tab and run the app. This is what you should get (images and text vary with RSS feed):
 
 <p class="image">
-<img src='{{ site.url }}/img/tutorials/modifying-extensions/new-layout.png'/>
+<img alt='Screens layout page' src='{{ site.url }}/img/tutorials/modifying-extensions/new-layout.png'/>
 </p>
 
 This way, we only extended Shoutem's **News RSS** extension and our extension will automatically get the all updates from Shoutem.
